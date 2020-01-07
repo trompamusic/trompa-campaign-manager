@@ -1,0 +1,130 @@
+{
+  "name": "ce-campaign-manager",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": {
+    "url": "https://github.com/Videodock/react-redux-boilterplate/issues"
+  },
+  "keywords": [
+    "React",
+    "React i18n",
+    "React Router",
+    "React Redux",
+    "React Sagas",
+    "React Helmet",
+    "React Hooks",
+    "React testing library",
+    "Reselect",
+    "Enzyme",
+    "GraphQL",
+    "Jest",
+    "Material UI",
+    "Storybook"
+  ],
+  "author": "Christiaan Scheermeijer <christiaan@videodock.com>",
+  "contributors": [
+    "CodeKarl",
+    "demmyhonore"
+  ],
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "lint": "eslint --ext jsx --ext js src",
+    "eject": "react-scripts eject",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add -A CHANGELOG.md",
+    "build-storybook": "build-storybook -s public",
+    "storybook": "start-storybook -p 9009 -s public"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.2.0",
+    "@material-ui/icons": "^4.2.1",
+    "@material-ui/styles": "^4.2.0",
+    "apisauce": "^1.0.3",
+    "classnames": "^2.2.5",
+    "connected-react-router": "^6.5.0",
+    "history": "^4.7.2",
+    "i18next": "^17.0.6",
+    "moment": "^2.19.2",
+    "object-hash": "^1.2.0",
+    "prop-types": "^15.6.0",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-helmet": "^5.2.0",
+    "react-i18next": "^10.11.4",
+    "react-jss": "^8.1.0",
+    "react-redux": "^7.1.0",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.0.1",
+    "redux": "^4.0.4",
+    "redux-saga": "^1.0.5",
+    "reselect": "^4.0.0",
+    "seamless-immutable": "^7.1.2",
+    "url-search-params-polyfill": "^7.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.0.0",
+    "@commitlint/config-conventional": "^8.0.0",
+    "@storybook/addon-actions": "^5.1.9",
+    "@storybook/addon-links": "^5.1.9",
+    "@storybook/addon-storyshots": "^5.1.9",
+    "@storybook/react": "^5.1.9",
+    "@testing-library/jest-dom": "^4.0.0",
+    "@testing-library/react": "^8.0.5",
+    "@types/jest": "^24.0.15",
+    "@types/prop-types": "^15.5.2",
+    "@types/react": "^16.0.10",
+    "@types/react-dom": "^16.0.1",
+    "@types/seamless-immutable": "^7.1.1",
+    "babel-core": "^6.26.0",
+    "boards": "^3.1.4",
+    "boards-preset-vd": "^3.1.0",
+    "conventional-changelog": "^3.1.8",
+    "conventional-changelog-cli": "^2.0.21",
+    "dotenv": "^8.0.0",
+    "dotenv-webpack": "^1.5.4",
+    "eslint-config-react-app-vd": "^1.0.4",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-react": "^7.4.0",
+    "eslint-plugin-varspacing": "^1.1.0",
+    "husky": "^3.0.0",
+    "lint-staged": "^9.2.0",
+    "node-emoji": "^1.8.1",
+    "react-test-renderer": "^16.8.6"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx}": [
+      "eslint",
+      "react-scripts test --watchAll=false --env=jsdom --passWithNoTests --findRelatedTests"
+    ]
+  },
+  "jest": {
+    "coverageReporters": [
+      "json",
+      "lcov"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">2%",
+      "not dead",
+      "not op_mini all",
+      "ie 11"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

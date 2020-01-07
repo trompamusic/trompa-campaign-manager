@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Root /> renders a generic error page when error prop is given 1`] = `
+<div
+  class="makeStyles-container-34"
+>
+  <div>
+    Something wen't terribly wrong!
+  </div>
+</div>
+`;
+
+exports[`<Root /> renders and matches snapshot 1`] = `
+<div
+  class="makeStyles-container-1"
+>
+  <div>
+    <div
+      class="makeStyles-hero-3"
+    >
+      <div>
+        <img
+          alt="logo"
+          class="makeStyles-logo-2"
+          src="[object Object]"
+          width="400"
+        />
+      </div>
+      <div>
+        <h4
+          class="MuiTypography-root MuiTypography-h4 MuiTypography-colorInherit"
+        >
+          Welcome to the Videodock React Redux Boilerplate website!
+        </h4>
+      </div>
+      <div>
+        <p
+          class="MuiTypography-root MuiTypography-body1 MuiTypography-colorInherit"
+        >
+          this is awwwwwee.... wait for it... some!
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
