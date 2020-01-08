@@ -5,10 +5,13 @@ import images from './images';
 import mixins from './mixins';
 import overrides from './overrides';
 
-export default createMuiTheme({
+const theme = createMuiTheme({
   palette,
   typography,
   images,
   mixins,
-  overrides,
 });
+
+theme.overrides = overrides(theme);
+
+export default theme;
