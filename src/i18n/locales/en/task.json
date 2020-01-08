@@ -1,4 +1,5 @@
 {
   "task": "Task",
-  "next": "Next"
+  "next": "Next",
+  "next_task": "Next task"
 }

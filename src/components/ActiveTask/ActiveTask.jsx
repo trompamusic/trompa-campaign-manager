@@ -29,7 +29,7 @@ export default function ActiveTask () {
       <AppBar classes={{ positionFixed: classes.appbarBottom }} position="fixed">
         <Toolbar classes={{ dense: classes.toolbarBottom }} variant="dense" >
           <Button variant="contained" color="primary">
-            {t('next')}
+            {t('next_task')}
           </Button>
         </Toolbar>
       </AppBar>
