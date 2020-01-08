@@ -2,14 +2,15 @@ import { createStyles } from '@material-ui/styles';
 
 export default () => createStyles({
   toolbarTop: {
-    height: 56,
+    height        : 56,
+    justifyContent: 'space-between',
   },
   appbarBottom: {
     top   : 'auto',
     bottom: 0,
   },
   toolbarBottom: {
-    height        : 87,
+    height        : 56,
     justifyContent: 'flex-end',
   },
   logo: {
@@ -18,7 +19,6 @@ export default () => createStyles({
   iframe: {
     border: 'none',
     width : '100%',
-    height: 'calc(100vh - 143px)',
+    height: 'calc(100vh - 112px)',
   },
 });
-

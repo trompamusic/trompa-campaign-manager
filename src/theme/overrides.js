@@ -1,4 +1,4 @@
-const overrides = ({ palette }) => ({
+const overrides = ({ palette, typography }) => ({
   MuiAppBar: {
     colorPrimary: {
       color          : palette.text.darkGrey,
@@ -8,8 +8,17 @@ const overrides = ({ palette }) => ({
   MuiButton: {
     root: {
       textTransform: 'none',
-      padding      : '10px 25px',
-      minWidth     : 132,
+      fontFamily   : typography.fontFamily,
+    },
+    text: {
+      fontWeight: 'bold',
+      '& svg'   : {
+        width : 18,
+        height: 18,
+      },
+    },
+    containedPrimary: {
+      background: 'linear-gradient(45.21deg, #0080E8 0%, #005AA3 100%)',
     },
   },
 });

@@ -4,13 +4,14 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import { useTranslation } from 'react-i18next';
 import Button from '@material-ui/core/Button';
+import CloseIcon from '@material-ui/icons/Close';
 import images from '../../theme/images';
 import styles from './ActiveTask.styles';
 
 const useStyles = makeStyles(styles);
 
 export default function ActiveTask () {
-  const { t }   = useTranslation("task");
+  const { t }   = useTranslation('task');
   const classes = useStyles();
 
   return (
@@ -18,6 +19,9 @@ export default function ActiveTask () {
       <AppBar position="relative">
         <Toolbar classes={{ dense: classes.toolbarTop }} variant="dense">
           <img className={classes.logo} src={images.logo} alt="logo" />
+          <Button startIcon={<CloseIcon />} variant="text">
+            {t('close')}
+          </Button>
         </Toolbar>
       </AppBar>
       <iframe
