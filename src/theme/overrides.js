@@ -12,6 +12,7 @@ const overrides = ({ palette, typography }) => ({
     },
     text: {
       fontWeight: 'bold',
+      padding   : '6px 16px',
       '& svg'   : {
         width : 18,
         height: 18,
