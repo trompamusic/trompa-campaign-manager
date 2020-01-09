@@ -2,7 +2,7 @@ import React from 'react';
 import { useQuery, gql } from '@apollo/client';
 
 const CONTROL_ACTIONS_QUERY = gql`
-  query ControlActionList {
+  query ControlActions {
     ControlAction {
       identifier
       description
