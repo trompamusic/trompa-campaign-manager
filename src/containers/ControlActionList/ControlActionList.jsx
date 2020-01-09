@@ -27,12 +27,14 @@ export default function ControlActionList () {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
 
-  console.log('ControlActionList query', data);
-
   return (
-    <div>
-    ControlActionList query in console.
-    </div>
+    <React.Fragment>
+      <h4>Queried controlActions</h4>
+      <ul>
+        {data.ControlAction.map(controlAction =>
+          <li key={controlAction.identifier}>{controlAction.name}</li>)}
+      </ul>
+    </React.Fragment>
   )
   ;
 }
