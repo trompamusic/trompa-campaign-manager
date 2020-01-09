@@ -31,8 +31,11 @@ export default function ControlActionList () {
     <React.Fragment>
       <h4>Queried controlActions</h4>
       <ul>
-        {data.ControlAction.map(({ identifier, name }) =>
-          <li key={identifier}>{name}</li>)}
+        {data.ControlAction.map(({ identifier, name }) => (
+          <li key={identifier}>
+            {name}
+          </li>
+        ))}
       </ul>
     </React.Fragment>
   )
