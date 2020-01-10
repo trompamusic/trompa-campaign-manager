@@ -1,10 +1,10 @@
 import React from 'react';
 import { render } from '../../testUtils';
-import ControlActionList from './ControlActionList';
+import ControlAction from './ControlAction';
 
-describe('<ControlActionList />', () => {
+describe('<ControlAction />', () => {
   test('matches snapshot', () => {
-    const { container } = render(<ControlActionList />);
+    const { container } = render(<ControlAction />);
 
     expect(container).toMatchSnapshot();
   });
