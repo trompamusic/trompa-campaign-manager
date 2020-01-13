@@ -1,5 +1,6 @@
 import React from 'react';
-import { useQuery, gql } from '@apollo/client';
+import { useQuery } from '@apollo/react-hooks';
+import { gql } from "apollo-boost";
 
 const CONTROL_ACTIONS_QUERY = gql`
   query ControlActions {
@@ -11,11 +12,6 @@ const CONTROL_ACTIONS_QUERY = gql`
       target {
           identifier
           title
-      }
-      object {
-          ... on MetadataInterface {
-              identifier
-          }
       }
   }
 }
