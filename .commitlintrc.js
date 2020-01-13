@@ -5,6 +5,9 @@ module.exports = {
       2, 'always', [
         'project',
         'layout',
+        'landing-page',
+        'search',
+        'campaign',
         'home',
         'redux',
         'sagas',

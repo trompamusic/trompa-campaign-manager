@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ActiveTask /> renders and matches snapshot 1`] = `
+<header
+  class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionRelative MuiAppBar-colorPrimary"
+>
+  <div
+    class="MuiToolbar-root MuiToolbar-dense makeStyles-toolbarTop-1 MuiToolbar-gutters"
+  >
+    <img
+      alt="logo"
+      class="makeStyles-logo-4"
+      src="logo.png"
+    />
+    <button
+      class="MuiButtonBase-root MuiButton-root MuiButton-text"
+      starticon="[object Object]"
+      tabindex="0"
+      type="button"
+    >
+      <span
+        class="MuiButton-label"
+      >
+        Close
+      </span>
+      <span
+        class="MuiTouchRipple-root"
+      />
+    </button>
+  </div>
+</header>
+`;
