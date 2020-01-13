@@ -5,7 +5,7 @@ module.exports = {
       2, 'always', [
         'project',
         'layout',
-        'landing page',
+        'landing-page',
         'search',
         'campaign',
         'home',
