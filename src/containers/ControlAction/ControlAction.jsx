@@ -9,7 +9,7 @@ export default function ControlAction () {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
 
-  // mocking in console
+  // mock query in console
   mockQuery();
 
   return (
@@ -23,7 +23,7 @@ export default function ControlAction () {
   );
 }
 
-const CONTROL_ACTION_QUERY = gql`
+export const CONTROL_ACTION_QUERY = gql`
   query ControlAction ($identifier: String!) {
     ControlAction(identifier: $identifier) {
       name
