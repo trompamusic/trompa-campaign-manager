@@ -2,7 +2,7 @@
 
 exports[`<ActiveTask /> renders and matches snapshot 1`] = `
 <header
-  class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionRelative MuiAppBar-colorPrimary"
+  class="MuiPaper-root MuiAppBar-root MuiAppBar-positionRelative MuiAppBar-colorPrimary MuiPaper-elevation4"
 >
   <div
     class="MuiToolbar-root MuiToolbar-dense makeStyles-toolbarTop-1 MuiToolbar-gutters"
@@ -14,13 +14,27 @@ exports[`<ActiveTask /> renders and matches snapshot 1`] = `
     />
     <button
       class="MuiButtonBase-root MuiButton-root MuiButton-text"
-      starticon="[object Object]"
       tabindex="0"
       type="button"
     >
       <span
         class="MuiButton-label"
       >
+        <span
+          class="MuiButton-startIcon MuiButton-iconSizeMedium"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root"
+            focusable="false"
+            role="presentation"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+            />
+          </svg>
+        </span>
         Close
       </span>
       <span
