@@ -19,26 +19,11 @@ exports[`<Root /> renders and matches snapshot 1`] = `
       class="makeStyles-hero-3"
     >
       <div>
-        <img
-          alt="logo"
-          class="makeStyles-logo-2"
-          src="[object Object]"
-          width="400"
-        />
-      </div>
-      <div>
         <h4
           class="MuiTypography-root MuiTypography-h4 MuiTypography-colorInherit"
         >
-          Welcome to the Videodock React Redux Boilerplate website!
+          Welcome to Trompa's campaign manager!
         </h4>
-      </div>
-      <div>
-        <p
-          class="MuiTypography-root MuiTypography-body1 MuiTypography-colorInherit"
-        >
-          this is awwwwwee.... wait for it... some!
-        </p>
       </div>
     </div>
   </div>

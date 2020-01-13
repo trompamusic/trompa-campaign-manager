@@ -5,7 +5,6 @@ import Typography from '@material-ui/core/Typography';
 import { useTranslation } from 'react-i18next';
 import { makeStyles } from '@material-ui/styles';
 import * as startupActions from '../../redux/Startup/Startup.actions';
-import images from '../../theme/images';
 import styles from './Home.styles';
 
 const useStyles = makeStyles(styles);
@@ -26,9 +25,6 @@ export default function Home() {
         <meta name="description" content={t('home:welcome_message')} />
       </Helmet>
       <div className={classes.hero}>
-        <div>
-          <img className={classes.logo} src={images.logo} width="400" alt="logo" />
-        </div>
         <div>
           <Typography variant="h4" color="inherit">
             {t('home:welcome_message')}
