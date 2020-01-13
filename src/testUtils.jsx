@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { render } from '@testing-library/react';
 import { ThemeProvider } from '@material-ui/styles';
 import { I18nextProvider } from 'react-i18next';
-import { ApolloProvider } from '@apollo/client';
+import { ApolloProvider } from '@apollo/react-hooks';
 import { BrowserRouter as Router } from 'react-router-dom';
 import 'url-search-params-polyfill';
 import i18n from '../src/i18n';

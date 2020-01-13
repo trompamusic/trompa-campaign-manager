@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { makeStyles } from '@material-ui/styles';
 import Home from '../../screens/Home';
+import Task from '../../screens/Task';
 import NotFound from '../../screens/NotFound';
 import ControlAction from '../../containers/ControlAction/ControlAction'; // testing control action query
 import styles from './Root.styles';
@@ -16,6 +17,7 @@ export default function Root(props) {
   ) : (
     <Switch>
       <Route path="/" component={Home} exact />
+      <Route path="/task" component={Task} exact />
       <Route component={NotFound} />
     </Switch>
   );

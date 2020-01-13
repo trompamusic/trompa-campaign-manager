@@ -1,4 +1,4 @@
-import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client';
+import { ApolloClient, HttpLink, InMemoryCache } from 'apollo-boost';
 
 const uri = process.env.REACT_APP_GRAPHQL_URL;
 

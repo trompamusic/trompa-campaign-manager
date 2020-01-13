@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
 import { ThemeProvider } from '@material-ui/styles';
-import { ApolloProvider } from '@apollo/client';
+import { ApolloProvider } from '@apollo/react-hooks';
 import { I18nextProvider } from 'react-i18next';
 import { history } from './history';
 import i18n from './i18n';
