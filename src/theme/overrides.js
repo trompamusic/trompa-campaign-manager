@@ -11,6 +11,7 @@ const overrides = ({ palette, typography }) => ({
       fontFamily   : typography.fontFamily,
     },
     text: {
+      color     : palette.text.blue,
       fontWeight: 'bold',
       padding   : '6px 16px',
       '& svg'   : {
