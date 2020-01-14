@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Campaign /> renders and matches snapshot 1`] = `
+<header
+  class="MuiPaper-root MuiAppBar-root MuiAppBar-positionRelative MuiAppBar-colorPrimary MuiPaper-elevation4"
+>
+  <div
+    class="MuiToolbar-root MuiToolbar-dense makeStyles-toolbarTop-4 MuiToolbar-gutters"
+  >
+    <img
+      alt="logo"
+      class="makeStyles-logo-5"
+      src="logo.png"
+    />
+  </div>
+</header>
+`;
