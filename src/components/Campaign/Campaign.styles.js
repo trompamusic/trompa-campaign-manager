@@ -7,7 +7,7 @@ export default ({ shape, palette }) => createStyles({
   },
   work: {
     display     : 'flex',
-    height      : 54,
+    minHeight   : 54,
     marginBottom: 14,
   },
   fileMusicIcon: {
@@ -22,11 +22,13 @@ export default ({ shape, palette }) => createStyles({
     },
   },
   actions: {
-    display   : 'flex',
     '& button': {
       marginRight: 16,
     },
     marginBottom: 16,
+  },
+  shareCampaignInput: {
+    padding: '8px 12px',
   },
   shareCampaignAdornedEnd: {
     color       : palette.text.blue,
@@ -35,11 +37,22 @@ export default ({ shape, palette }) => createStyles({
     fontWeight  : 'bold',
   },
   shareCampaignInputMarginDense: {
-    padding   : 0,
     color     : palette.text.darkGrey,
     fontWeight: 'normal',
   },
-  shareCampaignInput: {
-    padding: '8px 12px',
+  '@media (max-width: 700px)': {
+    section: {
+      margin      : 16,
+      marginBottom: 24,
+      '& button'  : {
+        width: '100%',
+      },
+    },
+    shareCampaignInputMarginDense: {
+      padding: 8,
+    },
+    textField: {
+      width: '100%',
+    },
   },
 });

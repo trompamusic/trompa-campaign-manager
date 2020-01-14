@@ -43,21 +43,28 @@ export default function Campaign ({ campaignIdentifier }) {
             </Typography>
           </div>
         </div>
-        <div className={classes.actions}>
-          <Button startIcon={<MusicProcessIcon />} variant="contained" color="primary">
-            {t('help_this_campaign')}
-          </Button>
-          <Button startIcon={<EmailIcon />} variant="text">
-            {t('subscribe_for_updates')}
-          </Button>
-          <Button startIcon={<ProgressCloseIcon />} variant="text">
-            {t('close_campaign')}
-          </Button>
-        </div>
+        <Grid spacing={1} classes={{ container: classes.actions }} container>
+          <Grid xs={12} sm={'auto'} item>
+            <Button startIcon={<MusicProcessIcon />} variant="contained" color="primary">
+              {t('help_this_campaign')}
+            </Button>
+          </Grid>
+          <Grid xs={12} sm={'auto'} item>
+            <Button startIcon={<EmailIcon />} variant="text">
+              {t('subscribe_for_updates')}
+            </Button>
+          </Grid>
+          <Grid xs={12} sm={'auto'} item>
+            <Button startIcon={<ProgressCloseIcon />} variant="text">
+              {t('close_campaign')}
+            </Button>
+          </Grid>
+        </Grid>
         <Typography variant="caption" >
           {t('share_this_campaign')}
         </Typography>
         <TextField
+          classes={{ root: classes.textField }}
           size="small"
           defaultValue="https://"
           variant="filled"
@@ -80,12 +87,12 @@ export default function Campaign ({ campaignIdentifier }) {
             Lorem, ipsum dolor sit amet consectetur.
         </Typography>
         <Grid spacing={1} container>
-          <Grid xs={6} item>
+          <Grid xs={12} sm={6} item>
             <Typography variant="body1" paragraph>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus nostrum eveniet accusantium ipsum excepturi reiciendis mollitia? Assumenda soluta doloremque fugit! Repellendus accusantium aliquid aperiam corporis obcaecati quia praesentium minima architecto.
             </Typography>
           </Grid>
-          <Grid xs={6} item>
+          <Grid xs={12} sm={6} item>
             <Typography variant="body1" paragraph>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus nostrum eveniet accusantium ipsum excepturi reiciendis mollitia? Assumenda soluta doloremque fugit! Repellendus accusantium aliquid aperiam corporis obcaecati quia praesentium minima architecto.
             </Typography>
