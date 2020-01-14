@@ -23,6 +23,16 @@ const overrides = ({ palette, typography }) => ({
       background: 'linear-gradient(45.21deg, #0080E8 0%, #005AA3 100%)',
     },
   },
+  MuiDivider: {
+    root: {
+      backgroundColor: palette.common.black,
+    },
+  },
+  MuiTypography: {
+    paragraph: {
+      marginBottom: 24,
+    },
+  },
 });
 
 export default overrides;

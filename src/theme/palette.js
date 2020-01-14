@@ -1,8 +1,9 @@
 export default {
   common: {
     white     : '#fff',
-    darkBlack : 'rgba(0, 0, 0, 0.7)',
+    black     : '#000',
     faintWhite: '#FAFAFA',
+    darkBlack : 'rgba(0, 0, 0, 0.7)',
   },
   text: {
     primary   : 'rgba(0, 0, 0, 0.7)',
