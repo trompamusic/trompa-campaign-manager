@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 import { useTranslation } from 'react-i18next';
-import * as PropTypes from 'prop-types';
 import { Typography } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import EmailIcon from '@material-ui/icons/Email';
@@ -16,7 +15,7 @@ import styles from './Campaign.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function Campaign ({ campaignIdentifier }) {
+export default function Campaign () {
   const { t }   = useTranslation('campaign');
   const classes = useStyles();
 
@@ -105,7 +104,3 @@ export default function Campaign ({ campaignIdentifier }) {
     </React.Fragment>
   );
 }
-
-Campaign.propTypes = {
-  campaignIdentifier: PropTypes.string,
-};
