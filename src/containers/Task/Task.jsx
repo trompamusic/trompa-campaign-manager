@@ -12,8 +12,7 @@ export default function Task ({ campaignIdentifier }) {
 
   const { name,  url } = data.ControlAction[0];
 
-  return (
-    <ActiveTask name={name} url={url} />);
+  return <ActiveTask name={name} url={url} campaignIdentifier={campaignIdentifier} />;
 }
 
 export const CONTROL_ACTION_QUERY = gql`

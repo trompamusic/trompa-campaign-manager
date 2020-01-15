@@ -1,10 +1,12 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/styles';
+import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import { Typography } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import EmailIcon from '@material-ui/icons/Email';
 import TextField from '@material-ui/core/TextField';
+import { Link } from 'react-router-dom';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
 import AppbarTop from '../AppbarTop/AppbarTop';
@@ -15,7 +17,7 @@ import styles from './Campaign.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function Campaign () {
+export default function Campaign ({ campaignIdentifier }) {
   const { t }   = useTranslation('campaign');
   const classes = useStyles();
 
@@ -44,7 +46,7 @@ export default function Campaign () {
         </div>
         <Grid spacing={1} classes={{ container: classes.actions }} container>
           <Grid xs={12} sm={'auto'} item>
-            <Button startIcon={<MusicProcessIcon />} variant="contained" color="primary">
+            <Button component={Link} to={`/campaign/${campaignIdentifier}/task`} startIcon={<MusicProcessIcon />} variant="contained" color="primary">
               {t('help_this_campaign')}
             </Button>
           </Grid>
@@ -104,3 +106,7 @@ export default function Campaign () {
     </React.Fragment>
   );
 }
+
+Campaign.propTypes = {
+  campaignIdentifier: PropTypes.string,
+};

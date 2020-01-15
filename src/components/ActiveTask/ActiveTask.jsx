@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 import { useTranslation } from 'react-i18next';
 import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom';
 import CloseIcon from '@material-ui/icons/Close';
 import PropTypes from 'prop-types';
 import AppbarTop from '../AppbarTop/AppbarTop';
@@ -10,14 +11,14 @@ import styles from './ActiveTask.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function ActiveTask ({ name, url }) {
+export default function ActiveTask ({ url, campaignIdentifier }) {
   const { t }   = useTranslation('task');
   const classes = useStyles();
 
   return (
     <React.Fragment>
       <AppbarTop>
-        <Button startIcon={<CloseIcon />} variant="text">
+        <Button component={Link} to={`/campaign/${campaignIdentifier}`} startIcon={<CloseIcon />} variant="text">
           {t('close')}
         </Button>
       </AppbarTop>
@@ -37,6 +38,7 @@ export default function ActiveTask ({ name, url }) {
 }
 
 ActiveTask.propTypes = {
-  name: PropTypes.string,
-  url : PropTypes.string,
+  name              : PropTypes.string,
+  url               : PropTypes.string,
+  campaignIdentifier: PropTypes.string,
 };
