@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AppbarTop /> renders and matches snapshot 1`] = `
+<header
+  class="MuiPaper-root MuiAppBar-root MuiAppBar-positionRelative MuiAppBar-colorPrimary MuiPaper-elevation4"
+>
+  <div
+    class="MuiToolbar-root MuiToolbar-dense makeStyles-toolbarTop-1 MuiToolbar-gutters"
+  >
+    <img
+      alt="logo"
+      class="makeStyles-logo-2"
+      src="logo.png"
+    />
+  </div>
+</header>
+`;

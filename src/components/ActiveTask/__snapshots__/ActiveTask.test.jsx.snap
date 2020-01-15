@@ -5,11 +5,11 @@ exports[`<ActiveTask /> renders and matches snapshot 1`] = `
   class="MuiPaper-root MuiAppBar-root MuiAppBar-positionRelative MuiAppBar-colorPrimary MuiPaper-elevation4"
 >
   <div
-    class="MuiToolbar-root MuiToolbar-dense makeStyles-toolbarTop-1 MuiToolbar-gutters"
+    class="MuiToolbar-root MuiToolbar-dense makeStyles-toolbarTop-2 MuiToolbar-gutters"
   >
     <img
       alt="logo"
-      class="makeStyles-logo-4"
+      class="makeStyles-logo-3"
       src="logo.png"
     />
     <button

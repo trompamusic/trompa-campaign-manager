@@ -1,5 +1,6 @@
 /* eslint-disable key-spacing */
 export default {
+  campaign  : require('./campaign.json'),
   common  : require('./common.json'),
   home    : require('./home.json'),
   notfound: require('./notfound.json'),
