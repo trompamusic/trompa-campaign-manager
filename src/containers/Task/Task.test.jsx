@@ -2,24 +2,39 @@ import React from 'react';
 import { MockedProvider } from '@apollo/react-testing';
 import { wait } from '@testing-library/react';
 import { render } from '../../testUtils';
-import Task, { CONTROL_ACTION_QUERY } from './Task';
+import Task, { NEXT_TEN_POTENTIAL_ACTIONS_QUERY } from './Task';
 
 const mocks = [
   {
     request: {
-      query    : CONTROL_ACTION_QUERY,
+      query    : NEXT_TEN_POTENTIAL_ACTIONS_QUERY,
       variables: {
         identifier: 'e63fc3c5-f84e-4a64-9d5b-98a49dd4680c',
+        offset    : 2,
       },
     },
     result: {
       data: {
-        ControlAction: [{
-          identifier: "b6e2596a-823f-4a58-b7a6-900f4ece68fd",
-          name      : "Campaign Manager Task #1",
-          url       : "https://demo.videodock.com/trompa/ce-task",
-          __typename: "ControlAction",
-        }],
+        ControlAction: [
+          {
+            identifier: "9754f772-988e-4758-b5a6-f481c0266002",
+            name      : "Campaign Manager Task #4",
+            url       : "https://demo.videodock.com/trompa/ce-task",
+            __typename: "ControlAction",
+          },
+          {
+            identifier: "bbd650f8-2c8d-43a0-ad92-34f8d14f4582",
+            name      : "Campaign Manager Task #6",
+            url       : "https://demo.videodock.com/trompa/ce-task",
+            __typename: "ControlAction",
+          },
+          {
+            identifier: "f67a7ab1-13ae-4d27-a6aa-5f49e0240858",
+            name      : "Campaign Manager Task #7",
+            url       : "https://demo.videodock.com/trompa/ce-task",
+            __typename: "ControlAction",
+          },
+        ],
       },
     },
   },
