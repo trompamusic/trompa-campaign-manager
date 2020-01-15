@@ -1,9 +1,16 @@
 import { createStyles } from '@material-ui/styles';
 
-export default ({ shape, palette }) => createStyles({
+export default ({ shape, palette, breakpoints }) => createStyles({
   section: {
-    margin  : 44,
-    maxWidth: 1440,
+    margin                  : 44,
+    maxWidth                : 1440,
+    [breakpoints.down('sm')]: {
+      margin      : 16,
+      marginBottom: 24,
+      '& button'  : {
+        width: '100%',
+      },
+    },
   },
   work: {
     display     : 'flex',
@@ -27,6 +34,9 @@ export default ({ shape, palette }) => createStyles({
     },
     marginBottom: 16,
   },
+  copy: {
+    cursor: 'pointer',
+  },
   shareCampaignInput: {
     padding: '8px 12px',
   },
@@ -37,21 +47,14 @@ export default ({ shape, palette }) => createStyles({
     fontWeight  : 'bold',
   },
   shareCampaignInputMarginDense: {
-    color     : palette.text.darkGrey,
-    fontWeight: 'normal',
-  },
-  '@media (max-width: 700px)': {
-    section: {
-      margin      : 16,
-      marginBottom: 24,
-      '& button'  : {
-        width: '100%',
-      },
-    },
-    shareCampaignInputMarginDense: {
+    color                   : palette.text.darkGrey,
+    fontWeight              : 'normal',
+    [breakpoints.down('sm')]: {
       padding: 8,
     },
-    textField: {
+  },
+  textField: {
+    [breakpoints.down('sm')]: {
       width: '100%',
     },
   },

@@ -5,11 +5,11 @@ exports[`<Campaign /> renders and matches snapshot 1`] = `
   class="MuiPaper-root MuiAppBar-root MuiAppBar-positionRelative MuiAppBar-colorPrimary MuiPaper-elevation4"
 >
   <div
-    class="MuiToolbar-root MuiToolbar-dense makeStyles-toolbarTop-9 MuiToolbar-gutters"
+    class="MuiToolbar-root MuiToolbar-dense makeStyles-toolbarTop-10 MuiToolbar-gutters"
   >
     <img
       alt="logo"
-      class="makeStyles-logo-10"
+      class="makeStyles-logo-11"
       src="logo.png"
     />
   </div>

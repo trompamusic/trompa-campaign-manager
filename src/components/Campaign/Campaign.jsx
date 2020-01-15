@@ -76,7 +76,7 @@ export default function Campaign ({ campaignIdentifier }) {
               inputMarginDense: classes.shareCampaignInputMarginDense,
             },
             endAdornment: (
-              <span>{t('copy')}</span>
+              <span className={classes.copy}>{t('copy')}</span>
             ),
           }}
         />
