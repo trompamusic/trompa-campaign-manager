@@ -12,10 +12,12 @@ exports[`<ActiveTask /> renders and matches snapshot 1`] = `
       class="makeStyles-logo-3"
       src="logo.png"
     />
-    <button
+    <a
+      aria-disabled="false"
       class="MuiButtonBase-root MuiButton-root MuiButton-text"
+      href="/campaign/undefined"
+      role="button"
       tabindex="0"
-      type="button"
     >
       <span
         class="MuiButton-label"
@@ -40,7 +42,7 @@ exports[`<ActiveTask /> renders and matches snapshot 1`] = `
       <span
         class="MuiTouchRipple-root"
       />
-    </button>
+    </a>
   </div>
 </header>
 `;
