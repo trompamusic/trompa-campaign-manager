@@ -56,5 +56,5 @@ query ControlAction {
 }
 `;
 
-export const mockQuery = () => graphql(schema, query).then(result => console.log('Mock query', result));
+export const mockQuery = () => graphql(schema, query).then(result => result);
 

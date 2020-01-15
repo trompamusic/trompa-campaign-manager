@@ -4,7 +4,6 @@ import { makeStyles } from '@material-ui/styles';
 import Home from '../../screens/Home';
 import Task from '../../screens/Task';
 import NotFound from '../../screens/NotFound';
-import ControlAction from '../../containers/ControlAction/ControlAction'; // testing control action query
 import styles from './Root.styles';
 
 const useStyles = makeStyles(styles);
@@ -25,7 +24,6 @@ export default function Root(props) {
   return (
     <div className={classes.container}>
       {content}
-      <ControlAction />
     </div>
   );
 };
