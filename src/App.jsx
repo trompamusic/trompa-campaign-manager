@@ -10,7 +10,6 @@ import theme from './theme';
 import client from './graphql';
 import store from './redux';
 import Root from './components/Root';
-import TaskProvider from './containers/TaskProvider/TaskProvider';
 
 class App extends Component {
   constructor(props) {
@@ -30,9 +29,7 @@ class App extends Component {
           <ThemeProvider theme={theme}>
             <I18nextProvider i18n={i18n}>
               <ConnectedRouter history={history}>
-                <TaskProvider>
-                  <Root error={this.state.error} />
-                </TaskProvider>
+                <Root error={this.state.error} />
               </ConnectedRouter>
             </I18nextProvider>
           </ThemeProvider>
