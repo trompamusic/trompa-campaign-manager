@@ -1,5 +1,6 @@
 {
   "close": "Close",
-  "task": "Task",
-  "next_task": "Next task"
+  "loading": "Loading...",
+  "next_task": "Next task",
+  "task": "Task"
 }

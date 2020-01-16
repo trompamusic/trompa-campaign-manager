@@ -6,11 +6,23 @@ import client from '../../graphql';
 import ActiveTask from '../../components/ActiveTask';
 
 export default function Task({ campaignIdentifier, taskIdentifier }) {
-  const history                               = useHistory();
   const taskAmount                            = 10;
+  const history                               = useHistory();
   const [loading, setLoading]                 = useState(false);
   const [task, setTask]                       = useState('');
   const [taskIdentifiers, setTaskIdentifiers] = useState([]);
+
+  // Handle next task
+  const handleNextAction = () => {
+    const filteredTaskIdentifiers = [...taskIdentifiers].filter(identifier => identifier !== taskIdentifier);
+
+    setTaskIdentifiers(filteredTaskIdentifiers);
+    if(filteredTaskIdentifiers.length > 0) {
+      history.replace(`/campaign/${campaignIdentifier}/task/${filteredTaskIdentifiers[0]}`);
+    } else {
+      history.replace(`/campaign/${campaignIdentifier}/task/`);
+    }
+  };
 
   // Retrieve task from url (or restart)
   useEffect(() => {
@@ -21,7 +33,6 @@ export default function Task({ campaignIdentifier, taskIdentifier }) {
 
           if(currentTask) {
             setTask(currentTask);
-            console.log('set task from url');
           } else {
             history.replace(`/campaign/${campaignIdentifier}/task`);
           }
@@ -29,7 +40,7 @@ export default function Task({ campaignIdentifier, taskIdentifier }) {
     }
   }, [campaignIdentifier, history, taskIdentifier]);
 
-  // Retrieve tasks new run
+  // Retrieve tasks on new run
   useEffect(() => {
     if(taskIdentifier || loading) {
       return;
@@ -40,7 +51,6 @@ export default function Task({ campaignIdentifier, taskIdentifier }) {
         .then(response => {
           const firstTask = response.data.ControlAction[0];
 
-          console.log('set task from current task');
           if(firstTask) {
             history.replace(`/campaign/${campaignIdentifier}/task/${firstTask.identifier}`);
             setLoading(false);
@@ -62,10 +72,10 @@ export default function Task({ campaignIdentifier, taskIdentifier }) {
   }, [campaignIdentifier, history, loading, taskIdentifier, taskIdentifiers]);
 
   if (loading) {
-    return <p>Loading ...</p>;
+    return <ActiveTask loading={loading} campaignIdentifier={campaignIdentifier} />;
   }
 
-  return <ActiveTask name={task.name} url={task.url} campaignIdentifier={campaignIdentifier} />;
+  return <ActiveTask name={task.name} url={task.url} campaignIdentifier={campaignIdentifier} handleNextAction={handleNextAction} />;
 }
 
 Task.propTypes = {

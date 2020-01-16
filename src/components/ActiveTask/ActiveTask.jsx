@@ -11,7 +11,7 @@ import styles from './ActiveTask.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function ActiveTask ({ url, campaignIdentifier }) {
+export default function ActiveTask ({ loading, url, campaignIdentifier, handleNextAction }) {
   const { t }   = useTranslation('task');
   const classes = useStyles();
 
@@ -29,16 +29,25 @@ export default function ActiveTask ({ url, campaignIdentifier }) {
         title={t('task')}
       />
       <AppbarBottom>
-        <Button variant="contained" color="primary">
-          {t('next_task')}
-        </Button>
+        {loading && (
+          <Button variant="contained" color="primary">
+            {t('loading')}
+          </Button>
+        )}
+        {!loading && (
+          <Button onClick={() => handleNextAction()} variant="contained" color="primary">
+            {t('next_task')}
+          </Button>
+        )}
       </AppbarBottom>
     </React.Fragment>
   );
 }
 
 ActiveTask.propTypes = {
+  loading           : PropTypes.bool,
   name              : PropTypes.string,
   url               : PropTypes.string,
   campaignIdentifier: PropTypes.string,
+  handleNextAction  : PropTypes.func,
 };

@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet';
-import ActiveTask from '../../components/ActiveTask';
 import TaskContainer from '../../containers/Task';
 
 export default function Task ({ match }) {
@@ -16,7 +15,6 @@ export default function Task ({ match }) {
         <meta property="og:title" content="Task" />
       </Helmet>
       <TaskContainer campaignIdentifier={campaignIdentifier} taskIdentifier={taskIdentifier} />
-      <ActiveTask />
     </React.Fragment>
   );
 }
