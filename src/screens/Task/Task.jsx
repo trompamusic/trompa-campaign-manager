@@ -5,8 +5,8 @@ import ActiveTask from '../../components/ActiveTask';
 import TaskContainer from '../../containers/Task';
 
 export default function Task ({ match }) {
-  const { t }                  = useTranslation('task');
-  const { campaignIdentifier } = match.params;
+  const { t }                                  = useTranslation('task');
+  const { campaignIdentifier, taskIdentifier } = match.params;
 
   return (
     <React.Fragment>
@@ -15,7 +15,7 @@ export default function Task ({ match }) {
         <meta name="description" content="" />
         <meta property="og:title" content="Task" />
       </Helmet>
-      <TaskContainer campaignIdentifier={campaignIdentifier} />
+      <TaskContainer campaignIdentifier={campaignIdentifier} taskIdentifier={taskIdentifier} />
       <ActiveTask />
     </React.Fragment>
   );

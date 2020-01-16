@@ -3,7 +3,7 @@
 exports[`<Task /> matches snapshot 1`] = `
 <div>
   <p>
-    Loading...
+    Loading ...
   </p>
 </div>
 `;

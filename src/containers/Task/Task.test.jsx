@@ -2,15 +2,14 @@ import React from 'react';
 import { MockedProvider } from '@apollo/react-testing';
 import { wait } from '@testing-library/react';
 import { render } from '../../testUtils';
-import Task, { NEXT_TEN_POTENTIAL_ACTIONS_QUERY } from './Task';
+import Task, { ALL_POTENTIAL_ACTIONS_QUERY } from './Task';
 
 const mocks = [
   {
     request: {
-      query    : NEXT_TEN_POTENTIAL_ACTIONS_QUERY,
+      query    : ALL_POTENTIAL_ACTIONS_QUERY,
       variables: {
         identifier: 'e63fc3c5-f84e-4a64-9d5b-98a49dd4680c',
-        offset    : 2,
       },
     },
     result: {
