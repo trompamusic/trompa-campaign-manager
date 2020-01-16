@@ -115,6 +115,12 @@
     "coverageReporters": [
       "json",
       "lcov"
+    ],
+    "collectCoverageFrom": [
+      "src/components/**/*.{js,jsx}",
+      "src/containers/**/*.{js,jsx}",
+      "!src/components/Root/**/*.{js,jsx}",
+      "!src/components/Icons/**/*.{js,jsx}"
     ]
   },
   "browserslist": {

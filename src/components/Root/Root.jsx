@@ -1,17 +1,11 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { makeStyles } from '@material-ui/styles';
 import Home from '../../screens/Home';
 import Task from '../../screens/Task';
 import Campaign from '../../screens/Campaign';
 import NotFound from '../../screens/NotFound';
-import styles from './Root.styles';
-
-const useStyles = makeStyles(styles);
 
 export default function Root(props) {
-  const classes = useStyles();
-
   const content = props.error ? (
     <div>Something wen't terribly wrong!</div>
   ) : (
@@ -25,7 +19,7 @@ export default function Root(props) {
   );
 
   return (
-    <div className={classes.container}>
+    <div>
       {content}
     </div>
   );
