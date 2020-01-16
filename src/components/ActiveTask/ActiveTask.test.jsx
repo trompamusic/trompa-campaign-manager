@@ -1,4 +1,5 @@
 import React from 'react';
+import { fireEvent } from '@testing-library/react';
 import { render } from '../../testUtils';
 import ActiveTask from './ActiveTask';
 
@@ -8,6 +9,4 @@ describe('<ActiveTask />', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
-
-  // add your unit tests here
 });

@@ -1,8 +1,9 @@
 import React from 'react';
 import { MockedProvider } from '@apollo/react-testing';
 import { wait } from '@testing-library/react';
+import { fireEvent } from '@testing-library/react';
 import { render } from '../../testUtils';
-import Task, { ALL_POTENTIAL_ACTIONS_QUERY } from './Task';
+import Task, { ALL_POTENTIAL_ACTIONS_QUERY, CLIENT_NEXT_POTENTIAL_ACTION_QUERY } from './Task';
 
 const mocks = [
   {
@@ -37,32 +38,72 @@ const mocks = [
       },
     },
   },
+  {
+    request: {
+      query    : CLIENT_NEXT_POTENTIAL_ACTION_QUERY,
+      variables: {
+        identifier: 'e63fc3c5-f84e-4a64-9d5b-98a49dd4680c',
+      },
+    },
+    result: {
+      data: {
+        ControlAction: [
+          {
+            identifier: "f67a7ab1-13ae-4d27-a6aa-5f49e0240858",
+            name      : "Campaign Manager Task #7",
+            url       : "https://demo.videodock.com/trompa/ce-task",
+            __typename: "ControlAction",
+          },
+        ],
+      },
+    },
+  },
 ];
 
 describe('<Task />', () => {
   test('matches snapshot', () => {
     const { container } = render((
       <MockedProvider mocks={mocks} addTypename={false}>
-        <Task />
+        <Task campaignIdentifier="e63fc3c5-f84e-4a64-9d5b-98a49dd4680c" />
       </MockedProvider>));
 
     expect(container).toMatchSnapshot();
   });
 
-  test('renders the loading state initially', () => {
+  test('renders loading state initially', () => {
     const { getByText } = render((
       <MockedProvider mocks={[]} addTypename={false}>
-        <Task />
+        <Task campaignIdentifier="e63fc3c5-f84e-4a64-9d5b-98a49dd4680c" />
       </MockedProvider>));
 
     wait(() => expect(getByText('Loading...')).toBeTruthy());
   });
 
-  test('renders the queried control action', () => {
+  test('renders task without task identifier', () => {
     const { getByText } = render((
       <MockedProvider mocks={mocks} addTypename={false}>
-        <Task />
+        <Task campaignIdentifier="e63fc3c5-f84e-4a64-9d5b-98a49dd4680c" />
       </MockedProvider>));
+
+    wait(() => expect(getByText('CE Task Page')).toBeTruthy());
+  });
+
+  test('renders task with task identifier', () => {
+    const { getByText } = render((
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <Task campaignIdentifier="e63fc3c5-f84e-4a64-9d5b-98a49dd4680c" taskIdentifier="f67a7ab1-13ae-4d27-a6aa-5f49e0240858" />
+      </MockedProvider>));
+
+    wait(() => expect(getByText('CE Task Page')).toBeTruthy());
+  });
+
+  test('renders next task', () => {
+    const { getByText } = render((
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <Task campaignIdentifier="e63fc3c5-f84e-4a64-9d5b-98a49dd4680c" taskIdentifier="f67a7ab1-13ae-4d27-a6aa-5f49e0240858" />
+      </MockedProvider>));
+
+    fireEvent.click(getByText('Next task'));
 
     wait(() => expect(getByText('CE Task Page')).toBeTruthy());
   });
