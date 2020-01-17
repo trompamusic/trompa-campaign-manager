@@ -62,7 +62,7 @@
     "react-i18next": "^10.11.4",
     "react-jss": "^8.1.0",
     "react-redux": "^7.1.0",
-    "react-router-dom": "^5.0.1",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.0.1",
     "redux": "^4.0.4",
     "redux-saga": "^1.0.5",
@@ -115,6 +115,12 @@
     "coverageReporters": [
       "json",
       "lcov"
+    ],
+    "collectCoverageFrom": [
+      "src/components/**/*.{js,jsx}",
+      "src/containers/**/*.{js,jsx}",
+      "!src/components/Root/**/*.{js,jsx}",
+      "!src/components/Icons/**/*.{js,jsx}"
     ]
   },
   "browserslist": {

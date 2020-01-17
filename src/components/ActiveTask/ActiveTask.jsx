@@ -1,17 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import { useTranslation } from 'react-i18next';
-import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
 import CloseIcon from '@material-ui/icons/Close';
-import PropTypes from 'prop-types';
 import AppbarTop from '../AppbarTop/AppbarTop';
 import AppbarBottom from '../AppbarBottom/AppbarBottom';
 import styles from './ActiveTask.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function ActiveTask ({ url, campaignIdentifier }) {
+export default function ActiveTask ({ loading, noTasks, url, campaignIdentifier, onNextTaskButtonClick }) {
   const { t }   = useTranslation('task');
   const classes = useStyles();
 
@@ -29,16 +29,31 @@ export default function ActiveTask ({ url, campaignIdentifier }) {
         title={t('task')}
       />
       <AppbarBottom>
-        <Button variant="contained" color="primary">
-          {t('next_task')}
-        </Button>
+        {loading && (
+          <Button variant="contained" color="primary" disabled>
+            {t('loading')}
+          </Button>
+        )}
+        {noTasks && (
+          <Button variant="contained" disabled>
+            {t('no_tasks_left')}
+          </Button>
+        )}
+        {!loading && !noTasks && (
+          <Button onClick={() => onNextTaskButtonClick()} variant="contained" color="primary">
+            {t('next_task')}
+          </Button>
+        )}
       </AppbarBottom>
     </React.Fragment>
   );
 }
 
 ActiveTask.propTypes = {
-  name              : PropTypes.string,
-  url               : PropTypes.string,
-  campaignIdentifier: PropTypes.string,
+  loading              : PropTypes.bool,
+  noTasks              : PropTypes.bool,
+  name                 : PropTypes.string,
+  url                  : PropTypes.string,
+  campaignIdentifier   : PropTypes.string,
+  onNextTaskButtonClick: PropTypes.func,
 };

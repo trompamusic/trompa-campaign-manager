@@ -5,9 +5,9 @@ export default ({ shape, palette, breakpoints }) => createStyles({
     margin                  : 44,
     maxWidth                : 1440,
     [breakpoints.down('sm')]: {
-      margin      : 16,
-      marginBottom: 24,
-      '& button'  : {
+      margin       : 16,
+      marginBottom : 24,
+      '& button, a': {
         width: '100%',
       },
     },
@@ -29,7 +29,7 @@ export default ({ shape, palette, breakpoints }) => createStyles({
     },
   },
   actions: {
-    '& button': {
+    '& a, button': {
       marginRight: 16,
     },
     marginBottom: 16,

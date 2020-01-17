@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
+import { Link } from 'react-router-dom';
 import * as PropTypes from 'prop-types';
 import images from '../../theme/images';
 import styles from './AppbarTop.styles';
@@ -14,7 +15,9 @@ export default function AppbarTop ({ children, position }) {
   return (
     <AppBar position={position}>
       <Toolbar classes={{ dense: classes.toolbarTop }} variant="dense">
-        <img className={classes.logo} src={images.logo} alt="logo" />
+        <Link to={"/"}>
+          <img className={classes.logo} src={images.logo} alt="logo" />
+        </Link>
         {children}
       </Toolbar>
     </AppBar>

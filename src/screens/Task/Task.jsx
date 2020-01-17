@@ -1,12 +1,11 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet';
-import ActiveTask from '../../components/ActiveTask';
 import TaskContainer from '../../containers/Task';
 
 export default function Task ({ match }) {
-  const { t }                  = useTranslation('task');
-  const { campaignIdentifier } = match.params;
+  const { t }                                  = useTranslation('task');
+  const { campaignIdentifier, taskIdentifier } = match.params;
 
   return (
     <React.Fragment>
@@ -15,8 +14,7 @@ export default function Task ({ match }) {
         <meta name="description" content="" />
         <meta property="og:title" content="Task" />
       </Helmet>
-      <TaskContainer campaignIdentifier={campaignIdentifier} />
-      <ActiveTask />
+      <TaskContainer campaignIdentifier={campaignIdentifier} taskIdentifier={taskIdentifier} />
     </React.Fragment>
   );
 }
