@@ -1,46 +1,50 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import { gql } from "apollo-boost";
-import PropTypes from 'prop-types';
 import client from '../../graphql';
 import ActiveTask from '../../components/ActiveTask';
 
 export default function Task({ campaignIdentifier, taskIdentifier }) {
-  const taskAmount                            = 10;
   const history                               = useHistory();
+  const taskDrawAmount                        = 10;
   const [loading, setLoading]                 = useState(false);
   const [task, setTask]                       = useState('');
   const [taskIdentifiers, setTaskIdentifiers] = useState([]);
+  const [tasksReceived, setTasksReceived]     = useState(new Set());
+  const [taskTotal, setTaskTotal]             = useState(10);
 
-  // Handle next task
-  const handleNextAction = () => {
-    const filteredTaskIdentifiers = [...taskIdentifiers].filter(identifier => identifier !== taskIdentifier);
+  const handleNextTaskButtonClick = () => {
+    const remainingTaskIdentifiers = [...taskIdentifiers].filter(identifier => identifier !== taskIdentifier);
 
-    setTaskIdentifiers(filteredTaskIdentifiers);
-    if(filteredTaskIdentifiers.length > 0) {
-      history.replace(`/campaign/${campaignIdentifier}/task/${filteredTaskIdentifiers[0]}`);
+    setTaskIdentifiers(remainingTaskIdentifiers);
+    if(remainingTaskIdentifiers.length > 0) {
+      history.replace(`/campaign/${campaignIdentifier}/task/${remainingTaskIdentifiers[0]}`);
     } else {
       history.replace(`/campaign/${campaignIdentifier}/task/`);
     }
   };
 
-  // Retrieve task from url (or restart)
+  // Retrieve task on existing draw (task identifier present in url)
   useEffect(() => {
     if(taskIdentifier) {
       client.query({ query: CLIENT_NEXT_POTENTIAL_ACTION_QUERY, variables: { taskIdentifiers: [taskIdentifier], offset: 0 } })
         .then(response => {
-          const currentTask = response.data.ControlAction[0];
+          const newTaskNotReceived = response.data.ControlAction.find(({ identifier }) => !tasksReceived.has(identifier));
 
-          if(currentTask) {
-            setTask(currentTask);
+          if (taskTotal === tasksReceived.size) {
+            return;
+          } else if(newTaskNotReceived) {
+            setTask(newTaskNotReceived);
+            setTasksReceived(tasksReceived.add(newTaskNotReceived.identifier));
           } else {
             history.replace(`/campaign/${campaignIdentifier}/task`);
           }
         });
     }
-  }, [campaignIdentifier, history, taskIdentifier]);
+  }, [campaignIdentifier, history, taskIdentifier, taskTotal, tasksReceived]);
 
-  // Retrieve tasks on new run
+  // Retrieve tasks on new draw (task identifier present in url)
   useEffect(() => {
     if(taskIdentifier || loading) {
       return;
@@ -64,18 +68,23 @@ export default function Task({ campaignIdentifier, taskIdentifier }) {
       .then(response => {
         const allPotentialActions = response.data.ControlAction;
         const offset              = Math.floor(Math.random() * allPotentialActions.length);
-        const identifiers         = allPotentialActions.slice(offset, taskAmount).map(({ identifier }) => identifier);
+        const identifiers         = allPotentialActions.slice(offset, taskDrawAmount).map(({ identifier }) => identifier);
 
         setTaskIdentifiers(identifiers);
         getCurrentTask(identifiers);
+        setTaskTotal(allPotentialActions.length);
       });
   }, [campaignIdentifier, history, loading, taskIdentifier, taskIdentifiers]);
+
+  if (taskTotal === tasksReceived.size) {
+    return <ActiveTask noTasks={true} campaignIdentifier={campaignIdentifier} />;
+  }
 
   if (loading) {
     return <ActiveTask loading={loading} campaignIdentifier={campaignIdentifier} />;
   }
 
-  return <ActiveTask name={task.name} url={task.url} campaignIdentifier={campaignIdentifier} handleNextAction={handleNextAction} />;
+  return <ActiveTask name={task.name} url={task.url} campaignIdentifier={campaignIdentifier} onNextTaskButtonClick={handleNextTaskButtonClick} />;
 }
 
 Task.propTypes = {

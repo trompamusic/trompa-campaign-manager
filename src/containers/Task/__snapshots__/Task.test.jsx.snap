@@ -62,8 +62,9 @@ exports[`<Task /> matches snapshot 1`] = `
       class="MuiToolbar-root MuiToolbar-dense makeStyles-toolbarBottom-87 MuiToolbar-gutters"
     >
       <button
-        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
-        tabindex="0"
+        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary Mui-disabled Mui-disabled"
+        disabled=""
+        tabindex="-1"
         type="button"
       >
         <span
@@ -71,9 +72,6 @@ exports[`<Task /> matches snapshot 1`] = `
         >
           Loading...
         </span>
-        <span
-          class="MuiTouchRipple-root"
-        />
       </button>
     </div>
   </header>
