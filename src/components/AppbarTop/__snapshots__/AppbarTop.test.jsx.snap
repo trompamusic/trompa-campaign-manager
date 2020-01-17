@@ -7,11 +7,15 @@ exports[`<AppbarTop /> renders and matches snapshot 1`] = `
   <div
     class="MuiToolbar-root MuiToolbar-dense makeStyles-toolbarTop-1 MuiToolbar-gutters"
   >
-    <img
-      alt="logo"
-      class="makeStyles-logo-2"
-      src="logo.png"
-    />
+    <a
+      href="/"
+    >
+      <img
+        alt="logo"
+        class="makeStyles-logo-2"
+        src="logo.png"
+      />
+    </a>
   </div>
 </header>
 `;

@@ -29,7 +29,7 @@ export default ({ shape, palette, breakpoints }) => createStyles({
     },
   },
   actions: {
-    '& button': {
+    '& a, button': {
       marginRight: 16,
     },
     marginBottom: 16,

@@ -1,9 +1,12 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Helmet } from 'react-helmet';
-import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/styles';
+import MusicProcessIcon from '../../components/Icons/MusicProcessIcon';
+import AppbarTop from '../../components/AppbarTop/AppbarTop';
 import * as startupActions from '../../redux/Startup/Startup.actions';
 import styles from './Home.styles';
 
@@ -21,15 +24,14 @@ export default function Home() {
   return (
     <div>
       <Helmet>
-        <title>{t('home:title')}</title>
-        <meta name="description" content={t('home:welcome_message')} />
+        <title>{t('title')}</title>
+        <meta name="description" content={t('welcome_message')} />
       </Helmet>
-      <div className={classes.hero}>
-        <div>
-          <Typography variant="h4" color="inherit">
-            {t('home:welcome_message')}
-          </Typography>
-        </div>
+      <AppbarTop />
+      <div className={classes.container}>
+        <Button component={Link} to="campaign/e63fc3c5-f84e-4a64-9d5b-98a49dd4680c" startIcon={<MusicProcessIcon />} variant="contained" color="primary">
+          {t('go_to_demo_campaign')}
+        </Button>
       </div>
     </div>
   );

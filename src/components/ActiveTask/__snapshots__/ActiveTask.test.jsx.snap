@@ -7,11 +7,15 @@ exports[`<ActiveTask /> renders and matches snapshot 1`] = `
   <div
     class="MuiToolbar-root MuiToolbar-dense makeStyles-toolbarTop-2 MuiToolbar-gutters"
   >
-    <img
-      alt="logo"
-      class="makeStyles-logo-3"
-      src="logo.png"
-    />
+    <a
+      href="/"
+    >
+      <img
+        alt="logo"
+        class="makeStyles-logo-3"
+        src="logo.png"
+      />
+    </a>
     <a
       aria-disabled="false"
       class="MuiButtonBase-root MuiButton-root MuiButton-text"
