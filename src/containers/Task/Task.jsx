@@ -9,13 +9,17 @@ export default function Task({ campaignIdentifier, taskIdentifier }) {
   const history                               = useHistory();
   const taskDrawAmount                        = 10;
   const [loading, setLoading]                 = useState(false);
-  const [task, setTask]                       = useState('');
+  const [task, setTask]                       = useState(null);
   const [taskIdentifiers, setTaskIdentifiers] = useState([]);
-  const [tasksReceived, setTasksReceived]     = useState(new Set());
+  const [tasksReceived, setTasksReceived]     = useState([]);
   const [taskTotal, setTaskTotal]             = useState(10);
 
   const handleNextTaskButtonClick = () => {
-    const remainingTaskIdentifiers = [...taskIdentifiers].filter(identifier => identifier !== taskIdentifier);
+    const remainingTaskIdentifiers = taskIdentifiers.filter(identifier => identifier !== taskIdentifier);
+    const hasReceivedTask          = tasksReceived.includes(taskIdentifier);
+
+    if(!hasReceivedTask)
+      setTasksReceived(tasksReceived.concat(taskIdentifier));
 
     setTaskIdentifiers(remainingTaskIdentifiers);
     if(remainingTaskIdentifiers.length > 0) {
@@ -25,18 +29,17 @@ export default function Task({ campaignIdentifier, taskIdentifier }) {
     }
   };
 
-  // Retrieve task on existing draw (task identifier present in url)
+  // Retrieve task on existing draw (task identifier in url)
   useEffect(() => {
     if(taskIdentifier) {
       client.query({ query: CLIENT_NEXT_POTENTIAL_ACTION_QUERY, variables: { taskIdentifiers: [taskIdentifier], offset: 0 } })
         .then(response => {
-          const newTaskNotReceived = response.data.ControlAction.find(({ identifier }) => !tasksReceived.has(identifier));
+          const newTaskNotReceived = response.data.ControlAction.find(({ identifier }) => !tasksReceived.includes(identifier));
 
-          if (taskTotal === tasksReceived.size) {
+          if (taskTotal === tasksReceived.length) {
             return;
           } else if(newTaskNotReceived) {
             setTask(newTaskNotReceived);
-            setTasksReceived(tasksReceived.add(newTaskNotReceived.identifier));
           } else {
             history.replace(`/campaign/${campaignIdentifier}/task`);
           }
@@ -44,7 +47,7 @@ export default function Task({ campaignIdentifier, taskIdentifier }) {
     }
   }, [campaignIdentifier, history, taskIdentifier, taskTotal, tasksReceived]);
 
-  // Retrieve tasks on new draw (task identifier present in url)
+  // Retrieve tasks on new draw (task identifier not in url)
   useEffect(() => {
     if(taskIdentifier || loading) {
       return;
@@ -76,12 +79,12 @@ export default function Task({ campaignIdentifier, taskIdentifier }) {
       });
   }, [campaignIdentifier, history, loading, taskIdentifier, taskIdentifiers]);
 
-  if (taskTotal === tasksReceived.size) {
+  if (taskTotal === tasksReceived.length) {
     return <ActiveTask noTasks={true} campaignIdentifier={campaignIdentifier} />;
   }
 
-  if (loading) {
-    return <ActiveTask loading={loading} campaignIdentifier={campaignIdentifier} />;
+  if (loading || !task) {
+    return <ActiveTask loading={true} campaignIdentifier={campaignIdentifier} />;
   }
 
   return <ActiveTask name={task.name} url={task.url} campaignIdentifier={campaignIdentifier} onNextTaskButtonClick={handleNextTaskButtonClick} />;

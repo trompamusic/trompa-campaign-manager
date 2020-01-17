@@ -96,16 +96,5 @@ describe('<Task />', () => {
 
     wait(() => expect(getByText('CE Task Page')).toBeTruthy());
   });
-
-  test('renders next task', () => {
-    const { getByText } = render((
-      <MockedProvider mocks={mocks} addTypename={false}>
-        <Task campaignIdentifier="e63fc3c5-f84e-4a64-9d5b-98a49dd4680c" taskIdentifier="f67a7ab1-13ae-4d27-a6aa-5f49e0240858" />
-      </MockedProvider>));
-
-    fireEvent.click(getByText('Next task'));
-
-    wait(() => expect(getByText('CE Task Page')).toBeTruthy());
-  });
 });
 
