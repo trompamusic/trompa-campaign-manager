@@ -1,5 +1,4 @@
 import React from 'react';
-import { getbyText } from '@testing-library/react';
 import { render } from '../../testUtils';
 import ActiveTask from './ActiveTask';
 
