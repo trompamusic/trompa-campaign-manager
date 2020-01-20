@@ -87,7 +87,7 @@ export default function Task({ campaignIdentifier, taskIdentifier }) {
     return <ActiveTask loading={true} campaignIdentifier={campaignIdentifier} />;
   }
 
-  return <ActiveTask name={task.name} url={task.url} campaignIdentifier={campaignIdentifier} onNextTaskButtonClick={handleNextTaskButtonClick} />;
+  return <ActiveTask name={task.name} url={task.url} identifier={task.identifier} campaignIdentifier={campaignIdentifier} onNextTaskButtonClick={handleNextTaskButtonClick} />;
 }
 
 Task.propTypes = {

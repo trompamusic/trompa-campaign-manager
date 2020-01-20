@@ -11,7 +11,7 @@ import styles from './ActiveTask.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function ActiveTask ({ loading, noTasks, url, campaignIdentifier, onNextTaskButtonClick }) {
+export default function ActiveTask ({ identifier, loading, noTasks, url, campaignIdentifier, onNextTaskButtonClick }) {
   const { t }   = useTranslation('task');
   const classes = useStyles();
 
@@ -23,7 +23,7 @@ export default function ActiveTask ({ loading, noTasks, url, campaignIdentifier,
         </Button>
       </AppbarTop>
       <iframe
-        src={url}
+        src={url && url.replace('{identifier}', identifier)}
         className={classes.iframe}
         name="task-iframe"
         title={t('task')}
