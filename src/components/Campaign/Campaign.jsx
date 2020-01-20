@@ -25,11 +25,14 @@ export default function Campaign ({ campaignIdentifier }) {
     <React.Fragment>
       <AppbarTop />
       <div className={classes.section}>
+        <Typography variant="caption">
+        &lt;campaign_leader&gt; has started this campaign. Help us to improve this score.
+        </Typography>
         <Typography variant="h1">
-          Lorem, ipsum dolor sit amet consectetur adipisicing.
+        Summer concert: Mahler's 6th in the beer garden.
         </Typography>
         <Typography variant="body1" paragraph>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus nostrum eveniet accusantium ipsum excepturi reiciendis mollitia? Assumenda soluta doloremque fugit! Repellendus accusantium aliquid aperiam corporis obcaecati quia praesentium minima architecto.
+        Let's work together on bringing Mahler's 6th to our yearly outdoor performance. This version would be perfect, but the quality of the PDF is really insufficient. Can you all help cleaning it up? We've got five weeks to do it, people!
         </Typography>
         <div className={classes.work}>
           <div className={classes.fileMusicIcon}>
@@ -37,10 +40,10 @@ export default function Campaign ({ campaignIdentifier }) {
           </div>
           <div>
             <Typography variant="h3">
-             Lorem, ipsum dolor sit amet.
+            Mahler: Symphony No. 6 in A minor
             </Typography>
             <Typography variant="body1">
-              Lorem, ipsum.
+            Complete Score
             </Typography>
           </div>
         </div>
@@ -85,12 +88,12 @@ export default function Campaign ({ campaignIdentifier }) {
       <Divider />
       <div className={classes.section}>
         <Typography variant="h2">
-            Lorem, ipsum dolor sit amet consectetur.
+        Enhance classical sheet music, together
         </Typography>
         <Grid spacing={1} container>
           <Grid xs={12} sm={6} item>
             <Typography variant="body1" paragraph>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus nostrum eveniet accusantium ipsum excepturi reiciendis mollitia? Assumenda soluta doloremque fugit! Repellendus accusantium aliquid aperiam corporis obcaecati quia praesentium minima architecto.
+              <a href="https://trompamusic.eu/">Trompa</a> is developing powerful and advanced tools for musicians. by combining computing power with the knowledge of the best. Whether you’re singing in a choir, playing in an ensemble or conducting an orchestra, Trompa explores new ways to discover, rehearse and perform classical music.
             </Typography>
           </Grid>
           <Grid xs={12} sm={6} item>
