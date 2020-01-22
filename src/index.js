@@ -4,7 +4,7 @@ import 'core-js/features/object/values';
 import 'core-js/features/array/every';
 import 'core-js/features/set';
 import 'core-js/features/map';
-import 'core-js/features/promise';
+import 'react-app-polyfill/ie11';
 
 // import application
 import React from 'react';

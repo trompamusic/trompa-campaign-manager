@@ -57,6 +57,7 @@
     "object-hash": "^1.2.0",
     "prop-types": "^15.6.0",
     "react": "16.9.0",
+    "react-app-polyfill": "^1.0.5",
     "react-dom": "16.9.0",
     "react-helmet": "^5.2.0",
     "react-i18next": "^10.11.4",
