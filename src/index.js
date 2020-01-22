@@ -4,6 +4,7 @@ import 'core-js/features/object/values';
 import 'core-js/features/array/every';
 import 'core-js/features/set';
 import 'core-js/features/map';
+import 'core-js/features/promise';
 
 // import application
 import React from 'react';
