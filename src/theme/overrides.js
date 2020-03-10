@@ -19,8 +19,8 @@ const overrides = ({ palette, typography }) => ({
         height: 18,
       },
     },
-    containedPrimary: {
-      background: 'linear-gradient(45.21deg, #0080E8 0%, #005AA3 100%)',
+    containedSecondary: {
+      background: palette.secondary.main,
     },
   },
   MuiDivider: {
