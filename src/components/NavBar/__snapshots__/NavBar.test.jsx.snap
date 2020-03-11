@@ -26,7 +26,7 @@ exports[`<NavBar /> renders and matches snapshot 1`] = `
       </a>
       <a
         aria-disabled="false"
-        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary"
+        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
         href="/campaign/e63fc3c5-f84e-4a64-9d5b-98a49dd4680c"
         role="button"
         tabindex="0"

@@ -12,9 +12,9 @@ export default {
     blue      : '#005AA3',
   },
   primary: {
-    main: 'rgb(8, 69, 146)',
+    main: '#2B44FF',
   },
   secondary: {
-    main: '#2B44FF',
+    main: '#ea6135',
   },
 };

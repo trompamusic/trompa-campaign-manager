@@ -29,7 +29,7 @@ export default function NavBar ({ navLinks, buttons }) {
           component={Link}
           to={to}
           variant="contained"
-          color="secondary"
+          color="primary"
         >
           {name}
         </Button>

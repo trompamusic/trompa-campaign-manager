@@ -10,6 +10,6 @@ export default ({ typography, palette, spacing }) => createStyles({
   },
   navLinkActive: {
     fontWeight: 600,
-    color     : palette.secondary.main,
+    color     : palette.primary.main,
   },
 });
