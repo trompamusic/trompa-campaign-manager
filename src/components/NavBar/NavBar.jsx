@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as PropTypes from 'prop-types';
 import { Link, NavLink } from 'react-router-dom';
 import { makeStyles } from '@material-ui/styles';
 import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import CloseIcon from '@material-ui/icons/Close';
+import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import AppbarTop from '../AppbarTop/AppbarTop';
+import images from '../../theme/images';
 import styles from './NavBar.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function NavBar ({ navLinks, buttons }) {
+export default function NavBar ({ navLinks, buttons, renderDrawerContent }) {
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
   const classes = useStyles();
 
   const renderLinks = () => {
@@ -38,16 +45,41 @@ export default function NavBar ({ navLinks, buttons }) {
   };
 
   return (
-    <AppbarTop>
-      <div>
-        {renderLinks()}
-        {renderButtons()}
+    <React.Fragment>
+      <div className={classes.mobile}>
+        <AppbarTop mobile>
+          <IconButton onClick={() => setDrawerOpen(true)} aria-label="" component="span">
+            <MenuIcon />
+          </IconButton>
+        </AppbarTop>
+        <SwipeableDrawer
+          open={drawerOpen}
+          onClose={() => setDrawerOpen(false)}
+          onOpen={() => setDrawerOpen(true)}
+        >
+          <div className={classes.drawerTop}>
+            <img className={classes.drawerLogo} src={images.logo} alt="" />
+            <IconButton onClick={() => setDrawerOpen(false)} aria-label="" color="primary" component="span">
+              <CloseIcon />
+            </IconButton>
+          </div>
+          {renderDrawerContent()}
+        </SwipeableDrawer>
       </div>
-    </AppbarTop>
+      <div className={classes.desktop}>
+        <AppbarTop>
+          <div>
+            {renderLinks()}
+            {renderButtons()}
+          </div>
+        </AppbarTop>
+      </div>
+    </React.Fragment>
   );
 }
 
 NavBar.propTypes = {
-  navLinks: PropTypes.array,
-  buttons : PropTypes.array,
+  navLinks           : PropTypes.array,
+  buttons            : PropTypes.array,
+  renderDrawerContent: PropTypes.func,
 };

@@ -1,6 +1,6 @@
 import { createStyles } from '@material-ui/styles';
 
-export default ({ typography, palette, spacing }) => createStyles({
+export default ({ typography, palette, spacing, breakpoints }) => createStyles({
   navLink: {
     fontSize      : typography.pxToRem(15.8),
     letterSpacing : 0.5,
@@ -11,5 +11,26 @@ export default ({ typography, palette, spacing }) => createStyles({
   navLinkActive: {
     fontWeight: 600,
     color     : palette.primary.main,
+  },
+  mobile: {
+    [breakpoints.up('sm')]: {
+      display: 'none',
+    },
+  },
+  desktop: {
+    [breakpoints.down('md')]: {
+      display: 'none',
+    },
+  },
+  drawerTop: {
+    display        : 'flex',
+    justifyContent : 'space-between',
+    alignItems     : 'center',
+    padding        : spacing(2),
+    width          : 288,
+    backgroundColor: palette.common.faintGrey,
+  },
+  drawerLogo: {
+    width: 138,
   },
 });

@@ -1,46 +1,59 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<NavBar /> renders and matches snapshot 1`] = `
-<header
-  class="MuiPaper-root MuiAppBar-root MuiAppBar-positionRelative MuiAppBar-colorPrimary MuiPaper-elevation4"
+<div
+  class="makeStyles-mobile-3"
 >
-  <div
-    class="MuiToolbar-root MuiToolbar-dense makeStyles-dense-3 MuiToolbar-gutters"
+  <header
+    class="MuiPaper-root MuiAppBar-root MuiAppBar-positionRelative MuiAppBar-colorPrimary MuiPaper-elevation4"
   >
-    <a
-      href="/"
+    <div
+      class="MuiToolbar-root MuiToolbar-dense makeStyles-dense-7 makeStyles-mobile-9 MuiToolbar-gutters"
     >
-      <img
-        alt="Trompa logo"
-        class="makeStyles-logo-4"
-        src="logo.png"
-      />
-    </a>
-    <div>
+      <div
+        class="makeStyles-hamburger-10"
+      >
+        <span
+          aria-disabled="false"
+          aria-label=""
+          class="MuiButtonBase-root MuiIconButton-root"
+          role="button"
+          tabindex="0"
+        >
+          <span
+            class="MuiIconButton-label"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              role="presentation"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+              />
+            </svg>
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </span>
+      </div>
       <a
-        aria-current="page"
-        class="makeStyles-navLink-1 makeStyles-navLinkActive-2"
         href="/"
       >
-        Home
-      </a>
-      <a
-        aria-disabled="false"
-        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
-        href="/campaign/e63fc3c5-f84e-4a64-9d5b-98a49dd4680c"
-        role="button"
-        tabindex="0"
-      >
-        <span
-          class="MuiButton-label"
-        >
-          Join campaign
-        </span>
-        <span
-          class="MuiTouchRipple-root"
+        <img
+          alt="Trompa logo"
+          class="makeStyles-logo-8"
+          src="logo.png"
         />
       </a>
     </div>
-  </div>
-</header>
+  </header>
+  <div
+    class="PrivateSwipeArea-root-124 PrivateSwipeArea-anchorLeft-125"
+    style="width: 20px;"
+  />
+</div>
 `;

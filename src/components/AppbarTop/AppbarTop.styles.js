@@ -14,4 +14,16 @@ export default ({ typography, palette }) => createStyles({
   logo: {
     width: 138,
   },
+  mobile: {
+    position      : 'relative',
+    justifyContent: 'center',
+  },
+  hamburger: {
+    position : 'absolute',
+    left     : 16,
+    marginTop: 2,
+    '& svg'  : {
+      color: palette.common.black,
+    },
+  },
 });

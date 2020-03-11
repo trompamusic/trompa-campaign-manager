@@ -15,6 +15,7 @@ describe('<NavBar />', () => {
         buttons={[
           { name: 'Join campaign', to: 'campaign/e63fc3c5-f84e-4a64-9d5b-98a49dd4680c' },
         ]}
+        renderDrawerContent={() => ''}
       />
     ));
 
@@ -27,6 +28,7 @@ describe('<NavBar />', () => {
         navLinks={[
           { name: 'Home', to: '/' },
         ]}
+        renderDrawerContent={() => ''}
       />
     ));
 
@@ -41,12 +43,12 @@ describe('<NavBar />', () => {
           navLinks={[
             { name: 'Home', to: '/' },
           ]}
+          renderDrawerContent={() => ''}
         />
       </Router>
     ));
 
     fireEvent.click(getByText('Home'));
-
     expect(getByText('Home')).toBeTruthy();
     expect(history.location.pathname).toBe("/");
   });
@@ -57,6 +59,7 @@ describe('<NavBar />', () => {
         buttons={[
           { name: 'Join campaign', to: 'campaign/e63fc3c5-f84e-4a64-9d5b-98a49dd4680c' },
         ]}
+        renderDrawerContent={() => ''}
       />
     ));
 
@@ -71,12 +74,12 @@ describe('<NavBar />', () => {
           buttons={[
             { name: 'Join campaign', to: 'campaign/e63fc3c5-f84e-4a64-9d5b-98a49dd4680c' },
           ]}
+          renderDrawerContent={() => ''}
         />
       </Router>
     ));
 
     fireEvent.click(getByText('Join campaign'));
-
     expect(getByText('Join campaign')).toBeTruthy();
     expect(history.location.pathname).toBe("/campaign/e63fc3c5-f84e-4a64-9d5b-98a49dd4680c");
   });

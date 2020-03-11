@@ -18,6 +18,12 @@ export default function Home() {
     dispatch(startupActions.startup());
   }, [dispatch]);
 
+  const renderDrawerContent = () => {
+    return (
+      <div className={classes.drawerContent} />
+    );
+  };
+
   return (
     <div>
       <Helmet>
@@ -32,6 +38,7 @@ export default function Home() {
         buttons={[
           { name: t('join_campaign'), to: 'campaign/e63fc3c5-f84e-4a64-9d5b-98a49dd4680c' },
         ]}
+        renderDrawerContent={renderDrawerContent}
       />
       <div className={classes.container} />
     </div>

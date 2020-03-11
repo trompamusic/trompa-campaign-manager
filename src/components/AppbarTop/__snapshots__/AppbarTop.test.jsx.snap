@@ -5,8 +5,11 @@ exports[`<AppbarTop /> renders and matches snapshot 1`] = `
   class="MuiPaper-root MuiAppBar-root MuiAppBar-positionRelative MuiAppBar-colorPrimary MuiPaper-elevation4"
 >
   <div
-    class="MuiToolbar-root MuiToolbar-dense makeStyles-dense-1 MuiToolbar-gutters"
+    class="MuiToolbar-root MuiToolbar-dense makeStyles-dense-1 makeStyles-mobile-3 MuiToolbar-gutters"
   >
+    <div
+      class="makeStyles-hamburger-4"
+    />
     <a
       href="/"
     >
