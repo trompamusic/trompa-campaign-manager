@@ -2,7 +2,7 @@ import { createStyles } from '@material-ui/styles';
 
 const backgroundGradient = (firstStop, secondStop) => `linear-gradient(105deg, rgba(255,255,255,1) ${firstStop}, rgba(255,140,2,1) ${secondStop}, rgba(244,87,49,1) 100%)`;
 
-export default ({ spacing, typography, breakpoints }) => createStyles({
+export default ({ spacing, palette, typography, shape, breakpoints }) => createStyles({
   root: {
     display                 : 'flex',
     position                : 'relative',
@@ -79,6 +79,11 @@ export default ({ spacing, typography, breakpoints }) => createStyles({
     width      : 16,
     height     : 15,
     marginRight: spacing(0.7),
+  },
+  compositionTitle: {
+    backgroundColor: palette.common.faintGrey,
+    borderRadius   : shape.borderRadius,
+    padding        : '0 4px',
   },
   buttonHero: {
     marginTop    : spacing(),

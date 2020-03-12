@@ -17,7 +17,7 @@ export default {
     fontSize    : '26.09px',
     marginBottom: 8,
     fontFamily  : fontFamilyAvenir,
-    lineHeight  : 1,
+    lineHeight  : 1.2,
   },
   h3: {
     color     : '#3A3A3A',

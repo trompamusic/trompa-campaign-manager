@@ -3,6 +3,7 @@ export default {
     white     : '#fff',
     black     : '#000',
     faintWhite: '#FAFAFA',
+    faintGrey : '#F2F2F2',
     darkBlack : 'rgba(0, 0, 0, 0.7)',
   },
   text: {

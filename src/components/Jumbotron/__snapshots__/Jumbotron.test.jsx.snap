@@ -30,6 +30,11 @@ exports[`<Jumbotron /> renders and matches snapshot 1`] = `
       class="MuiTypography-root MuiTypography-h2"
     >
       H2
+      <span
+        class="makeStyles-compositionTitle-6"
+      >
+        Requiem in D minor
+      </span>
     </h2>
     <p
       class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom"
@@ -39,7 +44,7 @@ exports[`<Jumbotron /> renders and matches snapshot 1`] = `
   </div>
   <img
     alt=""
-    class="makeStyles-image-7"
+    class="makeStyles-image-8"
   />
 </div>
 `;
