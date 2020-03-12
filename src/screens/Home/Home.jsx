@@ -91,6 +91,79 @@ export default function Home() {
             </div>
           </section>
         </Grid>
+        <Grid xs={12} item>
+          <section>
+            <Grid
+              direction="row"
+              justify="center"
+              alignItems="center"
+              container
+            >
+              <Grid className={classes.stepsTextContainer} xs={12} sm={6} item>
+                <div className={classes.stepsTextContent}>
+                  <span className={classes.number}>
+                    1
+                  </span>
+                  <Typography variant="h1">
+                    {t('pick_a_score')}
+                  </Typography>
+                </div>
+              </Grid>
+              <Grid xs={12} sm={6} item>
+                <img src={images.pickAScore} alt={t('pick_a_score')} />
+              </Grid>
+            </Grid>
+          </section>
+        </Grid>
+        <Grid xs={12} item>
+          <section>
+            <Grid
+              className={classes.stepWithGradient}
+              direction="row"
+              justify="center"
+              alignItems="center"
+              container
+            >
+              <Grid xs={12} sm={6} item>
+                <img src={images.algorithmsWillDistribute} alt={t('algorithms_will_distribute')} />
+              </Grid>
+              <Grid className={classes.stepsTextContainer} xs={12} sm={6} item>
+                <div className={classes.stepsTextContent}>
+                  <span className={classes.number}>
+                    2
+                  </span>
+                  <Typography variant="h1">
+                    {t('algorithms_will_distribute')}
+                  </Typography>
+                </div>
+              </Grid>
+            </Grid>
+          </section>
+        </Grid>
+        <Grid xs={12} item>
+          <section>
+            <Grid
+              direction="row"
+              justify="center"
+              alignItems="center"
+              container
+            >
+              <Grid className={classes.stepsTextContainer} xs={12} sm={6} item>
+                <div className={classes.stepsTextContent}>
+                  <span className={classes.number}>
+                    3
+                  </span>
+                  <Typography variant="h1">
+                    {t('every_collaborator')}
+                  </Typography>
+                </div>
+              </Grid>
+              <Grid xs={12} sm={6} item>
+                <img src={images.everyCollaborator} alt={t('every_collaborator')} />
+              </Grid>
+            </Grid>
+          </section>
+        </Grid>
       </Grid>
       <footer />
     </div>

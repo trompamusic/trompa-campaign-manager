@@ -1,5 +1,7 @@
 {
+  "algorithms_will_distribute": "Our algorithms will distribute tasks to everyone",
   "create_modern_classics": "Create modern, playable scores from known and unknown classics.",
+  "every_collaborator": "Every collaborator can contribute to a better score",
   "go_to_demo_campaign": "Go to demo campaign",
   "great_scores_alt": "Great scores are expensive. Photo by Marius Masalar.",
   "great_scores_title": "Great scores are expensive",
@@ -12,6 +14,7 @@
   "scores_available_online": "Scores available online ",
   "title": "$t(common:website_name)",
   "make_more_memorable": "Make even Mozart more memorable",
+  "pick_a_score": "Pick a score and invite your collaborators",
   "trompa_collaboration_campaign_manager": "Trompa collaboration campaign manager",
   "welcome_message": "Welcome to Trompa's campaign manager!"
 }

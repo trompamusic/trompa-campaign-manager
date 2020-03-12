@@ -1,6 +1,6 @@
 import { createStyles } from '@material-ui/styles';
 
-export default ({ spacing, typography, palette }) => createStyles({
+export default ({ spacing, typography, palette, shape }) => createStyles({
   relative: {
     position: 'relative',
   },
@@ -69,6 +69,44 @@ export default ({ spacing, typography, palette }) => createStyles({
       '& a': {
         textDecoration: 'none',
       },
+    },
+  },
+  stepsTextContainer: {
+    display       : 'flex',
+    justifyContent: 'flex-end',
+    alignItems    : 'center',
+    height        : 511,
+  },
+  stepsTextContent: {
+    width     : 566,
+    display   : 'flex',
+    alignItems: 'flex-start',
+    '& h1'    : {
+      marginTop : spacing(1.5),
+      marginLeft: spacing(3),
+      color     : palette.text.purpleBlack,
+    },
+  },
+  number: {
+    height         : 65,
+    width          : 65,
+    minWidth       : 65,
+    borderRadius   : '50%',
+    backgroundColor: palette.primary.main,
+    fontFamily     : typography.fontFamilyAvenir,
+    color          : palette.common.white,
+    fontSize       : 50,
+    fontWeight     : 900,
+    textAlign      : 'center',
+  },
+  stepWithGradient: {
+    background : 'linear-gradient(90deg, rgba(255,140,2,1) 50%, rgba(244,87,49,1) 100%)',
+    '& $number': {
+      backgroundColor: palette.common.white,
+      color          : palette.text.purpleBlack,
+    },
+    '& $stepsTextContainer': {
+      justifyContent: 'flex-start',
     },
   },
 });
