@@ -1,10 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { provided } from '../../testUtils';
+import { render } from '../../testUtils';
 import WhoAreYou from './WhoAreYou';
 
-test('renders without crashing', () => {
-  const div = document.createElement('div');
+describe('<WhoAreYou />', () => {
+  test('renders and matches snapshot', () => {
+    const { container } = render(<WhoAreYou />);
 
-  ReactDOM.render(provided(<WhoAreYou />), div);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  // add your unit tests here
 });

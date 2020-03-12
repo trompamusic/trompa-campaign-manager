@@ -8,6 +8,7 @@ exports[`<AppbarTop /> renders and matches snapshot 1`] = `
     class="MuiToolbar-root MuiToolbar-dense makeStyles-toolbarTop-1 MuiToolbar-gutters"
   >
     <a
+      class="makeStyles-link-3"
       href="/"
     >
       <img

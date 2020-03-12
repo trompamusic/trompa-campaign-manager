@@ -8,6 +8,7 @@ exports[`<ActiveTask /> renders and matches snapshot 1`] = `
     class="MuiToolbar-root MuiToolbar-dense makeStyles-toolbarTop-2 MuiToolbar-gutters"
   >
     <a
+      class="makeStyles-link-4"
       href="/"
     >
       <img

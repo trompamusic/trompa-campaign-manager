@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import { Formik } from 'formik';
 import * as PropTypes from 'prop-types';
 
@@ -12,20 +12,6 @@ export default function Form ({
   ...rest
 }) {
   const formRef = useRef();
-
-  // useEffect(() => {
-  //   formRef.current.setSubmitting(submitting);
-  // }, [submitting, formRef]);
-
-  // useEffect(() => {
-  //   if (errors && emptyOnError) {
-  //     Object.keys(errors).forEach(field => {
-  //       formRef.current.setFieldValue(field, '', false);
-  //     });
-  //   }
-
-  //   formRef.current.setErrors(errors || {});
-  // }, [emptyOnError, errors, formRef]);
 
   return (
     <Formik
