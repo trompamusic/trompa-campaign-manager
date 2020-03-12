@@ -33,13 +33,13 @@ export default function Jumbotron ({ children, image, text }) {
   );
 
   return (
-    <React.Fragment>
+    <header>
       <div className={classes.root}>
         {renderContent('desktop')}
         <img className={classes.image} src={image} alt="" />
       </div>
       {renderContent('mobile')}
-    </React.Fragment>
+    </header>
   );
 }
 
