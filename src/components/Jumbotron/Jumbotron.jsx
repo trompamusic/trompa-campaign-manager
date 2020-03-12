@@ -10,28 +10,35 @@ const useStyles = makeStyles(styles);
 export default function Jumbotron ({ children, image, text }) {
   const classes = useStyles();
 
-  return (
-    <div className={classes.root}>
-      <div className={classes.contentSection}>
-        <div className={classes.subtitle}>
-          <img className={classes.logoIcon} src={images.logoIcon} alt="" />
-          <Typography variant="subtitle2">
-            {text.subtitle}
-          </Typography>
-        </div>
-        <Typography variant="h1">
-          {text.h1}
+  const renderContent = device => (
+    <div className={classes[device]}>
+      <div className={classes.subtitle}>
+        <img className={classes.logoIcon} src={images.logoIcon} alt="" />
+        <Typography variant="subtitle2">
+          {text.subtitle}
         </Typography>
-        <Typography variant="h2">
-          {text.h2}
-        </Typography>
-        <Typography gutterBottom>
-          {text.paragraph}
-        </Typography>
-        {children}
       </div>
-      <img className={classes.image} src={image} alt="" />
+      <Typography variant="h1">
+        {text.h1}
+      </Typography>
+      <Typography variant="h2">
+        {text.h2}
+      </Typography>
+      <Typography gutterBottom>
+        {text.paragraph}
+      </Typography>
+      {children}
     </div>
+  );
+
+  return (
+    <React.Fragment>
+      <div className={classes.root}>
+        {renderContent('desktop')}
+        <img className={classes.image} src={image} alt="" />
+      </div>
+      {renderContent('mobile')}
+    </React.Fragment>
   );
 }
 
@@ -44,5 +51,3 @@ Jumbotron.propTypes = {
     paragraph: PropTypes.string,
   }),
 };
-
-Jumbotron.defaultProps = {};

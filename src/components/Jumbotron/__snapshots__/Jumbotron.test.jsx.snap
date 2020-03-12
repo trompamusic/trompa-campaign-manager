@@ -5,14 +5,14 @@ exports[`<Jumbotron /> renders and matches snapshot 1`] = `
   class="makeStyles-root-1"
 >
   <div
-    class="makeStyles-contentSection-2"
+    class="makeStyles-desktop-2"
   >
     <div
-      class="makeStyles-subtitle-3"
+      class="makeStyles-subtitle-4"
     >
       <img
         alt=""
-        class="makeStyles-logoIcon-4"
+        class="makeStyles-logoIcon-5"
         src="[object Object]"
       />
       <h6
@@ -39,7 +39,7 @@ exports[`<Jumbotron /> renders and matches snapshot 1`] = `
   </div>
   <img
     alt=""
-    class="makeStyles-image-6"
+    class="makeStyles-image-7"
   />
 </div>
 `;

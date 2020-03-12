@@ -19,7 +19,7 @@ describe('<Jumbotron />', () => {
   });
 
   test('renders all text props', () => {
-    const { getByText } = render((
+    const { getAllByText } = render((
       <Jumbotron
         text={{
           subtitle : 'Subtitle',
@@ -30,9 +30,9 @@ describe('<Jumbotron />', () => {
       />
     ));
 
-    expect(getByText('Subtitle')).toBeTruthy();
-    expect(getByText('H1')).toBeTruthy();
-    expect(getByText('H2')).toBeTruthy();
-    expect(getByText('Paragraph')).toBeTruthy();
+    expect(getAllByText('Subtitle')).toBeTruthy();
+    expect(getAllByText('H1')).toBeTruthy();
+    expect(getAllByText('H2')).toBeTruthy();
+    expect(getAllByText('Paragraph')).toBeTruthy();
   });
 });

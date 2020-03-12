@@ -3,6 +3,7 @@ import { createStyles } from '@material-ui/styles';
 export default ({ spacing, typography }) => createStyles({
   row: {
     display       : 'flex',
+    flexDirection : 'column',
     alignItems    : 'center',
     justifyContent: 'center',
   },
