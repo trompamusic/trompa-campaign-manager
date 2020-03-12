@@ -5,4 +5,5 @@ export default {
   home    : require('./home.json'),
   notfound: require('./notfound.json'),
   task: require('./task.json'),
+  whoAreYou: require('./whoAreYou'),
 };

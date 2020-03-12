@@ -50,6 +50,7 @@
     "apollo-boost": "^0.4.7",
     "classnames": "^2.2.5",
     "connected-react-router": "^6.5.0",
+    "formik": "^2.1.4",
     "graphql": "^14.5.8",
     "history": "^4.7.2",
     "i18next": "^17.0.6",
