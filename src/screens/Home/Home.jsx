@@ -20,7 +20,7 @@ export default function Home() {
 
   const renderDrawerContent = () => {
     return (
-      <div className={classes.drawerContent} />
+      <div />
     );
   };
 

@@ -7,5 +7,4 @@ export default () => createStyles({
     justifyContent: 'center',
     height        : '50vh',
   },
-  drawerContent: {},
 });
