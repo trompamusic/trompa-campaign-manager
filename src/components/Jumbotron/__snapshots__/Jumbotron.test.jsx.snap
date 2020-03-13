@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Jumbotron /> renders and matches snapshot 1`] = `
+<div
+  class="makeStyles-root-1"
+>
+  <div
+    class="makeStyles-desktop-2"
+  >
+    <div
+      class="makeStyles-prefixTitle-4"
+    >
+      <img
+        alt=""
+        class="makeStyles-logoIcon-5"
+        src="[object Object]"
+      />
+      <h6
+        class="MuiTypography-root MuiTypography-subtitle2"
+      >
+        Subtitle
+      </h6>
+    </div>
+    <h1
+      class="MuiTypography-root MuiTypography-h1"
+    >
+      H1
+    </h1>
+    <h2
+      class="MuiTypography-root MuiTypography-h2"
+    >
+      H2
+    </h2>
+    <p
+      class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom"
+    >
+      Paragraph
+    </p>
+  </div>
+  <img
+    alt=""
+    class="makeStyles-image-7"
+  />
+</div>
+`;

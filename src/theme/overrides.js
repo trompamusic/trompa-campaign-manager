@@ -19,7 +19,7 @@ const overrides = ({ palette, typography }) => ({
         height: 18,
       },
     },
-    containedSecondary: {
+    containedPrimary: {
       background: palette.primary.main,
     },
   },
