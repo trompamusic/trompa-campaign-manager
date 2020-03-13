@@ -1,4 +1,5 @@
-const fontFamily = '\'Roboto\', sans-serif';
+const fontFamily         = '\'Roboto\', sans-serif';
+const fontFamilyOpenSans = 'Open Sans';
 
 export default {
   h1: {
@@ -34,4 +35,5 @@ export default {
   },
   useNextVariants: true,
   fontFamily,
+  fontFamilyOpenSans,
 };

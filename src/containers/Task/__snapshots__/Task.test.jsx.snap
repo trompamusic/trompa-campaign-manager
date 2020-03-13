@@ -6,13 +6,13 @@ exports[`<Task /> matches snapshot 1`] = `
     class="MuiPaper-root MuiAppBar-root MuiAppBar-positionRelative MuiAppBar-colorPrimary MuiPaper-elevation4"
   >
     <div
-      class="MuiToolbar-root MuiToolbar-dense makeStyles-toolbarTop-2 MuiToolbar-gutters"
+      class="MuiToolbar-root MuiToolbar-dense makeStyles-dense-2 MuiToolbar-gutters"
     >
       <a
         href="/"
       >
         <img
-          alt="logo"
+          alt="Trompa logo"
           class="makeStyles-logo-3"
           src="logo.png"
         />
@@ -56,10 +56,10 @@ exports[`<Task /> matches snapshot 1`] = `
     title="Task"
   />
   <header
-    class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed makeStyles-appbarBottom-86 MuiAppBar-colorPrimary mui-fixed MuiPaper-elevation4"
+    class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed makeStyles-appbarBottom-88 MuiAppBar-colorPrimary mui-fixed MuiPaper-elevation4"
   >
     <div
-      class="MuiToolbar-root MuiToolbar-dense makeStyles-toolbarBottom-87 MuiToolbar-gutters"
+      class="MuiToolbar-root MuiToolbar-dense makeStyles-toolbarBottom-89 MuiToolbar-gutters"
     >
       <button
         class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary Mui-disabled Mui-disabled"

@@ -2,6 +2,7 @@ export default {
   common: {
     white     : '#fff',
     black     : '#000',
+    faintGrey : '#F2F2F2',
     faintWhite: '#FAFAFA',
     darkBlack : 'rgba(0, 0, 0, 0.7)',
   },
@@ -12,7 +13,7 @@ export default {
     blue      : '#005AA3',
   },
   primary: {
-    main: 'rgb(8, 69, 146)',
+    main: '#2B44FF',
   },
   secondary: {
     main: '#ea6135',

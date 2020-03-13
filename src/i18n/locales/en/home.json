@@ -1,5 +1,7 @@
 {
-  "title": "$t(common:website_name)",
-  "welcome_message": "Welcome to Trompa's campaign manager!",
-  "go_to_demo_campaign": "Go to demo campaign"
+  "home": "Home",
+  "join_campaign": "Join campaign",
+  "meta_description": "Help us digitise the Requiem in D minor. Create modern, playable scores from known and unknown classics.",
+  "page_title": "Make even Mozart more memorable",
+  "start_campaign": "Start your own campaign"
 }

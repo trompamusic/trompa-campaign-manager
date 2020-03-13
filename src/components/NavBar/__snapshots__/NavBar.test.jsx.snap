@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NavBar /> renders and matches snapshot 1`] = `
+<div
+  class="makeStyles-mobile-3"
+>
+  <header
+    class="MuiPaper-root MuiAppBar-root MuiAppBar-positionRelative MuiAppBar-colorPrimary MuiPaper-elevation4"
+  >
+    <div
+      class="MuiToolbar-root MuiToolbar-dense makeStyles-dense-7 makeStyles-mobile-9 MuiToolbar-gutters"
+    >
+      <div
+        class="makeStyles-hamburger-10"
+      >
+        <span
+          aria-disabled="false"
+          aria-label=""
+          class="MuiButtonBase-root MuiIconButton-root"
+          role="button"
+          tabindex="0"
+        >
+          <span
+            class="MuiIconButton-label"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              role="presentation"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+              />
+            </svg>
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </span>
+      </div>
+      <a
+        href="/"
+      >
+        <img
+          alt="Trompa logo"
+          class="makeStyles-logo-8"
+          src="logo.png"
+        />
+      </a>
+    </div>
+  </header>
+  <div
+    class="PrivateSwipeArea-root-124 PrivateSwipeArea-anchorLeft-125"
+    style="width: 20px;"
+  />
+</div>
+`;
