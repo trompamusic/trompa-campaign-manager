@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import classNames from 'classnames';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -36,7 +37,6 @@ export default function Home() {
         <title>{t('page_title')}</title>
         <meta name="description" content={t('meta_description')} />
       </Helmet>
-
       <NavBar
         navLinks={[
           { name: t('home'), to: '/' },
@@ -74,7 +74,7 @@ export default function Home() {
             </Button>
           </Jumbotron>
         </Grid>
-        <Grid className={classes.greatScores} xs={12} sm={6} item>
+        <Grid className={classNames(classes.twoSections, classes.greatScores)} xs={12} md={6} item>
           <section>
             <Typography variant="h1">
               {t('great_scores_title')}
@@ -85,7 +85,7 @@ export default function Home() {
             <img src={images.greatScores} alt={t('great_scores_alt')} />
           </section>
         </Grid>
-        <Grid className={classes.unlockClassics} xs={12} sm={6} item>
+        <Grid className={classNames(classes.twoSections, classes.unlockClassics)} xs={12} md={6} item>
           <section>
             <Typography variant="h1">
               {t('unlock_classics_title')}
@@ -115,7 +115,7 @@ export default function Home() {
               alignItems="center"
               container
             >
-              <Grid className={classes.stepsTextContainer} xs={12} sm={6} item>
+              <Grid className={classes.stepsTextContainer} xs={12} md={6} item>
                 <div className={classes.stepsTextContent}>
                   <span className={classes.number}>
                     1
@@ -125,7 +125,7 @@ export default function Home() {
                   </Typography>
                 </div>
               </Grid>
-              <Grid xs={12} sm={6} item>
+              <Grid className={classes.stepsImageContainer} xs={12} md={6} item>
                 <img src={images.pickAScore} alt={t('pick_a_score')} />
               </Grid>
             </Grid>
@@ -140,10 +140,10 @@ export default function Home() {
               alignItems="center"
               container
             >
-              <Grid xs={12} sm={6} item>
+              <Grid className={classes.stepsImageContainer} xs={12} md={6} item>
                 <img src={images.algorithmsWillDistribute} alt={t('algorithms_will_distribute')} />
               </Grid>
-              <Grid className={classes.stepsTextContainer} xs={12} sm={6} item>
+              <Grid className={classes.stepsTextContainer} xs={12} md={6} item>
                 <div className={classes.stepsTextContent}>
                   <span className={classes.number}>
                     2
@@ -164,7 +164,7 @@ export default function Home() {
               alignItems="center"
               container
             >
-              <Grid className={classes.stepsTextContainer} xs={12} sm={6} item>
+              <Grid className={classes.stepsTextContainer} xs={12} md={6} item>
                 <div className={classes.stepsTextContent}>
                   <span className={classes.number}>
                     3
@@ -174,7 +174,7 @@ export default function Home() {
                   </Typography>
                 </div>
               </Grid>
-              <Grid xs={12} sm={6} item>
+              <Grid className={classes.stepsImageContainer} xs={12} md={6} item>
                 <img src={images.everyCollaborator} alt={t('every_collaborator')} />
               </Grid>
             </Grid>

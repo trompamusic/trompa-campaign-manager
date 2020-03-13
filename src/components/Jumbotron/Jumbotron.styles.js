@@ -17,8 +17,11 @@ export default ({ spacing, palette, typography, shape, breakpoints }) => createS
     [breakpoints.only('sm')]: {
       height: 500,
     },
-    [breakpoints.up('lg')]: {
+    [breakpoints.only('lg')]: {
       background: backgroundGradient('60.9%', '61%'),
+    },
+    [breakpoints.only('xl')]: {
+      background: backgroundGradient('50.9%', '51%'),
     },
   },
   desktop: {
@@ -47,20 +50,17 @@ export default ({ spacing, palette, typography, shape, breakpoints }) => createS
     margin          : spacing(2),
     marginTop       : spacing(5),
     '& $prefixTitle': {
-      width       : 250,
-      lineHeight  : 1.2,
-      marginBottom: spacing(-0.5),
+      width     : 250,
+      lineHeight: 1.2,
     },
     '& $logoIcon': {
       width : 22,
       height: 21,
     },
     '& h1': {
-      fontSize  : typography.pxToRem(45),
       lineHeight: 1.2,
     },
     '& h2': {
-      fontSize    : typography.pxToRem(32),
       marginBottom: spacing(2),
     },
     '& p': {
@@ -71,14 +71,22 @@ export default ({ spacing, palette, typography, shape, breakpoints }) => createS
     },
   },
   prefixTitle: {
-    display     : 'flex',
-    alignItems  : 'center',
-    marginBottom: spacing(0.5),
+    display                 : 'flex',
+    alignItems              : 'center',
+    marginBottom            : spacing(0.5),
+    [breakpoints.only('sm')]: {
+      width     : 250,
+      lineHeight: 1.2,
+    },
   },
   logoIcon: {
-    width      : 16,
-    height     : 15,
-    marginRight: spacing(0.7),
+    width                   : 16,
+    height                  : 15,
+    marginRight             : spacing(0.7),
+    [breakpoints.only('sm')]: {
+      width : 22,
+      height: 21,
+    },
   },
   compositionTitle: {
     backgroundColor: palette.common.faintGrey,
@@ -107,11 +115,16 @@ export default ({ spacing, palette, typography, shape, breakpoints }) => createS
       right: 30,
     },
     [breakpoints.only('md')]: {
+      width: '45%',
       right: 40,
     },
-    [breakpoints.up('lg')]: {
+    [breakpoints.only('lg')]: {
       width: '45%',
       right: 150,
+    },
+    [breakpoints.only('xl')]: {
+      width: '36%',
+      right: 500,
     },
   },
 });
