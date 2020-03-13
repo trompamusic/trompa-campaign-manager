@@ -7,10 +7,10 @@ describe('<Jumbotron />', () => {
     const { container } = render((
       <Jumbotron
         text={{
-          subtitle : 'Subtitle',
-          h1       : 'H1',
-          h2       : 'H2',
-          paragraph: 'Paragraph',
+          prefixTitle          : 'Subtitle',
+          primaryTitle         : 'H1',
+          secondaryTitle       : 'H2',
+          introductionParagraph: 'Paragraph',
         }}
       />
     ));
@@ -22,10 +22,10 @@ describe('<Jumbotron />', () => {
     const { getAllByText } = render((
       <Jumbotron
         text={{
-          subtitle : 'Subtitle',
-          h1       : 'H1',
-          h2       : 'H2',
-          paragraph: 'Paragraph',
+          prefixTitle          : 'Subtitle',
+          primaryTitle         : 'H1',
+          secondaryTitle       : 'H2',
+          introductionParagraph: 'Paragraph',
         }}
       />
     ));

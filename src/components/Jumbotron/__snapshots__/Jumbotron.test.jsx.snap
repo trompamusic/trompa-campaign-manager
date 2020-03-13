@@ -9,7 +9,7 @@ exports[`<Jumbotron /> renders and matches snapshot 1`] = `
       class="makeStyles-desktop-2"
     >
       <div
-        class="makeStyles-subtitle-4"
+        class="makeStyles-prefixTitle-4"
       >
         <img
           alt=""
@@ -52,7 +52,7 @@ exports[`<Jumbotron /> renders and matches snapshot 1`] = `
     class="makeStyles-mobile-3"
   >
     <div
-      class="makeStyles-subtitle-4"
+      class="makeStyles-prefixTitle-4"
     >
       <img
         alt=""

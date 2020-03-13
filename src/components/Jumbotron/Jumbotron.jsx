@@ -12,21 +12,21 @@ export default function Jumbotron ({ children, image, text }) {
 
   const renderContent = device => (
     <div className={classes[device]}>
-      <div className={classes.subtitle}>
+      <div className={classes.prefixTitle}>
         <img className={classes.logoIcon} src={images.logoIcon} alt="" />
         <Typography variant="subtitle2">
-          {text.subtitle}
+          {text.prefixTitle}
         </Typography>
       </div>
       <Typography variant="h1">
-        {text.h1}
+        {text.primaryTitle}
       </Typography>
       <Typography variant="h2">
-        {text.h2}
+        {text.secondaryTitle}
         <span className={classes.compositionTitle}>Requiem in D minor</span>
       </Typography>
       <Typography gutterBottom>
-        {text.paragraph}
+        {text.introductionParagraph}
       </Typography>
       {children}
     </div>
@@ -46,9 +46,9 @@ export default function Jumbotron ({ children, image, text }) {
 Jumbotron.propTypes = {
   image: PropTypes.string,
   text : PropTypes.exact({
-    subtitle : PropTypes.string,
-    h1       : PropTypes.string,
-    h2       : PropTypes.string,
-    paragraph: PropTypes.string,
+    prefixTitle          : PropTypes.string,
+    primaryTitle         : PropTypes.string,
+    secondaryTitle       : PropTypes.string,
+    introductionParagraph: PropTypes.string,
   }),
 };

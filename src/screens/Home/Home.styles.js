@@ -5,12 +5,6 @@ export default ({ spacing, typography, palette, shape }) => createStyles({
   relative: {
     position: 'relative',
   },
-  row: {
-    display       : 'flex',
-    flexDirection : 'column',
-    alignItems    : 'center',
-    justifyContent: 'center',
-  },
   buttonHero: {
     marginTop    : spacing(),
     padding      : '8px 32px',

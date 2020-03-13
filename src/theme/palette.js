@@ -2,8 +2,8 @@ export default {
   common: {
     white     : '#fff',
     black     : '#000',
-    faintWhite: '#FAFAFA',
     faintGrey : '#F2F2F2',
+    faintWhite: '#FAFAFA',
     darkBlack : 'rgba(0, 0, 0, 0.7)',
   },
   text: {
