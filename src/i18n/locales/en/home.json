@@ -1,10 +1,11 @@
 {
   "create_modern_classics": "Create modern, playable scores from known and unknown classics.",
-  "go_to_demo_campaign": "Go to demo campaign",
   "join_campaign": "Join campaign",
   "help_us": "Help us digitise the Requiem in D minor",
-  "title": "$t(common:website_name)",
+  "home": "Home",
   "make_more_memorable": "Make even Mozart more memorable",
-  "trompa_collaboration_campaign_manager": "Trompa collaboration campaign manager",
-  "welcome_message": "Welcome to Trompa's campaign manager!"
+  "meta_description": "Help us digitise the Requiem in D minor. Create modern, playable scores from known and unknown classics.",
+  "page_title": "Make even Mozart more memorable",
+  "start_campaign": "Start your own campaign",
+  "trompa_collaboration_campaign_manager": "Trompa collaboration campaign manager"
 }

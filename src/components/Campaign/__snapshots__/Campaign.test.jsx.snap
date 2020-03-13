@@ -5,13 +5,13 @@ exports[`<Campaign /> renders and matches snapshot 1`] = `
   class="MuiPaper-root MuiAppBar-root MuiAppBar-positionRelative MuiAppBar-colorPrimary MuiPaper-elevation4"
 >
   <div
-    class="MuiToolbar-root MuiToolbar-dense makeStyles-toolbarTop-10 MuiToolbar-gutters"
+    class="MuiToolbar-root MuiToolbar-dense makeStyles-dense-10 MuiToolbar-gutters"
   >
     <a
       href="/"
     >
       <img
-        alt="logo"
+        alt="Trompa logo"
         class="makeStyles-logo-11"
         src="logo.png"
       />
