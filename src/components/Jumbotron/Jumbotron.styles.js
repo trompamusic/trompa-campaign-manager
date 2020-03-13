@@ -44,9 +44,9 @@ export default ({ spacing, typography, breakpoints }) => createStyles({
     },
   },
   mobile: {
-    margin       : spacing(2),
-    marginTop    : spacing(5),
-    '& $subtitle': {
+    margin                  : spacing(2),
+    marginTop               : spacing(5),
+    '& $sprefixTitleubtitle': {
       width       : 250,
       lineHeight  : 1.2,
       marginBottom: spacing(-0.5),
@@ -70,7 +70,7 @@ export default ({ spacing, typography, breakpoints }) => createStyles({
       display: 'none',
     },
   },
-  subtitle: {
+  prefixTitle: {
     display     : 'flex',
     alignItems  : 'center',
     marginBottom: spacing(0.5),

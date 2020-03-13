@@ -47,10 +47,10 @@ export default function Home() {
       <Jumbotron
         image={images.collaborateHero}
         text={{
-          subtitle : t('trompa_collaboration_campaign_manager'),
-          h1       : t('make_more_memorable'),
-          h2       : t('help_us'),
-          paragraph: t('create_modern_classics'),
+          prefixTitle          : t('trompa_collaboration_campaign_manager'),
+          primaryTitle         : t('make_more_memorable'),
+          secondaryTitle       : t('help_us'),
+          introductionParagraph: t('create_modern_classics'),
         }}
       >
         <Button

@@ -8,7 +8,7 @@ exports[`<Jumbotron /> renders and matches snapshot 1`] = `
     class="makeStyles-desktop-2"
   >
     <div
-      class="makeStyles-subtitle-4"
+      class="makeStyles-prefixTitle-4"
     >
       <img
         alt=""
