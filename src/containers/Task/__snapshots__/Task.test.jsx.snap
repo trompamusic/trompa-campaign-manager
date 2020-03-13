@@ -6,43 +6,8 @@ exports[`<Task /> matches snapshot 1`] = `
     class="MuiPaper-root MuiAppBar-root MuiAppBar-positionRelative MuiAppBar-colorPrimary MuiPaper-elevation4"
   >
     <div
-      class="MuiToolbar-root MuiToolbar-dense makeStyles-dense-2 makeStyles-mobile-4 MuiToolbar-gutters"
+      class="MuiToolbar-root MuiToolbar-dense makeStyles-dense-2 MuiToolbar-gutters"
     >
-      <div
-        class="makeStyles-hamburger-5"
-      >
-        <a
-          aria-disabled="false"
-          class="MuiButtonBase-root MuiButton-root MuiButton-text"
-          href="/campaign/e63fc3c5-f84e-4a64-9d5b-98a49dd4680c"
-          role="button"
-          tabindex="0"
-        >
-          <span
-            class="MuiButton-label"
-          >
-            <span
-              class="MuiButton-startIcon MuiButton-iconSizeMedium"
-            >
-              <svg
-                aria-hidden="true"
-                class="MuiSvgIcon-root"
-                focusable="false"
-                role="presentation"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-                />
-              </svg>
-            </span>
-            Close
-          </span>
-          <span
-            class="MuiTouchRipple-root"
-          />
-        </a>
-      </div>
       <a
         href="/"
       >
@@ -50,6 +15,37 @@ exports[`<Task /> matches snapshot 1`] = `
           alt="Trompa logo"
           class="makeStyles-logo-3"
           src="logo.png"
+        />
+      </a>
+      <a
+        aria-disabled="false"
+        class="MuiButtonBase-root MuiButton-root MuiButton-text"
+        href="/campaign/e63fc3c5-f84e-4a64-9d5b-98a49dd4680c"
+        role="button"
+        tabindex="0"
+      >
+        <span
+          class="MuiButton-label"
+        >
+          <span
+            class="MuiButton-startIcon MuiButton-iconSizeMedium"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              role="presentation"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+              />
+            </svg>
+          </span>
+          Close
+        </span>
+        <span
+          class="MuiTouchRipple-root"
         />
       </a>
     </div>

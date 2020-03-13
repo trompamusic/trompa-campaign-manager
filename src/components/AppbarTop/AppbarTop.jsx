@@ -17,24 +17,27 @@ export default function AppbarTop ({ children, position, mobile }) {
 
   return (
     <AppBar position={position}>
-      {!mobile && (
-        <Toolbar classes={{ dense: classes.dense }} variant="dense">
-          <Link to="/">
-            <img className={classes.logo} src={images.logo} alt={t('trompa_logo')} />
-          </Link>
-          {children}
-        </Toolbar>
-      )}
-      {mobile && (
-        <Toolbar classes={{ dense: classNames(classes.dense, classes.mobile) }} variant="dense">
-          <div className={classes.hamburger}>
+      <Toolbar classes={{ dense: classNames(classes.dense, { [classes.mobile]: mobile }) }} variant="dense">
+        {!mobile && (
+          <React.Fragment>
+            <Link to="/">
+              <img className={classes.logo} src={images.logo} alt={t('trompa_logo')} />
+            </Link>
             {children}
-          </div>
-          <Link to="/">
-            <img className={classes.logo} src={images.logo} alt={t('trompa_logo')} />
-          </Link>
-        </Toolbar>
-      )}
+          </React.Fragment>
+        )}
+        {mobile && (
+          <React.Fragment>
+            <div className={classes.hamburger}>
+              {children}
+            </div>
+            <Link to="/">
+              <img className={classes.logo} src={images.logo} alt={t('trompa_logo')} />
+            </Link>
+          </React.Fragment>
+
+        )}
+      </Toolbar>
     </AppBar>
   );
 }
@@ -46,5 +49,5 @@ AppbarTop.propTypes = {
 
 AppbarTop.defaultProps = {
   position: 'relative',
-  mobile  : 'false',
+  mobile  : false,
 };

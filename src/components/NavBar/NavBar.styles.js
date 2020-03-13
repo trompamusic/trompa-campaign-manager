@@ -13,12 +13,12 @@ export default ({ typography, palette, spacing, breakpoints }) => createStyles({
     color     : palette.primary.main,
   },
   mobile: {
-    [breakpoints.up('sm')]: {
+    [breakpoints.up('md')]: {
       display: 'none',
     },
   },
   desktop: {
-    [breakpoints.down('md')]: {
+    [breakpoints.down('sm')]: {
       display: 'none',
     },
   },
