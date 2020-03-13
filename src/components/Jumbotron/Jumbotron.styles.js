@@ -44,9 +44,9 @@ export default ({ spacing, typography, breakpoints }) => createStyles({
     },
   },
   mobile: {
-    margin                  : spacing(2),
-    marginTop               : spacing(5),
-    '& $sprefixTitleubtitle': {
+    margin          : spacing(2),
+    marginTop       : spacing(5),
+    '& $prefixTitle': {
       width       : 250,
       lineHeight  : 1.2,
       marginBottom: spacing(-0.5),
