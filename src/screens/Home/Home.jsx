@@ -164,6 +164,63 @@ export default function Home() {
             </Grid>
           </section>
         </Grid>
+        <Grid xs={12} item>
+          <section className={classes.testimonialsContainer}>
+            <Typography variant="h1">
+              {t('supported_by')}
+            </Typography>
+            <div className={classes.testimonialsBlock}>
+              <div className={classes.testimonial}>
+                <div className={classes.testimonialHeader}>
+                  <img src={images.avatar} alt="" />
+                  <div>
+                    <Typography variant="h2">
+                      Marcel van Tilburg
+                    </Typography>
+                    <Typography>
+                      Koninklijk Concertgebouworkest
+                    </Typography>
+                  </div>
+                </div>
+                <Typography>
+                  “The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.”
+                </Typography>
+              </div>
+              <div className={classes.testimonial}>
+                <div className={classes.testimonialHeader}>
+                  <img src={images.avatar} alt="" />
+                  <div>
+                    <Typography variant="h2">
+                      Marcel van Tilburg
+                    </Typography>
+                    <Typography>
+                      Koninklijk Concertgebouworkest
+                    </Typography>
+                  </div>
+                </div>
+                <Typography>
+                  “The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.”
+                </Typography>
+              </div>
+              <div className={classes.testimonial}>
+                <div className={classes.testimonialHeader}>
+                  <img src={images.avatar} alt="" />
+                  <div>
+                    <Typography variant="h2">
+                      Marcel van Tilburg
+                    </Typography>
+                    <Typography>
+                      Koninklijk Concertgebouworkest
+                    </Typography>
+                  </div>
+                </div>
+                <Typography>
+                  “The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.”
+                </Typography>
+              </div>
+            </div>
+          </section>
+        </Grid>
       </Grid>
       <footer />
     </div>

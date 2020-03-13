@@ -1,4 +1,5 @@
 import { createStyles } from '@material-ui/styles';
+import images from '../../theme/images';
 
 export default ({ spacing, typography, palette, shape }) => createStyles({
   relative: {
@@ -107,6 +108,57 @@ export default ({ spacing, typography, palette, shape }) => createStyles({
     },
     '& $stepsTextContainer': {
       justifyContent: 'flex-start',
+    },
+  },
+  testimonialsContainer: {
+    display       : 'flex',
+    alignItems    : 'center',
+    justifyContent: 'center',
+    flexDirection : 'column',
+    height        : 514,
+    background    : `url(${images.supportedBy})`,
+    backgroundSize: 'cover',
+    '& h1'        : {
+      color: palette.common.white,
+    },
+  },
+  testimonialsBlock: {
+    display       : 'flex',
+    alignItems    : 'center',
+    justifyContent: 'center',
+    flexWrap      : 'wrap',
+  },
+  testimonial: {
+    marginTop                      : 35,
+    marginRight                    : spacing(2),
+    boxSizing                      : 'border-box',
+    padding                        : spacing(3),
+    height                         : 184,
+    width                          : 393,
+    borderRadius                   : shape.borderRadius,
+    backgroundColor                : palette.common.white,
+    boxShadow                      : '0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.2)',
+    '&:not($testimonialHeader) > p': {
+      fontSize: typography.pxToRem(13.82),
+    },
+    '&:last-child': {
+      marginRight: 0,
+    },
+  },
+  testimonialHeader: {
+    display       : 'flex',
+    alignItems    : 'center',
+    justifyContent: 'flex-start',
+    marginBottom  : spacing(3),
+    '& img'       : {
+      height      : 52,
+      width       : 52,
+      borderRadius: 60,
+      marginRight : spacing(2),
+    },
+    '& h2': {
+      margin  : 0,
+      fontSize: typography.pxToRem(21),
     },
   },
 });
