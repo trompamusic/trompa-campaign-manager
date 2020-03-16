@@ -241,6 +241,28 @@ export default function Home() {
             </div>
           </section>
         </Grid>
+        <Grid className={classes.aboutTrompaSection} xs={12} item>
+          <section>
+            <Typography variant="h2">
+              {t('about_TROMPA')}
+            </Typography>
+            <Typography>
+              {t('about_TROMPA_paragraph')}
+            </Typography>
+            <div className={classes.partnersContainer}>
+              <img src={images.partnerUpfTide} alt={t('partners.uptide')} />
+              <img src={images.partnerUpfMtg} alt={t('partners.upfmtg')} />
+              <img src={images.partnerMuziekweb} alt={t('partners.muziekweb')} />
+              <img src={images.partnerPeachnote} alt={t('partners.peachnote')} />
+              <img src={images.partnerVideodock} alt={t('partners.videodock')} />
+              <img src={images.partnerGoldsmiths} alt={t('partners.goldsmiths')} />
+              <img className={classes.verticalLogo} src={images.partnerRco} alt={t('partners.rco')} />
+              <img className={classes.verticalLogo} src={images.partnerVoctroLabs} alt={t('partners.voctroLabs')} />
+              <img className={classes.verticalLogo} src={images.partnerMdw} alt={t('partners.mdw')} />
+              <img src={images.partnerTuDelft} alt={t('partners.tudelft')} />
+            </div>
+          </section>
+        </Grid>
       </Grid>
       <footer />
     </div>
