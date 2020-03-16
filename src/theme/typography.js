@@ -22,7 +22,7 @@ export default {
   h3: {
     color     : '#3A3A3A',
     fontWeight: 'bold',
-    fontSize  : '23.56px',
+    fontSize  : '21.50px',
   },
   subtitle1: {
     fontWeight: 'bold',

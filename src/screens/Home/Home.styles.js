@@ -17,7 +17,7 @@ export default ({ spacing, typography, palette, shape, breakpoints }) => createS
     '& section': {
       width : 528,
       margin: '51px 96px 98px 96px',
-      '& h1': {
+      '& h2': {
         marginBottom: spacing(0.5),
       },
       '& p': {
@@ -27,7 +27,8 @@ export default ({ spacing, typography, palette, shape, breakpoints }) => createS
         width: '100%',
       },
       [breakpoints.down('sm')]: {
-        marginLeft: spacing(4),
+        marginLeft : spacing(4),
+        marginRight: spacing(4),
       },
     },
   },
@@ -39,7 +40,10 @@ export default ({ spacing, typography, palette, shape, breakpoints }) => createS
     },
   },
   unlockClassics: {
-    justifyContent: 'flex-start',
+    justifyContent          : 'flex-start',
+    [breakpoints.only('xs')]: {
+      marginBottom: spacing(-3),
+    },
   },
   unlockClassicsImageOverlay: {
     position  : 'absolute',
@@ -79,6 +83,7 @@ export default ({ spacing, typography, palette, shape, breakpoints }) => createS
       height        : 'auto',
       paddingTop    : spacing(1.5),
       paddingLeft   : spacing(4),
+      paddingRight  : spacing(4),
       justifyContent: 'flex-start',
     },
   },
@@ -89,13 +94,19 @@ export default ({ spacing, typography, palette, shape, breakpoints }) => createS
     alignItems    : 'center',
     height        : 511,
     '& img'       : {
-      width   : '80%',
-      maxWidth: 550,
+      width                   : '80%',
+      maxWidth                : 550,
+      [breakpoints.only('xs')]: {
+        width: '100%',
+      },
+      [breakpoints.only('sm')]: {
+        width: '60%',
+      },
     },
     [breakpoints.down('sm')]: {
       order         : 1,
       height        : 'auto',
-      paddingLeft   : spacing(4),
+      margin        : '0 auto',
       paddingBottom : spacing(1.5),
       justifyContent: 'flex-start',
     },
@@ -103,11 +114,11 @@ export default ({ spacing, typography, palette, shape, breakpoints }) => createS
   stepsTextContent: {
     width     : 566,
     display   : 'flex',
-    alignItems: 'flex-start',
-    '& h1'    : {
-      marginTop : spacing(1.5),
-      marginLeft: spacing(3),
-      color     : palette.text.purpleBlack,
+    alignItems: 'center',
+    '& h2'    : {
+      marginLeft  : spacing(3),
+      marginBottom: 0,
+      color       : palette.text.purpleBlack,
     },
   },
   number: {
@@ -148,7 +159,7 @@ export default ({ spacing, typography, palette, shape, breakpoints }) => createS
     paddingBottom : 98,
     background    : `url(${images.supportedBy})`,
     backgroundSize: 'cover',
-    '& h1'        : {
+    '& h2'        : {
       color: palette.common.white,
     },
     [breakpoints.down('md')]: {
@@ -166,15 +177,23 @@ export default ({ spacing, typography, palette, shape, breakpoints }) => createS
     },
   },
   testimonial: {
-    marginTop                      : 35,
-    marginRight                    : spacing(2),
-    boxSizing                      : 'border-box',
-    padding                        : spacing(3),
-    height                         : 184,
-    width                          : 393,
-    borderRadius                   : shape.borderRadius,
-    backgroundColor                : palette.common.white,
-    boxShadow                      : '0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.2)',
+    position       : 'relative',
+    marginTop      : 35,
+    marginRight    : spacing(2),
+    boxSizing      : 'border-box',
+    padding        : spacing(3),
+    height         : 184,
+    width          : 393,
+    borderRadius   : shape.borderRadius,
+    backgroundColor: palette.common.white,
+    boxShadow      : '0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.2)',
+    '& svg'        : {
+      position: 'absolute',
+      top     : -20,
+      left    : -5,
+      width   : 90,
+      height  : 30,
+    },
     '&:not($testimonialHeader) > p': {
       fontSize: typography.pxToRem(13.82),
     },

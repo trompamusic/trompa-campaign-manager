@@ -11,6 +11,7 @@ import Button from '@material-ui/core/Button';
 import Jumbotron from '../../components/Jumbotron/Jumbotron';
 import images from '../../theme/images';
 import NavBar from '../../components/NavBar/NavBar';
+import QuotationMarksIcon from '../../components/Icons/QuotationMarksIcon';
 import * as startupActions from '../../redux/Startup/Startup.actions';
 import styles from './Home.styles';
 
@@ -76,7 +77,7 @@ export default function Home() {
         </Grid>
         <Grid className={classNames(classes.twoSections, classes.greatScores)} xs={12} md={6} item>
           <section>
-            <Typography variant="h1">
+            <Typography variant="h2">
               {t('great_scores_title')}
             </Typography>
             <Typography gutterBottom>
@@ -87,7 +88,7 @@ export default function Home() {
         </Grid>
         <Grid className={classNames(classes.twoSections, classes.unlockClassics)} xs={12} md={6} item>
           <section>
-            <Typography variant="h1">
+            <Typography variant="h2">
               {t('unlock_classics_title')}
             </Typography>
             <Typography gutterBottom>
@@ -120,7 +121,7 @@ export default function Home() {
                   <span className={classes.number}>
                     1
                   </span>
-                  <Typography variant="h1">
+                  <Typography variant="h2">
                     {t('pick_a_score')}
                   </Typography>
                 </div>
@@ -148,7 +149,7 @@ export default function Home() {
                   <span className={classes.number}>
                     2
                   </span>
-                  <Typography variant="h1">
+                  <Typography variant="h2">
                     {t('algorithms_will_distribute')}
                   </Typography>
                 </div>
@@ -169,7 +170,7 @@ export default function Home() {
                   <span className={classes.number}>
                     3
                   </span>
-                  <Typography variant="h1">
+                  <Typography variant="h2">
                     {t('every_collaborator')}
                   </Typography>
                 </div>
@@ -182,15 +183,16 @@ export default function Home() {
         </Grid>
         <Grid xs={12} item>
           <section className={classes.testimonialsContainer}>
-            <Typography variant="h1">
+            <Typography variant="h2">
               {t('supported_by')}
             </Typography>
             <div className={classes.testimonialsBlock}>
               <div className={classes.testimonial}>
+                <QuotationMarksIcon />
                 <div className={classes.testimonialHeader}>
                   <img src={images.avatar} alt="" />
                   <div>
-                    <Typography variant="h2">
+                    <Typography variant="h3">
                       Marcel van Tilburg
                     </Typography>
                     <Typography>
@@ -203,10 +205,11 @@ export default function Home() {
                 </Typography>
               </div>
               <div className={classes.testimonial}>
+                <QuotationMarksIcon />
                 <div className={classes.testimonialHeader}>
                   <img src={images.avatar} alt="" />
                   <div>
-                    <Typography variant="h2">
+                    <Typography variant="h3">
                       Marcel van Tilburg
                     </Typography>
                     <Typography>
@@ -219,10 +222,11 @@ export default function Home() {
                 </Typography>
               </div>
               <div className={classes.testimonial}>
+                <QuotationMarksIcon />
                 <div className={classes.testimonialHeader}>
                   <img src={images.avatar} alt="" />
                   <div>
-                    <Typography variant="h2">
+                    <Typography variant="h3">
                       Marcel van Tilburg
                     </Typography>
                     <Typography>

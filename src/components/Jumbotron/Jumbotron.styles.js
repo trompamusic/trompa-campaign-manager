@@ -49,6 +49,7 @@ export default ({ spacing, palette, typography, shape, breakpoints }) => createS
   mobile: {
     margin          : spacing(2),
     marginTop       : spacing(5),
+    marginBottom    : spacing(5),
     '& $prefixTitle': {
       width     : 250,
       lineHeight: 1.2,
@@ -58,7 +59,7 @@ export default ({ spacing, palette, typography, shape, breakpoints }) => createS
       height: 21,
     },
     '& h1': {
-      lineHeight: 1.2,
+      lineHeight: 1.1,
     },
     '& h2': {
       marginBottom: spacing(2),
@@ -78,6 +79,11 @@ export default ({ spacing, palette, typography, shape, breakpoints }) => createS
       width     : 250,
       lineHeight: 1.2,
     },
+    [breakpoints.only('xs')]: {
+      '& h6': {
+        lineHeight: 1.2,
+      },
+    },
   },
   logoIcon: {
     width                   : 16,
@@ -94,7 +100,6 @@ export default ({ spacing, palette, typography, shape, breakpoints }) => createS
     padding        : '0 4px',
   },
   buttonHero: {
-    marginTop    : spacing(),
     padding      : '8px 32px',
     fontFamily   : typography.fontFamilyOpenSans,
     fontSize     : typography.pxToRem(16),
