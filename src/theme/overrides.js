@@ -8,7 +8,7 @@ const overrides = ({ palette, typography }) => ({
   MuiButton: {
     root: {
       textTransform: 'none',
-      fontFamily   : typography.fontFamily,
+      fontFamily   : typography.fontFamilyOpenSans,
     },
     text: {
       color     : palette.text.blue,
@@ -20,7 +20,7 @@ const overrides = ({ palette, typography }) => ({
       },
     },
     containedPrimary: {
-      background: 'linear-gradient(45.21deg, #0080E8 0%, #005AA3 100%)',
+      background: palette.primary.main,
     },
   },
   MuiDivider: {

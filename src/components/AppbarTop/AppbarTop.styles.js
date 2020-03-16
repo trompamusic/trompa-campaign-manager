@@ -1,10 +1,15 @@
 import { createStyles } from '@material-ui/styles';
 
 export default ({ spacing, palette, typography, breakpoints }) => createStyles({
-  toolbarTop: {
+  dense: {
     height        : 56,
     justifyContent: 'space-between',
     color         : palette.primary.main,
+    alignItems    : 'center',
+    fontFamily    : typography.fontFamilyOpenSans,
+    '& img'       : {
+      transform: 'translateY(10%)',
+    },
   },
   logo: {
     width: 138,
@@ -37,5 +42,17 @@ export default ({ spacing, palette, typography, breakpoints }) => createStyles({
     fontWeight   : 'bold',
     letterSpacing: 0.25,
     color        : palette.text.darkPurple,
-  },
+    mobile       : {
+      position      : 'relative',
+      justifyContent: 'center',
+    },
+    hamburger: {
+      position : 'absolute',
+      left     : 16,
+      marginTop: 2,
+      '& svg'  : {
+        color: palette.common.black,
+      },
+    },
+  }, 
 });

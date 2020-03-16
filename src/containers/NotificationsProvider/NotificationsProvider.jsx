@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { makeStyles } from '@material-ui/styles';
 import Snackbar from '@material-ui/core/Snackbar';
-import Alert from '@material-ui/lab/Alert';
+// import Alert from '@material-ui/lab/Alert';
 import * as PropTypes from 'prop-types';
 import styles from './NotificationsProvider.styles';
 
@@ -30,9 +30,9 @@ export default function NotificationsProvider ({
         autoHideDuration={6000} 
         onClose={handleClose}
       >
-        <Alert severity="success">
-          {message}
-        </Alert>
+        {/* <Alert severity="success"> */}
+        {message}
+        {/* </Alert> */}
       </Snackbar>
     </React.Fragment>
   );

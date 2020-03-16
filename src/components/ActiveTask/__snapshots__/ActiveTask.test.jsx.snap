@@ -5,7 +5,7 @@ exports[`<ActiveTask /> renders and matches snapshot 1`] = `
   class="MuiPaper-root MuiAppBar-root MuiAppBar-positionRelative MuiAppBar-colorPrimary MuiPaper-elevation4"
 >
   <div
-    class="MuiToolbar-root MuiToolbar-dense makeStyles-toolbarTop-2 MuiToolbar-gutters"
+    class="MuiToolbar-root MuiToolbar-dense makeStyles-dense-2 MuiToolbar-gutters"
   >
     <a
       class="makeStyles-link-4"

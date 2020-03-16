@@ -1,10 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { provided } from '../../testUtils';
+import { render } from '../../testUtils';
 import NotificationsProvider from './NotificationsProvider';
 
-test('renders without crashing', () => {
-  const div = document.createElement('div');
+describe('<NotificationsProvider />', () => {
+  test('renders and matches snapshot', () => {
+    const { container } = render(<NotificationsProvider />);
 
-  ReactDOM.render(provided(<NotificationsProvider />), div);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  // add your unit tests here
 });
