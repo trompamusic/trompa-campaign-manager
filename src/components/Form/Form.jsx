@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { Formik } from 'formik';
 import * as PropTypes from 'prop-types';
 
@@ -11,11 +11,8 @@ export default function Form ({
   emptyOnError,
   ...rest
 }) {
-  const formRef = useRef();
-
   return (
     <Formik
-      ref={formRef}
       onSubmit={onSubmit}
       validateOnChange={false}
       validateOnBlur={false}

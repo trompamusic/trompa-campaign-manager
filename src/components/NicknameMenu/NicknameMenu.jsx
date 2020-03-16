@@ -30,7 +30,6 @@ export default function NicknameMenu ({
         open={isOpen}
         anchorEl={target}
         onClose={handleClose}
-        anchorOrigin={{ horizontal: 'left', vertical: 'center' }}
         PopoverClasses={{ paper: classes.menu }}
       >
         <div className={classes.userInfo}>

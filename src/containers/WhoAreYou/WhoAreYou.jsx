@@ -1,11 +1,10 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import * as PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
 import WhoAreYouComponent from '../../components/WhoAreYou/WhoAreYou';
 
 export default function WhoAreYou ({ campaignIdentifier }) {
-  const formRef = useRef();
   const history = useHistory();
   let nickname  = localStorage.getItem('nickname');
   const { t }   = useTranslation('whoAreYou');
@@ -17,8 +16,7 @@ export default function WhoAreYou ({ campaignIdentifier }) {
     }
   });
 
-  const onFormSubmit = ({ ...formValues }, form) => {
-    formRef.current = form;
+  const onFormSubmit = ({ ...formValues }) => {
     let nickname    = formValues.nickname;
 
     // create anonymous user if no nickname is given
