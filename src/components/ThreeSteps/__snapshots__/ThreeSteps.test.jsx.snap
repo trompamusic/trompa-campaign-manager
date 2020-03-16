@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ThreeSteps /> renders and matches snapshot 1`] = `
+<div
+  class="MuiGrid-root makeStyles-root-1 MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
+>
+  <div
+    class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+  >
+    <section>
+      <div
+        class="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
+      >
+        <div
+          class="MuiGrid-root makeStyles-stepsTextContainer-2 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+        >
+          <div
+            class="makeStyles-stepsTextContent-4"
+          >
+            <span
+              class="makeStyles-number-5"
+            >
+              1
+            </span>
+            <h2
+              class="MuiTypography-root MuiTypography-h2"
+            >
+              Pick a score and invite your collaborators
+            </h2>
+          </div>
+        </div>
+        <div
+          class="MuiGrid-root makeStyles-stepsImageContainer-3 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+        >
+          <img
+            alt="Pick a score and invite your collaborators"
+            src="pick_a_score.png"
+          />
+        </div>
+      </div>
+    </section>
+  </div>
+  <div
+    class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+  >
+    <section>
+      <div
+        class="MuiGrid-root makeStyles-stepWithGradient-6 MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
+      >
+        <div
+          class="MuiGrid-root makeStyles-stepsImageContainer-3 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+        >
+          <img
+            alt="Our algorithms will distribute tasks to everyone"
+            src="algorithms_will_distribute.png"
+          />
+        </div>
+        <div
+          class="MuiGrid-root makeStyles-stepsTextContainer-2 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+        >
+          <div
+            class="makeStyles-stepsTextContent-4"
+          >
+            <span
+              class="makeStyles-number-5"
+            >
+              2
+            </span>
+            <h2
+              class="MuiTypography-root MuiTypography-h2"
+            >
+              Our algorithms will distribute tasks to everyone
+            </h2>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div
+    class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+  >
+    <section>
+      <div
+        class="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
+      >
+        <div
+          class="MuiGrid-root makeStyles-stepsTextContainer-2 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+        >
+          <div
+            class="makeStyles-stepsTextContent-4"
+          >
+            <span
+              class="makeStyles-number-5"
+            >
+              3
+            </span>
+            <h2
+              class="MuiTypography-root MuiTypography-h2"
+            >
+              Every collaborator can contribute to a better score
+            </h2>
+          </div>
+        </div>
+        <div
+          class="MuiGrid-root makeStyles-stepsImageContainer-3 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+        >
+          <img
+            alt="Every collaborator can contribute to a better score"
+            src="every_collaborator.png"
+          />
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+`;

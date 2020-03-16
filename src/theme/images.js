@@ -2,6 +2,7 @@ export default {
   avatar                  : require('./images/avatar.png'),
   algorithmsWillDistribute: require('./images/algorithms_will_distribute.png'),
   everyCollaborator       : require('./images/every_collaborator.png'),
+  euFlag                  : require('./images/eu_flag.jpg'),
   logo                    : require('./images/logo.png'),
   logoIcon                : require('./images/logo_icon.svg'),
   collaborateHero         : require('./images/collaborate_hero.png'),
