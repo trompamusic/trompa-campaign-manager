@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import Button from '@material-ui/core/Button';
 import AppbarTop from '../AppbarTop/AppbarTop';
 import AppbarBottom from '../AppbarBottom/AppbarBottom';
-import NicknameMenuModal from '../../containers/NicknameMenuContainer/NicknameMenuContainer';
+import NicknameMenuContainer from '../../containers/NicknameMenuContainer/NicknameMenuContainer';
 import styles from './ActiveTask.styles';
 
 const useStyles = makeStyles(styles);
@@ -25,7 +25,7 @@ export default function ActiveTask ({
   return (
     <React.Fragment>
       <AppbarTop type={name} hasContextNavigation>
-        <NicknameMenuModal campaignIdentifier={campaignIdentifier} />
+        <NicknameMenuContainer campaignIdentifier={campaignIdentifier} />
       </AppbarTop>
       <iframe
         src={url && url.replace('{identifier}', identifier)}

@@ -1,6 +1,6 @@
 import { createStyles } from '@material-ui/styles';
 
-export default ({ typography, palette, spacing, shape }) => createStyles({
+export default ({ typography, palette, spacing, shape, breakpoints }) => createStyles({
   root: {
     position : 'absolute',
     top      : '50%',
@@ -8,12 +8,18 @@ export default ({ typography, palette, spacing, shape }) => createStyles({
     transform: 'translate(-50%, -50%)',
   },
   content: {
+    [breakpoints.down('sm')]: {
+      width: '90vw',
+    },
     width        : '40vw',
     display      : 'flex',
     flexDirection: 'column',
     alignItems   : 'center',
   },
   person: {
+    [breakpoints.down('sm')]: {
+      display: 'none',
+    },
     '&:first-child': {
       height: '54vh',
     },
@@ -24,6 +30,9 @@ export default ({ typography, palette, spacing, shape }) => createStyles({
     margin: `0px ${spacing(5.5)}px -${spacing(7)}px ${spacing(5.5)}px`,
   },
   goal: {
+    [breakpoints.down('sm')]: {
+      fontSize: typography.pxToRem(28),
+    },
     fontSize     : typography.pxToRem(37),
     padding      : `0px ${spacing(2)}px`,
     marginBottom : spacing(3),

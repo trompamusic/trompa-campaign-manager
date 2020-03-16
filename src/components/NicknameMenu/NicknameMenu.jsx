@@ -37,7 +37,7 @@ export default function NicknameMenu ({
           <Avatar className={classes.avatar}>
             {nicknameInitial ? nicknameInitial : '?'}
           </Avatar>
-          <Typography className={classes.nickname}>
+          <Typography className={classes.nicknameMenu}>
             {nickname}
           </Typography>
           <CloseIcon 

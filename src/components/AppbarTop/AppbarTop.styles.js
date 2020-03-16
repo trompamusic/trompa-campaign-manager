@@ -1,6 +1,6 @@
 import { createStyles } from '@material-ui/styles';
 
-export default ({ spacing, palette, typography }) => createStyles({
+export default ({ spacing, palette, typography, breakpoints }) => createStyles({
   toolbarTop: {
     height        : 56,
     justifyContent: 'space-between',
@@ -18,6 +18,9 @@ export default ({ spacing, palette, typography }) => createStyles({
     paddingRight: spacing(2),
   },
   backIcon: {
+    [breakpoints.down('sm')]: {
+      marginRight: spacing(2),
+    },
     fontSize   : 24,
     marginRight: spacing(3),
     color      : palette.primary.main,
