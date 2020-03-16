@@ -2,25 +2,30 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
-import CloseIcon from '@material-ui/icons/Close';
 import AppbarTop from '../AppbarTop/AppbarTop';
 import AppbarBottom from '../AppbarBottom/AppbarBottom';
+import NicknameMenuModal from '../../containers/NicknameMenuContainer/NicknameMenuContainer';
 import styles from './ActiveTask.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function ActiveTask ({ identifier, loading, noTasks, url, campaignIdentifier, onNextTaskButtonClick }) {
+export default function ActiveTask ({ 
+  identifier, 
+  loading, 
+  noTasks, 
+  url, 
+  campaignIdentifier, 
+  onNextTaskButtonClick,
+  name, 
+}) {
   const { t }   = useTranslation('task');
   const classes = useStyles();
 
   return (
     <React.Fragment>
-      <AppbarTop>
-        <Button component={Link} to={`/campaign/${campaignIdentifier}`} startIcon={<CloseIcon />} variant="text">
-          {t('close')}
-        </Button>
+      <AppbarTop type={name} hasContextNavigation>
+        <NicknameMenuModal campaignIdentifier={campaignIdentifier} />
       </AppbarTop>
       <iframe
         src={url && url.replace('{identifier}', identifier)}

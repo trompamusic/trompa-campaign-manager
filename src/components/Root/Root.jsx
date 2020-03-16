@@ -13,7 +13,7 @@ export default function Root(props) {
     <Switch>
       <Route path="/" component={Home} exact />
       <Route path="/campaign/:campaignIdentifier" component={Campaign} exact />
-      <Route path="/campaign/:campaignIdentifier/whoAreYou" component={WhoAreYou} exact />
+      <Route path="/campaign/:campaignIdentifier/who-are-you" component={WhoAreYou} exact />
       <Route path="/campaign/:campaignIdentifier/task/" component={Task} exact />
       <Route path="/campaign/:campaignIdentifier/task/:taskIdentifier" component={Task} exact />
       <Route component={NotFound} />

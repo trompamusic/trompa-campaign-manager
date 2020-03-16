@@ -49,7 +49,7 @@ export default function Campaign ({ campaignIdentifier }) {
         </div>
         <Grid spacing={1} classes={{ container: classes.actions }} container>
           <Grid xs={12} sm={'auto'} item>
-            <Button component={Link} to={`/campaign/${campaignIdentifier}/whoAreYou`} startIcon={<MusicProcessIcon />} variant="contained" color="primary">
+            <Button component={Link} to={`/campaign/${campaignIdentifier}/task`} startIcon={<MusicProcessIcon />} variant="contained" color="primary">
               {t('help_this_campaign')}
             </Button>
           </Grid>

@@ -52,10 +52,10 @@ export default function WhoAreYou ({
     >
       {({ values, handleChange, handleSubmit, handleBlur }) => (
         <React.Fragment>
-          <AppbarTop hasContextNavigation />
+          <AppbarTop type="General task" campaign="Test2" hasContextNavigation />
           <div className={classes.root}>
             <div style={{ display: 'flex', alignItems: 'flex-end' }}>
-              <img className={classes.person} src={images.personTrumpetStandingLeft} alt="person standing with trumpet" />
+              <img className={classes.person} src={images.personTrumpetStandingLeft} alt="" />
               <div className={classes.content}>
                 <Typography className={classes.goal} variant="h1">
                   {t('goal')}
@@ -91,7 +91,7 @@ export default function WhoAreYou ({
                 </Typography>
                 {renderNicknameCheck(values.nickname, nicknames)}
               </div>
-              <img className={classes.person} src={images.personStandingRight} alt="person standing with right" />
+              <img className={classes.person} src={images.personStandingRight} alt="" />
             </div>
           </div>
           <AppbarBottom>
@@ -112,6 +112,10 @@ export default function WhoAreYou ({
 
 WhoAreYou.propTypes = {
   campaignIdentifier: PropTypes.string,
+  initialFormValues : PropTypes.object,
+  onSubmit          : PropTypes.func, 
+  submitting        : PropTypes.bool, 
+  error             : PropTypes.object,
 };
 
 WhoAreYou.defaultProps = {};

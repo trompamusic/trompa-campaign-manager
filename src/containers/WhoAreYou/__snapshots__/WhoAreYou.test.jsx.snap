@@ -29,12 +29,12 @@ exports[`<WhoAreYou /> renders and matches snapshot 1`] = `
           <h6
             class="MuiTypography-root makeStyles-pageType-16 MuiTypography-h6 MuiTypography-colorSecondary"
           >
-            Type of page
+            General task
           </h6>
           <h5
             class="MuiTypography-root makeStyles-title-17 MuiTypography-h5"
           >
-            Title of thing
+            Test2
           </h5>
         </div>
       </div>

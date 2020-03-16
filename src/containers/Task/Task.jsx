@@ -8,6 +8,7 @@ import ActiveTask from '../../components/ActiveTask';
 export default function Task({ campaignIdentifier, taskIdentifier }) {
   const history                               = useHistory();
   const taskDrawAmount                        = 10;
+  let nickname                                = localStorage.getItem('nickname');
   const [loading, setLoading]                 = useState(false);
   const [task, setTask]                       = useState(null);
   const [taskIdentifiers, setTaskIdentifiers] = useState([]);
@@ -28,6 +29,13 @@ export default function Task({ campaignIdentifier, taskIdentifier }) {
       history.replace(`/campaign/${campaignIdentifier}/task/`);
     }
   };
+
+  // If not logged in reroute to login
+  useEffect(() => {
+    if(!nickname) {
+      history.replace(`/campaign/${campaignIdentifier}/who-are-you`);
+    }
+  });
 
   // Retrieve task on existing draw (task identifier in url)
   useEffect(() => {

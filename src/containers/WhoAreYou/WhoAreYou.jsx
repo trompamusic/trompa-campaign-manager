@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import * as PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
@@ -7,7 +7,15 @@ import WhoAreYouComponent from '../../components/WhoAreYou/WhoAreYou';
 export default function WhoAreYou ({ campaignIdentifier }) {
   const formRef = useRef();
   const history = useHistory();
+  let nickname  = localStorage.getItem('nickname');
   const { t }   = useTranslation('whoAreYou');
+
+  // If already logged in
+  useEffect(() => {
+    if(nickname) {
+      history.replace(`/campaign/${campaignIdentifier}/task`);
+    }
+  });
 
   const onFormSubmit = ({ ...formValues }, form) => {
     formRef.current = form;

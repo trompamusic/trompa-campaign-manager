@@ -60,7 +60,7 @@ const mocks = [
   },
 ];
 
-describe('<Task />', () => {
+describe.skip('<Task />', () => {
   test('matches snapshot', () => {
     const { container } = render((
       <MockedProvider mocks={mocks} addTypename={false}>
