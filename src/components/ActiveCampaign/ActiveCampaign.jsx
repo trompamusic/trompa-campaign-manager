@@ -5,13 +5,13 @@ import { useTranslation } from 'react-i18next';
 import { Typography } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import EmailIcon from '@material-ui/icons/Email';
-import TextField from '@material-ui/core/TextField';
 import { Link } from 'react-router-dom';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
 import FileMusicIcon from '../Icons/FileMusicIcon';
 import MusicProcessIcon from '../Icons/MusicProcessIcon';
 import ProgressCloseIcon from '../Icons/ProgressCloseIcon';
+import CopyField from '../CopyField/CopyField';
 import styles from './ActiveCampaign.styles';
 
 const useStyles = makeStyles(styles);
@@ -65,23 +65,7 @@ export default function ActiveCampaign ({ campaignIdentifier }) {
         <Typography variant="caption" >
           {t('share_this_campaign')}
         </Typography>
-        <TextField
-          classes={{ root: classes.textField }}
-          size="small"
-          defaultValue="https://"
-          variant="filled"
-          InputProps={{
-            disableUnderline: true,
-            classes         : {
-              input           : classes.shareCampaignInput,
-              adornedEnd      : classes.shareCampaignAdornedEnd,
-              inputMarginDense: classes.shareCampaignInputMarginDense,
-            },
-            endAdornment: (
-              <span className={classes.copy}>{t('copy')}</span>
-            ),
-          }}
-        />
+        <CopyField defaultValue="https://" />
       </div>
       <Divider />
       <div className={classes.section}>

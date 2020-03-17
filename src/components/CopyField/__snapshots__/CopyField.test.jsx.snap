@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CopyField /> renders and matches snapshot 1`] = `
+<div
+  class="MuiFormControl-root MuiTextField-root makeStyles-copyField-1"
+>
+  <div
+    class="MuiInputBase-root MuiFilledInput-root MuiInputBase-formControl MuiInputBase-adornedEnd MuiFilledInput-adornedEnd makeStyles-copyFieldAdornedEnd-3 MuiInputBase-marginDense MuiFilledInput-marginDense"
+  >
+    <input
+      aria-invalid="false"
+      class="MuiInputBase-input MuiFilledInput-input makeStyles-copyFieldInput-2 MuiInputBase-inputAdornedEnd MuiFilledInput-inputAdornedEnd MuiInputBase-inputMarginDense MuiFilledInput-inputMarginDense makeStyles-copyFieldInputMarginDense-4"
+      type="text"
+      value=""
+    />
+    <span
+      class="makeStyles-copyText-5"
+    >
+      Copy
+    </span>
+  </div>
+</div>
+`;

@@ -34,28 +34,4 @@ export default ({ shape, palette, breakpoints }) => createStyles({
     },
     marginBottom: 16,
   },
-  copy: {
-    cursor: 'pointer',
-  },
-  shareCampaignInput: {
-    padding: '8px 12px',
-  },
-  shareCampaignAdornedEnd: {
-    color       : palette.text.blue,
-    borderRadius: shape.borderRadius,
-    fontSize    : '13.75px',
-    fontWeight  : 'bold',
-  },
-  shareCampaignInputMarginDense: {
-    color                   : palette.text.darkGrey,
-    fontWeight              : 'normal',
-    [breakpoints.down('sm')]: {
-      padding: 8,
-    },
-  },
-  textField: {
-    [breakpoints.down('sm')]: {
-      width: '100%',
-    },
-  },
 });

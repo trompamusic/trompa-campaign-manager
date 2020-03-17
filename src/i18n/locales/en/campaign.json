@@ -4,10 +4,16 @@
   "copy": "Copy",
   "enhance_classical_sheet_music_together": "Enhance classical sheet music, together",
   "help_this_campaign": "Help this campaign",
+  "meta_description": "Let's work together on bringing Mahler's 6th to our yearly outdoor performance.",
   "navbar": {
     "download_mei_file": "Download MEI file",
     "join_campaign": "Join campaign",
     "share": "Share"
+  },
+  "page_title": "Help us digitise Mahler’s 6th",
+  "share_dialog": {
+    "drum_up_support": "Drum up support and invite your fellow musicians.",
+    "lets_face_music": "Let's face the music together."
   },
   "share_this_campaign": "Share this campaign",
   "start_your_own_campaign": "Start your own campaign",

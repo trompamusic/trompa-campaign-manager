@@ -175,19 +175,19 @@ exports[`<ActiveCampaign /> renders and matches snapshot 1`] = `
     Share this campaign
   </span>
   <div
-    class="MuiFormControl-root MuiTextField-root makeStyles-textField-9"
+    class="MuiFormControl-root MuiTextField-root makeStyles-copyField-179"
   >
     <div
-      class="MuiInputBase-root MuiFilledInput-root MuiInputBase-formControl MuiInputBase-adornedEnd MuiFilledInput-adornedEnd makeStyles-shareCampaignAdornedEnd-7 MuiInputBase-marginDense MuiFilledInput-marginDense"
+      class="MuiInputBase-root MuiFilledInput-root MuiInputBase-formControl MuiInputBase-adornedEnd MuiFilledInput-adornedEnd makeStyles-copyFieldAdornedEnd-181 MuiInputBase-marginDense MuiFilledInput-marginDense"
     >
       <input
         aria-invalid="false"
-        class="MuiInputBase-input MuiFilledInput-input makeStyles-shareCampaignInput-6 MuiInputBase-inputAdornedEnd MuiFilledInput-inputAdornedEnd MuiInputBase-inputMarginDense MuiFilledInput-inputMarginDense makeStyles-shareCampaignInputMarginDense-8"
+        class="MuiInputBase-input MuiFilledInput-input makeStyles-copyFieldInput-180 MuiInputBase-inputAdornedEnd MuiFilledInput-inputAdornedEnd MuiInputBase-inputMarginDense MuiFilledInput-inputMarginDense makeStyles-copyFieldInputMarginDense-182"
         type="text"
         value="https://"
       />
       <span
-        class="makeStyles-copy-5"
+        class="makeStyles-copyText-183"
       >
         Copy
       </span>

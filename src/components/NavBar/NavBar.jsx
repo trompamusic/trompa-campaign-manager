@@ -33,8 +33,9 @@ export default function NavBar ({ navLinks, iconLink, primaryButton, primaryIcon
       ? (
         <Button
           key={iconLink?.name}
-          component={Link}
-          to={iconLink?.to}
+          component={iconLink?.to ? Link : 'button'}
+          to={iconLink?.to ? iconLink?.to : undefined }
+          onClick={iconLink?.onClick ? iconLink?.onClick : undefined }
           variant="text"
           startIcon={iconLink?.icon}
         >
@@ -49,8 +50,9 @@ export default function NavBar ({ navLinks, iconLink, primaryButton, primaryIcon
       ? (
         <Button
           key={primaryButton?.name}
-          component={Link}
-          to={primaryButton?.to}
+          component={primaryButton?.to ? Link : 'button'}
+          to={primaryButton?.to ? primaryButton?.to : undefined }
+          onClick={primaryButton?.onClick ? primaryButton?.onClick : undefined }
           variant="contained"
           color="primary"
         >
@@ -65,8 +67,9 @@ export default function NavBar ({ navLinks, iconLink, primaryButton, primaryIcon
       ? (
         <Button
           key={primaryIconButton?.name}
-          component={Link}
-          to={primaryIconButton?.to}
+          component={primaryIconButton?.to ? Link : 'button'}
+          to={primaryIconButton?.to ? primaryIconButton?.to : undefined }
+          onClick={primaryIconButton?.onClick ? primaryIconButton?.onClick : undefined }
           variant="contained"
           color="primary"
           startIcon={primaryIconButton?.icon}
