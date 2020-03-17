@@ -13,11 +13,11 @@ import AppbarTop from '../AppbarTop/AppbarTop';
 import FileMusicIcon from '../Icons/FileMusicIcon';
 import MusicProcessIcon from '../Icons/MusicProcessIcon';
 import ProgressCloseIcon from '../Icons/ProgressCloseIcon';
-import styles from './Campaign.styles';
+import styles from './ActiveCampaign.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function Campaign ({ campaignIdentifier }) {
+export default function ActiveCampaign ({ campaignIdentifier }) {
   const { t }   = useTranslation('campaign');
   const classes = useStyles();
 
@@ -110,6 +110,6 @@ export default function Campaign ({ campaignIdentifier }) {
   );
 }
 
-Campaign.propTypes = {
+ActiveCampaign.propTypes = {
   campaignIdentifier: PropTypes.string,
 };

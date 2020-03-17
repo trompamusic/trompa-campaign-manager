@@ -1,10 +1,10 @@
 import React from 'react';
 import { render } from '../../testUtils';
-import Campaign from './Campaign';
+import ActiveCampaign from './ActiveCampaign';
 
-describe('<Campaign />', () => {
+describe('<ActiveCampaign />', () => {
   test('renders and matches snapshot', () => {
-    const { container } = render(<Campaign />);
+    const { container } = render(<ActiveCampaign />);
 
     expect(container.firstChild).toMatchSnapshot();
   });

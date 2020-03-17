@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Home from '../../screens/Home';
 import Task from '../../screens/Task';
-import Campaign from '../../screens/Campaign';
+import ActiveCampaign from '../../screens/ActiveCampaign';
 import NotFound from '../../screens/NotFound';
 
 export default function Root(props) {
@@ -11,7 +11,7 @@ export default function Root(props) {
   ) : (
     <Switch>
       <Route path="/" component={Home} exact />
-      <Route path="/campaign/:campaignIdentifier" component={Campaign} exact />
+      <Route path="/campaign/:campaignIdentifier" component={ActiveCampaign} exact />
       <Route path="/campaign/:campaignIdentifier/task/" component={Task} exact />
       <Route path="/campaign/:campaignIdentifier/task/:taskIdentifier" component={Task} exact />
       <Route component={NotFound} />

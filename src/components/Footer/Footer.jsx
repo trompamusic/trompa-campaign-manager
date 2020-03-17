@@ -23,7 +23,9 @@ export default function Footer () {
         container
       >
         <Grid xs={12} item>
-          <img className={classes.logo} src={images.logo} alt={t('trompa_logo')} />
+          <a target="_blank" rel="noopener noreferrer" href="https://trompamusic.eu/">
+            <img className={classes.logo} src={images.logo} alt={t('trompa_logo')} />
+          </a>
         </Grid>
         <Grid xs={12} item>
           <Grid

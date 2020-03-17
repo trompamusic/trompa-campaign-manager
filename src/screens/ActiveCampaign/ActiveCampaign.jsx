@@ -1,9 +1,9 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet';
-import CampaignContainer from '../../containers/Campaign';
+import ActiveCampaignContainer from '../../containers/ActiveCampaign';
 
-export default function Campaign ({ match }) {
+export default function ActiveCampaign ({ match }) {
   const { t }                  = useTranslation('campaign');
   const { campaignIdentifier } = match.params;
 
@@ -14,7 +14,7 @@ export default function Campaign ({ match }) {
         <meta name="description" content="" />
         <meta property="og:title" content="Campaign" />
       </Helmet>
-      <CampaignContainer campaignIdentifier={campaignIdentifier} />
+      <ActiveCampaignContainer campaignIdentifier={campaignIdentifier} />
     </React.Fragment>
   );
 }

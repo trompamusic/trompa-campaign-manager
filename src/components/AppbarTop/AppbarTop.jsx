@@ -1,7 +1,6 @@
 import React from 'react';
 import * as PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { makeStyles } from '@material-ui/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -15,14 +14,18 @@ export default function AppbarTop ({ children, position, mobile }) {
   const { t }   = useTranslation('common');
   const classes = useStyles();
 
+  const renderLogo = () => (
+    <a target="_blank" rel="noopener noreferrer" href="https://trompamusic.eu/">
+      <img className={classes.logo} src={images.logo} alt={t('trompa_logo')} />
+    </a>
+  );
+
   return (
     <AppBar position={position}>
       <Toolbar classes={{ dense: classNames(classes.dense, { [classes.mobile]: mobile }) }} variant="dense">
         {!mobile && (
           <React.Fragment>
-            <Link to="/">
-              <img className={classes.logo} src={images.logo} alt={t('trompa_logo')} />
-            </Link>
+            {renderLogo()}
             {children}
           </React.Fragment>
         )}
@@ -31,9 +34,7 @@ export default function AppbarTop ({ children, position, mobile }) {
             <div className={classes.hamburger}>
               {children}
             </div>
-            <Link to="/">
-              <img className={classes.logo} src={images.logo} alt={t('trompa_logo')} />
-            </Link>
+            {renderLogo()}
           </React.Fragment>
 
         )}

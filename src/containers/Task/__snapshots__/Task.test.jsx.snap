@@ -9,7 +9,9 @@ exports[`<Task /> matches snapshot 1`] = `
       class="MuiToolbar-root MuiToolbar-dense makeStyles-dense-2 MuiToolbar-gutters"
     >
       <a
-        href="/"
+        href="https://trompamusic.eu/"
+        rel="noopener noreferrer"
+        target="_blank"
       >
         <img
           alt="Trompa logo"

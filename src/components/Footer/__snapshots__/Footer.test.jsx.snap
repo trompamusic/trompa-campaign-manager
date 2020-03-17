@@ -8,11 +8,17 @@ exports[`<Footer /> renders and matches snapshot 1`] = `
     <div
       class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
     >
-      <img
-        alt="Trompa logo"
-        class="makeStyles-logo-2"
-        src="logo.png"
-      />
+      <a
+        href="https://trompamusic.eu/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <img
+          alt="Trompa logo"
+          class="makeStyles-logo-2"
+          src="logo.png"
+        />
+      </a>
     </div>
     <div
       class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
