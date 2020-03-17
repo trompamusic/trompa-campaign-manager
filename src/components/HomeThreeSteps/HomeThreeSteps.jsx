@@ -4,11 +4,11 @@ import { makeStyles } from '@material-ui/styles';
 import { Typography } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import images from '../../theme/images';
-import styles from './ThreeSteps.styles';
+import styles from './HomeThreeSteps.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function ThreeSteps () {
+export default function HomeThreeSteps () {
   const { t }   = useTranslation('home');
   const classes = useStyles();
 
@@ -34,12 +34,12 @@ export default function ThreeSteps () {
                     1
                 </span>
                 <Typography variant="h2">
-                  {t('pick_a_score')}
+                  {t('three_steps.pick_a_score')}
                 </Typography>
               </div>
             </Grid>
             <Grid className={classes.stepsImageContainer} xs={12} md={6} item>
-              <img src={images.pickAScore} alt={t('pick_a_score')} />
+              <img src={images.pickAScore} alt={t('three_steps.pick_a_score')} />
             </Grid>
           </Grid>
         </section>
@@ -54,7 +54,7 @@ export default function ThreeSteps () {
             container
           >
             <Grid className={classes.stepsImageContainer} xs={12} md={6} item>
-              <img src={images.algorithmsWillDistribute} alt={t('algorithms_will_distribute')} />
+              <img src={images.algorithmsWillDistribute} alt={t('three_steps.algorithms_will_distribute')} />
             </Grid>
             <Grid className={classes.stepsTextContainer} xs={12} md={6} item>
               <div className={classes.stepsTextContent}>
@@ -62,7 +62,7 @@ export default function ThreeSteps () {
                     2
                 </span>
                 <Typography variant="h2">
-                  {t('algorithms_will_distribute')}
+                  {t('three_steps.algorithms_will_distribute')}
                 </Typography>
               </div>
             </Grid>
@@ -83,12 +83,12 @@ export default function ThreeSteps () {
                     3
                 </span>
                 <Typography variant="h2">
-                  {t('every_collaborator')}
+                  {t('three_steps.every_collaborator')}
                 </Typography>
               </div>
             </Grid>
             <Grid className={classes.stepsImageContainer} xs={12} md={6} item>
-              <img src={images.everyCollaborator} alt={t('every_collaborator')} />
+              <img src={images.everyCollaborator} alt={t('three_steps.every_collaborator')} />
             </Grid>
           </Grid>
         </section>
@@ -96,7 +96,3 @@ export default function ThreeSteps () {
     </Grid>
   );
 }
-
-ThreeSteps.propTypes = {};
-
-ThreeSteps.defaultProps = {};

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ThreeSteps /> renders and matches snapshot 1`] = `
+exports[`<HomeThreeSteps /> renders and matches snapshot 1`] = `
 <div
   class="MuiGrid-root makeStyles-root-1 MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
 >

@@ -4,12 +4,12 @@ import { makeStyles } from '@material-ui/styles';
 import { Typography } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import images from '../../theme/images';
-import QuotationMarksIcon from '../../components/Icons/QuotationMarksIcon';
-import styles from './Testimonials.styles';
+import QuotationMarksIcon from '../Icons/QuotationMarksIcon';
+import styles from './HomeTestimonials.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function Testimonials () {
+export default function HomeTestimonials () {
   const { t }   = useTranslation('home');
   const classes = useStyles();
 
@@ -23,7 +23,7 @@ export default function Testimonials () {
       <Grid xs={12} item>
         <section className={classes.testimonialsContainer}>
           <Typography variant="h2">
-            {t('supported_by')}
+            {t('testimonials.supported_by')}
           </Typography>
           <div className={classes.testimonialsBlock}>
             <div className={classes.testimonial}>
@@ -83,7 +83,3 @@ export default function Testimonials () {
     </Grid>
   );
 }
-
-Testimonials.propTypes = {};
-
-Testimonials.defaultProps = {};

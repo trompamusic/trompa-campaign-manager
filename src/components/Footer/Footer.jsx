@@ -10,7 +10,7 @@ import styles from './Footer.styles';
 const useStyles = makeStyles(styles);
 
 export default function Footer () {
-  const { t }   = useTranslation('home');
+  const { t }   = useTranslation('footer');
   const classes = useStyles();
 
   return (
@@ -35,7 +35,7 @@ export default function Footer () {
           >
             <Grid xs={12} sm={4} item>
               <Typography variant="h3">
-                {t('footer.about')}
+                {t('about')}
               </Typography>
 
               <Grid
@@ -44,18 +44,18 @@ export default function Footer () {
                 container
               >
                 <Grid className={classes.linksBlock} xs={12} md={6} item>
-                  <Link to="/">{t('footer.about_us')}</Link>
-                  <Link to="/">{t('footer.partners')}</Link>
+                  <Link to="/">{t('about_us')}</Link>
+                  <Link to="/">{t('partners')}</Link>
                 </Grid>
                 <Grid className={classes.linksBlock} xs={12} md={6} item>
-                  <Link to="/">{t('footer.support')}</Link>
-                  <Link to="/">{t('footer.news')}</Link>
+                  <Link to="/">{t('support')}</Link>
+                  <Link to="/">{t('news')}</Link>
                 </Grid>
               </Grid>
             </Grid>
             <Grid xs={12} sm={4} item>
               <Typography variant="h3">
-                {t('footer.user_cases')}
+                {t('user_cases')}
               </Typography>
               <Grid
                 justify="flex-start"
@@ -63,19 +63,19 @@ export default function Footer () {
                 container
               >
                 <Grid className={classes.linksBlock} xs={12} lg={6} item>
-                  <Link to="/">{t('footer.music_scolars')}</Link>
-                  <Link to="/">{t('footer.choir_singers')}</Link>
-                  <Link to="/">{t('footer.content_owners')}</Link>
+                  <Link to="/">{t('music_scolars')}</Link>
+                  <Link to="/">{t('choir_singers')}</Link>
+                  <Link to="/">{t('content_owners')}</Link>
                 </Grid>
                 <Grid className={classes.linksBlock} xs={12} lg={6} item>
-                  <Link to="/">{t('footer.instrumental_players')}</Link>
-                  <Link to="/">{t('footer.music_enthusiasts')}</Link>
+                  <Link to="/">{t('instrumental_players')}</Link>
+                  <Link to="/">{t('music_enthusiasts')}</Link>
                 </Grid>
               </Grid>
             </Grid>
             <Grid className={classes.linksLastColumn} xs={12} sm={4} item>
               <Typography variant="h3">
-                {t('footer.get_involved')}
+                {t('get_involved')}
               </Typography>
               <Grid
                 justify="flex-start"
@@ -83,8 +83,8 @@ export default function Footer () {
                 container
               >
                 <Grid className={classes.linksBlock} xs={12} lg={6} item>
-                  <Link to="/"> {t('footer.newsletter')}</Link>
-                  <Link to="/"> {t('footer.twitter')}</Link>
+                  <Link to="/"> {t('newsletter')}</Link>
+                  <Link to="/"> {t('twitter')}</Link>
                 </Grid>
                 <Grid className={classes.linksBlock} xs={false} lg={6} item />
               </Grid>
@@ -113,7 +113,3 @@ export default function Footer () {
     </footer>
   );
 }
-
-Footer.propTypes = {};
-
-Footer.defaultProps = {};

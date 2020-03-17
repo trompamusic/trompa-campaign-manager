@@ -1,10 +1,10 @@
 import React from 'react';
 import { render } from '../../testUtils';
-import Testimonials from './Testimonials';
+import HomeThreeSteps from './HomeThreeSteps';
 
-describe('<Testimonials />', () => {
+describe('<HomeThreeSteps />', () => {
   test('renders and matches snapshot', () => {
-    const { container } = render(<Testimonials />);
+    const { container } = render(<HomeThreeSteps />);
 
     expect(container.firstChild).toMatchSnapshot();
   });

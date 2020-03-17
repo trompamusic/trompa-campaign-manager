@@ -8,10 +8,10 @@ import Button from '@material-ui/core/Button';
 import Jumbotron from '../../components/Jumbotron/Jumbotron';
 import images from '../../theme/images';
 import NavBar from '../../components/NavBar/NavBar';
-import TwoSections from '../../components/TwoSections/TwoSections';
-import ThreeSteps from '../../components/ThreeSteps/ThreeSteps';
-import Testimonials from '../../components/Testimonials/Testimonials';
-import AboutTrompa from '../../components/AboutTrompa/AboutTrompa';
+import HomeTwoSections from '../../components/HomeTwoSections/HomeTwoSections';
+import HomeThreeSteps from '../../components/HomeThreeSteps/HomeThreeSteps';
+import HomeTestimonials from '../../components/HomeTestimonials/HomeTestimonials';
+import HomeAboutTrompa from '../../components/HomeAboutTrompa/HomeAboutTrompa';
 import Footer from '../../components/Footer/Footer';
 import * as startupActions from '../../redux/Startup/Startup.actions';
 import styles from './Home.styles';
@@ -68,10 +68,10 @@ export default function Home() {
           {t('join_campaign')}
         </Button>
       </Jumbotron>
-      <TwoSections />
-      <ThreeSteps />
-      <Testimonials />
-      <AboutTrompa />
+      <HomeTwoSections />
+      <HomeThreeSteps />
+      <HomeTestimonials />
+      <HomeAboutTrompa />
       <Footer />
     </div>
   );

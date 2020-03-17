@@ -5,11 +5,11 @@ import { makeStyles } from '@material-ui/styles';
 import { Typography } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import images from '../../theme/images';
-import styles from './TwoSections.styles';
+import styles from './HomeTwoSections.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function TwoSections () {
+export default function HomeTwoSections () {
   const { t }   = useTranslation('home');
   const classes = useStyles();
 
@@ -23,28 +23,28 @@ export default function TwoSections () {
       <Grid className={classNames(classes.twoSections, classes.greatScores)} xs={12} md={6} item>
         <section>
           <Typography variant="h2">
-            {t('great_scores_title')}
+            {t('two_sections.great_scores_title')}
           </Typography>
           <Typography gutterBottom>
-            {t('great_scores_paragraph')}
+            {t('two_sections.great_scores_paragraph')}
           </Typography>
-          <img src={images.greatScores} alt={t('great_scores_alt')} />
+          <img src={images.greatScores} alt={t('two_sections.great_scores_alt')} />
         </section>
       </Grid>
       <Grid className={classNames(classes.twoSections, classes.unlockClassics)} xs={12} md={6} item>
         <section>
           <Typography variant="h2">
-            {t('unlock_classics_title')}
+            {t('two_sections.unlock_classics_title')}
           </Typography>
           <Typography gutterBottom>
-            {t('unlock_classics_paragraph')}
+            {t('two_sections.unlock_classics_paragraph')}
           </Typography>
           <div className={classes.relative}>
-            <img src={images.unlockClassics} alt={t('unlock_classics_alt')} />
+            <img src={images.unlockClassics} alt={t('two_sections.unlock_classics_alt')} />
             <div className={classes.unlockClassicsImageOverlay}>
               <span>500k</span>
               <Typography variant="subtitle2">
-                {t('scores_available_online')}
+                {t('two_sections.scores_available_online')}
                 <a target="_blank" rel="noopener noreferrer" href="https://imslp.org/wiki/Main_Page">
                 imslp
                 </a>
@@ -56,7 +56,3 @@ export default function TwoSections () {
     </Grid>
   );
 }
-
-TwoSections.propTypes = {};
-
-TwoSections.defaultProps = {};
