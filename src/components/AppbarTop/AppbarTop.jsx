@@ -18,7 +18,8 @@ export default function AppbarTop ({
   position, 
   hasContextNavigation,
   type,
-  campaign, 
+  campaign,
+  campaignIdentifier, 
   mobile,
 }) {
   const { t }   = useTranslation();
@@ -29,7 +30,7 @@ export default function AppbarTop ({
       <Toolbar classes={{ dense: classNames(classes.dense, { [classes.mobile]: mobile }) }} variant="dense">
         {!mobile && (
           <React.Fragment>
-            <Link className={classes.link} to="/">
+            <Link className={classes.link} to={`/campaign/${campaignIdentifier}`}>
               {hasContextNavigation ? (
                 <div className={classes.header}>
                   <ArrowBackIcon className={classes.backIcon} />
@@ -52,7 +53,7 @@ export default function AppbarTop ({
         {mobile && (
           <React.Fragment>
             {hasContextNavigation ? (
-              <Link className={classes.link} to="/">
+              <Link className={classes.link} to={`/campaign/${campaignIdentifier}`}>
                 <div className={classes.header}>
                   <ArrowBackIcon className={classes.backIcon} />
                   <div>

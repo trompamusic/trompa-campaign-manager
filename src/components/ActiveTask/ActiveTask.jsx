@@ -25,7 +25,11 @@ export default function ActiveTask ({
 
   return (
     <React.Fragment>
-      <AppbarTop type={name} hasContextNavigation>
+      <AppbarTop 
+        type={name} 
+        campaignIdentifier={campaignIdentifier} 
+        hasContextNavigation
+      >
         <NicknameMenuContainer campaignIdentifier={campaignIdentifier} />
       </AppbarTop>
       <iframe

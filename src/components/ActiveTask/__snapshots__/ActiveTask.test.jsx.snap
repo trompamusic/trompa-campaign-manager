@@ -9,7 +9,7 @@ exports[`<ActiveTask /> renders and matches snapshot 1`] = `
   >
     <a
       class="makeStyles-link-4"
-      href="/"
+      href="/campaign/undefined"
     >
       <div
         class="makeStyles-header-5"

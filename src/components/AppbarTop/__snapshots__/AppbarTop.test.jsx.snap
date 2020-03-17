@@ -9,7 +9,7 @@ exports[`<AppbarTop /> renders and matches snapshot 1`] = `
   >
     <a
       class="makeStyles-link-3"
-      href="/"
+      href="/campaign/undefined"
     >
       <img
         alt="Trompa logo"

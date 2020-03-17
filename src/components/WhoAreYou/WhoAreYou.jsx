@@ -52,7 +52,11 @@ export default function WhoAreYou ({
     >
       {({ values, handleChange, handleSubmit, handleBlur }) => (
         <React.Fragment>
-          <AppbarTop type="General task" campaign="Test2" hasContextNavigation />
+          <AppbarTop 
+            type="General task" 
+            campaignIdentifier={campaignIdentifier} 
+            hasContextNavigation 
+          />
           <div className={classes.root}>
             <div style={{ display: 'flex', alignItems: 'flex-end' }}>
               <img className={classes.person} src={images.personTrumpetStandingLeft} alt="" />

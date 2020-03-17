@@ -9,7 +9,7 @@ exports[`<WhoAreYou /> renders and matches snapshot 1`] = `
   >
     <a
       class="makeStyles-link-13"
-      href="/"
+      href="/campaign/undefined"
     >
       <div
         class="makeStyles-header-14"
@@ -34,7 +34,7 @@ exports[`<WhoAreYou /> renders and matches snapshot 1`] = `
           <h5
             class="MuiTypography-root makeStyles-title-17 MuiTypography-h5"
           >
-            Test2
+            Unknown Campaign
           </h5>
         </div>
       </div>
