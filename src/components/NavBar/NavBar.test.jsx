@@ -2,6 +2,8 @@ import React from 'react';
 import { createMemoryHistory } from "history";
 import { Router } from "react-router";
 import { fireEvent } from '@testing-library/react';
+import ShareIcon from '@material-ui/icons/Share';
+import GetAppIcon from '@material-ui/icons/GetApp';
 import { render } from '../../testUtils';
 import NavBar from './NavBar';
 
@@ -12,75 +14,85 @@ describe('<NavBar />', () => {
         navLinks={[
           { name: 'Home', to: '/' },
         ]}
-        buttons={[
-          { name: 'Join campaign', to: 'campaign/e63fc3c5-f84e-4a64-9d5b-98a49dd4680c' },
-        ]}
-        renderDrawerContent={() => ''}
+        primaryButton={{
+          name: 'Join campaign', to: 'campaign/e63fc3c5-f84e-4a64-9d5b-98a49dd4680c',
+        }}
+        drawerContent={<div />}
       />
     ));
 
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('displays navLink passed as prop', () => {
-    const { getByText } = render((
-      <NavBar
-        navLinks={[
-          { name: 'Home', to: '/' },
-        ]}
-        renderDrawerContent={() => ''}
-      />
-    ));
-
-    expect(getByText('Home')).toBeTruthy();
-  });
-
-  test('click on navLink goes to correct route', () => {
+  test('displays navLinks and goes to correct route', () => {
     const history       = createMemoryHistory();
     const { getByText } = render((
       <Router history={history}>
         <NavBar
           navLinks={[
-            { name: 'Home', to: '/' },
+            { name: 'Home', to: 'test' },
           ]}
-          renderDrawerContent={() => ''}
+          drawerContent={<div />}
         />
       </Router>
     ));
 
     fireEvent.click(getByText('Home'));
     expect(getByText('Home')).toBeTruthy();
-    expect(history.location.pathname).toBe("/");
+    expect(history.location.pathname).toBe("/test");
   });
 
-  test('displays button passed as prop', () => {
-    const { getByText } = render((
-      <NavBar
-        buttons={[
-          { name: 'Join campaign', to: 'campaign/e63fc3c5-f84e-4a64-9d5b-98a49dd4680c' },
-        ]}
-        renderDrawerContent={() => ''}
-      />
-    ));
-
-    expect(getByText('Join campaign')).toBeTruthy();
-  });
-
-  test('click on button goes to correct route', () => {
+  test('displays icon link and goes to correct route', () => {
     const history       = createMemoryHistory();
     const { getByText } = render((
       <Router history={history}>
         <NavBar
-          buttons={[
-            { name: 'Join campaign', to: 'campaign/e63fc3c5-f84e-4a64-9d5b-98a49dd4680c' },
-          ]}
-          renderDrawerContent={() => ''}
+          iconLink={{
+            name: 'Share', to: 'test', icon: <ShareIcon />,
+          }}
+          drawerContent={<div />}
+        />
+      </Router>
+    ));
+
+    fireEvent.click(getByText('Share'));
+    expect(getByText('Share')).toBeTruthy();
+    expect(history.location.pathname).toBe("/test");
+  });
+
+  test('displays primary button and goes to correct route', () => {
+    const history       = createMemoryHistory();
+    const { getByText } = render((
+      <Router history={history}>
+        <NavBar
+          primaryButton={{
+            name: 'Join campaign', to: 'test',
+          }}
+          drawerContent={<div />}
         />
       </Router>
     ));
 
     fireEvent.click(getByText('Join campaign'));
     expect(getByText('Join campaign')).toBeTruthy();
-    expect(history.location.pathname).toBe("/campaign/e63fc3c5-f84e-4a64-9d5b-98a49dd4680c");
+    expect(history.location.pathname).toBe("/test");
+  });
+
+  test('displays primary icon button and goes to correct route', () => {
+    const history       = createMemoryHistory();
+    const { getByText } = render((
+      <Router history={history}>
+        <NavBar
+          primaryIconButton={{
+            name: 'Download', to: 'test', icon: <GetAppIcon /> ,
+          }}
+          drawerContent={<div />}
+        />
+      </Router>
+    ));
+
+    fireEvent.click(getByText('Download'));
+    expect(getByText('Download')).toBeTruthy();
+    expect(history.location.pathname).toBe("/test");
   });
 });

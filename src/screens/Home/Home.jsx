@@ -27,12 +27,6 @@ export default function Home() {
     dispatch(startupActions.startup());
   }, [dispatch]);
 
-  const renderDrawerContent = () => {
-    return (
-      <div />
-    );
-  };
-
   return (
     <div>
       <Helmet>
@@ -44,10 +38,8 @@ export default function Home() {
           { name: t('home'), to: '/' },
           { name: t('start_campaign'), to: '/createCampaign' },
         ]}
-        buttons={[
-          { name: t('join_campaign'), to: 'campaign/e63fc3c5-f84e-4a64-9d5b-98a49dd4680c' },
-        ]}
-        renderDrawerContent={renderDrawerContent}
+        primaryButton={{ name: t('join_campaign'), to: 'campaign/e63fc3c5-f84e-4a64-9d5b-98a49dd4680c' }}
+        drawerContent={<div />}
       />
       <Jumbotron
         image={images.collaborateHero}

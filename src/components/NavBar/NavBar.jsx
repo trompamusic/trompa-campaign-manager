@@ -13,7 +13,7 @@ import styles from './NavBar.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function NavBar ({ navLinks, buttons, renderDrawerContent }) {
+export default function NavBar ({ navLinks, iconLink, primaryButton, primaryIconButton, drawerContent }) {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const classes = useStyles();
@@ -28,19 +28,52 @@ export default function NavBar ({ navLinks, buttons, renderDrawerContent }) {
       : null;
   };
 
-  const renderButtons = () => {
-    return buttons?.length > 0
-      ? buttons.map(({ name, to }) => (
+  const renderIconLink = () => {
+    return iconLink
+      ? (
         <Button
-          key={name}
+          key={iconLink?.name}
           component={Link}
-          to={to}
+          to={iconLink?.to}
+          variant="text"
+          startIcon={iconLink?.icon}
+        >
+          {iconLink?.name}
+        </Button>
+      )
+      : null;
+  };
+
+  const renderPrimaryButton = () => {
+    return primaryButton
+      ? (
+        <Button
+          key={primaryButton?.name}
+          component={Link}
+          to={primaryButton?.to}
           variant="contained"
           color="primary"
         >
-          {name}
+          {primaryButton?.name}
         </Button>
-      ))
+      )
+      : null;
+  };
+
+  const renderPrimaryIconButton = () => {
+    return primaryIconButton
+      ? (
+        <Button
+          key={primaryIconButton?.name}
+          component={Link}
+          to={primaryIconButton?.to}
+          variant="contained"
+          color="primary"
+          startIcon={primaryIconButton?.icon}
+        >
+          {primaryIconButton?.name}
+        </Button>
+      )
       : null;
   };
 
@@ -63,14 +96,16 @@ export default function NavBar ({ navLinks, buttons, renderDrawerContent }) {
               <CloseIcon />
             </IconButton>
           </div>
-          {renderDrawerContent()}
+          {drawerContent}
         </SwipeableDrawer>
       </div>
       <div className={classes.desktop}>
         <AppbarTop>
           <div>
             {renderLinks()}
-            {renderButtons()}
+            {renderIconLink()}
+            {renderPrimaryButton()}
+            {renderPrimaryIconButton()}
           </div>
         </AppbarTop>
       </div>
@@ -79,7 +114,9 @@ export default function NavBar ({ navLinks, buttons, renderDrawerContent }) {
 }
 
 NavBar.propTypes = {
-  navLinks           : PropTypes.array,
-  buttons            : PropTypes.array,
-  renderDrawerContent: PropTypes.func,
+  navLinks         : PropTypes.array,
+  iconLink         : PropTypes.object,
+  primaryButton    : PropTypes.object,
+  primaryIconButton: PropTypes.object,
+  drawerContent    : PropTypes.element,
 };

@@ -4,6 +4,10 @@
   "copy": "Copy",
   "enhance_classical_sheet_music_together": "Enhance classical sheet music, together",
   "help_this_campaign": "Help this campaign",
+  "navbar": {
+    "download_mei_file": "Download MEI file",
+    "share": "Share"
+  },
   "share_this_campaign": "Share this campaign",
   "start_your_own_campaign": "Start your own campaign",
   "subscribe_for_updates": "Subscribe for updates"

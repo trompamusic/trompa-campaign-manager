@@ -9,7 +9,6 @@ import TextField from '@material-ui/core/TextField';
 import { Link } from 'react-router-dom';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
-import AppbarTop from '../AppbarTop/AppbarTop';
 import FileMusicIcon from '../Icons/FileMusicIcon';
 import MusicProcessIcon from '../Icons/MusicProcessIcon';
 import ProgressCloseIcon from '../Icons/ProgressCloseIcon';
@@ -23,7 +22,6 @@ export default function ActiveCampaign ({ campaignIdentifier }) {
 
   return (
     <React.Fragment>
-      <AppbarTop />
       <div className={classes.section}>
         <Typography variant="caption">
         &lt;campaign_leader&gt; has started this campaign. Help us to improve this score.

@@ -1,4 +1,4 @@
-const overrides = ({ palette, typography, breakpoints }) => ({
+const overrides = ({ palette, typography, spacing, breakpoints }) => ({
   MuiAppBar: {
     colorPrimary: {
       color          : palette.text.darkGrey,
@@ -12,12 +12,13 @@ const overrides = ({ palette, typography, breakpoints }) => ({
     },
     text: {
       color     : palette.text.blue,
-      fontWeight: 'bold',
+      fontWeight: 600,
       padding   : '6px 16px',
       '& svg'   : {
         width : 18,
         height: 18,
       },
+      marginRight: spacing(1.5),
     },
     containedPrimary: {
       background: palette.primary.main,
