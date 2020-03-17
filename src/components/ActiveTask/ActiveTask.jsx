@@ -18,6 +18,7 @@ export default function ActiveTask ({
   campaignIdentifier, 
   onNextTaskButtonClick,
   name, 
+  handleNotification,
 }) {
   const { t }   = useTranslation('task');
   const classes = useStyles();
@@ -45,7 +46,14 @@ export default function ActiveTask ({
           </Button>
         )}
         {!loading && !noTasks && (
-          <Button onClick={() => onNextTaskButtonClick()} variant="contained" color="primary">
+          <Button 
+            onClick={() => { 
+              onNextTaskButtonClick();
+              handleNotification('success', t('notifications:thank_you_for_contributing'));
+            }} 
+            variant="contained" 
+            color="primary"
+          >
             {t('next_task')}
           </Button>
         )}
@@ -61,4 +69,5 @@ ActiveTask.propTypes = {
   url                  : PropTypes.string,
   campaignIdentifier   : PropTypes.string,
   onNextTaskButtonClick: PropTypes.func,
+  handleNotification   : PropTypes.func,
 };

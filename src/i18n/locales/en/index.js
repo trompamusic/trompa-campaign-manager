@@ -6,4 +6,5 @@ export default {
   notfound: require('./notfound.json'),
   task: require('./task.json'),
   whoAreYou: require('./whoAreYou'),
+  notifications: require('./notifications'),
 };

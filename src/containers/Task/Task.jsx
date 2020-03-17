@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { gql } from "apollo-boost";
 import client from '../../graphql';
 import ActiveTask from '../../components/ActiveTask';
+import { NotificationContext } from '../NotificationsProvider/NotificationsProvider';
 
 export default function Task({ campaignIdentifier, taskIdentifier }) {
   const history                               = useHistory();
@@ -95,7 +96,20 @@ export default function Task({ campaignIdentifier, taskIdentifier }) {
     return <ActiveTask loading={true} campaignIdentifier={campaignIdentifier} />;
   }
 
-  return <ActiveTask name={task.name} url={task.url} identifier={task.identifier} campaignIdentifier={campaignIdentifier} onNextTaskButtonClick={handleNextTaskButtonClick} />;
+  return (
+    <NotificationContext.Consumer>
+      {({ handleNotification }) => (
+        <ActiveTask 
+          name={task.name} 
+          url={task.url} 
+          identifier={task.identifier} 
+          campaignIdentifier={campaignIdentifier} 
+          onNextTaskButtonClick={handleNextTaskButtonClick}
+          handleNotification={handleNotification}
+        />
+      )}
+    </NotificationContext.Consumer>
+  );
 }
 
 Task.propTypes = {

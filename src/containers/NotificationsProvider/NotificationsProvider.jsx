@@ -1,51 +1,56 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector, shallowEqual } from 'react-redux';
-import { makeStyles } from '@material-ui/styles';
+import React, { useState } from 'react';
 import Snackbar from '@material-ui/core/Snackbar';
-// import Alert from '@material-ui/lab/Alert';
-import * as PropTypes from 'prop-types';
-import styles from './NotificationsProvider.styles';
+import Alert from '@material-ui/lab/Alert';
+import CloseIcon from '@material-ui/icons/Close';
 
-const useStyles = makeStyles(styles);
+export const NotificationContext = React.createContext({});
 
 export default function NotificationsProvider ({
   children,
-  open,
-  message,
-  handleClose,
-  type,
 }) {
-  const { t }   = useTranslation();
-  const classes = useStyles();
+  const [notificationIsOpen, setNotificationIsOpen]   = useState(false);
+  const [notificationMessage, setNotificationMessage] = useState('');
+  const [notificationType, setNotificationType]       = useState('');
 
-  // onClose={handleClose} 
-  // severity={type}
+  const handleNotification = (type, message) => {
+    setNotificationIsOpen(true);
+    setNotificationMessage(message);
+    setNotificationType(type);
+  };
+
+  const handleClose = () => {
+    setNotificationIsOpen(false);
+    setTimeout(() => {
+      setNotificationMessage('');
+      setNotificationType('');
+    }, 500);
+  };
+
+  const state = {
+    handleNotification,
+  };
 
   return (
-    <React.Fragment>
+    <NotificationContext.Provider
+      value={state}
+    >
       {children}
       <Snackbar 
-        open={open} 
+        open={notificationIsOpen} 
         autoHideDuration={6000} 
         onClose={handleClose}
       >
-        {/* <Alert severity="success"> */}
-        {message}
-        {/* </Alert> */}
+        <Alert 
+          onClose={handleClose} 
+          severity={notificationType}
+          variant="filled"
+          action={
+            <CloseIcon onClick={handleClose} />
+          }
+        >
+          {notificationMessage}
+        </Alert>
       </Snackbar>
-    </React.Fragment>
+    </NotificationContext.Provider>
   );
 }
-
-NotificationsProvider.propTypes = {
-  open       : PropTypes.bool,
-  message    : PropTypes.string,
-  handleClose: PropTypes.func,
-  type       : PropTypes.string,
-};
-
-NotificationsProvider.defaultProps = {
-  open: true,
-  type: 'success',
-};
