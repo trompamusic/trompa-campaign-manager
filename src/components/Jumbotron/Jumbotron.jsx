@@ -23,6 +23,7 @@ export default function Jumbotron ({ children, image, text }) {
       </Typography>
       <Typography variant="h2">
         {text.secondaryTitle}
+        <span className={classes.compositionTitle}>Requiem in D minor</span>
       </Typography>
       <Typography gutterBottom>
         {text.introductionParagraph}
@@ -32,13 +33,13 @@ export default function Jumbotron ({ children, image, text }) {
   );
 
   return (
-    <React.Fragment>
+    <header>
       <div className={classes.root}>
         {renderContent('desktop')}
         <img className={classes.image} src={image} alt="" />
       </div>
       {renderContent('mobile')}
-    </React.Fragment>
+    </header>
   );
 }
 

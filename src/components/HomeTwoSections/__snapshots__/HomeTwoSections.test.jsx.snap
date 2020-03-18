@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HomeTwoSections /> renders and matches snapshot 1`] = `
+<div
+  class="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
+>
+  <div
+    class="MuiGrid-root makeStyles-twoSections-2 makeStyles-greatScores-3 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+  >
+    <section>
+      <h2
+        class="MuiTypography-root MuiTypography-h2"
+      >
+        Great scores are expensive
+      </h2>
+      <p
+        class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom"
+      >
+        Finding playable scores for your orchestra is difficult. Renting great editions comes at a cost, public domain editions are often unplayable. A shame, because most classics belong to us all.
+      </p>
+      <img
+        alt="Great scores are expensive. Photo by Marius Masalar."
+        src="great_scores.png"
+      />
+    </section>
+  </div>
+  <div
+    class="MuiGrid-root makeStyles-twoSections-2 makeStyles-unlockClassics-4 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+  >
+    <section>
+      <h2
+        class="MuiTypography-root MuiTypography-h2"
+      >
+        We unlock the classics for all
+      </h2>
+      <p
+        class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom"
+      >
+        Turn a free public domain work into a ready to perform, digital score. With advanced machine learning and a bit of help from your community any orchestra can do it.
+      </p>
+      <div
+        class="makeStyles-relative-1"
+      >
+        <img
+          alt="We unlock the classics for all. Photo by Kael Bloom."
+          src="unlock_classics.png"
+        />
+        <div
+          class="makeStyles-unlockClassicsImageOverlay-5"
+        >
+          <span>
+            500k
+          </span>
+          <h6
+            class="MuiTypography-root MuiTypography-subtitle2"
+          >
+            Scores available online 
+            <a
+              href="https://imslp.org/wiki/Main_Page"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              imslp
+            </a>
+          </h6>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+`;

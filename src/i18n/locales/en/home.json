@@ -1,11 +1,45 @@
 {
+  "about": {
+    "about_TROMPA": "About TROMPA",
+    "about_TROMPA_paragraph": "TROMPA (Towards Richer Online Music Public-domain Archives) is an international research project, sponsored by the European Union. In the project, we are investigating how we can make public-domain digital music resources more accessible...with a little bit of help from state-of-the-art technology, and you!",
+    "partners": {
+      "goldsmiths": "Goldsmiths, University of London",
+      "mdw": "Universität für Musik und darstellende Kunst Wien",
+      "muziekweb": "Muziekweb",
+      "peachnote": "Peachnote",
+      "rco": "Royal Concertgebouw Orchestra",
+      "tudelft": "Technische Universiteit Delft",
+      "upfmtg": "Universitat Pompeu Fabra MTG",
+      "uptide": "Universitat Pompeu Fabra TIDE",
+      "videodock": "Videodock",
+      "voctroLabs": "Voctro Labs"
+      }
+    },
   "create_modern_classics": "Create modern, playable scores from known and unknown classics.",
-  "join_campaign": "Join campaign",
-  "help_us": "Help us digitise the Requiem in D minor",
+  "help_us": "Help us digitise the ",
   "home": "Home",
+  "join_campaign": "Join campaign",
   "make_more_memorable": "Make even Mozart more memorable",
   "meta_description": "Help us digitize the Requiem in D minor. Create modern, playable scores from known and unknown classics.",
   "page_title": "Make even Mozart more memorable",
   "start_campaign": "Start your own campaign",
-  "trompa_collaboration_campaign_manager": "Trompa collaboration campaign manager"
-}
+  "testimonials": {
+    "supported_by": "Supported by"
+    },
+  "trompa_collaboration_campaign_manager": "Trompa collaboration campaign manager",
+  "trompa_logo": "Trompa logo",
+  "three_steps": {
+    "algorithms_will_distribute": "Our algorithms will distribute tasks to everyone",
+    "every_collaborator": "Every collaborator can contribute to a better score",
+    "pick_a_score": "Pick a score and invite your collaborators"
+    },
+  "two_sections": {
+    "great_scores_alt": "Great scores are expensive. Photo by Marius Masalar.",
+    "great_scores_title": "Great scores are expensive",
+    "great_scores_paragraph": "Finding playable scores for your orchestra is difficult. Renting great editions comes at a cost, public domain editions are often unplayable. A shame, because most classics belong to us all.",
+    "scores_available_online": "Scores available online ",
+    "unlock_classics_alt": "We unlock the classics for all. Photo by Kael Bloom.",
+    "unlock_classics_title": "We unlock the classics for all",
+    "unlock_classics_paragraph": "Turn a free public domain work into a ready to perform, digital score. With advanced machine learning and a bit of help from your community any orchestra can do it."
+    }
+  }

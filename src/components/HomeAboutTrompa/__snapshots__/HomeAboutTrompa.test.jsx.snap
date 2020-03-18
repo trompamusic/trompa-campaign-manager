@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HomeAboutTrompa /> renders and matches snapshot 1`] = `
+<div
+  class="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
+>
+  <div
+    class="MuiGrid-root makeStyles-aboutTrompaSection-1 MuiGrid-item MuiGrid-grid-xs-12"
+  >
+    <section>
+      <h2
+        class="MuiTypography-root MuiTypography-h2"
+      >
+        About TROMPA
+      </h2>
+      <p
+        class="MuiTypography-root MuiTypography-body1"
+      >
+        TROMPA (Towards Richer Online Music Public-domain Archives) is an international research project, sponsored by the European Union. In the project, we are investigating how we can make public-domain digital music resources more accessible...with a little bit of help from state-of-the-art technology, and you!
+      </p>
+      <div
+        class="makeStyles-partnersContainer-2"
+      >
+        <img
+          alt="Universitat Pompeu Fabra TIDE"
+          src="upf_tide.png"
+        />
+        <img
+          alt="Universitat Pompeu Fabra MTG"
+          src="upf_mtg.png"
+        />
+        <img
+          alt="Muziekweb"
+          src="muziekweb.png"
+        />
+        <img
+          alt="Peachnote"
+          src="peachnote.png"
+        />
+        <img
+          alt="Videodock"
+          src="videodock.png"
+        />
+        <img
+          alt="Goldsmiths, University of London"
+          src="goldsmiths.png"
+        />
+        <img
+          alt="Royal Concertgebouw Orchestra"
+          class="makeStyles-verticalLogo-3"
+          src="rco.png"
+        />
+        <img
+          alt="Voctro Labs"
+          class="makeStyles-verticalLogo-3"
+          src="voctro_labs.png"
+        />
+        <img
+          alt="Universität für Musik und darstellende Kunst Wien"
+          class="makeStyles-verticalLogo-3"
+          src="mdw.png"
+        />
+        <img
+          alt="Technische Universiteit Delft"
+          src="tu_delft.png"
+        />
+      </div>
+    </section>
+  </div>
+</div>
+`;

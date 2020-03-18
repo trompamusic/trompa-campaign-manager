@@ -9,6 +9,7 @@ export default {
     fontSize    : '52.18px',
     marginBottom: 16,
     fontFamily  : fontFamilyAvenir,
+    src         : `local(${fontFamilyAvenir}), url(./fonts/Avenir-Black.ttf) format('truetype')`,
     lineHeight  : 1,
   },
   h2: {
@@ -17,15 +18,16 @@ export default {
     fontSize    : '26.09px',
     marginBottom: 8,
     fontFamily  : fontFamilyAvenir,
-    lineHeight  : 1,
+    src         : `local(${fontFamilyAvenir}), url(./fonts/Avenir-Black.ttf) format('truetype')`,
+    lineHeight  : 1.2,
   },
   h3: {
     color     : '#3A3A3A',
-    fontWeight: 'bold',
-    fontSize  : '23.56px',
+    fontWeight: 600,
+    fontSize  : '21.50px',
   },
   subtitle1: {
-    fontWeight: 'bold',
+    fontWeight: 600,
   },
   subtitle2: {
     color        : 'rgba(0,0,0,0.87)',
