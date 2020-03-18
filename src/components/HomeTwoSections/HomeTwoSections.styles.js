@@ -44,7 +44,7 @@ export default ({ spacing, typography, palette, breakpoints }) => createStyles({
     display   : 'flex',
     alignItems: 'flex-end',
     '& span'  : {
-      fontFamily : typography.fontFamilyAvenir,
+      fontFamily : typography.fontFamilyNunitoSans,
       color      : palette.primary.main,
       fontSize   : typography.pxToRem(100),
       textShadow : `2px 2px 0px ${palette.common.white}`,
