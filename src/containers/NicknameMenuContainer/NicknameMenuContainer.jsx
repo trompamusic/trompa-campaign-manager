@@ -4,19 +4,16 @@ import PropTypes from 'prop-types';
 import NicknameMenu from '../../components/NicknameMenu';
 
 export default function NicknameMenuContainer ({ campaignIdentifier }) {
-  const history                                     = useHistory();
-  const nickname                                    = localStorage.getItem('nickname');
-  const [nicknameMenuOpen, setNicknameMenuOpen]     = useState(false);
-  const [nicknameMenuTarget, setNicknameMenuTarget] = useState(null);
+  const history                                   = useHistory();
+  const nickname                                  = localStorage.getItem('nickname');
+  const [nicknameMenuState, setNicknameMenuState] = useState({ open: false, target: null });
 
   const handleOpen = event => {
-    setNicknameMenuTarget(event.currentTarget);
-    setNicknameMenuOpen(true);
+    setNicknameMenuState({ open: true, target: event.currentTarget });
   };
 
   const handleClose = () => {
-    setNicknameMenuOpen(false);
-    setNicknameMenuTarget(null);
+    setNicknameMenuState({ open: false, target: null });
   };
 
   const onLogoutClick = () => {
@@ -27,8 +24,8 @@ export default function NicknameMenuContainer ({ campaignIdentifier }) {
 
   return (
     <NicknameMenu 
-      isOpen={nicknameMenuOpen}
-      target={nicknameMenuTarget}
+      isOpen={nicknameMenuState.open}
+      target={nicknameMenuState.target}
       handleOpen={handleOpen}
       handleClose={handleClose}
       onLogoutClick={onLogoutClick}
@@ -40,5 +37,3 @@ export default function NicknameMenuContainer ({ campaignIdentifier }) {
 NicknameMenuContainer.propTypes = {
   campaignIdentifier: PropTypes.string,
 };
-
-NicknameMenuContainer.defaultProps = {};

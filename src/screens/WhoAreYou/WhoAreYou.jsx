@@ -11,7 +11,7 @@ export default function WhoAreYou ({ match }) {
     <React.Fragment>
       <Helmet>
         <title>{t('who_are_you')}</title>
-        <meta name="description" content="" />
+        <meta name="description" content={t('creative_commons')} />
         <meta property="og:title" content="WhoAreYou" />
       </Helmet>
       <WhoAreYouContainer campaignIdentifier={campaignIdentifier} />

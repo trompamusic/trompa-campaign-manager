@@ -11,7 +11,7 @@ export default function Task ({ match }) {
     <React.Fragment>
       <Helmet>
         <title>{t('task')}</title>
-        <meta name="description" content="" />
+        <meta name="description" content={t('description')} />
         <meta property="og:title" content="Task" />
       </Helmet>
       <TaskContainer campaignIdentifier={campaignIdentifier} taskIdentifier={taskIdentifier} />

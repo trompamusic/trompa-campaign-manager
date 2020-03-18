@@ -53,7 +53,7 @@ export default function WhoAreYou ({
       {({ values, handleChange, handleSubmit, handleBlur }) => (
         <React.Fragment>
           <AppbarTop 
-            type="General task" 
+            type={t('general_task')} 
             campaignIdentifier={campaignIdentifier} 
             hasContextNavigation 
           />

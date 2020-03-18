@@ -14,9 +14,6 @@ export default function Form ({
   return (
     <Formik
       onSubmit={onSubmit}
-      validateOnChange={false}
-      validateOnBlur={false}
-      validator={() => ({})}
       initialValues={initialValues}
       {...rest}
     >

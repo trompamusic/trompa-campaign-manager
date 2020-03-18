@@ -11,5 +11,6 @@
   "nickname_tip": "Don't use any sensitive data that can be traced back to you. So: no email as nickname, please.",
   "nickname_taken_warning": "This nickname is already in use, if this is you, click continue. If this is not you, please change the nickname.",
   "agree_and_continue": "I agree and want to continue",
-  "anonymous": "Anonymous"
+  "anonymous": "Anonymous",
+  "general_task": "General task"
 }

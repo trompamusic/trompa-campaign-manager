@@ -78,7 +78,12 @@ export default function NicknameMenu ({
 }
 
 NicknameMenu.propTypes = {
-  isOpen: PropTypes.bool,
+  isOpen       : PropTypes.bool,
+  target       : PropTypes.object,
+  handleOpen   : PropTypes.func,
+  handleClose  : PropTypes.func,
+  onLogoutClick: PropTypes.func,
+  nickname     : PropTypes.string,
 };
 
 NicknameMenu.defaultProps = {};

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import { useTranslation } from 'react-i18next';
 import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography/Typography';
 import AppbarTop from '../AppbarTop/AppbarTop';
 import AppbarBottom from '../AppbarBottom/AppbarBottom';
 import NicknameMenuContainer from '../../containers/NicknameMenuContainer/NicknameMenuContainer';
@@ -32,12 +33,20 @@ export default function ActiveTask ({
       >
         <NicknameMenuContainer campaignIdentifier={campaignIdentifier} />
       </AppbarTop>
-      <iframe
-        src={url && url.replace('{identifier}', identifier)}
-        className={classes.iframe}
-        name="task-iframe"
-        title={t('task')}
-      />
+      {url ? (
+        <iframe
+          src={url && url.replace('{identifier}', identifier)}
+          className={classes.iframe}
+          name="task-iframe"
+          title={t('task')}
+        />
+      ) : (
+        <div className={classes.emptyIframe}>
+          <Typography variant="h2">
+            {(t('this_task_is_not_yet_available'))}
+          </Typography>
+        </div>
+      )}
       <AppbarBottom>
         {loading && (
           <Button variant="contained" color="primary" disabled>

@@ -5,18 +5,18 @@ exports[`<ActiveTask /> renders and matches snapshot 1`] = `
   class="MuiPaper-root MuiAppBar-root MuiAppBar-positionRelative MuiAppBar-colorPrimary MuiPaper-elevation4"
 >
   <div
-    class="MuiToolbar-root MuiToolbar-dense makeStyles-dense-2 MuiToolbar-gutters"
+    class="MuiToolbar-root MuiToolbar-dense makeStyles-dense-3 MuiToolbar-gutters"
   >
     <a
-      class="makeStyles-link-4"
+      class="makeStyles-link-5"
       href="/campaign/undefined"
     >
       <div
-        class="makeStyles-header-5"
+        class="makeStyles-header-6"
       >
         <svg
           aria-hidden="true"
-          class="MuiSvgIcon-root makeStyles-backIcon-6"
+          class="MuiSvgIcon-root makeStyles-backIcon-7"
           focusable="false"
           role="presentation"
           viewBox="0 0 24 24"
@@ -27,12 +27,12 @@ exports[`<ActiveTask /> renders and matches snapshot 1`] = `
         </svg>
         <div>
           <h6
-            class="MuiTypography-root makeStyles-pageType-7 MuiTypography-h6 MuiTypography-colorSecondary"
+            class="MuiTypography-root makeStyles-pageType-8 MuiTypography-h6 MuiTypography-colorSecondary"
           >
             Unknown Type
           </h6>
           <h5
-            class="MuiTypography-root makeStyles-title-8 MuiTypography-h5"
+            class="MuiTypography-root makeStyles-title-9 MuiTypography-h5"
           >
             Unknown Campaign
           </h5>
