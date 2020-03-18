@@ -2,16 +2,16 @@
 
 exports[`<NavBar /> renders and matches snapshot 1`] = `
 <div
-  class="makeStyles-mobile-3"
+  class="makeStyles-mobile-4"
 >
   <header
     class="MuiPaper-root MuiAppBar-root MuiAppBar-positionRelative MuiAppBar-colorPrimary MuiPaper-elevation4"
   >
     <div
-      class="MuiToolbar-root MuiToolbar-dense makeStyles-dense-7 makeStyles-mobile-9 MuiToolbar-gutters"
+      class="MuiToolbar-root MuiToolbar-dense makeStyles-dense-8 makeStyles-mobile-10 MuiToolbar-gutters"
     >
       <div
-        class="makeStyles-hamburger-10"
+        class="makeStyles-hamburger-11"
       >
         <span
           aria-disabled="false"
@@ -47,14 +47,14 @@ exports[`<NavBar /> renders and matches snapshot 1`] = `
       >
         <img
           alt="Trompa logo"
-          class="makeStyles-logo-8"
+          class="makeStyles-logo-9"
           src="logo.png"
         />
       </a>
     </div>
   </header>
   <div
-    class="PrivateSwipeArea-root-124 PrivateSwipeArea-anchorLeft-125"
+    class="PrivateSwipeArea-root-125 PrivateSwipeArea-anchorLeft-126"
     style="width: 20px;"
   />
 </div>

@@ -20,11 +20,34 @@ export default function NavBar ({ navLinks, iconLink, primaryButton, primaryIcon
 
   const renderLinks = () => {
     return navLinks?.length > 0
-      ? navLinks.map(({ name, to }) => (
-        <NavLink key={name} className={classes.navLink} activeClassName={classes.navLinkActive} to={to}>
-          {name}
-        </NavLink>
-      ))
+      ? navLinks.map(({ name, to, onClick }) => {
+        if(to) {
+          return (
+            <NavLink
+              key={name}
+              className={classes.navLink}
+              activeClassName={classes.navLinkActive}
+              to={to}
+            >
+              {name}
+            </NavLink>
+          );
+        } else {
+          return (
+            <Button
+              key={name}
+              classes={{ root: classes.removeHover, text: classes.navLink }}
+              component="button"
+              onClick={onClick}
+              variant="text"
+              disableFocusRipple
+              disableRipple
+            >
+              {name}
+            </Button>
+          );
+        }
+      })
       : null;
   };
 
