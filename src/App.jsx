@@ -10,6 +10,7 @@ import theme from './theme';
 import client from './graphql';
 import store from './redux';
 import Root from './components/Root';
+import NotificationsProvider from './containers/NotificationsProvider/NotificationsProvider';
 
 class App extends Component {
   constructor(props) {
@@ -29,7 +30,9 @@ class App extends Component {
           <ThemeProvider theme={theme}>
             <I18nextProvider i18n={i18n}>
               <ConnectedRouter history={history}>
-                <Root error={this.state.error} />
+                <NotificationsProvider>
+                  <Root error={this.state.error} />
+                </NotificationsProvider>
               </ConnectedRouter>
             </I18nextProvider>
           </ThemeProvider>

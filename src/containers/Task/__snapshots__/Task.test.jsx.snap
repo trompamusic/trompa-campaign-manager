@@ -9,9 +9,14 @@ exports[`<Task /> matches snapshot 1`] = `
       class="MuiToolbar-root MuiToolbar-dense makeStyles-dense-2 MuiToolbar-gutters"
     >
       <a
+<<<<<<< HEAD
         href="https://trompamusic.eu/"
         rel="noopener noreferrer"
         target="_blank"
+=======
+        class="makeStyles-link-4"
+        href="/"
+>>>>>>> cae00d86e51e71ad2cd0aabc28e77797a5751b40
       >
         <img
           alt="Trompa logo"
@@ -58,10 +63,17 @@ exports[`<Task /> matches snapshot 1`] = `
     title="Task"
   />
   <header
+<<<<<<< HEAD
+    class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed makeStyles-appbarBottom-91 MuiAppBar-colorPrimary mui-fixed MuiPaper-elevation4"
+  >
+    <div
+      class="MuiToolbar-root MuiToolbar-dense makeStyles-toolbarBottom-92 MuiToolbar-gutters"
+=======
     class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed makeStyles-appbarBottom-88 MuiAppBar-colorPrimary mui-fixed MuiPaper-elevation4"
   >
     <div
       class="MuiToolbar-root MuiToolbar-dense makeStyles-toolbarBottom-89 MuiToolbar-gutters"
+>>>>>>> 00cc629ea17cb0751061dfd3ebc8ed42fbc806b2
     >
       <button
         class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary Mui-disabled Mui-disabled"

@@ -2,5 +2,7 @@
   "close": "Close",
   "copy": "Copy",
   "trompa_logo": "Trompa logo",
+  "unknown_campaign": "Unknown Campaign",
+  "unknown_type": "Unknown Type",
   "website_name": "Campaign manager | TROMPA"
 }

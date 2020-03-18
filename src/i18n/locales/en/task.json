@@ -1,7 +1,9 @@
 {
   "close": "Close",
+  "description": "Work on tasks related to the selected campaign.",
   "loading": "Loading...",
   "next_task": "Next task",
   "no_tasks_left": "No tasks left",
+  "this_task_is_not_yet_available": "This task is not yet available.",
   "task": "Task"
 }

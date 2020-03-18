@@ -64,9 +64,8 @@ export default ({ spacing, typography, palette, breakpoints }) => createStyles({
       width : 240,
       height: 160,
     },
-    [breakpoints.only('x')]: {
+    [breakpoints.only('xs')]: {
       paddingTop: 0,
-
     },
   },
 });
