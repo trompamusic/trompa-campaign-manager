@@ -1,0 +1,172 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer /> renders and matches snapshot 1`] = `
+<footer>
+  <div
+    class="MuiGrid-root makeStyles-footer-1 MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
+  >
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+    >
+      <img
+        alt="Trompa logo"
+        class="makeStyles-logo-2"
+        src="logo.png"
+      />
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+    >
+      <div
+        class="MuiGrid-root makeStyles-linksRow-3 MuiGrid-container MuiGrid-align-items-xs-flex-start MuiGrid-justify-xs-center"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-4"
+        >
+          <h3
+            class="MuiTypography-root MuiTypography-h3"
+          >
+            About
+          </h3>
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-flex-start"
+          >
+            <div
+              class="MuiGrid-root makeStyles-linksBlock-5 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+            >
+              <a
+                href="/"
+              >
+                About us
+              </a>
+              <a
+                href="/"
+              >
+                Partners
+              </a>
+            </div>
+            <div
+              class="MuiGrid-root makeStyles-linksBlock-5 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+            >
+              <a
+                href="/"
+              >
+                Support
+              </a>
+              <a
+                href="/"
+              >
+                News
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-4"
+        >
+          <h3
+            class="MuiTypography-root MuiTypography-h3"
+          >
+            User cases
+          </h3>
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-flex-start"
+          >
+            <div
+              class="MuiGrid-root makeStyles-linksBlock-5 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-lg-6"
+            >
+              <a
+                href="/"
+              >
+                Music scolars
+              </a>
+              <a
+                href="/"
+              >
+                Choir singers
+              </a>
+              <a
+                href="/"
+              >
+                Content owners
+              </a>
+            </div>
+            <div
+              class="MuiGrid-root makeStyles-linksBlock-5 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-lg-6"
+            >
+              <a
+                href="/"
+              >
+                Instrumental players
+              </a>
+              <a
+                href="/"
+              >
+                Music enthusiasts
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="MuiGrid-root makeStyles-linksLastColumn-4 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-4"
+        >
+          <h3
+            class="MuiTypography-root MuiTypography-h3"
+          >
+            Get involved
+          </h3>
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-flex-start"
+          >
+            <div
+              class="MuiGrid-root makeStyles-linksBlock-5 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-lg-6"
+            >
+              <a
+                href="/"
+              >
+                 
+                Newsletter
+              </a>
+              <a
+                href="/"
+              >
+                 
+                Twitter
+              </a>
+            </div>
+            <div
+              class="MuiGrid-root makeStyles-linksBlock-5 MuiGrid-item MuiGrid-grid-lg-6"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+    >
+      <div
+        class="MuiGrid-root makeStyles-euBlock-6 MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-item"
+        >
+          <img
+            alt="European flag"
+            class="makeStyles-euFlag-7"
+            src="eu_flag.jpg"
+          />
+        </div>
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-9"
+        >
+          <p
+            class="MuiTypography-root MuiTypography-body1"
+          >
+            This project has received funding from the European Union's Horizon 2020 research and innovation programme H2020-EU.3.6.3.1. - Study European heritage, memory, identity, integration and cultural interaction and translation, including its representations in cultural and scientific collections, archives and museums, to better inform and understand the present by richer interpretations of the past under grant agreement No 770376.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+`;

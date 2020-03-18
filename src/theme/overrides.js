@@ -1,4 +1,4 @@
-const overrides = ({ palette, typography }) => ({
+const overrides = ({ palette, typography, breakpoints }) => ({
   MuiAppBar: {
     colorPrimary: {
       color          : palette.text.darkGrey,
@@ -29,6 +29,16 @@ const overrides = ({ palette, typography }) => ({
     },
   },
   MuiTypography: {
+    h1: {
+      [breakpoints.down('sm')]: {
+        fontSize: typography.pxToRem(30),
+      },
+    },
+    h2: {
+      [breakpoints.down('sm')]: {
+        fontSize: typography.pxToRem(21),
+      },
+    },
     paragraph: {
       marginBottom: 24,
     },

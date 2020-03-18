@@ -2,7 +2,7 @@ import { createStyles } from '@material-ui/styles';
 
 const backgroundGradient = (firstStop, secondStop) => `linear-gradient(105deg, rgba(255,255,255,1) ${firstStop}, rgba(255,140,2,1) ${secondStop}, rgba(244,87,49,1) 100%)`;
 
-export default ({ spacing, typography, breakpoints }) => createStyles({
+export default ({ spacing, palette, typography, shape, breakpoints }) => createStyles({
   root: {
     display                 : 'flex',
     position                : 'relative',
@@ -17,8 +17,11 @@ export default ({ spacing, typography, breakpoints }) => createStyles({
     [breakpoints.only('sm')]: {
       height: 500,
     },
-    [breakpoints.up('lg')]: {
+    [breakpoints.only('lg')]: {
       background: backgroundGradient('60.9%', '61%'),
+    },
+    [breakpoints.only('xl')]: {
+      background: backgroundGradient('50.9%', '51%'),
     },
   },
   desktop: {
@@ -46,21 +49,19 @@ export default ({ spacing, typography, breakpoints }) => createStyles({
   mobile: {
     margin          : spacing(2),
     marginTop       : spacing(5),
+    marginBottom    : spacing(5),
     '& $prefixTitle': {
-      width       : 250,
-      lineHeight  : 1.2,
-      marginBottom: spacing(-0.5),
+      width     : 250,
+      lineHeight: 1.2,
     },
     '& $logoIcon': {
       width : 22,
       height: 21,
     },
     '& h1': {
-      fontSize  : typography.pxToRem(45),
-      lineHeight: 1.2,
+      lineHeight: 1.1,
     },
     '& h2': {
-      fontSize    : typography.pxToRem(32),
       marginBottom: spacing(2),
     },
     '& p': {
@@ -71,17 +72,34 @@ export default ({ spacing, typography, breakpoints }) => createStyles({
     },
   },
   prefixTitle: {
-    display     : 'flex',
-    alignItems  : 'center',
-    marginBottom: spacing(0.5),
+    display                 : 'flex',
+    alignItems              : 'center',
+    marginBottom            : spacing(0.5),
+    [breakpoints.only('sm')]: {
+      width     : 250,
+      lineHeight: 1.2,
+    },
+    [breakpoints.only('xs')]: {
+      '& h6': {
+        lineHeight: 1.2,
+      },
+    },
   },
   logoIcon: {
-    width      : 16,
-    height     : 15,
-    marginRight: spacing(0.7),
+    width                   : 16,
+    height                  : 15,
+    marginRight             : spacing(0.7),
+    [breakpoints.only('sm')]: {
+      width : 22,
+      height: 21,
+    },
+  },
+  compositionTitle: {
+    backgroundColor: palette.common.faintGrey,
+    borderRadius   : shape.borderRadius,
+    padding        : '0 4px',
   },
   buttonHero: {
-    marginTop    : spacing(),
     padding      : '8px 32px',
     fontFamily   : typography.fontFamilyOpenSans,
     fontSize     : typography.pxToRem(16),
@@ -102,11 +120,16 @@ export default ({ spacing, typography, breakpoints }) => createStyles({
       right: 30,
     },
     [breakpoints.only('md')]: {
+      width: '45%',
       right: 40,
     },
-    [breakpoints.up('lg')]: {
+    [breakpoints.only('lg')]: {
       width: '45%',
       right: 150,
+    },
+    [breakpoints.only('xl')]: {
+      width: '36%',
+      right: 500,
     },
   },
 });

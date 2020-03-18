@@ -13,6 +13,7 @@ export default {
     primary        : 'rgba(0, 0, 0, 0.7)',
     transparentGrey: 'rgba(0,0,0,0.4)',
     darkPurple     : '#191847',
+    purpleBlack    : '#191847',
     lightBlack     : '#3A3A3A',
     darkGrey       : '#333333',
     blue           : '#005AA3',
