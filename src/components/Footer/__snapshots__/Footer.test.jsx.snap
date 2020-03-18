@@ -8,11 +8,17 @@ exports[`<Footer /> renders and matches snapshot 1`] = `
     <div
       class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
     >
-      <img
-        alt="Trompa logo"
-        class="makeStyles-logo-2"
-        src="logo.png"
-      />
+      <a
+        href="https://trompamusic.eu/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <img
+          alt="Trompa logo"
+          class="makeStyles-logo-2"
+          src="logo.png"
+        />
+      </a>
     </div>
     <div
       class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
@@ -35,12 +41,16 @@ exports[`<Footer /> renders and matches snapshot 1`] = `
               class="MuiGrid-root makeStyles-linksBlock-5 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
             >
               <a
-                href="/"
+                href="https://trompamusic.eu/about"
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 About us
               </a>
               <a
-                href="/"
+                href="https://trompamusic.eu/partners"
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 Partners
               </a>
@@ -54,7 +64,9 @@ exports[`<Footer /> renders and matches snapshot 1`] = `
                 Support
               </a>
               <a
-                href="/"
+                href="https://trompamusic.eu/news"
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 News
               </a>
@@ -67,7 +79,7 @@ exports[`<Footer /> renders and matches snapshot 1`] = `
           <h3
             class="MuiTypography-root MuiTypography-h3"
           >
-            User cases
+            Use cases
           </h3>
           <div
             class="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-flex-start"
@@ -76,17 +88,23 @@ exports[`<Footer /> renders and matches snapshot 1`] = `
               class="MuiGrid-root makeStyles-linksBlock-5 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-lg-6"
             >
               <a
-                href="/"
+                href="https://trompamusic.eu/music-scholars"
+                rel="noopener noreferrer"
+                target="_blank"
               >
-                Music scolars
+                Music scholars
               </a>
               <a
-                href="/"
+                href="https://trompamusic.eu/choir-singers"
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 Choir singers
               </a>
               <a
-                href="/"
+                href="https://trompamusic.eu/content-owners"
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 Content owners
               </a>
@@ -95,12 +113,16 @@ exports[`<Footer /> renders and matches snapshot 1`] = `
               class="MuiGrid-root makeStyles-linksBlock-5 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-lg-6"
             >
               <a
-                href="/"
+                href="https://trompamusic.eu/instrumental-players"
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 Instrumental players
               </a>
               <a
-                href="/"
+                href="https://trompamusic.eu/music-enthusiasts"
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 Music enthusiasts
               </a>
@@ -122,15 +144,17 @@ exports[`<Footer /> renders and matches snapshot 1`] = `
               class="MuiGrid-root makeStyles-linksBlock-5 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-lg-6"
             >
               <a
-                href="/"
+                href="https://trompamusic.eu/newsletter"
+                rel="noopener noreferrer"
+                target="_blank"
               >
-                 
                 Newsletter
               </a>
               <a
-                href="/"
+                href="https://twitter.com/TrompaMusic"
+                rel="noopener noreferrer"
+                target="_blank"
               >
-                 
                 Twitter
               </a>
             </div>

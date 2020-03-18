@@ -7,6 +7,16 @@ export default ({ typography, palette, spacing, breakpoints }) => createStyles({
     textDecoration: 'none',
     color         : palette.text.darkGrey,
     marginRight   : spacing(4),
+    padding       : 0,
+    '& span'      : {
+      paddingBottom: spacing(0.3),
+      fontWeight   : 400,
+    },
+  },
+  removeHover: {
+    '&:hover': {
+      backgroundColor: 'transparent',
+    },
   },
   navLinkActive: {
     fontWeight: 600,

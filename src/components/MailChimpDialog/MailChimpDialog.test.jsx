@@ -1,10 +1,10 @@
 import React from 'react';
 import { render } from '../../testUtils';
-import Campaign from './Campaign';
+import MailChimpDialog from './MailChimpDialog';
 
-describe('<Campaign />', () => {
+describe('<MailChimpDialog />', () => {
   test('renders and matches snapshot', () => {
-    const { container } = render(<Campaign />);
+    const { container } = render(<MailChimpDialog />);
 
     expect(container.firstChild).toMatchSnapshot();
   });

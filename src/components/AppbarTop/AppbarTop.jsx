@@ -13,70 +13,70 @@ import styles from './AppbarTop.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function AppbarTop ({ 
-  children, 
-  position, 
+export default function AppbarTop ({
+  children,
+  position,
   hasContextNavigation,
   type,
   campaign,
-  campaignIdentifier, 
+  campaignIdentifier,
   mobile,
 }) {
   const { t }   = useTranslation();
   const classes = useStyles();
+
+  const renderLogo = () => (
+    <a target="_blank" rel="noopener noreferrer" href="https://trompamusic.eu/">
+      <img className={classes.logo} src={images.logo} alt={t('trompa_logo')} />
+    </a>
+  );
 
   return (
     <AppBar position={position}>
       <Toolbar classes={{ dense: classNames(classes.dense, { [classes.mobile]: mobile }) }} variant="dense">
         {!mobile && (
           <React.Fragment>
-            <Link className={classes.link} to={`/campaign/${campaignIdentifier}`}>
-              {hasContextNavigation ? (
-                <div className={classes.header}>
-                  <ArrowBackIcon className={classes.backIcon} />
-                  <div>
+            {hasContextNavigation ? (
+              <div className={classes.header}>
+                <ArrowBackIcon className={classes.backIcon} />
+                <div>
+                  <Link className={classes.link} to={`/campaign/${campaignIdentifier}`}>
                     <Typography className={classes.pageType} variant="h6" color="secondary">
                       {type ? type : t('common:unknown_type')}
                     </Typography>
                     <Typography className={classes.title} variant="h5">
                       {campaign ? campaign : t('common:unknown_campaign')}
                     </Typography>
-                  </div>
+                  </Link>
                 </div>
-              ) : (
-                <img className={classes.logo} src={images.logo} alt={t('trompa_logo')} />
-              )}
-            </Link>
+              </div>
+            ) : renderLogo()}
             {children}
           </React.Fragment>
         )}
         {mobile && (
-          <React.Fragment>
-            {hasContextNavigation ? (
-              <Link className={classes.link} to={`/campaign/${campaignIdentifier}`}>
-                <div className={classes.header}>
-                  <ArrowBackIcon className={classes.backIcon} />
-                  <div>
-                    <Typography className={classes.pageType} variant="h6" color="secondary">
-                      {type ? type : t('common:unknown_type')}
-                    </Typography>
-                    <Typography className={classes.title} variant="h5">
-                      {campaign ? campaign : t('common:unknown_campaign')}
-                    </Typography>
-                  </div>
+          hasContextNavigation ? (
+            <Link className={classes.link} to={`/campaign/${campaignIdentifier}`}>
+              <div className={classes.header}>
+                <ArrowBackIcon className={classes.backIcon} />
+                <div>
+                  <Typography className={classes.pageType} variant="h6" color="secondary">
+                    {type ? type : t('common:unknown_type')}
+                  </Typography>
+                  <Typography className={classes.title} variant="h5">
+                    {campaign ? campaign : t('common:unknown_campaign')}
+                  </Typography>
                 </div>
-              </Link>
-            ) : (
-              <React.Fragment>
-                <div className={classes.hamburger}>
-                  {children}
-                </div>
-                <Link to="/">
-                  <img className={classes.logo} src={images.logo} alt={t('trompa_logo')} />
-                </Link>
-              </React.Fragment>
-            )}
-          </React.Fragment>
+              </div>
+            </Link>
+          ) : (
+            <React.Fragment>
+              <div className={classes.hamburger}>
+                {children}
+              </div>
+              {renderLogo()}
+            </React.Fragment>
+          )
         )}
       </Toolbar>
     </AppBar>

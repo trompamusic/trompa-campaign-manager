@@ -23,7 +23,9 @@ export default function Footer () {
         container
       >
         <Grid xs={12} item>
-          <img className={classes.logo} src={images.logo} alt={t('trompa_logo')} />
+          <a target="_blank" rel="noopener noreferrer" href="https://trompamusic.eu/">
+            <img className={classes.logo} src={images.logo} alt={t('trompa_logo')} />
+          </a>
         </Grid>
         <Grid xs={12} item>
           <Grid
@@ -44,18 +46,18 @@ export default function Footer () {
                 container
               >
                 <Grid className={classes.linksBlock} xs={12} md={6} item>
-                  <Link to="/">{t('about_us')}</Link>
-                  <Link to="/">{t('partners')}</Link>
+                  <a target="_blank" rel="noopener noreferrer" href="https://trompamusic.eu/about">{t('about_us')}</a>
+                  <a target="_blank" rel="noopener noreferrer" href="https://trompamusic.eu/partners">{t('partners')}</a>
                 </Grid>
                 <Grid className={classes.linksBlock} xs={12} md={6} item>
                   <Link to="/">{t('support')}</Link>
-                  <Link to="/">{t('news')}</Link>
+                  <a target="_blank" rel="noopener noreferrer" href="https://trompamusic.eu/news">{t('news')}</a>
                 </Grid>
               </Grid>
             </Grid>
             <Grid xs={12} sm={4} item>
               <Typography variant="h3">
-                {t('user_cases')}
+                {t('use_cases')}
               </Typography>
               <Grid
                 justify="flex-start"
@@ -63,13 +65,13 @@ export default function Footer () {
                 container
               >
                 <Grid className={classes.linksBlock} xs={12} lg={6} item>
-                  <Link to="/">{t('music_scolars')}</Link>
-                  <Link to="/">{t('choir_singers')}</Link>
-                  <Link to="/">{t('content_owners')}</Link>
+                  <a target="_blank" rel="noopener noreferrer" href="https://trompamusic.eu/music-scholars">{t('music_scholars')}</a>
+                  <a target="_blank" rel="noopener noreferrer" href="https://trompamusic.eu/choir-singers">{t('choir_singers')}</a>
+                  <a target="_blank" rel="noopener noreferrer" href="https://trompamusic.eu/content-owners">{t('content_owners')}</a>
                 </Grid>
                 <Grid className={classes.linksBlock} xs={12} lg={6} item>
-                  <Link to="/">{t('instrumental_players')}</Link>
-                  <Link to="/">{t('music_enthusiasts')}</Link>
+                  <a target="_blank" rel="noopener noreferrer" href="https://trompamusic.eu/instrumental-players">{t('instrumental_players')}</a>
+                  <a target="_blank" rel="noopener noreferrer" href="https://trompamusic.eu/music-enthusiasts">{t('music_enthusiasts')}</a>
                 </Grid>
               </Grid>
             </Grid>
@@ -83,8 +85,8 @@ export default function Footer () {
                 container
               >
                 <Grid className={classes.linksBlock} xs={12} lg={6} item>
-                  <Link to="/"> {t('newsletter')}</Link>
-                  <Link to="/"> {t('twitter')}</Link>
+                  <a target="_blank" rel="noopener noreferrer" href="https://trompamusic.eu/newsletter">{t('newsletter')}</a>
+                  <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/TrompaMusic">{t('twitter')}</a>
                 </Grid>
                 <Grid className={classes.linksBlock} xs={false} lg={6} item />
               </Grid>

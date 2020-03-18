@@ -42,17 +42,17 @@ export default ({ spacing, palette, typography, breakpoints }) => createStyles({
     fontWeight   : 'bold',
     letterSpacing: 0.25,
     color        : palette.text.darkPurple,
-    mobile       : {
-      position      : 'relative',
-      justifyContent: 'center',
+  },
+  mobile: {
+    position      : 'relative',
+    justifyContent: 'center',
+  },
+  hamburger: {
+    position : 'absolute',
+    left     : 16,
+    marginTop: 2,
+    '& svg'  : {
+      color: palette.common.black,
     },
-    hamburger: {
-      position : 'absolute',
-      left     : 16,
-      marginTop: 2,
-      '& svg'  : {
-        color: palette.common.black,
-      },
-    },
-  }, 
+  },
 });
