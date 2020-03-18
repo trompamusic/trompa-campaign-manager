@@ -1,6 +1,5 @@
-const fontFamily           = '\'Roboto\', sans-serif';
-const fontFamilyOpenSans   = 'Open Sans';
-const fontFamilyNunitoSans = '\'Nunito Sans\', sans-serif';
+const fontFamily         = '\'Roboto\', sans-serif';
+const fontFamilyOpenSans = '\'Open Sans\', sans-serif';
 
 export default {
   h1: {
@@ -8,7 +7,7 @@ export default {
     fontWeight  : 900,
     fontSize    : '52.18px',
     marginBottom: 16,
-    fontFamily  : fontFamilyNunitoSans,
+    fontFamily  : fontFamilyOpenSans,
     lineHeight  : 1,
   },
   h2: {
@@ -16,7 +15,7 @@ export default {
     fontWeight  : 900,
     fontSize    : '26.09px',
     marginBottom: 8,
-    fontFamily  : fontFamilyNunitoSans,
+    fontFamily  : fontFamilyOpenSans,
     lineHeight  : 1.2,
   },
   h3: {
@@ -50,5 +49,4 @@ export default {
   useNextVariants: true,
   fontFamily,
   fontFamilyOpenSans,
-  fontFamilyNunitoSans,
 };

@@ -18,10 +18,14 @@ export default ({ spacing, typography, palette, breakpoints }) => createStyles({
       '& img': {
         width: '100%',
       },
-      [breakpoints.down('sm')]: {
+      [breakpoints.only('sm')]: {
         marginLeft  : spacing(4),
         marginRight : spacing(4),
         marginBottom: spacing(4),
+      },
+      [breakpoints.only('xs')]: {
+        marginLeft : spacing(2),
+        marginRight: spacing(2),
       },
     },
   },
@@ -44,7 +48,7 @@ export default ({ spacing, typography, palette, breakpoints }) => createStyles({
     display   : 'flex',
     alignItems: 'flex-end',
     '& span'  : {
-      fontFamily : typography.fontFamilyNunitoSans,
+      fontFamily : typography.fontFamilyOpenSans,
       color      : palette.primary.main,
       fontSize   : typography.pxToRem(100),
       textShadow : `2px 2px 0px ${palette.common.white}`,

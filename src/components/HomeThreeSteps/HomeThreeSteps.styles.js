@@ -67,7 +67,7 @@ export default ({ spacing, typography, palette, breakpoints }) => createStyles({
     borderRadius            : '50%',
     backgroundColor         : palette.primary.main,
     color                   : palette.common.white,
-    fontFamily              : typography.fontFamilyNunitoSans,
+    fontFamily              : typography.fontFamilyOpenSans,
     fontSize                : typography.pxToRem(50),
     fontWeight              : 900,
     textAlign               : 'center',
