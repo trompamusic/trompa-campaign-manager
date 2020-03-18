@@ -175,22 +175,26 @@ exports[`<ActiveCampaign /> renders and matches snapshot 1`] = `
     Share this campaign
   </span>
   <div
-    class="MuiFormControl-root MuiTextField-root makeStyles-copyField-179"
+    class="makeStyles-root-179"
   >
     <div
-      class="MuiInputBase-root MuiFilledInput-root MuiInputBase-formControl MuiInputBase-adornedEnd MuiFilledInput-adornedEnd makeStyles-copyFieldAdornedEnd-181 MuiInputBase-marginDense MuiFilledInput-marginDense"
+      class="MuiFormControl-root MuiTextField-root makeStyles-copyField-180"
     >
-      <input
-        aria-invalid="false"
-        class="MuiInputBase-input MuiFilledInput-input makeStyles-copyFieldInput-180 MuiInputBase-inputAdornedEnd MuiFilledInput-inputAdornedEnd MuiInputBase-inputMarginDense MuiFilledInput-inputMarginDense makeStyles-copyFieldInputMarginDense-182"
-        type="text"
-        value="https://"
-      />
-      <span
-        class="makeStyles-copyText-183"
+      <div
+        class="MuiInputBase-root MuiFilledInput-root MuiInputBase-formControl MuiInputBase-adornedEnd MuiFilledInput-adornedEnd makeStyles-copyFieldAdornedEnd-182 MuiInputBase-marginDense MuiFilledInput-marginDense"
       >
-        Copy
-      </span>
+        <input
+          aria-invalid="false"
+          class="MuiInputBase-input MuiFilledInput-input makeStyles-copyFieldInput-181 MuiInputBase-inputAdornedEnd MuiFilledInput-inputAdornedEnd MuiInputBase-inputMarginDense MuiFilledInput-inputMarginDense makeStyles-copyFieldInputMarginDense-183"
+          type="text"
+          value="https://"
+        />
+        <span
+          class="makeStyles-copyText-184"
+        >
+          Copy
+        </span>
+      </div>
     </div>
   </div>
 </div>

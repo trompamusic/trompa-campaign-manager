@@ -12,24 +12,26 @@ export default function CopyField ({ defaultValue, ...rest }) {
   const classes = useStyles();
 
   return (
-    <TextField
-      classes={{ root: classes.copyField }}
-      size="small"
-      defaultValue={defaultValue}
-      variant="filled"
-      InputProps={{
-        disableUnderline: true,
-        classes         : {
-          input           : classes.copyFieldInput,
-          adornedEnd      : classes.copyFieldAdornedEnd,
-          inputMarginDense: classes.copyFieldInputMarginDense,
-        },
-        endAdornment: (
-          <span className={classes.copyText}>{t('copy')}</span>
-        ),
-      }}
-      {...rest}
-    />
+    <div className={classes.root}>
+      <TextField
+        classes={{ root: classes.copyField }}
+        size="small"
+        defaultValue={defaultValue}
+        variant="filled"
+        InputProps={{
+          disableUnderline: true,
+          classes         : {
+            input           : classes.copyFieldInput,
+            adornedEnd      : classes.copyFieldAdornedEnd,
+            inputMarginDense: classes.copyFieldInputMarginDense,
+          },
+          endAdornment: (
+            <span className={classes.copyText}>{t('copy')}</span>
+          ),
+        }}
+        {...rest}
+      />
+    </div>
   );
 }
 

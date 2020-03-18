@@ -18,9 +18,12 @@ import styles from './ShareDialog.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function ShareDialog ({ open, onClose, title, paragraph }) {
+export default function ShareDialog ({ open, onClose, title, paragraph, campaignUrl }) {
   const { t }   = useTranslation('common');
   const classes = useStyles();
+
+  const mailShareSubject = t('mail_share_subject');
+  const mailShareBody    = t('mail_share_body, { campaignUrl: campaignUrl }');
 
   return (
     <Dialog classes={{ paperWidthSm: classes.root }} onClose={onClose} open={open}>
@@ -44,13 +47,19 @@ export default function ShareDialog ({ open, onClose, title, paragraph }) {
           alignItems="center"
           container
         >
-          <Grid sm={8} item>
-            <CopyField defaultValue="https://" fullWidth />
+          <Grid xs={12} sm={9} item>
+            <CopyField defaultValue={campaignUrl} fullWidth />
           </Grid>
-          <Grid className={classes.sharingIcons} sm={4} item>
-            <FacebookIcon />
-            <TwitterIcon />
-            <EmailIcon />
+          <Grid className={classes.sharingIcons} sm={3} item>
+            <a target="_blank" rel="noopener noreferrer" href={`https://facebook.com?sharingUrl=${campaignUrl}`}>
+              <FacebookIcon />
+            </a>
+            <a target="_blank" rel="noopener noreferrer" href={`https://twitter.com?sharingUrl=${campaignUrl}`}>
+              <TwitterIcon />
+            </a>
+            <a target="_blank" rel="noopener noreferrer" href={`mailto:?subject=${mailShareSubject}&body=${mailShareBody}`}>
+              <EmailIcon />
+            </a>
           </Grid>
         </Grid>
       </DialogContent>
@@ -59,10 +68,11 @@ export default function ShareDialog ({ open, onClose, title, paragraph }) {
 }
 
 ShareDialog.propTypes = {
-  open     : PropTypes.bool,
-  onClose  : PropTypes.func,
-  title    : PropTypes.string,
-  paragraph: PropTypes.string,
+  open       : PropTypes.bool,
+  onClose    : PropTypes.func,
+  title      : PropTypes.string,
+  paragraph  : PropTypes.string,
+  campaignUrl: PropTypes.string,
 };
 
 ShareDialog.defaultProps = {

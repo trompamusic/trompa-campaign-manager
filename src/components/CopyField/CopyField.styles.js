@@ -1,8 +1,10 @@
 import { createStyles } from '@material-ui/styles';
 
 export default ({ spacing, palette, shape, breakpoints, typography }) => createStyles({
+  root: {
+    marginRight: spacing(4),
+  },
   copyField: {
-    marginRight             : spacing(),
     [breakpoints.down('sm')]: {
       width: '100%',
     },

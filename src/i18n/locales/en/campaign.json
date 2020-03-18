@@ -13,7 +13,9 @@
   "page_title": "Help us digitise Mahler’s 6th",
   "share_dialog": {
     "drum_up_support": "Drum up support and invite your fellow musicians.",
-    "lets_face_music": "Let's face the music together."
+    "lets_face_music": "Let's face the music together.",
+    "mail_share_subject": "TROMPA: Let's face the music together.",
+    "mail_share_body": "Let's work together on campaign: {{campaignUrl}}."
   },
   "share_this_campaign": "Share this campaign",
   "start_your_own_campaign": "Start your own campaign",

@@ -28,6 +28,7 @@ export default function ActiveCampaign ({ match }) {
         onClose={() => setShareDialogOpen(false)}
         title={t('share_dialog.drum_up_support')}
         paragraph={t('share_dialog.lets_face_music')}
+        campaignUrl="https://"
       />
       <ActiveCampaignContainer campaignIdentifier={campaignIdentifier} />
     </React.Fragment>
