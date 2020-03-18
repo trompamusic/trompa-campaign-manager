@@ -1,4 +1,6 @@
 {
-  "trompa_logo": "Trompa logo",
-  "website_name": "Campaign manager | TROMPA"
+  "website_name": "Campaign manager | TROMPA",
+  "unknown_campaign": "Unknown Campaign",
+  "unknown_type": "Unknown Type",
+  "trompa_logo": "Trompa logo"
 }

@@ -8,7 +8,8 @@ exports[`<Campaign /> renders and matches snapshot 1`] = `
     class="MuiToolbar-root MuiToolbar-dense makeStyles-dense-10 MuiToolbar-gutters"
   >
     <a
-      href="/"
+      class="makeStyles-link-12"
+      href="/campaign/undefined"
     >
       <img
         alt="Trompa logo"

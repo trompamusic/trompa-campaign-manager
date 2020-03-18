@@ -4,10 +4,12 @@ import { useHistory } from 'react-router-dom';
 import { gql } from "apollo-boost";
 import client from '../../graphql';
 import ActiveTask from '../../components/ActiveTask';
+import { NotificationContext } from '../NotificationsProvider/NotificationsProvider';
 
 export default function Task({ campaignIdentifier, taskIdentifier }) {
   const history                               = useHistory();
   const taskDrawAmount                        = 10;
+  let nickname                                = localStorage.getItem('nickname');
   const [loading, setLoading]                 = useState(false);
   const [task, setTask]                       = useState(null);
   const [taskIdentifiers, setTaskIdentifiers] = useState([]);
@@ -28,6 +30,13 @@ export default function Task({ campaignIdentifier, taskIdentifier }) {
       history.replace(`/campaign/${campaignIdentifier}/task/`);
     }
   };
+
+  // If not logged in reroute to login
+  useEffect(() => {
+    if(!nickname) {
+      history.replace(`/campaign/${campaignIdentifier}/who-are-you`);
+    }
+  });
 
   // Retrieve task on existing draw (task identifier in url)
   useEffect(() => {
@@ -87,7 +96,20 @@ export default function Task({ campaignIdentifier, taskIdentifier }) {
     return <ActiveTask loading={true} campaignIdentifier={campaignIdentifier} />;
   }
 
-  return <ActiveTask name={task.name} url={task.url} identifier={task.identifier} campaignIdentifier={campaignIdentifier} onNextTaskButtonClick={handleNextTaskButtonClick} />;
+  return (
+    <NotificationContext.Consumer>
+      {({ handleNotification }) => (
+        <ActiveTask 
+          name={task.name} 
+          url={task.url} 
+          identifier={task.identifier} 
+          campaignIdentifier={campaignIdentifier} 
+          onNextTaskButtonClick={handleNextTaskButtonClick}
+          handleNotification={handleNotification}
+        />
+      )}
+    </NotificationContext.Consumer>
+  );
 }
 
 Task.propTypes = {

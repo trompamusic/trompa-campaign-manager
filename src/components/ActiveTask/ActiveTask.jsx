@@ -2,32 +2,51 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
-import CloseIcon from '@material-ui/icons/Close';
+import Typography from '@material-ui/core/Typography/Typography';
 import AppbarTop from '../AppbarTop/AppbarTop';
 import AppbarBottom from '../AppbarBottom/AppbarBottom';
+import NicknameMenuContainer from '../../containers/NicknameMenuContainer/NicknameMenuContainer';
 import styles from './ActiveTask.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function ActiveTask ({ identifier, loading, noTasks, url, campaignIdentifier, onNextTaskButtonClick }) {
+export default function ActiveTask ({ 
+  identifier, 
+  loading, 
+  noTasks, 
+  url, 
+  campaignIdentifier, 
+  onNextTaskButtonClick,
+  name, 
+  handleNotification,
+}) {
   const { t }   = useTranslation('task');
   const classes = useStyles();
 
   return (
     <React.Fragment>
-      <AppbarTop>
-        <Button component={Link} to={`/campaign/${campaignIdentifier}`} startIcon={<CloseIcon />} variant="text">
-          {t('close')}
-        </Button>
+      <AppbarTop 
+        type={name} 
+        campaignIdentifier={campaignIdentifier} 
+        hasContextNavigation
+      >
+        <NicknameMenuContainer campaignIdentifier={campaignIdentifier} />
       </AppbarTop>
-      <iframe
-        src={url && url.replace('{identifier}', identifier)}
-        className={classes.iframe}
-        name="task-iframe"
-        title={t('task')}
-      />
+      {url ? (
+        <iframe
+          src={url && url.replace('{identifier}', identifier)}
+          className={classes.iframe}
+          name="task-iframe"
+          title={t('task')}
+        />
+      ) : (
+        <div className={classes.emptyIframe}>
+          <Typography variant="h2">
+            {(t('this_task_is_not_yet_available'))}
+          </Typography>
+        </div>
+      )}
       <AppbarBottom>
         {loading && (
           <Button variant="contained" color="primary" disabled>
@@ -40,7 +59,14 @@ export default function ActiveTask ({ identifier, loading, noTasks, url, campaig
           </Button>
         )}
         {!loading && !noTasks && (
-          <Button onClick={() => onNextTaskButtonClick()} variant="contained" color="primary">
+          <Button 
+            onClick={() => { 
+              onNextTaskButtonClick();
+              handleNotification('success', t('notifications:thank_you_for_contributing'));
+            }} 
+            variant="contained" 
+            color="primary"
+          >
             {t('next_task')}
           </Button>
         )}
@@ -56,4 +82,5 @@ ActiveTask.propTypes = {
   url                  : PropTypes.string,
   campaignIdentifier   : PropTypes.string,
   onNextTaskButtonClick: PropTypes.func,
+  handleNotification   : PropTypes.func,
 };

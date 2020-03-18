@@ -6,4 +6,11 @@ export default () => createStyles({
     width : '100%',
     height: 'calc(100vh - 112px)',
   },
+  emptyIframe: {
+    display       : 'flex',
+    alignItems    : 'center',
+    justifyContent: 'center',
+    width         : '100%',
+    height        : 'calc(100vh - 112px)',
+  },
 });

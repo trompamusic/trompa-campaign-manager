@@ -1,0 +1,16 @@
+{
+  "who_are_you": "Who are you?",
+  "goal": "Our goal is to bring music in the public domain.",
+  "creative_commons": "All your contributions to this campaign will be published under a Creative Commons license.",
+  "creative_commons_link": "(CC BY 4.0)",
+  "explanation": "We'll assign you a random nickname for attribution of your work. If you want a personalized nickname, create one here:",
+  "nickname_input": {
+    "placeholder": "MahlerLover#1234",
+    "label": "Nickname"
+  },
+  "nickname_tip": "Don't use any sensitive data that can be traced back to you. So: no email as nickname, please.",
+  "nickname_taken_warning": "This nickname is already in use, if this is you, click continue. If this is not you, please change the nickname.",
+  "agree_and_continue": "I agree and want to continue",
+  "anonymous": "Anonymous",
+  "general_task": "General task"
+}

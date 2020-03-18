@@ -8,7 +8,8 @@ exports[`<AppbarTop /> renders and matches snapshot 1`] = `
     class="MuiToolbar-root MuiToolbar-dense makeStyles-dense-1 MuiToolbar-gutters"
   >
     <a
-      href="/"
+      class="makeStyles-link-3"
+      href="/campaign/undefined"
     >
       <img
         alt="Trompa logo"

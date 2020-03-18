@@ -4,6 +4,7 @@ import Home from '../../screens/Home';
 import Task from '../../screens/Task';
 import Campaign from '../../screens/Campaign';
 import NotFound from '../../screens/NotFound';
+import WhoAreYou from '../../screens/WhoAreYou';
 
 export default function Root(props) {
   const content = props.error ? (
@@ -12,6 +13,7 @@ export default function Root(props) {
     <Switch>
       <Route path="/" component={Home} exact />
       <Route path="/campaign/:campaignIdentifier" component={Campaign} exact />
+      <Route path="/campaign/:campaignIdentifier/who-are-you" component={WhoAreYou} exact />
       <Route path="/campaign/:campaignIdentifier/task/" component={Task} exact />
       <Route path="/campaign/:campaignIdentifier/task/:taskIdentifier" component={Task} exact />
       <Route component={NotFound} />

@@ -8,11 +8,9 @@ exports[`<NavBar /> renders and matches snapshot 1`] = `
     class="MuiPaper-root MuiAppBar-root MuiAppBar-positionRelative MuiAppBar-colorPrimary MuiPaper-elevation4"
   >
     <div
-      class="MuiToolbar-root MuiToolbar-dense makeStyles-dense-7 makeStyles-mobile-9 MuiToolbar-gutters"
+      class="MuiToolbar-root MuiToolbar-dense makeStyles-dense-7 undefined MuiToolbar-gutters"
     >
-      <div
-        class="makeStyles-hamburger-10"
-      >
+      <div>
         <span
           aria-disabled="false"
           aria-label=""
@@ -52,7 +50,7 @@ exports[`<NavBar /> renders and matches snapshot 1`] = `
     </div>
   </header>
   <div
-    class="PrivateSwipeArea-root-124 PrivateSwipeArea-anchorLeft-125"
+    class="PrivateSwipeArea-root-129 PrivateSwipeArea-anchorLeft-130"
     style="width: 20px;"
   />
 </div>
