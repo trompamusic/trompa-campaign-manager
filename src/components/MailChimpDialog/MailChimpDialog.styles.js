@@ -1,8 +1,20 @@
 import { createStyles } from '@material-ui/styles';
 
-export default ({ palette, spacing, breakpoints }) => createStyles({
+export default ({ palette, spacing, typography, breakpoints }) => createStyles({
   root: {
-    background: `linear-gradient(0deg, ${palette.common.white} 60.9%, ${palette.common.faintGrey} 61%)`,
+    width        : 500,
+    paddingBottom: spacing(3),
+    '& form'     : {
+      padding   : '0 !important',
+      fontFamily: typography.fontFamilyOpenSans,
+    },
+    '& input': {
+      fontFamily: 'inherit',
+      fontSize  : typography.pxToRem(14),
+      '&:focus' : {
+        outline: 'none',
+      },
+    },
   },
   closeButton: {
     position: 'absolute',

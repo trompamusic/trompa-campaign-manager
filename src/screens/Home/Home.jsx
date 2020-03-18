@@ -46,8 +46,16 @@ export default function Home() {
       <MailChimpDialog
         open={mailChimpDialogOpen}
         onClose={() => setMailChimpDialogOpen(false)}
-        title="temp"
-        paragraph="temp"
+        title={t('start_campaign')}
+        paragraph={t('mail_chimp_dialog.paragraph')}
+        formTranslations={{
+          email    : t('mail_chimp_dialog.email'),
+          firstName: t('mail_chimp_dialog.first_name'),
+          lastName : t('mail_chimp_dialog.last_name'),
+          required : t('mail_chimp_dialog.required'),
+          subscribe: t('mail_chimp_dialog.subscribe'),
+          whichWork: t('mail_chimp_dialog.which_work'),
+        }}
       />
       <Jumbotron
         image={images.collaborateHero}
