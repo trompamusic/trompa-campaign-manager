@@ -151,7 +151,7 @@ exports[`<Footer /> renders and matches snapshot 1`] = `
                 Newsletter
               </a>
               <a
-                href="https://twitter.com"
+                href="https://twitter.com/TrompaMusic"
                 rel="noopener noreferrer"
                 target="_blank"
               >

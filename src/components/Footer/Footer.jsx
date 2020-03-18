@@ -86,7 +86,7 @@ export default function Footer () {
               >
                 <Grid className={classes.linksBlock} xs={12} lg={6} item>
                   <a target="_blank" rel="noopener noreferrer" href="https://trompamusic.eu/newsletter">{t('newsletter')}</a>
-                  <a target="_blank" rel="noopener noreferrer" href="https://twitter.com">{t('twitter')}</a>
+                  <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/TrompaMusic">{t('twitter')}</a>
                 </Grid>
                 <Grid className={classes.linksBlock} xs={false} lg={6} item />
               </Grid>
