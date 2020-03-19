@@ -42,24 +42,6 @@ describe('<NavBar />', () => {
     expect(history.location.pathname).toBe("/test");
   });
 
-  test('displays icon link and goes to correct route', () => {
-    const history       = createMemoryHistory();
-    const { getByText } = render((
-      <Router history={history}>
-        <NavBar
-          iconLink={{
-            name: 'Share', to: 'test', icon: <ShareIcon />,
-          }}
-          drawerContent={<div />}
-        />
-      </Router>
-    ));
-
-    fireEvent.click(getByText('Share'));
-    expect(getByText('Share')).toBeTruthy();
-    expect(history.location.pathname).toBe("/test");
-  });
-
   test('displays primary button and goes to correct route', () => {
     const history       = createMemoryHistory();
     const { getByText } = render((

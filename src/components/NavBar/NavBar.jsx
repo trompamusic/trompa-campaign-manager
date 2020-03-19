@@ -13,14 +13,14 @@ import styles from './NavBar.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function NavBar ({ navLinks, iconLink, primaryButton, primaryIconButton, drawerContent }) {
+export default function NavBar ({ navLinks, primaryButton, primaryIconButton, drawerContent }) {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const classes = useStyles();
 
   const renderLinks = () => {
     return navLinks?.length > 0
-      ? navLinks.map(({ name, to, onClick }) => {
+      ? navLinks.map(({ name, to, onClick, startIcon }) => {
         if(to) {
           return (
             <NavLink
@@ -40,6 +40,7 @@ export default function NavBar ({ navLinks, iconLink, primaryButton, primaryIcon
               component="button"
               onClick={onClick}
               variant="text"
+              startIcon={startIcon}
               disableFocusRipple
               disableRipple
             >
@@ -48,23 +49,6 @@ export default function NavBar ({ navLinks, iconLink, primaryButton, primaryIcon
           );
         }
       })
-      : null;
-  };
-
-  const renderIconLink = () => {
-    return iconLink
-      ? (
-        <Button
-          key={iconLink?.name}
-          component={iconLink?.to ? Link : 'button'}
-          to={iconLink?.to ? iconLink?.to : undefined }
-          onClick={iconLink?.onClick ? iconLink?.onClick : undefined }
-          variant="text"
-          startIcon={iconLink?.icon}
-        >
-          {iconLink?.name}
-        </Button>
-      )
       : null;
   };
 
@@ -129,7 +113,6 @@ export default function NavBar ({ navLinks, iconLink, primaryButton, primaryIcon
         <AppbarTop>
           <div>
             {renderLinks()}
-            {renderIconLink()}
             {renderPrimaryButton()}
             {renderPrimaryIconButton()}
           </div>
@@ -141,7 +124,6 @@ export default function NavBar ({ navLinks, iconLink, primaryButton, primaryIcon
 
 NavBar.propTypes = {
   navLinks         : PropTypes.array,
-  iconLink         : PropTypes.object,
   primaryButton    : PropTypes.object,
   primaryIconButton: PropTypes.object,
   drawerContent    : PropTypes.element,
