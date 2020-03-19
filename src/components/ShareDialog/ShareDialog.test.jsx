@@ -8,9 +8,13 @@ describe('<ShareDialog />', () => {
     const { container } = render((
       <ShareDialog
         open={true}
-        title="Hello"
-        paragraph="Some info"
-        shareUrl="https://"
+        modalContent={{
+          title    : "Hello",
+          paragraph: "Some info",
+        }}
+        shareContent={{
+          shareUrl: "https://",
+        }}
       />
     ));
 
@@ -21,9 +25,13 @@ describe('<ShareDialog />', () => {
     const { queryByText } = render((
       <ShareDialog
         open={false}
-        title="Hello"
-        paragraph="Some info"
-        shareUrl="https://"
+        modalContent={{
+          title    : "Hello",
+          paragraph: "Some info",
+        }}
+        shareContent={{
+          shareUrl: "https://",
+        }}
       />
     ));
 
@@ -34,9 +42,13 @@ describe('<ShareDialog />', () => {
     const { getByText, getByDisplayValue } = render((
       <ShareDialog
         open={true}
-        title="Hello"
-        paragraph="Some info"
-        shareUrl="https://"
+        modalContent={{
+          title    : "Hello",
+          paragraph: "Some info",
+        }}
+        shareContent={{
+          shareUrl: "https://",
+        }}
       />
     ));
 
@@ -51,6 +63,13 @@ describe('<ShareDialog />', () => {
       <ShareDialog
         open={true}
         onClose={callback}
+        modalContent={{
+          title    : "Hello",
+          paragraph: "Some info",
+        }}
+        shareContent={{
+          shareUrl: "https://",
+        }}
       />
     ));
 

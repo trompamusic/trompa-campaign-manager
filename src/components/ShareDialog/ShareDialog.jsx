@@ -18,7 +18,7 @@ import styles from './ShareDialog.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function ShareDialog ({ open, onClose, title, paragraph, campaignTitle, shareUrl }) {
+export default function ShareDialog ({ open, onClose, modalContent: { title, paragraph }, shareContent: { campaignTitle, shareUrl } }) {
   const { t }        = useTranslation('campaign');
   const classes      = useStyles();
   const shareContent = {
@@ -69,12 +69,16 @@ export default function ShareDialog ({ open, onClose, title, paragraph, campaign
 }
 
 ShareDialog.propTypes = {
-  open         : PropTypes.bool,
-  onClose      : PropTypes.func,
-  title        : PropTypes.string,
-  paragraph    : PropTypes.string,
-  campaignTitle: PropTypes.string,
-  shareUrl     : PropTypes.string,
+  open        : PropTypes.bool,
+  onClose     : PropTypes.func,
+  modalContent: PropTypes.shape({
+    title    : PropTypes.string,
+    paragraph: PropTypes.string,
+  }),
+  shareContent: PropTypes.shape({
+    campaignTitle: PropTypes.string,
+    shareUrl     : PropTypes.string,
+  }),
 };
 
 ShareDialog.defaultProps = {

@@ -29,10 +29,14 @@ export default function ActiveCampaign ({ match }) {
       <ShareDialog
         open={shareDialogOpen}
         onClose={() => setShareDialogOpen(false)}
-        title={t('share_dialog.drum_up_support')}
-        paragraph={t('share_dialog.lets_face_music')}
-        campaignTitle={campaignTitle}
-        shareUrl={shareUrl}
+        modalContent={{
+          title    : t('share_dialog.drum_up_support'),
+          paragraph: t('share_dialog.lets_face_music'),
+        }}
+        shareContent={{
+          campaignTitle,
+          shareUrl,
+        }}
       />
       <ActiveCampaignContainer campaignIdentifier={campaignIdentifier} />
     </React.Fragment>
