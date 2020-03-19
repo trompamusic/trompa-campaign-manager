@@ -96,7 +96,7 @@ export default function Footer () {
         <Grid xs={12} item>
           <Grid
             direction="row"
-            justify="center"
+            justify="flex-start"
             alignItems="center"
             className={classes.euBlock}
             container
@@ -104,7 +104,7 @@ export default function Footer () {
             <Grid item>
               <img className={classes.euFlag} src={images.euFlag} alt={t('eu_flag')} />
             </Grid>
-            <Grid sm={9} item>
+            <Grid sm={10} item>
               <Typography >
                 {t('eu_flag_paragraph')}
               </Typography>

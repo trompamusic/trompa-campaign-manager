@@ -8,7 +8,7 @@ export default ({ spacing, typography, palette, breakpoints }) => createStyles({
       marginBottom: spacing(3),
     },
     '& p': {
-      maxWidth: 1100,
+      maxWidth: 1240,
     },
     [breakpoints.only('xs')]: {
       padding: '36px 16px',
@@ -47,8 +47,7 @@ export default ({ spacing, typography, palette, breakpoints }) => createStyles({
   },
   euBlock: {
     [breakpoints.down('md')]: {
-      justifyContent: 'flex-start',
-      alignItems    : 'flex-start',
+      alignItems: 'flex-start',
     },
   },
   euFlag: {

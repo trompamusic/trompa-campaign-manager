@@ -169,7 +169,7 @@ exports[`<Footer /> renders and matches snapshot 1`] = `
       class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
     >
       <div
-        class="MuiGrid-root makeStyles-euBlock-6 MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
+        class="MuiGrid-root makeStyles-euBlock-6 MuiGrid-container MuiGrid-align-items-xs-center"
       >
         <div
           class="MuiGrid-root MuiGrid-item"
@@ -181,7 +181,7 @@ exports[`<Footer /> renders and matches snapshot 1`] = `
           />
         </div>
         <div
-          class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-9"
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-10"
         >
           <p
             class="MuiTypography-root MuiTypography-body1"
