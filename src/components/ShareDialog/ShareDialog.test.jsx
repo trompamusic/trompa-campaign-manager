@@ -10,7 +10,7 @@ describe('<ShareDialog />', () => {
         open={true}
         title="Hello"
         paragraph="Some info"
-        campaignUrl="https://"
+        shareUrl="https://"
       />
     ));
 
@@ -23,7 +23,7 @@ describe('<ShareDialog />', () => {
         open={false}
         title="Hello"
         paragraph="Some info"
-        campaignUrl="https://"
+        shareUrl="https://"
       />
     ));
 
@@ -36,7 +36,7 @@ describe('<ShareDialog />', () => {
         open={true}
         title="Hello"
         paragraph="Some info"
-        campaignUrl="https://"
+        shareUrl="https://"
       />
     ));
 

@@ -18,12 +18,13 @@ import styles from './ShareDialog.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function ShareDialog ({ open, onClose, title, paragraph, campaignUrl }) {
-  const { t }   = useTranslation('common');
-  const classes = useStyles();
-
-  const mailShareSubject = t('mail_share_subject');
-  const mailShareBody    = t('mail_share_body, { campaignUrl: campaignUrl }');
+export default function ShareDialog ({ open, onClose, title, paragraph, campaignTitle, shareUrl }) {
+  const { t }        = useTranslation('campaign');
+  const classes      = useStyles();
+  const shareContent = {
+    twitter: t('share_dialog.twitter_content') + shareUrl,
+    mail   : { subject: campaignTitle, body: t('share_dialog.mail_content') + shareUrl },
+  };
 
   return (
     <Dialog classes={{ paperWidthSm: classes.root }} onClose={onClose} open={open}>
@@ -48,16 +49,16 @@ export default function ShareDialog ({ open, onClose, title, paragraph, campaign
           container
         >
           <Grid xs={12} sm={9} item>
-            <CopyField defaultValue={campaignUrl} fullWidth />
+            <CopyField defaultValue={shareUrl} fullWidth />
           </Grid>
           <Grid className={classes.sharingIcons} sm={3} item>
-            <a target="_blank" rel="noopener noreferrer" href={`https://facebook.com?sharingUrl=${campaignUrl}`}>
+            <a target="_blank" rel="noopener noreferrer" href={`https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`}>
               <FacebookIcon />
             </a>
-            <a target="_blank" rel="noopener noreferrer" href={`https://twitter.com?sharingUrl=${campaignUrl}`}>
+            <a target="_blank" rel="noopener noreferrer" href={`https://twitter.com/intent/tweet?text=${shareContent.twitter}`}>
               <TwitterIcon />
             </a>
-            <a target="_blank" rel="noopener noreferrer" href={`mailto:?subject=${mailShareSubject}&body=${mailShareBody}`}>
+            <a target="_blank" rel="noopener noreferrer" href={`mailto:?subject=${shareContent.mail.subject}&body=${shareContent.mail.body}`}>
               <EmailIcon />
             </a>
           </Grid>
@@ -68,11 +69,12 @@ export default function ShareDialog ({ open, onClose, title, paragraph, campaign
 }
 
 ShareDialog.propTypes = {
-  open       : PropTypes.bool,
-  onClose    : PropTypes.func,
-  title      : PropTypes.string,
-  paragraph  : PropTypes.string,
-  campaignUrl: PropTypes.string,
+  open         : PropTypes.bool,
+  onClose      : PropTypes.func,
+  title        : PropTypes.string,
+  paragraph    : PropTypes.string,
+  campaignTitle: PropTypes.string,
+  shareUrl     : PropTypes.string,
 };
 
 ShareDialog.defaultProps = {
