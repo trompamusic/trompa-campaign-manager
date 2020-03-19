@@ -53,13 +53,13 @@ export default function ShareDialog ({ open, onClose, title, paragraph, campaign
           </Grid>
           <Grid className={classes.sharingIcons} sm={3} item>
             <a target="_blank" rel="noopener noreferrer" href={`https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`}>
-              <FacebookIcon />
+              <FacebookIcon aria-label="Facebook" />
             </a>
             <a target="_blank" rel="noopener noreferrer" href={`https://twitter.com/intent/tweet?text=${shareContent.twitter}`}>
-              <TwitterIcon />
+              <TwitterIcon aria-label="Twitter" />
             </a>
             <a target="_blank" rel="noopener noreferrer" href={`mailto:?subject=${shareContent.mail.subject}&body=${shareContent.mail.body}`}>
-              <EmailIcon />
+              <EmailIcon aria-label="Mail" />
             </a>
           </Grid>
         </Grid>
