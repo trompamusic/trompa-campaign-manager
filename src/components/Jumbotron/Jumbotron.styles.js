@@ -4,12 +4,15 @@ const backgroundGradient = (firstStop, secondStop) => `linear-gradient(105deg, r
 
 export default ({ spacing, palette, typography, shape, breakpoints }) => createStyles({
   root: {
-    display                 : 'flex',
-    position                : 'relative',
-    alignItems              : 'center',
-    width                   : '100%',
-    height                  : 600,
-    background              : backgroundGradient('65.9%', '66%'),
+    display     : 'flex',
+    position    : 'relative',
+    alignItems  : 'center',
+    width       : '100%',
+    height      : 600,
+    background  : backgroundGradient('65.9%', '66%'),
+    '&$campaign': {
+      height: 650,
+    },
     [breakpoints.only('xs')]: {
       height    : 250,
       background: backgroundGradient('45.9%', '46%'),
@@ -25,12 +28,15 @@ export default ({ spacing, palette, typography, shape, breakpoints }) => createS
     },
   },
   desktop: {
-    zIndex                  : 10,
-    marginLeft              : 92,
-    marginTop               : 170,
-    marginBottom            : 'auto',
-    width                   : 475,
-    height                  : 50,
+    zIndex      : 10,
+    marginLeft  : 92,
+    marginTop   : 170,
+    marginBottom: 'auto',
+    width       : 475,
+    height      : 50,
+    '&$campaign': {
+      marginTop: 70,
+    },
     [breakpoints.only('xs')]: {
       display: 'none',
     },
@@ -39,7 +45,10 @@ export default ({ spacing, palette, typography, shape, breakpoints }) => createS
       marginTop : 70,
       width     : 370,
       '& h2, p' : {
-        width: 350,
+        width: '70%',
+      },
+      '&$campaign': {
+        width: '50%',
       },
     },
     [breakpoints.only('md')]: {
@@ -75,6 +84,7 @@ export default ({ spacing, palette, typography, shape, breakpoints }) => createS
       display: 'none',
     },
   },
+  campaign       : {},
   prefixTitleHome: {
     display                 : 'flex',
     alignItems              : 'center',
@@ -145,7 +155,7 @@ export default ({ spacing, palette, typography, shape, breakpoints }) => createS
     height                  : 'auto',
     right                   : 92,
     [breakpoints.only('xs')]: {
-      width : '80%',
+      width : '70%',
       margin: '0 auto',
       left  : 0,
       right : 0,
@@ -176,26 +186,37 @@ export default ({ spacing, palette, typography, shape, breakpoints }) => createS
     backgroundColor         : palette.common.white,
     padding                 : spacing(3),
     [breakpoints.only('xs')]: {
-      width : '80%',
+      width : 290,
       margin: '0 auto',
       left  : 0,
       right : 0,
     },
     [breakpoints.only('sm')]: {
-      right: 30,
+      right: 70,
+      width: 230,
     },
     [breakpoints.only('md')]: {
-      right: 40,
+      right: 80,
     },
     [breakpoints.only('lg')]: {
-      // right: 150,
+      width: 340,
     },
     [breakpoints.only('xl')]: {
-      // right: 500,
+      width: 340,
+      right: 500,
     },
   },
   scoreImage: {
-    width       : 240,
+    width                   : 240,
+    [breakpoints.only('xs')]: {
+      width: 240,
+    },
+    [breakpoints.only('sm')]: {
+      width: 180,
+    },
+    [breakpoints.up('lg')]: {
+      width: 290,
+    },
     borderRadius: shape.borderRadius,
     border      : `3px solid ${palette.border.lightGrey}`,
   },

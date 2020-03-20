@@ -1,16 +1,17 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 import { Typography } from '@material-ui/core';
+import * as PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-
-import styles from './CampaignJumbotronContent.styles';
+import CopyAndShareRow from '../CopyAndShareRow/CopyAndShareRow';
+import styles from './JumbotronContentCampaign.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function CampaignJumbotronContent () {
+export default function JumbotronContentCampaign ({ campaignInfo }) {
   const { t }   = useTranslation('campaign');
   const classes = useStyles();
 
@@ -41,6 +42,17 @@ export default function CampaignJumbotronContent () {
           {t('jumbotron.subscribe_for_updates')}
         </Button>
       </div>
+      <CopyAndShareRow className={classes.copyAndShareRow} campaignInfo={campaignInfo} />
     </div>
   );
 }
+
+JumbotronContentCampaign.propTypes = {
+  campaignInfo: PropTypes.shape({
+    campaignOwner: PropTypes.string,
+    campaignTitle: PropTypes.string,
+    campaignUrl  : PropTypes.string,
+    scoreTitle   : PropTypes.string,
+    scoreComment : PropTypes.string,
+  }),
+};

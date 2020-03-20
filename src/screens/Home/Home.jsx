@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <div>
       <Helmet>
-        <title>{t('page_title')}</title>
+        <title>{t('jumbotron.primaryTitle')}</title>
         <meta name="description" content={t('meta_description')} />
       </Helmet>
       <NavBar
