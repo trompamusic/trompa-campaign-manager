@@ -47,10 +47,14 @@ export default ({ spacing, palette, typography, shape, breakpoints }) => createS
     },
   },
   mobile: {
-    margin          : spacing(2),
-    marginTop       : spacing(5),
-    marginBottom    : spacing(5),
-    '& $prefixTitle': {
+    margin              : spacing(2),
+    marginTop           : spacing(5),
+    marginBottom        : spacing(5),
+    '& $prefixTitleHome': {
+      width     : 250,
+      lineHeight: 1.2,
+    },
+    '& $prefixTitleCampaign': {
       width     : 250,
       lineHeight: 1.2,
     },

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { makeStyles } from '@material-ui/styles';
 import { Typography } from '@material-ui/core';
@@ -50,7 +49,7 @@ export default function Footer () {
                   <a target="_blank" rel="noopener noreferrer" href="https://trompamusic.eu/partners">{t('partners')}</a>
                 </Grid>
                 <Grid className={classes.linksBlock} xs={12} md={6} item>
-                  <Link to="/">{t('support')}</Link>
+                  <a target="_blank" rel="noopener noreferrer" href="https://videodock.atlassian.net/servicedesk/customer/portal/6">{t('support')}</a>
                   <a target="_blank" rel="noopener noreferrer" href="https://trompamusic.eu/news">{t('news')}</a>
                 </Grid>
               </Grid>
