@@ -5,6 +5,8 @@ export default {
     faintGrey : '#F2F2F2',
     faintWhite: '#FAFAFA',
     darkBlack : 'rgba(0, 0, 0, 0.7)',
+    errorRed  : '#e85c41',
+    borderGrey: '#ABB0B2',
   },
   background: {
     primary : 'rgba(43,68,255,0.1)',
