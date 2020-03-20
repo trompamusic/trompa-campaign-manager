@@ -57,7 +57,7 @@ export default ({ spacing, typography, palette, breakpoints }) => createStyles({
     '& h2'    : {
       marginLeft  : spacing(3),
       marginBottom: 0,
-      color       : palette.text.purpleBlack,
+      color       : palette.text.darkPurple,
     },
   },
   number: {
@@ -84,7 +84,7 @@ export default ({ spacing, typography, palette, breakpoints }) => createStyles({
     background : 'linear-gradient(90deg, rgba(255,140,2,1) 50%, rgba(244,87,49,1) 100%)',
     '& $number': {
       backgroundColor: palette.common.white,
-      color          : palette.text.purpleBlack,
+      color          : palette.text.darkPurple,
     },
     '& $stepsTextContainer': {
       justifyContent: 'flex-start',

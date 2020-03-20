@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { makeStyles } from '@material-ui/styles';
 import { useTranslation } from 'react-i18next';
 import * as PropTypes from 'prop-types';
@@ -8,8 +8,18 @@ import styles from './CopyField.styles';
 const useStyles = makeStyles(styles);
 
 export default function CopyField ({ defaultValue, ...rest }) {
-  const { t }   = useTranslation('common');
-  const classes = useStyles();
+  const { t }                   = useTranslation('common');
+  const classes                 = useStyles();
+  const [copyText, setCopyText] = useState(t('copy'));
+  const inputRef                = useRef();
+
+  const handleCopy = () => {
+    inputRef.current.firstElementChild.select();
+    document.execCommand("copy");
+
+    setCopyText(t('copied'));
+    setTimeout(() => setCopyText(t('copy')), 500);
+  };
 
   return (
     <div className={classes.root}>
@@ -19,6 +29,7 @@ export default function CopyField ({ defaultValue, ...rest }) {
         defaultValue={defaultValue}
         variant="filled"
         InputProps={{
+          ref             : inputRef,
           disableUnderline: true,
           classes         : {
             input           : classes.copyFieldInput,
@@ -26,7 +37,9 @@ export default function CopyField ({ defaultValue, ...rest }) {
             inputMarginDense: classes.copyFieldInputMarginDense,
           },
           endAdornment: (
-            <span className={classes.copyText}>{t('copy')}</span>
+            <span onClick={handleCopy} className={classes.copyText}>
+              {copyText}
+            </span>
           ),
         }}
         {...rest}
