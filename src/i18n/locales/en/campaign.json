@@ -1,5 +1,6 @@
 {
   "campaign": "Campaign",
+  "close": "Close",
   "close_campaign": "Close campaign",
   "copy": "Copy",
   "enhance_classical_sheet_music_together": "Enhance classical sheet music, together",
@@ -14,9 +15,9 @@
   "share_dialog": {
     "drum_up_support": "Drum up support and invite your fellow musicians.",
     "lets_face_music": "Let's face the music together.",
-    "mail_share_subject": "TROMPA: Let's face the music together.",
-    "mail_share_body": "Let's work together on campaign: {{campaignUrl}}."
-  },
+    "mail_content": "Hey,%0D%0A%0D%0AThe TROMPA project brings classical music into the public domain.%0D%0A%0D%0AAnd I think you can help them. Have a look: ",
+    "twitter_content": "Help us bring classical music into the public domain.%0D%0A🎵Can you read music notation?%0D%0A⏲ Got five minutes to spare?%0D%0A➡️ Join us now: "
+     },
   "share_this_campaign": "Share this campaign",
   "start_your_own_campaign": "Start your own campaign",
   "subscribe_for_updates": "Subscribe for updates"

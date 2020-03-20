@@ -27,6 +27,8 @@ export default ({ spacing, palette, shape, breakpoints, typography }) => createS
     },
   },
   copyText: {
-    cursor: 'pointer',
+    cursor   : 'pointer',
+    textAlign: 'center',
+    minWidth : 50,
   },
 });
