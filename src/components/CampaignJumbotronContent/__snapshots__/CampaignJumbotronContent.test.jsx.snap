@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CampaignJumbotronContent /> renders and matches snapshot 1`] = `
+<div>
+  <p
+    class="MuiTypography-root makeStyles-daysToGo-1 MuiTypography-body1"
+  >
+    33 days to go
+  </p>
+  <p
+    class="MuiTypography-root makeStyles-deadline-2 MuiTypography-body1"
+  >
+    Deadline: 16 May 2020
+  </p>
+  <div
+    class="makeStyles-buttons-3"
+  >
+    <a
+      aria-disabled="false"
+      class="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-primaryButton-4 MuiButton-containedPrimary"
+      href="/campaign/e63fc3c5-f84e-4a64-9d5b-98a49dd4680c"
+      role="button"
+      tabindex="0"
+    >
+      <span
+        class="MuiButton-label"
+      >
+        Join campaign
+      </span>
+      <span
+        class="MuiTouchRipple-root"
+      />
+    </a>
+    <button
+      class="MuiButtonBase-root MuiButton-root MuiButton-text"
+      tabindex="0"
+      type="button"
+    >
+      <span
+        class="MuiButton-label"
+      >
+        <span
+          class="MuiButton-startIcon MuiButton-iconSizeMedium"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root"
+            focusable="false"
+            role="presentation"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"
+            />
+          </svg>
+        </span>
+        Subscribe for updates
+      </span>
+      <span
+        class="MuiTouchRipple-root"
+      />
+    </button>
+  </div>
+</div>
+`;

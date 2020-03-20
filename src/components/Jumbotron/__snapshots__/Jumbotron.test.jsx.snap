@@ -9,11 +9,11 @@ exports[`<Jumbotron /> renders and matches snapshot 1`] = `
       class="makeStyles-desktop-2"
     >
       <div
-        class="makeStyles-prefixTitle-4"
+        class="makeStyles-prefixTitleHome-4"
       >
         <img
           alt=""
-          class="makeStyles-logoIcon-5"
+          class="makeStyles-logoIcon-6"
           src="[object Object]"
         />
         <h6
@@ -32,7 +32,7 @@ exports[`<Jumbotron /> renders and matches snapshot 1`] = `
       >
         H2
         <span
-          class="makeStyles-compositionTitle-6"
+          class="makeStyles-compositionTitle-8"
         >
           Requiem in D minor
         </span>
@@ -45,18 +45,18 @@ exports[`<Jumbotron /> renders and matches snapshot 1`] = `
     </div>
     <img
       alt=""
-      class="makeStyles-image-8"
+      class="makeStyles-image-10"
     />
   </div>
   <div
     class="makeStyles-mobile-3"
   >
     <div
-      class="makeStyles-prefixTitle-4"
+      class="makeStyles-prefixTitleHome-4"
     >
       <img
         alt=""
-        class="makeStyles-logoIcon-5"
+        class="makeStyles-logoIcon-6"
         src="[object Object]"
       />
       <h6
@@ -75,7 +75,7 @@ exports[`<Jumbotron /> renders and matches snapshot 1`] = `
     >
       H2
       <span
-        class="makeStyles-compositionTitle-6"
+        class="makeStyles-compositionTitle-8"
       >
         Requiem in D minor
       </span>

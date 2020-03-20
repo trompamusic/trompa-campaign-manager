@@ -1,5 +1,6 @@
 import React from 'react';
 import * as PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/styles';
 import { Typography } from '@material-ui/core';
 import images from '../../theme/images';
@@ -7,26 +8,39 @@ import styles from './Jumbotron.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function Jumbotron ({ children, image, text }) {
+export default function Jumbotron ({ children, image, text, campaign, campaignInfo }) {
   const classes = useStyles();
 
   const renderContent = device => (
     <div className={classes[device]}>
-      <div className={classes.prefixTitle}>
-        <img className={classes.logoIcon} src={images.logoIcon} alt="" />
-        <Typography variant="subtitle2">
-          {text.prefixTitle}
-        </Typography>
-      </div>
+      {!campaign && (
+        <div className={classes.prefixTitleHome}>
+          <img className={classes.logoIcon} src={images.logoIcon} alt="" />
+          <Typography variant="subtitle2">
+            {text?.prefixTitle}
+          </Typography>
+        </div>
+      )}
+      {campaign && (
+        <div className={classes.prefixTitleCampaign}>
+          <span className={classes.avatar} >
+            <img src={images.avatarOne} alt="" />
+          </span>
+          <Typography variant="caption">
+            <Link>{campaignInfo?.campaignOwner}</Link>
+            {text?.prefixTitle}
+          </Typography>
+        </div>
+      )}
       <Typography variant="h1">
-        {text.primaryTitle}
+        {text?.primaryTitle}
       </Typography>
       <Typography variant="h2">
-        {text.secondaryTitle}
-        <span className={classes.compositionTitle}>Requiem in D minor</span>
+        {text?.secondaryTitle}
+        {!campaign && (<span className={classes.compositionTitle}>Requiem in D minor</span>)}
       </Typography>
       <Typography gutterBottom>
-        {text.introductionParagraph}
+        {text?.introductionParagraph}
       </Typography>
       {children}
     </div>
@@ -36,7 +50,18 @@ export default function Jumbotron ({ children, image, text }) {
     <header>
       <div className={classes.root}>
         {renderContent('desktop')}
-        <img className={classes.image} src={image} alt="" />
+        {!campaign && (<img className={classes.image} src={image} alt="" />)}
+        {campaign && (
+          <div className={classes.score}>
+            <Typography variant="h3">
+              {campaignInfo?.scoreTitle}
+            </Typography>
+            <Typography gutterBottom>
+              {campaignInfo?.scoreComment}
+            </Typography>
+            <img className={classes.scoreImage} src={image} alt="" />
+          </div>
+        )}
       </div>
       {renderContent('mobile')}
     </header>
@@ -50,5 +75,11 @@ Jumbotron.propTypes = {
     primaryTitle         : PropTypes.string,
     secondaryTitle       : PropTypes.string,
     introductionParagraph: PropTypes.string,
+  }),
+  campaign    : PropTypes.bool,
+  campaignInfo: PropTypes.exact({
+    campaignOwner: PropTypes.string,
+    scoreTitle   : PropTypes.string,
+    scoreComment : PropTypes.string,
   }),
 };

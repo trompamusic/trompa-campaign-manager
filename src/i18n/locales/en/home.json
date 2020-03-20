@@ -18,6 +18,12 @@
   "create_modern_classics": "Create modern, playable scores from known and unknown classics.",
   "help_us": "Help us digitise the ",
   "home": "Home",
+  "jumbotron": {
+    "prefixTitle": "Trompa collaboration campaign manager",
+    "primaryTitle": "Make even Mozart more memorable",
+    "secondaryTitle": "Help us digitise the ",
+    "introductionParagraph": "Create modern, playable scores from known and unknown classics."
+  },
   "join_campaign": "Join campaign",
   "mail_chimp_dialog": {
     "xx": "yy"

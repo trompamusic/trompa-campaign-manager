@@ -4,7 +4,9 @@ import { Helmet } from 'react-helmet';
 import ShareIcon from '@material-ui/icons/Share';
 import NavBar from '../../components/NavBar/NavBar';
 import ShareDialog from '../../components/ShareDialog/ShareDialog';
-import ActiveCampaignContainer from '../../containers/ActiveCampaign';
+import Jumbotron from '../../components/Jumbotron/Jumbotron';
+import CampaignJumbotronContent from '../../components/CampaignJumbotronContent/CampaignJumbotronContent';
+import images from '../../theme/images';
 
 export default function ActiveCampaign ({ match }) {
   const { t }                                 = useTranslation('campaign');
@@ -30,7 +32,23 @@ export default function ActiveCampaign ({ match }) {
         paragraph={t('share_dialog.lets_face_music')}
         campaignUrl="https://"
       />
-      <ActiveCampaignContainer campaignIdentifier={campaignIdentifier} />
+      <Jumbotron
+        image={images.mahlerSymphony}
+        text={{
+          prefixTitle          : t('jumbotron.prefixTitle'),
+          primaryTitle         : t('jumbotron.primaryTitle'),
+          secondaryTitle       : t('jumbotron.secondaryTitle'),
+          introductionParagraph: t('jumbotron.introductionParagraph'),
+        }}
+        campaignInfo={{
+          campaignOwner: 'Annabel',
+          scoreTitle   : t('jumbotron.score.title'),
+          scoreComment : t('jumbotron.score.paragraph'),
+        }}
+        campaign
+      >
+        <CampaignJumbotronContent />
+      </Jumbotron>
     </React.Fragment>
   );
 }

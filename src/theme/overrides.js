@@ -11,7 +11,7 @@ const overrides = ({ palette, typography, spacing, breakpoints }) => ({
       fontFamily   : typography.fontFamilyOpenSans,
     },
     text: {
-      color     : palette.text.blue,
+      color     : palette.primary.main,
       fontWeight: 600,
       padding   : '6px 16px',
       '& svg'   : {

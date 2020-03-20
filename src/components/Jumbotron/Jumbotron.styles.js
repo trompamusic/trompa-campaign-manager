@@ -71,7 +71,7 @@ export default ({ spacing, palette, typography, shape, breakpoints }) => createS
       display: 'none',
     },
   },
-  prefixTitle: {
+  prefixTitleHome: {
     display                 : 'flex',
     alignItems              : 'center',
     marginBottom            : spacing(0.5),
@@ -85,6 +85,23 @@ export default ({ spacing, palette, typography, shape, breakpoints }) => createS
       },
     },
   },
+  prefixTitleCampaign: {
+    display   : 'flex',
+    alignItems: 'center',
+    marginLeft: spacing(0.5),
+    lineHeight: 1.5,
+    '& a'     : {
+      textDecoration: 'none',
+      color         : palette.primary.main,
+    },
+    '& span': {
+      fontSize    : typography.pxToRem(12),
+      marginBottom: 0,
+    },
+    [breakpoints.down('sm')]: {
+      width: 250,
+    },
+  },
   logoIcon: {
     width                   : 16,
     height                  : 15,
@@ -92,6 +109,19 @@ export default ({ spacing, palette, typography, shape, breakpoints }) => createS
     [breakpoints.only('sm')]: {
       width : 22,
       height: 21,
+    },
+  },
+  avatar: {
+    display        : 'flex',
+    justifyContent : 'center',
+    alignItems     : 'center',
+    width          : 18,
+    height         : 18,
+    borderRadius   : 60,
+    backgroundColor: palette.common.faintGrey,
+    marginRight    : spacing(0.5),
+    '& img'        : {
+      height: 14,
     },
   },
   compositionTitle: {
@@ -132,4 +162,38 @@ export default ({ spacing, palette, typography, shape, breakpoints }) => createS
       right: 500,
     },
   },
+  score: {
+    position                : 'absolute',
+    right                   : 350,
+    boxSizing               : 'border-box',
+    width                   : 290,
+    height                  : 'auto',
+    boxShadow               : `0 0 10px 0 ${palette.shadow.transparentGrey}`,
+    backgroundColor         : palette.common.white,
+    padding                 : spacing(3),
+    [breakpoints.only('xs')]: {
+      width : '80%',
+      margin: '0 auto',
+      left  : 0,
+      right : 0,
+    },
+    [breakpoints.only('sm')]: {
+      right: 30,
+    },
+    [breakpoints.only('md')]: {
+      right: 40,
+    },
+    [breakpoints.only('lg')]: {
+      // right: 150,
+    },
+    [breakpoints.only('xl')]: {
+      // right: 500,
+    },
+  },
+  scoreImage: {
+    width       : 240,
+    borderRadius: shape.borderRadius,
+    border      : `3px solid ${palette.border.lightGrey}`,
+  },
 });
+
