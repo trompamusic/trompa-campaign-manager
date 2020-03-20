@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { makeStyles } from '@material-ui/styles';
 import { useTranslation } from 'react-i18next';
 import * as PropTypes from 'prop-types';
@@ -11,9 +11,11 @@ export default function CopyField ({ defaultValue, ...rest }) {
   const { t }                   = useTranslation('common');
   const classes                 = useStyles();
   const [copyText, setCopyText] = useState(t('copy'));
+  const inputRef                = useRef();
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(defaultValue);
+    inputRef.current.firstElementChild.select();
+    document.execCommand("copy");
 
     setCopyText(t('copied'));
     setTimeout(() => setCopyText(t('copy')), 500);
@@ -27,6 +29,7 @@ export default function CopyField ({ defaultValue, ...rest }) {
         defaultValue={defaultValue}
         variant="filled"
         InputProps={{
+          ref             : inputRef,
           disableUnderline: true,
           classes         : {
             input           : classes.copyFieldInput,
