@@ -9,8 +9,11 @@ import CampaignJumbotronContent from '../../components/CampaignJumbotronContent/
 import images from '../../theme/images';
 
 export default function ActiveCampaign ({ match }) {
-  const { t }                                 = useTranslation('campaign');
-  const { campaignIdentifier }                = match.params;
+  const { t }                  = useTranslation('campaign');
+  const { campaignIdentifier } = match.params;
+  const shareUrl               = `https://trompamusic.eu/campaign/${campaignIdentifier}`;
+  const campaignTitle          ='Summer concert: Mahler\'s 6th in the beer garden.'; // temp
+
   const [shareDialogOpen, setShareDialogOpen] = useState(false);
 
   return (
@@ -21,16 +24,21 @@ export default function ActiveCampaign ({ match }) {
         <meta name="description" content={t('meta_description')} />
       </Helmet>
       <NavBar
-        iconLink={{ name: t('navbar.share'), onClick: () => setShareDialogOpen(true), icon: <ShareIcon /> }}
+        navLinks={[{ name: t('navbar.share'), onClick: () => setShareDialogOpen(true), startIcon: <ShareIcon /> }]}
         primaryButton={{ name: t('navbar.join_campaign'), to: `${campaignIdentifier}/who-are-you` }}
         drawerContent={<div />}
       />
       <ShareDialog
         open={shareDialogOpen}
         onClose={() => setShareDialogOpen(false)}
-        title={t('share_dialog.drum_up_support')}
-        paragraph={t('share_dialog.lets_face_music')}
-        campaignUrl="https://"
+        modalContent={{
+          title    : t('share_dialog.drum_up_support'),
+          paragraph: t('share_dialog.lets_face_music'),
+        }}
+        shareContent={{
+          campaignTitle,
+          shareUrl,
+        }}
       />
       <Jumbotron
         image={images.mahlerSymphony}
