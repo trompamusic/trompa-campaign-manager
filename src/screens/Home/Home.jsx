@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { makeStyles } from '@material-ui/styles';
 import Button from '@material-ui/core/Button';
+import { useQuery } from '@apollo/react-hooks';
+import { gql } from 'apollo-boost';
 import Jumbotron from '../../components/Jumbotron/Jumbotron';
 import images from '../../theme/images';
 import NavBar from '../../components/NavBar/NavBar';
@@ -14,20 +15,20 @@ import HomeTestimonials from '../../components/HomeTestimonials/HomeTestimonials
 import HomeAboutTrompa from '../../components/HomeAboutTrompa/HomeAboutTrompa';
 import Footer from '../../components/Footer/Footer';
 import MailChimpDialog from '../../components/MailChimpDialog/MailChimpDialog';
-import * as startupActions from '../../redux/Startup/Startup.actions';
 import styles from './Home.styles';
 
 const useStyles = makeStyles(styles);
 
 export default function Home() {
   const { t }                                         = useTranslation('home');
+  const { loading, error, data }                      = useQuery(GET_CAMPAIGN, { variables: { identifier: process.env.REACT_APP_PUBLIC_CAMPAIGN_IDENTIFIER } });
   const classes                                       = useStyles();
-  const dispatch                                      = useDispatch();
   const [mailChimpDialogOpen, setMailChimpDialogOpen] = useState(false);
+  const campaign                                      = data?.ControlAction[0];
 
-  useEffect(() => {
-    dispatch(startupActions.startup());
-  }, [dispatch]);
+  if (loading || error || !campaign) {
+    return null;
+  }
 
   return (
     <div>
@@ -40,7 +41,7 @@ export default function Home() {
           { name: t('home'), to: '/' },
           { name: t('start_campaign'), onClick: () => setMailChimpDialogOpen(true) },
         ]}
-        primaryButton={{ name: t('join_campaign'), to: 'campaign/e63fc3c5-f84e-4a64-9d5b-98a49dd4680c' }}
+        primaryButton={{ name: t('join_campaign'), to: `campaign/${process.env.REACT_APP_PUBLIC_CAMPAIGN_IDENTIFIER}` }}
         drawerContent={<div />}
       />
       <MailChimpDialog
@@ -55,13 +56,14 @@ export default function Home() {
           prefixTitle          : t('trompa_collaboration_campaign_manager'),
           primaryTitle         : t('make_more_memorable'),
           secondaryTitle       : t('help_us'),
+          campaignTitle        : campaign.name,
           introductionParagraph: t('create_modern_classics'),
         }}
       >
         <Button
           className={classes.buttonHero}
           component={Link}
-          to="campaign/e63fc3c5-f84e-4a64-9d5b-98a49dd4680c"
+          to={`campaign/${process.env.REACT_APP_PUBLIC_CAMPAIGN_IDENTIFIER}`}
           variant="contained"
           color="primary"
         >
@@ -76,3 +78,13 @@ export default function Home() {
     </div>
   );
 }
+
+export const GET_CAMPAIGN = gql`
+    query Campaign($identifier: ID!) {
+        ControlAction (identifier: $identifier) {
+            identifier
+            name
+            description
+        }
+    }
+`;

@@ -1,44 +1,83 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<WhoAreYou /> renders and matches snapshot 1`] = `
-<header
-  class="MuiPaper-root MuiAppBar-root MuiAppBar-positionRelative MuiAppBar-colorPrimary MuiPaper-elevation4"
+<div
+  class="makeStyles-root-1"
 >
   <div
-    class="MuiToolbar-root MuiToolbar-dense makeStyles-dense-11 MuiToolbar-gutters"
+    style="display: flex; align-items: flex-end;"
   >
+    <img
+      alt=""
+      class="makeStyles-person-3"
+      src="personTrumpetStandingLeft.png"
+    />
     <div
-      class="makeStyles-header-14"
+      class="makeStyles-content-2"
     >
-      <svg
-        aria-hidden="true"
-        class="MuiSvgIcon-root makeStyles-backIcon-15"
-        focusable="false"
-        role="presentation"
-        viewBox="0 0 24 24"
+      <h1
+        class="MuiTypography-root makeStyles-goal-4 MuiTypography-h1"
       >
-        <path
-          d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
-        />
-      </svg>
-      <div>
+        Our goal is to bring music in the public domain.
+      </h1>
+      <p
+        class="MuiTypography-root makeStyles-body-5 MuiTypography-body1 MuiTypography-paragraph"
+      >
+        All your contributions to this campaign will be published under a Creative Commons license. 
         <a
-          class="makeStyles-link-13"
-          href="/campaign/undefined"
+          href="https://creativecommons.org/licenses/by/4.0/legalcode"
+          rel="noopener noreferrer"
+          target="_blank"
         >
-          <h6
-            class="MuiTypography-root makeStyles-pageType-16 MuiTypography-h6 MuiTypography-colorSecondary"
-          >
-            General task
-          </h6>
-          <h5
-            class="MuiTypography-root makeStyles-title-17 MuiTypography-h5"
-          >
-            Unknown Campaign
-          </h5>
+          (CC BY 4.0)
         </a>
-      </div>
+      </p>
+      <p
+        class="MuiTypography-root makeStyles-body-5 MuiTypography-body1 MuiTypography-paragraph"
+      >
+        We'll assign you a random nickname for attribution of your work. If you want a personalized nickname, create one here:
+      </p>
+      <form
+        class="makeStyles-fullWidth-6"
+        id="nickname-form"
+      >
+        <div
+          class="MuiFormControl-root MuiTextField-root makeStyles-fullWidth-6"
+        >
+          <label
+            class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
+            data-shrink="false"
+            for="user-nickname"
+            id="user-nickname-label"
+          >
+            Nickname
+          </label>
+          <div
+            class="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-formControl"
+          >
+            <input
+              aria-invalid="false"
+              class="MuiInputBase-input MuiFilledInput-input"
+              id="user-nickname"
+              name="nickname"
+              placeholder="MahlerLover#1234"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </form>
+      <p
+        class="MuiTypography-root makeStyles-tip-7 MuiTypography-body1"
+      >
+        Don't use any sensitive data that can be traced back to you. So: no email as nickname, please.
+      </p>
     </div>
+    <img
+      alt=""
+      class="makeStyles-person-3"
+      src="personStandingRight.png"
+    />
   </div>
-</header>
+</div>
 `;

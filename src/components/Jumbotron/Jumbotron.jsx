@@ -22,8 +22,7 @@ export default function Jumbotron ({ children, image, text }) {
         {text.primaryTitle}
       </Typography>
       <Typography variant="h2">
-        {text.secondaryTitle}
-        <span className={classes.compositionTitle}>Requiem in D minor</span>
+        {text.secondaryTitle} <span className={classes.compositionTitle}>{text.campaignTitle}</span>
       </Typography>
       <Typography gutterBottom>
         {text.introductionParagraph}

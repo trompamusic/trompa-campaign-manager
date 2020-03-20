@@ -20,7 +20,7 @@ export default function ActiveCampaign ({ match }) {
       </Helmet>
       <NavBar
         iconLink={{ name: t('navbar.share'), onClick: () => setShareDialogOpen(true), icon: <ShareIcon /> }}
-        primaryButton={{ name: t('navbar.join_campaign'), to: `${campaignIdentifier}/who-are-you` }}
+        primaryButton={{ name: t('navbar.join_campaign'), to: `/campaign/${campaignIdentifier}/task` }}
         drawerContent={<div />}
       />
       <ShareDialog
