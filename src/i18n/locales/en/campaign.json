@@ -1,11 +1,20 @@
 {
+  "about_collaboration_manager": "About Trompa Collaboration Campaign Manager",
   "campaign": "Campaign",
+  "campaignProgress": {
+    "clefs_checked": "Clef's checked",
+    "tempo_checked": "Tempo Signature checked",
+    "measure_checked": "Erroneous measure checked",
+    "key_checked": "Key Signature checked",
+    "mei_changes": "MEI Editor changes"
+  },
   "close": "Close",
   "close_campaign": "Close campaign",
   "copy": "Copy",
   "enhance_classical_sheet_music_together": "Enhance classical sheet music, together",
   "help_this_campaign": "Help this campaign",
   "meta_description": "Let's work together on bringing Mahler's 6th to our yearly outdoor performance.",
+  "more": "More",
   "navbar": {
     "download_mei_file": "Download MEI file",
     "join_campaign": "Join campaign",
@@ -27,8 +36,10 @@
       }
     },
   "share_this_campaign": "Share this campaign",
+  "start_today": "Start today",
   "start_your_own_campaign": "Start your own campaign",
   "subscribe_for_updates": "Subscribe for updates",
+  "trompa_is_developing": "Trompa is developing powerful and advanced tools for musicians. by combining computing power with the knowledge of the best. Whether you’re singing in a choir, playing in an ensemble or conducting an orchestra, Trompa explores new ways to discover, rehearse and perform classical music.",
   "keep_you_posted": "We'll keep you posted",
   "leave_your_email_here": "Leave your email here and we'll send you a weekly update on the campaign and a quarterly update on the TROMPA project"
 }

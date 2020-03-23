@@ -10,6 +10,7 @@ export default {
   collaborateHero          : require('./images/collaborate_hero.png'),
   greatScores              : require('./images/great_scores.png'),
   mahlerSymphony           : require('./images/mahler_symphony.png'),
+  mahlerHeadshot           : require('./images/mahler_headshot.jpg'),
   partnerGoldsmiths        : require('./images/partners/goldsmiths.png'),
   partnerMdw               : require('./images/partners/mdw.png'),
   partnerMuziekweb         : require('./images/partners/muziekweb.png'),

@@ -11,7 +11,7 @@ import styles from './JumbotronContentCampaign.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function JumbotronContentCampaign ({ campaignInfo, campaignIdentifier, setMailChimpDialogOpen }) {
+export default function JumbotronContentCampaign ({ campaign, campaignUrl, to, setMailChimpDialogOpen }) {
   const { t }   = useTranslation('campaign');
   const classes = useStyles();
 
@@ -27,7 +27,7 @@ export default function JumbotronContentCampaign ({ campaignInfo, campaignIdenti
         <Button
           className={classes.primaryButton}
           component={Link}
-          to={`/campaign/${campaignIdentifier}/task`}
+          to={to}
           variant="contained"
           color="primary"
         >
@@ -42,19 +42,14 @@ export default function JumbotronContentCampaign ({ campaignInfo, campaignIdenti
           {t('jumbotron.subscribe_for_updates')}
         </Button>
       </div>
-      <CopyAndShareRow className={classes.copyAndShareRow} campaignInfo={campaignInfo} />
+      <CopyAndShareRow className={classes.copyAndShareRow} campaign={campaign} campaignUrl={campaignUrl} />
     </div>
   );
 }
 
 JumbotronContentCampaign.propTypes = {
-  campaignInfo: PropTypes.shape({
-    campaignOwner: PropTypes.string,
-    campaignTitle: PropTypes.string,
-    campaignUrl  : PropTypes.string,
-    scoreTitle   : PropTypes.string,
-    scoreComment : PropTypes.string,
-  }),
-  campaignIdentifier    : PropTypes.string,
+  campaign              : PropTypes.object,
+  campaignUrl           : PropTypes.string,
+  to                    : PropTypes.string,
   setMailChimpDialogOpen: PropTypes.func,
 };

@@ -14,7 +14,7 @@ import styles from './ShareDialog.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function ShareDialog ({ open, onClose, modalContent: { title, paragraph }, campaignInfo }) {
+export default function ShareDialog ({ open, onClose, modalContent: { title, paragraph }, campaign, campaignUrl }) {
   const { t }   = useTranslation('campaign');
   const classes = useStyles();
 
@@ -33,7 +33,7 @@ export default function ShareDialog ({ open, onClose, modalContent: { title, par
         <Typography paragraph>
           {paragraph}
         </Typography>
-        <CopyAndShareRow campaignInfo={campaignInfo} />
+        <CopyAndShareRow campaign={campaign} campaignUrl={campaignUrl} />
       </DialogContent>
     </Dialog>
   );
@@ -46,7 +46,8 @@ ShareDialog.propTypes = {
     title    : PropTypes.string,
     paragraph: PropTypes.string,
   }),
-  campaignInfo: PropTypes.object,
+  campaign   : PropTypes.object,
+  campaignUrl: PropTypes.string,
 };
 
 ShareDialog.defaultProps = {

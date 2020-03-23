@@ -40,28 +40,26 @@ describe('<Jumbotron />', () => {
     const { getAllByText } = render((
       <Jumbotron
         text={{
-          prefixTitle          : 'Subtitle',
-          primaryTitle         : 'H1',
-          secondaryTitle       : 'H2',
-          introductionParagraph: 'Paragraph',
+          prefixTitle   : 'Subtitle',
+          primaryTitle  : 'H1',
+          secondaryTitle: 'H2',
         }}
-        campaignInfo={{
-          campaignOwner: 'Annabel',
-          campaignTitle: 'Mozart',
-          campaignUrl  : `https://www.trompa.com`,
-          scoreTitle   : 'Mahler',
-          scoreComment : 'Complete',
+        campaign={{
+          name: 'Mozart',
         }}
-        campaign
+        digitalDocument={{
+          title: 'Mahler',
+        }}
+        author="Annabel"
+        campaignUrl="https://www.trompa.com"
+        isCampaign
       />
     ));
 
     expect(getAllByText('Subtitle')).toBeTruthy();
     expect(getAllByText('H1')).toBeTruthy();
     expect(getAllByText('H2')).toBeTruthy();
-    expect(getAllByText('Paragraph')).toBeTruthy();
     expect(getAllByText('Annabel')).toBeTruthy();
     expect(getAllByText('Mahler')).toBeTruthy();
-    expect(getAllByText('Complete')).toBeTruthy();
   });
 });

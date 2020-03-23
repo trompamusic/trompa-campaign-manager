@@ -18,7 +18,7 @@ exports[`<JumbotronContentCampaign /> renders and matches snapshot 1`] = `
     <a
       aria-disabled="false"
       class="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-primaryButton-4 MuiButton-containedPrimary"
-      href="/campaign/undefined/task"
+      href=""
       role="button"
       tabindex="0"
     >
@@ -80,7 +80,7 @@ exports[`<JumbotronContentCampaign /> renders and matches snapshot 1`] = `
               aria-invalid="false"
               class="MuiInputBase-input MuiFilledInput-input makeStyles-copyFieldInput-184 MuiInputBase-inputAdornedEnd MuiFilledInput-inputAdornedEnd MuiInputBase-inputMarginDense MuiFilledInput-inputMarginDense makeStyles-copyFieldInputMarginDense-186"
               type="text"
-              value="https://"
+              value=""
             />
             <span
               class="makeStyles-copyText-187"
@@ -95,7 +95,7 @@ exports[`<JumbotronContentCampaign /> renders and matches snapshot 1`] = `
       class="MuiGrid-root makeStyles-sharingIcons-78 MuiGrid-item MuiGrid-grid-sm-3"
     >
       <a
-        href="https://www.facebook.com/sharer/sharer.php?u=https://"
+        href="https://www.facebook.com/sharer/sharer.php?u=undefined"
         rel="noopener noreferrer"
         target="_blank"
       >
@@ -114,7 +114,7 @@ exports[`<JumbotronContentCampaign /> renders and matches snapshot 1`] = `
         </svg>
       </a>
       <a
-        href="https://twitter.com/intent/tweet?text=Help us bring classical music into the public domain.%0D%0A🎵Can you read music notation?%0D%0A⏲ Got five minutes to spare?%0D%0A➡️ Join us now: https://"
+        href="https://twitter.com/intent/tweet?text=Help us bring classical music into the public domain.%0D%0A🎵Can you read music notation?%0D%0A⏲ Got five minutes to spare?%0D%0A➡️ Join us now: undefined"
         rel="noopener noreferrer"
         target="_blank"
       >
@@ -133,7 +133,7 @@ exports[`<JumbotronContentCampaign /> renders and matches snapshot 1`] = `
         </svg>
       </a>
       <a
-        href="mailto:?subject=Mozart&body=Hey,%0D%0A%0D%0AThe TROMPA project brings classical music into the public domain.%0D%0A%0D%0AAnd I think you can help them. Have a look: https://"
+        href="mailto:?subject=Mozart&body=Hey,%0D%0A%0D%0AThe TROMPA project brings classical music into the public domain.%0D%0A%0D%0AAnd I think you can help them. Have a look: undefined"
         rel="noopener noreferrer"
         target="_blank"
       >

@@ -4,6 +4,7 @@ const backgroundGradient = (firstStop, secondStop) => `linear-gradient(105deg, r
 
 export default ({ spacing, palette, typography, shape, breakpoints }) => createStyles({
   root: {
+    boxShadow   : '0 1px 6px 0px rgba(0,0,0,0.1)',
     display     : 'flex',
     position    : 'relative',
     alignItems  : 'center',
@@ -11,7 +12,10 @@ export default ({ spacing, palette, typography, shape, breakpoints }) => createS
     height      : 600,
     background  : backgroundGradient('65.9%', '66%'),
     '&$campaign': {
-      height: 650,
+      height                  : 750,
+      [breakpoints.only('sm')]: {
+        height: 800,
+      },
     },
     [breakpoints.only('xs')]: {
       height    : 250,
@@ -48,7 +52,8 @@ export default ({ spacing, palette, typography, shape, breakpoints }) => createS
         width: '70%',
       },
       '&$campaign': {
-        width: '50%',
+        width    : '50%',
+        marginTop: 110,
       },
     },
     [breakpoints.only('md')]: {
@@ -177,14 +182,17 @@ export default ({ spacing, palette, typography, shape, breakpoints }) => createS
     },
   },
   score: {
-    position                : 'absolute',
-    right                   : 350,
-    boxSizing               : 'border-box',
-    width                   : 290,
-    height                  : 'auto',
-    boxShadow               : `0 0 10px 0 ${palette.shadow.transparentGrey}`,
-    backgroundColor         : palette.common.white,
-    padding                 : spacing(3),
+    position       : 'absolute',
+    right          : 350,
+    boxSizing      : 'border-box',
+    width          : 290,
+    height         : 'auto',
+    boxShadow      : `0 0 10px 0 ${palette.shadow.transparentGrey}`,
+    backgroundColor: palette.common.white,
+    padding        : spacing(3),
+    '& h3'         : {
+      marginBottom: spacing(),
+    },
     [breakpoints.only('xs')]: {
       width : 290,
       margin: '0 auto',
