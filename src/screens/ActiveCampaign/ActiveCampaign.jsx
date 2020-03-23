@@ -105,8 +105,8 @@ export default function ActiveCampaign ({ match }) {
       >
         <Button
           className={classes.buttonHero}
-          component={Link}
-          to={`campaign/${process.env.REACT_APP_PUBLIC_CAMPAIGN_IDENTIFIER}`}
+          component="button"
+          onClick={() => setMailChimpDialogOpen(true)}
           variant="contained"
           color="primary"
         >
