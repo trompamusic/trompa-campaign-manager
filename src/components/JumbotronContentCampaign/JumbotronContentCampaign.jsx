@@ -11,23 +11,23 @@ import styles from './JumbotronContentCampaign.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function JumbotronContentCampaign ({ campaignInfo }) {
+export default function JumbotronContentCampaign ({ campaignInfo, campaignIdentifier }) {
   const { t }   = useTranslation('campaign');
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
       <Typography className={classes.daysToGo}>
-      33 days to go
+        33 days to go
       </Typography>
       <Typography className={classes.deadline}>
-      Deadline: 16 May 2020
+        Deadline: 16 May 2020
       </Typography>
       <div className={classes.buttons}>
         <Button
           className={classes.primaryButton}
           component={Link}
-          to="campaign/e63fc3c5-f84e-4a64-9d5b-98a49dd4680c"
+          to={`/campaign/${campaignIdentifier}/task`}
           variant="contained"
           color="primary"
         >
@@ -49,10 +49,11 @@ export default function JumbotronContentCampaign ({ campaignInfo }) {
 
 JumbotronContentCampaign.propTypes = {
   campaignInfo: PropTypes.shape({
-    campaignOwner: PropTypes.string,
-    campaignTitle: PropTypes.string,
-    campaignUrl  : PropTypes.string,
-    scoreTitle   : PropTypes.string,
-    scoreComment : PropTypes.string,
+    campaignOwner     : PropTypes.string,
+    campaignTitle     : PropTypes.string,
+    campaignUrl       : PropTypes.string,
+    scoreTitle        : PropTypes.string,
+    scoreComment      : PropTypes.string,
+    campaignIdentifier: PropTypes.string,
   }),
 };

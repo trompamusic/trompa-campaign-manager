@@ -41,9 +41,8 @@ exports[`<NavBar /> renders and matches snapshot 1`] = `
         </span>
       </div>
       <a
-        href="https://trompamusic.eu/"
+        href="/"
         rel="noopener noreferrer"
-        target="_blank"
       >
         <img
           alt="Trompa logo"

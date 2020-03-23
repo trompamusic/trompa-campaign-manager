@@ -8,9 +8,8 @@ exports[`<AppbarTop /> renders and matches snapshot 1`] = `
     class="MuiToolbar-root MuiToolbar-dense makeStyles-dense-1 MuiToolbar-gutters"
   >
     <a
-      href="https://trompamusic.eu/"
+      href="/"
       rel="noopener noreferrer"
-      target="_blank"
     >
       <img
         alt="Trompa logo"

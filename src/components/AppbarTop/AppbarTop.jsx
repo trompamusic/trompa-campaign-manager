@@ -21,12 +21,13 @@ export default function AppbarTop ({
   campaign,
   campaignIdentifier,
   mobile,
+  onGoBackClick,
 }) {
   const { t }   = useTranslation();
   const classes = useStyles();
 
   const renderLogo = () => (
-    <a target="_blank" rel="noopener noreferrer" href="https://trompamusic.eu/">
+    <a rel="noopener noreferrer" href="/">
       <img className={classes.logo} src={images.logo} alt={t('trompa_logo')} />
     </a>
   );
@@ -38,7 +39,7 @@ export default function AppbarTop ({
           <React.Fragment>
             {hasContextNavigation ? (
               <div className={classes.header}>
-                <ArrowBackIcon className={classes.backIcon} />
+                <ArrowBackIcon onClick={onGoBackClick} className={classes.backIcon} />
                 <div>
                   <Link className={classes.link} to={`/campaign/${campaignIdentifier}`}>
                     <Typography className={classes.pageType} variant="h6" color="secondary">
@@ -58,7 +59,7 @@ export default function AppbarTop ({
           hasContextNavigation ? (
             <Link className={classes.link} to={`/campaign/${campaignIdentifier}`}>
               <div className={classes.header}>
-                <ArrowBackIcon className={classes.backIcon} />
+                <ArrowBackIcon onClick={() => onGoBackClick} className={classes.backIcon} />
                 <div>
                   <Typography className={classes.pageType} variant="h6" color="secondary">
                     {type ? type : t('common:unknown_type')}
@@ -84,8 +85,13 @@ export default function AppbarTop ({
 }
 
 AppbarTop.propTypes = {
-  position: PropTypes.oneOf(['absolute', 'fixed', 'relative', 'static', 'sticky']),
-  mobile  : PropTypes.bool,
+  position            : PropTypes.oneOf(['absolute', 'fixed', 'relative', 'static', 'sticky']),
+  hasContextNavigation: PropTypes.bool,
+  type                : PropTypes.string,
+  campaign            : PropTypes.string,
+  campaignIdentifier  : PropTypes.string,
+  mobile              : PropTypes.bool,
+  onGoBackClick       : PropTypes.func,
 };
 
 AppbarTop.defaultProps = {
