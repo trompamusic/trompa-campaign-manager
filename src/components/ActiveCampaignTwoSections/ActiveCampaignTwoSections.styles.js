@@ -11,6 +11,10 @@ export default ({ spacing, typography, palette, breakpoints }) => createStyles({
     [breakpoints.only('sm')]: {
       height: 500,
     },
+    [breakpoints.only('xs')]: {
+      maxHeight: 750,
+      height   : 750,
+    },
     '& section': {
       width : 528,
       margin: '51px 96px 98px 96px',
