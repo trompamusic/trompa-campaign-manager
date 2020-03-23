@@ -22,6 +22,7 @@ export default {
     color     : '#3A3A3A',
     fontWeight: 600,
     fontSize  : '21.50px',
+    fontFamily: fontFamilyOpenSans,
   },
   subtitle1: {
     fontWeight: 600,

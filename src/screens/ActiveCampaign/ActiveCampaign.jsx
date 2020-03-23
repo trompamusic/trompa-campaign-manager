@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet';
 import ShareIcon from '@material-ui/icons/Share';
-import NavBar from '../../components/NavBar/NavBar';
 import ShareDialog from '../../components/ShareDialog/ShareDialog';
+import NavBar from '../../components/NavBar/NavBar';
 import Jumbotron from '../../components/Jumbotron/Jumbotron';
 import JumbotronContentCampaign from '../../components/JumbotronContentCampaign/JumbotronContentCampaign';
+import ActiveCampaignProgress from '../../components/ActiveCampaignProgress/ActiveCampaignProgress';
 import images from '../../theme/images';
 
 export default function ActiveCampaign ({ match }) {
@@ -55,6 +56,7 @@ export default function ActiveCampaign ({ match }) {
       >
         <JumbotronContentCampaign campaignInfo={campaignInfo} />
       </Jumbotron>
+      <ActiveCampaignProgress />
     </React.Fragment>
   );
 }

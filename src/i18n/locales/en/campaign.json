@@ -1,5 +1,12 @@
 {
   "campaign": "Campaign",
+  "campaignProgress": {
+    "clefs_checked": "Clef's checked",
+    "tempo_checked": "Tempo Signature checked",
+    "measure_checked": "Erroneous measure checked",
+    "key_checked": "Key Signature checked",
+    "mei_changes": "MEI Editor changes"
+  },
   "close": "Close",
   "close_campaign": "Close campaign",
   "copy": "Copy",
