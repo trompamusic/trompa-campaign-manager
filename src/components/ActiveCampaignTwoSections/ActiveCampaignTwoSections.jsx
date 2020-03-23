@@ -37,16 +37,10 @@ export default function ActiveCampaignTwoSections ({ campaign, digitalDocument }
             PDF scanned by US-AAu
             Music Addict (2018/3/2)
           </Typography>
-
-          <Button
-            component="button"
-            onClick={() => ''}
-            variant="text"
-            startIcon={<OpenInNewIcon />}
-          >
-          More
-          </Button>
-
+          <a className={classes.moreLink} target="_blank" rel="noopener noreferrer" href={digitalDocument?.source}>
+            <OpenInNewIcon />
+            More
+          </a>
         </section>
       </Grid>
       <Grid className={classNames(classes.twoSections, classes.pieceAuthor)} xs={12} md={6} item>

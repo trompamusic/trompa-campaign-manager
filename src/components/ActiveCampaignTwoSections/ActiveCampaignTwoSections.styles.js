@@ -65,4 +65,18 @@ export default ({ spacing, typography, palette, breakpoints }) => createStyles({
     width       : 115,
     height      : 115,
   },
+  moreLink: {
+    display       : 'flex',
+    alignItems    : 'center',
+    fontWeight    : 600,
+    fontSize      : typography.pxToRem(14),
+    fontFamily    : typography.fontFamilyOpenSans,
+    color         : palette.primary.main,
+    textDecoration: 'none',
+    '& svg'       : {
+      width      : 18,
+      height     : 18,
+      marginRight: spacing(),
+    },
+  },
 });

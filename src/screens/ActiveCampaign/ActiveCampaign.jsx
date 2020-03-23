@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { gql } from 'apollo-boost';
 import { useQuery } from '@apollo/react-hooks';
-import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { makeStyles } from '@material-ui/styles';
