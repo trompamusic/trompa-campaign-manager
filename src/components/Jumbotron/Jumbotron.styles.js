@@ -11,10 +11,9 @@ export default ({ spacing, palette, typography, shape, breakpoints }) => createS
     height      : 600,
     background  : backgroundGradient('65.9%', '66%'),
     '&$campaign': {
-      height                  : 650,
+      height                  : 750,
       [breakpoints.only('sm')]: {
-        height: 750,
-
+        height: 800,
       },
     },
     [breakpoints.only('xs')]: {

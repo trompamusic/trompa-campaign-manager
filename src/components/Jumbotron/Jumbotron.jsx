@@ -25,7 +25,7 @@ export default function Jumbotron ({
 
   const renderContent = device => (
     <div className={classNames(classes[device], { [classes.campaign]: campaign })}>
-      {!campaign && (
+      {!campaign && prefixTitle && (
         <div className={classes.prefixTitleHome}>
           <img className={classes.logoIcon} src={images.logoIcon} alt="" />
           <Typography variant="subtitle2">
@@ -44,9 +44,11 @@ export default function Jumbotron ({
           </Typography>
         </div>
       )}
-      <Typography variant="h1">
-        {primaryTitle}
-      </Typography>
+      {primaryTitle && (
+        <Typography variant="h1">
+          {primaryTitle}
+        </Typography>
+      )}
       <Typography variant="h2">
         {secondaryTitle} <span className={classes.compositionTitle}>{campaignInfo?.campaignTitle}</span>
       </Typography>
