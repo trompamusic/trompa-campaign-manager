@@ -12,13 +12,13 @@ import styles from './CopyAndShareRow.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function CopyAndShareRow ({ className, campaign: { name }, campaignUrl }) {
+export default function CopyAndShareRow ({ className, campaign, campaignUrl }) {
   const { t }   = useTranslation('campaign');
   const classes = useStyles();
 
   const shareContent = {
     twitter: t('share_dialog.content.twitter') + campaignUrl,
-    mail   : { subject: name, body: t('share_dialog.content.mail') + campaignUrl },
+    mail   : { subject: campaign?.name, body: t('share_dialog.content.mail') + campaignUrl },
   };
 
   return (
@@ -48,12 +48,6 @@ export default function CopyAndShareRow ({ className, campaign: { name }, campai
 }
 
 CopyAndShareRow.propTypes = {
-  campaign: PropTypes.shape({
-    campaignOwner: PropTypes.string,
-    name         : PropTypes.string,
-    campaignUrl  : PropTypes.string,
-    scoreTitle   : PropTypes.string,
-    scoreComment : PropTypes.string,
-  }),
+  campaign   : PropTypes.object,
   campaignUrl: PropTypes.string,
 };

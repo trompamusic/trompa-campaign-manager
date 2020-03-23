@@ -39,7 +39,6 @@ export default function ActiveCampaignProgress () {
           {renderCheckItem('0', '345k', t('campaignProgress.measure_checked'))}
           {renderCheckItem('0', '345k', t('campaignProgress.key_checked'))}
           {renderCheckItem('0', '345k', t('campaignProgress.mei_changes'))}
-
         </Grid>
       </div>
     </section>

@@ -18,10 +18,10 @@ export default function Jumbotron ({
     secondaryTitle,
     introductionParagraph,
   },
-  isCampaign,
   campaign,
   author,
   digitalDocument,
+  isCampaign,
 }) {
   const classes = useStyles();
 
@@ -88,8 +88,8 @@ Jumbotron.propTypes = {
     secondaryTitle       : PropTypes.string,
     introductionParagraph: PropTypes.string,
   }),
-  isCampaign     : PropTypes.bool,
   campaign       : PropTypes.object,
   digitalDocument: PropTypes.object,
   author         : PropTypes.string,
+  isCampaign     : PropTypes.bool,
 };

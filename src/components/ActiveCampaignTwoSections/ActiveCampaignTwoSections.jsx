@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { makeStyles } from '@material-ui/styles';
 import { Typography } from '@material-ui/core';
 import classNames from 'classnames';
@@ -12,6 +13,7 @@ const useStyles = makeStyles(styles);
 
 export default function ActiveCampaignTwoSections ({ campaign, digitalDocument }) {
   const classes = useStyles();
+  const { t }   = useTranslation('campaign');
 
   return (
     <Grid
@@ -38,7 +40,7 @@ export default function ActiveCampaignTwoSections ({ campaign, digitalDocument }
           </Typography>
           <a className={classes.moreLink} target="_blank" rel="noopener noreferrer" href={digitalDocument?.source}>
             <OpenInNewIcon />
-            More
+            {t('more')}
           </a>
         </section>
       </Grid>
@@ -64,5 +66,3 @@ ActiveCampaignTwoSections.propTypes = {
   campaign       : PropTypes.object,
   digitalDocument: PropTypes.object,
 };
-
-ActiveCampaignTwoSections.defaultProps = {};
