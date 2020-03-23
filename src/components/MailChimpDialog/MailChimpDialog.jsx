@@ -12,7 +12,7 @@ import styles from './MailChimpDialog.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function MailChimpDialog ({ open, onClose }) {
+export default function MailChimpDialog ({ open, onClose, audience }) {
   const { t }   = useTranslation('home');
   const classes = useStyles();
 
@@ -60,6 +60,38 @@ export default function MailChimpDialog ({ open, onClose }) {
           <div className={classes.submit}>
             <input type="submit" value={t('mail_chimp_dialog.subscribe')} name="subscribe" />
           </div>
+          <div class="mc-field-group input-group" style={{ display: 'none' }}>
+            <strong>Audiences </strong>
+            <ul>
+              <li>
+                <input
+                  type="checkbox"
+                  value="1"
+                  name="group[68895][1]"
+                  id="mce-group[68895]-68895-0"
+                  checked={audience === 'contributor'}
+                />
+              </li>
+              <li>
+                <input
+                  type="checkbox"
+                  value="2"
+                  name="group[68895][2]"
+                  id="mce-group[68895]-68895-1"
+                  checked={audience === 'campaignLead'}
+                />
+              </li>
+              <li>
+                <input
+                  type="checkbox"
+                  value="4"
+                  name="group[68895][4]"
+                  id="mce-group[68895]-68895-2"
+                  checked={audience === 'general'}
+                />
+              </li>
+            </ul>
+          </div>
         </form>
       </DialogContent>
     </Dialog>
@@ -67,11 +99,9 @@ export default function MailChimpDialog ({ open, onClose }) {
 }
 
 MailChimpDialog.propTypes = {
-  open            : PropTypes.bool,
-  onClose         : PropTypes.func,
-  title           : PropTypes.string,
-  paragraph       : PropTypes.string,
-  formTranslations: PropTypes.object,
+  open    : PropTypes.bool,
+  onClose : PropTypes.func,
+  audience: PropTypes.string,
 };
 
 MailChimpDialog.defaultProps = {

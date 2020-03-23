@@ -9,6 +9,7 @@ import ShareIcon from '@material-ui/icons/Share';
 import Button from '@material-ui/core/Button';
 import NotFound from '../NotFound';
 import ShareDialog from '../../components/ShareDialog/ShareDialog';
+import MailChimpDialog from '../../components/MailChimpDialog/MailChimpDialog';
 import NavBar from '../../components/NavBar/NavBar';
 import Jumbotron from '../../components/Jumbotron/Jumbotron';
 import JumbotronContentCampaign from '../../components/JumbotronContentCampaign/JumbotronContentCampaign';
@@ -25,10 +26,11 @@ export default function ActiveCampaign ({ match }) {
   const { t }                  = useTranslation('campaign');
   const classes                = useStyles();
 
-  const [shareDialogOpen, setShareDialogOpen] = useState(false);
-  const { loading, error, data }              = useQuery(GET_CAMPAIGN, { variables: { identifier: campaignIdentifier } });
-  const campaign                              = data?.ControlAction[0];
-  const author                                = "TROMPA";
+  const [shareDialogOpen, setShareDialogOpen]         = useState(false);
+  const [mailChimpDialogOpen, setMailChimpDialogOpen] = useState(false);
+  const { loading, error, data }                      = useQuery(GET_CAMPAIGN, { variables: { identifier: campaignIdentifier } });
+  const campaign                                      = data?.ControlAction[0];
+  const author                                        = "TROMPA";
 
   if (loading) {
     return null;
@@ -67,6 +69,11 @@ export default function ActiveCampaign ({ match }) {
         campaign={campaign}
         campaignUrl={campaignUrl}
       />
+      <MailChimpDialog
+        open={mailChimpDialogOpen}
+        onClose={() => setMailChimpDialogOpen(false)}
+        audience="general"
+      />
       <Jumbotron
         image={images.mahlerSymphony}
         text={{
@@ -80,7 +87,12 @@ export default function ActiveCampaign ({ match }) {
         digitalDocument={digitalDocument}
         isCampaign
       >
-        <JumbotronContentCampaign campaign={campaign} campaignUrl={campaignUrl} to={doTaskUrl} />
+        <JumbotronContentCampaign
+          campaign={campaign}
+          campaignUrl={campaignUrl}
+          to={doTaskUrl}
+          setMailChimpDialogOpen={setMailChimpDialogOpen}
+        />
       </Jumbotron>
       <ActiveCampaignProgress />
       <ActiveCampaignTwoSections campaign={campaign} digitalDocument={digitalDocument} />
