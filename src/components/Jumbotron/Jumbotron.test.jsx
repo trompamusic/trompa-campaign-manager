@@ -35,4 +35,33 @@ describe('<Jumbotron />', () => {
     expect(getAllByText('H2')).toBeTruthy();
     expect(getAllByText('Paragraph')).toBeTruthy();
   });
+
+  test('renders all text and campaign props if campaign', () => {
+    const { getAllByText } = render((
+      <Jumbotron
+        text={{
+          prefixTitle          : 'Subtitle',
+          primaryTitle         : 'H1',
+          secondaryTitle       : 'H2',
+          introductionParagraph: 'Paragraph',
+        }}
+        campaignInfo={{
+          campaignOwner: 'Annabel',
+          campaignTitle: 'Mozart',
+          campaignUrl  : `https://www.trompa.com`,
+          scoreTitle   : 'Mahler',
+          scoreComment : 'Complete',
+        }}
+        campaign
+      />
+    ));
+
+    expect(getAllByText('Subtitle')).toBeTruthy();
+    expect(getAllByText('H1')).toBeTruthy();
+    expect(getAllByText('H2')).toBeTruthy();
+    expect(getAllByText('Paragraph')).toBeTruthy();
+    expect(getAllByText('Annabel')).toBeTruthy();
+    expect(getAllByText('Mahler')).toBeTruthy();
+    expect(getAllByText('Complete')).toBeTruthy();
+  });
 });
