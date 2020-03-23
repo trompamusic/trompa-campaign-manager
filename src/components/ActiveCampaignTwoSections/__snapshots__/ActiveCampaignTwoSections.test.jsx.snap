@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ActiveCampaignTwoSections /> renders and matches snapshot 1`] = `
+<div
+  class="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
+>
+  <div
+    class="MuiGrid-root makeStyles-twoSections-2 makeStyles-pieceInfo-3 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+  >
+    <section>
+      <h2
+        class="MuiTypography-root MuiTypography-h2"
+      >
+        Mahler: Symphony No. 6 in A minor
+      </h2>
+      <p
+        class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom"
+      >
+        Mahler’s A-minor Sixth Symphony is a mythical piece. Mahler may or may not have subtitled it “Tragic” at some stage of its composition, and it could, possibly, contain music that consecrates and depicts his wife Alma. It may be “the first nihilist work in the history of music”, as conductor Wilhelm Furtwängler described it. Conductor and friend of Mahler’s Bruno Walter found the piece too expressively dark for him to conduct, since it “ends in hopelessness and the dark night of the soul”. Most significantly, it’s a work you are always told is dangerously, prophetically autobiographical, above all in its final fourth movement, that half-hour-long hallucinogenic, emotional nightmare-scape.
+      </p>
+      <h2
+        class="MuiTypography-root MuiTypography-h2"
+      >
+        Complete Score
+      </h2>
+      <p
+        class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom"
+      >
+        #514284 - 45.31MB - 263 pages - 486× downloaded PDF scanned by US-AAu Music Addict (2018/3/2)
+      </p>
+      <button
+        class="MuiButtonBase-root MuiButton-root MuiButton-text"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="MuiButton-label"
+        >
+          <span
+            class="MuiButton-startIcon MuiButton-iconSizeMedium"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              role="presentation"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"
+              />
+            </svg>
+          </span>
+          More
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
+    </section>
+  </div>
+  <div
+    class="MuiGrid-root makeStyles-twoSections-2 makeStyles-pieceAuthor-4 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
+  >
+    <section>
+      <img
+        alt=""
+        class="makeStyles-mahlerHeadshot-5"
+        src="mahler_headshot.jpg"
+      />
+      <h2
+        class="MuiTypography-root MuiTypography-h2"
+      >
+        Gustav Mahler
+      </h2>
+      <p
+        class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom"
+      >
+        (7 July 1860 — 18 May 1911)
+      </p>
+      <p
+        class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom"
+      >
+        Gustav Mahler was een in Bohemen geboren en opgegroeide Oostenrijkse componist en dirigent van joodse afkomst. Mahler gold als een van de belangrijkste dirigenten van zijn tijd, maar wordt tegenwoordig vooral gezien als componist die de late romantiek verbonden heeft met de moderne periode van de klassieke muziek die met name in de Tweede Weense School gestalte kreeg. Als dirigent was hij onder andere actief aan de operahuizen van Boedapest en Hamburg en aan de hofopera te Wenen. In Wenen was hij tevens dirigent van de Wiener Philharmoniker.
+      </p>
+    </section>
+  </div>
+</div>
+`;

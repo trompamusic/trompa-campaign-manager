@@ -7,6 +7,8 @@ import NavBar from '../../components/NavBar/NavBar';
 import Jumbotron from '../../components/Jumbotron/Jumbotron';
 import JumbotronContentCampaign from '../../components/JumbotronContentCampaign/JumbotronContentCampaign';
 import ActiveCampaignProgress from '../../components/ActiveCampaignProgress/ActiveCampaignProgress';
+import ActiveCampaignTwoSections from '../../components/ActiveCampaignTwoSections/ActiveCampaignTwoSections';
+
 import images from '../../theme/images';
 
 export default function ActiveCampaign ({ match }) {
@@ -57,6 +59,7 @@ export default function ActiveCampaign ({ match }) {
         <JumbotronContentCampaign campaignInfo={campaignInfo} />
       </Jumbotron>
       <ActiveCampaignProgress />
+      <ActiveCampaignTwoSections />
     </React.Fragment>
   );
 }
