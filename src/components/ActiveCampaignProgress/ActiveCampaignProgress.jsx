@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 import { useTranslation } from 'react-i18next';
-import * as PropTypes from 'prop-types';
 import { Typography } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import styles from './ActiveCampaignProgress.styles';
@@ -27,24 +26,22 @@ export default function ActiveCampaignProgress () {
   );
 
   return (
-    <section className={classes.root}>
-      <Grid
-        direction="row"
-        justify="space-between"
-        alignItems="center"
-        container
-      >
-        {renderCheckItem('12k', '345k', t('campaignProgress.clefs_checked'))}
-        {renderCheckItem('0', '345k', t('campaignProgress.tempo_checked'))}
-        {renderCheckItem('0', '345k', t('campaignProgress.measure_checked'))}
-        {renderCheckItem('0', '345k', t('campaignProgress.key_checked'))}
-        {renderCheckItem('0', '345k', t('campaignProgress.mei_changes'))}
+    <section className={classes.section}>
+      <div className={classes.container}>
+        <Grid
+          direction="row"
+          justify="space-between"
+          alignItems="center"
+          container
+        >
+          {renderCheckItem('12k', '345k', t('campaignProgress.clefs_checked'))}
+          {renderCheckItem('0', '345k', t('campaignProgress.tempo_checked'))}
+          {renderCheckItem('0', '345k', t('campaignProgress.measure_checked'))}
+          {renderCheckItem('0', '345k', t('campaignProgress.key_checked'))}
+          {renderCheckItem('0', '345k', t('campaignProgress.mei_changes'))}
 
-      </Grid>
+        </Grid>
+      </div>
     </section>
   );
 }
-
-ActiveCampaignProgress.propTypes = {};
-
-ActiveCampaignProgress.defaultProps = {};

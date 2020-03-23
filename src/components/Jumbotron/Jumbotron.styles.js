@@ -4,6 +4,7 @@ const backgroundGradient = (firstStop, secondStop) => `linear-gradient(105deg, r
 
 export default ({ spacing, palette, typography, shape, breakpoints }) => createStyles({
   root: {
+    boxShadow   : '0 1px 6px 0px rgba(0,0,0,0.1)',
     display     : 'flex',
     position    : 'relative',
     alignItems  : 'center',
@@ -181,14 +182,17 @@ export default ({ spacing, palette, typography, shape, breakpoints }) => createS
     },
   },
   score: {
-    position                : 'absolute',
-    right                   : 350,
-    boxSizing               : 'border-box',
-    width                   : 290,
-    height                  : 'auto',
-    boxShadow               : `0 0 10px 0 ${palette.shadow.transparentGrey}`,
-    backgroundColor         : palette.common.white,
-    padding                 : spacing(3),
+    position       : 'absolute',
+    right          : 350,
+    boxSizing      : 'border-box',
+    width          : 290,
+    height         : 'auto',
+    boxShadow      : `0 0 10px 0 ${palette.shadow.transparentGrey}`,
+    backgroundColor: palette.common.white,
+    padding        : spacing(3),
+    '& h3'         : {
+      marginBottom: spacing(),
+    },
     [breakpoints.only('xs')]: {
       width : 290,
       margin: '0 auto',

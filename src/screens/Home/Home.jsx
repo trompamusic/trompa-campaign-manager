@@ -56,9 +56,7 @@ export default function Home() {
           secondaryTitle       : t('jumbotron.secondaryTitle'),
           introductionParagraph: t('jumbotron.introductionParagraph'),
         }}
-        campaignInfo={{
-          campaignTitle: campaign?.name,
-        }}
+        campaign={campaign}
       >
         <Button
           className={classes.buttonHero}

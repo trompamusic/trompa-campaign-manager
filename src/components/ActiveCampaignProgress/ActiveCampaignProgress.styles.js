@@ -1,7 +1,10 @@
 import { createStyles } from '@material-ui/styles';
 
 export default ({ palette, typography, spacing }) => createStyles({
-  root: {
+  section: {
+    boxShadow: '0 1px 6px 0px rgba(0,0,0,0.1)',
+  },
+  container: {
     paddingTop   : 48,
     paddingBottom: 48,
     width        : '80%',

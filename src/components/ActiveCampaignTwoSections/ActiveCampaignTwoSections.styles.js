@@ -5,9 +5,12 @@ export default ({ spacing, typography, palette, breakpoints }) => createStyles({
     position: 'relative',
   },
   twoSections: {
-    display    : 'flex',
-    height     : 600,
-    maxHeight  : 600,
+    display                 : 'flex',
+    height                  : 600,
+    maxHeight               : 600,
+    [breakpoints.only('sm')]: {
+      height: 500,
+    },
     '& section': {
       width : 528,
       margin: '51px 96px 98px 96px',
@@ -16,6 +19,12 @@ export default ({ spacing, typography, palette, breakpoints }) => createStyles({
       },
       '& p': {
         marginBottom: spacing(2),
+      },
+      [breakpoints.down('md')]: {
+        marginTop   : spacing(4),
+        marginLeft  : spacing(2),
+        marginRight : spacing(2),
+        marginBottom: spacing(4),
       },
       [breakpoints.only('sm')]: {
         marginLeft  : spacing(4),

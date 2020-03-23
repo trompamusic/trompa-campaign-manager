@@ -6,9 +6,8 @@ describe('<JumbotronContentCampaign />', () => {
   test('renders and matches snapshot', () => {
     const { container } = render((
       <JumbotronContentCampaign
-        campaignInfo={{
-          campaignTitle: 'Mozart',
-          campaignUrl  : `https://`,
+        campaign={{
+          name: 'Mozart',
         }}
       />
     ));

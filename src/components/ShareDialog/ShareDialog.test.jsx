@@ -12,10 +12,10 @@ describe('<ShareDialog />', () => {
           title    : "Hello",
           paragraph: "Some info",
         }}
-        campaignInfo={{
-          campaignTitle: 'Mozart',
-          campaignUrl  : `https://`,
+        campaign={{
+          name: 'Mozart',
         }}
+        campaignUrl="https://www.trompa.com"
       />
     ));
 
@@ -30,10 +30,10 @@ describe('<ShareDialog />', () => {
           title    : "Hello",
           paragraph: "Some info",
         }}
-        campaignInfo={{
-          campaignTitle: 'Mozart',
-          campaignUrl  : `https://`,
+        campaign={{
+          name: 'Mozart',
         }}
+        campaignUrl="https://www.trompa.com"
       />
     ));
 
@@ -48,16 +48,16 @@ describe('<ShareDialog />', () => {
           title    : "Hello",
           paragraph: "Some info",
         }}
-        campaignInfo={{
-          campaignTitle: 'Mozart',
-          campaignUrl  : `https://`,
+        campaign={{
+          name: 'Mozart',
         }}
+        campaignUrl="https://www.trompa.com"
       />
     ));
 
     expect(getByText('Hello')).toBeTruthy();
     expect(getByText('Some info')).toBeTruthy();
-    expect(getByDisplayValue('https://')).toBeTruthy();
+    expect(getByDisplayValue('https://www.trompa.com')).toBeTruthy();
   });
 
   test('fires onClose callback if close icon is clicked', () => {
@@ -70,10 +70,10 @@ describe('<ShareDialog />', () => {
           title    : "Hello",
           paragraph: "Some info",
         }}
-        campaignInfo={{
-          campaignTitle: 'Mozart',
-          campaignUrl  : `https://`,
+        campaign={{
+          name: 'Mozart',
         }}
+        campaignUrl="https://www.trompa.com"
       />
     ));
 

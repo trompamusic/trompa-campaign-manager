@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 import { Typography } from '@material-ui/core';
-import { useTranslation } from 'react-i18next';
 import classNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
@@ -12,8 +11,7 @@ import styles from './ActiveCampaignTwoSections.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function ActiveCampaignTwoSections () {
-  const { t }   = useTranslation('campaign');
+export default function ActiveCampaignTwoSections ({ campaign, digitalDocument }) {
   const classes = useStyles();
 
   return (
@@ -39,6 +37,7 @@ export default function ActiveCampaignTwoSections () {
             PDF scanned by US-AAu
             Music Addict (2018/3/2)
           </Typography>
+
           <Button
             component="button"
             onClick={() => ''}
@@ -47,6 +46,7 @@ export default function ActiveCampaignTwoSections () {
           >
           More
           </Button>
+
         </section>
       </Grid>
       <Grid className={classNames(classes.twoSections, classes.pieceAuthor)} xs={12} md={6} item>
@@ -71,6 +71,9 @@ Mahler gold als een van de belangrijkste dirigenten van zijn tijd, maar wordt te
   );
 }
 
-ActiveCampaignTwoSections.propTypes = {};
+ActiveCampaignTwoSections.propTypes = {
+  campaign       : PropTypes.object,
+  digitalDocument: PropTypes.object,
+};
 
 ActiveCampaignTwoSections.defaultProps = {};

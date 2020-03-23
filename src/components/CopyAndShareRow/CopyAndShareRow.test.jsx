@@ -6,10 +6,10 @@ describe('<CopyAndShareRow />', () => {
   test('renders and matches snapshot', () => {
     const { container } = render((
       <CopyAndShareRow
-        campaignInfo={{
-          campaignTitle: 'Mozart',
-          campaignUrl  : 'https://www.trompa.com/',
+        campaign={{
+          name: 'Mozart',
         }}
+        campaignUrl="https://www.trompa.com/"
       />
     ));
 
@@ -19,10 +19,10 @@ describe('<CopyAndShareRow />', () => {
   test('renders copy input value and social icons', () => {
     const { getByLabelText, getByDisplayValue } = render((
       <CopyAndShareRow
-        campaignInfo={{
-          campaignTitle: 'Mozart',
-          campaignUrl  : 'https://www.trompa.com/',
+        campaign={{
+          name: 'Mozart',
         }}
+        campaignUrl="https://www.trompa.com/"
       />
     ));
 

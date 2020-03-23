@@ -18,14 +18,16 @@ export default function Jumbotron ({
     secondaryTitle,
     introductionParagraph,
   },
+  isCampaign,
   campaign,
-  campaignInfo,
+  author,
+  digitalDocument,
 }) {
   const classes = useStyles();
 
   const renderContent = device => (
-    <div className={classNames(classes[device], { [classes.campaign]: campaign })}>
-      {!campaign && prefixTitle && (
+    <div className={classNames(classes[device], { [classes.campaign]: isCampaign })}>
+      {!isCampaign && prefixTitle && (
         <div className={classes.prefixTitleHome}>
           <img className={classes.logoIcon} src={images.logoIcon} alt="" />
           <Typography variant="subtitle2">
@@ -33,13 +35,13 @@ export default function Jumbotron ({
           </Typography>
         </div>
       )}
-      {campaign && (
+      {isCampaign && (
         <div className={classes.prefixTitleCampaign}>
           <span className={classes.avatar} >
             <img src={images.avatarOne} alt="" />
           </span>
           <Typography variant="caption">
-            <Link to="">{campaignInfo?.campaignOwner}</Link>
+            <Link to="">{author}</Link>
             {prefixTitle}
           </Typography>
         </div>
@@ -50,10 +52,10 @@ export default function Jumbotron ({
         </Typography>
       )}
       <Typography variant="h2">
-        {secondaryTitle} <span className={classes.compositionTitle}>{campaignInfo?.campaignTitle}</span>
+        {secondaryTitle ? secondaryTitle : <span className={classes.compositionTitle}>{campaign?.name}</span>}
       </Typography>
       <Typography gutterBottom>
-        {introductionParagraph}
+        {isCampaign ? campaign?.description : introductionParagraph}
       </Typography>
       {children}
     </div>
@@ -61,16 +63,13 @@ export default function Jumbotron ({
 
   return (
     <header>
-      <div className={classNames(classes.root, { [classes.campaign]: campaign })}>
+      <div className={classNames(classes.root, { [classes.campaign]: isCampaign })}>
         {renderContent('desktop')}
-        {!campaign && (<img className={classes.image} src={image} alt="" />)}
-        {campaign && (
+        {!isCampaign && (<img className={classes.image} src={image} alt="" />)}
+        {isCampaign && (
           <div className={classes.score}>
             <Typography variant="h3">
-              {campaignInfo?.scoreTitle}
-            </Typography>
-            <Typography gutterBottom>
-              {campaignInfo?.scoreComment}
+              {digitalDocument?.title}
             </Typography>
             <img className={classes.scoreImage} src={image} alt="" />
           </div>
@@ -89,12 +88,8 @@ Jumbotron.propTypes = {
     secondaryTitle       : PropTypes.string,
     introductionParagraph: PropTypes.string,
   }),
-  campaign    : PropTypes.bool,
-  campaignInfo: PropTypes.shape({
-    campaignOwner: PropTypes.string,
-    campaignTitle: PropTypes.string,
-    campaignUrl  : PropTypes.string,
-    scoreTitle   : PropTypes.string,
-    scoreComment : PropTypes.string,
-  }),
+  isCampaign     : PropTypes.bool,
+  campaign       : PropTypes.object,
+  digitalDocument: PropTypes.object,
+  author         : PropTypes.string,
 };

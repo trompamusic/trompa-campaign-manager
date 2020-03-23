@@ -31,10 +31,6 @@ exports[`<Jumbotron /> renders and matches snapshot 1`] = `
         class="MuiTypography-root MuiTypography-h2"
       >
         H2
-         
-        <span
-          class="makeStyles-compositionTitle-9"
-        />
       </h2>
       <p
         class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom"
@@ -73,10 +69,6 @@ exports[`<Jumbotron /> renders and matches snapshot 1`] = `
       class="MuiTypography-root MuiTypography-h2"
     >
       H2
-       
-      <span
-        class="makeStyles-compositionTitle-9"
-      />
     </h2>
     <p
       class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom"

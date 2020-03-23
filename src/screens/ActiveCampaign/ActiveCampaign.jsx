@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { gql } from 'apollo-boost';
+import { useQuery } from '@apollo/react-hooks';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { makeStyles } from '@material-ui/styles';
-import { Helmet } from 'react-helmet';
-import { Link } from 'react-router-dom';
 import ShareIcon from '@material-ui/icons/Share';
 import Button from '@material-ui/core/Button';
+import NotFound from '../NotFound';
 import ShareDialog from '../../components/ShareDialog/ShareDialog';
 import NavBar from '../../components/NavBar/NavBar';
 import Jumbotron from '../../components/Jumbotron/Jumbotron';
@@ -18,19 +21,30 @@ import styles from './ActiveCampaign.styles';
 const useStyles = makeStyles(styles);
 
 export default function ActiveCampaign ({ match }) {
-  const { t }                                 = useTranslation('campaign');
-  const classes                               = useStyles();
-  const { campaignIdentifier }                = match.params;
-  const [shareDialogOpen, setShareDialogOpen] = useState(false);
+  const { campaignIdentifier } = match.params;
+  const { t }                  = useTranslation('campaign');
+  const classes                = useStyles();
 
-  // temp static campaign data
-  const campaignInfo = {
-    campaignOwner: 'Annabel',
-    campaignTitle: 'Summer concert: Mahler\'s 6th in the beer garden.',
-    campaignUrl  : `https://trompamusic.eu/campaign/${campaignIdentifier}`,
-    scoreTitle   : 'Mahler: Symphony No. 6 in A minor',
-    scoreComment : 'Complete score',
-  };
+  const [shareDialogOpen, setShareDialogOpen] = useState(false);
+  const { loading, error, data }              = useQuery(GET_CAMPAIGN, { variables: { identifier: campaignIdentifier } });
+  const campaign                              = data?.ControlAction[0];
+  const author                                = "TROMPA";
+
+  if (loading) {
+    return null;
+  }
+
+  if (error) {
+    return <h2>{error.message}</h2>;
+  }
+
+  if (!loading && !campaign) {
+    return <NotFound />;
+  }
+
+  const digitalDocument = campaign.object.find(obj => obj.name === 'Work')?.nodeValue;
+  const campaignUrl     = `https://trompamusic.eu/campaign/${campaignIdentifier}`;
+  const doTaskUrl       = `${process.env.REACT_APP_PUBLIC_CAMPAIGN_IDENTIFIER}/who-are-you`;
 
   return (
     <React.Fragment>
@@ -50,21 +64,26 @@ export default function ActiveCampaign ({ match }) {
           title    : t('share_dialog.drum_up_support'),
           paragraph: t('share_dialog.lets_face_music'),
         }}
-        campaignInfo={campaignInfo}
+        campaign={campaign}
+        campaignUrl={campaignUrl}
       />
       <Jumbotron
         image={images.mahlerSymphony}
         text={{
-          primaryTitle         : 'About Trompa Collaboration Campaign Manager',
-          introductionParagraph: 'Trompa is developing powerful and advanced tools for musicians. by combining computing power with the knowledge of the best. Whether you’re singing in a choir, playing in an ensemble or conducting an orchestra, Trompa explores new ways to discover, rehearse and perform classical music.',
+          prefixTitle          : t('jumbotron.prefixTitle'),
+          primaryTitle         : t('jumbotron.primaryTitle'),
+          secondaryTitle       : t('jumbotron.secondaryTitle'),
+          introductionParagraph: t('jumbotron.introductionParagraph'),
         }}
-        campaignInfo={campaignInfo}
-        campaign
+        campaign={campaign}
+        author={author}
+        digitalDocument={digitalDocument}
+        isCampaign
       >
-        <JumbotronContentCampaign campaignInfo={campaignInfo} />
+        <JumbotronContentCampaign campaign={campaign} campaignUrl={campaignUrl} to={doTaskUrl} />
       </Jumbotron>
       <ActiveCampaignProgress />
-      <ActiveCampaignTwoSections />
+      <ActiveCampaignTwoSections campaign={campaign} digitalDocument={digitalDocument} />
       <Jumbotron
         image={images.collaborateHero}
         text={{
@@ -86,3 +105,26 @@ export default function ActiveCampaign ({ match }) {
     </React.Fragment>
   );
 }
+
+export const GET_CAMPAIGN = gql`
+    query Campaign($identifier: ID!) {
+        ControlAction (identifier: $identifier) {
+            identifier
+            name
+            description
+            object {
+                ... on PropertyValue {
+                    name
+                    value
+                    nodeValue {
+                        ... on DigitalDocument {
+                            identifier
+                            title
+                            source
+                        }
+                    }
+                }
+            }
+        }
+    }
+`;

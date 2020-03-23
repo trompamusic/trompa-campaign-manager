@@ -2,110 +2,114 @@
 
 exports[`<ActiveCampaignProgress /> renders and matches snapshot 1`] = `
 <section
-  class="makeStyles-root-1"
+  class="makeStyles-section-1"
 >
   <div
-    class="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-space-between"
+    class="makeStyles-container-2"
   >
     <div
-      class="MuiGrid-root makeStyles-checkItem-2 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-true"
+      class="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-space-between"
     >
-      <h3
-        class="MuiTypography-root makeStyles-amountDone-3 MuiTypography-h3"
+      <div
+        class="MuiGrid-root makeStyles-checkItem-3 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-true"
       >
-        12k
-      </h3>
-      <h3
-        class="MuiTypography-root makeStyles-amountTotal-4 MuiTypography-h3"
+        <h3
+          class="MuiTypography-root makeStyles-amountDone-4 MuiTypography-h3"
+        >
+          12k
+        </h3>
+        <h3
+          class="MuiTypography-root makeStyles-amountTotal-5 MuiTypography-h3"
+        >
+          /
+          345k
+        </h3>
+        <p
+          class="MuiTypography-root MuiTypography-body1"
+        >
+          Clef's checked
+        </p>
+      </div>
+      <div
+        class="MuiGrid-root makeStyles-checkItem-3 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-true"
       >
-        /
-        345k
-      </h3>
-      <p
-        class="MuiTypography-root MuiTypography-body1"
+        <h3
+          class="MuiTypography-root makeStyles-amountDone-4 MuiTypography-h3"
+        >
+          0
+        </h3>
+        <h3
+          class="MuiTypography-root makeStyles-amountTotal-5 MuiTypography-h3"
+        >
+          /
+          345k
+        </h3>
+        <p
+          class="MuiTypography-root MuiTypography-body1"
+        >
+          Tempo Signature checked
+        </p>
+      </div>
+      <div
+        class="MuiGrid-root makeStyles-checkItem-3 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-true"
       >
-        Clef's checked
-      </p>
-    </div>
-    <div
-      class="MuiGrid-root makeStyles-checkItem-2 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-true"
-    >
-      <h3
-        class="MuiTypography-root makeStyles-amountDone-3 MuiTypography-h3"
+        <h3
+          class="MuiTypography-root makeStyles-amountDone-4 MuiTypography-h3"
+        >
+          0
+        </h3>
+        <h3
+          class="MuiTypography-root makeStyles-amountTotal-5 MuiTypography-h3"
+        >
+          /
+          345k
+        </h3>
+        <p
+          class="MuiTypography-root MuiTypography-body1"
+        >
+          Erroneous measure checked
+        </p>
+      </div>
+      <div
+        class="MuiGrid-root makeStyles-checkItem-3 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-true"
       >
-        0
-      </h3>
-      <h3
-        class="MuiTypography-root makeStyles-amountTotal-4 MuiTypography-h3"
+        <h3
+          class="MuiTypography-root makeStyles-amountDone-4 MuiTypography-h3"
+        >
+          0
+        </h3>
+        <h3
+          class="MuiTypography-root makeStyles-amountTotal-5 MuiTypography-h3"
+        >
+          /
+          345k
+        </h3>
+        <p
+          class="MuiTypography-root MuiTypography-body1"
+        >
+          Key Signature checked
+        </p>
+      </div>
+      <div
+        class="MuiGrid-root makeStyles-checkItem-3 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-true"
       >
-        /
-        345k
-      </h3>
-      <p
-        class="MuiTypography-root MuiTypography-body1"
-      >
-        Tempo Signature checked
-      </p>
-    </div>
-    <div
-      class="MuiGrid-root makeStyles-checkItem-2 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-true"
-    >
-      <h3
-        class="MuiTypography-root makeStyles-amountDone-3 MuiTypography-h3"
-      >
-        0
-      </h3>
-      <h3
-        class="MuiTypography-root makeStyles-amountTotal-4 MuiTypography-h3"
-      >
-        /
-        345k
-      </h3>
-      <p
-        class="MuiTypography-root MuiTypography-body1"
-      >
-        Erroneous measure checked
-      </p>
-    </div>
-    <div
-      class="MuiGrid-root makeStyles-checkItem-2 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-true"
-    >
-      <h3
-        class="MuiTypography-root makeStyles-amountDone-3 MuiTypography-h3"
-      >
-        0
-      </h3>
-      <h3
-        class="MuiTypography-root makeStyles-amountTotal-4 MuiTypography-h3"
-      >
-        /
-        345k
-      </h3>
-      <p
-        class="MuiTypography-root MuiTypography-body1"
-      >
-        Key Signature checked
-      </p>
-    </div>
-    <div
-      class="MuiGrid-root makeStyles-checkItem-2 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-true"
-    >
-      <h3
-        class="MuiTypography-root makeStyles-amountDone-3 MuiTypography-h3"
-      >
-        0
-      </h3>
-      <h3
-        class="MuiTypography-root makeStyles-amountTotal-4 MuiTypography-h3"
-      >
-        /
-        345k
-      </h3>
-      <p
-        class="MuiTypography-root MuiTypography-body1"
-      >
-        MEI Editor changes
-      </p>
+        <h3
+          class="MuiTypography-root makeStyles-amountDone-4 MuiTypography-h3"
+        >
+          0
+        </h3>
+        <h3
+          class="MuiTypography-root makeStyles-amountTotal-5 MuiTypography-h3"
+        >
+          /
+          345k
+        </h3>
+        <p
+          class="MuiTypography-root MuiTypography-body1"
+        >
+          MEI Editor changes
+        </p>
+      </div>
     </div>
   </div>
 </section>
