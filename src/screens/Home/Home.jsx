@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <div>
       <Helmet>
-        <title>{t('page_title')}</title>
+        <title>{t('jumbotron.primaryTitle')}</title>
         <meta name="description" content={t('meta_description')} />
       </Helmet>
       <NavBar
@@ -52,10 +52,10 @@ export default function Home() {
       <Jumbotron
         image={images.collaborateHero}
         text={{
-          prefixTitle          : t('trompa_collaboration_campaign_manager'),
-          primaryTitle         : t('make_more_memorable'),
-          secondaryTitle       : t('help_us'),
-          introductionParagraph: t('create_modern_classics'),
+          prefixTitle          : t('jumbotron.prefixTitle'),
+          primaryTitle         : t('jumbotron.primaryTitle'),
+          secondaryTitle       : t('jumbotron.secondaryTitle'),
+          introductionParagraph: t('jumbotron.introductionParagraph'),
         }}
       >
         <Button

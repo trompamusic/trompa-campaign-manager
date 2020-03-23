@@ -1,0 +1,156 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<JumbotronContentCampaign /> renders and matches snapshot 1`] = `
+<div>
+  <p
+    class="MuiTypography-root makeStyles-daysToGo-1 MuiTypography-body1"
+  >
+    33 days to go
+  </p>
+  <p
+    class="MuiTypography-root makeStyles-deadline-2 MuiTypography-body1"
+  >
+    Deadline: 16 May 2020
+  </p>
+  <div
+    class="makeStyles-buttons-3"
+  >
+    <a
+      aria-disabled="false"
+      class="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-primaryButton-4 MuiButton-containedPrimary"
+      href="/campaign/e63fc3c5-f84e-4a64-9d5b-98a49dd4680c"
+      role="button"
+      tabindex="0"
+    >
+      <span
+        class="MuiButton-label"
+      >
+        Join campaign
+      </span>
+      <span
+        class="MuiTouchRipple-root"
+      />
+    </a>
+    <button
+      class="MuiButtonBase-root MuiButton-root MuiButton-text"
+      tabindex="0"
+      type="button"
+    >
+      <span
+        class="MuiButton-label"
+      >
+        <span
+          class="MuiButton-startIcon MuiButton-iconSizeMedium"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root"
+            focusable="false"
+            role="presentation"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"
+            />
+          </svg>
+        </span>
+        Subscribe for updates
+      </span>
+      <span
+        class="MuiTouchRipple-root"
+      />
+    </button>
+  </div>
+  <div
+    class="MuiGrid-root makeStyles-copyAndShareRow-77 makeStyles-copyAndShareRow-5 MuiGrid-container MuiGrid-align-items-xs-center"
+  >
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-9"
+    >
+      <div
+        class="makeStyles-root-182"
+      >
+        <div
+          class="MuiFormControl-root MuiTextField-root makeStyles-copyField-183 MuiFormControl-fullWidth"
+        >
+          <div
+            class="MuiInputBase-root MuiFilledInput-root MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiFilledInput-adornedEnd makeStyles-copyFieldAdornedEnd-185 MuiInputBase-marginDense MuiFilledInput-marginDense"
+          >
+            <input
+              aria-invalid="false"
+              class="MuiInputBase-input MuiFilledInput-input makeStyles-copyFieldInput-184 MuiInputBase-inputAdornedEnd MuiFilledInput-inputAdornedEnd MuiInputBase-inputMarginDense MuiFilledInput-inputMarginDense makeStyles-copyFieldInputMarginDense-186"
+              type="text"
+              value="https://"
+            />
+            <span
+              class="makeStyles-copyText-187"
+            >
+              Copy
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root makeStyles-sharingIcons-78 MuiGrid-item MuiGrid-grid-sm-3"
+    >
+      <a
+        href="https://www.facebook.com/sharer/sharer.php?u=https://"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <svg
+          aria-hidden="true"
+          aria-label="Facebook"
+          class="MuiSvgIcon-root"
+          focusable="false"
+          role="presentation"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M23.9981 11.9991C23.9981 5.37216 18.626 0 11.9991 0C5.37216 0 0 5.37216 0 11.9991C0 17.9882 4.38789 22.9522 10.1242 23.8524V15.4676H7.07758V11.9991H10.1242V9.35553C10.1242 6.34826 11.9156 4.68714 14.6564 4.68714C15.9692 4.68714 17.3424 4.92149 17.3424 4.92149V7.87439H15.8294C14.3388 7.87439 13.8739 8.79933 13.8739 9.74824V11.9991H17.2018L16.6698 15.4676H13.8739V23.8524C19.6103 22.9522 23.9981 17.9882 23.9981 11.9991Z"
+            style="fill: #3B5998;"
+          />
+        </svg>
+      </a>
+      <a
+        href="https://twitter.com/intent/tweet?text=Help us bring classical music into the public domain.%0D%0A🎵Can you read music notation?%0D%0A⏲ Got five minutes to spare?%0D%0A➡️ Join us now: https://"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <svg
+          aria-hidden="true"
+          aria-label="Twitter"
+          class="MuiSvgIcon-root"
+          focusable="false"
+          role="presentation"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"
+            style="fill: #1DA1F2;"
+          />
+        </svg>
+      </a>
+      <a
+        href="mailto:?subject=Mozart&body=Hey,%0D%0A%0D%0AThe TROMPA project brings classical music into the public domain.%0D%0A%0D%0AAnd I think you can help them. Have a look: https://"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <svg
+          aria-hidden="true"
+          aria-label="Mail"
+          class="MuiSvgIcon-root"
+          focusable="false"
+          role="presentation"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+          />
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+`;
