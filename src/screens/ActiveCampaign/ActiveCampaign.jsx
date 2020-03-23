@@ -98,8 +98,8 @@ export default function ActiveCampaign ({ match }) {
       <Jumbotron
         image={images.collaborateHero}
         text={{
-          secondaryTitle       : 'About Trompa Collaboration Campaign Manager',
-          introductionParagraph: 'Trompa is developing powerful and advanced tools for musicians. by combining computing power with the knowledge of the best. Whether you’re singing in a choir, playing in an ensemble or conducting an orchestra, Trompa explores new ways to discover, rehearse and perform classical music.',
+          secondaryTitle       : t('about_collaboration_manager'),
+          introductionParagraph: t('trompa_is_developing'),
         }}
       >
         <Button
@@ -109,7 +109,7 @@ export default function ActiveCampaign ({ match }) {
           variant="contained"
           color="primary"
         >
-          Start today
+          {t('start_today')}
         </Button>
       </Jumbotron>
       <Footer />

@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/styles';
 import { Typography } from '@material-ui/core';
 import classNames from 'classnames';
 import * as PropTypes from 'prop-types';
-import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import OpenInNewIcon from '@material-ui/icons/OpenInNew';
 import images from '../../theme/images';
@@ -53,12 +52,8 @@ export default function ActiveCampaignTwoSections ({ campaign, digitalDocument }
           (7 July 1860 — 18 May 1911)
           </Typography>
           <Typography gutterBottom>
-          Gustav Mahler was een in Bohemen geboren en opgegroeide Oostenrijkse componist en dirigent van joodse afkomst.
-
-Mahler gold als een van de belangrijkste dirigenten van zijn tijd, maar wordt tegenwoordig vooral gezien als componist die de late romantiek verbonden heeft met de moderne periode van de klassieke muziek die met name in de Tweede Weense School gestalte kreeg. Als dirigent was hij onder andere actief aan de operahuizen van Boedapest en Hamburg en aan de hofopera te Wenen. In Wenen was hij tevens dirigent van de Wiener Philharmoniker.
-
+          Gustav Mahler was an Austro-Bohemian Romantic composer, and one of the leading conductors of his generation. As a composer he acted as a bridge between the 19th century Austro-German tradition and the modernism of the early 20th century. While in his lifetime his status as a conductor was established beyond question, his own music gained wide popularity only after periods of relative neglect, which included a ban on its performance in much of Europe during the Nazi era. After 1945 his compositions were rediscovered by a new generation of listeners; Mahler then became one of the most frequently performed and recorded of all composers, a position he has sustained into the 21st century.
           </Typography>
-
         </section>
       </Grid>
     </Grid>
