@@ -11,7 +11,7 @@ import styles from './JumbotronContentCampaign.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function JumbotronContentCampaign ({ campaignInfo }) {
+export default function JumbotronContentCampaign ({ campaignInfo, setMailChimpDialogOpen }) {
   const { t }   = useTranslation('campaign');
   const classes = useStyles();
 
@@ -35,7 +35,7 @@ export default function JumbotronContentCampaign ({ campaignInfo }) {
         </Button>
         <Button
           component="button"
-          onClick={() => ''}
+          onClick={() => setMailChimpDialogOpen(true)}
           variant="text"
           startIcon={<NotificationsIcon />}
         >
@@ -49,10 +49,11 @@ export default function JumbotronContentCampaign ({ campaignInfo }) {
 
 JumbotronContentCampaign.propTypes = {
   campaignInfo: PropTypes.shape({
-    campaignOwner: PropTypes.string,
-    campaignTitle: PropTypes.string,
-    campaignUrl  : PropTypes.string,
-    scoreTitle   : PropTypes.string,
-    scoreComment : PropTypes.string,
+    campaignOwner         : PropTypes.string,
+    campaignTitle         : PropTypes.string,
+    campaignUrl           : PropTypes.string,
+    scoreTitle            : PropTypes.string,
+    scoreComment          : PropTypes.string,
+    setMailChimpDialogOpen: PropTypes.func,
   }),
 };
