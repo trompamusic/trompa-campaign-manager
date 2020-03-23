@@ -12,8 +12,9 @@ describe('<ShareDialog />', () => {
           title    : "Hello",
           paragraph: "Some info",
         }}
-        shareContent={{
-          shareUrl: "https://",
+        campaignInfo={{
+          campaignTitle: 'Mozart',
+          campaignUrl  : `https://`,
         }}
       />
     ));
@@ -29,8 +30,9 @@ describe('<ShareDialog />', () => {
           title    : "Hello",
           paragraph: "Some info",
         }}
-        shareContent={{
-          shareUrl: "https://",
+        campaignInfo={{
+          campaignTitle: 'Mozart',
+          campaignUrl  : `https://`,
         }}
       />
     ));
@@ -46,8 +48,9 @@ describe('<ShareDialog />', () => {
           title    : "Hello",
           paragraph: "Some info",
         }}
-        shareContent={{
-          shareUrl: "https://",
+        campaignInfo={{
+          campaignTitle: 'Mozart',
+          campaignUrl  : `https://`,
         }}
       />
     ));
@@ -67,8 +70,9 @@ describe('<ShareDialog />', () => {
           title    : "Hello",
           paragraph: "Some info",
         }}
-        shareContent={{
-          shareUrl: "https://",
+        campaignInfo={{
+          campaignTitle: 'Mozart',
+          campaignUrl  : `https://`,
         }}
       />
     ));

@@ -5,26 +5,18 @@ import * as PropTypes from 'prop-types';
 import Dialog from '@material-ui/core/Dialog';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogContent from '@material-ui/core/DialogContent';
-import Grid from '@material-ui/core/Grid';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
-import EmailIcon from '@material-ui/icons/Email';
 import images from '../../theme/images';
-import CopyField from '../CopyField/CopyField';
-import FacebookIcon from '../Icons/FacebookIcon';
-import TwitterIcon from '../Icons/TwitterIcon';
+import CopyAndShareRow from '../CopyAndShareRow/CopyAndShareRow';
 import styles from './ShareDialog.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function ShareDialog ({ open, onClose, modalContent: { title, paragraph }, shareContent: { campaignTitle, shareUrl } }) {
-  const { t }        = useTranslation('campaign');
-  const classes      = useStyles();
-  const shareContent = {
-    twitter: t('share_dialog.twitter_content') + shareUrl,
-    mail   : { subject: campaignTitle, body: t('share_dialog.mail_content') + shareUrl },
-  };
+export default function ShareDialog ({ open, onClose, modalContent: { title, paragraph }, campaignInfo }) {
+  const { t }   = useTranslation('campaign');
+  const classes = useStyles();
 
   return (
     <Dialog classes={{ paperWidthSm: classes.root }} onClose={onClose} open={open}>
@@ -41,28 +33,7 @@ export default function ShareDialog ({ open, onClose, modalContent: { title, par
         <Typography paragraph>
           {paragraph}
         </Typography>
-        <Grid
-          className={classes.copyAndShareRow}
-          direction="row"
-          justify="flex-start"
-          alignItems="center"
-          container
-        >
-          <Grid xs={12} sm={9} item>
-            <CopyField defaultValue={shareUrl} fullWidth />
-          </Grid>
-          <Grid className={classes.sharingIcons} sm={3} item>
-            <a target="_blank" rel="noopener noreferrer" href={`https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`}>
-              <FacebookIcon aria-label="Facebook" />
-            </a>
-            <a target="_blank" rel="noopener noreferrer" href={`https://twitter.com/intent/tweet?text=${shareContent.twitter}`}>
-              <TwitterIcon aria-label="Twitter" />
-            </a>
-            <a target="_blank" rel="noopener noreferrer" href={`mailto:?subject=${shareContent.mail.subject}&body=${shareContent.mail.body}`}>
-              <EmailIcon aria-label="Mail" />
-            </a>
-          </Grid>
-        </Grid>
+        <CopyAndShareRow campaignInfo={campaignInfo} />
       </DialogContent>
     </Dialog>
   );
@@ -75,10 +46,7 @@ ShareDialog.propTypes = {
     title    : PropTypes.string,
     paragraph: PropTypes.string,
   }),
-  shareContent: PropTypes.shape({
-    campaignTitle: PropTypes.string,
-    shareUrl     : PropTypes.string,
-  }),
+  campaignInfo: PropTypes.object,
 };
 
 ShareDialog.defaultProps = {

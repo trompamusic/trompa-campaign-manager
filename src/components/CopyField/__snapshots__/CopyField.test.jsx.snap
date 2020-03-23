@@ -14,7 +14,7 @@ exports[`<CopyField /> renders and matches snapshot 1`] = `
         aria-invalid="false"
         class="MuiInputBase-input MuiFilledInput-input makeStyles-copyFieldInput-3 MuiInputBase-inputAdornedEnd MuiFilledInput-inputAdornedEnd MuiInputBase-inputMarginDense MuiFilledInput-inputMarginDense makeStyles-copyFieldInputMarginDense-5"
         type="text"
-        value="https://"
+        value="https://www.trompa.com"
       />
       <span
         class="makeStyles-copyText-6"
