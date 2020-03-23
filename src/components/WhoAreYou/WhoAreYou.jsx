@@ -6,7 +6,6 @@ import * as PropTypes from 'prop-types';
 import PersonIcon from '@material-ui/icons/Person';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField/TextField';
-import AppbarTop from '../AppbarTop/AppbarTop';
 import AppbarBottom from '../AppbarBottom/AppbarBottom';
 import images from '../../theme/images';
 import Form from '../Form/Form';
@@ -14,14 +13,11 @@ import styles from './WhoAreYou.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function WhoAreYou ({ 
-  campaignIdentifier,
+export default function WhoAreYou ({
   initialFormValues,
-  onSubmit, 
-  submitting, 
+  onSubmit,
   error,
   nicknames,
-  ...rest 
 }) {
   const { t, i18n } = useTranslation('whoAreYou');
   const classes     = useStyles();
@@ -52,11 +48,6 @@ export default function WhoAreYou ({
     >
       {({ values, handleChange, handleSubmit, handleBlur }) => (
         <React.Fragment>
-          <AppbarTop 
-            type={t('general_task')} 
-            campaignIdentifier={campaignIdentifier} 
-            hasContextNavigation 
-          />
           <div className={classes.root}>
             <div style={{ display: 'flex', alignItems: 'flex-end' }}>
               <img className={classes.person} src={images.personTrumpetStandingLeft} alt="" />
@@ -66,8 +57,8 @@ export default function WhoAreYou ({
                 </Typography>
                 <Typography className={classes.body} variant="body1" paragraph>
                   {`${t('creative_commons')} `}
-                  <a 
-                    href="https://creativecommons.org/licenses/by/4.0/legalcode" 
+                  <a
+                    href="https://creativecommons.org/licenses/by/4.0/legalcode"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -79,7 +70,7 @@ export default function WhoAreYou ({
                 </Typography>
                 <form className={classes.fullWidth} id="nickname-form" onSubmit={handleSubmit}>
                   <TextField
-                    className={classes.fullWidth} 
+                    className={classes.fullWidth}
                     id="user-nickname"
                     onChange={handleChange}
                     onBlur={handleBlur}
@@ -88,7 +79,7 @@ export default function WhoAreYou ({
                     placeholder={t('nickname_input.placeholder')}
                     label={t('nickname_input.label')}
                     variant="filled"
-                  />            
+                  />
                 </form>
                 <Typography className={classes.tip}>
                   {t('nickname_tip')}
@@ -100,9 +91,9 @@ export default function WhoAreYou ({
           </div>
           <AppbarBottom>
             <Button
-              type={"submit"} 
-              form={"nickname-form"} 
-              variant="contained" 
+              type={"submit"}
+              form={"nickname-form"}
+              variant="contained"
               color="primary"
             >
               {t('agree_and_continue')}
@@ -110,16 +101,14 @@ export default function WhoAreYou ({
           </AppbarBottom>
         </React.Fragment>
       )}
-    </Form>    
+    </Form>
   );
 }
 
 WhoAreYou.propTypes = {
-  campaignIdentifier: PropTypes.string,
-  initialFormValues : PropTypes.object,
-  onSubmit          : PropTypes.func, 
-  submitting        : PropTypes.bool, 
-  error             : PropTypes.object,
+  initialFormValues: PropTypes.object,
+  onSubmit         : PropTypes.func,
+  error            : PropTypes.object,
 };
 
 WhoAreYou.defaultProps = {};

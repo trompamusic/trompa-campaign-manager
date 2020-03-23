@@ -27,4 +27,42 @@ export default ({ palette, spacing, typography, breakpoints }) => createStyles({
       maxWidth : 570,
     },
   },
+  indicatesRequired: {
+    fontSize      : typography.pxToRem(11),
+    display       : 'flex',
+    justifyContent: 'flex-end',
+    marginBottom  : spacing(2),
+  },
+  asterisk: {
+    color: palette.common.errorRed,
+  },
+  mcFieldGroup: {
+    '& label': {
+      fontSize: typography.pxToRem(14),
+    },
+    '& input': {
+      '&:focus': {
+        border: `1px solid ${palette.primary.main}`,
+      },
+      borderRadius: 3,
+      border      : `1px solid ${palette.common.borderGrey}`,
+      marginTop   : spacing(0.5),
+      marginBottom: spacing(1.5),
+      padding     : spacing(),
+    },
+    display       : 'flex',
+    flexDirection : 'column',
+    justifyContent: 'flex-start',
+  },
+  submit: {
+    '& input': {
+      borderRadius   : 3,
+      border         : 'none',
+      color          : palette.common.white,
+      backgroundColor: palette.primary.main,
+      padding        : `${spacing()}px ${spacing(3.5)}px`,
+      margin         : 0,
+      marginTop      : spacing(2),
+    },
+  },
 });
