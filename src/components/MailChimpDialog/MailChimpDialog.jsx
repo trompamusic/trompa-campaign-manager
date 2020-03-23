@@ -12,7 +12,13 @@ import styles from './MailChimpDialog.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function MailChimpDialog ({ open, onClose, audience }) {
+export default function MailChimpDialog ({ 
+  open, 
+  onClose, 
+  audience,
+  header,
+  body, 
+}) {
   const { t }   = useTranslation('home');
   const classes = useStyles();
 
@@ -25,10 +31,10 @@ export default function MailChimpDialog ({ open, onClose, audience }) {
       </DialogTitle>
       <DialogContent className={classes.content}>
         <Typography variant="h2">
-          {t('start_campaign')}
+          {header}
         </Typography>
         <Typography>
-          {t('mail_chimp_dialog.paragraph')}
+          {body}
         </Typography>
         <form 
           action="https://trompamusic.us4.list-manage.com/subscribe/post?u=7c60dbc6ba7c06709a4145899&amp;id=e85d4ca8dc"
@@ -100,6 +106,8 @@ export default function MailChimpDialog ({ open, onClose, audience }) {
 
 MailChimpDialog.propTypes = {
   open    : PropTypes.bool,
+  header  : PropTypes.string,
+  body    : PropTypes.string,
   onClose : PropTypes.func,
   audience: PropTypes.string,
 };

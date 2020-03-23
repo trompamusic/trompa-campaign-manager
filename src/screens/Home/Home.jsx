@@ -46,6 +46,8 @@ export default function Home() {
       />
       <MailChimpDialog
         open={mailChimpDialogOpen}
+        header={t('start_campaign')}
+        body={t('mail_chimp_dialog.paragraph')}
         onClose={() => setMailChimpDialogOpen(false)}
         audience="campaignLead"
       />
