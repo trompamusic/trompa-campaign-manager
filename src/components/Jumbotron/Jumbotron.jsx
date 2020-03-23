@@ -41,7 +41,7 @@ export default function Jumbotron ({
             <img src={images.avatarOne} alt="" />
           </span>
           <Typography variant="caption">
-            <Link to="">{author}</Link>
+            <Link to="#">{author}</Link>
             {prefixTitle}
           </Typography>
         </div>

@@ -23,6 +23,9 @@ export default ({ spacing, palette, typography, breakpoints }) => createStyles({
     paddingRight: spacing(2),
   },
   backIcon: {
+    '&:hover': {
+      cursor: 'pointer',
+    },
     [breakpoints.down('sm')]: {
       marginRight: spacing(2),
     },

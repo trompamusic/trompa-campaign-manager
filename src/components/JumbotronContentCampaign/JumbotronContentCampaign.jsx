@@ -18,10 +18,10 @@ export default function JumbotronContentCampaign ({ campaign, campaignUrl, to, s
   return (
     <div className={classes.root}>
       <Typography className={classes.daysToGo}>
-      33 days to go
+        33 days to go
       </Typography>
       <Typography className={classes.deadline}>
-      Deadline: 16 May 2020
+        Deadline: 16 May 2020
       </Typography>
       <div className={classes.buttons}>
         <Button

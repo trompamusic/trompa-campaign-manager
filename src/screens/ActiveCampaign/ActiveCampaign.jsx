@@ -3,7 +3,7 @@ import { gql } from 'apollo-boost';
 import { useQuery } from '@apollo/react-hooks';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
-import { makeStyles } from '@material-ui/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import ShareIcon from '@material-ui/icons/Share';
 import Button from '@material-ui/core/Button';
 import NotFound from '../NotFound';
@@ -44,8 +44,8 @@ export default function ActiveCampaign ({ match }) {
   }
 
   const digitalDocument = campaign.object.find(obj => obj.name === 'Work')?.nodeValue;
-  const campaignUrl     = `https://trompamusic.eu/campaign/${campaignIdentifier}`;
-  const doTaskUrl       = `${process.env.REACT_APP_PUBLIC_CAMPAIGN_IDENTIFIER}/who-are-you`;
+  const campaignUrl     = window.location.href;
+  const doTaskUrl       = `/campaign/${campaignIdentifier}/task`;
 
   return (
     <React.Fragment>
@@ -54,24 +54,12 @@ export default function ActiveCampaign ({ match }) {
         <meta name="description" content={t('meta_description')} />
       </Helmet>
       <NavBar
-        navLinks={[{ name: t('navbar.share'), onClick: () => setShareDialogOpen(true), startIcon: <ShareIcon /> }]}
-        primaryButton={{ name: t('navbar.join_campaign'), to: `/campaign/${campaignIdentifier}/task` }}
+        navLinks={[
+          { name: t('home:home'), to: '/' },
+          { name: t('navbar.share'), onClick: () => setShareDialogOpen(true), startIcon: <ShareIcon /> },
+        ]}
+        primaryButton={{ name: t('navbar.join_campaign'), to: doTaskUrl }}
         drawerContent={<div />}
-      />
-      <ShareDialog
-        open={shareDialogOpen}
-        onClose={() => setShareDialogOpen(false)}
-        modalContent={{
-          title    : t('share_dialog.drum_up_support'),
-          paragraph: t('share_dialog.lets_face_music'),
-        }}
-        campaign={campaign}
-        campaignUrl={campaignUrl}
-      />
-      <MailChimpDialog
-        open={mailChimpDialogOpen}
-        onClose={() => setMailChimpDialogOpen(false)}
-        audience="general"
       />
       <Jumbotron
         image={images.mahlerSymphony}
@@ -113,6 +101,23 @@ export default function ActiveCampaign ({ match }) {
         </Button>
       </Jumbotron>
       <Footer />
+      <ShareDialog
+        open={shareDialogOpen}
+        onClose={() => setShareDialogOpen(false)}
+        modalContent={{
+          title    : t('share_dialog.drum_up_support'),
+          paragraph: t('share_dialog.lets_face_music'),
+        }}
+        campaign={campaign}
+        campaignUrl={campaignUrl}
+      />
+      <MailChimpDialog
+        open={mailChimpDialogOpen}
+        header={t('keep_you_posted')}
+        body={t('leave_your_email_here')}
+        onClose={() => setMailChimpDialogOpen(false)}
+        audience="general"
+      />
     </React.Fragment>
   );
 }
