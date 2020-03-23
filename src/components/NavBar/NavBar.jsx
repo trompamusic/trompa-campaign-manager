@@ -13,7 +13,12 @@ import styles from './NavBar.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function NavBar ({ navLinks, primaryButton, primaryIconButton, drawerContent }) {
+export default function NavBar ({ 
+  navLinks, 
+  primaryButton, 
+  primaryIconButton, 
+  drawerContent,
+}) {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const classes = useStyles();

@@ -22,6 +22,7 @@ export default function ActiveTask ({
   campaign,
   nickname,
   handleNotification,
+  onGoBackClick,
 }) {
   const { t }   = useTranslation('task');
   const classes = useStyles();
@@ -32,6 +33,7 @@ export default function ActiveTask ({
         type={name}
         campaignIdentifier={campaignIdentifier}
         campaign={campaign}
+        onGoBackClick={onGoBackClick}
         hasContextNavigation
       >
         <NicknameMenuContainer campaignIdentifier={campaignIdentifier} />
@@ -96,4 +98,5 @@ ActiveTask.propTypes = {
   campaignIdentifier   : PropTypes.string,
   onNextTaskButtonClick: PropTypes.func,
   handleNotification   : PropTypes.func,
+  onGoBackClick        : PropTypes.func,
 };

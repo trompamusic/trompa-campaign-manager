@@ -18,6 +18,10 @@ export default function Task({ campaignIdentifier, taskIdentifier }) {
   const taskDrawAmount                        = 10;
   const nickname                              = localStorage.getItem('nickname');
 
+  const onGoBackClick = () => {
+    history.goBack();
+  };
+
   const handleNextTaskButtonClick = () => {
     const remainingTaskIdentifiers = taskIdentifiers.filter(identifier => identifier !== taskIdentifier);
     const hasReceivedTask          = tasksReceived.includes(taskIdentifier);
@@ -116,6 +120,7 @@ export default function Task({ campaignIdentifier, taskIdentifier }) {
         campaign={campaign?.name}
         campaignIdentifier={campaignIdentifier}
         nickname={nickname}
+        onGoBackClick={onGoBackClick}
         noTasks
       />
     );
@@ -127,6 +132,7 @@ export default function Task({ campaignIdentifier, taskIdentifier }) {
         name="Loading"
         campaign={campaign?.name}
         campaignIdentifier={campaignIdentifier}
+        onGoBackClick={onGoBackClick}
         loading
       />
     );
@@ -143,6 +149,7 @@ export default function Task({ campaignIdentifier, taskIdentifier }) {
           campaignIdentifier={campaignIdentifier}
           onNextTaskButtonClick={handleNextTaskButtonClick}
           handleNotification={handleNotification}
+          onGoBackClick={onGoBackClick}
         />
       )}
     </NotificationContext.Consumer>

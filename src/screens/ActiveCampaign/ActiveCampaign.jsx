@@ -31,7 +31,10 @@ export default function ActiveCampaign ({ match }) {
         <meta name="description" content={t('meta_description')} />
       </Helmet>
       <NavBar
-        navLinks={[{ name: t('navbar.share'), onClick: () => setShareDialogOpen(true), startIcon: <ShareIcon /> }]}
+        navLinks={[
+          { name: t('home:home'), to: '/' },
+          { name: t('navbar.share'), onClick: () => setShareDialogOpen(true), startIcon: <ShareIcon /> },
+        ]}
         primaryButton={{ name: t('navbar.join_campaign'), to: `/campaign/${campaignIdentifier}/task` }}
         drawerContent={<div />}
       />
@@ -61,7 +64,8 @@ export default function ActiveCampaign ({ match }) {
         campaign
       >
         <JumbotronContentCampaign 
-          campaignInfo={campaignInfo} 
+          campaignInfo={campaignInfo}
+          campaignIdentifier={campaignIdentifier}
           setMailChimpDialogOpen={setMailChimpDialogOpen} 
         />
       </Jumbotron>
