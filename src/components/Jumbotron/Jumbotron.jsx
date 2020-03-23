@@ -48,8 +48,7 @@ export default function Jumbotron ({
         {primaryTitle}
       </Typography>
       <Typography variant="h2">
-        {secondaryTitle}
-        {!campaign && (<span className={classes.compositionTitle}>Requiem in D minor</span>)}
+        {secondaryTitle} <span className={classes.compositionTitle}>{campaignInfo?.campaignTitle}</span>
       </Typography>
       <Typography gutterBottom>
         {introductionParagraph}
