@@ -7,11 +7,13 @@ import ShareDialog from '../../components/ShareDialog/ShareDialog';
 import Jumbotron from '../../components/Jumbotron/Jumbotron';
 import JumbotronContentCampaign from '../../components/JumbotronContentCampaign/JumbotronContentCampaign';
 import images from '../../theme/images';
+import MailChimpDialog from '../../components/MailChimpDialog/MailChimpDialog';
 
 export default function ActiveCampaign ({ match }) {
-  const { t }                                 = useTranslation('campaign');
-  const { campaignIdentifier }                = match.params;
-  const [shareDialogOpen, setShareDialogOpen] = useState(false);
+  const { t }                                         = useTranslation('campaign');
+  const { campaignIdentifier }                        = match.params;
+  const [shareDialogOpen, setShareDialogOpen]         = useState(false);
+  const [mailChimpDialogOpen, setMailChimpDialogOpen] = useState(false);
 
   // temp static campaign data
   const campaignInfo = {
@@ -45,6 +47,11 @@ export default function ActiveCampaign ({ match }) {
         }}
         campaignInfo={campaignInfo}
       />
+      <MailChimpDialog
+        open={mailChimpDialogOpen}
+        onClose={() => setMailChimpDialogOpen(false)}
+        audience="general"
+      />
       <Jumbotron
         image={images.mahlerSymphony}
         text={{
@@ -59,6 +66,7 @@ export default function ActiveCampaign ({ match }) {
         <JumbotronContentCampaign 
           campaignInfo={campaignInfo}
           campaignIdentifier={campaignIdentifier}
+          setMailChimpDialogOpen={setMailChimpDialogOpen} 
         />
       </Jumbotron>
     </React.Fragment>
