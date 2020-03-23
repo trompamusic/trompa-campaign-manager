@@ -28,6 +28,7 @@ export default ({ palette, typography, spacing, breakpoints }) => createStyles({
     padding      : '8px 32px',
     fontSize     : typography.pxToRem(16),
     letterSpacing: '0.66px',
+    marginRight  : spacing(),
   },
   copyAndShareRow: {
     [breakpoints.only('sm')]: {
