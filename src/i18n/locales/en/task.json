@@ -4,6 +4,7 @@
   "loading": "Loading...",
   "next_task": "Next task",
   "no_tasks_left": "No tasks left",
+  "no_tasks_available": "There are currently no tasks available for this campaign",
   "this_task_is_not_yet_available": "This task is not yet available.",
   "task": "Task"
 }

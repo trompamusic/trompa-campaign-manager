@@ -1,10 +1,11 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import { Typography } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import EmailIcon from '@material-ui/icons/Email';
+import DownloadIcon from '@material-ui/icons/CloudDownload';
 import { Link } from 'react-router-dom';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
@@ -16,7 +17,14 @@ import styles from './ActiveCampaign.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function ActiveCampaign ({ campaignIdentifier }) {
+export default function ActiveCampaign({
+  campaignIdentifier,
+  author,
+  title,
+  description,
+  scoreTitle,
+  scoreSource,
+}) {
   const { t }   = useTranslation('campaign');
   const classes = useStyles();
 
@@ -24,30 +32,39 @@ export default function ActiveCampaign ({ campaignIdentifier }) {
     <React.Fragment>
       <div className={classes.section}>
         <Typography variant="caption">
-        &lt;campaign_leader&gt; has started this campaign. Help us to improve this score.
+          <span className={classes.author}>{author}</span> has started this campaign. Help us to improve this score.
         </Typography>
         <Typography variant="h1">
-        Summer concert: Mahler's 6th in the beer garden.
+          {title}
         </Typography>
         <Typography variant="body1" paragraph>
-        Let's work together on bringing Mahler's 6th to our yearly outdoor performance. This version would be perfect, but the quality of the PDF is really insufficient. Can you all help cleaning it up? We've got five weeks to do it, people!
+          {description}
         </Typography>
-        <div className={classes.work}>
-          <div className={classes.fileMusicIcon}>
-            <FileMusicIcon />
+        {scoreTitle ? (
+          <div className={classes.work}>
+            <a className={classes.workLink} href={scoreSource} target="_blank" rel="noopener noreferrer">
+              <FileMusicIcon className={classes.workMusicIcon} />
+              <DownloadIcon className={classes.workDownloadIcon} />
+            </a>
+            <div>
+              <Typography variant="h3">
+                {scoreTitle}
+              </Typography>
+              <Typography variant="body1">
+                Complete Score
+              </Typography>
+            </div>
           </div>
-          <div>
-            <Typography variant="h3">
-            Mahler: Symphony No. 6 in A minor
-            </Typography>
-            <Typography variant="body1">
-            Complete Score
-            </Typography>
-          </div>
-        </div>
+        ) : null }
         <Grid spacing={1} classes={{ container: classes.actions }} container>
           <Grid xs={12} sm={'auto'} item>
-            <Button component={Link} to={`/campaign/${campaignIdentifier}/task`} startIcon={<MusicProcessIcon />} variant="contained" color="primary">
+            <Button
+              component={Link}
+              to={`/campaign/${campaignIdentifier}/task`}
+              startIcon={<MusicProcessIcon />}
+              variant="contained"
+              color="primary"
+            >
               {t('help_this_campaign')}
             </Button>
           </Grid>
@@ -62,15 +79,15 @@ export default function ActiveCampaign ({ campaignIdentifier }) {
             </Button>
           </Grid>
         </Grid>
-        <Typography variant="caption" >
+        <Typography variant="caption">
           {t('share_this_campaign')}
         </Typography>
-        <CopyField defaultValue="https://" />
+        <CopyField defaultValue={window.location.href} />
       </div>
       <Divider />
       <div className={classes.section}>
         <Typography variant="h2">
-        Enhance classical sheet music, together
+          Enhance classical sheet music, together
         </Typography>
         <Grid spacing={1} container>
           <Grid xs={12} sm={6} item>
@@ -94,4 +111,9 @@ export default function ActiveCampaign ({ campaignIdentifier }) {
 
 ActiveCampaign.propTypes = {
   campaignIdentifier: PropTypes.string,
+  author            : PropTypes.string,
+  title             : PropTypes.string,
+  description       : PropTypes.string,
+  scoreTitle        : PropTypes.string,
+  scoreSource       : PropTypes.string,
 };

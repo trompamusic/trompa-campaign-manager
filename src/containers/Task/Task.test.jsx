@@ -1,7 +1,6 @@
 import React from 'react';
 import { MockedProvider } from '@apollo/react-testing';
 import { wait } from '@testing-library/react';
-import { fireEvent } from '@testing-library/react';
 import { render } from '../../testUtils';
 import Task, { ALL_POTENTIAL_ACTIONS_QUERY, CLIENT_NEXT_POTENTIAL_ACTION_QUERY } from './Task';
 

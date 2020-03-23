@@ -1,44 +1,64 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import * as PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
+import { useQuery } from '@apollo/react-hooks';
 import WhoAreYouComponent from '../../components/WhoAreYou/WhoAreYou';
+import AppbarTop from '../../components/AppbarTop';
+import NotFound from '../../screens/NotFound';
+import { GET_CAMPAIGN } from '../ActiveCampaign/ActiveCampaign';
 
-export default function WhoAreYou ({ campaignIdentifier }) {
-  const history = useHistory();
-  let nickname  = localStorage.getItem('nickname');
-  const { t }   = useTranslation('whoAreYou');
+export default function WhoAreYou({ campaignIdentifier }) {
+  const history                  = useHistory();
+  const [nickname, setNickname]  = useState(localStorage.getItem('nickname') || '');
+  const { t }                    = useTranslation('whoAreYou');
+  const { loading, error, data } = useQuery(GET_CAMPAIGN, { variables: { identifier: campaignIdentifier } });
+  const campaign                 = data?.ControlAction[0];
 
   // If already logged in
-  useEffect(() => {
-    if(nickname) {
-      history.replace(`/campaign/${campaignIdentifier}/task`);
-    }
-  });
+  if (nickname) {
+    history.replace(`/campaign/${campaignIdentifier}/task`);
+
+    return null;
+  }
+
+  if (loading) {
+    return null;
+  }
+
+  if (error) {
+    return <h2>{error.message}</h2>;
+  }
+
+  if (!loading && !campaign) {
+    return <NotFound />;
+  }
 
   const onFormSubmit = ({ ...formValues }) => {
-    let nickname    = formValues.nickname;
-
-    // create anonymous user if no nickname is given
-    if (nickname === '') {
-      nickname = t('anonymous');
-    }
+    const givenNickname = formValues.nickname || t('anonymous');
 
     // save user to local storage
-    localStorage.setItem('nickname', nickname);
-    
-    // route to task
-    history.push(`/campaign/${campaignIdentifier}/task`);
+    localStorage.setItem('nickname', givenNickname);
+
+    setNickname(givenNickname);
   };
 
   return (
-    <WhoAreYouComponent 
-      campaignIdentifier={campaignIdentifier}
-      onSubmit={onFormSubmit} 
-      initialFormValues={{
-        nickname: '',
-      }}
-    />
+    <React.Fragment>
+      <AppbarTop
+        type={t('First things first')}
+        campaignIdentifier={campaignIdentifier}
+        campaign={campaign.name}
+        hasContextNavigation
+      />
+      <WhoAreYouComponent
+        campaignIdentifier={campaignIdentifier}
+        onSubmit={onFormSubmit}
+        initialFormValues={{
+          nickname: '',
+        }}
+      />
+    </React.Fragment>
   );
 }
 

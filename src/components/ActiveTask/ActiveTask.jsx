@@ -11,14 +11,16 @@ import styles from './ActiveTask.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function ActiveTask ({ 
-  identifier, 
-  loading, 
-  noTasks, 
-  url, 
-  campaignIdentifier, 
+export default function ActiveTask ({
+  identifier,
+  loading,
+  noTasks,
+  url,
+  campaignIdentifier,
   onNextTaskButtonClick,
-  name, 
+  name,
+  campaign,
+  nickname,
   handleNotification,
 }) {
   const { t }   = useTranslation('task');
@@ -26,26 +28,37 @@ export default function ActiveTask ({
 
   return (
     <React.Fragment>
-      <AppbarTop 
-        type={name} 
-        campaignIdentifier={campaignIdentifier} 
+      <AppbarTop
+        type={name}
+        campaignIdentifier={campaignIdentifier}
+        campaign={campaign}
         hasContextNavigation
       >
         <NicknameMenuContainer campaignIdentifier={campaignIdentifier} />
       </AppbarTop>
-      {url ? (
-        <iframe
-          src={url && url.replace('{identifier}', identifier)}
-          className={classes.iframe}
-          name="task-iframe"
-          title={t('task')}
-        />
-      ) : (
+      {noTasks ? (
         <div className={classes.emptyIframe}>
           <Typography variant="h2">
-            {(t('this_task_is_not_yet_available'))}
+            {(t('no_tasks_available'))}
           </Typography>
         </div>
+      ) : (
+        <React.Fragment>
+          {url ? (
+            <iframe
+              src={url && url.replace('{identifier}', identifier).replace('{username}', nickname)}
+              className={classes.iframe}
+              name="task-iframe"
+              title={t('task')}
+            />
+          ) : (
+            <div className={classes.emptyIframe}>
+              <Typography variant="h2">
+                {(t('this_task_is_not_yet_available'))}
+              </Typography>
+            </div>
+          )}
+        </React.Fragment>
       )}
       <AppbarBottom>
         {loading && (
@@ -59,12 +72,12 @@ export default function ActiveTask ({
           </Button>
         )}
         {!loading && !noTasks && (
-          <Button 
-            onClick={() => { 
+          <Button
+            onClick={() => {
               onNextTaskButtonClick();
               handleNotification('success', t('notifications:thank_you_for_contributing'));
-            }} 
-            variant="contained" 
+            }}
+            variant="contained"
             color="primary"
           >
             {t('next_task')}

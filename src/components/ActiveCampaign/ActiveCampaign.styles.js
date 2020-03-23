@@ -1,6 +1,9 @@
 import { createStyles } from '@material-ui/styles';
 
 export default ({ shape, palette, breakpoints }) => createStyles({
+  author: {
+    color: palette.text.blue,
+  },
   section: {
     margin                  : 44,
     maxWidth                : 1440,
@@ -17,16 +20,34 @@ export default ({ shape, palette, breakpoints }) => createStyles({
     minHeight   : 54,
     marginBottom: 14,
   },
-  fileMusicIcon: {
+  workLink: {
+    '&:hover': {
+      '& $workMusicIcon': {
+        opacity: 0,
+      },
+      '& $workDownloadIcon': {
+        opacity: 1,
+      },
+    },
+    '& svg': {
+      transition: 'opacity 0.2s ease',
+      fill      : 'url(#FileMusicIconGradient)',
+      height    : 36,
+      width     : 30,
+    },
+    position      : 'relative',
     display       : 'flex',
     justifyContent: 'center',
     alignItems    : 'center',
     margin        : '8px 16px 8px 0',
-    '& svg'       : {
-      fill  : 'url(#FileMusicIconGradient)',
-      height: 36,
-      width : 30,
-    },
+    cursor        : 'pointer',
+  },
+  workMusicIcon: {
+    opacity: 1,
+  },
+  workDownloadIcon: {
+    opacity : 0,
+    position: 'absolute',
   },
   actions: {
     '& a, button': {
