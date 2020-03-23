@@ -47,8 +47,6 @@ export default function Home() {
       <MailChimpDialog
         open={mailChimpDialogOpen}
         onClose={() => setMailChimpDialogOpen(false)}
-        title="temp"
-        paragraph="temp"
       />
       <Jumbotron
         image={images.collaborateHero}

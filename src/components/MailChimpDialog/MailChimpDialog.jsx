@@ -12,34 +12,66 @@ import styles from './MailChimpDialog.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function MailChimpDialog ({ open, onClose, title, paragraph }) {
-  const { t }   = useTranslation('common');
+export default function MailChimpDialog ({ open, onClose }) {
+  const { t }   = useTranslation('home');
   const classes = useStyles();
 
   return (
     <Dialog classes={{ paperWidthSm: classes.root }} onClose={onClose} open={open}>
       <DialogTitle disableTypography>
-        <IconButton className={classes.closeButton} aria-label={t('close')} onClick={onClose}>
+        <IconButton className={classes.closeButton} aria-label={t('common:close')} onClick={onClose}>
           <CloseIcon />
         </IconButton>
       </DialogTitle>
       <DialogContent className={classes.content}>
         <Typography variant="h2">
-          {title}
+          {t('start_campaign')}
         </Typography>
-        <Typography paragraph>
-          {paragraph}
+        <Typography>
+          {t('mail_chimp_dialog.paragraph')}
         </Typography>
+        <form 
+          action="https://trompamusic.us4.list-manage.com/subscribe/post?u=7c60dbc6ba7c06709a4145899&amp;id=e85d4ca8dc"
+          method="post" 
+          target="_blank" 
+          onSubmit={onClose}
+        >  
+          <div className={classes.indicatesRequired}>
+            <span className={classes.asterisk}>*</span>{t('mail_chimp_dialog.required')}
+          </div>
+          <div className={classes.mcFieldGroup}>
+            <label htmlFor="mce-EMAIL">
+              {t('mail_chimp_dialog.email')} <span className={classes.asterisk}>*</span>
+            </label>
+            <input type="email" name="EMAIL" id="mce-EMAIL" />
+          </div>
+          <div className={classes.mcFieldGroup}>
+            <label htmlFor="mce-FNAME">{t('mail_chimp_dialog.first_name')}</label>
+            <input type="text" name="FNAME" id="mce-FNAME" />
+          </div>
+          <div className={classes.mcFieldGroup}>
+            <label htmlFor="mce-LNAME">{t('mail_chimp_dialog.last_name')}</label>
+            <input type="text" name="LNAME" id="mce-LNAME" />
+          </div>
+          <div className={classes.mcFieldGroup}>
+            <label htmlFor="mce-MMERGE6">{t('mail_chimp_dialog.which_work')}</label>
+            <input type="text" name="MMERGE6" id="mce-MMERGE6" />
+          </div>
+          <div className={classes.submit}>
+            <input type="submit" value={t('mail_chimp_dialog.subscribe')} name="subscribe" />
+          </div>
+        </form>
       </DialogContent>
     </Dialog>
   );
 }
 
 MailChimpDialog.propTypes = {
-  open     : PropTypes.bool,
-  onClose  : PropTypes.func,
-  title    : PropTypes.string,
-  paragraph: PropTypes.string,
+  open            : PropTypes.bool,
+  onClose         : PropTypes.func,
+  title           : PropTypes.string,
+  paragraph       : PropTypes.string,
+  formTranslations: PropTypes.object,
 };
 
 MailChimpDialog.defaultProps = {
