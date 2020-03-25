@@ -17,8 +17,8 @@ export default function CopyAndShareRow ({ className, campaign, campaignUrl }) {
   const classes = useStyles();
 
   const shareContent = {
-    twitter: t('share_dialog.content.twitter') + campaignUrl,
-    mail   : { subject: campaign?.name, body: t('share_dialog.content.mail') + campaignUrl },
+    twitter: t('sharedialog.content.twitter') + campaignUrl,
+    mail   : { subject: campaign?.name, body: t('sharedialog.content.mail') + campaignUrl },
   };
 
   return (

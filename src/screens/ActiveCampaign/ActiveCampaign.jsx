@@ -61,7 +61,7 @@ export default function ActiveCampaign ({ match }) {
       </Helmet>
       <NavBar
         navLinks={[
-          { name: t('home:home'), to: '/' },
+          { name: t('navbar.home'), to: '/' },
           { name: t('navbar.share'), onClick: () => setShareDialogOpen(true), startIcon: <ShareIcon /> },
         ]}
         primaryButton={{ name: t('navbar.join_campaign'), to: doTaskUrl }}
@@ -87,8 +87,8 @@ export default function ActiveCampaign ({ match }) {
       <Jumbotron
         image={images.collaborateHero}
         text={{
-          aboutTitle : t('about_collaboration_manager'),
-          description: t('trompa_is_developing'),
+          aboutTitle : t('about.about_collaboration_manager'),
+          description: t('about.trompa_is_developing'),
         }}
       >
         <Button
@@ -98,7 +98,7 @@ export default function ActiveCampaign ({ match }) {
           variant="contained"
           color="primary"
         >
-          {t('start_today')}
+          {t('about.start_today')}
         </Button>
       </Jumbotron>
       <Footer />
@@ -106,16 +106,16 @@ export default function ActiveCampaign ({ match }) {
         open={shareDialogOpen}
         onClose={() => setShareDialogOpen(false)}
         modalContent={{
-          title    : t('share_dialog.drum_up_support'),
-          paragraph: t('share_dialog.lets_face_music'),
+          title    : t('sharedialog.drum_up_support'),
+          paragraph: t('sharedialog.lets_face_music'),
         }}
         campaign={campaign}
         campaignUrl={campaignUrl}
       />
       <MailChimpDialog
         open={mailChimpDialogOpen}
-        header={t('keep_you_posted')}
-        body={t('leave_your_email_here')}
+        header={t('mailchimp.keep_you_posted')}
+        body={t('mailchimp.leave_your_email_here')}
         onClose={() => setMailChimpDialogOpen(false)}
         audience="general"
       />

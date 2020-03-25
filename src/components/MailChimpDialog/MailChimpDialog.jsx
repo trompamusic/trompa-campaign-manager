@@ -12,12 +12,12 @@ import styles from './MailChimpDialog.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function MailChimpDialog ({ 
-  open, 
-  onClose, 
+export default function MailChimpDialog ({
+  open,
+  onClose,
   audience,
   header,
-  body, 
+  body,
 }) {
   const { t }   = useTranslation('home');
   const classes = useStyles();
@@ -36,35 +36,35 @@ export default function MailChimpDialog ({
         <Typography>
           {body}
         </Typography>
-        <form 
+        <form
           action="https://trompamusic.us4.list-manage.com/subscribe/post?u=7c60dbc6ba7c06709a4145899&amp;id=e85d4ca8dc"
-          method="post" 
-          target="_blank" 
+          method="post"
+          target="_blank"
           onSubmit={onClose}
-        >  
+        >
           <div className={classes.indicatesRequired}>
-            <span className={classes.asterisk}>*</span>{t('mail_chimp_dialog.required')}
+            <span className={classes.asterisk}>*</span>{t('common:required')}
           </div>
           <div className={classes.mcFieldGroup}>
             <label htmlFor="mce-EMAIL">
-              {t('mail_chimp_dialog.email')} <span className={classes.asterisk}>*</span>
+              {t('mailchimp_dialog.email')} <span className={classes.asterisk}>*</span>
             </label>
             <input type="email" name="EMAIL" id="mce-EMAIL" />
           </div>
           <div className={classes.mcFieldGroup}>
-            <label htmlFor="mce-FNAME">{t('mail_chimp_dialog.first_name')}</label>
+            <label htmlFor="mce-FNAME">{t('mailchimp_dialog.first_name')}</label>
             <input type="text" name="FNAME" id="mce-FNAME" />
           </div>
           <div className={classes.mcFieldGroup}>
-            <label htmlFor="mce-LNAME">{t('mail_chimp_dialog.last_name')}</label>
+            <label htmlFor="mce-LNAME">{t('mailchimp_dialog.last_name')}</label>
             <input type="text" name="LNAME" id="mce-LNAME" />
           </div>
           <div className={classes.mcFieldGroup}>
-            <label htmlFor="mce-MMERGE6">{t('mail_chimp_dialog.which_work')}</label>
+            <label htmlFor="mce-MMERGE6">{t('mailchimp_dialog.which_work')}</label>
             <input type="text" name="MMERGE6" id="mce-MMERGE6" />
           </div>
           <div className={classes.submit}>
-            <input type="submit" value={t('mail_chimp_dialog.subscribe')} name="subscribe" />
+            <input type="submit" value={t('mailchimp_dialog.subscribe')} name="subscribe" />
           </div>
           <div class="mc-field-group input-group" style={{ display: 'none' }}>
             <strong>Audiences </strong>

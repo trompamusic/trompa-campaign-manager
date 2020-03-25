@@ -6,7 +6,7 @@ import { useQuery } from '@apollo/react-hooks';
 import WhoAreYouComponent from '../../components/WhoAreYou/WhoAreYou';
 import AppbarTop from '../../components/AppbarTop';
 import NotFound from '../../screens/NotFound';
-import { GET_CAMPAIGN } from '../ActiveCampaign/ActiveCampaign';
+import { GET_CAMPAIGN } from '../../screens/ActiveCampaign';
 
 export default function WhoAreYou({ campaignIdentifier }) {
   const history                  = useHistory();

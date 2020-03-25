@@ -43,7 +43,7 @@ export default function JumbotronContentCampaign ({ campaign, campaignUrl, endDa
           variant="text"
           startIcon={<NotificationsIcon />}
         >
-          {t('jumbotron.subscribe_for_updates')}
+          {t('subscribe_for_updates')}
         </Button>
       </div>
       <CopyAndShareRow className={classes.copyAndShareRow} campaign={campaign} campaignUrl={campaignUrl} />
