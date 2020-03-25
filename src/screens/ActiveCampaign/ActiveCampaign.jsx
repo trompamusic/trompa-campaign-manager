@@ -55,7 +55,7 @@ export default function ActiveCampaign ({ match }) {
             ? `${t('help_us_digitize')}: ${campaign?.name}`
             : t('help_us_digitize_untitled')}
         </title>
-        <meta name="description" content={t('meta_description')} />
+        <meta name="description" content={campaign?.description || ''} />
       </Helmet>
       <NavBar
         navLinks={[
