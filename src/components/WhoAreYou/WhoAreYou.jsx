@@ -55,36 +55,38 @@ export default function WhoAreYou ({
                 <Typography className={classes.goal} variant="h1">
                   {t('goal')}
                 </Typography>
-                <Typography className={classes.body} variant="body1" paragraph>
-                  {`${t('creative_commons')} `}
-                  <a
-                    href="https://creativecommons.org/licenses/by/4.0/legalcode"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {t('creative_commons_link')}
-                  </a>
-                </Typography>
-                <Typography className={classes.body} variant="body1" paragraph>
-                  {t('explanation')}
-                </Typography>
-                <form className={classes.fullWidth} id="nickname-form" onSubmit={handleSubmit}>
-                  <TextField
-                    className={classes.fullWidth}
-                    id="user-nickname"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    name="nickname"
-                    value={values.nickname}
-                    placeholder={t('nickname_input.placeholder')}
-                    label={t('nickname_input.label')}
-                    variant="filled"
-                  />
-                </form>
-                <Typography className={classes.tip}>
-                  {t('nickname_tip')}
-                </Typography>
-                {renderNicknameCheck(values.nickname, nicknames)}
+                <div>
+                  <Typography className={classes.body} variant="body1" paragraph>
+                    {`${t('creative_commons')} `}
+                    <a
+                      href="https://creativecommons.org/licenses/by/4.0/legalcode"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {t('creative_commons_link')}
+                    </a>
+                  </Typography>
+                  <Typography className={classes.body} variant="body1" paragraph>
+                    {t('explanation')}
+                  </Typography>
+                  <form id="nickname-form" onSubmit={handleSubmit}>
+                    <TextField
+                      id="user-nickname"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      name="nickname"
+                      value={values.nickname}
+                      placeholder={t('nickname_input.placeholder')}
+                      label={t('nickname_input.label')}
+                      variant="filled"
+                      fullWidth
+                    />
+                    <Typography className={classes.tip}>
+                      {t('nickname_tip')}
+                    </Typography>
+                  </form>
+                  {renderNicknameCheck(values.nickname, nicknames)}
+                </div>
               </div>
               <img className={classes.person} src={images.personStandingRight} alt="" />
             </div>

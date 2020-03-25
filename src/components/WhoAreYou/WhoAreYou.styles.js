@@ -47,8 +47,14 @@ export default ({ typography, palette, spacing, shape, breakpoints }) => createS
     fontSize     : typography.pxToRem(16),
     letterSpacing: 0.5,
   },
-  fullWidth: {
-    width: '100%',
+  form: {
+    // [breakpoints.down('sm')]: {
+    //   width: '90vw',
+    // },
+    // width         : '40vw',
+    // display       : 'flex',
+    // justifyContent: 'center',
+    // flexDirection : 'column',
   },
   tip: {
     marginTop    : spacing(0.5),
