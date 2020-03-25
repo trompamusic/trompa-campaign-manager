@@ -67,7 +67,7 @@ exports[`<WhoAreYou /> renders and matches snapshot 1`] = `
             </div>
           </div>
           <p
-            class="MuiTypography-root makeStyles-tip-7 MuiTypography-body1"
+            class="MuiTypography-root makeStyles-tip-6 MuiTypography-body1"
           >
             Don't use any sensitive data that can be traced back to you. So: no email as nickname, please.
           </p>
