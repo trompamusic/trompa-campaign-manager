@@ -54,9 +54,9 @@ export default function Jumbotron ({
           {text?.slogan}
         </Typography>
       )}
-      {isCampaignPageHeader && (
+      {isCampaignPageHeader && campaign?.alternateName && (
         <Typography variant="h2">
-          {campaign?.alternateName || "So we can play it at the beer garden festival in May"}
+          {campaign?.alternateName}
         </Typography>
       )}
       {!isCampaignPageHeader && text?.aboutTitle && (

@@ -5,13 +5,11 @@ exports[`<JumbotronContentCampaign /> renders and matches snapshot 1`] = `
   <p
     class="MuiTypography-root makeStyles-daysToGo-1 MuiTypography-body1"
   >
-    33 days to go
+    No deadline available
   </p>
   <p
     class="MuiTypography-root makeStyles-deadline-2 MuiTypography-body1"
-  >
-    Deadline: 16 May 2020
-  </p>
+  />
   <div
     class="makeStyles-buttons-3"
   >

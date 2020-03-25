@@ -1,9 +1,10 @@
 import React from 'react';
+import * as PropTypes from 'prop-types';
+import moment from 'moment';
+import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { makeStyles } from '@material-ui/styles';
 import { Typography } from '@material-ui/core';
-import * as PropTypes from 'prop-types';
-import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import CopyAndShareRow from '../CopyAndShareRow/CopyAndShareRow';
@@ -15,15 +16,18 @@ export default function JumbotronContentCampaign ({ campaign, campaignUrl, to, s
   const { t }   = useTranslation('campaign');
   const classes = useStyles();
 
-  console.log('campaign', campaign);
+  const endDate       = campaign?.endTime?.day && moment([campaign?.endTime?.year, campaign?.endTime?.month, campaign?.endTime?.day]);
+  const remainingDays = endDate?.diff(moment(), 'days');
 
   return (
     <div className={classes.root}>
       <Typography className={classes.daysToGo}>
-        33 days to go
+        {remainingDays
+          ? t('jumbotron.days_to_go', { count: remainingDays })
+          : t('jumbotron.no_deadline_available')}
       </Typography>
       <Typography className={classes.deadline}>
-        Deadline: 16 May 2020
+        {endDate && `${t('jumbotron.deadline')}: ${endDate.format("MMMM Do YYYY")}`}
       </Typography>
       <div className={classes.buttons}>
         <Button

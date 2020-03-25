@@ -50,7 +50,11 @@ export default function ActiveCampaign ({ match }) {
   return (
     <React.Fragment>
       <Helmet>
-        <title>xx</title>
+        <title>
+          {campaign?.name
+            ? `${t('help_us_digitize')}: ${campaign?.name}`
+            : t('help_us_digitize_untitled')}
+        </title>
         <meta name="description" content={t('meta_description')} />
       </Helmet>
       <NavBar
@@ -121,7 +125,13 @@ export const GET_CAMPAIGN = gql`
         ControlAction (identifier: $identifier) {
             identifier
             name
+            alternateName
             description
+            endTime {
+              year
+              month
+              day
+            }
             object {
                 ... on PropertyValue {
                     name
