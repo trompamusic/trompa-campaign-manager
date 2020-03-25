@@ -12,18 +12,16 @@ import styles from './JumbotronContentCampaign.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function JumbotronContentCampaign ({ campaign, campaignUrl, to, setMailChimpDialogOpen }) {
-  const { t }   = useTranslation('campaign');
-  const classes = useStyles();
-
-  const endDate       = campaign?.endTime?.day && moment([campaign?.endTime?.year, campaign?.endTime?.month, campaign?.endTime?.day]);
-  const remainingDays = endDate?.diff(moment(), 'days');
+export default function JumbotronContentCampaign ({ campaign, campaignUrl, endDate, to, setMailChimpDialogOpen }) {
+  const { t }    = useTranslation('campaign');
+  const classes  = useStyles();
+  const daysLeft = endDate?.diff(moment(), 'days');
 
   return (
     <div className={classes.root}>
       <Typography className={classes.daysToGo}>
-        {remainingDays
-          ? t('jumbotron.days_to_go', { count: remainingDays })
+        {daysLeft
+          ? t('jumbotron.days_to_go', { count: daysLeft })
           : t('jumbotron.no_deadline_available')}
       </Typography>
       <Typography className={classes.deadline}>
@@ -56,6 +54,7 @@ export default function JumbotronContentCampaign ({ campaign, campaignUrl, to, s
 JumbotronContentCampaign.propTypes = {
   campaign              : PropTypes.object,
   campaignUrl           : PropTypes.string,
+  campaignEndDate       : PropTypes.string,
   to                    : PropTypes.string,
   setMailChimpDialogOpen: PropTypes.func,
 };

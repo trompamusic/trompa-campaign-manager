@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import moment from 'moment';
 import { gql } from 'apollo-boost';
 import { useQuery } from '@apollo/react-hooks';
 import { Helmet } from 'react-helmet';
@@ -45,6 +46,7 @@ export default function ActiveCampaign ({ match }) {
 
   const digitalDocument = campaign.object.find(obj => obj.name === 'Work')?.nodeValue;
   const campaignUrl     = window.location.href;
+  const campaignEndDate = campaign?.endTime?.day && moment([campaign?.endTime?.year, campaign?.endTime?.month, campaign?.endTime?.day]);
   const doTaskUrl       = `/campaign/${campaignIdentifier}/task`;
 
   return (
@@ -75,6 +77,7 @@ export default function ActiveCampaign ({ match }) {
         <JumbotronContentCampaign
           campaign={campaign}
           campaignUrl={campaignUrl}
+          endDate={campaignEndDate}
           to={doTaskUrl}
           setMailChimpDialogOpen={setMailChimpDialogOpen}
         />
