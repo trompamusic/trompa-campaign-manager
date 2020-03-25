@@ -52,7 +52,7 @@ exports[`<HomeAboutTrompa /> renders and matches snapshot 1`] = `
         />
         <img
           alt="Voctro Labs"
-          class="makeStyles-verticalLogo-3"
+          class="makeStyles-smallLogo-4"
           src="voctro_labs.png"
         />
         <img
@@ -62,6 +62,7 @@ exports[`<HomeAboutTrompa /> renders and matches snapshot 1`] = `
         />
         <img
           alt="Technische Universiteit Delft"
+          class="makeStyles-smallLogo-4"
           src="tu_delft.png"
         />
       </div>
