@@ -36,6 +36,7 @@ export default ({ spacing, typography, palette, breakpoints }) => createStyles({
   linksBlock: {
     display      : 'flex',
     flexDirection: 'column',
+    marginRight  : `-${spacing(3.5)}px`,
     '& a'        : {
       fontFamily    : typography.fontFamilyOpenSans,
       fontSize      : typography.pxToRem(15.8),
