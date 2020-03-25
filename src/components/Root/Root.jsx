@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { isMobile } from "react-device-detect";
+import { isMobileOnly } from "react-device-detect";
 import Home from '../../screens/Home';
 import Task from '../../screens/Task';
 import ActiveCampaign from '../../screens/ActiveCampaign';
@@ -9,7 +9,7 @@ import WhoAreYou from '../../screens/WhoAreYou';
 import NoSupportMobile from '../../screens/NoSupportMobile';
 
 export default function Root(props) {
-  if(isMobile) return <NoSupportMobile />;
+  if(isMobileOnly) return <NoSupportMobile />;
 
   const content = props.error ? (
     <div>Something wen't terribly wrong!</div>
