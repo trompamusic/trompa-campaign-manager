@@ -19,10 +19,8 @@
   "help_us": "Help us digitize",
   "home": "Home",
   "jumbotron": {
-    "prefixTitle": "Trompa collaboration campaign manager",
-    "primaryTitle": "Make even Mozart more memorable",
-    "secondaryTitle": "Help us digitise the ",
-    "introductionParagraph": "Create modern, playable scores from known and unknown classics."
+    "description": "Create modern, playable scores from known and unknown classics.",
+    "slogan": "Make even Mozart more memorable"
   },
   "join_campaign": "Join campaign",
   "mail_chimp_dialog": {

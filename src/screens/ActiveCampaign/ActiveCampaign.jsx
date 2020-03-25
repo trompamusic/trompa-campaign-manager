@@ -50,7 +50,7 @@ export default function ActiveCampaign ({ match }) {
   return (
     <React.Fragment>
       <Helmet>
-        <title>{t('jumbotron.primaryTitle')}</title>
+        <title>xx</title>
         <meta name="description" content={t('meta_description')} />
       </Helmet>
       <NavBar
@@ -63,16 +63,10 @@ export default function ActiveCampaign ({ match }) {
       />
       <Jumbotron
         image={images.mahlerSymphony}
-        text={{
-          prefixTitle          : t('jumbotron.prefixTitle'),
-          primaryTitle         : t('jumbotron.primaryTitle'),
-          secondaryTitle       : t('jumbotron.secondaryTitle'),
-          introductionParagraph: t('jumbotron.introductionParagraph'),
-        }}
         campaign={campaign}
         author={author}
         digitalDocument={digitalDocument}
-        isCampaign
+        isCampaignPageHeader
       >
         <JumbotronContentCampaign
           campaign={campaign}
@@ -86,8 +80,8 @@ export default function ActiveCampaign ({ match }) {
       <Jumbotron
         image={images.collaborateHero}
         text={{
-          secondaryTitle       : t('about_collaboration_manager'),
-          introductionParagraph: t('trompa_is_developing'),
+          aboutTitle : t('about_collaboration_manager'),
+          description: t('trompa_is_developing'),
         }}
       >
         <Button

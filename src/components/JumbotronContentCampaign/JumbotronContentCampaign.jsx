@@ -15,6 +15,8 @@ export default function JumbotronContentCampaign ({ campaign, campaignUrl, to, s
   const { t }   = useTranslation('campaign');
   const classes = useStyles();
 
+  console.log('campaign', campaign);
+
   return (
     <div className={classes.root}>
       <Typography className={classes.daysToGo}>

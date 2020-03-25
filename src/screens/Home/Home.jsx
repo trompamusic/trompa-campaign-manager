@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <div>
       <Helmet>
-        <title>{t('jumbotron.primaryTitle')}</title>
+        <title>{t('jumbotron.slogan')}</title>
         <meta name="description" content={t('meta_description')} />
       </Helmet>
       <NavBar
@@ -54,10 +54,8 @@ export default function Home() {
       <Jumbotron
         image={images.collaborateHero}
         text={{
-          prefixTitle          : t('jumbotron.prefixTitle'),
-          primaryTitle         : t('jumbotron.primaryTitle'),
-          secondaryTitle       : t('jumbotron.secondaryTitle'),
-          introductionParagraph: t('jumbotron.introductionParagraph'),
+          slogan     : t('jumbotron.slogan'),
+          description: t('jumbotron.description'),
         }}
         campaign={campaign}
       >

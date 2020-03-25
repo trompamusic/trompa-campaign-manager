@@ -12,9 +12,9 @@ export default ({ spacing, palette, typography, shape, breakpoints }) => createS
     height      : 600,
     background  : backgroundGradient('65.9%', '66%'),
     '&$campaign': {
-      height                  : 750,
+      height                  : 870,
       [breakpoints.only('sm')]: {
-        height: 800,
+        height: 850,
       },
     },
     [breakpoints.only('xs')]: {
@@ -34,12 +34,21 @@ export default ({ spacing, palette, typography, shape, breakpoints }) => createS
   desktop: {
     zIndex      : 10,
     marginLeft  : 92,
-    marginTop   : 170,
+    marginTop   : 150,
     marginBottom: 'auto',
     width       : 475,
     height      : 50,
+    '& h1'      : {
+      lineHeight: 1.2,
+    },
+    '& h2': {
+      lineHeight: 1.4,
+    },
     '&$campaign': {
       marginTop: 70,
+      '& h1'   : {
+        lineHeight: 1.3,
+      },
     },
     [breakpoints.only('xs')]: {
       display: 'none',
@@ -77,7 +86,7 @@ export default ({ spacing, palette, typography, shape, breakpoints }) => createS
       height: 21,
     },
     '& h1': {
-      lineHeight: 1.1,
+      lineHeight: 1.2,
     },
     '& h2': {
       marginBottom: spacing(2),

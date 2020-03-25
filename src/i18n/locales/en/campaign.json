@@ -21,11 +21,9 @@
     "share": "Share"
   },
   "jumbotron": {
-    "prefixTitle": " has started this campaign",
-    "primaryTitle": "Help us digitise Mahler’s 6th",
     "secondaryTitle": "So we can play it at the beer garden festival in May",
     "subscribe_for_updates": "Subscribe for updates",
-    "introductionParagraph": "Let's work together on bringing Mahler's 6th to our yearly outdoor performance. This version would be perfect, but the quality of the PDF is really insufficient. Can you all help cleaning it up? We've got five weeks to do it, people!"
+    "description": "Let's work together on bringing Mahler's 6th to our yearly outdoor performance. This version would be perfect, but the quality of the PDF is really insufficient. Can you all help cleaning it up? We've got five weeks to do it, people!"
   },
   "share_dialog": {
     "drum_up_support": "Drum up support and invite your fellow musicians.",
