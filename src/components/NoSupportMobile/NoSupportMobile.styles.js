@@ -7,14 +7,16 @@ export default ({ spacing }) => createStyles({
     alignItems    : 'center',
     justifyContent: 'center',
     height        : '100vh',
-    padding       : 48,
+    padding       : '48px 0',
   },
   container: {
     maxWidth: 550,
+    padding : '0 48px',
   },
   heroImage: {
-    width   : '70%',
     maxWidth: 500,
+    width   : '55%',
+    height  : 'auto',
   },
   logoBlock: {
     display     : 'flex',

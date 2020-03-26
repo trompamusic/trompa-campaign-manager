@@ -24,7 +24,7 @@ exports[`<NoSupportMobile /> renders and matches snapshot 1`] = `
     <h1
       class="MuiTypography-root MuiTypography-h1"
     >
-      Sorry, we are not yet mobile..
+      Sorry, we're not yet mobile
     </h1>
     <p
       class="MuiTypography-root MuiTypography-body1 MuiTypography-paragraph"

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { isMobileOnly } from "react-device-detect";
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import useTheme from '@material-ui/core/styles/useTheme';
 import Home from '../../screens/Home';
 import Task from '../../screens/Task';
 import ActiveCampaign from '../../screens/ActiveCampaign';
@@ -9,7 +10,12 @@ import WhoAreYou from '../../screens/WhoAreYou';
 import NoSupportMobile from '../../screens/NoSupportMobile';
 
 export default function Root(props) {
-  if(isMobileOnly) return <NoSupportMobile />;
+  const theme    = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.only('xs'));
+
+  if(isMobile) {
+    return <NoSupportMobile />;
+  }
 
   const content = props.error ? (
     <div>Something wen't terribly wrong!</div>
