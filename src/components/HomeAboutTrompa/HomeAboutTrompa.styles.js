@@ -72,4 +72,8 @@ export default ({ spacing, breakpoints }) => createStyles({
     height: 50,
     width : 'auto',
   },
+  smallLogo: {
+    height: '85px !important',
+    width : 'auto',
+  },
 });

@@ -30,6 +30,8 @@ export default ({ spacing, typography, palette, breakpoints }) => createStyles({
     },
   },
   greatScores: {
+    paddingTop              : 2,
+    paddingBottom           : 2,
     justifyContent          : 'flex-end',
     backgroundColor         : palette.common.faintGrey,
     [breakpoints.down('sm')]: {

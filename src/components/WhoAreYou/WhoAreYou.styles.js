@@ -47,9 +47,6 @@ export default ({ typography, palette, spacing, shape, breakpoints }) => createS
     fontSize     : typography.pxToRem(16),
     letterSpacing: 0.5,
   },
-  fullWidth: {
-    width: '100%',
-  },
   tip: {
     marginTop    : spacing(0.5),
     alignSelf    : 'start',
