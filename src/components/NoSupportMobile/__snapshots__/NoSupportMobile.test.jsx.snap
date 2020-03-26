@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NoSupportMobile /> renders and matches snapshot 1`] = `
+<div
+  class="makeStyles-root-1"
+>
+  <div
+    class="makeStyles-container-2"
+  >
+    <div
+      class="makeStyles-logoBlock-4"
+    >
+      <img
+        alt="Trompa collaboration campaign manager"
+        class="makeStyles-logoIcon-5"
+        src="[object Object]"
+      />
+      <h6
+        class="MuiTypography-root MuiTypography-subtitle2"
+      >
+        Trompa collaboration campaign manager
+      </h6>
+    </div>
+    <h1
+      class="MuiTypography-root MuiTypography-h1"
+    >
+      Sorry, we're not yet mobile
+    </h1>
+    <p
+      class="MuiTypography-root MuiTypography-body1 MuiTypography-paragraph"
+    >
+      Please use desktop or tablet for now to create modern, playable scores from known and unknown classics.
+    </p>
+  </div>
+  <img
+    alt=""
+    class="makeStyles-heroImage-3"
+    src="collaborate_hero.png"
+  />
+</div>
+`;
