@@ -19,24 +19,20 @@ exports[`<Jumbotron /> renders and matches snapshot 1`] = `
         <h6
           class="MuiTypography-root MuiTypography-subtitle2"
         >
-          Subtitle
+          Trompa collaboration campaign manager
         </h6>
       </div>
-      <h1
-        class="MuiTypography-root MuiTypography-h1"
-      >
-        H1
-      </h1>
       <h2
         class="MuiTypography-root MuiTypography-h2"
       >
-        H2
+        Help us digitize the 
+        <span
+          class="makeStyles-compositionTitle-9"
+        />
       </h2>
       <p
         class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom"
-      >
-        Paragraph
-      </p>
+      />
     </div>
     <img
       alt=""
@@ -57,24 +53,20 @@ exports[`<Jumbotron /> renders and matches snapshot 1`] = `
       <h6
         class="MuiTypography-root MuiTypography-subtitle2"
       >
-        Subtitle
+        Trompa collaboration campaign manager
       </h6>
     </div>
-    <h1
-      class="MuiTypography-root MuiTypography-h1"
-    >
-      H1
-    </h1>
     <h2
       class="MuiTypography-root MuiTypography-h2"
     >
-      H2
+      Help us digitize the 
+      <span
+        class="makeStyles-compositionTitle-9"
+      />
     </h2>
     <p
       class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom"
-    >
-      Paragraph
-    </p>
+    />
   </div>
 </header>
 `;

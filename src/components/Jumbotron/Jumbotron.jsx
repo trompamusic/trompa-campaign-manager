@@ -1,6 +1,7 @@
 import React from 'react';
-import * as PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import * as PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { makeStyles } from '@material-ui/styles';
 import { Typography } from '@material-ui/core';
@@ -12,50 +13,67 @@ const useStyles = makeStyles(styles);
 export default function Jumbotron ({
   children,
   image,
-  text: {
-    prefixTitle,
-    primaryTitle,
-    secondaryTitle,
-    introductionParagraph,
-  },
-  campaign,
   author,
+  text,
+  campaign,
   digitalDocument,
-  isCampaign,
+  isCampaignPageHeader,
 }) {
   const classes = useStyles();
+  const { t }   = useTranslation('common');
 
   const renderContent = device => (
-    <div className={classNames(classes[device], { [classes.campaign]: isCampaign })}>
-      {!isCampaign && prefixTitle && (
-        <div className={classes.prefixTitleHome}>
-          <img className={classes.logoIcon} src={images.logoIcon} alt="" />
-          <Typography variant="subtitle2">
-            {prefixTitle}
-          </Typography>
-        </div>
-      )}
-      {isCampaign && (
+    <div className={classNames(classes[device], { [classes.campaign]: isCampaignPageHeader })}>
+      {isCampaignPageHeader && (
         <div className={classes.prefixTitleCampaign}>
           <span className={classes.avatar} >
             <img src={images.avatarOne} alt="" />
           </span>
           <Typography variant="caption">
             <Link to="#">{author}</Link>
-            {prefixTitle}
+            {t('jumbotron.has_started')}
           </Typography>
         </div>
       )}
-      {primaryTitle && (
+      {!isCampaignPageHeader && (
+        <div className={classes.prefixTitleHome}>
+          <img className={classes.logoIcon} src={images.logoIcon} alt="" />
+          <Typography variant="subtitle2">
+            {t('jumbotron.trompa_collaboration_manager')}
+          </Typography>
+        </div>
+      )}
+      {isCampaignPageHeader && (
         <Typography variant="h1">
-          {primaryTitle}
+          {t('jumbotron.help_us_digitize')}
+          <span className={classes.compositionTitle}>{campaign?.name}</span>
         </Typography>
       )}
-      <Typography variant="h2">
-        {secondaryTitle ? secondaryTitle : <span className={classes.compositionTitle}>{campaign?.name}</span>}
-      </Typography>
+      {!isCampaignPageHeader && text?.slogan && (
+        <Typography variant="h1">
+          {text?.slogan}
+        </Typography>
+      )}
+      {isCampaignPageHeader && campaign?.alternateName && (
+        <Typography variant="h2">
+          {campaign?.alternateName}
+        </Typography>
+      )}
+      {!isCampaignPageHeader && text?.aboutTitle && (
+        <Typography variant="h2">
+          {text?.aboutTitle}
+        </Typography>
+      )}
+      {!isCampaignPageHeader && !text?.aboutTitle && (
+        <Typography variant="h2">
+          {t('jumbotron.help_us_digitize')}
+          <span className={classes.compositionTitle}>
+            {campaign?.name}
+          </span>
+        </Typography>
+      )}
       <Typography gutterBottom>
-        {isCampaign ? campaign?.description : introductionParagraph}
+        {isCampaignPageHeader ? campaign?.description : text?.description}
       </Typography>
       {children}
     </div>
@@ -63,10 +81,10 @@ export default function Jumbotron ({
 
   return (
     <header>
-      <div className={classNames(classes.root, { [classes.campaign]: isCampaign })}>
+      <div className={classNames(classes.root, { [classes.campaign]: isCampaignPageHeader })}>
         {renderContent('desktop')}
-        {!isCampaign && (<img className={classes.image} src={image} alt="" />)}
-        {isCampaign && (
+        {!isCampaignPageHeader && (<img className={classes.image} src={image} alt="" />)}
+        {isCampaignPageHeader && (
           <div className={classes.score}>
             <Typography variant="h3">
               {digitalDocument?.title}
@@ -81,15 +99,10 @@ export default function Jumbotron ({
 }
 
 Jumbotron.propTypes = {
-  image: PropTypes.string,
-  text : PropTypes.exact({
-    prefixTitle          : PropTypes.string,
-    primaryTitle         : PropTypes.string,
-    secondaryTitle       : PropTypes.string,
-    introductionParagraph: PropTypes.string,
-  }),
-  campaign       : PropTypes.object,
-  digitalDocument: PropTypes.object,
-  author         : PropTypes.string,
-  isCampaign     : PropTypes.bool,
+  image               : PropTypes.string,
+  author              : PropTypes.string,
+  text                : PropTypes.object,
+  campaign            : PropTypes.object,
+  digitalDocument     : PropTypes.object,
+  isCampaignPageHeader: PropTypes.bool,
 };

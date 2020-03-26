@@ -5,7 +5,7 @@ import { gql } from 'apollo-boost';
 import client from '../../graphql';
 import ActiveTask from '../../components/ActiveTask';
 import { NotificationContext } from '../NotificationsProvider/NotificationsProvider';
-import { GET_CAMPAIGN } from '../ActiveCampaign/ActiveCampaign';
+import { GET_CAMPAIGN } from '../../screens/ActiveCampaign/';
 
 export default function Task({ campaignIdentifier, taskIdentifier }) {
   const history                               = useHistory();

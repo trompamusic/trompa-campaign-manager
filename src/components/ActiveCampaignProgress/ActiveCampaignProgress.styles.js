@@ -1,14 +1,18 @@
 import { createStyles } from '@material-ui/styles';
 
-export default ({ palette, typography, spacing }) => createStyles({
+export default ({ palette, typography, spacing, breakpoints }) => createStyles({
   section: {
     boxShadow: '0 1px 6px 0px rgba(0,0,0,0.1)',
   },
   container: {
-    paddingTop   : 48,
-    paddingBottom: 48,
-    width        : '80%',
-    margin       : '0 auto',
+    paddingTop              : 48,
+    paddingBottom           : 48,
+    width                   : '80%',
+    margin                  : '0 auto',
+    [breakpoints.only('xl')]: {
+      paddingTop   : 96,
+      paddingBottom: 96,
+    },
   },
   checkItem: {
     width    : 200,

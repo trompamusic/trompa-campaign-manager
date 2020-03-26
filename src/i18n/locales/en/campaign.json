@@ -1,6 +1,20 @@
 {
-  "about_collaboration_manager": "About Trompa Collaboration Campaign Manager",
   "campaign": "Campaign",
+  "close": "Close",
+  "close_campaign": "Close campaign",
+  "copy": "Copy",
+  "help_this_campaign": "Help this campaign",
+  "help_us_digitize": "Help us digitize",
+  "help_us_digitize_untitled": "Help us digitize this untitled project",
+  "more": "More",
+  "share_this_campaign": "Share this campaign",
+  "start_your_own_campaign": "Start your own campaign",
+  "subscribe_for_updates": "Subscribe for updates",
+  "about": {
+    "about_collaboration_manager": "About Trompa Collaboration Campaign Manager",
+    "trompa_is_developing": "Trompa is developing powerful and advanced tools for musicians. by combining computing power with the knowledge of the best. Whether you’re singing in a choir, playing in an ensemble or conducting an orchestra, Trompa explores new ways to discover, rehearse and perform classical music.",
+    "start_today": "Start today"
+  },
   "campaignProgress": {
     "clefs_checked": "Clef's checked",
     "tempo_checked": "Tempo Signature checked",
@@ -8,38 +22,30 @@
     "key_checked": "Key Signature checked",
     "mei_changes": "MEI Editor changes"
   },
-  "close": "Close",
-  "close_campaign": "Close campaign",
-  "copy": "Copy",
-  "enhance_classical_sheet_music_together": "Enhance classical sheet music, together",
-  "help_this_campaign": "Help this campaign",
-  "meta_description": "Let's work together on bringing Mahler's 6th to our yearly outdoor performance.",
-  "more": "More",
+  "jumbotron": {
+    "secondaryTitle": "So we can play it at the beer garden festival in May",
+    "deadline": "Deadline",
+    "no_deadline_available": "No deadline available",
+    "days_to_go": "{{count}} day to go",
+    "days_to_go_plural": "{{count}} days to go",
+    "description": "Let's work together on bringing Mahler's 6th to our yearly outdoor performance. This version would be perfect, but the quality of the PDF is really insufficient. Can you all help cleaning it up? We've got five weeks to do it, people!"
+  },
+  "mailchimp": {
+    "keep_you_posted": "We'll keep you posted",
+    "leave_your_email_here": "Leave your email here and we'll send you a weekly update on the campaign and a quarterly update on the TROMPA project"
+  },
   "navbar": {
     "download_mei_file": "Download MEI file",
     "join_campaign": "Join campaign",
+    "home": "Home",
     "share": "Share"
   },
-  "jumbotron": {
-    "prefixTitle": " has started this campaign",
-    "primaryTitle": "Help us digitise Mahler’s 6th",
-    "secondaryTitle": "So we can play it at the beer garden festival in May",
-    "subscribe_for_updates": "Subscribe for updates",
-    "introductionParagraph": "Let's work together on bringing Mahler's 6th to our yearly outdoor performance. This version would be perfect, but the quality of the PDF is really insufficient. Can you all help cleaning it up? We've got five weeks to do it, people!"
-  },
-  "share_dialog": {
+  "sharedialog": {
     "drum_up_support": "Drum up support and invite your fellow musicians.",
     "lets_face_music": "Let's face the music together.",
     "content": {
       "mail": "Hey,%0D%0A%0D%0AThe TROMPA project brings classical music into the public domain.%0D%0A%0D%0AAnd I think you can help them. Have a look: ",
       "twitter": "Help us bring classical music into the public domain.%0D%0A🎵Can you read music notation?%0D%0A⏲ Got five minutes to spare?%0D%0A➡️ Join us now: "
       }
-    },
-  "share_this_campaign": "Share this campaign",
-  "start_today": "Start today",
-  "start_your_own_campaign": "Start your own campaign",
-  "subscribe_for_updates": "Subscribe for updates",
-  "trompa_is_developing": "Trompa is developing powerful and advanced tools for musicians. by combining computing power with the knowledge of the best. Whether you’re singing in a choir, playing in an ensemble or conducting an orchestra, Trompa explores new ways to discover, rehearse and perform classical music.",
-  "keep_you_posted": "We'll keep you posted",
-  "leave_your_email_here": "Leave your email here and we'll send you a weekly update on the campaign and a quarterly update on the TROMPA project"
+    }
 }

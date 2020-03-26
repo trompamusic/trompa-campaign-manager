@@ -14,7 +14,7 @@ exports[`<AppbarTop /> renders and matches snapshot 1`] = `
       <img
         alt="Trompa logo"
         class="makeStyles-logo-2"
-        src="logo.png"
+        src="[object Object]"
       />
     </a>
   </div>

@@ -22,10 +22,10 @@ export default function HomeAboutTrompa () {
       <Grid className={classes.aboutTrompaSection} xs={12} item>
         <section>
           <Typography variant="h2">
-            {t('about.about_TROMPA')}
+            {t('about.about_trompa')}
           </Typography>
           <Typography>
-            {t('about.about_TROMPA_paragraph')}
+            {t('about.about_trompa_paragraph')}
           </Typography>
           <div className={classes.partnersContainer}>
             <img src={images.partnerUpfTide} alt={t('about.partners.uptide')} />

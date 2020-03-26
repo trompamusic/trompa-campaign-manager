@@ -28,7 +28,7 @@ export default function AppbarTop ({
 
   const renderLogo = () => (
     <a rel="noopener noreferrer" href="/">
-      <img className={classes.logo} src={images.logo} alt={t('trompa_logo')} />
+      <img className={classes.logo} src={images.logoAsSvg} alt={t('trompa_logo')} />
     </a>
   );
 

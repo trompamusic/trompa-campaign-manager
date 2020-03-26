@@ -1,7 +1,11 @@
 {
+  "home": "Home",
+  "join_campaign": "Join campaign",
+  "meta_description": "Help us digitize the Requiem in D minor. Create modern, playable scores from known and unknown classics.",
+  "start_campaign": "Start your own campaign",
   "about": {
-    "about_TROMPA": "About TROMPA",
-    "about_TROMPA_paragraph": "TROMPA (Towards Richer Online Music Public-domain Archives) is an international research project, sponsored by the European Union. In the project, we are investigating how we can make public-domain digital music resources more accessible...with a little bit of help from state-of-the-art technology, and you!",
+    "about_trompa": "About TROMPA",
+    "about_trompa_paragraph": "TROMPA (Towards Richer Online Music Public-domain Archives) is an international research project, sponsored by the European Union. In the project, we are investigating how we can make public-domain digital music resources more accessible...with a little bit of help from state-of-the-art technology, and you!",
     "partners": {
       "goldsmiths": "Goldsmiths, University of London",
       "mdw": "Universität für Musik und darstellende Kunst Wien",
@@ -15,17 +19,11 @@
       "voctroLabs": "Voctro Labs"
       }
     },
-  "create_modern_classics": "Create modern, playable scores from known and unknown classics.",
-  "help_us": "Help us digitize",
-  "home": "Home",
   "jumbotron": {
-    "prefixTitle": "Trompa collaboration campaign manager",
-    "primaryTitle": "Make even Mozart more memorable",
-    "secondaryTitle": "Help us digitise the ",
-    "introductionParagraph": "Create modern, playable scores from known and unknown classics."
+    "description": "Create modern, playable scores from known and unknown classics.",
+    "slogan": "Make even Mozart more memorable"
   },
-  "join_campaign": "Join campaign",
-  "mail_chimp_dialog": {
+  "mailchimp_dialog": {
     "email": "Email address",
     "first_name": "First name",
     "last_name": "Last name",
@@ -34,10 +32,6 @@
     "which_work": "Which work would you like to digitise?",
     "paragraph": "Before you can kick-off your campaign we need to know three basic things:"
   },
-  "make_more_memorable": "Make even Mozart more memorable",
-  "meta_description": "Help us digitize the Requiem in D minor. Create modern, playable scores from known and unknown classics.",
-  "page_title": "Make even Mozart more memorable",
-  "start_campaign": "Start your own campaign",
   "testimonials": {
     "composer": "Composer",
     "quoteBeethoven": "I don't hear a word of what they say!",
@@ -45,8 +39,6 @@
     "quoteMozart": "What's good enough for Mahler is good enough for me.",
     "supported_by": "Supported by"
     },
-  "trompa_collaboration_campaign_manager": "Trompa collaboration campaign manager",
-  "trompa_logo": "Trompa logo",
   "three_steps": {
     "algorithms_will_distribute": "Our algorithms will distribute tasks to everyone",
     "every_collaborator": "Every collaborator can contribute to a better score",

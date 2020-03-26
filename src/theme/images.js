@@ -9,6 +9,7 @@ export default {
   everyCollaboratorNoBg    : require('./images/every_collaborator_no_bg.png'),
   euFlag                   : require('./images/eu_flag.jpg'),
   logo                     : require('./images/logo.png'),
+  logoAsSvg                : require('./images/logo.svg'),
   logoIcon                 : require('./images/logo_icon.svg'),
   collaborateHero          : require('./images/collaborate_hero.png'),
   greatScores              : require('./images/great_scores.png'),

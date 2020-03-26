@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import moment from 'moment';
 import { gql } from 'apollo-boost';
 import { useQuery } from '@apollo/react-hooks';
 import { Helmet } from 'react-helmet';
@@ -45,17 +46,22 @@ export default function ActiveCampaign ({ match }) {
 
   const digitalDocument = campaign.object.find(obj => obj.name === 'Work')?.nodeValue;
   const campaignUrl     = window.location.href;
+  const campaignEndDate = campaign?.endTime?.day && moment([campaign?.endTime?.year, campaign?.endTime?.month, campaign?.endTime?.day]);
   const doTaskUrl       = `/campaign/${campaignIdentifier}/task`;
 
   return (
     <React.Fragment>
       <Helmet>
-        <title>{t('jumbotron.primaryTitle')}</title>
-        <meta name="description" content={t('meta_description')} />
+        <title>
+          {campaign?.name
+            ? `${t('help_us_digitize')}: ${campaign?.name}`
+            : t('help_us_digitize_untitled')}
+        </title>
+        <meta name="description" content={campaign?.description || ''} />
       </Helmet>
       <NavBar
         navLinks={[
-          { name: t('home:home'), to: '/' },
+          { name: t('navbar.home'), to: '/' },
           { name: t('navbar.share'), onClick: () => setShareDialogOpen(true), startIcon: <ShareIcon /> },
         ]}
         primaryButton={{ name: t('navbar.join_campaign'), to: doTaskUrl }}
@@ -63,20 +69,15 @@ export default function ActiveCampaign ({ match }) {
       />
       <Jumbotron
         image={images.mahlerSymphony}
-        text={{
-          prefixTitle          : t('jumbotron.prefixTitle'),
-          primaryTitle         : t('jumbotron.primaryTitle'),
-          secondaryTitle       : t('jumbotron.secondaryTitle'),
-          introductionParagraph: t('jumbotron.introductionParagraph'),
-        }}
         campaign={campaign}
         author={author}
         digitalDocument={digitalDocument}
-        isCampaign
+        isCampaignPageHeader
       >
         <JumbotronContentCampaign
           campaign={campaign}
           campaignUrl={campaignUrl}
+          endDate={campaignEndDate}
           to={doTaskUrl}
           setMailChimpDialogOpen={setMailChimpDialogOpen}
         />
@@ -86,8 +87,8 @@ export default function ActiveCampaign ({ match }) {
       <Jumbotron
         image={images.collaborateHero}
         text={{
-          secondaryTitle       : t('about_collaboration_manager'),
-          introductionParagraph: t('trompa_is_developing'),
+          aboutTitle : t('about.about_collaboration_manager'),
+          description: t('about.trompa_is_developing'),
         }}
       >
         <Button
@@ -97,7 +98,7 @@ export default function ActiveCampaign ({ match }) {
           variant="contained"
           color="primary"
         >
-          {t('start_today')}
+          {t('about.start_today')}
         </Button>
       </Jumbotron>
       <Footer />
@@ -105,8 +106,8 @@ export default function ActiveCampaign ({ match }) {
         open={shareDialogOpen}
         onClose={() => setShareDialogOpen(false)}
         modalContent={{
-          title    : t('share_dialog.drum_up_support'),
-          paragraph: t('share_dialog.lets_face_music'),
+          title    : t('sharedialog.drum_up_support'),
+          paragraph: t('sharedialog.lets_face_music'),
         }}
         campaign={campaign}
         campaignUrl={campaignUrl}
@@ -125,7 +126,13 @@ export const GET_CAMPAIGN = gql`
         ControlAction (identifier: $identifier) {
             identifier
             name
+            alternateName
             description
+            endTime {
+              year
+              month
+              day
+            }
             object {
                 ... on PropertyValue {
                     name
