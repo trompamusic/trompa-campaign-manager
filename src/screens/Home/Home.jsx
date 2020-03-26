@@ -47,7 +47,7 @@ export default function Home() {
       <MailChimpDialog
         open={mailChimpDialogOpen}
         onClose={() => setMailChimpDialogOpen(false)}
-        formLink="https://kirkandblackbeard.typeform.com/to/BpMzhX?audiencegroup=xxxxx"
+        formLink={`https://kirkandblackbeard.typeform.com/to/BpMzhX?campaignid=${campaign?.identifier}`}
       />
       <Jumbotron
         image={images.collaborateHero}
