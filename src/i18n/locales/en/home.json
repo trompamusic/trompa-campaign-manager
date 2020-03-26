@@ -33,6 +33,10 @@
     "paragraph": "Before you can kick-off your campaign we need to know three basic things:"
   },
   "testimonials": {
+    "composer": "Composer",
+    "quoteBeethoven": "I don't hear a word of what they say!",
+    "quoteMahler": "I want everyone to be able to enjoy my music.",
+    "quoteMozart": "What's good enough for Mahler is good enough for me.",
     "supported_by": "Supported by"
     },
   "three_steps": {

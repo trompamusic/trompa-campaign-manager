@@ -46,10 +46,8 @@ export default function Home() {
       />
       <MailChimpDialog
         open={mailChimpDialogOpen}
-        header={t('start_campaign')}
-        body={t('mailchimp_dialog.paragraph')}
         onClose={() => setMailChimpDialogOpen(false)}
-        audience="campaignLead"
+        formLink={`https://kirkandblackbeard.typeform.com/to/BpMzhX?campaignid=${campaign?.identifier}`}
       />
       <Jumbotron
         image={images.collaborateHero}
