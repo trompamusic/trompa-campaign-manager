@@ -17,13 +17,13 @@ export default function MailChimpDialog ({
   onClose,
   formLink,
 }) {
-  const { t }   = useTranslation('home');
+  const { t }   = useTranslation('common');
   const classes = useStyles();
 
   return (
     <Dialog classes={{ paperWidthSm: classes.root }} onClose={onClose} open={open}>
       <DialogTitle disableTypography>
-        <IconButton className={classes.closeButton} aria-label={t('common:close')} onClick={onClose}>
+        <IconButton className={classes.closeButton} aria-label={t('close')} onClick={onClose}>
           <CloseIcon />
         </IconButton>
       </DialogTitle>
