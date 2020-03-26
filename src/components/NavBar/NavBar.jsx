@@ -13,10 +13,10 @@ import styles from './NavBar.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function NavBar ({ 
-  navLinks, 
-  primaryButton, 
-  primaryIconButton, 
+export default function NavBar ({
+  navLinks,
+  primaryButton,
+  primaryIconButton,
   drawerContent,
 }) {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -106,7 +106,7 @@ export default function NavBar ({
           onOpen={() => setDrawerOpen(true)}
         >
           <div className={classes.drawerTop}>
-            <img className={classes.drawerLogo} src={images.logo} alt="" />
+            <img className={classes.drawerLogo} src={images.logoAsSvg} alt="" />
             <IconButton onClick={() => setDrawerOpen(false)} aria-label="" color="primary" component="span">
               <CloseIcon />
             </IconButton>

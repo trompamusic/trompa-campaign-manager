@@ -6,6 +6,7 @@ export default {
   euFlag                   : require('./images/eu_flag.jpg'),
   avatarOne                : require('./images/avatars/1.png'),
   logo                     : require('./images/logo.png'),
+  logoAsSvg                : require('./images/logo.svg'),
   logoIcon                 : require('./images/logo_icon.svg'),
   collaborateHero          : require('./images/collaborate_hero.png'),
   greatScores              : require('./images/great_scores.png'),
