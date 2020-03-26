@@ -113,10 +113,8 @@ export default function ActiveCampaign ({ match }) {
       />
       <MailChimpDialog
         open={mailChimpDialogOpen}
-        header={t('keep_you_posted')}
-        body={t('leave_your_email_here')}
         onClose={() => setMailChimpDialogOpen(false)}
-        audience="general"
+        formLink={`https://kirkandblackbeard.typeform.com/to/NHbUkT?campaignid=${campaignIdentifier}`}
       />
     </React.Fragment>
   );
