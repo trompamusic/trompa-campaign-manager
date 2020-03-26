@@ -2,7 +2,7 @@ import { createStyles } from '@material-ui/styles';
 import images from '../../theme/images';
 
 export default ({ spacing, typography, palette, shape, breakpoints }) => createStyles({
-  testimonialsContainer: {
+  root: {
     display       : 'flex',
     alignItems    : 'center',
     justifyContent: 'center',
@@ -20,7 +20,7 @@ export default ({ spacing, typography, palette, shape, breakpoints }) => createS
       paddingBottom: 47,
     },
   },
-  testimonialsBlock: {
+  container: {
     display                 : 'flex',
     alignItems              : 'center',
     justifyContent          : 'center',
@@ -29,7 +29,7 @@ export default ({ spacing, typography, palette, shape, breakpoints }) => createS
       width: 400,
     },
   },
-  testimonial: {
+  testimonialItem: {
     position       : 'relative',
     marginTop      : 35,
     marginRight    : spacing(2),
@@ -47,7 +47,7 @@ export default ({ spacing, typography, palette, shape, breakpoints }) => createS
       width   : 90,
       height  : 30,
     },
-    '&:not($testimonialHeader) > p': {
+    '&:not($testimonialHead) > p': {
       fontSize: typography.pxToRem(13.82),
     },
     '&:last-child': {
@@ -61,7 +61,7 @@ export default ({ spacing, typography, palette, shape, breakpoints }) => createS
       marginRight: 0,
     },
   },
-  testimonialHeader: {
+  testimonialHead: {
     display       : 'flex',
     alignItems    : 'center',
     justifyContent: 'flex-start',

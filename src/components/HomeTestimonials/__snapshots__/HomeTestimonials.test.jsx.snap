@@ -1,238 +1,236 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<HomeTestimonials /> renders and matches snapshot 1`] = `
-<div
-  class="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
+<section
+  class="makeStyles-root-1"
 >
-  <div
-    class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+  <h2
+    class="MuiTypography-root MuiTypography-h2"
   >
-    <section
-      class="makeStyles-testimonialsContainer-1"
+    Supported by
+  </h2>
+  <div
+    class="makeStyles-container-2"
+  >
+    <div
+      class="makeStyles-testimonialItem-3"
     >
-      <h2
-        class="MuiTypography-root MuiTypography-h2"
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root"
+        focusable="false"
+        role="presentation"
+        viewBox="0 0 24 24"
       >
-        Supported by
-      </h2>
+        <g
+          fill="none"
+          fill-rule="evenodd"
+          id="Page-1"
+          stroke="none"
+          stroke-width="1"
+        >
+          <g
+            fill="#FD820B"
+            fill-rule="nonzero"
+            id="V3.2-/-1440-/-Landing-page"
+            transform="translate(-143.000000, -3006.000000)"
+          >
+            <g
+              id="Group-2-Copy-2"
+              transform="translate(0.000000, 2820.000000)"
+            >
+              <g
+                id="Group-15"
+                transform="translate(96.000000, 156.000000)"
+              >
+                <g
+                  id="Group-9-Copy-2"
+                  transform="translate(19.000000, 0.000000)"
+                >
+                  <path
+                    d="M43.6195988,59.5428241 L51.3422068,30.1134259 L37.9841821,30.1134259 L28.591821,59.5428241 L43.6195988,59.5428241 Z M65.9525463,59.5428241 L73.6751543,30.1134259 L60.3171296,30.1134259 L50.9247685,59.5428241 L65.9525463,59.5428241 Z"
+                    id="“"
+                  />
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
       <div
-        class="makeStyles-testimonialsBlock-2"
+        class="makeStyles-testimonialHead-4"
       >
-        <div
-          class="makeStyles-testimonial-3"
-        >
-          <svg
-            aria-hidden="true"
-            class="MuiSvgIcon-root"
-            focusable="false"
-            role="presentation"
-            viewBox="0 0 24 24"
+        <img
+          alt=""
+          src="mahler.jpg"
+        />
+        <div>
+          <h3
+            class="MuiTypography-root MuiTypography-h3"
           >
-            <g
-              fill="none"
-              fill-rule="evenodd"
-              id="Page-1"
-              stroke="none"
-              stroke-width="1"
-            >
-              <g
-                fill="#FD820B"
-                fill-rule="nonzero"
-                id="V3.2-/-1440-/-Landing-page"
-                transform="translate(-143.000000, -3006.000000)"
-              >
-                <g
-                  id="Group-2-Copy-2"
-                  transform="translate(0.000000, 2820.000000)"
-                >
-                  <g
-                    id="Group-15"
-                    transform="translate(96.000000, 156.000000)"
-                  >
-                    <g
-                      id="Group-9-Copy-2"
-                      transform="translate(19.000000, 0.000000)"
-                    >
-                      <path
-                        d="M43.6195988,59.5428241 L51.3422068,30.1134259 L37.9841821,30.1134259 L28.591821,59.5428241 L43.6195988,59.5428241 Z M65.9525463,59.5428241 L73.6751543,30.1134259 L60.3171296,30.1134259 L50.9247685,59.5428241 L65.9525463,59.5428241 Z"
-                        id="“"
-                      />
-                    </g>
-                  </g>
-                </g>
-              </g>
-            </g>
-          </svg>
-          <div
-            class="makeStyles-testimonialHeader-4"
-          >
-            <img
-              alt=""
-              src="avatar.png"
-            />
-            <div>
-              <h3
-                class="MuiTypography-root MuiTypography-h3"
-              >
-                Marcel van Tilburg
-              </h3>
-              <p
-                class="MuiTypography-root MuiTypography-body1"
-              >
-                Koninklijk Concertgebouworkest
-              </p>
-            </div>
-          </div>
+            G. Mahler
+          </h3>
           <p
             class="MuiTypography-root MuiTypography-body1"
           >
-            “The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.”
-          </p>
-        </div>
-        <div
-          class="makeStyles-testimonial-3"
-        >
-          <svg
-            aria-hidden="true"
-            class="MuiSvgIcon-root"
-            focusable="false"
-            role="presentation"
-            viewBox="0 0 24 24"
-          >
-            <g
-              fill="none"
-              fill-rule="evenodd"
-              id="Page-1"
-              stroke="none"
-              stroke-width="1"
-            >
-              <g
-                fill="#FD820B"
-                fill-rule="nonzero"
-                id="V3.2-/-1440-/-Landing-page"
-                transform="translate(-143.000000, -3006.000000)"
-              >
-                <g
-                  id="Group-2-Copy-2"
-                  transform="translate(0.000000, 2820.000000)"
-                >
-                  <g
-                    id="Group-15"
-                    transform="translate(96.000000, 156.000000)"
-                  >
-                    <g
-                      id="Group-9-Copy-2"
-                      transform="translate(19.000000, 0.000000)"
-                    >
-                      <path
-                        d="M43.6195988,59.5428241 L51.3422068,30.1134259 L37.9841821,30.1134259 L28.591821,59.5428241 L43.6195988,59.5428241 Z M65.9525463,59.5428241 L73.6751543,30.1134259 L60.3171296,30.1134259 L50.9247685,59.5428241 L65.9525463,59.5428241 Z"
-                        id="“"
-                      />
-                    </g>
-                  </g>
-                </g>
-              </g>
-            </g>
-          </svg>
-          <div
-            class="makeStyles-testimonialHeader-4"
-          >
-            <img
-              alt=""
-              src="avatar.png"
-            />
-            <div>
-              <h3
-                class="MuiTypography-root MuiTypography-h3"
-              >
-                Marcel van Tilburg
-              </h3>
-              <p
-                class="MuiTypography-root MuiTypography-body1"
-              >
-                Koninklijk Concertgebouworkest
-              </p>
-            </div>
-          </div>
-          <p
-            class="MuiTypography-root MuiTypography-body1"
-          >
-            “The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.”
-          </p>
-        </div>
-        <div
-          class="makeStyles-testimonial-3"
-        >
-          <svg
-            aria-hidden="true"
-            class="MuiSvgIcon-root"
-            focusable="false"
-            role="presentation"
-            viewBox="0 0 24 24"
-          >
-            <g
-              fill="none"
-              fill-rule="evenodd"
-              id="Page-1"
-              stroke="none"
-              stroke-width="1"
-            >
-              <g
-                fill="#FD820B"
-                fill-rule="nonzero"
-                id="V3.2-/-1440-/-Landing-page"
-                transform="translate(-143.000000, -3006.000000)"
-              >
-                <g
-                  id="Group-2-Copy-2"
-                  transform="translate(0.000000, 2820.000000)"
-                >
-                  <g
-                    id="Group-15"
-                    transform="translate(96.000000, 156.000000)"
-                  >
-                    <g
-                      id="Group-9-Copy-2"
-                      transform="translate(19.000000, 0.000000)"
-                    >
-                      <path
-                        d="M43.6195988,59.5428241 L51.3422068,30.1134259 L37.9841821,30.1134259 L28.591821,59.5428241 L43.6195988,59.5428241 Z M65.9525463,59.5428241 L73.6751543,30.1134259 L60.3171296,30.1134259 L50.9247685,59.5428241 L65.9525463,59.5428241 Z"
-                        id="“"
-                      />
-                    </g>
-                  </g>
-                </g>
-              </g>
-            </g>
-          </svg>
-          <div
-            class="makeStyles-testimonialHeader-4"
-          >
-            <img
-              alt=""
-              src="avatar.png"
-            />
-            <div>
-              <h3
-                class="MuiTypography-root MuiTypography-h3"
-              >
-                Marcel van Tilburg
-              </h3>
-              <p
-                class="MuiTypography-root MuiTypography-body1"
-              >
-                Koninklijk Concertgebouworkest
-              </p>
-            </div>
-          </div>
-          <p
-            class="MuiTypography-root MuiTypography-body1"
-          >
-            “The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.”
+            Composer
           </p>
         </div>
       </div>
-    </section>
+      <p
+        class="MuiTypography-root MuiTypography-body1"
+      >
+        "
+        I want everyone to be able to enjoy my music.
+        "
+      </p>
+    </div>
+    <div
+      class="makeStyles-testimonialItem-3"
+    >
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root"
+        focusable="false"
+        role="presentation"
+        viewBox="0 0 24 24"
+      >
+        <g
+          fill="none"
+          fill-rule="evenodd"
+          id="Page-1"
+          stroke="none"
+          stroke-width="1"
+        >
+          <g
+            fill="#FD820B"
+            fill-rule="nonzero"
+            id="V3.2-/-1440-/-Landing-page"
+            transform="translate(-143.000000, -3006.000000)"
+          >
+            <g
+              id="Group-2-Copy-2"
+              transform="translate(0.000000, 2820.000000)"
+            >
+              <g
+                id="Group-15"
+                transform="translate(96.000000, 156.000000)"
+              >
+                <g
+                  id="Group-9-Copy-2"
+                  transform="translate(19.000000, 0.000000)"
+                >
+                  <path
+                    d="M43.6195988,59.5428241 L51.3422068,30.1134259 L37.9841821,30.1134259 L28.591821,59.5428241 L43.6195988,59.5428241 Z M65.9525463,59.5428241 L73.6751543,30.1134259 L60.3171296,30.1134259 L50.9247685,59.5428241 L65.9525463,59.5428241 Z"
+                    id="“"
+                  />
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+      <div
+        class="makeStyles-testimonialHead-4"
+      >
+        <img
+          alt=""
+          src="mozart.jpg"
+        />
+        <div>
+          <h3
+            class="MuiTypography-root MuiTypography-h3"
+          >
+            W. A. Mozart
+          </h3>
+          <p
+            class="MuiTypography-root MuiTypography-body1"
+          >
+            Composer
+          </p>
+        </div>
+      </div>
+      <p
+        class="MuiTypography-root MuiTypography-body1"
+      >
+        "
+        What's good enough for Mahler is good enough for me.
+        "
+      </p>
+    </div>
+    <div
+      class="makeStyles-testimonialItem-3"
+    >
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root"
+        focusable="false"
+        role="presentation"
+        viewBox="0 0 24 24"
+      >
+        <g
+          fill="none"
+          fill-rule="evenodd"
+          id="Page-1"
+          stroke="none"
+          stroke-width="1"
+        >
+          <g
+            fill="#FD820B"
+            fill-rule="nonzero"
+            id="V3.2-/-1440-/-Landing-page"
+            transform="translate(-143.000000, -3006.000000)"
+          >
+            <g
+              id="Group-2-Copy-2"
+              transform="translate(0.000000, 2820.000000)"
+            >
+              <g
+                id="Group-15"
+                transform="translate(96.000000, 156.000000)"
+              >
+                <g
+                  id="Group-9-Copy-2"
+                  transform="translate(19.000000, 0.000000)"
+                >
+                  <path
+                    d="M43.6195988,59.5428241 L51.3422068,30.1134259 L37.9841821,30.1134259 L28.591821,59.5428241 L43.6195988,59.5428241 Z M65.9525463,59.5428241 L73.6751543,30.1134259 L60.3171296,30.1134259 L50.9247685,59.5428241 L65.9525463,59.5428241 Z"
+                    id="“"
+                  />
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+      <div
+        class="makeStyles-testimonialHead-4"
+      >
+        <img
+          alt=""
+          src="beethoven.jpeg"
+        />
+        <div>
+          <h3
+            class="MuiTypography-root MuiTypography-h3"
+          >
+            L. von Beethoven
+          </h3>
+          <p
+            class="MuiTypography-root MuiTypography-body1"
+          >
+            Composer
+          </p>
+        </div>
+      </div>
+      <p
+        class="MuiTypography-root MuiTypography-body1"
+      >
+        "
+        I don't hear a word of what they say!
+        "
+      </p>
+    </div>
   </div>
-</div>
+</section>
 `;

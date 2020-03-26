@@ -2,7 +2,6 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { makeStyles } from '@material-ui/styles';
 import { Typography } from '@material-ui/core';
-import Grid from '@material-ui/core/Grid';
 import images from '../../theme/images';
 import QuotationMarksIcon from '../Icons/QuotationMarksIcon';
 import styles from './HomeTestimonials.styles';
@@ -14,72 +13,63 @@ export default function HomeTestimonials () {
   const classes = useStyles();
 
   return (
-    <Grid
-      direction="row"
-      justify="center"
-      alignItems="center"
-      container
-    >
-      <Grid xs={12} item>
-        <section className={classes.testimonialsContainer}>
-          <Typography variant="h2">
-            {t('testimonials.supported_by')}
-          </Typography>
-          <div className={classes.testimonialsBlock}>
-            <div className={classes.testimonial}>
-              <QuotationMarksIcon />
-              <div className={classes.testimonialHeader}>
-                <img src={images.avatar} alt="" />
-                <div>
-                  <Typography variant="h3">
-                  Marcel van Tilburg
-                  </Typography>
-                  <Typography>
-                  Koninklijk Concertgebouworkest
-                  </Typography>
-                </div>
-              </div>
-              <Typography>
-              “The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.”
+    <section className={classes.root}>
+      <Typography variant="h2">
+        {t('testimonials.supported_by')}
+      </Typography>
+      <div className={classes.container}>
+        <div className={classes.testimonialItem}>
+          <QuotationMarksIcon />
+          <div className={classes.testimonialHead}>
+            <img src={images.avatarMahler} alt="" />
+            <div>
+              <Typography variant="h3">
+              G. Mahler
               </Typography>
-            </div>
-            <div className={classes.testimonial}>
-              <QuotationMarksIcon />
-              <div className={classes.testimonialHeader}>
-                <img src={images.avatar} alt="" />
-                <div>
-                  <Typography variant="h3">
-                  Marcel van Tilburg
-                  </Typography>
-                  <Typography>
-                  Koninklijk Concertgebouworkest
-                  </Typography>
-                </div>
-              </div>
               <Typography>
-              “The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.”
-              </Typography>
-            </div>
-            <div className={classes.testimonial}>
-              <QuotationMarksIcon />
-              <div className={classes.testimonialHeader}>
-                <img src={images.avatar} alt="" />
-                <div>
-                  <Typography variant="h3">
-                  Marcel van Tilburg
-                  </Typography>
-                  <Typography>
-                  Koninklijk Concertgebouworkest
-                  </Typography>
-                </div>
-              </div>
-              <Typography>
-              “The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.”
+                {t('testimonials.composer')}
               </Typography>
             </div>
           </div>
-        </section>
-      </Grid>
-    </Grid>
+          <Typography>
+          "{t('testimonials.quoteMahler')}"
+          </Typography>
+        </div>
+        <div className={classes.testimonialItem}>
+          <QuotationMarksIcon />
+          <div className={classes.testimonialHead}>
+            <img src={images.avatarMozart} alt="" />
+            <div>
+              <Typography variant="h3">
+              W. A. Mozart
+              </Typography>
+              <Typography>
+                {t('testimonials.composer')}
+              </Typography>
+            </div>
+          </div>
+          <Typography>
+          "{t('testimonials.quoteMozart')}"
+          </Typography>
+        </div>
+        <div className={classes.testimonialItem}>
+          <QuotationMarksIcon />
+          <div className={classes.testimonialHead}>
+            <img src={images.avatarBeethoven} alt="" />
+            <div>
+              <Typography variant="h3">
+              L. von Beethoven
+              </Typography>
+              <Typography>
+                {t('testimonials.composer')}
+              </Typography>
+            </div>
+          </div>
+          <Typography>
+          "{t('testimonials.quoteBeethoven')}"
+          </Typography>
+        </div>
+      </div>
+    </section>
   );
 }
