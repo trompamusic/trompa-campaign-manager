@@ -22,14 +22,6 @@ exports[`<Jumbotron /> renders and matches snapshot 1`] = `
           Trompa collaboration campaign manager
         </h6>
       </div>
-      <h2
-        class="MuiTypography-root MuiTypography-h2"
-      >
-        Help us digitize the 
-        <span
-          class="makeStyles-compositionTitle-9"
-        />
-      </h2>
       <p
         class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom"
       />
@@ -56,14 +48,6 @@ exports[`<Jumbotron /> renders and matches snapshot 1`] = `
         Trompa collaboration campaign manager
       </h6>
     </div>
-    <h2
-      class="MuiTypography-root MuiTypography-h2"
-    >
-      Help us digitize the 
-      <span
-        class="makeStyles-compositionTitle-9"
-      />
-    </h2>
     <p
       class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom"
     />

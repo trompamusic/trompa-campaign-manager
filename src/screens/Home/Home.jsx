@@ -25,6 +25,7 @@ export default function Home() {
   const classes                                       = useStyles();
   const [mailChimpDialogOpen, setMailChimpDialogOpen] = useState(false);
   const campaign                                      = data?.ControlAction[0];
+  const digitalDocument                               = campaign?.object.find(obj => obj.name === 'Work')?.nodeValue;
 
   if (loading || error || !campaign) {
     return null;
@@ -56,6 +57,7 @@ export default function Home() {
           description: t('jumbotron.description'),
         }}
         campaign={campaign}
+        digitalDocument={digitalDocument}
       >
         <Button
           className={classes.buttonHero}
@@ -82,6 +84,19 @@ export const GET_CAMPAIGN = gql`
             identifier
             name
             description
+            object {
+                ... on PropertyValue {
+                    name
+                    value
+                    nodeValue {
+                        ... on DigitalDocument {
+                            identifier
+                            title
+                            source
+                        }
+                    }
+                }
+            }
         }
     }
 `;

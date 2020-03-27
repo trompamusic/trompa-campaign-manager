@@ -45,8 +45,7 @@ export default function Jumbotron ({
       )}
       {isCampaignPageHeader && (
         <Typography variant="h1">
-          {t('jumbotron.help_us_digitize')}
-          <span className={classes.compositionTitle}>{campaign?.name}</span>
+          {campaign?.name}
         </Typography>
       )}
       {!isCampaignPageHeader && text?.slogan && (
@@ -64,11 +63,11 @@ export default function Jumbotron ({
           {text?.aboutTitle}
         </Typography>
       )}
-      {!isCampaignPageHeader && !text?.aboutTitle && (
+      {!isCampaignPageHeader && digitalDocument && (
         <Typography variant="h2">
           {t('jumbotron.help_us_digitize')}
           <span className={classes.compositionTitle}>
-            {campaign?.name}
+            {digitalDocument.title}
           </span>
         </Typography>
       )}

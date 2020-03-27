@@ -33,14 +33,9 @@ export default function ActiveCampaignTwoSections ({ campaign, digitalDocument }
           <Typography variant="h2">
           Complete Score
           </Typography>
-          <Typography gutterBottom>
-            #514284 - 45.31MB - 263 pages - 486× downloaded
-            PDF scanned by US-AAu
-            Music Addict (2018/3/2)
-          </Typography>
           <a className={classes.moreLink} target="_blank" rel="noopener noreferrer" href={digitalDocument?.source}>
             <OpenInNewIcon />
-            {t('more')}
+            {t('download')}
           </a>
         </section>
       </Grid>
