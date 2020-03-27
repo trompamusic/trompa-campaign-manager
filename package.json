@@ -1,12 +1,13 @@
 {
-  "name": "ce-campaign-manager",
-  "description": "",
+  "name": "trompa-campaign-manager",
+  "description": "This is the frontend application of the TROMPA Campaign Manager",
+  "version": "1.0.0",
   "repository": {
     "type": "git",
     "url": ""
   },
   "bugs": {
-    "url": "https://github.com/Videodock/react-redux-boilterplate/issues"
+    "url": "https://github.com/trompamusic/trompa-campaign-manager/issues"
   },
   "keywords": [
     "React",
@@ -29,14 +30,11 @@
     "CodeKarl",
     "demmyhonore"
   ],
-  "version": "0.0.1",
-  "private": true,
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "lint": "eslint --ext jsx --ext js src",
-    "eject": "react-scripts eject",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add -A CHANGELOG.md",
     "build-storybook": "build-storybook -s public",
     "storybook": "start-storybook -p 9009 -s public"
