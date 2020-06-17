@@ -1,3 +1,12 @@
+# [1.1.0](https://github.com/Videodock/ce-campaign-manager/compare/v1.0.0...v1.1.0) (2020-06-17)
+
+
+### Features
+
+* **campaign:** use metadata from ce api ([54c2b2b](https://github.com/Videodock/ce-campaign-manager/commit/54c2b2b))
+
+
+
 # 1.0.0 (2020-03-27)
 
 
