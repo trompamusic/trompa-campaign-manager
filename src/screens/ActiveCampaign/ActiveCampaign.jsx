@@ -68,9 +68,9 @@ export default function ActiveCampaign ({ match }) {
         drawerContent={<div />}
       />
       <Jumbotron
-        image={images.mahlerSymphony}
+        image={digitalDocument.image}
         campaign={campaign}
-        author={author}
+        author={campaign.agent || author}
         digitalDocument={digitalDocument}
         isCampaignPageHeader
       >
@@ -83,7 +83,12 @@ export default function ActiveCampaign ({ match }) {
         />
       </Jumbotron>
       <ActiveCampaignProgress />
-      <ActiveCampaignTwoSections campaign={campaign} digitalDocument={digitalDocument} />
+      <ActiveCampaignTwoSections
+        campaign={campaign}
+        digitalDocument={digitalDocument}
+        musicComposition={digitalDocument?.exampleOfWork[0]}
+        composer={digitalDocument?.exampleOfWork[0]?.composer[0]}
+      />
       <Jumbotron
         image={images.collaborateHero}
         text={{
@@ -124,6 +129,7 @@ export default function ActiveCampaign ({ match }) {
 export const GET_CAMPAIGN = gql`
     query Campaign($identifier: ID!) {
         ControlAction (identifier: $identifier) {
+            agent
             identifier
             name
             alternateName
@@ -142,6 +148,26 @@ export const GET_CAMPAIGN = gql`
                             identifier
                             title
                             source
+                            image
+                            exampleOfWork {
+                                ... on MusicComposition {
+                                    title
+                                    description
+                                    composer {
+                                        ... on Person {
+                                            name
+                                            description
+                                            birthDate {
+                                                formatted
+                                            }
+                                            deathDate {
+                                                formatted
+                                            }
+                                            image
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }

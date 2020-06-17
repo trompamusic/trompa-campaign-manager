@@ -10,14 +10,7 @@ exports[`<ActiveCampaignTwoSections /> renders and matches snapshot 1`] = `
     <section>
       <h2
         class="MuiTypography-root MuiTypography-h2"
-      >
-        Mahler: Symphony No. 6 in A minor
-      </h2>
-      <p
-        class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom"
-      >
-        Mahler’s A-minor Sixth Symphony is a mythical piece. Mahler may or may not have subtitled it “Tragic” at some stage of its composition, and it could, possibly, contain music that consecrates and depicts his wife Alma. It may be “the first nihilist work in the history of music”, as conductor Wilhelm Furtwängler described it. Conductor and friend of Mahler’s Bruno Walter found the piece too expressively dark for him to conduct, since it “ends in hopelessness and the dark night of the soul”. Most significantly, it’s a work you are always told is dangerously, prophetically autobiographical, above all in its final fourth movement, that half-hour-long hallucinogenic, emotional nightmare-scape.
-      </p>
+      />
       <h2
         class="MuiTypography-root MuiTypography-h2"
       >
@@ -47,26 +40,11 @@ exports[`<ActiveCampaignTwoSections /> renders and matches snapshot 1`] = `
     class="MuiGrid-root makeStyles-twoSections-2 makeStyles-pieceAuthor-4 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6"
   >
     <section>
-      <img
-        alt=""
-        class="makeStyles-mahlerHeadshot-5"
-        src="mahler_headshot.jpg"
-      />
       <h2
         class="MuiTypography-root MuiTypography-h2"
       >
-        Gustav Mahler
+        Unknown composer
       </h2>
-      <p
-        class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom"
-      >
-        (7 July 1860 — 18 May 1911)
-      </p>
-      <p
-        class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom"
-      >
-        Gustav Mahler was an Austro-Bohemian Romantic composer, and one of the leading conductors of his generation. As a composer he acted as a bridge between the 19th century Austro-German tradition and the modernism of the early 20th century. While in his lifetime his status as a conductor was established beyond question, his own music gained wide popularity only after periods of relative neglect, which included a ban on its performance in much of Europe during the Nazi era. After 1945 his compositions were rediscovered by a new generation of listeners; Mahler then became one of the most frequently performed and recorded of all composers, a position he has sustained into the 21st century.
-      </p>
     </section>
   </div>
 </div>
