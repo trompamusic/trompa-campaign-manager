@@ -31,6 +31,10 @@ export default function Home() {
     return null;
   }
 
+  const navLinks      = [{ name: t('home'), to: '/' }];
+  const buttons       = [{ name: t('start_campaign'), onClick: () => setMailChimpDialogOpen(true) }];
+  const primaryButton = { name: t('join_campaign'), to: `campaign/${process.env.REACT_APP_PUBLIC_CAMPAIGN_IDENTIFIER}` };
+
   return (
     <div>
       <Helmet>
@@ -38,12 +42,9 @@ export default function Home() {
         <meta name="description" content={t('meta_description')} />
       </Helmet>
       <NavBar
-        navLinks={[
-          { name: t('home'), to: '/' },
-          { name: t('start_campaign'), onClick: () => setMailChimpDialogOpen(true) },
-        ]}
-        primaryButton={{ name: t('join_campaign'), to: `campaign/${process.env.REACT_APP_PUBLIC_CAMPAIGN_IDENTIFIER}` }}
-        drawerContent={<div />}
+        navLinks={navLinks}
+        buttons={buttons}
+        primaryButton={primaryButton}
       />
       <MailChimpDialog
         open={mailChimpDialogOpen}

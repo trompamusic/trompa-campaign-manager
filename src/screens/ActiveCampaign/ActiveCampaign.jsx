@@ -49,6 +49,10 @@ export default function ActiveCampaign ({ match }) {
   const campaignEndDate = campaign?.endTime?.day && moment([campaign?.endTime?.year, campaign?.endTime?.month, campaign?.endTime?.day]);
   const doTaskUrl       = `/campaign/${campaignIdentifier}/task`;
 
+  const navLinks      = [{ name: t('home'), to: '/' }];
+  const buttons       = [{ name: t('navbar.share'), onClick: () => setShareDialogOpen(true), startIcon: <ShareIcon /> }];
+  const primaryButton = { name: t('navbar.join_campaign'), to: doTaskUrl };
+
   return (
     <React.Fragment>
       <Helmet>
@@ -60,12 +64,9 @@ export default function ActiveCampaign ({ match }) {
         <meta name="description" content={campaign?.description || ''} />
       </Helmet>
       <NavBar
-        navLinks={[
-          { name: t('navbar.home'), to: '/' },
-          { name: t('navbar.share'), onClick: () => setShareDialogOpen(true), startIcon: <ShareIcon /> },
-        ]}
-        primaryButton={{ name: t('navbar.join_campaign'), to: doTaskUrl }}
-        drawerContent={<div />}
+        navLinks={navLinks}
+        buttons={buttons}
+        primaryButton={primaryButton}
       />
       <Jumbotron
         image={digitalDocument.image}
