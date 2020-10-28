@@ -138,12 +138,14 @@ export default function Task({ campaignIdentifier, taskIdentifier }) {
     );
   }
 
+  const composeTaskUrl = (taskUrl, nickname) => `${task.url}?user=${encodeURIComponent(nickname)}`;
+
   return (
     <NotificationContext.Consumer>
       {({ handleNotification }) => (
         <ActiveTask
           name={task.name}
-          url={task.url}
+          url={composeTaskUrl(task.url, nickname)}
           identifier={task.identifier}
           campaign={campaign?.name}
           campaignIdentifier={campaignIdentifier}
