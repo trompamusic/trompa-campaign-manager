@@ -28,6 +28,7 @@ export default function ActiveCampaign ({ match }) {
   const classes                = useStyles();
 
   const subscribeFormRef                      = useRef();
+  const openSubscribeForm                     = () => subscribeFormRef.current.typeform.open();
   const [shareDialogOpen, setShareDialogOpen] = useState(false);
   const { loading, error, data }              = useQuery(GET_CAMPAIGN, { variables: { identifier: campaignIdentifier } });
   const campaign                              = data?.ControlAction[0];
@@ -45,11 +46,10 @@ export default function ActiveCampaign ({ match }) {
     return <NotFound />;
   }
 
-  const digitalDocument   = campaign.object.find(obj => obj.name === 'Work')?.nodeValue;
-  const campaignUrl       = window.location.href;
-  const campaignEndDate   = campaign?.endTime?.day && moment([campaign?.endTime?.year, campaign?.endTime?.month, campaign?.endTime?.day]);
-  const doTaskUrl         = `/campaign/${campaignIdentifier}/task`;
-  const openSubscribeForm = () => subscribeFormRef.current.typeform.open();
+  const digitalDocument = campaign.object.find(obj => obj.name === 'Work')?.nodeValue;
+  const campaignUrl     = window.location.href;
+  const campaignEndDate = campaign?.endTime?.day && moment([campaign?.endTime?.year, campaign?.endTime?.month, campaign?.endTime?.day]);
+  const doTaskUrl       = `/campaign/${campaignIdentifier}/task`;
 
   return (
     <React.Fragment>
