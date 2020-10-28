@@ -3,6 +3,7 @@ import moment from 'moment';
 import { gql } from 'apollo-boost';
 import { useQuery } from '@apollo/react-hooks';
 import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { makeStyles } from '@material-ui/core/styles';
 import ShareIcon from '@material-ui/icons/Share';
@@ -99,8 +100,8 @@ export default function ActiveCampaign ({ match }) {
       >
         <Button
           className={classes.buttonHero}
-          component="button"
-          onClick={openSubscribeForm}
+          component={Link}
+          to={doTaskUrl}
           variant="contained"
           color="primary"
         >
