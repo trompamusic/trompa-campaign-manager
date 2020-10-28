@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import moment from 'moment';
 import { gql } from 'apollo-boost';
 import { useQuery } from '@apollo/react-hooks';
@@ -9,8 +9,8 @@ import ShareIcon from '@material-ui/icons/Share';
 import Button from '@material-ui/core/Button';
 import NotFound from '../NotFound';
 import ShareDialog from '../../components/ShareDialog/ShareDialog';
-import MailChimpDialog from '../../components/MailChimpDialog/MailChimpDialog';
 import NavBar from '../../components/NavBar/NavBar';
+import TypeformModal from '../../components/TypeformModal';
 import Jumbotron from '../../components/Jumbotron/Jumbotron';
 import JumbotronContentCampaign from '../../components/JumbotronContentCampaign/JumbotronContentCampaign';
 import ActiveCampaignProgress from '../../components/ActiveCampaignProgress/ActiveCampaignProgress';
@@ -26,11 +26,11 @@ export default function ActiveCampaign ({ match }) {
   const { t }                  = useTranslation('campaign');
   const classes                = useStyles();
 
-  const [shareDialogOpen, setShareDialogOpen]         = useState(false);
-  const [mailChimpDialogOpen, setMailChimpDialogOpen] = useState(false);
-  const { loading, error, data }                      = useQuery(GET_CAMPAIGN, { variables: { identifier: campaignIdentifier } });
-  const campaign                                      = data?.ControlAction[0];
-  const author                                        = "TROMPA";
+  const subscribeFormRef                      = useRef();
+  const [shareDialogOpen, setShareDialogOpen] = useState(false);
+  const { loading, error, data }              = useQuery(GET_CAMPAIGN, { variables: { identifier: campaignIdentifier } });
+  const campaign                              = data?.ControlAction[0];
+  const author                                = "TROMPA";
 
   if (loading) {
     return null;
@@ -44,10 +44,11 @@ export default function ActiveCampaign ({ match }) {
     return <NotFound />;
   }
 
-  const digitalDocument = campaign.object.find(obj => obj.name === 'Work')?.nodeValue;
-  const campaignUrl     = window.location.href;
-  const campaignEndDate = campaign?.endTime?.day && moment([campaign?.endTime?.year, campaign?.endTime?.month, campaign?.endTime?.day]);
-  const doTaskUrl       = `/campaign/${campaignIdentifier}/task`;
+  const digitalDocument   = campaign.object.find(obj => obj.name === 'Work')?.nodeValue;
+  const campaignUrl       = window.location.href;
+  const campaignEndDate   = campaign?.endTime?.day && moment([campaign?.endTime?.year, campaign?.endTime?.month, campaign?.endTime?.day]);
+  const doTaskUrl         = `/campaign/${campaignIdentifier}/task`;
+  const openSubscribeForm = () => subscribeFormRef.current.typeform.open();
 
   return (
     <React.Fragment>
@@ -79,7 +80,7 @@ export default function ActiveCampaign ({ match }) {
           campaignUrl={campaignUrl}
           endDate={campaignEndDate}
           to={doTaskUrl}
-          setMailChimpDialogOpen={setMailChimpDialogOpen}
+          openSubscribeForm={openSubscribeForm}
         />
       </Jumbotron>
       <ActiveCampaignProgress />
@@ -99,7 +100,7 @@ export default function ActiveCampaign ({ match }) {
         <Button
           className={classes.buttonHero}
           component="button"
-          onClick={() => setMailChimpDialogOpen(true)}
+          onClick={openSubscribeForm}
           variant="contained"
           color="primary"
         >
@@ -117,11 +118,7 @@ export default function ActiveCampaign ({ match }) {
         campaign={campaign}
         campaignUrl={campaignUrl}
       />
-      <MailChimpDialog
-        open={mailChimpDialogOpen}
-        onClose={() => setMailChimpDialogOpen(false)}
-        formLink={`https://kirkandblackbeard.typeform.com/to/NHbUkT?campaignid=${campaignIdentifier}`}
-      />
+      <TypeformModal url={`https://kirkandblackbeard.typeform.com/to/NHbUkT?campaignid=${campaignIdentifier}`} formRef={subscribeFormRef} />
     </React.Fragment>
   );
 }
