@@ -11,6 +11,11 @@ export default ({ spacing, palette, typography, breakpoints }) => createStyles({
       transform: 'translateY(10%)',
     },
   },
+  heading: { 
+    [breakpoints.down('sm')]: {
+      width: 200,
+    }, 
+  },
   logo: {
     width: 138,
   },
