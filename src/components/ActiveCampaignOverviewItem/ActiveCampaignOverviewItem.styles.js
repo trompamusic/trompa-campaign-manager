@@ -1,14 +1,17 @@
 import { createStyles } from '@material-ui/styles';
 
-export default ({ palette, spacing, typography }) => createStyles({
+export default ({ palette, spacing, typography, breakpoints }) => createStyles({
   root: {
-    width          : 244,
+    maxWidth       : 244,
     backgroundColor: palette.common.white,
   },
   imageContainer: {
-    padding        : 5,
-    textAlign      : 'center',
-    backgroundColor: palette.border.lightGrey,
+    padding                 : 5,
+    textAlign               : 'center',
+    backgroundColor         : palette.border.lightGrey,
+    [breakpoints.only('xs')]: {
+      display: 'none',
+    },
   },
   image: {
     width : 144,

@@ -1,15 +1,21 @@
 import { createStyles } from '@material-ui/styles';
 
-export default ({ palette }) => createStyles({
+export default ({ palette, breakpoints }) => createStyles({
   '@global': {
     ".slider-control-bottomcenter ul": {
-      top: '60px !important',
+      top                     : '60px !important',
+      [breakpoints.only('xs')]: {
+        display: 'none !important',
+      },
     },
   },
   root: {
-    backgroundColor: palette.common.faintGrey,
-    padding        : 96,
-    paddingTop     : 48,
+    backgroundColor         : palette.common.faintGrey,
+    padding                 : 96,
+    paddingTop              : 48,
+    [breakpoints.only('xs')]: {
+      padding: 32,
+    },
   },
   heading: {
     marginLeft: 25,
