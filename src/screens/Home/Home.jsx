@@ -12,6 +12,8 @@ import NavBar from '../../components/NavBar/NavBar';
 import HomeTwoSections from '../../components/HomeTwoSections/HomeTwoSections';
 import HomeThreeSteps from '../../components/HomeThreeSteps/HomeThreeSteps';
 import HomeTestimonials from '../../components/HomeTestimonials/HomeTestimonials';
+import ActiveCampaignOverviewSection from '../../components/ActiveCampaignOverviewSection';
+import ActiveCampaignOverviewItem from '../../components/ActiveCampaignOverviewItem';
 import HomeAboutTrompa from '../../components/HomeAboutTrompa/HomeAboutTrompa';
 import Footer from '../../components/Footer/Footer';
 import MailChimpDialog from '../../components/MailChimpDialog/MailChimpDialog';
@@ -71,6 +73,44 @@ export default function Home() {
       </Jumbotron>
       <HomeTwoSections />
       <HomeThreeSteps />
+      <ActiveCampaignOverviewSection>
+        <ActiveCampaignOverviewItem
+          scoreImage={undefined}
+          scoreTitle="Mahler: Symphony No. 6 in A minor (Complete score)"
+          campaignTitle="Help us digitise Mahler’s 6th"
+          campaignDeadline="33 days to go"
+        />
+        <ActiveCampaignOverviewItem
+          scoreImage={undefined}
+          scoreTitle="Mahler: Symphony No. 6 in A minor (Complete score)"
+          campaignTitle="Help us digitise Mahler’s 6th"
+          campaignDeadline="33 days to go"
+        />
+        <ActiveCampaignOverviewItem
+          scoreImage={undefined}
+          scoreTitle="Mahler: Symphony No. 6 in A minor (Complete score)"
+          campaignTitle="Help us digitise Mahler’s 6th"
+          campaignDeadline="33 days to go"
+        />
+        <ActiveCampaignOverviewItem
+          scoreImage={undefined}
+          scoreTitle="Mahler: Symphony No. 6 in A minor (Complete score)"
+          campaignTitle="Help us digitise Mahler’s 6th"
+          campaignDeadline="33 days to go"
+        />
+        <ActiveCampaignOverviewItem
+          scoreImage={undefined}
+          scoreTitle="Mahler: Symphony No. 6 in A minor (Complete score)"
+          campaignTitle="Help us digitise Mahler’s 6th"
+          campaignDeadline="33 days to go"
+        />
+        <ActiveCampaignOverviewItem
+          scoreImage={undefined}
+          scoreTitle="Mahler: Symphony No. 6 in A minor (Complete score)"
+          campaignTitle="Help us digitise Mahler’s 6th"
+          campaignDeadline="33 days to go"
+        />
+      </ActiveCampaignOverviewSection>
       <HomeTestimonials />
       <HomeAboutTrompa />
       <Footer />
