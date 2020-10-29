@@ -24,36 +24,6 @@ exports[`<Slider /> renders and matches snapshot 1`] = `
     />
   </div>
   <div
-    class="slider-control-centerright"
-    style="position: absolute; top: 50%; right: 0px; transform: translateY(-50%);"
-  >
-    <button
-      aria-label="Slide right"
-      class="MuiButtonBase-root MuiIconButton-root makeStyles-slideButton-1"
-      tabindex="0"
-      type="button"
-    >
-      <span
-        class="MuiIconButton-label"
-      >
-        <svg
-          aria-hidden="true"
-          class="MuiSvgIcon-root"
-          focusable="false"
-          role="presentation"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
-          />
-        </svg>
-      </span>
-      <span
-        class="MuiTouchRipple-root"
-      />
-    </button>
-  </div>
-  <div
     class="slider-control-bottomcenter"
     style="position: absolute; bottom: 0px; left: 50%; transform: translateX(-50%);"
   >

@@ -8,7 +8,7 @@ import styles from './ActiveCampaignOverviewSection.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function ActiveCampaignOverviewSection ({ children, campaignsToShow }) {
+export default function ActiveCampaignOverviewSection ({ children, campaignsToShow = 4 }) {
   const { t }   = useTranslation('campaign');
   const classes = useStyles();
 
@@ -17,10 +17,7 @@ export default function ActiveCampaignOverviewSection ({ children, campaignsToSh
       <Typography className={classes.heading} variant="h2">
         {t('overview.heading')}
       </Typography>
-      <Slider
-        slidesToShow={campaignsToShow}
-        framePadding="20px 25px 0 25px"
-      >
+      <Slider slidesToShow={campaignsToShow} framePadding="20px 25px 0 25px">
         {children}
       </Slider>
     </div>

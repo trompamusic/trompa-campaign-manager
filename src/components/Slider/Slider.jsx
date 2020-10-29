@@ -10,7 +10,7 @@ import styles from './Slider.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function Slider ({ children, slidesToShow = 4, framePadding }) {
+export default function Slider ({ children, slidesToShow, framePadding }) {
   const { t }   = useTranslation('campaign');
   const classes = useStyles();
 
@@ -19,6 +19,7 @@ export default function Slider ({ children, slidesToShow = 4, framePadding }) {
       cellSpacing={16}
       framePadding={framePadding}
       slidesToShow={slidesToShow}
+      scrollMode="page"
       renderCenterLeftControls={({ previousSlide, currentSlide }) => {
         return currentSlide > 0 ? (
           <IconButton classes={{ root: classes.slideButton }} onClick={previousSlide} aria-label={t('overview.slide_left')}>
@@ -26,9 +27,9 @@ export default function Slider ({ children, slidesToShow = 4, framePadding }) {
           </IconButton>
         ) : null;}}
       renderCenterRightControls={({ nextSlide, currentSlide, slideCount }) => {
-        const isLastSlide = currentSlide + slidesToShow === slideCount;
+        const nextSlideAvailable = currentSlide + slidesToShow < slideCount;
 
-        return !isLastSlide ? (
+        return nextSlideAvailable ? (
           <IconButton classes={{ root: classes.slideButton }} onClick={nextSlide} aria-label={t('overview.slide_right')}>
             <ArrowForwardIcon />
           </IconButton>
