@@ -41,6 +41,11 @@
     "home": "Home",
     "share": "Share"
   },
+  "overview": {
+    "heading": "Active campaigns",
+    "slide_left": "Slide left",
+    "slide_right": "Slide right"
+  },
   "sharedialog": {
     "drum_up_support": "Drum up support and invite your fellow musicians.",
     "lets_face_music": "Let's face the music together.",
