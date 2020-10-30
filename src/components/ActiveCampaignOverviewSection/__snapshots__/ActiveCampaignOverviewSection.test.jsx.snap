@@ -20,7 +20,7 @@ exports[`<ActiveCampaignOverviewSection /> renders and matches snapshot 1`] = `
       style="position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden;"
       tabindex="-1"
     >
-      Slide 1 of 0
+      Slide 1 of 1
     </div>
     <div
       class="slider-frame"
@@ -29,7 +29,20 @@ exports[`<ActiveCampaignOverviewSection /> renders and matches snapshot 1`] = `
       <ul
         class="slider-list"
         style="box-sizing: border-box; cursor: pointer; display: block; height: 0px; margin: 0px -8px; padding: 0px; position: relative; transform: translate3d(0px, 0px, 0); width: auto;"
-      />
+      >
+        <li
+          class="slider-slide slide-visible slide-current"
+          style="box-sizing: border-box; display: inline-block; height: auto; left: 0px; list-style-type: none; margin: auto 8px auto 8px; position: absolute; top: 0px; transform: scale(1); transition: transform .4s linear; vertical-align: top; width: -10.666666666666664px;"
+          tabindex="-1"
+        >
+          <div
+            aria-hidden="false"
+            tabindex="0"
+          >
+            cc
+          </div>
+        </li>
+      </ul>
     </div>
     <div
       class="slider-control-bottomcenter"

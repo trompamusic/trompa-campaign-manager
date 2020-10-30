@@ -18,13 +18,19 @@ exports[`<ActiveCampaignOverviewItem /> renders and matches snapshot 1`] = `
   >
     <p
       class="MuiTypography-root makeStyles-caption-5 MuiTypography-body1"
-    />
+    >
+      bb
+    </p>
     <h2
       class="MuiTypography-root makeStyles-title-6 MuiTypography-h2"
-    />
+    >
+      cc
+    </h2>
     <p
       class="MuiTypography-root MuiTypography-body1"
-    />
+    >
+      dd
+    </p>
   </div>
 </div>
 `;
