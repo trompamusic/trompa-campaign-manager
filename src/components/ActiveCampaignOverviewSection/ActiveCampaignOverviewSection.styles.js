@@ -2,6 +2,9 @@ import { createStyles } from '@material-ui/styles';
 
 export default ({ palette, breakpoints }) => createStyles({
   '@global': {
+    ".slider-list": {
+      minHeight: 360,
+    },
     ".slider-control-bottomcenter ul": {
       top                     : '60px !important',
       [breakpoints.only('xs')]: {
