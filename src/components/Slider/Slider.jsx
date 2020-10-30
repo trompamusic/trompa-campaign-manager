@@ -50,7 +50,6 @@ export default function Slider ({ children, itemWidth, framePadding }) {
       renderCenterLeftControls={renderCenterLeftControls}
       renderCenterRightControls={renderCenterRightControls}
       cellSpacing={16}
-      scrollMode="page"
     >
       {children}
     </Carousel>

@@ -1,6 +1,28 @@
 import { createStyles } from '@material-ui/styles';
 
 export default ({ palette }) => createStyles({
+  '@global': {
+    ".paging-item .paging-dot": {
+      width : 20,
+      height: 20,
+    },
+    ".paging-item.active .paging-dot": {
+      fill: palette.common.blue,
+    },
+    ".paging-item:not(.active) .paging-dot > circle": {
+      fill       : 'none',
+      stroke     : palette.border.grey,
+      strokeWidth: '2px',
+    },
+    ".paging-item:not(.active) > button": {
+      opacity: '1 !important',
+    },
+    ".paging-dot > circle": {
+      r : 6,
+      cx: 10,
+      cy: 10,
+    },
+  },
   slideButton: {
     backgroundColor: palette.common.white,
     boxShadow      : `0 4px 5px 0 rgba(0,0,0,0.14),
