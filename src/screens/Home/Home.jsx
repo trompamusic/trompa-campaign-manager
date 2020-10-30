@@ -74,42 +74,14 @@ export default function Home() {
       <HomeTwoSections />
       <HomeThreeSteps />
       <ActiveCampaignOverviewSection>
-        <ActiveCampaignOverviewItem
-          scoreImage={undefined}
-          scoreTitle="Mahler: Symphony No. 6 in A minor (Complete score)"
-          campaignTitle="Help us digitise Mahler’s 6th"
-          campaignDeadline="33 days to go"
-        />
-        <ActiveCampaignOverviewItem
-          scoreImage={undefined}
-          scoreTitle="Mahler: Symphony No. 6 in A minor (Complete score)"
-          campaignTitle="Help us digitise Mahler’s 6th"
-          campaignDeadline="33 days to go"
-        />
-        <ActiveCampaignOverviewItem
-          scoreImage={undefined}
-          scoreTitle="Mahler: Symphony No. 6 in A minor (Complete score)"
-          campaignTitle="Help us digitise Mahler’s 6th"
-          campaignDeadline="33 days to go"
-        />
-        <ActiveCampaignOverviewItem
-          scoreImage={undefined}
-          scoreTitle="Mahler: Symphony No. 6 in A minor (Complete score)"
-          campaignTitle="Help us digitise Mahler’s 6th"
-          campaignDeadline="33 days to go"
-        />
-        <ActiveCampaignOverviewItem
-          scoreImage={undefined}
-          scoreTitle="Mahler: Symphony No. 6 in A minor (Complete score)"
-          campaignTitle="Help us digitise Mahler’s 6th"
-          campaignDeadline="33 days to go"
-        />
-        <ActiveCampaignOverviewItem
-          scoreImage={undefined}
-          scoreTitle="Mahler: Symphony No. 6 in A minor (Complete score)"
-          campaignTitle="Help us digitise Mahler’s 6th"
-          campaignDeadline="33 days to go"
-        />
+        {Array(6).fill(null).map(() => (
+          <ActiveCampaignOverviewItem
+            scoreImage={undefined}
+            scoreTitle="Mahler: Symphony No. 6 in A minor (Complete score)"
+            campaignTitle="Help us digitise Mahler’s 6th"
+            campaignDeadline="33 days to go"
+          />
+        ))}
       </ActiveCampaignOverviewSection>
       <HomeTestimonials />
       <HomeAboutTrompa />

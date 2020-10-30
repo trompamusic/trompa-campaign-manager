@@ -16,6 +16,7 @@ export default function Slider ({ children, itemWidth, framePadding }) {
   const { width: windowWidth } = useWindowSize();
   const { t }                  = useTranslation('campaign');
   const slidesToShow           = getSlidesToShow(windowWidth, itemWidth);
+  const slideCount             = children?.length;
 
   function getSlidesToShow (windowWidth, itemWidth) {
     const minimumSlides = 2;
@@ -49,6 +50,7 @@ export default function Slider ({ children, itemWidth, framePadding }) {
       framePadding={framePadding}
       renderCenterLeftControls={renderCenterLeftControls}
       renderCenterRightControls={renderCenterRightControls}
+      renderBottomCenterControls={slideCount <= slidesToShow ? null : undefined}
       cellSpacing={16}
     >
       {children}

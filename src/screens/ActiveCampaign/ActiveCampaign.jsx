@@ -15,6 +15,8 @@ import Jumbotron from '../../components/Jumbotron/Jumbotron';
 import JumbotronContentCampaign from '../../components/JumbotronContentCampaign/JumbotronContentCampaign';
 import ActiveCampaignProgress from '../../components/ActiveCampaignProgress/ActiveCampaignProgress';
 import ActiveCampaignTwoSections from '../../components/ActiveCampaignTwoSections/ActiveCampaignTwoSections';
+import ActiveCampaignOverviewSection from '../../components/ActiveCampaignOverviewSection';
+import ActiveCampaignOverviewItem from '../../components/ActiveCampaignOverviewItem';
 import Footer from '../../components/Footer/Footer';
 import images from '../../theme/images';
 import styles from './ActiveCampaign.styles';
@@ -106,6 +108,16 @@ export default function ActiveCampaign ({ match }) {
           {t('about.start_today')}
         </Button>
       </Jumbotron>
+      <ActiveCampaignOverviewSection>
+        {Array(12).fill(null).map(() => (
+          <ActiveCampaignOverviewItem
+            scoreImage={undefined}
+            scoreTitle="Mahler: Symphony No. 6 in A minor (Complete score)"
+            campaignTitle="Help us digitise Mahler’s 6th"
+            campaignDeadline="33 days to go"
+          />
+        ))}
+      </ActiveCampaignOverviewSection>
       <Footer />
       <ShareDialog
         open={shareDialogOpen}
