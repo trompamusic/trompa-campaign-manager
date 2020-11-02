@@ -8,14 +8,14 @@ import styles from './ActiveCampaignOverviewItem.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function ActiveCampaignOverviewItem ({ scoreImage, scoreTitle, campaignTitle, campaignDeadline }) {
+export default function ActiveCampaignOverviewItem ({ scoreImage, scoreTitle, campaignTitle, campaignDeadline, onClick }) {
   const { t }   = useTranslation('campaign');
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} onClick={onClick}>
       <div className={classes.imageContainer}>
-        <img className={classes.image} src={scoreImage} alt={t('overview.score')} />
+        <img className={classes.image} src={scoreImage || images.scorePlaceholder} alt={t('overview.score')} />
       </div>
       <div className={classes.metaContainer}>
         <Typography className={classes.caption}>
@@ -25,7 +25,7 @@ export default function ActiveCampaignOverviewItem ({ scoreImage, scoreTitle, ca
           {campaignTitle}
         </Typography>
         <Typography>
-          {campaignDeadline}
+          {campaignDeadline ? `${campaignDeadline} ${t('days_to_go')}` : null}
         </Typography>
       </div>
     </div>
@@ -36,9 +36,6 @@ ActiveCampaignOverviewItem.propTypes = {
   scoreImage      : PropTypes.string,
   scoreTitle      : PropTypes.string,
   campaignTitle   : PropTypes.string,
-  campaignDeadline: PropTypes.string,
-};
-
-ActiveCampaignOverviewItem.defaultProps = {
-  scoreImage: images.scorePlaceholder,
+  campaignDeadline: PropTypes.number,
+  onClick         : PropTypes.func,
 };

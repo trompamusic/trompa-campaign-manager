@@ -18,7 +18,8 @@ export default ({ palette, spacing, typography, breakpoints }) => createStyles({
     height: 203,
   },
   metaContainer: {
-    padding: spacing(),
+    padding  : spacing(),
+    minHeight: 75,
   },
   caption: {
     color        : palette.primary.main,

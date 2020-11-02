@@ -3,10 +3,9 @@ import { render } from '../../testUtils';
 import ActiveCampaignOverviewItem from './ActiveCampaignOverviewItem';
 
 const dummyProps = {
-  scoreImage      : undefined,
-  scoreTitle      : "bb",
-  campaignTitle   : "cc",
-  campaignDeadline: "dd",
+  scoreImage   : undefined,
+  scoreTitle   : "bb",
+  campaignTitle: "cc",
 };
 
 describe('<ActiveCampaignOverviewItem />', () => {
@@ -21,6 +20,5 @@ describe('<ActiveCampaignOverviewItem />', () => {
 
     expect(getByText('bb')).toBeTruthy();
     expect(getByText('cc')).toBeTruthy();
-    expect(getByText('dd')).toBeTruthy();
   });
 });

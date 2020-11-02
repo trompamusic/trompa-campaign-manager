@@ -28,9 +28,7 @@ exports[`<ActiveCampaignOverviewItem /> renders and matches snapshot 1`] = `
     </h2>
     <p
       class="MuiTypography-root MuiTypography-body1"
-    >
-      dd
-    </p>
+    />
   </div>
 </div>
 `;
