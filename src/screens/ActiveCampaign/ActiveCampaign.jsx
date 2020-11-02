@@ -30,7 +30,6 @@ export default function ActiveCampaign ({ match }) {
   const [mailChimpDialogOpen, setMailChimpDialogOpen] = useState(false);
   const { loading, error, data }                      = useQuery(GET_CAMPAIGN, { variables: { identifier: campaignIdentifier } });
   const campaign                                      = data?.ControlAction[0];
-  const author                                        = "TROMPA";
 
   if (loading) {
     return null;
@@ -70,7 +69,7 @@ export default function ActiveCampaign ({ match }) {
       <Jumbotron
         image={digitalDocument.image}
         campaign={campaign}
-        author={campaign.agent || author}
+        author={campaign.author}
         digitalDocument={digitalDocument}
         isCampaignPageHeader
       >
@@ -87,7 +86,7 @@ export default function ActiveCampaign ({ match }) {
         campaign={campaign}
         digitalDocument={digitalDocument}
         musicComposition={digitalDocument?.exampleOfWork[0]}
-        composer={digitalDocument?.exampleOfWork[0]?.composer[0]}
+        composer={undefined}
       />
       <Jumbotron
         image={images.collaborateHero}

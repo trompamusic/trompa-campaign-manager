@@ -2,6 +2,7 @@
   "campaign": "Campaign",
   "close": "Close",
   "close_campaign": "Close campaign",
+  "complete_score": "Complete Score",
   "copy": "Copy",
   "help_this_campaign": "Help this campaign",
   "help_us_digitize": "Help us digitize",
@@ -11,6 +12,7 @@
   "share_this_campaign": "Share this campaign",
   "start_your_own_campaign": "Start your own campaign",
   "subscribe_for_updates": "Subscribe for updates",
+  "unknown_composer": "Unknown composer",
   "about": {
     "about_collaboration_manager": "About Trompa Collaboration Campaign Manager",
     "trompa_is_developing": "Trompa is developing powerful and advanced tools for musicians. by combining computing power with the knowledge of the best. Whether you’re singing in a choir, playing in an ensemble or conducting an orchestra, Trompa explores new ways to discover, rehearse and perform classical music.",

@@ -16,9 +16,12 @@ export default ({ spacing, typography, palette, breakpoints }) => createStyles({
       height   : 750,
     },
     '& section': {
-      width : 528,
-      margin: '51px 96px 98px 96px',
-      '& h2': {
+      display       : 'flex',
+      flexDirection : 'column',
+      justifyContent: 'center',
+      width         : 528,
+      margin        : '51px 96px 98px 96px',
+      '& h2'        : {
         marginBottom: spacing(0.5),
       },
       '& p': {
