@@ -15,10 +15,22 @@ describe('<ActiveCampaignOverviewItem />', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  it('it renders the score title, campaign title and campaign deadline correctly', () => {
+  it('renders the score title, campaign title and campaign deadline correctly', () => {
     const { getByText } = render(<ActiveCampaignOverviewItem {...dummyProps} />);
 
     expect(getByText('bb')).toBeTruthy();
     expect(getByText('cc')).toBeTruthy();
+  });
+
+  it('renders the campaign deadline if its a positive integer', () => {
+    const { getByText } = render(<ActiveCampaignOverviewItem campaignDeadline={10} {...dummyProps} />);
+
+    expect(getByText(/days to go/i)).toBeTruthy();
+  });
+
+  it('renders past due date if campaign deadline if below zero', () => {
+    const { getByText } = render(<ActiveCampaignOverviewItem campaignDeadline={-10} {...dummyProps} />);
+
+    expect(getByText(/due date/i)).toBeTruthy();
   });
 });

@@ -25,7 +25,9 @@ export default function ActiveCampaignOverviewItem ({ scoreImage, scoreTitle, ca
           {campaignTitle}
         </Typography>
         <Typography>
-          {campaignDeadline ? `${campaignDeadline} ${t('days_to_go')}` : null}
+          {campaignDeadline
+            ? (campaignDeadline > 0 ? `${campaignDeadline} ${t('days_to_go')}` : t('past_due_date'))
+            : null}
         </Typography>
       </div>
     </div>
