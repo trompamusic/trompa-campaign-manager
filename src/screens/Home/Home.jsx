@@ -90,7 +90,7 @@ export default function Home() {
               scoreTitle={digitalDocument?.title}
               campaignTitle={campaign.title}
               campaignDeadline={daysToGo}
-              onClick={() => history.push(`campaign/${publicCampaignIdentifier}`)}
+              onClick={() => history.push(`/campaign/${campaign.identifier}`)}
             />
           );})}
       </ActiveCampaignOverviewSection>
@@ -124,5 +124,27 @@ query {
 			}
 		}
 	}
-}
+}`;
+
+export const GET_CAMPAIGN = gql`
+    query Campaign($identifier: ID!) {
+        ControlAction (identifier: $identifier) {
+            identifier
+            name
+            description
+            object {
+                ... on PropertyValue {
+                    name
+                    value
+                    nodeValue {
+                        ... on DigitalDocument {
+                            identifier
+                            title
+                            source
+                        }
+                    }
+                }
+            }
+        }
+    }
 `;

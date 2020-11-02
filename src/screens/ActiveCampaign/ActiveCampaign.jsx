@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import moment from 'moment';
 import { gql } from 'apollo-boost';
+import { useHistory } from 'react-router-dom';
 import { useQuery } from '@apollo/react-hooks';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
@@ -8,6 +9,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import ShareIcon from '@material-ui/icons/Share';
 import Button from '@material-ui/core/Button';
 import NotFound from '../NotFound';
+import { getCampaignDigitalDocument } from '../../utils';
 import ShareDialog from '../../components/ShareDialog/ShareDialog';
 import MailChimpDialog from '../../components/MailChimpDialog/MailChimpDialog';
 import NavBar from '../../components/NavBar/NavBar';
@@ -24,15 +26,15 @@ import styles from './ActiveCampaign.styles';
 const useStyles = makeStyles(styles);
 
 export default function ActiveCampaign ({ match }) {
-  const { campaignIdentifier } = match.params;
-  const { t }                  = useTranslation('campaign');
-  const classes                = useStyles();
-
-  const [shareDialogOpen, setShareDialogOpen]         = useState(false);
-  const [mailChimpDialogOpen, setMailChimpDialogOpen] = useState(false);
-  const { loading, error, data }                      = useQuery(GET_CAMPAIGN, { variables: { identifier: campaignIdentifier } });
-  const campaign                                      = data?.ControlAction[0];
-  const author                                        = "TROMPA";
+  const { campaignIdentifier }                                      = match.params;
+  const { t }                                                       = useTranslation('campaign');
+  const classes                                                     = useStyles();
+  const history                                                     = useHistory();
+  const [shareDialogOpen, setShareDialogOpen]                       = useState(false);
+  const [mailChimpDialogOpen, setMailChimpDialogOpen]               = useState(false);
+  const { loading, error, data: { ControlAction: campaigns } = {} } = useQuery(GET_CAMPAIGNS);
+  const campaign                                                    = campaigns?.find(({ identifier }) => identifier === campaignIdentifier);
+  const author                                                      = "TROMPA";
 
   if (loading) {
     return null;
@@ -46,7 +48,7 @@ export default function ActiveCampaign ({ match }) {
     return <NotFound />;
   }
 
-  const digitalDocument = campaign.object.find(obj => obj.name === 'Work')?.nodeValue;
+  const digitalDocument = getCampaignDigitalDocument(campaign);
   const campaignUrl     = window.location.href;
   const campaignEndDate = campaign?.endTime?.day && moment([campaign?.endTime?.year, campaign?.endTime?.month, campaign?.endTime?.day]);
   const doTaskUrl       = `/campaign/${campaignIdentifier}/task`;
@@ -70,7 +72,7 @@ export default function ActiveCampaign ({ match }) {
         drawerContent={<div />}
       />
       <Jumbotron
-        image={digitalDocument.image}
+        image={digitalDocument?.image || images.scoreImage}
         campaign={campaign}
         author={campaign.agent || author}
         digitalDocument={digitalDocument}
@@ -109,14 +111,21 @@ export default function ActiveCampaign ({ match }) {
         </Button>
       </Jumbotron>
       <ActiveCampaignOverviewSection>
-        {Array(12).fill(null).map(() => (
-          <ActiveCampaignOverviewItem
-            scoreImage={undefined}
-            scoreTitle="Mahler: Symphony No. 6 in A minor (Complete score)"
-            campaignTitle="Help us digitise Mahler’s 6th"
-            campaignDeadline="33 days to go"
-          />
-        ))}
+        {campaigns?.map(campaign => {
+          const deadline        = moment([campaign.endTime.year, campaign.endTime.month, campaign.endTime.day]);
+          const daysToGo        = deadline?.diff(moment(), 'days');
+          const digitalDocument = getCampaignDigitalDocument(campaign);
+
+          return (
+            <ActiveCampaignOverviewItem
+              key={campaign.identifier}
+              scoreImage={digitalDocument?.image}
+              scoreTitle={digitalDocument?.title}
+              campaignTitle={campaign.title}
+              campaignDeadline={daysToGo}
+              onClick={() => history.push(`/campaign/${campaign.identifier}`)}
+            />
+          );})}
       </ActiveCampaignOverviewSection>
       <Footer />
       <ShareDialog
@@ -138,10 +147,10 @@ export default function ActiveCampaign ({ match }) {
   );
 }
 
-export const GET_CAMPAIGN = gql`
-    query Campaign($identifier: ID!) {
-        ControlAction (identifier: $identifier) {
-            agent
+export const GET_CAMPAIGNS = gql`
+    query {
+      ControlAction(filter:{wasDerivedFrom:{identifier: "b559c52d-6104-4cb3-ab82-39b82bb2de6c"}}) {
+        agent
             identifier
             name
             alternateName
@@ -151,7 +160,8 @@ export const GET_CAMPAIGN = gql`
               month
               day
             }
-            object {
+            object(filter: {name: "Work"})
+            {
                 ... on PropertyValue {
                     name
                     value
@@ -180,6 +190,28 @@ export const GET_CAMPAIGN = gql`
                                     }
                                 }
                             }
+                        }
+                    }
+                }
+            }
+        }
+    }`;
+
+export const GET_CAMPAIGN = gql`
+    query Campaign($identifier: ID!) {
+        ControlAction (identifier: $identifier) {
+            identifier
+            name
+            description
+            object {
+                ... on PropertyValue {
+                    name
+                    value
+                    nodeValue {
+                        ... on DigitalDocument {
+                            identifier
+                            title
+                            source
                         }
                     }
                 }
