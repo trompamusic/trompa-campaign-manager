@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import * as PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { makeStyles } from '@material-ui/styles';
-import { Typography } from '@material-ui/core';
+import { Typography, IconButton } from '@material-ui/core';
+import RemoveRedEyeIcon from '@material-ui/icons/RemoveRedEye';
+import ScoreContainer from '../../containers/ScoreContainer/ScoreContainer';
 import images from '../../theme/images';
+import ScoreModal from '../ScoreModal/ScoreModal';
 import styles from './Jumbotron.styles';
 
 const useStyles = makeStyles(styles);
@@ -19,8 +22,9 @@ export default function Jumbotron ({
   digitalDocument,
   isCampaignPageHeader,
 }) {
-  const classes = useStyles();
-  const { t }   = useTranslation('common');
+  const classes                            = useStyles();
+  const { t }                              = useTranslation('common');
+  const [scoreModalOpen, toggleScoremodal] = useState(false);
 
   const renderContent = device => (
     <div className={classNames(classes[device], { [classes.campaign]: isCampaignPageHeader })}>
@@ -84,15 +88,25 @@ export default function Jumbotron ({
         {renderContent('desktop')}
         {!isCampaignPageHeader && (<img className={classes.image} src={image} alt="" />)}
         {isCampaignPageHeader && (
-          <div className={classes.score}>
-            <Typography variant="h3">
+          <div className={classes.score} >
+            <Typography variant="h3" color="inherit">
               {digitalDocument?.title}
             </Typography>
-            <img className={classes.scoreImage} src={image} alt="" />
+            <ScoreContainer />
+            <IconButton className={classes.toggleScoreModal} onClick={() => toggleScoremodal(true)}>
+              <RemoveRedEyeIcon color="inherit" />
+              <Typography variant="body2" color="inherit">
+              View progress
+              </Typography>
+            </IconButton>
+            <Typography className={classes.progress} variant="body2" color="inherit">
+            2/12 pages done
+            </Typography>
           </div>
         )}
       </div>
       {renderContent('mobile')}
+      <ScoreModal isOpen={scoreModalOpen} onClose={() => toggleScoremodal(false)} />
     </header>
   );
 }
