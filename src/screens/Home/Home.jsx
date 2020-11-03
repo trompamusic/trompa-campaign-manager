@@ -79,8 +79,7 @@ export default function Home() {
       <HomeThreeSteps />
       <ActiveCampaignOverviewSection>
         {campaigns?.map(campaign => {
-          const deadline        = moment([campaign.endTime.year, campaign.endTime.month, campaign.endTime.day]);
-          const daysToGo        = deadline?.diff(moment(), 'days');
+          const daysToGo        = moment(campaign.endTime.formatted)?.diff(moment(), 'days');
           const digitalDocument = getCampaignDigitalDocument(campaign);
 
           return (
@@ -107,9 +106,7 @@ query {
 		identifier
     name
     endTime {
-      year
-      month
-      day
+      formatted
     }
     object(filter: {name: "Work"})
     {
