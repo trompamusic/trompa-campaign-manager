@@ -54,9 +54,7 @@ export default function WhoAreYou({ campaignIdentifier }) {
       <WhoAreYouComponent
         campaignIdentifier={campaignIdentifier}
         onSubmit={onFormSubmit}
-        initialFormValues={{
-          nickname: '',
-        }}
+        initialFormValues={{ nickname }}
       />
     </React.Fragment>
   );
