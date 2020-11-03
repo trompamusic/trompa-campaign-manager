@@ -102,7 +102,7 @@ export default function Home() {
 
 const GET_CAMPAIGNS = gql`
 query {
-	ControlAction(filter:{wasDerivedFrom:{identifier: "b559c52d-6104-4cb3-ab82-39b82bb2de6c"}}) {
+	ControlAction(filter:{wasDerivedFrom:{identifier: "b559c52d-6104-4cb3-ab82-39b82bb2de6c"}}, orderBy: endTime_asc) {
 		identifier
     name
     endTime {
