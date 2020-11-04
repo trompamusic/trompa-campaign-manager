@@ -8,6 +8,7 @@ import ActiveCampaign from '../../screens/ActiveCampaign';
 import NotFound from '../../screens/NotFound';
 import WhoAreYou from '../../screens/WhoAreYou';
 import NoSupportMobile from '../../screens/NoSupportMobile';
+import CreateCampaign from '../../screens/CreateCampaign';
 
 export default function Root(props) {
   const theme    = useTheme();
@@ -26,6 +27,7 @@ export default function Root(props) {
       <Route path="/campaign/:campaignIdentifier/who-are-you" component={WhoAreYou} exact />
       <Route path="/campaign/:campaignIdentifier/task/" component={Task} exact />
       <Route path="/campaign/:campaignIdentifier/task/:taskIdentifier" component={Task} exact />
+      <Route path="/createcampaign/:step?" component={CreateCampaign} />
       <Route component={NotFound} />
     </Switch>
   );

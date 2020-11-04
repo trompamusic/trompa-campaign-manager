@@ -40,7 +40,7 @@ export default function Home() {
       <NavBar
         navLinks={[
           { name: t('home'), to: '/' },
-          { name: t('start_campaign'), onClick: () => setMailChimpDialogOpen(true) },
+          { name: t('start_campaign'), to: '/createcampaign' },
         ]}
         primaryButton={{ name: t('join_campaign'), to: `campaign/${process.env.REACT_APP_PUBLIC_CAMPAIGN_IDENTIFIER}` }}
         drawerContent={<div />}
