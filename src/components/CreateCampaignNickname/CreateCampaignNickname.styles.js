@@ -7,6 +7,10 @@ export default ({ typography, palette, spacing, shape, breakpoints }) => createS
     left     : '50%',
     transform: 'translate(-50%, -50%)',
   },
+  container: {
+    display   : 'flex',
+    alignItems: 'flex-end' ,
+  },
   content: {
     [breakpoints.down('sm')]: {
       width: '90vw',
@@ -47,6 +51,9 @@ export default ({ typography, palette, spacing, shape, breakpoints }) => createS
     fontSize     : typography.pxToRem(16),
     letterSpacing: 0.5,
   },
+  inputHeader: {
+    marginBottom: spacing(0.5),
+  },
   tip: {
     marginTop    : spacing(0.5),
     marginBottom : spacing(2),
@@ -54,24 +61,6 @@ export default ({ typography, palette, spacing, shape, breakpoints }) => createS
     fontSize     : typography.pxToRem(12),
     letterSpacing: 0.5,
     color        : palette.text.transparentGrey,
-  },
-  nicknameTaken: {
-    display        : 'flex',
-    alignItems     : 'center',
-    maxWidth       : '40vw',
-    marginTop      : spacing(3),
-    padding        : `${spacing(1.25)}px ${spacing(2)}px `,
-    borderRadius   : shape.borderRadius,
-    backgroundColor: palette.background.primary,
-  },
-  missingPersonIcon: {
-    marginRight: spacing(2),
-    color      : palette.primary.main,
-  },
-  warning: {
-    margin       : 0,
-    fontSize     : typography.pxToRem(14),
-    letterSpacing: 0.25,
   },
   buttons: {
     display       : 'flex',

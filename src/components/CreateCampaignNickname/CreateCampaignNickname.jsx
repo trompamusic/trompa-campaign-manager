@@ -19,7 +19,7 @@ export default function CreateCampaignNickname ({ initialFormValues, onSubmit, o
     <Form onSubmit={onSubmit} initialValues={{ ...initialFormValues }}>
       {({ values, handleChange, handleSubmit, handleBlur, isSubmitting }) => (
         <div className={classes.root}>
-          <div style={{ display: 'flex', alignItems: 'flex-end' }}>
+          <div className={classes.container}>
             <img className={classes.person} src={images.personTrumpetStandingLeft} alt={t('person')} />
             <div className={classes.content}>
               <Typography className={classes.goal} variant="h1">
@@ -40,8 +40,10 @@ export default function CreateCampaignNickname ({ initialFormValues, onSubmit, o
                   {t('explanation')}
                 </Typography>
                 <form id="nickname-form" onSubmit={handleSubmit}>
+                  <Typography className={classes.inputHeader} variant="body1">
+                    {t('nickname_input.label')}
+                  </Typography>
                   <TextField
-                    id="user-nickname"
                     onChange={handleChange}
                     onBlur={handleBlur}
                     name="nickname"
