@@ -29,6 +29,11 @@ const overrides = ({ palette, typography, spacing, breakpoints }) => ({
       backgroundColor: palette.common.black,
     },
   },
+  MuiFormLabel: {
+    root: {
+      color: palette.text.transparentGrey,
+    },
+  },
   MuiTypography: {
     h1: {
       [breakpoints.down('sm')]: {
