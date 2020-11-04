@@ -8,6 +8,7 @@ module.exports = {
         'landing-page',
         'search',
         'campaign',
+        'startcampaign',
         'home',
         'redux',
         'sagas',
