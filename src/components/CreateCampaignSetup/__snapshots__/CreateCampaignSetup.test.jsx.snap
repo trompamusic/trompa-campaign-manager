@@ -1,0 +1,189 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CreateCampaignSetup /> renders and matches snapshot 1`] = `
+<div
+  class="makeStyles-root-1"
+>
+  <div
+    class="makeStyles-container-2"
+  >
+    <img
+      alt="person"
+      class="makeStyles-person-5"
+      src="personWithBass.png"
+    />
+    <div
+      class="makeStyles-content-3"
+    >
+      <h1
+        class="MuiTypography-root makeStyles-header-6 MuiTypography-h1"
+      >
+        Let’s get your campaign set up
+      </h1>
+      <form
+        class="makeStyles-form-4"
+        id="campaign-meta-form"
+      >
+        <div
+          class="makeStyles-inputItem-7"
+        >
+          <p
+            class="MuiTypography-root makeStyles-inputHeader-8 MuiTypography-body1"
+          >
+            Give it a catchy title
+          </p>
+          <div
+            class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+          >
+            <label
+              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
+              data-shrink="false"
+            >
+              Campaign title
+            </label>
+            <div
+              class="MuiInputBase-root MuiFilledInput-root MuiInputBase-fullWidth MuiInputBase-formControl"
+            >
+              <input
+                aria-invalid="false"
+                class="MuiInputBase-input MuiFilledInput-input"
+                name="campaignTitle"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="makeStyles-inputItem-7"
+        >
+          <p
+            class="MuiTypography-root makeStyles-inputHeader-8 MuiTypography-body1"
+          >
+            Explain to your collaborators why you want to improve this score
+          </p>
+          <div
+            class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+          >
+            <label
+              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
+              data-shrink="false"
+            >
+              Description
+            </label>
+            <div
+              class="MuiInputBase-root MuiFilledInput-root MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-multiline MuiFilledInput-multiline"
+            >
+              <textarea
+                aria-invalid="false"
+                class="MuiInputBase-input MuiFilledInput-input MuiInputBase-inputMultiline MuiFilledInput-inputMultiline"
+                name="campaignDescription"
+                rows="4"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="makeStyles-inputItem-7"
+        >
+          <p
+            class="MuiTypography-root makeStyles-inputHeader-8 MuiTypography-body1"
+          >
+            When do you need it?
+          </p>
+          <div
+            class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+            format="MMMM DD HH:mm"
+          >
+            <label
+              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled"
+              data-shrink="true"
+            >
+              Deadline
+            </label>
+            <div
+              class="MuiInputBase-root MuiFilledInput-root MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiFilledInput-adornedEnd"
+            >
+              <input
+                aria-invalid="false"
+                class="MuiInputBase-input MuiFilledInput-input MuiInputBase-inputAdornedEnd MuiFilledInput-inputAdornedEnd"
+                name="campaignDeadline"
+                readonly=""
+                type="text"
+                value="November 04 13:46"
+              />
+              <div
+                class="MuiInputAdornment-root MuiInputAdornment-filled MuiInputAdornment-positionEnd"
+              >
+                <button
+                  class="MuiButtonBase-root MuiIconButton-root"
+                  tabindex="0"
+                  type="button"
+                >
+                  <span
+                    class="MuiIconButton-label"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root"
+                      focusable="false"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </button>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <div
+          class="makeStyles-buttons-9"
+        >
+          <button
+            class="MuiButtonBase-root MuiButton-root MuiButton-text"
+            tabindex="0"
+            type="button"
+          >
+            <span
+              class="MuiButton-label"
+            >
+              back
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+          <button
+            class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+            form="campaign-meta-form"
+            tabindex="0"
+            type="submit"
+          >
+            <span
+              class="MuiButton-label"
+            >
+              Set up my campaign
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+        </div>
+      </form>
+    </div>
+    <img
+      alt="person"
+      class="makeStyles-person-5"
+      src="personTrumpetStandingRight.png"
+    />
+  </div>
+</div>
+`;

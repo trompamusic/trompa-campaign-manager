@@ -41,6 +41,16 @@
     "home": "Home",
     "share": "Share"
   },
+  "setup": {
+    "campaign_title": "Campaign title",
+    "deadline": "Deadline",
+    "description": "Description",
+    "header": "Let’s get your campaign set up",
+    "give_catchy_title": "Give it a catchy title",
+    "setup_my_campaign": "Set up my campaign",
+    "why_want_to_improve": "Explain to your collaborators why you want to improve this score",
+    "when_need_it": "When do you need it?"
+  },
   "sharedialog": {
     "drum_up_support": "Drum up support and invite your fellow musicians.",
     "lets_face_music": "Let's face the music together.",

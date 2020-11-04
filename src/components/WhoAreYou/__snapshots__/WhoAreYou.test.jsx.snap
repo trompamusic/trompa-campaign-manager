@@ -77,7 +77,6 @@ exports[`<WhoAreYou /> renders and matches snapshot 1`] = `
     <img
       alt=""
       class="makeStyles-person-3"
-      src="personStandingRight.png"
     />
   </div>
 </div>
