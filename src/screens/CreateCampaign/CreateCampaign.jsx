@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 import NicknameMenuContainer from '../../containers/NicknameMenuContainer/NicknameMenuContainer';
 import AppbarTop from "../../components/AppbarTop/AppbarTop";
+import ProgressStepper from "../../components/ProgressStepper/ProgressStepper";
 import styles from './CreateCampaign.styles';
 
 const useStyles = makeStyles(styles);
@@ -28,15 +29,21 @@ export default function CreateCampaign() {
     digitalDocumentRef: '',
   });
 
-  useEffect(() => {
-    if (!nickname) {
-      history.replace('/createcampaign/nickname');
-    } else {
-      history.replace('/createcampaign/compositionScore');
-    }
-  },[history, nickname, pathname]);
+  // useEffect(() => {
+  //   if (!nickname) {
+  //     history.replace('/createcampaign/nickname');
+  //   } else {
+  //     history.replace('/createcampaign/compositionScore');
+  //   }
+  // },[history, nickname]);
 
-  const onBackButtonClick = () => history.back();
+  const getCurrentStep = () => {
+    return pathname === '/createcampaign/compositionScore' ? 0 : 1;
+  }
+
+  const Steps = [t('composition_score'),t('campaign')];
+
+  const onBackButtonClick = () => history.goBack();
 
   const onNicknameSubmit = givenNickname => {
     // save user to local storage
@@ -72,6 +79,7 @@ export default function CreateCampaign() {
       >
         <NicknameMenuContainer  />
       </AppbarTop>
+        {(pathname !== '/createcampaign/nickname' ) && <ProgressStepper activeStep={getCurrentStep()} steps={Steps}/>}
       <Box className={classes.main}>
         <Switch>
           <Route path="/createcampaign/nickname"exact >

@@ -8,5 +8,6 @@ export default {
   notfound: require('./notfound.json'),
   task: require('./task.json'),
   whoAreYou: require('./whoAreYou'),
+  startCampaign: require('./startCampaign'),
   notifications: require('./notifications'),
 };
