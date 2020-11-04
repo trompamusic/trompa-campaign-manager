@@ -8,3 +8,12 @@ export const providers = (component, ...wrappers) => {
 
 export const setPrerenderReady = status => (window.prerenderReady = status);
 
+export const enhanceUrlWithParameters = (url, ...parameters) => {
+  const parsedUrl = new URL(url);
+
+  parameters.forEach(({ key, value }) => {
+    parsedUrl.searchParams.set(key, encodeURIComponent(value));
+  });
+
+  return parsedUrl.href;
+};
