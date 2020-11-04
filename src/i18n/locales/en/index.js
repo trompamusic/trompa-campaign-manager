@@ -9,4 +9,5 @@ export default {
   task: require('./task.json'),
   whoAreYou: require('./whoAreYou'),
   notifications: require('./notifications'),
+  selectComposition: require ('./selectComposition'),
 };

@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SelectComposition /> renders and matches snapshot 1`] = `
+<div
+  class="MuiContainer-root makeStyles-root-1 MuiContainer-maxWidthLg"
+>
+  <h2
+    class="MuiTypography-root MuiTypography-h2"
+  >
+    Composition & Score
+  </h2>
+  <div
+    class="MuiBox-root MuiBox-root-43 makeStyles-part-2"
+  >
+    <p
+      class="MuiTypography-root MuiTypography-body1"
+    >
+      Let's start with the composition
+    </p>
+    <div
+      class="MuiBox-root MuiBox-root-44 makeStyles-inputBox-3"
+    >
+      <div
+        class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+      >
+        <div
+          class="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline Mui-disabled Mui-disabled MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiFilledInput-adornedEnd"
+        >
+          <input
+            aria-invalid="false"
+            class="MuiInputBase-input MuiFilledInput-input Mui-disabled Mui-disabled MuiInputBase-inputAdornedEnd MuiFilledInput-inputAdornedEnd"
+            disabled=""
+            type="text"
+            value="Music Composition"
+          />
+          <div
+            class="MuiInputAdornment-root MuiInputAdornment-filled MuiInputAdornment-positionEnd"
+          >
+            <button
+              class="MuiButtonBase-root MuiButton-root MuiButton-text"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="MuiButton-label"
+              >
+                Select
+              </span>
+              <span
+                class="MuiTouchRipple-root"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p
+      class="MuiTypography-root MuiTypography-body2"
+    >
+      In Trompa we support a wide range of compositions
+    </p>
+  </div>
+  <div
+    class="MuiBox-root MuiBox-root-123 makeStyles-part-2"
+  >
+    <p
+      class="MuiTypography-root MuiTypography-body1"
+    >
+      Score
+    </p>
+    <div
+      class="MuiBox-root MuiBox-root-124 makeStyles-inputBox-3"
+    >
+      <div
+        class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+      >
+        <div
+          class="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline Mui-disabled Mui-disabled MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiFilledInput-adornedEnd"
+        >
+          <input
+            aria-invalid="false"
+            class="MuiInputBase-input MuiFilledInput-input Mui-disabled Mui-disabled MuiInputBase-inputAdornedEnd MuiFilledInput-inputAdornedEnd"
+            disabled=""
+            type="text"
+            value="Score"
+          />
+          <div
+            class="MuiInputAdornment-root MuiInputAdornment-filled MuiInputAdornment-positionEnd"
+          >
+            <button
+              class="MuiButtonBase-root MuiButton-root MuiButton-text"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="MuiButton-label"
+              >
+                Select
+              </span>
+              <span
+                class="MuiTouchRipple-root"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

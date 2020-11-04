@@ -1,0 +1,14 @@
+{
+  "home" : "Home",
+  "title": "Composition & Score",
+  "start": "Let's start with the composition",
+  "select": "Select",
+  "noteCompositions": "In Trompa we support a wide range of compositions",
+  "score": "Score",
+  "back": "Back",
+  "next": "Next",
+  "selectComposition": "Search the composition",
+  "compositionDefault": "Music Composition",
+  "selectScore": "Select score version to improve",
+  "scoreDefault": "Score"
+}
