@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import moment from 'moment';
 import { gql } from 'apollo-boost';
 import { useQuery } from '@apollo/react-hooks';
 import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { makeStyles } from '@material-ui/core/styles';
 import ShareIcon from '@material-ui/icons/Share';
 import Button from '@material-ui/core/Button';
 import NotFound from '../NotFound';
 import ShareDialog from '../../components/ShareDialog/ShareDialog';
-import MailChimpDialog from '../../components/MailChimpDialog/MailChimpDialog';
 import NavBar from '../../components/NavBar/NavBar';
+import TypeformModal from '../../components/TypeformModal';
 import Jumbotron from '../../components/Jumbotron/Jumbotron';
 import JumbotronContentCampaign from '../../components/JumbotronContentCampaign/JumbotronContentCampaign';
 import ActiveCampaignProgress from '../../components/ActiveCampaignProgress/ActiveCampaignProgress';
@@ -26,11 +27,12 @@ export default function ActiveCampaign ({ match }) {
   const { t }                  = useTranslation('campaign');
   const classes                = useStyles();
 
-  const [shareDialogOpen, setShareDialogOpen]         = useState(false);
-  const [mailChimpDialogOpen, setMailChimpDialogOpen] = useState(false);
-  const { loading, error, data }                      = useQuery(GET_CAMPAIGN, { variables: { identifier: campaignIdentifier } });
-  const campaign                                      = data?.ControlAction[0];
-  const author                                        = "TROMPA";
+  const subscribeFormRef                      = useRef();
+  const openSubscribeForm                     = () => subscribeFormRef.current.typeform.open();
+  const [shareDialogOpen, setShareDialogOpen] = useState(false);
+  const { loading, error, data }              = useQuery(GET_CAMPAIGN, { variables: { identifier: campaignIdentifier } });
+  const campaign                              = data?.ControlAction[0];
+  const author                                = "TROMPA";
 
   if (loading) {
     return null;
@@ -80,7 +82,7 @@ export default function ActiveCampaign ({ match }) {
           campaignUrl={campaignUrl}
           endDate={campaignEndDate}
           to={doTaskUrl}
-          setMailChimpDialogOpen={setMailChimpDialogOpen}
+          openSubscribeForm={openSubscribeForm}
         />
       </Jumbotron>
       <ActiveCampaignProgress />
@@ -99,8 +101,8 @@ export default function ActiveCampaign ({ match }) {
       >
         <Button
           className={classes.buttonHero}
-          component="button"
-          onClick={() => setMailChimpDialogOpen(true)}
+          component={Link}
+          to={doTaskUrl}
           variant="contained"
           color="primary"
         >
@@ -118,11 +120,7 @@ export default function ActiveCampaign ({ match }) {
         campaign={campaign}
         campaignUrl={campaignUrl}
       />
-      <MailChimpDialog
-        open={mailChimpDialogOpen}
-        onClose={() => setMailChimpDialogOpen(false)}
-        formLink={`https://kirkandblackbeard.typeform.com/to/NHbUkT?campaignid=${campaignIdentifier}`}
-      />
+      <TypeformModal url={`https://kirkandblackbeard.typeform.com/to/NHbUkT?campaignid=${campaignIdentifier}`} formRef={subscribeFormRef} />
     </React.Fragment>
   );
 }
