@@ -15,5 +15,8 @@
   "pdf": "Pdf",
   "active_campaign": "Already active campaign",
   "created_by": "Created by",
-  "published_by": "Published by"
+  "published_by": "Published by",
+  "cant_find": "Can't find the right score?",
+  "use_link": "Select your own PDF MEI XML file",
+  "share_link": "Select your own file"
 }

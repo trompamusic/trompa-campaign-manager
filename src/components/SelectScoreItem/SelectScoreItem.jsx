@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import { Box, Button, Card, IconButton, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
-import ExitToApp from '@material-ui/icons/ExitToApp';
+import Launch from '@material-ui/icons/Launch';
 import { useTranslation } from 'react-i18next';
 import { truncateLabel } from "../../utils";
 import styles from './SelectScoreItem.styles';
@@ -50,7 +50,7 @@ export default function SelectScoreItem({ item, isActiveCampaign, progress, onIt
                 size="small" 
                 color="primary"
               >
-                <ExitToApp className={classes.icon} />
+                <Launch className={classes.icon} />
                 {t('active_campaign')}
               </Button>
             }

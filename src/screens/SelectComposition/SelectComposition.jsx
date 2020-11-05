@@ -19,7 +19,7 @@ const searchConfig = new SearchConfig({
 
 const useStyles = makeStyles(styles);
 
-export default function SelectComposition({ onBackButtonClick, onCompositionSubmit }) {
+export default function SelectComposition({ onBackButtonClick, onCompositionSubmit, onSelectFileClick }) {
   const { t }                         = useTranslation('selectComposition');
   const classes                       = useStyles();
   const [composition, setComposition] = useState();
@@ -60,6 +60,7 @@ export default function SelectComposition({ onBackButtonClick, onCompositionSubm
         score={score}
         onSelectComponentClick={() => setModal(MODAL_COMP)} 
         onSelectScoreClick={() => setModal(MODAL_SCORE)}
+        onSelectFileClick={onSelectFileClick}
       />
       <Box className={classes.formNav}>
         <Button onClick={onBackButtonClick}>{t('back')}</Button>
@@ -99,6 +100,7 @@ export default function SelectComposition({ onBackButtonClick, onCompositionSubm
 SelectComposition.propTypes = {
   onBackButtonClick  : PropTypes.func, 
   onCompositionSubmit: PropTypes.func,
+  onSelectFileClick  : PropTypes.func,
 };
 
 export const GET_COMPOSITION_WITH_SCORES = gql`

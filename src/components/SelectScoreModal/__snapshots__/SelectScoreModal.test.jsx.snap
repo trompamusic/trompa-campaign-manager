@@ -5,7 +5,49 @@ exports[`<SelectScoreModal /> renders and matches snapshot 1`] = `
   class="MuiContainer-root makeStyles-root-1 MuiContainer-maxWidthLg"
 >
   <div
-    class="MuiBox-root MuiBox-root-11"
-  />
+    class="MuiBox-root MuiBox-root-15"
+  >
+    <div
+      class="MuiPaper-root MuiCard-root makeStyles-uploadCard-2 MuiPaper-elevation0 MuiPaper-rounded"
+    >
+      <h3
+        class="MuiTypography-root makeStyles-uploadCardText-3 MuiTypography-h3"
+      >
+        Can't find the right score?
+      </h3>
+      <p
+        class="MuiTypography-root makeStyles-uploadCardText-3 MuiTypography-body1"
+      >
+        Select your own PDF MEI XML file
+      </p>
+      <button
+        aria-label="Select your own file"
+        class="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-uploadCardButton-4 MuiButton-containedPrimary"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="MuiButton-label"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root makeStyles-icon-5"
+            focusable="false"
+            role="presentation"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M9,16 L15,16 L15,10 L19,10 L12,3 L5,10 L9,10 L9,16 Z M5,18 L19,18 L19,20 L5,20 L5,18 Z"
+              id="path-1"
+            />
+          </svg>
+          Select your own file
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
+    </div>
+  </div>
 </div>
 `;
