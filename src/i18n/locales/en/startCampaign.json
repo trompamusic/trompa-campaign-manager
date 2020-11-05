@@ -3,5 +3,17 @@
   "meta_description": "Help us digitize the Requiem in D minor. Create modern, playable scores from known and unknown classics.",
   "home": "Home",
   "composition_score": "Composition & Score",
-  "campaign": "Campaign"
+  "campaign": "Campaign",
+  "create_digitial_doc": {
+    "select_own_file": "Select your own file",
+    "score": "Score",
+    "thumbnail": "Thumbnail",
+    "score_title": "Score title",
+    "editor": "Editor",
+    "publisher": "Publisher",
+    "copyright": "Copyright license",
+    "language": "Language",
+    "notes": "Miscellaneous Notes",
+    "upload": "Upload"
+  }
 }
