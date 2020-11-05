@@ -28,7 +28,6 @@ export default function Home() {
   const { t }                                                       = useTranslation('home');
   const history                                                     = useHistory();
   const startCampaignFormRef                                        = useRef();
-  const openStartCampaignForm                                       = () => startCampaignFormRef.current.typeform.open();
   const { loading, error, data: { ControlAction: campaigns } = {} } = useQuery(GET_CAMPAIGNS);
   const publicCampaignIdentifier                                    = process.env.REACT_APP_PUBLIC_CAMPAIGN_IDENTIFIER;
   const campaign                                                    = campaigns?.find(({ identifier }) => identifier === publicCampaignIdentifier);
