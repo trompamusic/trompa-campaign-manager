@@ -1,5 +1,7 @@
 {
   "title": "Start new campaign",
   "meta_description": "Help us digitize the Requiem in D minor. Create modern, playable scores from known and unknown classics.",
-  "home": "Home"
+  "home": "Home",
+  "composition_score": "Composition & Score",
+  "campaign": "Campaign"
 }
