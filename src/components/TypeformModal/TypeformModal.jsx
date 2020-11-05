@@ -10,6 +10,9 @@ export default function TypeformModal ({ url, formRef }) {
       ref={tf => {
         formRef.current = tf;
       }}
+      style={{
+        height: 0, width: 0,
+      }}
       popup
       hideHeaders
       hideFooter
