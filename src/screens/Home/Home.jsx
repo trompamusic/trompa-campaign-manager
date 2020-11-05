@@ -104,9 +104,11 @@ query {
     endTime {
       formatted
     }
-    object(filter: {name: "Work"})
+    object
     {
 			... on PropertyValue {
+        name
+        value
 				nodeValue {
 					... on DigitalDocument {
 						identifier
