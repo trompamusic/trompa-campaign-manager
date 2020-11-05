@@ -8,9 +8,9 @@ export const providers = (component, ...wrappers) => {
 
 export const setPrerenderReady = status => (window.prerenderReady = status);
 
-export const getCampaignDigitalDocument = campaign => {
-  return campaign ? campaign?.object[0]?.nodeValue : null;
-};
+export const getCampaignDigitalDocument = campaign => campaign ? campaign?.object.find(object => object.name === 'Work')?.nodeValue : null;
+
+export const getCampaignTasksValue = campaign => campaign ? campaign?.object.find(object => object.name === 'tasks')?.value : null;
 
 export const enhanceUrlWithParameters = (url, ...parameters) => {
   const parsedUrl = new URL(url);
@@ -20,4 +20,10 @@ export const enhanceUrlWithParameters = (url, ...parameters) => {
   });
 
   return parsedUrl.href;
+};
+
+export const hasUrlParameter = parameter => {
+  const urlParams = new URLSearchParams(window.location.search);
+
+  return urlParams.has(parameter);
 };
