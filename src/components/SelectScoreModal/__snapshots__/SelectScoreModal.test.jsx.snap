@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SelectScoreModal /> renders and matches snapshot 1`] = `
+<div
+  class="MuiContainer-root makeStyles-root-1 MuiContainer-maxWidthLg"
+>
+  <div
+    class="MuiBox-root MuiBox-root-11"
+  />
+</div>
+`;
