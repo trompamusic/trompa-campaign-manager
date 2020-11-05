@@ -88,8 +88,9 @@ exports[`<SelectComposition /> renders and matches snapshot 1`] = `
             class="MuiInputAdornment-root MuiInputAdornment-filled MuiInputAdornment-positionEnd"
           >
             <button
-              class="MuiButtonBase-root MuiButton-root MuiButton-text"
-              tabindex="0"
+              class="MuiButtonBase-root MuiButton-root MuiButton-text Mui-disabled Mui-disabled"
+              disabled=""
+              tabindex="-1"
               type="button"
             >
               <span
@@ -97,9 +98,6 @@ exports[`<SelectComposition /> renders and matches snapshot 1`] = `
               >
                 Select
               </span>
-              <span
-                class="MuiTouchRipple-root"
-              />
             </button>
           </div>
         </div>

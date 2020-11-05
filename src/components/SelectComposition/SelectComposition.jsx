@@ -19,6 +19,7 @@ export default function SelectComposition({ composition, score, onSelectCompClic
           <TextField 
             value={composition? composition.name : t('compositionDefault')}
             variant="filled" 
+            disabled={!composition}
             InputProps={{
               endAdornment: (
                 <InputAdornment position="end">
@@ -27,7 +28,6 @@ export default function SelectComposition({ composition, score, onSelectCompClic
               ) }
             }
             fullWidth 
-            disabled 
           />
         </Box>
         <Typography variant="body2">{t('noteCompositions')}</Typography>
@@ -36,17 +36,22 @@ export default function SelectComposition({ composition, score, onSelectCompClic
         <Typography variant="body1">{t('score')}</Typography>
         <Box className={classes.inputBox}>
           <TextField 
-            value={score? score.name : t('scoreDefault')}
+            value={score? (score.title || score.name) : t('scoreDefault')}
             variant="filled" 
+            disabled={!score}
             InputProps={{
               endAdornment: (
                 <InputAdornment position="end">
-                  <Button onClick={e => onSelectScoreClick()}>{t('select')}</Button>
+                  <Button 
+                    disabled={!composition}
+                    onClick={e => onSelectScoreClick()}
+                  >
+                    {t('select')}
+                  </Button>
                 </InputAdornment>
               ) }
             }
             fullWidth 
-            disabled 
           />
         </Box>
       </Box>

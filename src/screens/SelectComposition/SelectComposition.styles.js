@@ -11,4 +11,16 @@ export default ({ spacing, typography }) => createStyles({
     width         : '100%',
     justifyContent: 'flex-end',
   },
+  dialogBox: {
+    display       : 'flex',
+    flexDirection : 'column',
+    justifyContent: 'center',
+    alignItems    : 'center',
+    padding       : spacing(3),
+  },
+  closeButton: {
+    position: 'absolute',
+    right   : spacing(3),
+    top     : spacing(3),
+  },
 });
