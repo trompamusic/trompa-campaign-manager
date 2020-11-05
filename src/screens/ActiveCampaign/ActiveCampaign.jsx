@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import moment from 'moment';
 import { gql } from 'apollo-boost';
 import { useHistory } from 'react-router-dom';
@@ -10,7 +10,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import ShareIcon from '@material-ui/icons/Share';
 import Button from '@material-ui/core/Button';
 import NotFound from '../NotFound';
-import { getCampaignDigitalDocument } from '../../utils';
+import { getCampaignDigitalDocument, hasUrlParameter } from '../../utils';
 import useTaskCount from '../../hooks/useTaskCount';
 import ShareDialog from '../../components/ShareDialog/ShareDialog';
 import NavBar from '../../components/NavBar/NavBar';
@@ -32,12 +32,26 @@ export default function ActiveCampaign ({ match }) {
   const subscribeFormRef                                            = useRef();
   const openSubscribeForm                                           = () => subscribeFormRef.current.typeform.open();
   const history                                                     = useHistory();
+  const createdParameter                                            = hasUrlParameter("created");
   const [shareDialogOpen, setShareDialogOpen]                       = useState(false);
   const { loading, error, data: { ControlAction: campaigns } = {} } = useQuery(GET_CAMPAIGNS);
   const { campaignIdentifier }                                      = match.params;
   const campaign                                                    = campaigns?.find(({ identifier }) => identifier === campaignIdentifier);
   const taskCount                                                   = useTaskCount(campaign);
   const author                                                      = "TROMPA";
+
+  useEffect(() => {
+    if(createdParameter) {
+      setShareDialogOpen(true);
+    }
+  }, [createdParameter]);
+
+  const handleShareDialogClose = () => {
+    if(createdParameter) {
+      history.replace(`/campaign/${campaignIdentifier}`);
+    }
+    setShareDialogOpen(false);
+  };
 
   if (loading) {
     return null;
@@ -55,10 +69,9 @@ export default function ActiveCampaign ({ match }) {
   const campaignUrl     = window.location.href;
   const campaignEndDate = campaign?.endTime?.formatted && moment(campaign.endTime.formatted);
   const doTaskUrl       = `/campaign/${campaignIdentifier}/task`;
-
-  const navLinks      = [{ name: t('home'), to: '/' }];
-  const buttons       = [{ name: t('navbar.share'), onClick: () => setShareDialogOpen(true), startIcon: <ShareIcon /> }];
-  const primaryButton = { name: t('navbar.join_campaign'), to: doTaskUrl };
+  const navLinks        = [{ name: t('home'), to: '/' }];
+  const buttons         = [{ name: t('navbar.share'), onClick: () => setShareDialogOpen(true), startIcon: <ShareIcon /> }];
+  const primaryButton   = { name: t('navbar.join_campaign'), to: doTaskUrl };
 
   return (
     <React.Fragment>
@@ -133,7 +146,7 @@ export default function ActiveCampaign ({ match }) {
       <Footer />
       <ShareDialog
         open={shareDialogOpen}
-        onClose={() => setShareDialogOpen(false)}
+        onClose={handleShareDialogClose}
         modalContent={{
           title    : t('sharedialog.drum_up_support'),
           paragraph: t('sharedialog.lets_face_music'),

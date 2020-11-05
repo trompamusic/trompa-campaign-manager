@@ -21,3 +21,9 @@ export const enhanceUrlWithParameters = (url, ...parameters) => {
 
   return parsedUrl.href;
 };
+
+export const hasUrlParameter = parameter => {
+  const urlParams = new URLSearchParams(window.location.search);
+
+  return urlParams.has(parameter);
+};
