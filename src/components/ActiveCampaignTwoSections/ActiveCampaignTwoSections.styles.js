@@ -6,14 +6,10 @@ export default ({ spacing, typography, palette, breakpoints }) => createStyles({
   },
   twoSections: {
     display                 : 'flex',
+    boxShadow               : '0 1px 6px 0px rgba(0,0,0,0.1)',
     height                  : 600,
-    maxHeight               : 600,
-    [breakpoints.only('sm')]: {
-      height: 500,
-    },
-    [breakpoints.only('xs')]: {
-      maxHeight: 750,
-      height   : 750,
+    [breakpoints.down('xs')]: {
+      height: 'initial',
     },
     '& section': {
       width : 528,
@@ -25,19 +21,10 @@ export default ({ spacing, typography, palette, breakpoints }) => createStyles({
         marginBottom: spacing(2),
       },
       [breakpoints.down('md')]: {
-        marginTop   : spacing(4),
-        marginLeft  : spacing(2),
-        marginRight : spacing(2),
-        marginBottom: spacing(4),
+        margin: spacing(4, 2),
       },
-      [breakpoints.only('sm')]: {
-        marginLeft  : spacing(4),
-        marginRight : spacing(4),
-        marginBottom: spacing(4),
-      },
-      [breakpoints.only('xs')]: {
-        marginLeft : spacing(2),
-        marginRight: spacing(2),
+      [breakpoints.down('sm')]: {
+        margin: spacing(5, 2),
       },
     },
   },
@@ -48,12 +35,9 @@ export default ({ spacing, typography, palette, breakpoints }) => createStyles({
     },
   },
   pieceAuthor: {
-    justifyContent          : 'flex-start',
-    backgroundColor         : palette.common.faintGrey,
-    [breakpoints.only('xs')]: {
-      marginBottom: spacing(-3),
-    },
-    '& section': {
+    justifyContent : 'flex-start',
+    backgroundColor: palette.common.faintGrey,
+    '& section'    : {
       display       : 'flex',
       flexDirection : 'column',
       justifyContent: 'center',

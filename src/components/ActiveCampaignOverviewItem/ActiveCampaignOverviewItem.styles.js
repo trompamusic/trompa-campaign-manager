@@ -6,20 +6,24 @@ export default ({ palette, spacing, typography, breakpoints }) => createStyles({
     backgroundColor: palette.common.white,
   },
   imageContainer: {
-    padding                 : 5,
-    textAlign               : 'center',
-    backgroundColor         : palette.border.lightGrey,
-    [breakpoints.only('xs')]: {
-      display: 'none',
-    },
+    padding        : 5,
+    textAlign      : 'center',
+    backgroundColor: palette.border.lightGrey,
   },
   image: {
-    width : 144,
-    height: 203,
+    width                   : 144,
+    height                  : 203,
+    [breakpoints.only('xs')]: {
+      width : 96,
+      height: 136,
+    },
   },
   metaContainer: {
-    padding  : spacing(),
-    minHeight: 75,
+    padding                 : spacing(),
+    minHeight               : 75,
+    [breakpoints.only('xs')]: {
+      minHeight: 100,
+    },
   },
   caption: {
     color        : palette.primary.main,

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
 import moment from 'moment';
 import { Helmet } from 'react-helmet';
 import { Link, useHistory } from 'react-router-dom';
@@ -11,6 +11,7 @@ import { getCampaignDigitalDocument } from '../../utils';
 import images from '../../theme/images';
 import Jumbotron from '../../components/Jumbotron/Jumbotron';
 import NavBar from '../../components/NavBar/NavBar';
+import TypeformModal from '../../components/TypeformModal';
 import HomeTwoSections from '../../components/HomeTwoSections/HomeTwoSections';
 import HomeThreeSteps from '../../components/HomeThreeSteps/HomeThreeSteps';
 import HomeTestimonials from '../../components/HomeTestimonials/HomeTestimonials';
@@ -18,24 +19,28 @@ import ActiveCampaignOverviewSection from '../../components/ActiveCampaignOvervi
 import ActiveCampaignOverviewItem from '../../components/ActiveCampaignOverviewItem';
 import HomeAboutTrompa from '../../components/HomeAboutTrompa/HomeAboutTrompa';
 import Footer from '../../components/Footer/Footer';
-import MailChimpDialog from '../../components/MailChimpDialog/MailChimpDialog';
 import styles from './Home.styles';
 
 const useStyles = makeStyles(styles);
 
 export default function Home() {
   const classes                                                     = useStyles();
-  const history                                                     = useHistory();
   const { t }                                                       = useTranslation('home');
+  const history                                                     = useHistory();
+  const startCampaignFormRef                                        = useRef();
+  const openStartCampaignForm                                       = () => startCampaignFormRef.current.typeform.open();
   const { loading, error, data: { ControlAction: campaigns } = {} } = useQuery(GET_CAMPAIGNS);
   const publicCampaignIdentifier                                    = process.env.REACT_APP_PUBLIC_CAMPAIGN_IDENTIFIER;
   const campaign                                                    = campaigns?.find(({ identifier }) => identifier === publicCampaignIdentifier);
   const digitalDocument                                             = getCampaignDigitalDocument(campaign);
-  const [mailChimpDialogOpen, setMailChimpDialogOpen]               = useState(false);
 
   if (loading || error || !campaign) {
     return null;
   }
+
+  const navLinks      = [{ name: t('home'), to: '/' }];
+  const buttons       = [{ name: t('start_campaign'), onClick: openStartCampaignForm }];
+  const primaryButton = { name: t('join_campaign'), to: `campaign/${process.env.REACT_APP_PUBLIC_CAMPAIGN_IDENTIFIER}` };
 
   return (
     <div>
@@ -44,18 +49,11 @@ export default function Home() {
         <meta name="description" content={t('meta_description')} />
       </Helmet>
       <NavBar
-        navLinks={[
-          { name: t('home'), to: '/' },
-          { name: t('start_campaign'), onClick: () => setMailChimpDialogOpen(true) },
-        ]}
-        primaryButton={{ name: t('join_campaign'), to: `campaign/${publicCampaignIdentifier}` }}
-        drawerContent={<div />}
+        navLinks={navLinks}
+        buttons={buttons}
+        primaryButton={primaryButton}
       />
-      <MailChimpDialog
-        open={mailChimpDialogOpen}
-        onClose={() => setMailChimpDialogOpen(false)}
-        formLink={`https://kirkandblackbeard.typeform.com/to/BpMzhX?campaignid=${campaign?.identifier}`}
-      />
+      <TypeformModal url={`https://kirkandblackbeard.typeform.com/to/BpMzhX?campaignid=${campaign?.identifier}`} formRef={startCampaignFormRef} />
       <Jumbotron
         image={images.collaborateHero}
         text={{

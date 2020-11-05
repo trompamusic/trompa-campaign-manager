@@ -6,6 +6,7 @@ export default ({ typography, palette, spacing, breakpoints }) => createStyles({
     letterSpacing : 0.5,
     textDecoration: 'none',
     color         : palette.text.darkGrey,
+    fontFamily    : typography.fontFamily,
     marginRight   : spacing(4),
     padding       : 0,
     '& span'      : {
@@ -38,7 +39,19 @@ export default ({ typography, palette, spacing, breakpoints }) => createStyles({
     alignItems     : 'center',
     padding        : spacing(2),
     width          : 288,
+    boxSizing      : 'border-box',
     backgroundColor: palette.common.faintGrey,
+  },
+  drawerBody: {
+    display      : 'flex',
+    flexDirection: 'column',
+    flex         : '1 0 auto',
+    padding      : spacing(2, 3),
+  },
+  drawerBottom: {
+    display      : 'flex',
+    flexDirection: 'column',
+    padding      : spacing(2, 3),
   },
   drawerLogo: {
     width: 138,
