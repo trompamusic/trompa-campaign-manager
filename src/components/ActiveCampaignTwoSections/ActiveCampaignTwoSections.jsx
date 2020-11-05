@@ -11,7 +11,7 @@ import styles from './ActiveCampaignTwoSections.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function ActiveCampaignTwoSections ({ campaign, digitalDocument, musicComposition, composer }) {
+export default function ActiveCampaignTwoSections ({ digitalDocument, musicComposition, composer }) {
   const classes = useStyles();
   const { t }   = useTranslation('campaign');
 
@@ -39,7 +39,7 @@ export default function ActiveCampaignTwoSections ({ campaign, digitalDocument, 
             </Typography>
           )}
           <Typography variant="h2">
-          Complete Score
+            {t('complete_score')}
           </Typography>
           <a className={classes.moreLink} target="_blank" rel="noopener noreferrer" href={digitalDocument?.source}>
             <OpenInNewIcon />
@@ -68,7 +68,7 @@ export default function ActiveCampaignTwoSections ({ campaign, digitalDocument, 
             </React.Fragment>
           ) : (
             <Typography variant="h2">
-              Unknown composer
+              {t('unknown_composer')}
             </Typography>
           )}
         </section>
