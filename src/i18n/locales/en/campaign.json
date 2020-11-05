@@ -2,15 +2,19 @@
   "campaign": "Campaign",
   "close": "Close",
   "close_campaign": "Close campaign",
+  "complete_score": "Complete Score",
   "copy": "Copy",
+  "days_to_go": "days to go",
   "help_this_campaign": "Help this campaign",
   "help_us_digitize": "Help us digitize",
   "help_us_digitize_untitled": "Help us digitize this untitled project",
   "more": "More",
+  "past_due_date": "Past due date",
   "download": "Download",
   "share_this_campaign": "Share this campaign",
   "start_your_own_campaign": "Start your own campaign",
   "subscribe_for_updates": "Subscribe for updates",
+  "unknown_composer": "Unknown composer",
   "about": {
     "about_collaboration_manager": "About Trompa Collaboration Campaign Manager",
     "trompa_is_developing": "Trompa is developing powerful and advanced tools for musicians. by combining computing power with the knowledge of the best. Whether you’re singing in a choir, playing in an ensemble or conducting an orchestra, Trompa explores new ways to discover, rehearse and perform classical music.",
@@ -29,7 +33,8 @@
     "no_deadline_available": "No deadline available",
     "days_to_go": "{{count}} day to go",
     "days_to_go_plural": "{{count}} days to go",
-    "description": "Let's work together on bringing Mahler's 6th to our yearly outdoor performance. This version would be perfect, but the quality of the PDF is really insufficient. Can you all help cleaning it up? We've got five weeks to do it, people!"
+    "description": "Let's work together on bringing Mahler's 6th to our yearly outdoor performance. This version would be perfect, but the quality of the PDF is really insufficient. Can you all help cleaning it up? We've got five weeks to do it, people!",
+    "processing_score": "Processing score"
   },
   "mailchimp": {
     "keep_you_posted": "We'll keep you posted",
@@ -40,6 +45,12 @@
     "join_campaign": "Join campaign",
     "home": "Home",
     "share": "Share"
+  },
+  "overview": {
+    "heading": "Active campaigns",
+    "score": "Score",
+    "slide_left": "Slide left",
+    "slide_right": "Slide right"
   },
   "sharedialog": {
     "drum_up_support": "Drum up support and invite your fellow musicians.",

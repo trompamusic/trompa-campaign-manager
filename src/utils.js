@@ -18,3 +18,22 @@ export const truncateLabel = (str, maxChars) => {
 
   return ret;
 };
+export const getCampaignDigitalDocument = campaign => campaign ? campaign?.object.find(object => object.name === 'Work')?.nodeValue : null;
+
+export const getCampaignTasksValue = campaign => campaign ? campaign?.object.find(object => object.name === 'tasks')?.value : null;
+
+export const enhanceUrlWithParameters = (url, ...parameters) => {
+  const parsedUrl = new URL(url);
+
+  parameters.forEach(({ key, value }) => {
+    parsedUrl.searchParams.set(key, encodeURIComponent(value));
+  });
+
+  return parsedUrl.href;
+};
+
+export const hasUrlParameter = parameter => {
+  const urlParams = new URLSearchParams(window.location.search);
+
+  return urlParams.has(parameter);
+};

@@ -12,7 +12,7 @@ import styles from './JumbotronContentCampaign.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function JumbotronContentCampaign ({ campaign, campaignUrl, endDate, to, setMailChimpDialogOpen }) {
+export default function JumbotronContentCampaign ({ campaign, campaignUrl, endDate, to, openSubscribeForm, hasTasksAvailable }) {
   const { t }    = useTranslation('campaign');
   const classes  = useStyles();
   const daysLeft = endDate?.diff(moment(), 'days');
@@ -33,13 +33,14 @@ export default function JumbotronContentCampaign ({ campaign, campaignUrl, endDa
           component={Link}
           to={to}
           variant="contained"
+          disabled={!hasTasksAvailable}
           color="primary"
         >
-          {t('navbar.join_campaign')}
+          {hasTasksAvailable ? t('navbar.join_campaign') : t('jumbotron.processing_score')}
         </Button>
         <Button
           component="button"
-          onClick={() => setMailChimpDialogOpen(true)}
+          onClick={openSubscribeForm}
           variant="text"
           startIcon={<NotificationsIcon />}
         >
@@ -52,9 +53,10 @@ export default function JumbotronContentCampaign ({ campaign, campaignUrl, endDa
 }
 
 JumbotronContentCampaign.propTypes = {
-  campaign              : PropTypes.object,
-  campaignUrl           : PropTypes.string,
-  campaignEndDate       : PropTypes.string,
-  to                    : PropTypes.string,
-  setMailChimpDialogOpen: PropTypes.func,
+  campaign         : PropTypes.object,
+  campaignUrl      : PropTypes.string,
+  campaignEndDate  : PropTypes.string,
+  to               : PropTypes.string,
+  openSubscribeForm: PropTypes.func,
+  hasTasksAvailable: PropTypes.bool,
 };
