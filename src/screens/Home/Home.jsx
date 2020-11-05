@@ -28,7 +28,6 @@ export default function Home() {
   const { t }                                                       = useTranslation('home');
   const history                                                     = useHistory();
   const startCampaignFormRef                                        = useRef();
-  const openStartCampaignForm                                       = () => startCampaignFormRef.current.typeform.open();
   const { loading, error, data: { ControlAction: campaigns } = {} } = useQuery(GET_CAMPAIGNS);
   const publicCampaignIdentifier                                    = process.env.REACT_APP_PUBLIC_CAMPAIGN_IDENTIFIER;
   const campaign                                                    = campaigns?.find(({ identifier }) => identifier === publicCampaignIdentifier);
@@ -38,8 +37,7 @@ export default function Home() {
     return null;
   }
 
-  const navLinks      = [{ name: t('home'), to: '/' }];
-  const buttons       = [{ name: t('start_campaign'), onClick: openStartCampaignForm }];
+  const navLinks      = [{ name: t('home'), to: '/' }, { name: t('start_campaign'), to: '/createcampaign' }];
   const primaryButton = { name: t('join_campaign'), to: `campaign/${process.env.REACT_APP_PUBLIC_CAMPAIGN_IDENTIFIER}` };
 
   return (
@@ -50,7 +48,6 @@ export default function Home() {
       </Helmet>
       <NavBar
         navLinks={navLinks}
-        buttons={buttons}
         primaryButton={primaryButton}
       />
       <TypeformModal url={`https://kirkandblackbeard.typeform.com/to/BpMzhX?campaignid=${campaign?.identifier}`} formRef={startCampaignFormRef} />
