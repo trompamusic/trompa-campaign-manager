@@ -48,7 +48,7 @@ export default function ActiveTask ({
         <React.Fragment>
           {url ? (
             <iframe
-              src={url && url.replace('{identifier}', identifier).replace('{username}', nickname)}
+              src={url}
               className={classes.iframe}
               name="task-iframe"
               title={t('task')}
