@@ -18,6 +18,7 @@ export default function Input ({ handleChange, handleBlur, value, label, name, c
       <TextField
         onChange={handleChange}
         onBlur={handleBlur}
+        name={name}
         value={value}
         variant="filled"
         InputProps={{ disableUnderline: true }}

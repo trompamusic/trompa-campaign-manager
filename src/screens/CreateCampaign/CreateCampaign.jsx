@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import NicknameMenuContainer from '../../containers/NicknameMenuContainer/NicknameMenuContainer';
 import AppbarTop from "../../components/AppbarTop/AppbarTop";
 import ProgressStepper from "../../components/ProgressStepper/ProgressStepper";
+import CreateDigitalDoc from "../../containers/CreateDigitalDoc/CreateDigitalDoc";
 import styles from './CreateCampaign.styles';
 
 const useStyles = makeStyles(styles);
@@ -65,6 +66,12 @@ export default function CreateCampaign() {
       deadline,
     });
   };
+
+  if(true) {
+    return (
+<CreateDigitalDoc />
+    )
+  }
   
   return (
     <div>

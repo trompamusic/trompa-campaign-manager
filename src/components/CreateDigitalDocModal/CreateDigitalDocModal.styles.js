@@ -8,5 +8,6 @@ export default () => createStyles({
   container: {
     position: 'relative',
     margin  : '0 auto',
+    width   : '100%',
   },
 });

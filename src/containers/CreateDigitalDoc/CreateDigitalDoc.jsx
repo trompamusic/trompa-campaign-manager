@@ -8,27 +8,40 @@ const temp ="affb36ad-1338-4906-bf9f-b526cd839be3";
 
 const useStyles = makeStyles(styles);
 
-export default function CreateDigitalDoc () {
+export default function CreateDigitalDoc() {
   const classes                                                  = useStyles();
-  // const [digitalDocumentMetadata, updateDigitalDocumentMetadata] = useState({});
 
-  const digitalDocumentMetadata ={
-    name        : "",
+  const digitalDocumentInitialValues = {
     title       : "",
-    relation    : "https://FILE",
     creator     : "",
-    language    : "en",
-    url         : "https://FILE",
-    source      : "https://FILE",
-    license     : "https://LICENSE",
-    image       : "https://IMAGE",
-    thumbnailUrl: "https://IMAGE",
+    language    : "",
+    url         : "",
+    license     : "",
+    thumbnailUrl: "",
     description : "",
+  };
+
+  const onFormSubmit = ({ title, url, creator, thumbnailUrl, description, language, license }) => {
+    const data = {
+      name    : title,
+      relation: url,
+      source  : url,    
+      image   : thumbnailUrl,
+      title       ,
+      url,
+      creator  ,
+      language    ,
+      license     ,
+      thumbnailUrl,
+      description ,
+    };
+
+    console.log(data);
   };
 
   return (
     <div className={classes.root}>
-      <CreateDigitalDocModal  initialFormValues={digitalDocumentMetadata} />
+      <CreateDigitalDocModal  initialFormValues={digitalDocumentInitialValues} onFormSubmit={onFormSubmit} />
     </div>
   );
 }

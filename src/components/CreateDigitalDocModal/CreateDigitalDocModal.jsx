@@ -16,7 +16,7 @@ import styles from './CreateDigitalDocModal.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function CreateDigitalDocModal () {
+export default function CreateDigitalDocModal ({ initialFormValues, onFormSubmit }) {
   const { t }           = useTranslation('startCampaign');
   const classes         = useStyles();
   const [open, setOpen] = React.useState(true);
@@ -29,12 +29,8 @@ export default function CreateDigitalDocModal () {
     setOpen(false);
   };
 
-  const onSubmit = () => {};
-
-  const initialFormValues = {};
-
-  const licenses  = ['Public', ' ', ' '];
-  const languages = ['English', ' ', ' '];
+  const licenses  = ['Public', ' ', undefined];
+  const languages = ['en', ' ', undefined];
 
   return (
     <div className={classes.root}>
@@ -47,43 +43,48 @@ export default function CreateDigitalDocModal () {
             <CloseIcon />
           </IconButton>
         </DialogTitle>
-        <DialogContent>
-          <Form onSubmit={onSubmit} initialValues={{ ...initialFormValues }}>
-            {({ values, handleChange, handleSubmit, handleBlur, setFieldValue, setFieldTouched, isSubmitting }) => (
-              <div className={classes.container}>
+        <Form onSubmit={onFormSubmit} initialValues={{ ...initialFormValues }}>
+          {({ values, handleChange, handleSubmit, handleBlur, setFieldValue, setFieldTouched, isSubmitting }) => (
+            <div className={classes.container}>
+              <DialogContent>
                 <Input
                   label={t('create_digitial_doc.score')}
-                  value={values.campaignTitle}
+                  name="url"
+                  value={values.url}
                   onChange={handleChange}
                   onBlur={handleBlur}
                 />
                 <Input
                   label={t('create_digitial_doc.thumbnail')}
-                  value={values.campaignTitle}
+                  value={values.thumbnailUrl}
+                  name="thumbnailUrl"
                   onChange={handleChange}
                   onBlur={handleBlur}
                 />
                 <Input
                   label={t('create_digitial_doc.score_title')}
-                  value={values.campaignTitle}
+                  name="title"
+                  value={values.title}
                   onChange={handleChange}
                   onBlur={handleBlur}
                 />
                 <Input
                   label={t('create_digitial_doc.editor')}
-                  value={values.campaignTitle}
+                  name="creator"
+                  value={values.creator}
                   onChange={handleChange}
                   onBlur={handleBlur}
                 />
-                <Input
+                {/* <Input
                   label={t('create_digitial_doc.publisher')}
                   value={values.campaignTitle}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                />
+                /> */}
                 <Input
                   label={t('create_digitial_doc.copyright')}
-                  value={values.campaignTitle}
+                  value={values.license}
+                  name="license"
                   onChange={handleChange}
                   onBlur={handleBlur}
                   select
@@ -96,7 +97,8 @@ export default function CreateDigitalDocModal () {
                 </Input>
                 <Input
                   label={t('create_digitial_doc.language')}
-                  value={values.campaignTitle}
+                  name="language"
+                  value={values.language}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   select
@@ -109,27 +111,30 @@ export default function CreateDigitalDocModal () {
                 </Input>
                 <Input
                   label={t('create_digitial_doc.notes')}
-                  value={values.campaignTitle}
+                  value={values.description}
+                  name="description"
                   onChange={handleChange}
                   onBlur={handleBlur}
                   rows={3}
                   multiline
                 />
-              </div>
-            )}
-          </Form>
-        </DialogContent>
-        <DialogActions>
-          <div className={classes.buttons}>
-            <Button
-              type="submit"
-              variant="contained"
-              color="primary"
-            >
-              {t('create_digitial_doc.upload')}
-            </Button>
-          </div>
-        </DialogActions>
+
+              </DialogContent>
+              <DialogActions>
+                <div className={classes.buttons}>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={handleSubmit}
+                  >
+                    {t('create_digitial_doc.upload')}
+                  </Button>
+                </div>
+              </DialogActions>
+            </div>
+          )}
+
+        </Form>
       </Dialog>
     </div>
   );
