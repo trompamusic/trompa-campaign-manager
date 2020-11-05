@@ -65,7 +65,7 @@ export default function Jumbotron ({
           {text?.aboutTitle}
         </Typography>
       )}
-      {!isCampaignPageHeader && digitalDocument && (
+      {!isCampaignPageHeader && digitalDocument?.title && (
         <Typography variant="h2">
           {t('jumbotron.help_us_digitize')}
           <span className={classes.compositionTitle}>
