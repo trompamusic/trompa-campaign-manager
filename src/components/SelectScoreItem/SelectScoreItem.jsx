@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import * as PropTypes from 'prop-types';
 import { Box, Button, Card, IconButton, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
@@ -16,30 +17,27 @@ export default function SelectScoreItem({ item, isActiveCampaign, progress, onIt
   const [pdfHover, setPdfHover] = useState(false);
   const maxChars                = 200;
   
-  const parse       = str => str || "";
-  const onCardClick = () =>  (!pdfHover)? onItemClick() : null;
-  
   return (
     <Card 
       className={classes.item} 
       elevation={hover? 4:2} 
-      onMouseOver={e => setHover(true)}
-      onMouseOut={e => setHover(false)}
-      onClick={e => onCardClick()}
+      onMouseOver={() => setHover(true)}
+      onMouseOut={() => setHover(false)}
+      onClick={() => !pdfHover? onItemClick() : null}
     >
       <Box className={classes.itemImg}>
-        {item?.img && <img src={item?.img} alt={parse(item?.name)} />}
+        {item?.img && <img src={item?.img} alt={item?.name || ""} />}
       </Box>
       <Box className={classes.itemMain}>
         <Box className={classes.itemHeader}>
-          <Typography variant="h3" color="primary">{parse(item?.title)}</Typography>
+          <Typography variant="h3" color="primary">{item?.title || ""}</Typography>
           <Box className={classes.itemButtonBox}>
             {item?.format === "application/pdf" && 
               <a href={item?.source} target="_blank" rel="noopener noreferrer">
                 <IconButton 
                   aria-label="PDF" 
-                  onMouseOver={e => setPdfHover(true)}
-                  onMouseOut={e => setPdfHover(false)} 
+                  onMouseOver={() => setPdfHover(true)}
+                  onMouseOut={() => setPdfHover(false)} 
                 >
                   <InsertDriveFileIcon className={classes.icon} />
                   <Typography>{t('pdf')}</Typography>
@@ -53,7 +51,7 @@ export default function SelectScoreItem({ item, isActiveCampaign, progress, onIt
                 color="primary"
               >
                 <ExitToApp className={classes.icon} />
-                {t('activeCampaign')}
+                {t('active_campaign')}
               </Button>
             }
           </Box>
@@ -62,9 +60,9 @@ export default function SelectScoreItem({ item, isActiveCampaign, progress, onIt
           <Typography>{item?.subject}</Typography>
           <Typography className={classes.itemDescription} variant="body2">{truncateLabel(item?.description, maxChars)}</Typography>
           <Typography>
-            {item?.creator && `Created by ${item?.creator}`}
+            {item?.creator && `${t('created_by')} ${item?.creator}`}
             {(item?.creator && item?.publisher) && ` • `}
-            {item?.publisher && `Published by ${item?.publisher}`}
+            {item?.publisher && `${t('published_by')} ${item?.publisher}`}
           </Typography>
         </Box>
       </Box>
@@ -76,3 +74,14 @@ export default function SelectScoreItem({ item, isActiveCampaign, progress, onIt
     </Card>
   );
 }
+
+SelectScoreItem.propTypes = {
+  item            : PropTypes.object,
+  isActiveCampaign: PropTypes.bool,
+  progress        : PropTypes.number,
+  onItemClick     : PropTypes.func,
+};
+
+SelectScoreItem.defaultProps = {
+  isActiveCampaign: false,
+};

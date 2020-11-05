@@ -17,5 +17,4 @@ export default ({ spacing, palette, shape, breakpoints, typography }) => createS
     flexDirection: 'row',
     width        : '100%',
   },
-  
 });

@@ -1,8 +1,9 @@
-import { useLazyQuery } from "@apollo/react-hooks";
-import { Box, Button, Container, Dialog, makeStyles, Typography } from "@material-ui/core";
-import { gql } from "apollo-boost";
 import React, { useState } from "react";
+import * as PropTypes from 'prop-types';
 import { useTranslation } from "react-i18next";
+import { useLazyQuery } from "@apollo/react-hooks";
+import { gql } from "apollo-boost";
+import { Box, Button, Container, Dialog, makeStyles, Typography } from "@material-ui/core";
 import MultiModalComponent, { SearchConfig, searchTypes } from "trompa-multimodal-component";
 import SelectCompositionComponent from "../../components/SelectComposition";
 import SelectScoreModal from "../../components/SelectScoreModal";
@@ -31,6 +32,7 @@ export default function SelectComposition({ onBackButtonClick, onCompositionSubm
   const loadComposition = node => {
     // Recieve node (composition) from MMC, close Modal, trigger lazyQuery to get additional metadata + scores
     setModal(MODAL_NONE);
+    setScore();
     getCompositionWithScores({ variables: { identifier: node.identifier }, onCompleted: data => onMMCDataLoaded(data) });
   };
 
@@ -56,14 +58,15 @@ export default function SelectComposition({ onBackButtonClick, onCompositionSubm
       <SelectCompositionComponent 
         composition={composition} 
         score={score}
-        onSelectCompClick={() => setModal(MODAL_COMP)} 
+        onSelectComponentClick={() => setModal(MODAL_COMP)} 
         onSelectScoreClick={() => setModal(MODAL_SCORE)}
       />
       <Box className={classes.formNav}>
-        <Button onClick={e => onBackButtonClick()}>{t('back')}</Button>
-        <Button disabled={!(composition && score) } onClick={e => onNextButtonClick()}>{t('next')}</Button>
+        <Button onClick={onBackButtonClick}>{t('back')}</Button>
+        <Button disabled={!(composition && score) } onClick={onNextButtonClick}>{t('next')}</Button>
       </Box>
       <Dialog
+        className={classes.dialog}
         open={modal !== MODAL_NONE} 
         onClose={e => setModal(MODAL_NONE)}
         maxWidth="lg"
@@ -71,10 +74,10 @@ export default function SelectComposition({ onBackButtonClick, onCompositionSubm
       >
         <Box className={classes.dialogBox}>
           <Typography variant="h2">
-            {modal === MODAL_COMP && t('selectComposition')}
-            {modal === MODAL_SCORE && t('selectScore')}
+            {modal === MODAL_COMP && t('select_composition')}
+            {modal === MODAL_SCORE && t('select_score')}
           </Typography>
-          <Button className={classes.closeButton} onClick={e => setModal(MODAL_NONE)}>X</Button>
+          <Button className={classes.closeButton} onClick={() => setModal(MODAL_NONE)}>X</Button>
           {modal === MODAL_COMP && (
             <MultiModalComponent 
               config={searchConfig}
@@ -92,7 +95,12 @@ export default function SelectComposition({ onBackButtonClick, onCompositionSubm
     </Container>
   );
 }
-// workExample (filter: { format: "application/pdf" }) 
+
+SelectComposition.propTypes = {
+  onBackButtonClick  : PropTypes.func, 
+  onCompositionSubmit: PropTypes.func,
+};
+
 export const GET_COMPOSITION_WITH_SCORES = gql`
   query GetMusicCompositionWithScores($identifier: ID!){
       MusicComposition(identifier: $identifier) {

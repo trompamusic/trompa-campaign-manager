@@ -8,6 +8,7 @@ export const providers = (component, ...wrappers) => {
 
 export const setPrerenderReady = status => (window.prerenderReady = status);
 
+//Truncates a string to last space <' '> before length maxChars
 export const truncateLabel = (str, maxChars) => {
   if(!str) return "";
   let ret = str.substring(0, maxChars);

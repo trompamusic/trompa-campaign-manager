@@ -1,6 +1,6 @@
 import { createStyles } from '@material-ui/styles';
 
-export default ({ spacing, typography }) => createStyles({
+export default ({ spacing, palette }) => createStyles({
   root: {
     width  : '100vw',
     height : '100%',
@@ -10,6 +10,9 @@ export default ({ spacing, typography }) => createStyles({
     display       : 'flex',
     width         : '100%',
     justifyContent: 'flex-end',
+  },
+  dialog: {
+    backgroundColor: palette.background.primary,
   },
   dialogBox: {
     display       : 'flex',

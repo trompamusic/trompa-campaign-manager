@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import { Box, Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
@@ -26,3 +27,7 @@ export default function SelectScoreModal({ composition, onLoadScore }){
     </Container>
   );
 }
+SelectScoreModal.propTypes = {
+  composition: PropTypes.object,
+  onLoadScore: PropTypes.func,
+};
