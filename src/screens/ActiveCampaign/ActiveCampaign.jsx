@@ -35,7 +35,6 @@ export default function ActiveCampaign ({ match }) {
   const { loading, error, data: { ControlAction: campaigns } = {} } = useQuery(GET_CAMPAIGNS);
   const { campaignIdentifier }                                      = match.params;
   const campaign                                                    = campaigns?.find(({ identifier }) => identifier === campaignIdentifier);
-  const author                                                      = "TROMPA";
 
   if (loading) {
     return null;
@@ -76,7 +75,7 @@ export default function ActiveCampaign ({ match }) {
       <Jumbotron
         image={digitalDocument?.image || images.scoreImage}
         campaign={campaign}
-        author={campaign.agent || author}
+        author={campaign.author}
         digitalDocument={digitalDocument}
         isCampaignPageHeader
       >
@@ -92,7 +91,7 @@ export default function ActiveCampaign ({ match }) {
         campaign={campaign}
         digitalDocument={digitalDocument}
         musicComposition={digitalDocument?.exampleOfWork[0]}
-        composer={digitalDocument?.exampleOfWork[0]?.composer[0]}
+        composer={undefined}
       />
       <Jumbotron
         image={images.collaborateHero}
