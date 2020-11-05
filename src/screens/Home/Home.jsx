@@ -77,8 +77,7 @@ export default function Home() {
       <HomeThreeSteps />
       <ActiveCampaignOverviewSection>
         {campaigns?.map(campaign => {
-          const deadline        = moment([campaign.endTime.year, campaign.endTime.month, campaign.endTime.day]);
-          const daysToGo        = deadline?.diff(moment(), 'days');
+          const daysToGo        = moment(campaign.endTime.formatted)?.diff(moment(), 'days');
           const digitalDocument = getCampaignDigitalDocument(campaign);
 
           return (
@@ -101,13 +100,11 @@ export default function Home() {
 
 const GET_CAMPAIGNS = gql`
 query {
-	ControlAction(filter:{wasDerivedFrom:{identifier: "b559c52d-6104-4cb3-ab82-39b82bb2de6c"}}) {
+	ControlAction(filter:{wasDerivedFrom:{identifier: "b559c52d-6104-4cb3-ab82-39b82bb2de6c"}}, orderBy: endTime_asc) {
 		identifier
     name
     endTime {
-      year
-      month
-      day
+      formatted
     }
     object(filter: {name: "Work"})
     {

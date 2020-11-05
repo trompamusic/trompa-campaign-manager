@@ -51,7 +51,7 @@ export default function ActiveCampaign ({ match }) {
 
   const digitalDocument = getCampaignDigitalDocument(campaign);
   const campaignUrl     = window.location.href;
-  const campaignEndDate = campaign?.endTime?.day && moment([campaign?.endTime?.year, campaign?.endTime?.month, campaign?.endTime?.day]);
+  const campaignEndDate = campaign?.endTime?.formatted && moment(campaign.endTime.formatted);
   const doTaskUrl       = `/campaign/${campaignIdentifier}/task`;
 
   const navLinks      = [{ name: t('home'), to: '/' }];
@@ -113,8 +113,7 @@ export default function ActiveCampaign ({ match }) {
       </Jumbotron>
       <ActiveCampaignOverviewSection>
         {campaigns?.map(campaign => {
-          const deadline        = moment([campaign.endTime.year, campaign.endTime.month, campaign.endTime.day]);
-          const daysToGo        = deadline?.diff(moment(), 'days');
+          const daysToGo        = moment(campaign.endTime.formatted)?.diff(moment(), 'days');
           const digitalDocument = getCampaignDigitalDocument(campaign);
 
           return (
@@ -146,16 +145,14 @@ export default function ActiveCampaign ({ match }) {
 
 export const GET_CAMPAIGNS = gql`
     query {
-      ControlAction(filter:{wasDerivedFrom:{identifier: "b559c52d-6104-4cb3-ab82-39b82bb2de6c"}}) {
+      ControlAction(filter:{wasDerivedFrom:{identifier: "b559c52d-6104-4cb3-ab82-39b82bb2de6c"}}, orderBy: endTime_asc) {
         agent
             identifier
             name
             alternateName
             description
             endTime {
-              year
-              month
-              day
+              formatted
             }
             object(filter: {name: "Work"})
             {
