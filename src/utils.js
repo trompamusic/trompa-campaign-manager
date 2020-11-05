@@ -8,3 +8,12 @@ export const providers = (component, ...wrappers) => {
 
 export const setPrerenderReady = status => (window.prerenderReady = status);
 
+export const truncateLabel = (str, maxChars) => {
+  if(!str) return "";
+  let ret = str.substring(0, maxChars);
+  
+  ret = ret.substring(0, str.lastIndexOf(' ') -1);
+  if(ret.length < str.length) ret = `${ret}...`;
+
+  return ret;
+};
