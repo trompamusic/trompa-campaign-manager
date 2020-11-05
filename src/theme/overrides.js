@@ -1,4 +1,4 @@
-const overrides = ({ palette, typography, spacing, breakpoints }) => ({
+const overrides = ({ palette, typography, spacing, breakpoints, shape }) => ({
   MuiAppBar: {
     root: {
       zIndex: 50,
@@ -30,6 +30,11 @@ const overrides = ({ palette, typography, spacing, breakpoints }) => ({
   MuiDivider: {
     root: {
       backgroundColor: palette.common.black,
+    },
+  },
+  MuiFilledInput: {
+    root: {
+      borderRadius: shape.borderRadius,
     },
   },
   MuiTypography: {
