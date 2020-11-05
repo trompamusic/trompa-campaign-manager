@@ -1,5 +1,8 @@
 const overrides = ({ palette, typography, spacing, breakpoints }) => ({
   MuiAppBar: {
+    root: {
+      zIndex: 50,
+    },
     colorPrimary: {
       color          : palette.text.darkGrey,
       backgroundColor: palette.common.faintWhite,
