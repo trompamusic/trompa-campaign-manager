@@ -10,5 +10,8 @@
   "selectComposition": "Search the composition",
   "compositionDefault": "Music Composition",
   "selectScore": "Select score version to improve",
-  "scoreDefault": "Score"
+  "scoreDefault": "Score",
+  "loading": "Loading..",
+  "pdf": "Pdf",
+  "activeCampaign": "Already active campaign"
 }
