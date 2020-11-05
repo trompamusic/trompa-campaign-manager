@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import moment from 'moment';
 import { gql } from 'apollo-boost';
+import { useHistory } from 'react-router-dom';
 import { useQuery } from '@apollo/react-hooks';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
@@ -9,13 +10,15 @@ import { makeStyles } from '@material-ui/core/styles';
 import ShareIcon from '@material-ui/icons/Share';
 import Button from '@material-ui/core/Button';
 import NotFound from '../NotFound';
+import { getCampaignDigitalDocument } from '../../utils';
 import ShareDialog from '../../components/ShareDialog/ShareDialog';
 import NavBar from '../../components/NavBar/NavBar';
 import TypeformModal from '../../components/TypeformModal';
 import Jumbotron from '../../components/Jumbotron/Jumbotron';
 import JumbotronContentCampaign from '../../components/JumbotronContentCampaign/JumbotronContentCampaign';
-import ActiveCampaignProgress from '../../components/ActiveCampaignProgress/ActiveCampaignProgress';
 import ActiveCampaignTwoSections from '../../components/ActiveCampaignTwoSections/ActiveCampaignTwoSections';
+import ActiveCampaignOverviewSection from '../../components/ActiveCampaignOverviewSection';
+import ActiveCampaignOverviewItem from '../../components/ActiveCampaignOverviewItem';
 import Footer from '../../components/Footer/Footer';
 import images from '../../theme/images';
 import styles from './ActiveCampaign.styles';
@@ -23,16 +26,16 @@ import styles from './ActiveCampaign.styles';
 const useStyles = makeStyles(styles);
 
 export default function ActiveCampaign ({ match }) {
-  const { campaignIdentifier } = match.params;
-  const { t }                  = useTranslation('campaign');
-  const classes                = useStyles();
-
-  const subscribeFormRef                      = useRef();
-  const openSubscribeForm                     = () => subscribeFormRef.current.typeform.open();
-  const [shareDialogOpen, setShareDialogOpen] = useState(false);
-  const { loading, error, data }              = useQuery(GET_CAMPAIGN, { variables: { identifier: campaignIdentifier } });
-  const campaign                              = data?.ControlAction[0];
-  const author                                = "TROMPA";
+  const { t }                                                       = useTranslation('campaign');
+  const classes                                                     = useStyles();
+  const subscribeFormRef                                            = useRef();
+  const openSubscribeForm                                           = () => subscribeFormRef.current.typeform.open();
+  const history                                                     = useHistory();
+  const [shareDialogOpen, setShareDialogOpen]                       = useState(false);
+  const { loading, error, data: { ControlAction: campaigns } = {} } = useQuery(GET_CAMPAIGNS);
+  const { campaignIdentifier }                                      = match.params;
+  const campaign                                                    = campaigns?.find(({ identifier }) => identifier === campaignIdentifier);
+  const author                                                      = "TROMPA";
 
   if (loading) {
     return null;
@@ -46,7 +49,7 @@ export default function ActiveCampaign ({ match }) {
     return <NotFound />;
   }
 
-  const digitalDocument = campaign.object.find(obj => obj.name === 'Work')?.nodeValue;
+  const digitalDocument = getCampaignDigitalDocument(campaign);
   const campaignUrl     = window.location.href;
   const campaignEndDate = campaign?.endTime?.day && moment([campaign?.endTime?.year, campaign?.endTime?.month, campaign?.endTime?.day]);
   const doTaskUrl       = `/campaign/${campaignIdentifier}/task`;
@@ -71,7 +74,7 @@ export default function ActiveCampaign ({ match }) {
         primaryButton={primaryButton}
       />
       <Jumbotron
-        image={digitalDocument.image}
+        image={digitalDocument?.image || images.scoreImage}
         campaign={campaign}
         author={campaign.agent || author}
         digitalDocument={digitalDocument}
@@ -85,7 +88,6 @@ export default function ActiveCampaign ({ match }) {
           openSubscribeForm={openSubscribeForm}
         />
       </Jumbotron>
-      <ActiveCampaignProgress />
       <ActiveCampaignTwoSections
         campaign={campaign}
         digitalDocument={digitalDocument}
@@ -109,6 +111,23 @@ export default function ActiveCampaign ({ match }) {
           {t('about.start_today')}
         </Button>
       </Jumbotron>
+      <ActiveCampaignOverviewSection>
+        {campaigns?.map(campaign => {
+          const deadline        = moment([campaign.endTime.year, campaign.endTime.month, campaign.endTime.day]);
+          const daysToGo        = deadline?.diff(moment(), 'days');
+          const digitalDocument = getCampaignDigitalDocument(campaign);
+
+          return (
+            <ActiveCampaignOverviewItem
+              key={campaign.identifier}
+              scoreImage={digitalDocument?.image}
+              scoreTitle={digitalDocument?.title}
+              campaignTitle={campaign.title}
+              campaignDeadline={daysToGo}
+              onClick={() => history.push(`/campaign/${campaign.identifier}`)}
+            />
+          );})}
+      </ActiveCampaignOverviewSection>
       <Footer />
       <ShareDialog
         open={shareDialogOpen}
@@ -125,10 +144,10 @@ export default function ActiveCampaign ({ match }) {
   );
 }
 
-export const GET_CAMPAIGN = gql`
-    query Campaign($identifier: ID!) {
-        ControlAction (identifier: $identifier) {
-            agent
+export const GET_CAMPAIGNS = gql`
+    query {
+      ControlAction(filter:{wasDerivedFrom:{identifier: "b559c52d-6104-4cb3-ab82-39b82bb2de6c"}}) {
+        agent
             identifier
             name
             alternateName
@@ -138,7 +157,8 @@ export const GET_CAMPAIGN = gql`
               month
               day
             }
-            object {
+            object(filter: {name: "Work"})
+            {
                 ... on PropertyValue {
                     name
                     value
@@ -167,6 +187,28 @@ export const GET_CAMPAIGN = gql`
                                     }
                                 }
                             }
+                        }
+                    }
+                }
+            }
+        }
+    }`;
+
+export const GET_CAMPAIGN = gql`
+    query Campaign($identifier: ID!) {
+        ControlAction (identifier: $identifier) {
+            identifier
+            name
+            description
+            object {
+                ... on PropertyValue {
+                    name
+                    value
+                    nodeValue {
+                        ... on DigitalDocument {
+                            identifier
+                            title
+                            source
                         }
                     }
                 }

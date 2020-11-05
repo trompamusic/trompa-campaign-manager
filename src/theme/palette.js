@@ -2,6 +2,7 @@ export default {
   common: {
     white     : '#fff',
     black     : '#000',
+    blue      : '#384FFF',
     faintGrey : '#F2F2F2',
     faintWhite: '#FAFAFA',
     darkBlack : 'rgba(0, 0, 0, 0.7)',
@@ -15,6 +16,7 @@ export default {
   },
   border: {
     lightGrey: '#DDE3E9',
+    grey     : '#4C4C4C',
   },
   text: {
     primary        : 'rgba(0, 0, 0, 0.7)',

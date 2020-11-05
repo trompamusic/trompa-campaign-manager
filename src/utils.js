@@ -8,6 +8,10 @@ export const providers = (component, ...wrappers) => {
 
 export const setPrerenderReady = status => (window.prerenderReady = status);
 
+export const getCampaignDigitalDocument = campaign => {
+  return campaign ? campaign?.object[0]?.nodeValue : null;
+};
+
 export const enhanceUrlWithParameters = (url, ...parameters) => {
   const parsedUrl = new URL(url);
 

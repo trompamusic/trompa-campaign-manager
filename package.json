@@ -54,6 +54,7 @@
     "history": "^4.7.2",
     "i18next": "^17.0.6",
     "moment": "^2.19.2",
+    "nuka-carousel": "^4.7.1",
     "object-hash": "^1.2.0",
     "prop-types": "^15.6.0",
     "react": "16.9.0",
