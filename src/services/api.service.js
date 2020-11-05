@@ -9,4 +9,4 @@ const api = create({
 });
 
 // api methods
-export const getPosts = () => api.get('/posts');
+export const createDigitalDoc = (musicCompositionId, data) => api.post(`/music-compositions/${musicCompositionId}/digital-document`, data);
