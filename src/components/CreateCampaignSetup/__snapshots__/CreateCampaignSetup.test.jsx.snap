@@ -110,7 +110,7 @@ exports[`<CreateCampaignSetup /> renders and matches snapshot 1`] = `
                 name="campaignDeadline"
                 readonly=""
                 type="text"
-                value="November 04 13:46"
+                value="November 05 17:08"
               />
               <div
                 class="MuiInputAdornment-root MuiInputAdornment-filled MuiInputAdornment-positionEnd"

@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SelectScoreItem /> renders and matches snapshot 1`] = `
+<div
+  class="MuiPaper-root MuiCard-root makeStyles-item-1 MuiPaper-elevation2 MuiPaper-rounded"
+>
+  <div
+    class="MuiBox-root MuiBox-root-40 makeStyles-itemImg-2"
+  />
+  <div
+    class="MuiBox-root MuiBox-root-41 makeStyles-itemMain-3"
+  >
+    <div
+      class="MuiBox-root MuiBox-root-42 makeStyles-itemHeader-4"
+    >
+      <h3
+        class="MuiTypography-root MuiTypography-h3 MuiTypography-colorPrimary"
+      />
+      <div
+        class="MuiBox-root MuiBox-root-73 makeStyles-itemButtonBox-5"
+      />
+    </div>
+    <div
+      class="MuiBox-root MuiBox-root-74"
+    >
+      <p
+        class="MuiTypography-root MuiTypography-body1"
+      />
+      <p
+        class="MuiTypography-root makeStyles-itemDescription-6 MuiTypography-body2"
+      />
+      <p
+        class="MuiTypography-root MuiTypography-body1"
+      />
+    </div>
+  </div>
+</div>
+`;

@@ -1,5 +1,8 @@
-const overrides = ({ palette, typography, spacing, breakpoints }) => ({
+const overrides = ({ palette, typography, spacing, breakpoints, shape }) => ({
   MuiAppBar: {
+    root: {
+      zIndex: 50,
+    },
     colorPrimary: {
       color          : palette.text.darkGrey,
       backgroundColor: palette.common.faintWhite,
@@ -32,6 +35,11 @@ const overrides = ({ palette, typography, spacing, breakpoints }) => ({
   MuiFormLabel: {
     root: {
       color: palette.text.transparentGrey,
+    },
+  },
+  MuiFilledInput: {
+    root: {
+      borderRadius: shape.borderRadius,
     },
   },
   MuiTypography: {

@@ -26,10 +26,12 @@ export default {
   partnerVideodock          : require('./images/partners/videodock.png'),
   partnerVoctroLabs         : require('./images/partners/voctro_labs.png'),
   pickAScore                : require('./images/pick_a_score.png'),
+  scorePlaceholder          : require('./images/score_placeholder.svg'),
   supportedBy               : require('./images/supported_by.png'),
   unlockClassics            : require('./images/unlock_classics.png'),
   personTrumpetStandingLeft : require('./images/personTrumpetStandingLeft.png'),
   personTrumpetStandingRight: require('./images/personTrumpetStandingRight.png'),
+  personStandingRight       : require('./images/personStandingRight.png'),
   personWithBass            : require('./images/personWithBass.png'),
 };
 
