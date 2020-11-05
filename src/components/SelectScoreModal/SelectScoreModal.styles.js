@@ -4,7 +4,7 @@ export default ({ spacing, palette, shape, breakpoints, typography }) => createS
   root: {
   },
   uploadCard: {
-    border        : `1px dashed ${palette.primary.main}`,
+    border        : `2px dashed ${palette.primary.main}`,
     marginBottom  : spacing(2),
     marginTop     : spacing(2),
     padding       : spacing(1),
