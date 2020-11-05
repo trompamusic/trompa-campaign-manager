@@ -31,7 +31,8 @@ export default ({ typography, palette, spacing, shape, breakpoints }) => createS
   },
   goal: {
     [breakpoints.down('sm')]: {
-      fontSize: typography.pxToRem(28),
+      fontSize    : typography.pxToRem(26),
+      marginBottom: spacing(5),
     },
     fontSize     : typography.pxToRem(37),
     padding      : `0px ${spacing(2)}px`,
@@ -44,7 +45,10 @@ export default ({ typography, palette, spacing, shape, breakpoints }) => createS
     '&:last-child': {
       marginBottom: spacing(),
     },
-    fontSize     : typography.pxToRem(16),
+    fontSize                : typography.pxToRem(16),
+    [breakpoints.down('sm')]: {
+      fontSize: typography.pxToRem(14),
+    },
     letterSpacing: 0.5,
   },
   tip: {
