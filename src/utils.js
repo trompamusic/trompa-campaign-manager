@@ -8,13 +8,9 @@ export const providers = (component, ...wrappers) => {
 
 export const setPrerenderReady = status => (window.prerenderReady = status);
 
-export const getCampaignDigitalDocument = campaign => {
-  return campaign ? campaign?.object.find(object => object.name === 'Work')?.nodeValue : null;
-};
+export const getCampaignDigitalDocument = campaign => campaign ? campaign?.object.find(object => object.name === 'Work')?.nodeValue : null;
 
-export const getCampaignTasksValue = campaign => {
-  return campaign ? campaign?.object.find(object => object.name === 'tasks')?.value : null;
-};
+export const getCampaignTasksValue = campaign => campaign ? campaign?.object.find(object => object.name === 'tasks')?.value : null;
 
 export const enhanceUrlWithParameters = (url, ...parameters) => {
   const parsedUrl = new URL(url);

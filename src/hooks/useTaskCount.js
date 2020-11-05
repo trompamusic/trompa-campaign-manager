@@ -7,13 +7,15 @@ const useTaskCount = campaign => {
   const [taskCount, setTaskCount] = useState(0);
 
   useEffect(() => {
-    if(campaign) {
+    if(campaign && campaign.object.length === 2) {
       client.query({ query: ALL_POTENTIAL_ACTIONS_QUERY, variables: { identifier: getCampaignTasksValue(campaign) } })
         .then(response => {
           const allPotentialActionsCount = response.data.ControlAction.length;
 
           setTaskCount(allPotentialActionsCount);
         });
+    } else {
+      setTaskCount(0);
     }
   }, [campaign]);
 
@@ -29,7 +31,6 @@ const ALL_POTENTIAL_ACTIONS_QUERY = gql`
                 wasDerivedFrom: { identifier: $identifier }
                 actionStatus: PotentialActionStatus
             }
-            first: 10
         ) {
             identifier
         }
