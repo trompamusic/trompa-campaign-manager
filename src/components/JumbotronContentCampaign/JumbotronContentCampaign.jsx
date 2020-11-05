@@ -28,25 +28,16 @@ export default function JumbotronContentCampaign ({ campaign, campaignUrl, endDa
         {endDate && `${t('jumbotron.deadline')}: ${endDate.format("MMMM Do YYYY")}`}
       </Typography>
       <div className={classes.buttons}>
-        {hasTasksAvailable ? (
-          <Button
-            className={classes.primaryButton}
-            component={Link}
-            to={to}
-            variant="contained"
-            color="primary"
-          >
-            {t('navbar.join_campaign')}
-          </Button>)
-          : (
-            <Button
-              className={classes.primaryButton}
-              disabled={true}
-              variant="contained"
-              color="primary"
-            >
-              {t('jumbotron.processing_score')}
-            </Button>)}
+        <Button
+          className={classes.primaryButton}
+          component={Link}
+          to={to}
+          variant="contained"
+          disabled={!hasTasksAvailable}
+          color="primary"
+        >
+          {hasTasksAvailable ? t('navbar.join_campaign') : t('jumbotron.processing_score')}
+        </Button>
         <Button
           component="button"
           onClick={openSubscribeForm}
