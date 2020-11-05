@@ -13,22 +13,18 @@ exports[`<JumbotronContentCampaign /> renders and matches snapshot 1`] = `
   <div
     class="makeStyles-buttons-3"
   >
-    <a
-      aria-disabled="false"
-      class="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-primaryButton-4 MuiButton-containedPrimary"
-      href=""
-      role="button"
-      tabindex="0"
+    <button
+      class="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-primaryButton-4 MuiButton-containedPrimary Mui-disabled Mui-disabled"
+      disabled=""
+      tabindex="-1"
+      type="button"
     >
       <span
         class="MuiButton-label"
       >
-        Join campaign
+        Processing score
       </span>
-      <span
-        class="MuiTouchRipple-root"
-      />
-    </a>
+    </button>
     <button
       class="MuiButtonBase-root MuiButton-root MuiButton-text"
       tabindex="0"

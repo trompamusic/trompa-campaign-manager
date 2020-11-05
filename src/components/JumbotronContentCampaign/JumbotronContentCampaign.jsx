@@ -12,7 +12,7 @@ import styles from './JumbotronContentCampaign.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function JumbotronContentCampaign ({ campaign, campaignUrl, endDate, to, openSubscribeForm }) {
+export default function JumbotronContentCampaign ({ campaign, campaignUrl, endDate, to, openSubscribeForm, hasTasksAvailable }) {
   const { t }    = useTranslation('campaign');
   const classes  = useStyles();
   const daysLeft = endDate?.diff(moment(), 'days');
@@ -28,15 +28,25 @@ export default function JumbotronContentCampaign ({ campaign, campaignUrl, endDa
         {endDate && `${t('jumbotron.deadline')}: ${endDate.format("MMMM Do YYYY")}`}
       </Typography>
       <div className={classes.buttons}>
-        <Button
-          className={classes.primaryButton}
-          component={Link}
-          to={to}
-          variant="contained"
-          color="primary"
-        >
-          {t('navbar.join_campaign')}
-        </Button>
+        {hasTasksAvailable ? (
+          <Button
+            className={classes.primaryButton}
+            component={Link}
+            to={to}
+            variant="contained"
+            color="primary"
+          >
+            {t('navbar.join_campaign')}
+          </Button>)
+          : (
+            <Button
+              className={classes.primaryButton}
+              disabled={true}
+              variant="contained"
+              color="primary"
+            >
+              {t('jumbotron.processing_score')}
+            </Button>)}
         <Button
           component="button"
           onClick={openSubscribeForm}
@@ -57,4 +67,5 @@ JumbotronContentCampaign.propTypes = {
   campaignEndDate  : PropTypes.string,
   to               : PropTypes.string,
   openSubscribeForm: PropTypes.func,
+  hasTasksAvailable: PropTypes.bool,
 };

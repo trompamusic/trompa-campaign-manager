@@ -11,6 +11,7 @@ import ShareIcon from '@material-ui/icons/Share';
 import Button from '@material-ui/core/Button';
 import NotFound from '../NotFound';
 import { getCampaignDigitalDocument } from '../../utils';
+import useTaskCount from '../../hooks/useTaskCount';
 import ShareDialog from '../../components/ShareDialog/ShareDialog';
 import NavBar from '../../components/NavBar/NavBar';
 import TypeformModal from '../../components/TypeformModal';
@@ -35,6 +36,7 @@ export default function ActiveCampaign ({ match }) {
   const { loading, error, data: { ControlAction: campaigns } = {} } = useQuery(GET_CAMPAIGNS);
   const { campaignIdentifier }                                      = match.params;
   const campaign                                                    = campaigns?.find(({ identifier }) => identifier === campaignIdentifier);
+  const taskCount                                                   = useTaskCount(campaign);
   const author                                                      = "TROMPA";
 
   if (loading) {
@@ -85,6 +87,7 @@ export default function ActiveCampaign ({ match }) {
           campaignUrl={campaignUrl}
           endDate={campaignEndDate}
           to={doTaskUrl}
+          hasTasksAvailable={taskCount > 0}
           openSubscribeForm={openSubscribeForm}
         />
       </Jumbotron>
@@ -154,7 +157,7 @@ export const GET_CAMPAIGNS = gql`
             endTime {
               formatted
             }
-            object(filter: {name: "Work"})
+            object
             {
                 ... on PropertyValue {
                     name

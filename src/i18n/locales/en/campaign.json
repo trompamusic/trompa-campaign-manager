@@ -31,7 +31,8 @@
     "no_deadline_available": "No deadline available",
     "days_to_go": "{{count}} day to go",
     "days_to_go_plural": "{{count}} days to go",
-    "description": "Let's work together on bringing Mahler's 6th to our yearly outdoor performance. This version would be perfect, but the quality of the PDF is really insufficient. Can you all help cleaning it up? We've got five weeks to do it, people!"
+    "description": "Let's work together on bringing Mahler's 6th to our yearly outdoor performance. This version would be perfect, but the quality of the PDF is really insufficient. Can you all help cleaning it up? We've got five weeks to do it, people!",
+    "processing_score": "Processing score"
   },
   "mailchimp": {
     "keep_you_posted": "We'll keep you posted",
