@@ -32,6 +32,11 @@ const overrides = ({ palette, typography, spacing, breakpoints, shape }) => ({
       backgroundColor: palette.common.black,
     },
   },
+  MuiFormLabel: {
+    root: {
+      color: palette.text.transparentGrey,
+    },
+  },
   MuiFilledInput: {
     root: {
       borderRadius: shape.borderRadius,
