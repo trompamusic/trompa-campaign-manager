@@ -70,7 +70,7 @@
     "redux-saga": "^1.0.5",
     "reselect": "^4.0.0",
     "seamless-immutable": "^7.1.2",
-    "trompa-multimodal-component": "^0.4.0",
+    "trompa-multimodal-component": "^1.0.0-alpha1",
     "url-search-params-polyfill": "^7.0.0"
   },
   "devDependencies": {
