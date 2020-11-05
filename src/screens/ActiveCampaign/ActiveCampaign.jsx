@@ -1,20 +1,24 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import moment from 'moment';
 import { gql } from 'apollo-boost';
+import { useHistory } from 'react-router-dom';
 import { useQuery } from '@apollo/react-hooks';
 import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { makeStyles } from '@material-ui/core/styles';
 import ShareIcon from '@material-ui/icons/Share';
 import Button from '@material-ui/core/Button';
 import NotFound from '../NotFound';
+import { getCampaignDigitalDocument } from '../../utils';
 import ShareDialog from '../../components/ShareDialog/ShareDialog';
-import MailChimpDialog from '../../components/MailChimpDialog/MailChimpDialog';
 import NavBar from '../../components/NavBar/NavBar';
+import TypeformModal from '../../components/TypeformModal';
 import Jumbotron from '../../components/Jumbotron/Jumbotron';
 import JumbotronContentCampaign from '../../components/JumbotronContentCampaign/JumbotronContentCampaign';
-import ActiveCampaignProgress from '../../components/ActiveCampaignProgress/ActiveCampaignProgress';
 import ActiveCampaignTwoSections from '../../components/ActiveCampaignTwoSections/ActiveCampaignTwoSections';
+import ActiveCampaignOverviewSection from '../../components/ActiveCampaignOverviewSection';
+import ActiveCampaignOverviewItem from '../../components/ActiveCampaignOverviewItem';
 import Footer from '../../components/Footer/Footer';
 import images from '../../theme/images';
 import styles from './ActiveCampaign.styles';
@@ -22,15 +26,15 @@ import styles from './ActiveCampaign.styles';
 const useStyles = makeStyles(styles);
 
 export default function ActiveCampaign ({ match }) {
-  const { campaignIdentifier } = match.params;
-  const { t }                  = useTranslation('campaign');
-  const classes                = useStyles();
-
-  const [shareDialogOpen, setShareDialogOpen]         = useState(false);
-  const [mailChimpDialogOpen, setMailChimpDialogOpen] = useState(false);
-  const { loading, error, data }                      = useQuery(GET_CAMPAIGN, { variables: { identifier: campaignIdentifier } });
-  const campaign                                      = data?.ControlAction[0];
-  const author                                        = "TROMPA";
+  const { t }                                                       = useTranslation('campaign');
+  const classes                                                     = useStyles();
+  const subscribeFormRef                                            = useRef();
+  const openSubscribeForm                                           = () => subscribeFormRef.current.typeform.open();
+  const history                                                     = useHistory();
+  const [shareDialogOpen, setShareDialogOpen]                       = useState(false);
+  const { loading, error, data: { ControlAction: campaigns } = {} } = useQuery(GET_CAMPAIGNS);
+  const { campaignIdentifier }                                      = match.params;
+  const campaign                                                    = campaigns?.find(({ identifier }) => identifier === campaignIdentifier);
 
   if (loading) {
     return null;
@@ -44,10 +48,14 @@ export default function ActiveCampaign ({ match }) {
     return <NotFound />;
   }
 
-  const digitalDocument = campaign.object.find(obj => obj.name === 'Work')?.nodeValue;
+  const digitalDocument = getCampaignDigitalDocument(campaign);
   const campaignUrl     = window.location.href;
-  const campaignEndDate = campaign?.endTime?.day && moment([campaign?.endTime?.year, campaign?.endTime?.month, campaign?.endTime?.day]);
+  const campaignEndDate = campaign?.endTime?.formatted && moment(campaign.endTime.formatted);
   const doTaskUrl       = `/campaign/${campaignIdentifier}/task`;
+
+  const navLinks      = [{ name: t('home'), to: '/' }];
+  const buttons       = [{ name: t('navbar.share'), onClick: () => setShareDialogOpen(true), startIcon: <ShareIcon /> }];
+  const primaryButton = { name: t('navbar.join_campaign'), to: doTaskUrl };
 
   return (
     <React.Fragment>
@@ -60,17 +68,14 @@ export default function ActiveCampaign ({ match }) {
         <meta name="description" content={campaign?.description || ''} />
       </Helmet>
       <NavBar
-        navLinks={[
-          { name: t('navbar.home'), to: '/' },
-          { name: t('navbar.share'), onClick: () => setShareDialogOpen(true), startIcon: <ShareIcon /> },
-        ]}
-        primaryButton={{ name: t('navbar.join_campaign'), to: doTaskUrl }}
-        drawerContent={<div />}
+        navLinks={navLinks}
+        buttons={buttons}
+        primaryButton={primaryButton}
       />
       <Jumbotron
-        image={digitalDocument.image}
+        image={digitalDocument?.image || images.scoreImage}
         campaign={campaign}
-        author={campaign.agent || author}
+        author={campaign.author}
         digitalDocument={digitalDocument}
         isCampaignPageHeader
       >
@@ -79,15 +84,14 @@ export default function ActiveCampaign ({ match }) {
           campaignUrl={campaignUrl}
           endDate={campaignEndDate}
           to={doTaskUrl}
-          setMailChimpDialogOpen={setMailChimpDialogOpen}
+          openSubscribeForm={openSubscribeForm}
         />
       </Jumbotron>
-      <ActiveCampaignProgress />
       <ActiveCampaignTwoSections
         campaign={campaign}
         digitalDocument={digitalDocument}
         musicComposition={digitalDocument?.exampleOfWork[0]}
-        composer={digitalDocument?.exampleOfWork[0]?.composer[0]}
+        composer={undefined}
       />
       <Jumbotron
         image={images.collaborateHero}
@@ -98,14 +102,30 @@ export default function ActiveCampaign ({ match }) {
       >
         <Button
           className={classes.buttonHero}
-          component="button"
-          onClick={() => setMailChimpDialogOpen(true)}
+          component={Link}
+          to={doTaskUrl}
           variant="contained"
           color="primary"
         >
           {t('about.start_today')}
         </Button>
       </Jumbotron>
+      <ActiveCampaignOverviewSection>
+        {campaigns?.map(campaign => {
+          const daysToGo        = moment(campaign.endTime.formatted)?.diff(moment(), 'days');
+          const digitalDocument = getCampaignDigitalDocument(campaign);
+
+          return (
+            <ActiveCampaignOverviewItem
+              key={campaign.identifier}
+              scoreImage={digitalDocument?.image}
+              scoreTitle={digitalDocument?.title}
+              campaignTitle={campaign.title}
+              campaignDeadline={daysToGo}
+              onClick={() => history.push(`/campaign/${campaign.identifier}`)}
+            />
+          );})}
+      </ActiveCampaignOverviewSection>
       <Footer />
       <ShareDialog
         open={shareDialogOpen}
@@ -117,29 +137,24 @@ export default function ActiveCampaign ({ match }) {
         campaign={campaign}
         campaignUrl={campaignUrl}
       />
-      <MailChimpDialog
-        open={mailChimpDialogOpen}
-        onClose={() => setMailChimpDialogOpen(false)}
-        formLink={`https://kirkandblackbeard.typeform.com/to/NHbUkT?campaignid=${campaignIdentifier}`}
-      />
+      <TypeformModal url={`https://kirkandblackbeard.typeform.com/to/NHbUkT?campaignid=${campaignIdentifier}`} formRef={subscribeFormRef} />
     </React.Fragment>
   );
 }
 
-export const GET_CAMPAIGN = gql`
-    query Campaign($identifier: ID!) {
-        ControlAction (identifier: $identifier) {
-            agent
+export const GET_CAMPAIGNS = gql`
+    query {
+      ControlAction(filter:{wasDerivedFrom:{identifier: "b559c52d-6104-4cb3-ab82-39b82bb2de6c"}}, orderBy: endTime_asc) {
+        agent
             identifier
             name
             alternateName
             description
             endTime {
-              year
-              month
-              day
+              formatted
             }
-            object {
+            object(filter: {name: "Work"})
+            {
                 ... on PropertyValue {
                     name
                     value
@@ -168,6 +183,28 @@ export const GET_CAMPAIGN = gql`
                                     }
                                 }
                             }
+                        }
+                    }
+                }
+            }
+        }
+    }`;
+
+export const GET_CAMPAIGN = gql`
+    query Campaign($identifier: ID!) {
+        ControlAction (identifier: $identifier) {
+            identifier
+            name
+            description
+            object {
+                ... on PropertyValue {
+                    name
+                    value
+                    nodeValue {
+                        ... on DigitalDocument {
+                            identifier
+                            title
+                            source
                         }
                     }
                 }

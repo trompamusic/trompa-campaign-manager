@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import { gql } from 'apollo-boost';
 import client from '../../graphql';
+import { enhanceUrlWithParameters } from '../../utils';
 import ActiveTask from '../../components/ActiveTask';
 import { NotificationContext } from '../NotificationsProvider/NotificationsProvider';
 import { GET_CAMPAIGN } from '../../screens/ActiveCampaign/';
@@ -143,7 +144,7 @@ export default function Task({ campaignIdentifier, taskIdentifier }) {
       {({ handleNotification }) => (
         <ActiveTask
           name={task.name}
-          url={task.url}
+          url={enhanceUrlWithParameters(task.url, { key: 'user', value: nickname })}
           identifier={task.identifier}
           campaign={campaign?.name}
           campaignIdentifier={campaignIdentifier}
