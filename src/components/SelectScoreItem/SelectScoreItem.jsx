@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/styles';
 import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
 import Launch from '@material-ui/icons/Launch';
 import { useTranslation } from 'react-i18next';
+import ScorePlaceholderIcon from "../Icons/ScorePlaceholderIcon";
 import { truncateLabel } from "../../utils";
 import styles from './SelectScoreItem.styles';
 
@@ -27,7 +28,7 @@ export default function SelectScoreItem({ item, isActiveCampaign, progress, onIt
     >
       <Box className={classes.imgBox}>
         <Avatar className={classes.img} src={item?.image} alt={item?.name || ""}>
-          <InsertDriveFileIcon className={classes.icon} />
+          <ScorePlaceholderIcon className={classes.icon} />
         </Avatar>
       </Box>
       <Box className={classes.itemMain}>

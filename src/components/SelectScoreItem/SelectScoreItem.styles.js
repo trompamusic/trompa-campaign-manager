@@ -12,20 +12,25 @@ export default ({ spacing, palette, shape, breakpoints, typography }) => createS
   imgBox: {
     backgroundColor: palette.common.faintGrey,
     display        : 'flex',
-    justifyConten  : 'center',
+    justifyContent : 'center',
     alignItems     : 'center',
     width          : 100,
   },
   img: {
-    width       : 'inherit',
-    height      : 'inherit',
-    maxWidth    : 100,
-    borderRadius: 0,
-    background  : 'none',
-    color       : palette.shadow.transparentGrey,
-    '& svg'     : {
+    width          : '100%',
+    height         : '100%',
+    maxWidth       : 100,
+    borderRadius   : 0,
+    backgroundColor: palette.border.lightGrey,
+    borderSize     : 3,
+    color          : palette.shadow.transparentGrey,
+    '& svg'        : {
       width : '2em',
       height: '2em',
+    },
+    '& img': {
+      maxWidth : '90%',
+      maxHeight: '90%',
     },
   },
   itemMain: {
