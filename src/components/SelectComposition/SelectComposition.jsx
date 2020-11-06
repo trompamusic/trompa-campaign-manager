@@ -22,8 +22,7 @@ export default function SelectComposition({ composition, score, onSelectComposit
           <Typography variant="body1">{t('start')}</Typography>
           <Box className={classes.inputBox}>
             <TextField 
-              value={composition?.name}
-              placeholder={t('composition_default')}
+              value={composition?.name || t('composition_default')}
               variant="filled" 
               disabled={!composition}
               InputProps={{
@@ -34,6 +33,7 @@ export default function SelectComposition({ composition, score, onSelectComposit
                   </InputAdornment>
                 ) }
               }
+              onChange={() => {}}
               fullWidth 
             />
           </Box>
@@ -44,7 +44,7 @@ export default function SelectComposition({ composition, score, onSelectComposit
           <Box className={classes.inputBox}>
             <TextField 
               value={score? (score.title || score.name) : t('score_default')}
-              placeholder={t('score_default')}
+              // placeholder={t('score_default')}
               variant="filled" 
               disabled={!score}
               InputProps={{
