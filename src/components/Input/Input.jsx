@@ -7,7 +7,7 @@ import styles from './Input.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function Input ({ handleChange, handleBlur, value, label, name, children, ...rest }) {
+export default function Input ({ handleChange, handleBlur, value, label, name, endAdornment, children, ...rest }) {
   const classes = useStyles();
 
   return (
@@ -21,7 +21,10 @@ export default function Input ({ handleChange, handleBlur, value, label, name, c
         name={name}
         value={value}
         variant="filled"
-        InputProps={{ disableUnderline: true }}
+        InputProps={{
+          disableUnderline: true,
+          endAdornment,
+        }}
         fullWidth
         {...rest}
       >{children}

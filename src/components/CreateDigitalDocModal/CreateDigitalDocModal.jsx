@@ -7,6 +7,9 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import Typography from '@material-ui/core/Typography/Typography';
+import CancelIcon from '@material-ui/icons/Cancel';
+import IconButton from "@material-ui/core/IconButton";
+import InputAdornment from "@material-ui/core/InputAdornment";
 import Input from '../Input/Input';
 import Form from '../Form/Form';
 import styles from './CreateDigitalDocModal.styles';
@@ -29,7 +32,7 @@ export default function CreateDigitalDocModal ({ initialFormValues, onFormSubmit
       </DialogTitle>
       <Form onSubmit={onFormSubmit} initialValues={{ ...initialFormValues }}>
         {({ values, handleChange, handleSubmit, handleBlur, setFieldValue, setFieldTouched, isSubmitting }) => (
-          <div className={classes.container}>
+          <form className={classes.container} onSubmit={handleSubmit}>
             <DialogContent>
               <Input
                 label={t('create_digitial_doc.score')}
@@ -37,6 +40,15 @@ export default function CreateDigitalDocModal ({ initialFormValues, onFormSubmit
                 value={values.url}
                 onChange={handleChange}
                 onBlur={handleBlur}
+                type="url"
+                endAdornment={
+                  <InputAdornment position="end">
+                    <IconButton>
+                      <CancelIcon />
+                    </IconButton>
+                  </InputAdornment>               
+                }
+                required
               />
               <Input
                 label={t('create_digitial_doc.thumbnail')}
@@ -44,6 +56,14 @@ export default function CreateDigitalDocModal ({ initialFormValues, onFormSubmit
                 name="thumbnailUrl"
                 onChange={handleChange}
                 onBlur={handleBlur}
+                endAdornment={
+                  <InputAdornment position="end">
+                    <IconButton>
+                      <CancelIcon />
+                    </IconButton>
+                  </InputAdornment>               
+                }
+                required
               />
               <Input
                 label={t('create_digitial_doc.score_title')}
@@ -51,6 +71,7 @@ export default function CreateDigitalDocModal ({ initialFormValues, onFormSubmit
                 value={values.title}
                 onChange={handleChange}
                 onBlur={handleBlur}
+                required
               />
               <Input
                 label={t('create_digitial_doc.editor')}
@@ -59,18 +80,19 @@ export default function CreateDigitalDocModal ({ initialFormValues, onFormSubmit
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
-              {/* <Input
-                  label={t('create_digitial_doc.publisher')}
-                  value={values.campaignTitle}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                /> */}
+              <Input
+                label={t('create_digitial_doc.publisher')}
+                value={values.campaignTitle}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
               <Input
                 label={t('create_digitial_doc.copyright')}
                 value={values.license}
                 name="license"
                 onChange={handleChange}
                 onBlur={handleBlur}
+                required
                 select
               >
                 {licenses.map(option => (
@@ -85,6 +107,7 @@ export default function CreateDigitalDocModal ({ initialFormValues, onFormSubmit
                 value={values.language}
                 onChange={handleChange}
                 onBlur={handleBlur}
+                required
                 select
               >
                 {languages.map(option => (
@@ -100,6 +123,7 @@ export default function CreateDigitalDocModal ({ initialFormValues, onFormSubmit
                 onChange={handleChange}
                 onBlur={handleBlur}
                 rows={3}
+                required
                 multiline
               />
 
@@ -107,15 +131,15 @@ export default function CreateDigitalDocModal ({ initialFormValues, onFormSubmit
             <DialogActions>
               <div className={classes.buttons}>
                 <Button
+                  type="submit"
                   variant="contained"
                   color="primary"
-                  onClick={handleSubmit}
                 >
                   {t('create_digitial_doc.upload')}
                 </Button>
               </div>
             </DialogActions>
-          </div>
+          </form>
         )}
       </Form>
     </div>

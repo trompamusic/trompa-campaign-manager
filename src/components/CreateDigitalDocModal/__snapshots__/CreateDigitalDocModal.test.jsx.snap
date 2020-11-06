@@ -13,7 +13,7 @@ exports[`<CreateDigitalDocModal /> renders and matches snapshot 1`] = `
       Select your own file
     </h2>
   </div>
-  <div
+  <form
     class="makeStyles-container-3"
   >
     <div
@@ -31,15 +31,44 @@ exports[`<CreateDigitalDocModal /> renders and matches snapshot 1`] = `
           class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
         >
           <div
-            class="MuiInputBase-root MuiFilledInput-root MuiInputBase-fullWidth MuiInputBase-formControl"
+            class="MuiInputBase-root MuiFilledInput-root MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiFilledInput-adornedEnd"
           >
             <input
               aria-invalid="false"
-              class="MuiInputBase-input MuiFilledInput-input"
+              class="MuiInputBase-input MuiFilledInput-input MuiInputBase-inputAdornedEnd MuiFilledInput-inputAdornedEnd"
               name="url"
-              type="text"
+              required=""
+              type="url"
               value=""
             />
+            <div
+              class="MuiInputAdornment-root MuiInputAdornment-filled MuiInputAdornment-positionEnd"
+            >
+              <button
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -55,15 +84,44 @@ exports[`<CreateDigitalDocModal /> renders and matches snapshot 1`] = `
           class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
         >
           <div
-            class="MuiInputBase-root MuiFilledInput-root MuiInputBase-fullWidth MuiInputBase-formControl"
+            class="MuiInputBase-root MuiFilledInput-root MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiFilledInput-adornedEnd"
           >
             <input
               aria-invalid="false"
-              class="MuiInputBase-input MuiFilledInput-input"
+              class="MuiInputBase-input MuiFilledInput-input MuiInputBase-inputAdornedEnd MuiFilledInput-inputAdornedEnd"
               name="thumbnailUrl"
+              required=""
               type="text"
               value=""
             />
+            <div
+              class="MuiInputAdornment-root MuiInputAdornment-filled MuiInputAdornment-positionEnd"
+            >
+              <button
+                class="MuiButtonBase-root MuiIconButton-root"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiIconButton-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -85,6 +143,7 @@ exports[`<CreateDigitalDocModal /> renders and matches snapshot 1`] = `
               aria-invalid="false"
               class="MuiInputBase-input MuiFilledInput-input"
               name="title"
+              required=""
               type="text"
               value=""
             />
@@ -109,6 +168,29 @@ exports[`<CreateDigitalDocModal /> renders and matches snapshot 1`] = `
               aria-invalid="false"
               class="MuiInputBase-input MuiFilledInput-input"
               name="creator"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="makeStyles-root-37"
+      >
+        <p
+          class="MuiTypography-root MuiTypography-body1"
+        >
+          Publisher
+        </p>
+        <div
+          class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+        >
+          <div
+            class="MuiInputBase-root MuiFilledInput-root MuiInputBase-fullWidth MuiInputBase-formControl"
+          >
+            <input
+              aria-invalid="false"
+              class="MuiInputBase-input MuiFilledInput-input"
               type="text"
               value=""
             />
@@ -223,6 +305,7 @@ exports[`<CreateDigitalDocModal /> renders and matches snapshot 1`] = `
               aria-invalid="false"
               class="MuiInputBase-input MuiFilledInput-input MuiInputBase-inputMultiline MuiFilledInput-inputMultiline"
               name="description"
+              required=""
               rows="3"
             />
           </div>
@@ -236,7 +319,7 @@ exports[`<CreateDigitalDocModal /> renders and matches snapshot 1`] = `
         <button
           class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
           tabindex="0"
-          type="button"
+          type="submit"
         >
           <span
             class="MuiButton-label"
@@ -249,6 +332,6 @@ exports[`<CreateDigitalDocModal /> renders and matches snapshot 1`] = `
         </button>
       </div>
     </div>
-  </div>
+  </form>
 </div>
 `;
