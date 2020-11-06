@@ -6,11 +6,6 @@ export default ({ spacing, palette }) => createStyles({
     height : '100%',
     padding: spacing(5),
   },
-  formNav: {
-    display       : 'flex',
-    width         : '100%',
-    justifyContent: 'flex-end',
-  },
   dialog: {
     backgroundColor: palette.background.primary,
   },
