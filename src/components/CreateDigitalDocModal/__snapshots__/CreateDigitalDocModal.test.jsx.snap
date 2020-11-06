@@ -1,3 +1,254 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<CreateDigitalDocModal /> renders and matches snapshot 1`] = `<div />`;
+exports[`<CreateDigitalDocModal /> renders and matches snapshot 1`] = `
+<div
+  class="makeStyles-root-1"
+>
+  <div
+    class="MuiDialogTitle-root makeStyles-title-2"
+  >
+    <h2
+      class="MuiTypography-root MuiTypography-h2"
+    >
+      Select your own file
+    </h2>
+  </div>
+  <div
+    class="makeStyles-container-3"
+  >
+    <div
+      class="MuiDialogContent-root"
+    >
+      <div
+        class="makeStyles-root-37"
+      >
+        <p
+          class="MuiTypography-root MuiTypography-body1"
+        >
+          Score
+        </p>
+        <div
+          class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+        >
+          <div
+            class="MuiInputBase-root MuiFilledInput-root MuiInputBase-fullWidth MuiInputBase-formControl"
+          >
+            <input
+              aria-invalid="false"
+              class="MuiInputBase-input MuiFilledInput-input"
+              name="url"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="makeStyles-root-37"
+      >
+        <p
+          class="MuiTypography-root MuiTypography-body1"
+        >
+          Thumbnail
+        </p>
+        <div
+          class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+        >
+          <div
+            class="MuiInputBase-root MuiFilledInput-root MuiInputBase-fullWidth MuiInputBase-formControl"
+          >
+            <input
+              aria-invalid="false"
+              class="MuiInputBase-input MuiFilledInput-input"
+              name="thumbnailUrl"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="makeStyles-root-37"
+      >
+        <p
+          class="MuiTypography-root MuiTypography-body1"
+        >
+          Score title
+        </p>
+        <div
+          class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+        >
+          <div
+            class="MuiInputBase-root MuiFilledInput-root MuiInputBase-fullWidth MuiInputBase-formControl"
+          >
+            <input
+              aria-invalid="false"
+              class="MuiInputBase-input MuiFilledInput-input"
+              name="title"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="makeStyles-root-37"
+      >
+        <p
+          class="MuiTypography-root MuiTypography-body1"
+        >
+          Editor
+        </p>
+        <div
+          class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+        >
+          <div
+            class="MuiInputBase-root MuiFilledInput-root MuiInputBase-fullWidth MuiInputBase-formControl"
+          >
+            <input
+              aria-invalid="false"
+              class="MuiInputBase-input MuiFilledInput-input"
+              name="creator"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="makeStyles-root-37"
+      >
+        <p
+          class="MuiTypography-root MuiTypography-body1"
+        >
+          Copyright license
+        </p>
+        <div
+          class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+        >
+          <div
+            class="MuiInputBase-root MuiFilledInput-root MuiInputBase-fullWidth MuiInputBase-formControl"
+          >
+            <div
+              aria-haspopup="listbox"
+              aria-labelledby=" mui-component-select-license"
+              class="MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiSelect-filled MuiInputBase-input MuiFilledInput-input"
+              id="mui-component-select-license"
+              role="button"
+              tabindex="0"
+            >
+              <span>
+                ​
+              </span>
+            </div>
+            <input
+              name="license"
+              type="hidden"
+              value=""
+            />
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSelect-icon MuiSelect-iconFilled"
+              focusable="false"
+              role="presentation"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M7 10l5 5 5-5z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        class="makeStyles-root-37"
+      >
+        <p
+          class="MuiTypography-root MuiTypography-body1"
+        >
+          Language
+        </p>
+        <div
+          class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+        >
+          <div
+            class="MuiInputBase-root MuiFilledInput-root MuiInputBase-fullWidth MuiInputBase-formControl"
+          >
+            <div
+              aria-haspopup="listbox"
+              aria-labelledby=" mui-component-select-language"
+              class="MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiSelect-filled MuiInputBase-input MuiFilledInput-input"
+              id="mui-component-select-language"
+              role="button"
+              tabindex="0"
+            >
+              <span>
+                ​
+              </span>
+            </div>
+            <input
+              name="language"
+              type="hidden"
+              value=""
+            />
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSelect-icon MuiSelect-iconFilled"
+              focusable="false"
+              role="presentation"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M7 10l5 5 5-5z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        class="makeStyles-root-37"
+      >
+        <p
+          class="MuiTypography-root MuiTypography-body1"
+        >
+          Miscellaneous Notes
+        </p>
+        <div
+          class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+        >
+          <div
+            class="MuiInputBase-root MuiFilledInput-root MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-multiline MuiFilledInput-multiline"
+          >
+            <textarea
+              aria-invalid="false"
+              class="MuiInputBase-input MuiFilledInput-input MuiInputBase-inputMultiline MuiFilledInput-inputMultiline"
+              name="description"
+              rows="3"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiDialogActions-root MuiDialogActions-spacing"
+    >
+      <div>
+        <button
+          class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiButton-label"
+          >
+            Upload
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

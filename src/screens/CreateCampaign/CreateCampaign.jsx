@@ -89,12 +89,6 @@ export default function CreateCampaign() {
       console.log(error);
     }
   };
-
-  if(true) {
-    return (
-      <CreateDigitalDoc />
-    );
-  }
   
   return (
     <div>

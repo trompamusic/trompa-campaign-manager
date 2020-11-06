@@ -3,15 +3,18 @@ import * as PropTypes from 'prop-types';
 import { useTranslation } from "react-i18next";
 import { useLazyQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
-import { Box, Button, Container, Dialog, makeStyles, Typography } from "@material-ui/core";
+import { Box, IconButton, Container, Dialog, makeStyles, Typography } from "@material-ui/core";
+import CloseIcon from '@material-ui/icons/Close';
 import MultiModalComponent, { SearchConfig, searchTypes } from "trompa-multimodal-component";
 import SelectCompositionComponent from "../../components/SelectComposition";
 import SelectScoreModal from "../../components/SelectScoreModal";
+import CreateDigitalDoc from "../../containers/CreateDigitalDoc";
 import styles from './SelectComposition.styles';
 
-const MODAL_NONE  = 0;
-const MODAL_COMP  = 1;
-const MODAL_SCORE = 2;
+const MODAL_NONE       = 0;
+const MODAL_COMP       = 1;
+const MODAL_SCORE      = 2;
+const MODAL_SELECT_URL = 3;
 
 const searchConfig = new SearchConfig({
   searchTypes: [searchTypes.MusicComposition],
@@ -19,7 +22,7 @@ const searchConfig = new SearchConfig({
 
 const useStyles = makeStyles(styles);
 
-export default function SelectComposition({ onBackButtonClick, onCompositionSubmit, onSelectFileClick }) {
+export default function SelectComposition({ onBackButtonClick, onCompositionSubmit }) {
   const { t }                         = useTranslation('selectComposition');
   const classes                       = useStyles();
   const [composition, setComposition] = useState();
@@ -54,6 +57,11 @@ export default function SelectComposition({ onBackButtonClick, onCompositionSubm
     setScore();
   };
 
+  const onSelectFileClick = () => {
+    console.log('fire');
+    setModal(MODAL_SELECT_URL);
+  };
+
   if (loading) return <Box>{t('loading')}</Box>;
   if (error) console.log('Failed to load scores', error);
 
@@ -66,7 +74,6 @@ export default function SelectComposition({ onBackButtonClick, onCompositionSubm
         onDeselectCompositionClick={deselectBoth}
         onSelectScoreClick={() => setModal(MODAL_SCORE)}
         onDeselectScoreClick={() => setScore()} 
-        onSelectFileClick={onSelectFileClick}
         onBackButtonClick={onBackButtonClick}
         onNextButtonClick={onNextButtonClick}
       />
@@ -82,7 +89,9 @@ export default function SelectComposition({ onBackButtonClick, onCompositionSubm
             {modal === MODAL_COMP && t('select_composition')}
             {modal === MODAL_SCORE && t('select_score')}
           </Typography>
-          <Button className={classes.closeButton} onClick={() => setModal(MODAL_NONE)}>X</Button>
+          <IconButton  className={classes.closeButton} onClick={() => setModal(MODAL_NONE)}>
+            <CloseIcon />
+          </IconButton>
           {modal === MODAL_COMP && (
             <MultiModalComponent 
               config={searchConfig}
@@ -92,8 +101,12 @@ export default function SelectComposition({ onBackButtonClick, onCompositionSubm
           {modal === MODAL_SCORE && (
             <SelectScoreModal 
               composition={composition}
+              onSelectFileClick={onSelectFileClick}
               onLoadScore={node => loadScore(node)} 
             />
+          )}
+          {modal === MODAL_SELECT_URL && (
+            <CreateDigitalDoc musicCompositionId={composition?.identifier} />
           )}
         </Box>
       </Dialog>

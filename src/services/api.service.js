@@ -12,4 +12,4 @@ const api = create({
 // api methods
 export const createDigitalDoc = (musicCompositionId, data) => api.post(`/music-compositions/${musicCompositionId}/digital-document`, data);
 
-export const createCampaign = data => api.post('/campaigns',data);
+export const createCampaign = data => api.post('/campaigns', data);
