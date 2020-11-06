@@ -34,12 +34,12 @@ export default function CreateCampaign() {
     if (!nickname) {
       history.replace('/createcampaign/nickname');
     } else {
-      history.replace('/createcampaign/compositionScore');
+      history.replace('/createcampaign/compositionscore');
     }
   },[history, nickname]);
 
   const getCurrentStep = () => {
-    return pathname === '/createcampaign/compositionScore' ? 0 : 1;
+    return pathname === '/createcampaign/compositionscore' ? 0 : 1;
   };
 
   const Steps = [t('composition_score'),t('campaign')];
@@ -51,7 +51,7 @@ export default function CreateCampaign() {
     localStorage.setItem('nickname', givenNickname);
 
     setNickname(givenNickname);
-    history.push('/createcampaign/compositionScore');
+    history.push('/createcampaign/compositionscore');
   };
 
   const onCompositionSubmit = value => {
@@ -98,11 +98,12 @@ export default function CreateCampaign() {
         <meta name="description" content={t('meta_description')} />
       </Helmet>
       <AppbarTop
-        type={'test'}
+        type={' '}
+        campaign="Create Campaign"
         onGoBackClick={onBackButtonClick}
         hasContextNavigation
       >
-        <NicknameMenuContainer  />
+        <NicknameMenuContainer logoutPath={'/createcampaign/nickname'} />
       </AppbarTop>
       {(pathname !== '/createcampaign/nickname' ) && <ProgressStepper activeStep={getCurrentStep()} steps={Steps} />}
       <Box className={classes.main}>
@@ -110,8 +111,8 @@ export default function CreateCampaign() {
           <Route path="/createcampaign/nickname"exact >
             <CreateCampaignNickname nickname={nickname} onBackButtonClick={onBackButtonClick} onNicknameSubmit={onNicknameSubmit} />
           </Route>
-          <Route path="/createcampaign/compositionScore"  exact >
-            <SelectComposition onBackButtonClick={onBackButtonClick}   onCompositionSubmit={onCompositionSubmit} />
+          <Route path="/createcampaign/compositionscore"  exact >
+            <SelectComposition onBackButtonClick={onBackButtonClick} onCompositionSubmit={onCompositionSubmit} onSelectFileClick={() => {}} />
           </Route> 
           <Route path="/createcampaign/campaign" exact >
             <CreateCampaignSetup 
@@ -119,6 +120,7 @@ export default function CreateCampaign() {
               campaignDescription={campaignMetaData.description} 
               campaignDeadline={campaignMetaData.deadline} 
               onCampaignMetaSubmit={onCampaignSubmit}
+              onBackButtonClick={onBackButtonClick}
             />
           </Route>
         </Switch>

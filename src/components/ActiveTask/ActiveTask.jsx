@@ -36,7 +36,7 @@ export default function ActiveTask ({
         onGoBackClick={onGoBackClick}
         hasContextNavigation
       >
-        <NicknameMenuContainer campaignIdentifier={campaignIdentifier} />
+        <NicknameMenuContainer logoutPath={`/campaign/${campaignIdentifier}/who-are-you`} />
       </AppbarTop>
       {noTasks ? (
         <div className={classes.emptyIframe}>
