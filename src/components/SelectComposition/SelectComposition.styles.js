@@ -21,14 +21,7 @@ export default ({ spacing, palette, shape, breakpoints, typography }) => createS
     [breakpoints.down('sm')]: {
       display: 'none',
     },
-    '&:first-child': {
-      height: '54vh',
-      margin: `0px 24px -56px 24px`,
-    },
-    '&:last-child': {
-      margin: `0px 24px -56px 24px`,
-    },
-    height: '59vh',
+    height: '50vh',
   },
   part: {
     width  : '100%',

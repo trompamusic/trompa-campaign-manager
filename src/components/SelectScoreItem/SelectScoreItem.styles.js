@@ -9,9 +9,29 @@ export default ({ spacing, palette, shape, breakpoints, typography }) => createS
     position     : 'relative',
     cursor       : 'pointer',
   },
-  itemImg: {
+  imgBox: {
     backgroundColor: palette.common.faintGrey,
+    display        : 'flex',
+    justifyContent : 'center',
+    alignItems     : 'center',
     width          : 100,
+  },
+  img: {
+    width          : '100%',
+    height         : '100%',
+    maxWidth       : 100,
+    borderRadius   : 0,
+    backgroundColor: palette.border.lightGrey,
+    borderSize     : 3,
+    color          : palette.shadow.transparentGrey,
+    '& svg'        : {
+      width : '2em',
+      height: '2em',
+    },
+    '& img': {
+      maxWidth : '90%',
+      maxHeight: '90%',
+    },
   },
   itemMain: {
     width  : '100%',

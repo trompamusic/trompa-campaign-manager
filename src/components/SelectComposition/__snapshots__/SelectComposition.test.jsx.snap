@@ -92,7 +92,7 @@ exports[`<SelectComposition /> renders and matches snapshot 1`] = `
               disabled=""
               placeholder="Score"
               type="text"
-              value="Score"
+              value=""
             />
             <div
               class="MuiInputAdornment-root MuiInputAdornment-filled MuiInputAdornment-positionEnd"
