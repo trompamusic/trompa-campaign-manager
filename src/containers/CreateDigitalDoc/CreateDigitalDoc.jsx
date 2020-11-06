@@ -1,14 +1,8 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/styles';
 import CreateDigitalDocModal from '../../components/CreateDigitalDocModal/CreateDigitalDocModal';
 import { createDigitalDoc } from '../../services/api.service';
-import styles from './CreateDigitalDoc.styles';
-
-const useStyles = makeStyles(styles);
 
 export default function CreateDigitalDoc({ musicCompositionId, onDigitalDocCreated }) {
-  const classes                                                  = useStyles();
-
   const digitalDocumentInitialValues = {
     title       : "",
     creator     : "",
@@ -22,7 +16,7 @@ export default function CreateDigitalDoc({ musicCompositionId, onDigitalDocCreat
   console.log(musicCompositionId);
 
   const onFormSubmit = async ({ title, url, creator, thumbnailUrl, description, language, license }) => {
-    const data = {
+    const digitalDocumentData = {
       name    : title,
       relation: url,
       source  : url,    
@@ -36,7 +30,15 @@ export default function CreateDigitalDoc({ musicCompositionId, onDigitalDocCreat
       description ,
     };
 
-    createDigitalDoc(musicCompositionId, data);
+    try {
+      const { ok, data: { data } } = await createDigitalDoc(musicCompositionId, digitalDocumentData);
+
+      if(ok) {
+        return onDigitalDocCreated({ identifier: data.identifier,...digitalDocumentData });
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

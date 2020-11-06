@@ -27,7 +27,7 @@ export default function SelectComposition({ onBackButtonClick, onCompositionSubm
   const classes                       = useStyles();
   const [composition, setComposition] = useState();
   const [score, setScore]             = useState();
-  const [modal, setModal]             = useState(MODAL_NONE);
+  const [modal, setModal]             = useState(MODAL_SELECT_URL);
 
   const lazyQueryCallback                              = { onCompleted: data => onMMCDataLoaded(data) };
   const [getCompositionWithScores, { loading, error }] = useLazyQuery(GET_COMPOSITION_WITH_SCORES, lazyQueryCallback );
@@ -48,10 +48,12 @@ export default function SelectComposition({ onBackButtonClick, onCompositionSubm
     setScore(score);
     setModal(MODAL_NONE);
   };
+
   const onNextButtonClick = () => {
     // console.log('Submit. Composition/score:', composition, score);
     onCompositionSubmit({ composition: composition, score: score });
   };
+
   const deselectBoth      = () => {
     setComposition();
     setScore();
@@ -106,7 +108,7 @@ export default function SelectComposition({ onBackButtonClick, onCompositionSubm
             />
           )}
           {modal === MODAL_SELECT_URL && (
-            <CreateDigitalDoc musicCompositionId={composition?.identifier} />
+            <CreateDigitalDoc musicCompositionId={composition?.identifier} onDigitalDocCreated={node => loadScore(node)} />
           )}
         </Box>
       </Dialog>
