@@ -1,0 +1,22 @@
+{
+  "home" : "Home",
+  "title": "Composition & Score",
+  "start": "Let's start with the composition",
+  "select": "Select",
+  "note_compositions": "In Trompa we support a wide range of compositions",
+  "score": "Score",
+  "back": "Back",
+  "next": "Next",
+  "select_composition": "Search the composition",
+  "composition_default": "Music Composition",
+  "select_score": "Select score version to improve",
+  "score_default": "Score",
+  "loading": "Loading..",
+  "pdf": "Pdf",
+  "active_campaign": "Already active campaign",
+  "created_by": "Created by",
+  "published_by": "Published by",
+  "cant_find": "Can't find the right score?",
+  "use_link": "Select your own PDF MEI XML file",
+  "share_link": "Select your own file"
+}

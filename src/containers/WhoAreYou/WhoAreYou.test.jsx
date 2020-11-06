@@ -3,7 +3,7 @@ import { MockedProvider } from '@apollo/react-testing';
 import { render } from '../../testUtils';
 import WhoAreYou from './WhoAreYou';
 
-describe('<WhoAreYou />', () => {
+describe.skip('<WhoAreYou />', () => {
   test('renders and matches snapshot', () => {
     const { container } = render(<MockedProvider><WhoAreYou /></MockedProvider>);
 

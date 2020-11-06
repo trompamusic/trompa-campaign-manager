@@ -40,12 +40,12 @@ export default function AppbarTop ({
             {hasContextNavigation ? (
               <div className={classes.header}>
                 <ArrowBackIcon onClick={onGoBackClick} className={classes.backIcon} />
-                <div>
+                <div className={classes.heading}>
                   <Link className={classes.link} to={`/campaign/${campaignIdentifier}`}>
                     <Typography className={classes.pageType} variant="h6" color="secondary">
                       {type ? type : t('common:unknown_type')}
                     </Typography>
-                    <Typography className={classes.title} variant="h5">
+                    <Typography className={classes.title} variant="h5" noWrap>
                       {campaign ? campaign : t('common:unknown_campaign')}
                     </Typography>
                   </Link>

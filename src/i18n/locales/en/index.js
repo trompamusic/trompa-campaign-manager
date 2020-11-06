@@ -10,4 +10,5 @@ export default {
   whoAreYou: require('./whoAreYou'),
   startCampaign: require('./startCampaign'),
   notifications: require('./notifications'),
+  selectComposition: require ('./selectComposition'),
 };
