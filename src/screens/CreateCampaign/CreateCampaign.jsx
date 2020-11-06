@@ -9,7 +9,6 @@ import CreateCampaignSetup from '../CreateCampaignSetup/CreateCampaignSetup';
 import SelectComposition from '../SelectComposition/SelectComposition';
 import AppbarTop from "../../components/AppbarTop/AppbarTop";
 import ProgressStepper from "../../components/ProgressStepper/ProgressStepper";
-import CreateDigitalDoc from "../../containers/CreateDigitalDoc/CreateDigitalDoc";
 import { createCampaign } from '../../services/api.service';
 import styles from './CreateCampaign.styles';
 
