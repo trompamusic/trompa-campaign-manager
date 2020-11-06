@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Switch, Route, useHistory, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
+import moment from 'moment';
 import NicknameMenuContainer from '../../containers/NicknameMenuContainer/NicknameMenuContainer';
 import CreateCampaignNickname from '../CreateCampaignNickname/CreateCampaignNickname';
 import CreateCampaignSetup from '../CreateCampaignSetup/CreateCampaignSetup';
@@ -25,7 +26,7 @@ export default function CreateCampaign() {
     title             : '',
     description       : '',
     name              : '',
-    deadline          : '',
+    deadline          : moment().hours(17).minute(0).add(2, 'months'),
     url               : '',
     digitalDocumentRef: '',
   });
