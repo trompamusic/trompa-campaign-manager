@@ -49,7 +49,11 @@ export default function SelectComposition({ onBackButtonClick, onCompositionSubm
     // console.log('Submit. Composition/score:', composition, score);
     onCompositionSubmit({ composition: composition, score: score });
   };
-  
+  const deselectBoth      = () => {
+    setComposition();
+    setScore();
+  };
+
   if (loading) return <Box>{t('loading')}</Box>;
   if (error) console.log('Failed to load scores', error);
 
@@ -58,14 +62,14 @@ export default function SelectComposition({ onBackButtonClick, onCompositionSubm
       <SelectCompositionComponent 
         composition={composition} 
         score={score}
-        onSelectComponentClick={() => setModal(MODAL_COMP)} 
+        onSelectCompositionClick={() => setModal(MODAL_COMP)} 
+        onDeselectCompositionClick={deselectBoth}
         onSelectScoreClick={() => setModal(MODAL_SCORE)}
+        onDeselectScoreClick={() => setScore()} 
         onSelectFileClick={onSelectFileClick}
+        onBackButtonClick={onBackButtonClick}
+        onNextButtonClick={onNextButtonClick}
       />
-      <Box className={classes.formNav}>
-        <Button onClick={onBackButtonClick}>{t('back')}</Button>
-        <Button disabled={!(composition && score) } onClick={onNextButtonClick}>{t('next')}</Button>
-      </Box>
       <Dialog
         className={classes.dialog}
         open={modal !== MODAL_NONE} 

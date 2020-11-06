@@ -17,7 +17,7 @@ export default function Root(props) {
       <Route path="/campaign/:campaignIdentifier/who-are-you" component={WhoAreYou} exact />
       <Route path="/campaign/:campaignIdentifier/task/" component={Task} exact />
       <Route path="/campaign/:campaignIdentifier/task/:taskIdentifier" component={Task} exact />
-      <Route path="/createcampaign/:step?" component={CreateCampaign} />
+      <Route path="/createcampaign/:step?/:status?" component={CreateCampaign} />
       <Route component={NotFound} />
     </Switch>
   );
