@@ -5,29 +5,45 @@ exports[`<SelectScoreItem /> renders and matches snapshot 1`] = `
   class="MuiPaper-root MuiCard-root makeStyles-item-1 MuiPaper-elevation2 MuiPaper-rounded"
 >
   <div
-    class="MuiBox-root MuiBox-root-40 makeStyles-itemImg-2"
-  />
-  <div
-    class="MuiBox-root MuiBox-root-41 makeStyles-itemMain-3"
+    class="MuiBox-root MuiBox-root-41 makeStyles-imgBox-2"
   >
     <div
-      class="MuiBox-root MuiBox-root-42 makeStyles-itemHeader-4"
+      class="MuiAvatar-root MuiAvatar-circle makeStyles-img-3 MuiAvatar-colorDefault"
+    >
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root makeStyles-icon-8"
+        focusable="false"
+        role="presentation"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"
+        />
+      </svg>
+    </div>
+  </div>
+  <div
+    class="MuiBox-root MuiBox-root-58 makeStyles-itemMain-4"
+  >
+    <div
+      class="MuiBox-root MuiBox-root-59 makeStyles-itemHeader-5"
     >
       <h3
         class="MuiTypography-root MuiTypography-h3 MuiTypography-colorPrimary"
       />
       <div
-        class="MuiBox-root MuiBox-root-73 makeStyles-itemButtonBox-5"
+        class="MuiBox-root MuiBox-root-90 makeStyles-itemButtonBox-6"
       />
     </div>
     <div
-      class="MuiBox-root MuiBox-root-74"
+      class="MuiBox-root MuiBox-root-91"
     >
       <p
         class="MuiTypography-root MuiTypography-body1"
       />
       <p
-        class="MuiTypography-root makeStyles-itemDescription-6 MuiTypography-body2"
+        class="MuiTypography-root makeStyles-itemDescription-7 MuiTypography-body2"
       />
       <p
         class="MuiTypography-root MuiTypography-body1"
