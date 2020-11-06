@@ -55,12 +55,12 @@ export default function CreateCampaign() {
   };
 
   const onCompositionSubmit = value => {
-    console.log(value);
     updateCampaignMetadata({
       ...campaignMetaData,
       digitalDocumentId: value.score.identifier,
       name             : value.score.name,
     });
+
     history.push('/createcampaign/campaign');
   };
 
@@ -78,17 +78,15 @@ export default function CreateCampaign() {
     } = campaignMetaData;
 
     try {
-      const response = await createCampaign({ name, title: campaignTitle, description: campaignDescription, digitalDocumentId });
+      const { ok, data: { data } } = await createCampaign({ name, title: campaignTitle, description: campaignDescription, digitalDocumentId });
 
-      if (response.ok) {
-        console.log(response);
+      if (ok && data?.identifier) {
+        history.push(`/campaign/${data.identifier}?created`);
       }
     }
     catch(error) {
       console.log(error);
-    } 
-    
-    history.push('/createcampaign/campaign');
+    }
   };
   
   return (
