@@ -27,7 +27,7 @@ export default function SelectComposition({ onBackButtonClick, onCompositionSubm
   const classes                       = useStyles();
   const [composition, setComposition] = useState();
   const [score, setScore]             = useState();
-  const [modal, setModal]             = useState(MODAL_SELECT_URL);
+  const [modal, setModal]             = useState(MODAL_NONE);
 
   const lazyQueryCallback                              = { onCompleted: data => onMMCDataLoaded(data) };
   const [getCompositionWithScores, { loading, error }] = useLazyQuery(GET_COMPOSITION_WITH_SCORES, lazyQueryCallback );
