@@ -28,7 +28,7 @@ export default function SelectScoreItem({ item, isActiveCampaign, progress, onIt
     >
       <Box className={classes.imgBox}>
         <Avatar className={classes.img} src={item?.image} alt={item?.name || ""}>
-          <ScorePlaceholderIcon className={classes.icon} />
+          <ScorePlaceholderIcon />
         </Avatar>
       </Box>
       <Box className={classes.itemMain}>

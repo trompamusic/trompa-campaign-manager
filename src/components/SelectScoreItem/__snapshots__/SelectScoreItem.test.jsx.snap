@@ -12,7 +12,7 @@ exports[`<SelectScoreItem /> renders and matches snapshot 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="MuiSvgIcon-root makeStyles-icon-8"
+        class="MuiSvgIcon-root"
         focusable="false"
         role="presentation"
         viewBox="0 0 20 20"
