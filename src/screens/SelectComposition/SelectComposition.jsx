@@ -22,7 +22,7 @@ const searchConfig = new SearchConfig({
 
 const useStyles = makeStyles(styles);
 
-export default function SelectComposition({ composition, score, onSetComposition, onSetScore, onBackButtonClick, onNextButtonClick }) {
+export default function SelectComposition({ composition, score, onSetComposition, onSetScore, onBackButtonClick, onCompositionSubmit }) {
   const { t }             = useTranslation('selectComposition');
   const classes           = useStyles();
   const [modal, setModal] = useState(MODAL_NONE);
@@ -62,7 +62,7 @@ export default function SelectComposition({ composition, score, onSetComposition
         onSelectScoreClick={() => setModal(MODAL_SCORE)}
         onDeselectScoreClick={() => onSetScore()} 
         onBackButtonClick={onBackButtonClick}
-        onNextButtonClick={onNextButtonClick}
+        onNextButtonClick={onCompositionSubmit}
       />
       <Dialog
         className={classes.dialog}
