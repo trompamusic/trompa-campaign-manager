@@ -72,13 +72,12 @@ export default function CreateCampaign() {
       deadline   : campaignDeadline,
     }));
 
-    const {     
-      name,
+    const {
       digitalDocumentId,
     } = campaignMetaData;
 
     try {
-      const { ok, data: { data } } = await createCampaign({ name, title: campaignTitle, description: campaignDescription, digitalDocumentId });
+      const { ok, data: { data } } = await createCampaign({ name: campaignTitle, title: campaignTitle, description: campaignDescription, digitalDocumentId });
 
       if (ok && data?.identifier) {
         history.push(`/campaign/${data.identifier}?created`);
