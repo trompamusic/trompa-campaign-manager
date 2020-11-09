@@ -19,7 +19,7 @@ export default function CreateCampaignSetup({
 CreateCampaignSetup.propTypes = {
   campaignTitle       : PropTypes.string,
   campaignDescription : PropTypes.string,
-  campaignDeadline    : PropTypes.string,
+  campaignDeadline    : PropTypes.object,
   onBackButtonClick   : PropTypes.func,
   onCampaignMetaSubmit: PropTypes.func,
 };

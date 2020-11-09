@@ -48,14 +48,16 @@ export default function SelectScoreItem({ item, isActiveCampaign, progress, onIt
               </a>
             }
             {isActiveCampaign && 
-              <Button 
-                variant="contained" 
-                size="small" 
-                color="primary"
-              >
-                <Launch className={classes.icon} />
-                {t('active_campaign')}
-              </Button>
+              <a href={'<campaignlink>'} target="_blank" rel="noopener noreferrer">
+                <Button 
+                  variant="contained" 
+                  size="small" 
+                  color="primary"
+                >
+                  <Launch className={classes.icon} />
+                  {t('active_campaign')}
+                </Button>
+              </a>
             }
           </Box>
         </Box>

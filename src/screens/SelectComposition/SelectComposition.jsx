@@ -22,45 +22,38 @@ const searchConfig = new SearchConfig({
 
 const useStyles = makeStyles(styles);
 
-export default function SelectComposition({ onBackButtonClick, onCompositionSubmit }) {
-  const { t }                         = useTranslation('selectComposition');
-  const classes                       = useStyles();
-  const [composition, setComposition] = useState();
-  const [score, setScore]             = useState();
-  const [modal, setModal]             = useState(MODAL_NONE);
+export default function SelectComposition({ composition, score, onSetComposition, onSetScore, onBackButtonClick, onCompositionSubmit }) {
+  const { t }             = useTranslation('selectComposition');
+  const classes           = useStyles();
+  const [modal, setModal] = useState(MODAL_NONE);
 
   const lazyQueryCallback                              = { onCompleted: data => onGqlLoaded(data), fetchPolicy: "no-cache" };
   const [getCompositionWithScores, { loading, error }] = useLazyQuery(GET_COMPOSITION_WITH_SCORES, lazyQueryCallback );
 
   /**
-   * DATA 
+   * DATA
    * Recieve node (composition) from MMC, then trigger lazyQuery to get metadata + scores
-   * 
+   *
    * Todo: Get active campaigns of selected composition
    */
   const loadComposition = node => {
     setModal(MODAL_NONE);
+    onSetScore();
     getCompositionWithScores({ variables: { identifier: node.identifier }, ...lazyQueryCallback });
   };
-  const onGqlLoaded     = data => setComposition(data.MusicComposition?.[0]);
-  
+  const onGqlLoaded     = data => onSetComposition(data.MusicComposition?.[0]);
+
   /**
    * INTERNAL
    */
   const loadScore         = score => {
-    setScore(score);
+    onSetScore(score);
     setModal(MODAL_NONE);
   };
 
   const deselectBoth      = () => {
-    setComposition();
-    setScore();
-  };
-  const onNextButtonClick = () => onCompositionSubmit({ composition: composition, score: score });
-
-  const onSelectFileClick = () => {
-    console.log('fire');
-    setModal(MODAL_SELECT_URL);
+    onSetComposition();
+    onSetScore();
   };
 
   if (loading) return <Box>{t('loading')}</Box>;
@@ -68,25 +61,25 @@ export default function SelectComposition({ onBackButtonClick, onCompositionSubm
 
   return (
     <Container className={classes.root}>
-      <SelectCompositionComponent 
-        composition={composition} 
+      <SelectCompositionComponent
+        composition={composition}
         score={score}
-        onSelectCompositionClick={() => setModal(MODAL_COMP)} 
+        onSelectCompositionClick={() => setModal(MODAL_COMP)}
         onDeselectCompositionClick={deselectBoth}
         onSelectScoreClick={() => setModal(MODAL_SCORE)}
-        onDeselectScoreClick={() => setScore()} 
+        onDeselectScoreClick={() => onSetScore()}
         onBackButtonClick={onBackButtonClick}
-        onNextButtonClick={onNextButtonClick}
+        onNextButtonClick={onCompositionSubmit}
       />
       <Dialog
         className={classes.dialog}
-        open={modal !== MODAL_NONE} 
+        open={modal !== MODAL_NONE}
         onClose={e => setModal(MODAL_NONE)}
         maxWidth="lg"
         fullWidth
       >
         <Box className={classes.dialogBox}>
-          <Typography variant="h2">
+          <Typography variant="h1" className={classes.dialogHeader}>
             {modal === MODAL_COMP && t('select_composition')}
             {modal === MODAL_SCORE && t('select_score')}
           </Typography>
@@ -94,16 +87,16 @@ export default function SelectComposition({ onBackButtonClick, onCompositionSubm
             <CloseIcon />
           </IconButton>
           {modal === MODAL_COMP && (
-            <MultiModalComponent 
+            <MultiModalComponent
               config={searchConfig}
-              onResultClick={node => loadComposition(node)} 
+              onResultClick={node => loadComposition(node)}
             />
           )}
           {modal === MODAL_SCORE && (
-            <SelectScoreModal 
+            <SelectScoreModal
               composition={composition}
-              onSelectFileClick={onSelectFileClick}
-              onLoadScore={node => loadScore(node)} 
+              onSelectFileClick={() => setModal(MODAL_SELECT_URL)}
+              onLoadScore={node => loadScore(node)}
             />
           )}
           {modal === MODAL_SELECT_URL && (
@@ -116,7 +109,7 @@ export default function SelectComposition({ onBackButtonClick, onCompositionSubm
 }
 
 SelectComposition.propTypes = {
-  onBackButtonClick  : PropTypes.func, 
+  onBackButtonClick  : PropTypes.func,
   onCompositionSubmit: PropTypes.func,
   onSelectFileClick  : PropTypes.func,
 };

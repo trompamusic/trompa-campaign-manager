@@ -18,7 +18,7 @@ export default function SelectComposition({ composition, score, onSelectComposit
     <Box className={classes.root}>
       <img className={classes.person} src={images.personWithBass} alt={t('person')} />
       <Container className={classes.main}>
-        <Typography variant="h2">{t('title')}</Typography>
+        <Typography variant="h1" className={classes.header}>{t('title')}</Typography>
         <Box className={classes.part}>
           <Typography variant="body1">{t('start')}</Typography>
           <Box className={classes.inputBox}>
@@ -35,7 +35,7 @@ export default function SelectComposition({ composition, score, onSelectComposit
               </div>
             </div>
           </Box>
-          <Typography variant="body2">{t('note_compositions')}</Typography>
+          <Typography variant="body2" className={classes.subText}>{t('note_compositions')}</Typography>
         </Box>
         <Box className={classes.part}>
           <Typography variant="body1">{t('score')}</Typography>
@@ -48,7 +48,7 @@ export default function SelectComposition({ composition, score, onSelectComposit
                 {score ? (
                   <IconButton onClick={onDeselectScoreClick} size="small"><Cancel /></IconButton>
                 ) : (
-                  <Button variant="contained" color="primary" onClick={onSelectScoreClick}>{t('select')}</Button>
+                  <Button variant="contained" color="primary" onClick={onSelectScoreClick} disabled={!composition}>{t('select')}</Button>
                 )}
               </div>
             </div>

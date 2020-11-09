@@ -22,6 +22,8 @@ export default function CreateCampaign() {
   const { pathname } = useLocation();
 
   const [nickname, setNickname]                    = useState(localStorage.getItem('nickname') || '');
+  const [composition, setComposition]              = useState();
+  const [score, setScore]                          = useState();
   const [campaignMetaData, updateCampaignMetadata] = useState({
     title             : '',
     description       : '',
@@ -55,15 +57,7 @@ export default function CreateCampaign() {
     history.push('/createcampaign/compositionscore');
   };
 
-  const onCompositionSubmit = value => {
-    updateCampaignMetadata({
-      ...campaignMetaData,
-      digitalDocumentId: value.score.identifier,
-      name             : value.score.name,
-    });
-
-    history.push('/createcampaign/campaign');
-  };
+  const onCompositionSubmit = () => history.push('/createcampaign/campaign');
 
   const onCampaignSubmit = async ({ campaignTitle, campaignDeadline, campaignDescription }) => {
     updateCampaignMetadata(() => ({
@@ -111,7 +105,14 @@ export default function CreateCampaign() {
             <CreateCampaignNickname nickname={nickname} onBackButtonClick={onBackButtonClick} onNicknameSubmit={onNicknameSubmit} />
           </Route>
           <Route path="/createcampaign/compositionscore"  exact >
-            <SelectComposition onBackButtonClick={onBackButtonClick} onCompositionSubmit={onCompositionSubmit} onSelectFileClick={() => {}} />
+            <SelectComposition
+              score={score}
+              composition={composition}
+              onSetScore={score => setScore(score)}
+              onSetComposition={composition => setComposition(composition)}
+              onBackButtonClick={onBackButtonClick}
+              onCompositionSubmit={onCompositionSubmit}
+            />
           </Route>
           <Route path="/createcampaign/campaign" exact >
             <CreateCampaignSetup

@@ -6,16 +6,40 @@ export default ({ spacing, palette, shape, breakpoints, typography }) => createS
     flexDirection: 'row',
   },
   main: {
+    [breakpoints.down('sm')]: {
+      width: '95%',
+    },
+    width         : '45vw',
     display       : 'flex',
     flexDirection : 'column',
     justifyContent: 'center',
     alignItems    : 'center',
-    width         : '45vw',
+  },
+  header: {
+    [breakpoints.down('sm')]: {
+      fontSize: typography.pxToRem(28),
+    },
+    fontSize     : typography.pxToRem(37),
+    padding      : `0px ${spacing(2)}px`,
+    marginBottom : spacing(3),
+    textAlign    : 'center',
+    letterSpacing: 0.25,
+    color        : palette.text.darkPurple,
+  },
+  textfield: {
+    '& input': {
+      padding: spacing(2),
+    },
   },
   formNav: {
     display       : 'flex',
     width         : '100%',
     justifyContent: 'flex-end',
+  },
+  subText: {
+    fontSize  : typography.pxToRem(12),
+    paddingTop: spacing(1),
+    color     : palette.text.lightBlack,
   },
   person: {
     [breakpoints.down('sm')]: {

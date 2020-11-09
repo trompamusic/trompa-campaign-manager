@@ -2,23 +2,23 @@
 
 exports[`<SelectComposition /> renders and matches snapshot 1`] = `
 <div
-  class="MuiBox-root MuiBox-root-11 makeStyles-root-1"
+  class="MuiBox-root MuiBox-root-14 makeStyles-root-1"
 >
   <img
     alt="person"
-    class="makeStyles-person-4"
+    class="makeStyles-person-7"
     src="personWithBass.png"
   />
   <div
     class="MuiContainer-root makeStyles-main-2 MuiContainer-maxWidthLg"
   >
-    <h2
-      class="MuiTypography-root MuiTypography-h2"
+    <h1
+      class="MuiTypography-root makeStyles-header-3 MuiTypography-h1"
     >
       Composition & Score
-    </h2>
+    </h1>
     <div
-      class="MuiBox-root MuiBox-root-50 makeStyles-part-5"
+      class="MuiBox-root MuiBox-root-53 makeStyles-part-8"
     >
       <p
         class="MuiTypography-root MuiTypography-body1"
@@ -26,13 +26,13 @@ exports[`<SelectComposition /> renders and matches snapshot 1`] = `
         Let's start with the composition
       </p>
       <div
-        class="MuiBox-root MuiBox-root-51 makeStyles-inputBox-6"
+        class="MuiBox-root MuiBox-root-54 makeStyles-inputBox-9"
       >
         <div
-          class="makeStyles-selectInput-7"
+          class="makeStyles-selectInput-10"
         >
           <p
-            class="MuiTypography-root makeStyles-selectInputText-8 makeStyles-selectInputTextNoValue-9 MuiTypography-body1 MuiTypography-noWrap"
+            class="MuiTypography-root makeStyles-selectInputText-11 makeStyles-selectInputTextNoValue-12 MuiTypography-body1 MuiTypography-noWrap"
           >
             Music Composition
           </p>
@@ -55,13 +55,13 @@ exports[`<SelectComposition /> renders and matches snapshot 1`] = `
         </div>
       </div>
       <p
-        class="MuiTypography-root MuiTypography-body2"
+        class="MuiTypography-root makeStyles-subText-6 MuiTypography-body2"
       >
         In Trompa we support a wide range of compositions
       </p>
     </div>
     <div
-      class="MuiBox-root MuiBox-root-84 makeStyles-part-5"
+      class="MuiBox-root MuiBox-root-87 makeStyles-part-8"
     >
       <p
         class="MuiTypography-root MuiTypography-body1"
@@ -69,20 +69,21 @@ exports[`<SelectComposition /> renders and matches snapshot 1`] = `
         Score
       </p>
       <div
-        class="MuiBox-root MuiBox-root-85 makeStyles-inputBox-6"
+        class="MuiBox-root MuiBox-root-88 makeStyles-inputBox-9"
       >
         <div
-          class="makeStyles-selectInput-7"
+          class="makeStyles-selectInput-10"
         >
           <p
-            class="MuiTypography-root makeStyles-selectInputText-8 makeStyles-selectInputTextNoValue-9 MuiTypography-body1 MuiTypography-noWrap"
+            class="MuiTypography-root makeStyles-selectInputText-11 makeStyles-selectInputTextNoValue-12 MuiTypography-body1 MuiTypography-noWrap"
           >
             Score
           </p>
           <div>
             <button
-              class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
-              tabindex="0"
+              class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary Mui-disabled Mui-disabled"
+              disabled=""
+              tabindex="-1"
               type="button"
             >
               <span
@@ -90,16 +91,13 @@ exports[`<SelectComposition /> renders and matches snapshot 1`] = `
               >
                 Select
               </span>
-              <span
-                class="MuiTouchRipple-root"
-              />
             </button>
           </div>
         </div>
       </div>
     </div>
     <div
-      class="MuiBox-root MuiBox-root-86 makeStyles-formNav-3"
+      class="MuiBox-root MuiBox-root-89 makeStyles-formNav-5"
     >
       <button
         class="MuiButtonBase-root MuiButton-root MuiButton-text"
@@ -131,7 +129,7 @@ exports[`<SelectComposition /> renders and matches snapshot 1`] = `
   </div>
   <img
     alt="person"
-    class="makeStyles-person-4"
+    class="makeStyles-person-7"
     src="personTrumpetStandingRight.png"
   />
 </div>

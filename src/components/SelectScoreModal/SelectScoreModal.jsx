@@ -22,6 +22,7 @@ export default function SelectScoreModal({ composition, onLoadScore, onSelectFil
           <SelectScoreItem 
             key={item.identifier}
             item={item} 
+            key={item.identifier}
             isActiveCampaign={false}
             progress={60}
             onItemClick={() => onLoadScore(item)}
