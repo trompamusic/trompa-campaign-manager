@@ -14,7 +14,9 @@ export default function NotFound () {
   const { t }   = useTranslation('not_found');
   const classes = useStyles();
 
-  useEffect(() => setPrerenderReady(true), []);
+  useEffect(() => {
+    setPrerenderReady(true);
+  }, []);
 
   return (
     <div>

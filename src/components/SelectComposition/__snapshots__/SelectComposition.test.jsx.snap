@@ -2,23 +2,23 @@
 
 exports[`<SelectComposition /> renders and matches snapshot 1`] = `
 <div
-  class="MuiBox-root MuiBox-root-8 makeStyles-root-1"
+  class="MuiBox-root MuiBox-root-14 makeStyles-root-1"
 >
   <img
     alt="person"
-    class="makeStyles-person-4"
+    class="makeStyles-person-7"
     src="personWithBass.png"
   />
   <div
     class="MuiContainer-root makeStyles-main-2 MuiContainer-maxWidthLg"
   >
-    <h2
-      class="MuiTypography-root MuiTypography-h2"
+    <h1
+      class="MuiTypography-root makeStyles-header-3 MuiTypography-h1"
     >
       Composition & Score
-    </h2>
+    </h1>
     <div
-      class="MuiBox-root MuiBox-root-47 makeStyles-part-5"
+      class="MuiBox-root MuiBox-root-53 makeStyles-part-8"
     >
       <p
         class="MuiTypography-root MuiTypography-body1"
@@ -26,51 +26,42 @@ exports[`<SelectComposition /> renders and matches snapshot 1`] = `
         Let's start with the composition
       </p>
       <div
-        class="MuiBox-root MuiBox-root-48 makeStyles-inputBox-6"
+        class="MuiBox-root MuiBox-root-54 makeStyles-inputBox-9"
       >
         <div
-          class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+          class="makeStyles-selectInput-10"
         >
-          <div
-            class="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline Mui-disabled Mui-disabled MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiFilledInput-adornedEnd"
+          <p
+            class="MuiTypography-root makeStyles-selectInputText-11 makeStyles-selectInputTextNoValue-12 MuiTypography-body1 MuiTypography-noWrap"
           >
-            <input
-              aria-invalid="false"
-              class="MuiInputBase-input MuiFilledInput-input Mui-disabled Mui-disabled MuiInputBase-inputAdornedEnd MuiFilledInput-inputAdornedEnd"
-              disabled=""
-              placeholder="Music Composition"
-              type="text"
-              value=""
-            />
-            <div
-              class="MuiInputAdornment-root MuiInputAdornment-filled MuiInputAdornment-positionEnd"
+            Music Composition
+          </p>
+          <div>
+            <button
+              class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+              tabindex="0"
+              type="button"
             >
-              <button
-                class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
-                tabindex="0"
-                type="button"
+              <span
+                class="MuiButton-label"
               >
-                <span
-                  class="MuiButton-label"
-                >
-                  Select
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </button>
-            </div>
+                Select
+              </span>
+              <span
+                class="MuiTouchRipple-root"
+              />
+            </button>
           </div>
         </div>
       </div>
       <p
-        class="MuiTypography-root MuiTypography-body2"
+        class="MuiTypography-root makeStyles-subText-6 MuiTypography-body2"
       >
         In Trompa we support a wide range of compositions
       </p>
     </div>
     <div
-      class="MuiBox-root MuiBox-root-127 makeStyles-part-5"
+      class="MuiBox-root MuiBox-root-87 makeStyles-part-8"
     >
       <p
         class="MuiTypography-root MuiTypography-body1"
@@ -78,44 +69,35 @@ exports[`<SelectComposition /> renders and matches snapshot 1`] = `
         Score
       </p>
       <div
-        class="MuiBox-root MuiBox-root-128 makeStyles-inputBox-6"
+        class="MuiBox-root MuiBox-root-88 makeStyles-inputBox-9"
       >
         <div
-          class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+          class="makeStyles-selectInput-10"
         >
-          <div
-            class="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline Mui-disabled Mui-disabled MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiFilledInput-adornedEnd"
+          <p
+            class="MuiTypography-root makeStyles-selectInputText-11 makeStyles-selectInputTextNoValue-12 MuiTypography-body1 MuiTypography-noWrap"
           >
-            <input
-              aria-invalid="false"
-              class="MuiInputBase-input MuiFilledInput-input Mui-disabled Mui-disabled MuiInputBase-inputAdornedEnd MuiFilledInput-inputAdornedEnd"
+            Score
+          </p>
+          <div>
+            <button
+              class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary Mui-disabled Mui-disabled"
               disabled=""
-              placeholder="Score"
-              type="text"
-              value="Score"
-            />
-            <div
-              class="MuiInputAdornment-root MuiInputAdornment-filled MuiInputAdornment-positionEnd"
+              tabindex="-1"
+              type="button"
             >
-              <button
-                class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary Mui-disabled Mui-disabled"
-                disabled=""
-                tabindex="-1"
-                type="button"
+              <span
+                class="MuiButton-label"
               >
-                <span
-                  class="MuiButton-label"
-                >
-                  Select
-                </span>
-              </button>
-            </div>
+                Select
+              </span>
+            </button>
           </div>
         </div>
       </div>
     </div>
     <div
-      class="MuiBox-root MuiBox-root-129 makeStyles-formNav-3"
+      class="MuiBox-root MuiBox-root-89 makeStyles-formNav-5"
     >
       <button
         class="MuiButtonBase-root MuiButton-root MuiButton-text"
@@ -147,7 +129,7 @@ exports[`<SelectComposition /> renders and matches snapshot 1`] = `
   </div>
   <img
     alt="person"
-    class="makeStyles-person-4"
+    class="makeStyles-person-7"
     src="personTrumpetStandingRight.png"
   />
 </div>

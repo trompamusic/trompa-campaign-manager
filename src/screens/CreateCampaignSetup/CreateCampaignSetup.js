@@ -1,12 +1,11 @@
 import React from 'react';
 import * as PropTypes from 'prop-types';
-import moment from 'moment';
 import CreateCampaignSetupComponent from '../../components/CreateCampaignSetup';
 
 export default function CreateCampaignSetup({
   campaignTitle = '',
   campaignDescription = '',
-  campaignDeadline = moment().hours(17).minute(0).add(2, 'months'),
+  campaignDeadline,
   onBackButtonClick,
   onCampaignMetaSubmit,
 }) {
@@ -20,7 +19,7 @@ export default function CreateCampaignSetup({
 CreateCampaignSetup.propTypes = {
   campaignTitle       : PropTypes.string,
   campaignDescription : PropTypes.string,
-  campaignDeadline    : PropTypes.string,
+  campaignDeadline    : PropTypes.object,
   onBackButtonClick   : PropTypes.func,
   onCampaignMetaSubmit: PropTypes.func,
 };

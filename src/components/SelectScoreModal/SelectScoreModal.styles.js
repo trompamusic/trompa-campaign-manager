@@ -7,7 +7,7 @@ export default ({ spacing, palette, shape, breakpoints, typography }) => createS
     border        : `2px dashed ${palette.primary.main}`,
     marginBottom  : spacing(2),
     marginTop     : spacing(2),
-    padding       : spacing(1),
+    padding       : spacing(3),
     display       : 'flex',
     flexDirection : 'column',
     justifyContent: 'center',

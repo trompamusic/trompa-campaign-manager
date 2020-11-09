@@ -1,6 +1,6 @@
 import { createStyles } from '@material-ui/styles';
 
-export default ({ spacing, palette }) => createStyles({
+export default ({ spacing, palette, breakpoints, typography }) => createStyles({
   root: {
     width  : '100vw',
     height : '100%',
@@ -8,6 +8,17 @@ export default ({ spacing, palette }) => createStyles({
   },
   dialog: {
     backgroundColor: palette.background.primary,
+  },
+  dialogHeader: {
+    [breakpoints.down('sm')]: {
+      fontSize: typography.pxToRem(28),
+    },
+    fontSize     : typography.pxToRem(37),
+    padding      : `0px ${spacing(2)}px`,
+    marginBottom : spacing(3),
+    textAlign    : 'center',
+    letterSpacing: 0.25,
+    color        : palette.text.darkPurple,
   },
   dialogBox: {
     display       : 'flex',

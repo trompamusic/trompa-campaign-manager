@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Switch, Route, useHistory, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
+import moment from 'moment';
 import NicknameMenuContainer from '../../containers/NicknameMenuContainer/NicknameMenuContainer';
 import CreateCampaignNickname from '../CreateCampaignNickname/CreateCampaignNickname';
 import CreateCampaignSetup from '../CreateCampaignSetup/CreateCampaignSetup';
@@ -21,11 +22,13 @@ export default function CreateCampaign() {
   const { pathname } = useLocation();
 
   const [nickname, setNickname]                    = useState(localStorage.getItem('nickname') || '');
+  const [composition, setComposition]              = useState();
+  const [score, setScore]                          = useState();
   const [campaignMetaData, updateCampaignMetadata] = useState({
     title             : '',
     description       : '',
     name              : '',
-    deadline          : '',
+    deadline          : moment().hours(17).minute(0).add(2, 'months'),
     url               : '',
     digitalDocumentRef: '',
   });
@@ -44,7 +47,7 @@ export default function CreateCampaign() {
 
   const Steps = [t('composition_score'),t('campaign')];
 
-  const onBackButtonClick = () => history.goBack();
+  const onBackButtonClick = () => history.replace('/');
 
   const onNicknameSubmit = givenNickname => {
     // save user to local storage
@@ -54,15 +57,7 @@ export default function CreateCampaign() {
     history.push('/createcampaign/compositionscore');
   };
 
-  const onCompositionSubmit = value => {
-    updateCampaignMetadata({
-      ...campaignMetaData,
-      digitalDocumentId: value.score.identifier,
-      name             : value.score.name,
-    });
-
-    history.push('/createcampaign/campaign');
-  };
+  const onCompositionSubmit = () => history.push('/createcampaign/campaign');
 
   const onCampaignSubmit = async ({ campaignTitle, campaignDeadline, campaignDescription }) => {
     updateCampaignMetadata(() => ({
@@ -87,7 +82,7 @@ export default function CreateCampaign() {
       console.log(error);
     }
   };
-  
+
   return (
     <div>
       <Helmet>
@@ -109,13 +104,20 @@ export default function CreateCampaign() {
             <CreateCampaignNickname nickname={nickname} onBackButtonClick={onBackButtonClick} onNicknameSubmit={onNicknameSubmit} />
           </Route>
           <Route path="/createcampaign/compositionscore"  exact >
-            <SelectComposition onBackButtonClick={onBackButtonClick} onCompositionSubmit={onCompositionSubmit} onSelectFileClick={() => {}} />
-          </Route> 
+            <SelectComposition
+              score={score}
+              composition={composition}
+              onSetScore={score => setScore(score)}
+              onSetComposition={composition => setComposition(composition)}
+              onBackButtonClick={onBackButtonClick}
+              onCompositionSubmit={onCompositionSubmit}
+            />
+          </Route>
           <Route path="/createcampaign/campaign" exact >
-            <CreateCampaignSetup 
-              campaignTitle={campaignMetaData.title} 
-              campaignDescription={campaignMetaData.description} 
-              campaignDeadline={campaignMetaData.deadline} 
+            <CreateCampaignSetup
+              campaignTitle={campaignMetaData.title}
+              campaignDescription={campaignMetaData.description}
+              campaignDeadline={campaignMetaData.deadline}
               onCampaignMetaSubmit={onCampaignSubmit}
               onBackButtonClick={onBackButtonClick}
             />
