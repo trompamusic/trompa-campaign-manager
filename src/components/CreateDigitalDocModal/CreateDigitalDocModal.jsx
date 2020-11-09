@@ -8,26 +8,26 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import Typography from '@material-ui/core/Typography/Typography';
 import CancelIcon from '@material-ui/icons/Cancel';
-import IconButton from "@material-ui/core/IconButton";
-import InputAdornment from "@material-ui/core/InputAdornment";
+import IconButton from '@material-ui/core/IconButton';
+import InputAdornment from '@material-ui/core/InputAdornment';
 import Input from '../Input/Input';
 import Form from '../Form/Form';
 import styles from './CreateDigitalDocModal.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function CreateDigitalDocModal ({ initialFormValues, onFormSubmit }) {
+export default function CreateDigitalDocModal({ initialFormValues, onFormSubmit }) {
   const { t }   = useTranslation('startCampaign');
   const classes = useStyles();
 
   const licenses  = [{ label: 'Public', value: 'https://www0.cpdl.org/wiki/index.php/ChoralWiki:CPDL' }];
-  const languages = ['en'];
+  const languages = [{ label: 'English', value: 'en' }];
 
   return (
     <div className={classes.root}>
-      <DialogTitle className={classes.title} disableTypography >
+      <DialogTitle className={classes.title} disableTypography>
         <Typography className={classes.header} variant="h1">
-          {t('create_digitial_doc.select_own_file')}
+          {t('create_digital_doc.select_own_file')}
         </Typography>
       </DialogTitle>
       <Form onSubmit={onFormSubmit} initialValues={{ ...initialFormValues }}>
@@ -35,40 +35,41 @@ export default function CreateDigitalDocModal ({ initialFormValues, onFormSubmit
           <form className={classes.container} onSubmit={handleSubmit}>
             <DialogContent>
               <Input
-                label={t('create_digitial_doc.score')}
+                label={t('create_digital_doc.score')}
                 name="url"
                 value={values.url}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                placeholder={t('url_example')}
+                placeholder={t('create_digital_doc.url_example')}
                 type="url"
-                endAdornment={
+                endAdornment={values.url?.length > 0 && (
                   <InputAdornment position="end">
-                    <IconButton onClick={() => setFieldValue('url',"")}>
+                    <IconButton onClick={() => setFieldValue('url', '')}>
                       <CancelIcon />
                     </IconButton>
-                  </InputAdornment>               
-                }
+                  </InputAdornment>
+                )}
                 required
               />
               <Input
-                label={t('create_digitial_doc.thumbnail')}
+                label={t('create_digital_doc.thumbnail')}
                 value={values.thumbnailUrl}
                 name="thumbnailUrl"
                 onChange={handleChange}
                 onBlur={handleBlur}
-                placeholder={t('url_example')}
-                endAdornment={
+                placeholder={t('create_digital_doc.url_example')}
+                endAdornment={values.thumbnailUrl?.length > 0 && (
                   <InputAdornment position="end">
-                    <IconButton onClick={() => setFieldValue('thumbnailUrl',"")}>
+                    <IconButton onClick={() => setFieldValue('thumbnailUrl', '')}>
                       <CancelIcon />
                     </IconButton>
-                  </InputAdornment>               
-                }
+                  </InputAdornment>
+                )}
                 required
               />
               <Input
-                label={t('create_digitial_doc.score_title')}
+                label={t('create_digital_doc.score_title')}
+                placeholder={t('create_digital_doc.score_title')}
                 name="title"
                 value={values.title}
                 onChange={handleChange}
@@ -76,28 +77,29 @@ export default function CreateDigitalDocModal ({ initialFormValues, onFormSubmit
                 required
               />
               <Input
-                label={t('create_digitial_doc.editor')}
+                label={t('create_digital_doc.editor')}
+                placeholder={t('create_digital_doc.editor')}
                 name="creator"
                 value={values.creator}
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
-            
-              {/* 
+
+              {/*
               TEMP: for now not necessary
               <Input
-                label={t('create_digitial_doc.publisher')}
+                label={t('create_digital_doc.publisher')}
                 value={values.campaignTitle}
                 onChange={handleChange}
                 onBlur={handleBlur}
               /> */}
               <Input
-                label={t('create_digitial_doc.copyright')}
+                label={t('create_digital_doc.copyright')}
+                placeholder={t('create_digital_doc.copyright')}
                 value={values.license}
                 name="license"
                 onChange={handleChange}
                 onBlur={handleBlur}
-                required
                 select
               >
                 {licenses.map(option => (
@@ -107,28 +109,28 @@ export default function CreateDigitalDocModal ({ initialFormValues, onFormSubmit
                 ))}
               </Input>
               <Input
-                label={t('create_digitial_doc.language')}
+                label={t('create_digital_doc.language')}
+                placeholder={t('create_digital_doc.language')}
                 name="language"
                 value={values.language}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                required
                 select
               >
-                {languages.map(option => (
-                  <MenuItem key={option} value={option}>
-                    {option}
+                {languages.map(({ value, label }) => (
+                  <MenuItem key={value} value={value}>
+                    {label}
                   </MenuItem>
                 ))}
               </Input>
               <Input
-                label={t('create_digitial_doc.notes')}
+                label={t('create_digital_doc.notes')}
+                placeholder={t('create_digital_doc.notes')}
                 value={values.description}
                 name="description"
                 onChange={handleChange}
                 onBlur={handleBlur}
                 rows={3}
-                required
                 multiline
               />
 
@@ -140,7 +142,7 @@ export default function CreateDigitalDocModal ({ initialFormValues, onFormSubmit
                   variant="contained"
                   color="primary"
                 >
-                  {t('create_digitial_doc.upload')}
+                  {t('create_digital_doc.upload')}
                 </Button>
               </div>
             </DialogActions>

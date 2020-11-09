@@ -19,10 +19,9 @@ export default function SelectScoreModal({ composition, onLoadScore, onSelectFil
       <Box>
         {composition?.workExample?.map(item => (
           // TODO: use isActiveCampaign & progress from CE data (once available)
-          <SelectScoreItem 
+          <SelectScoreItem
             key={item.identifier}
-            item={item} 
-            key={item.identifier}
+            item={item}
             isActiveCampaign={false}
             progress={60}
             onItemClick={() => onLoadScore(item)}
@@ -31,11 +30,11 @@ export default function SelectScoreModal({ composition, onLoadScore, onSelectFil
         <Card className={classes.uploadCard} elevation={0}>
           <Typography variant="h3" className={classes.uploadCardText}>{t('cant_find')}</Typography>
           <Typography variant="body1" className={classes.uploadCardText}>{t('use_link')}</Typography>
-          <Button 
-            variant="contained" 
-            color="primary" 
+          <Button
+            variant="contained"
+            color="primary"
             className={classes.uploadCardButton}
-            aria-label={t('share_link')} 
+            aria-label={t('share_link')}
             onClick={onSelectFileClick}
           >
             <UploadIcon className={classes.icon} />

@@ -25,51 +25,34 @@ exports[`<CreateDigitalDocModal /> renders and matches snapshot 1`] = `
         <p
           class="MuiTypography-root MuiTypography-body1"
         >
-          Score
+          Score URL
         </p>
         <div
           class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
         >
+          <label
+            class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled Mui-required Mui-required"
+            data-shrink="false"
+          >
+            https://...
+            <span
+              class="MuiFormLabel-asterisk MuiInputLabel-asterisk"
+            >
+               
+              *
+            </span>
+          </label>
           <div
-            class="MuiInputBase-root MuiFilledInput-root MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiFilledInput-adornedEnd"
+            class="MuiInputBase-root MuiFilledInput-root MuiInputBase-fullWidth MuiInputBase-formControl"
           >
             <input
               aria-invalid="false"
-              class="MuiInputBase-input MuiFilledInput-input MuiInputBase-inputAdornedEnd MuiFilledInput-inputAdornedEnd"
+              class="MuiInputBase-input MuiFilledInput-input"
               name="url"
-              placeholder="https://example.com"
               required=""
               type="url"
               value=""
             />
-            <div
-              class="MuiInputAdornment-root MuiInputAdornment-filled MuiInputAdornment-positionEnd"
-            >
-              <button
-                class="MuiButtonBase-root MuiIconButton-root"
-                tabindex="0"
-                type="button"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root"
-                    focusable="false"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </button>
-            </div>
           </div>
         </div>
       </div>
@@ -79,51 +62,34 @@ exports[`<CreateDigitalDocModal /> renders and matches snapshot 1`] = `
         <p
           class="MuiTypography-root MuiTypography-body1"
         >
-          Thumbnail
+          Thumbnail URL
         </p>
         <div
           class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
         >
+          <label
+            class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled Mui-required Mui-required"
+            data-shrink="false"
+          >
+            https://...
+            <span
+              class="MuiFormLabel-asterisk MuiInputLabel-asterisk"
+            >
+               
+              *
+            </span>
+          </label>
           <div
-            class="MuiInputBase-root MuiFilledInput-root MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiFilledInput-adornedEnd"
+            class="MuiInputBase-root MuiFilledInput-root MuiInputBase-fullWidth MuiInputBase-formControl"
           >
             <input
               aria-invalid="false"
-              class="MuiInputBase-input MuiFilledInput-input MuiInputBase-inputAdornedEnd MuiFilledInput-inputAdornedEnd"
+              class="MuiInputBase-input MuiFilledInput-input"
               name="thumbnailUrl"
-              placeholder="https://example.com"
               required=""
               type="text"
               value=""
             />
-            <div
-              class="MuiInputAdornment-root MuiInputAdornment-filled MuiInputAdornment-positionEnd"
-            >
-              <button
-                class="MuiButtonBase-root MuiIconButton-root"
-                tabindex="0"
-                type="button"
-              >
-                <span
-                  class="MuiIconButton-label"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="MuiSvgIcon-root"
-                    focusable="false"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </button>
-            </div>
           </div>
         </div>
       </div>
@@ -138,6 +104,18 @@ exports[`<CreateDigitalDocModal /> renders and matches snapshot 1`] = `
         <div
           class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
         >
+          <label
+            class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled Mui-required Mui-required"
+            data-shrink="false"
+          >
+            Score title
+            <span
+              class="MuiFormLabel-asterisk MuiInputLabel-asterisk"
+            >
+               
+              *
+            </span>
+          </label>
           <div
             class="MuiInputBase-root MuiFilledInput-root MuiInputBase-fullWidth MuiInputBase-formControl"
           >
@@ -163,6 +141,12 @@ exports[`<CreateDigitalDocModal /> renders and matches snapshot 1`] = `
         <div
           class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
         >
+          <label
+            class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
+            data-shrink="false"
+          >
+            Editor
+          </label>
           <div
             class="MuiInputBase-root MuiFilledInput-root MuiInputBase-fullWidth MuiInputBase-formControl"
           >
@@ -187,6 +171,12 @@ exports[`<CreateDigitalDocModal /> renders and matches snapshot 1`] = `
         <div
           class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
         >
+          <label
+            class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
+            data-shrink="false"
+          >
+            Copyright license
+          </label>
           <div
             class="MuiInputBase-root MuiFilledInput-root MuiInputBase-fullWidth MuiInputBase-formControl"
           >
@@ -232,6 +222,12 @@ exports[`<CreateDigitalDocModal /> renders and matches snapshot 1`] = `
         <div
           class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
         >
+          <label
+            class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
+            data-shrink="false"
+          >
+            Language
+          </label>
           <div
             class="MuiInputBase-root MuiFilledInput-root MuiInputBase-fullWidth MuiInputBase-formControl"
           >
@@ -277,6 +273,12 @@ exports[`<CreateDigitalDocModal /> renders and matches snapshot 1`] = `
         <div
           class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
         >
+          <label
+            class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
+            data-shrink="false"
+          >
+            Miscellaneous Notes
+          </label>
           <div
             class="MuiInputBase-root MuiFilledInput-root MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-multiline MuiFilledInput-multiline"
           >
@@ -284,7 +286,6 @@ exports[`<CreateDigitalDocModal /> renders and matches snapshot 1`] = `
               aria-invalid="false"
               class="MuiInputBase-input MuiFilledInput-input MuiInputBase-inputMultiline MuiFilledInput-inputMultiline"
               name="description"
-              required=""
               rows="3"
             />
           </div>

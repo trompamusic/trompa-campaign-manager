@@ -1,15 +1,15 @@
-import { Box, makeStyles } from "@material-ui/core";
-import React, { useState, useEffect } from "react";
-import { Switch, Route, useHistory, useLocation } from "react-router-dom";
-import { Helmet } from "react-helmet";
-import { useTranslation } from "react-i18next";
+import { Box, makeStyles } from '@material-ui/core';
+import React, { useState, useEffect } from 'react';
+import { Switch, Route, useHistory, useLocation } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
+import { useTranslation } from 'react-i18next';
 import moment from 'moment';
 import NicknameMenuContainer from '../../containers/NicknameMenuContainer/NicknameMenuContainer';
 import CreateCampaignNickname from '../CreateCampaignNickname/CreateCampaignNickname';
 import CreateCampaignSetup from '../CreateCampaignSetup/CreateCampaignSetup';
 import SelectComposition from '../SelectComposition/SelectComposition';
-import AppbarTop from "../../components/AppbarTop/AppbarTop";
-import ProgressStepper from "../../components/ProgressStepper/ProgressStepper";
+import AppbarTop from '../../components/AppbarTop/AppbarTop';
+import ProgressStepper from '../../components/ProgressStepper/ProgressStepper';
 import { createCampaign } from '../../services/api.service';
 import styles from './CreateCampaign.styles';
 
@@ -25,12 +25,10 @@ export default function CreateCampaign() {
   const [composition, setComposition]              = useState();
   const [score, setScore]                          = useState();
   const [campaignMetaData, updateCampaignMetadata] = useState({
-    title             : '',
-    description       : '',
-    name              : '',
-    deadline          : moment().hours(17).minute(0).add(2, 'months'),
-    url               : '',
-    digitalDocumentRef: '',
+    title      : '',
+    description: '',
+    deadline   : moment().hours(17).minute(0).add(2, 'months'),
+    url        : '',
   });
 
   useEffect(() => {
@@ -39,13 +37,13 @@ export default function CreateCampaign() {
     } else {
       history.replace('/createcampaign/compositionscore');
     }
-  },[history, nickname]);
+  }, [history, nickname]);
 
   const getCurrentStep = () => {
     return pathname === '/createcampaign/compositionscore' ? 0 : 1;
   };
 
-  const Steps = [t('composition_score'),t('campaign')];
+  const Steps = [t('composition_score'), t('campaign')];
 
   const onBackButtonClick = () => history.replace('/');
 
@@ -60,25 +58,27 @@ export default function CreateCampaign() {
   const onCompositionSubmit = () => history.push('/createcampaign/campaign');
 
   const onCampaignSubmit = async ({ campaignTitle, campaignDeadline, campaignDescription }) => {
-    updateCampaignMetadata(() => ({
-      ...campaignMetaData,
+    updateCampaignMetadata(metadata => ({
+      ...metadata,
       title      : campaignTitle,
       description: campaignDescription,
       deadline   : campaignDeadline,
     }));
 
-    const {
-      digitalDocumentId,
-    } = campaignMetaData;
+    const digitalDocumentId = score.identifier;
 
     try {
-      const { ok, data: { data } } = await createCampaign({ name: campaignTitle, title: campaignTitle, description: campaignDescription, digitalDocumentId });
+      const { ok, data: { data } } = await createCampaign({
+        name       : campaignTitle,
+        title      : campaignTitle,
+        description: campaignDescription,
+        digitalDocumentId,
+      });
 
       if (ok && data?.identifier) {
         history.push(`/campaign/${data.identifier}?created`);
       }
-    }
-    catch(error) {
+    } catch (error) {
       console.log(error);
     }
   };
@@ -97,13 +97,17 @@ export default function CreateCampaign() {
       >
         <NicknameMenuContainer logoutPath={'/createcampaign/nickname'} />
       </AppbarTop>
-      {(pathname !== '/createcampaign/nickname' ) && <ProgressStepper activeStep={getCurrentStep()} steps={Steps} />}
+      {(pathname !== '/createcampaign/nickname') && <ProgressStepper activeStep={getCurrentStep()} steps={Steps} />}
       <Box className={classes.main}>
         <Switch>
-          <Route path="/createcampaign/nickname"exact >
-            <CreateCampaignNickname nickname={nickname} onBackButtonClick={onBackButtonClick} onNicknameSubmit={onNicknameSubmit} />
+          <Route path="/createcampaign/nickname" exact>
+            <CreateCampaignNickname
+              nickname={nickname}
+              onBackButtonClick={onBackButtonClick}
+              onNicknameSubmit={onNicknameSubmit}
+            />
           </Route>
-          <Route path="/createcampaign/compositionscore"  exact >
+          <Route path="/createcampaign/compositionscore" exact>
             <SelectComposition
               score={score}
               composition={composition}
@@ -113,7 +117,7 @@ export default function CreateCampaign() {
               onCompositionSubmit={onCompositionSubmit}
             />
           </Route>
-          <Route path="/createcampaign/campaign" exact >
+          <Route path="/createcampaign/campaign" exact>
             <CreateCampaignSetup
               campaignTitle={campaignMetaData.title}
               campaignDescription={campaignMetaData.description}

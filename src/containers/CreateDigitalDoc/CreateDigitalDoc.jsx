@@ -4,13 +4,13 @@ import { createDigitalDoc } from '../../services/api.service';
 
 export default function CreateDigitalDoc({ musicCompositionId, onDigitalDocCreated }) {
   const digitalDocumentInitialValues = {
-    title       : "",
-    creator     : "",
-    language    : "",
-    url         : "",
-    license     : "",
-    thumbnailUrl: "",
-    description : "",
+    title       : '',
+    creator     : '',
+    language    : 'en',
+    url         : '',
+    license     : 'https://www0.cpdl.org/wiki/index.php/ChoralWiki:CPDL',
+    thumbnailUrl: '',
+    description : '',
   };
 
   console.log(musicCompositionId);
@@ -19,22 +19,22 @@ export default function CreateDigitalDoc({ musicCompositionId, onDigitalDocCreat
     const digitalDocumentData = {
       name    : title,
       relation: url,
-      source  : url,    
+      source  : url,
       image   : thumbnailUrl,
-      title       ,
+      license,
+      language,
+      title,
       url,
-      creator  ,
-      language    ,
-      license     ,
+      creator,
       thumbnailUrl,
-      description ,
+      description,
     };
 
     try {
       const { ok, data: { data } } = await createDigitalDoc(musicCompositionId, digitalDocumentData);
 
-      if(ok) {
-        return onDigitalDocCreated({ identifier: data.identifier,...digitalDocumentData });
+      if (ok) {
+        return onDigitalDocCreated({ identifier: data.identifier, ...digitalDocumentData });
       }
     } catch (error) {
       console.log(error);
@@ -42,7 +42,7 @@ export default function CreateDigitalDoc({ musicCompositionId, onDigitalDocCreat
   };
 
   return (
-    <CreateDigitalDocModal  initialFormValues={digitalDocumentInitialValues} onFormSubmit={onFormSubmit} />
+    <CreateDigitalDocModal initialFormValues={digitalDocumentInitialValues} onFormSubmit={onFormSubmit} />
   );
 }
 

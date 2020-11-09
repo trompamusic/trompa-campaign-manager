@@ -7,7 +7,7 @@ import styles from './Input.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function Input ({ handleChange, handleBlur, value, label, name, endAdornment, children, ...rest }) {
+export default function Input ({ value, label, name, endAdornment, children, placeholder, ...rest }) {
   const classes = useStyles();
 
   return (
@@ -16,10 +16,9 @@ export default function Input ({ handleChange, handleBlur, value, label, name, e
         {label}
       </Typography>
       <TextField
-        onChange={handleChange}
-        onBlur={handleBlur}
         name={name}
         value={value}
+        label={placeholder}
         variant="filled"
         InputProps={{
           disableUnderline: true,
@@ -34,8 +33,6 @@ export default function Input ({ handleChange, handleBlur, value, label, name, e
 }
 
 Input.propTypes = {
-  handleBlur  : PropTypes.func,
-  handleChange: PropTypes.func.isRequired,
-  value       : (PropTypes.number || PropTypes.string).isRequired,
-  label       : PropTypes.string,
+  value: (PropTypes.number || PropTypes.string).isRequired,
+  label: PropTypes.string,
 };

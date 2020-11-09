@@ -26,9 +26,6 @@ export default ({ spacing, breakpoints, typography, palette }) => createStyles({
     position: 'relative',
     margin  : '0 auto',
     width   : '100%',
-    '& p'   : {
-      paddingTop: spacing(3),
-    },
   },
   buttons: {
     marginRight: spacing(2),
