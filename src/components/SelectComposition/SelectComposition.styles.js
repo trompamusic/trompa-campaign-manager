@@ -45,14 +45,7 @@ export default ({ spacing, palette, shape, breakpoints, typography }) => createS
     [breakpoints.down('sm')]: {
       display: 'none',
     },
-    '&:first-child': {
-      height: '54vh',
-      margin: `0px 24px -56px 24px`,
-    },
-    '&:last-child': {
-      margin: `0px 24px -56px 24px`,
-    },
-    height: '59vh',
+    height: '50vh',
   },
   part: {
     width  : '100%',
@@ -62,5 +55,20 @@ export default ({ spacing, palette, shape, breakpoints, typography }) => createS
     display      : 'flex',
     flexDirection: 'row',
     width        : '100%',
+  },
+  selectInput: {
+    width          : '100%',
+    height         : 36,
+    display        : 'flex',
+    alignItems     : 'center',
+    padding        : spacing(1.5, 2),
+    backgroundColor: palette.common.darkGrey,
+    borderRadius   : 4,
+  },
+  selectInputText: {
+    flex: 1,
+  },
+  selectInputTextNoValue: {
+    color: palette.common.darkerGrey,
   },
 });

@@ -25,10 +25,12 @@ export default function CreateCampaign() {
   const [composition, setComposition]              = useState();
   const [score, setScore]                          = useState();
   const [campaignMetaData, updateCampaignMetadata] = useState({
-    title      : '',
-    description: '',
-    deadline   : moment().hours(17).minute(0).add(2, 'months'),
-    url        : '',
+    title             : '',
+    description       : '',
+    name              : '',
+    deadline          : moment().hours(17).minute(0).add(2, 'months'),
+    url               : '',
+    digitalDocumentRef: '',
   });
 
   useEffect(() => {
@@ -45,7 +47,7 @@ export default function CreateCampaign() {
 
   const Steps = [t('composition_score'),t('campaign')];
 
-  const onBackButtonClick = () => history.goBack();
+  const onBackButtonClick = () => history.replace('/');
 
   const onNicknameSubmit = givenNickname => {
     // save user to local storage
@@ -65,8 +67,10 @@ export default function CreateCampaign() {
       deadline   : campaignDeadline,
     }));
 
-    const name              = score.name;
-    const digitalDocumentId = score.identifier;
+    const {
+      name,
+      digitalDocumentId,
+    } = campaignMetaData;
 
     try {
       const { ok, data: { data } } = await createCampaign({ name, title: campaignTitle, description: campaignDescription, digitalDocumentId });
@@ -79,7 +83,7 @@ export default function CreateCampaign() {
       console.log(error);
     }
   };
-  
+
   return (
     <div>
       <Helmet>
@@ -101,20 +105,20 @@ export default function CreateCampaign() {
             <CreateCampaignNickname nickname={nickname} onBackButtonClick={onBackButtonClick} onNicknameSubmit={onNicknameSubmit} />
           </Route>
           <Route path="/createcampaign/compositionscore"  exact >
-            <SelectComposition 
+            <SelectComposition
               score={score}
               composition={composition}
               onSetScore={score => setScore(score)}
               onSetComposition={composition => setComposition(composition)}
-              onBackButtonClick={onBackButtonClick} 
-              onCompositionSubmit={onCompositionSubmit} 
+              onBackButtonClick={onBackButtonClick}
+              onCompositionSubmit={onCompositionSubmit}
             />
-          </Route> 
+          </Route>
           <Route path="/createcampaign/campaign" exact >
-            <CreateCampaignSetup 
-              campaignTitle={campaignMetaData.title} 
-              campaignDescription={campaignMetaData.description} 
-              campaignDeadline={campaignMetaData.deadline} 
+            <CreateCampaignSetup
+              campaignTitle={campaignMetaData.title}
+              campaignDescription={campaignMetaData.description}
+              campaignDeadline={campaignMetaData.deadline}
               onCampaignMetaSubmit={onCampaignSubmit}
               onBackButtonClick={onBackButtonClick}
             />

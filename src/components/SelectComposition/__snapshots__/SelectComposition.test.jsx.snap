@@ -2,7 +2,7 @@
 
 exports[`<SelectComposition /> renders and matches snapshot 1`] = `
 <div
-  class="MuiBox-root MuiBox-root-11 makeStyles-root-1"
+  class="MuiBox-root MuiBox-root-14 makeStyles-root-1"
 >
   <img
     alt="person"
@@ -18,7 +18,7 @@ exports[`<SelectComposition /> renders and matches snapshot 1`] = `
       Composition & Score
     </h1>
     <div
-      class="MuiBox-root MuiBox-root-50 makeStyles-part-8"
+      class="MuiBox-root MuiBox-root-53 makeStyles-part-8"
     >
       <p
         class="MuiTypography-root MuiTypography-body1"
@@ -26,40 +26,31 @@ exports[`<SelectComposition /> renders and matches snapshot 1`] = `
         Let's start with the composition
       </p>
       <div
-        class="MuiBox-root MuiBox-root-51 makeStyles-inputBox-9"
+        class="MuiBox-root MuiBox-root-54 makeStyles-inputBox-9"
       >
         <div
-          class="MuiFormControl-root MuiTextField-root makeStyles-textfield-4 MuiFormControl-fullWidth"
+          class="makeStyles-selectInput-10"
         >
-          <div
-            class="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline Mui-disabled Mui-disabled MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiFilledInput-adornedEnd"
+          <p
+            class="MuiTypography-root makeStyles-selectInputText-11 makeStyles-selectInputTextNoValue-12 MuiTypography-body1 MuiTypography-noWrap"
           >
-            <input
-              aria-invalid="false"
-              class="MuiInputBase-input MuiFilledInput-input Mui-disabled Mui-disabled MuiInputBase-inputAdornedEnd MuiFilledInput-inputAdornedEnd"
-              disabled=""
-              placeholder="Music Composition"
-              type="text"
-              value=""
-            />
-            <div
-              class="MuiInputAdornment-root MuiInputAdornment-filled MuiInputAdornment-positionEnd"
+            Music Composition
+          </p>
+          <div>
+            <button
+              class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+              tabindex="0"
+              type="button"
             >
-              <button
-                class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
-                tabindex="0"
-                type="button"
+              <span
+                class="MuiButton-label"
               >
-                <span
-                  class="MuiButton-label"
-                >
-                  Select
-                </span>
-                <span
-                  class="MuiTouchRipple-root"
-                />
-              </button>
-            </div>
+                Select
+              </span>
+              <span
+                class="MuiTouchRipple-root"
+              />
+            </button>
           </div>
         </div>
       </div>
@@ -70,7 +61,7 @@ exports[`<SelectComposition /> renders and matches snapshot 1`] = `
       </p>
     </div>
     <div
-      class="MuiBox-root MuiBox-root-130 makeStyles-part-8"
+      class="MuiBox-root MuiBox-root-87 makeStyles-part-8"
     >
       <p
         class="MuiTypography-root MuiTypography-body1"
@@ -78,44 +69,35 @@ exports[`<SelectComposition /> renders and matches snapshot 1`] = `
         Score
       </p>
       <div
-        class="MuiBox-root MuiBox-root-131 makeStyles-inputBox-9"
+        class="MuiBox-root MuiBox-root-88 makeStyles-inputBox-9"
       >
         <div
-          class="MuiFormControl-root MuiTextField-root makeStyles-textfield-4 MuiFormControl-fullWidth"
+          class="makeStyles-selectInput-10"
         >
-          <div
-            class="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline Mui-disabled Mui-disabled MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiFilledInput-adornedEnd"
+          <p
+            class="MuiTypography-root makeStyles-selectInputText-11 makeStyles-selectInputTextNoValue-12 MuiTypography-body1 MuiTypography-noWrap"
           >
-            <input
-              aria-invalid="false"
-              class="MuiInputBase-input MuiFilledInput-input Mui-disabled Mui-disabled MuiInputBase-inputAdornedEnd MuiFilledInput-inputAdornedEnd"
+            Score
+          </p>
+          <div>
+            <button
+              class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary Mui-disabled Mui-disabled"
               disabled=""
-              placeholder="Score"
-              type="text"
-              value=""
-            />
-            <div
-              class="MuiInputAdornment-root MuiInputAdornment-filled MuiInputAdornment-positionEnd"
+              tabindex="-1"
+              type="button"
             >
-              <button
-                class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary Mui-disabled Mui-disabled"
-                disabled=""
-                tabindex="-1"
-                type="button"
+              <span
+                class="MuiButton-label"
               >
-                <span
-                  class="MuiButton-label"
-                >
-                  Select
-                </span>
-              </button>
-            </div>
+                Select
+              </span>
+            </button>
           </div>
         </div>
       </div>
     </div>
     <div
-      class="MuiBox-root MuiBox-root-132 makeStyles-formNav-5"
+      class="MuiBox-root MuiBox-root-89 makeStyles-formNav-5"
     >
       <button
         class="MuiButtonBase-root MuiButton-root MuiButton-text"

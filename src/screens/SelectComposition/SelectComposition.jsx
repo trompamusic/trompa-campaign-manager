@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import * as PropTypes from 'prop-types';
 import { useTranslation } from "react-i18next";
 import { useLazyQuery } from "@apollo/react-hooks";
@@ -27,24 +27,31 @@ export default function SelectComposition({ composition, score, onSetComposition
   const classes           = useStyles();
   const [modal, setModal] = useState(MODAL_NONE);
 
-  const lazyQueryCallback                              = { onCompleted: data => onSetComposition(data.MusicComposition?.[0]), fetchPolicy: "no-cache" };
+  const lazyQueryCallback                              = { onCompleted: data => onGqlLoaded(data), fetchPolicy: "no-cache" };
   const [getCompositionWithScores, { loading, error }] = useLazyQuery(GET_COMPOSITION_WITH_SCORES, lazyQueryCallback );
 
-  //Recieve composition from MMC, then run lazyQuery to get metadata + scores
+  /**
+   * DATA
+   * Recieve node (composition) from MMC, then trigger lazyQuery to get metadata + scores
+   *
+   * Todo: Get active campaigns of selected composition
+   */
   const loadComposition = node => {
     setModal(MODAL_NONE);
     onSetScore();
-    getCompositionWithScores({ 
-      variables  : { identifier: node.identifier }, 
-      onCompleted: data => onSetComposition(data.MusicComposition?.[0]),
-    });
+    getCompositionWithScores({ variables: { identifier: node.identifier }, ...lazyQueryCallback });
   };
+  const onGqlLoaded     = data => onSetComposition(data.MusicComposition?.[0]);
 
-  const loadScore    = score => {
+  /**
+   * INTERNAL
+   */
+  const loadScore         = score => {
     onSetScore(score);
     setModal(MODAL_NONE);
   };
-  const deselectBoth = () => {
+
+  const deselectBoth      = () => {
     onSetComposition();
     onSetScore();
   };
@@ -54,19 +61,19 @@ export default function SelectComposition({ composition, score, onSetComposition
 
   return (
     <Container className={classes.root}>
-      <SelectCompositionComponent 
-        composition={composition} 
+      <SelectCompositionComponent
+        composition={composition}
         score={score}
-        onSelectCompositionClick={() => setModal(MODAL_COMP)} 
+        onSelectCompositionClick={() => setModal(MODAL_COMP)}
         onDeselectCompositionClick={deselectBoth}
         onSelectScoreClick={() => setModal(MODAL_SCORE)}
-        onDeselectScoreClick={() => onSetScore()} 
+        onDeselectScoreClick={() => onSetScore()}
         onBackButtonClick={onBackButtonClick}
         onNextButtonClick={onCompositionSubmit}
       />
       <Dialog
         className={classes.dialog}
-        open={modal !== MODAL_NONE} 
+        open={modal !== MODAL_NONE}
         onClose={e => setModal(MODAL_NONE)}
         maxWidth="lg"
         fullWidth
@@ -80,16 +87,16 @@ export default function SelectComposition({ composition, score, onSetComposition
             <CloseIcon />
           </IconButton>
           {modal === MODAL_COMP && (
-            <MultiModalComponent 
+            <MultiModalComponent
               config={searchConfig}
-              onResultClick={node => loadComposition(node)} 
+              onResultClick={node => loadComposition(node)}
             />
           )}
           {modal === MODAL_SCORE && (
-            <SelectScoreModal 
+            <SelectScoreModal
               composition={composition}
               onSelectFileClick={() => setModal(MODAL_SELECT_URL)}
-              onLoadScore={node => loadScore(node)} 
+              onLoadScore={node => loadScore(node)}
             />
           )}
           {modal === MODAL_SELECT_URL && (
@@ -102,7 +109,7 @@ export default function SelectComposition({ composition, score, onSetComposition
 }
 
 SelectComposition.propTypes = {
-  onBackButtonClick  : PropTypes.func, 
+  onBackButtonClick  : PropTypes.func,
   onCompositionSubmit: PropTypes.func,
   onSelectFileClick  : PropTypes.func,
 };
