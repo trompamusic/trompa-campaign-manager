@@ -39,13 +39,10 @@ export default function CreateCampaign() {
     }
   }, [history, nickname]);
 
-  const getCurrentStep = () => {
-    return pathname === '/createcampaign/compositionscore' ? 0 : 1;
-  };
+  const getCurrentStep    = () => pathname === '/createcampaign/compositionscore' ? 0 : 1;
+  const onBackButtonClick = () => history.goBack();
 
-  const Steps = [t('composition_score'), t('campaign')];
-
-  const onBackButtonClick = () => history.replace('/');
+  const Steps             = [t('composition_score'), t('campaign')];
 
   const onNicknameSubmit = givenNickname => {
     // save user to local storage
