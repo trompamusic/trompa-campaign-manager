@@ -17,15 +17,16 @@ export default function SelectComposition({ composition, score, onSelectComposit
     <Box className={classes.root}>
       <img className={classes.person} src={images.personWithBass} alt={t('person')} />
       <Container className={classes.main}>
-        <Typography variant="h2">{t('title')}</Typography>
+        <Typography variant="h1" className={classes.header}>{t('title')}</Typography>
         <Box className={classes.part}>
           <Typography variant="body1">{t('start')}</Typography>
           <Box className={classes.inputBox}>
             <TextField 
-              value={composition?.name}
+              value={composition?.name || ""}
               placeholder={t('composition_default')}
               variant="filled" 
               disabled={!composition}
+              className={classes.textfield}
               InputProps={{
                 endAdornment: (
                   <InputAdornment position="end">
@@ -37,16 +38,17 @@ export default function SelectComposition({ composition, score, onSelectComposit
               fullWidth 
             />
           </Box>
-          <Typography variant="body2">{t('note_compositions')}</Typography>
+          <Typography variant="body2" className={classes.subText}>{t('note_compositions')}</Typography>
         </Box>
         <Box className={classes.part}>
           <Typography variant="body1">{t('score')}</Typography>
           <Box className={classes.inputBox}>
             <TextField 
-              value={score? (score.title || score.name) : t('score_default')}
+              value={score?.title || score?.name || ""}
               placeholder={t('score_default')}
               variant="filled" 
               disabled={!score}
+              className={classes.textfield}
               InputProps={{
                 endAdornment: (
                   <InputAdornment position="end">
