@@ -7,20 +7,20 @@ exports[`<CreateDigitalDocModal /> renders and matches snapshot 1`] = `
   <div
     class="MuiDialogTitle-root makeStyles-title-2"
   >
-    <h2
-      class="MuiTypography-root MuiTypography-h2"
+    <h1
+      class="MuiTypography-root makeStyles-header-3 MuiTypography-h1"
     >
       Select your own file
-    </h2>
+    </h1>
   </div>
   <form
-    class="makeStyles-container-3"
+    class="makeStyles-container-5"
   >
     <div
       class="MuiDialogContent-root"
     >
       <div
-        class="makeStyles-root-37"
+        class="makeStyles-root-39"
       >
         <p
           class="MuiTypography-root MuiTypography-body1"
@@ -73,7 +73,7 @@ exports[`<CreateDigitalDocModal /> renders and matches snapshot 1`] = `
         </div>
       </div>
       <div
-        class="makeStyles-root-37"
+        class="makeStyles-root-39"
       >
         <p
           class="MuiTypography-root MuiTypography-body1"
@@ -126,7 +126,7 @@ exports[`<CreateDigitalDocModal /> renders and matches snapshot 1`] = `
         </div>
       </div>
       <div
-        class="makeStyles-root-37"
+        class="makeStyles-root-39"
       >
         <p
           class="MuiTypography-root MuiTypography-body1"
@@ -151,7 +151,7 @@ exports[`<CreateDigitalDocModal /> renders and matches snapshot 1`] = `
         </div>
       </div>
       <div
-        class="makeStyles-root-37"
+        class="makeStyles-root-39"
       >
         <p
           class="MuiTypography-root MuiTypography-body1"
@@ -175,7 +175,7 @@ exports[`<CreateDigitalDocModal /> renders and matches snapshot 1`] = `
         </div>
       </div>
       <div
-        class="makeStyles-root-37"
+        class="makeStyles-root-39"
       >
         <p
           class="MuiTypography-root MuiTypography-body1"
@@ -198,7 +198,7 @@ exports[`<CreateDigitalDocModal /> renders and matches snapshot 1`] = `
         </div>
       </div>
       <div
-        class="makeStyles-root-37"
+        class="makeStyles-root-39"
       >
         <p
           class="MuiTypography-root MuiTypography-body1"
@@ -243,7 +243,7 @@ exports[`<CreateDigitalDocModal /> renders and matches snapshot 1`] = `
         </div>
       </div>
       <div
-        class="makeStyles-root-37"
+        class="makeStyles-root-39"
       >
         <p
           class="MuiTypography-root MuiTypography-body1"
@@ -288,7 +288,7 @@ exports[`<CreateDigitalDocModal /> renders and matches snapshot 1`] = `
         </div>
       </div>
       <div
-        class="makeStyles-root-37"
+        class="makeStyles-root-39"
       >
         <p
           class="MuiTypography-root MuiTypography-body1"

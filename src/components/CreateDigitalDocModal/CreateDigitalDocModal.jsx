@@ -26,7 +26,7 @@ export default function CreateDigitalDocModal ({ initialFormValues, onFormSubmit
   return (
     <div className={classes.root}>
       <DialogTitle className={classes.title} disableTypography >
-        <Typography className={classes.header} variant="h2">
+        <Typography className={classes.header} variant="h1">
           {t('create_digitial_doc.select_own_file')}
         </Typography>
       </DialogTitle>
