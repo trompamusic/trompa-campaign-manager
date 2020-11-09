@@ -195,9 +195,14 @@ export default ({ spacing, palette, typography, shape, breakpoints }) => createS
     position       : 'absolute',
     right          : 350,
     boxSizing      : 'border-box',
+    display        : 'flex',
+    flexDirection  : 'column',
+    justifyContent : 'center',
+    alignItems     : 'center',
     width          : 290,
     height         : 'auto',
     boxShadow      : `0 0 10px 0 ${palette.shadow.transparentGrey}`,
+    color          : palette.text.darkPurple,
     backgroundColor: palette.common.white,
     padding        : spacing(3),
     '& h3'         : {
@@ -207,6 +212,7 @@ export default ({ spacing, palette, typography, shape, breakpoints }) => createS
       width : 290,
       margin: '0 auto',
       left  : 0,
+      top   : 25,
       right : 0,
     },
     [breakpoints.only('sm')]: {
@@ -217,12 +223,24 @@ export default ({ spacing, palette, typography, shape, breakpoints }) => createS
       right: 80,
     },
     [breakpoints.only('lg')]: {
-      width: 340,
+      width : 320,
+      height: 500,
     },
     [breakpoints.only('xl')]: {
-      width: 340,
-      right: 500,
+      width : 320,
+      height: 500,
+      right : 500,
     },
+  },
+  toggleScoreModal: {
+    // marginLeft    : '50px',
+    color         : palette.primary.main,
+    width         : '55%',
+    display       : 'flex',
+    justifyContent: 'space-between',
+  },
+  progress: {
+    // marginLeft: '75px',
   },
   scoreImage: {
     width                   : 240,
