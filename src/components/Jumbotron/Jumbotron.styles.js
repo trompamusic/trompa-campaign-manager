@@ -118,6 +118,7 @@ export default ({ spacing, palette, typography, shape, breakpoints }) => createS
     alignItems: 'center',
     marginLeft: spacing(0.5),
     lineHeight: 1.5,
+    minHeight : 19,
     '& a'     : {
       textDecoration: 'none',
       color         : palette.primary.main,

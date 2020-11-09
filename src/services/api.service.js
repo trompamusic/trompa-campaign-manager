@@ -1,3 +1,4 @@
+
 import { create } from 'apisauce';
 
 const baseURL = process.env.REACT_APP_API_BASE_URL;
@@ -9,4 +10,6 @@ const api = create({
 });
 
 // api methods
-export const getPosts = () => api.get('/posts');
+export const createDigitalDoc = (musicCompositionId, data) => api.post(`/music-compositions/${musicCompositionId}/digital-document`, data);
+
+export const createCampaign = data => api.post('/campaigns',data);

@@ -6,14 +6,18 @@ export default ({ spacing, typography, palette, breakpoints }) => createStyles({
   },
   twoSections: {
     display                 : 'flex',
+    boxShadow               : '0 1px 6px 0px rgba(0,0,0,0.1)',
     height                  : 600,
     [breakpoints.down('xs')]: {
       height: 'initial',
     },
     '& section': {
-      width : 528,
-      margin: '51px 96px 98px 96px',
-      '& h2': {
+      display       : 'flex',
+      flexDirection : 'column',
+      justifyContent: 'center',
+      width         : 528,
+      margin        : '51px 96px 98px 96px',
+      '& h2'        : {
         marginBottom: spacing(0.5),
       },
       '& p': {

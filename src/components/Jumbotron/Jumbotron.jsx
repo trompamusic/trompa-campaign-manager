@@ -30,18 +30,20 @@ export default function Jumbotron ({
     <div className={classNames(classes[device], { [classes.campaign]: isCampaignPageHeader })}>
       {isCampaignPageHeader && (
         <div className={classes.prefixTitleCampaign}>
-          <span className={classes.avatar} >
-            <img src={images.avatarOne} alt="" />
-          </span>
-          <Typography variant="caption">
-            <Link to="#">{author}</Link>
-            {t('jumbotron.has_started')}
-          </Typography>
+          {author && (
+            <span className={classes.avatar} >
+              <img src={images.avatarOne} alt="" />
+            </span>)}
+          {author && (
+            <Typography variant="caption">
+              <Link to="#">{author}</Link>
+              {t('jumbotron.has_started')}
+            </Typography>)}
         </div>
       )}
       {!isCampaignPageHeader && (
         <div className={classes.prefixTitleHome}>
-          <img className={classes.logoIcon} src={images.logoIcon} alt="" />
+          <img className={classes.logoIcon} src={images.logoIcon} alt={t('jumbotron.score')} />
           <Typography variant="subtitle2">
             {t('jumbotron.trompa_collaboration_manager')}
           </Typography>
@@ -67,7 +69,7 @@ export default function Jumbotron ({
           {text?.aboutTitle}
         </Typography>
       )}
-      {!isCampaignPageHeader && digitalDocument && (
+      {!isCampaignPageHeader && digitalDocument?.title && (
         <Typography variant="h2">
           {t('jumbotron.help_us_digitize')}
           <span className={classes.compositionTitle}>

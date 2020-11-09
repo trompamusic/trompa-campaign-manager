@@ -1,0 +1,154 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SelectComposition /> renders and matches snapshot 1`] = `
+<div
+  class="MuiBox-root MuiBox-root-8 makeStyles-root-1"
+>
+  <img
+    alt="person"
+    class="makeStyles-person-4"
+    src="personWithBass.png"
+  />
+  <div
+    class="MuiContainer-root makeStyles-main-2 MuiContainer-maxWidthLg"
+  >
+    <h2
+      class="MuiTypography-root MuiTypography-h2"
+    >
+      Composition & Score
+    </h2>
+    <div
+      class="MuiBox-root MuiBox-root-47 makeStyles-part-5"
+    >
+      <p
+        class="MuiTypography-root MuiTypography-body1"
+      >
+        Let's start with the composition
+      </p>
+      <div
+        class="MuiBox-root MuiBox-root-48 makeStyles-inputBox-6"
+      >
+        <div
+          class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+        >
+          <div
+            class="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline Mui-disabled Mui-disabled MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiFilledInput-adornedEnd"
+          >
+            <input
+              aria-invalid="false"
+              class="MuiInputBase-input MuiFilledInput-input Mui-disabled Mui-disabled MuiInputBase-inputAdornedEnd MuiFilledInput-inputAdornedEnd"
+              disabled=""
+              placeholder="Music Composition"
+              type="text"
+              value=""
+            />
+            <div
+              class="MuiInputAdornment-root MuiInputAdornment-filled MuiInputAdornment-positionEnd"
+            >
+              <button
+                class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiButton-label"
+                >
+                  Select
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p
+        class="MuiTypography-root MuiTypography-body2"
+      >
+        In Trompa we support a wide range of compositions
+      </p>
+    </div>
+    <div
+      class="MuiBox-root MuiBox-root-127 makeStyles-part-5"
+    >
+      <p
+        class="MuiTypography-root MuiTypography-body1"
+      >
+        Score
+      </p>
+      <div
+        class="MuiBox-root MuiBox-root-128 makeStyles-inputBox-6"
+      >
+        <div
+          class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+        >
+          <div
+            class="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline Mui-disabled Mui-disabled MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiFilledInput-adornedEnd"
+          >
+            <input
+              aria-invalid="false"
+              class="MuiInputBase-input MuiFilledInput-input Mui-disabled Mui-disabled MuiInputBase-inputAdornedEnd MuiFilledInput-inputAdornedEnd"
+              disabled=""
+              placeholder="Score"
+              type="text"
+              value=""
+            />
+            <div
+              class="MuiInputAdornment-root MuiInputAdornment-filled MuiInputAdornment-positionEnd"
+            >
+              <button
+                class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary Mui-disabled Mui-disabled"
+                disabled=""
+                tabindex="-1"
+                type="button"
+              >
+                <span
+                  class="MuiButton-label"
+                >
+                  Select
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiBox-root MuiBox-root-129 makeStyles-formNav-3"
+    >
+      <button
+        class="MuiButtonBase-root MuiButton-root MuiButton-text"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="MuiButton-label"
+        >
+          Back
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
+      <button
+        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary Mui-disabled Mui-disabled"
+        disabled=""
+        tabindex="-1"
+        type="button"
+      >
+        <span
+          class="MuiButton-label"
+        >
+          Next
+        </span>
+      </button>
+    </div>
+  </div>
+  <img
+    alt="person"
+    class="makeStyles-person-4"
+    src="personTrumpetStandingRight.png"
+  />
+</div>
+`;

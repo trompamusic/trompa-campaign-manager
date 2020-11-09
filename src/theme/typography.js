@@ -36,10 +36,11 @@ export default {
     textTransform: 'uppercase',
   },
   body1: {
-    maxWidth  : '655px',
-    color     : '#333333',
-    fontSize  : '15.8px',
-    fontFamily: fontFamilyOpenSans,
+    maxWidth     : '655px',
+    color        : '#333333',
+    fontSize     : '16px',
+    fontFamily   : fontFamilyOpenSans,
+    letterSpacing: 0.5,
   },
   caption: {
     display     : 'block',

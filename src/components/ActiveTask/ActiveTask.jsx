@@ -36,7 +36,7 @@ export default function ActiveTask ({
         onGoBackClick={onGoBackClick}
         hasContextNavigation
       >
-        <NicknameMenuContainer campaignIdentifier={campaignIdentifier} />
+        <NicknameMenuContainer logoutPath={`/campaign/${campaignIdentifier}/who-are-you`} />
       </AppbarTop>
       {noTasks ? (
         <div className={classes.emptyIframe}>
@@ -48,7 +48,7 @@ export default function ActiveTask ({
         <React.Fragment>
           {url ? (
             <iframe
-              src={url && url.replace('{identifier}', identifier).replace('{username}', nickname)}
+              src={url}
               className={classes.iframe}
               name="task-iframe"
               title={t('task')}

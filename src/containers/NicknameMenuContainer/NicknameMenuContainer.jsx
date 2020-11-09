@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import NicknameMenu from '../../components/NicknameMenu';
 
-export default function NicknameMenuContainer ({ campaignIdentifier }) {
+export default function NicknameMenuContainer ({ logoutPath }) {
   const history                                   = useHistory();
   const nickname                                  = localStorage.getItem('nickname');
   const [nicknameMenuState, setNicknameMenuState] = useState({ open: false, target: null });
@@ -19,7 +19,7 @@ export default function NicknameMenuContainer ({ campaignIdentifier }) {
   const onLogoutClick = () => {
     handleClose();
     localStorage.removeItem('nickname');
-    history.push(`/campaign/${campaignIdentifier}/who-are-you`);
+    history.push(logoutPath);
   };
 
   return (
@@ -35,5 +35,5 @@ export default function NicknameMenuContainer ({ campaignIdentifier }) {
 }
 
 NicknameMenuContainer.propTypes = {
-  campaignIdentifier: PropTypes.string,
+  logoutPath: PropTypes.string,
 };
