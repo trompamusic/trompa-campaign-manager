@@ -45,7 +45,7 @@ export default function CreateCampaign() {
 
   const Steps = [t('composition_score'),t('campaign')];
 
-  const onBackButtonClick = () => history.goBack();
+  const onBackButtonClick = () => history.replace('/');
 
   const onNicknameSubmit = givenNickname => {
     // save user to local storage
@@ -73,7 +73,7 @@ export default function CreateCampaign() {
       deadline   : campaignDeadline,
     }));
 
-    const {     
+    const {
       name,
       digitalDocumentId,
     } = campaignMetaData;
@@ -89,7 +89,7 @@ export default function CreateCampaign() {
       console.log(error);
     }
   };
-  
+
   return (
     <div>
       <Helmet>
@@ -112,12 +112,12 @@ export default function CreateCampaign() {
           </Route>
           <Route path="/createcampaign/compositionscore"  exact >
             <SelectComposition onBackButtonClick={onBackButtonClick} onCompositionSubmit={onCompositionSubmit} onSelectFileClick={() => {}} />
-          </Route> 
+          </Route>
           <Route path="/createcampaign/campaign" exact >
-            <CreateCampaignSetup 
-              campaignTitle={campaignMetaData.title} 
-              campaignDescription={campaignMetaData.description} 
-              campaignDeadline={campaignMetaData.deadline} 
+            <CreateCampaignSetup
+              campaignTitle={campaignMetaData.title}
+              campaignDescription={campaignMetaData.description}
+              campaignDeadline={campaignMetaData.deadline}
               onCampaignMetaSubmit={onCampaignSubmit}
               onBackButtonClick={onBackButtonClick}
             />
