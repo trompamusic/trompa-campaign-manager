@@ -8,6 +8,8 @@ export default {
     darkBlack : 'rgba(0, 0, 0, 0.7)',
     errorRed  : '#e85c41',
     borderGrey: '#ABB0B2',
+    darkGrey  : 'rgb(231,231,231)',
+    darkerGrey: 'rgb(112,112,112)',
   },
   background: {
     primary : 'rgba(43,68,255,0.1)',

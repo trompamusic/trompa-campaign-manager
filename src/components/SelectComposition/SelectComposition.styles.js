@@ -32,4 +32,19 @@ export default ({ spacing, palette, shape, breakpoints, typography }) => createS
     flexDirection: 'row',
     width        : '100%',
   },
+  selectInput: {
+    width          : '100%',
+    height         : 36,
+    display        : 'flex',
+    alignItems     : 'center',
+    padding        : spacing(1.5, 2),
+    backgroundColor: palette.common.darkGrey,
+    borderRadius   : 4,
+  },
+  selectInputText: {
+    flex: 1,
+  },
+  selectInputTextNoValue: {
+    color: palette.common.darkerGrey,
+  },
 });
