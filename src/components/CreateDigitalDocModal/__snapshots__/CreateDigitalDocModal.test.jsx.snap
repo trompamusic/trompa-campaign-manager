@@ -20,7 +20,7 @@ exports[`<CreateDigitalDocModal /> renders and matches snapshot 1`] = `
       class="MuiDialogContent-root"
     >
       <div
-        class="makeStyles-root-37"
+        class="makeStyles-root-38"
       >
         <p
           class="MuiTypography-root MuiTypography-body1"
@@ -37,6 +37,7 @@ exports[`<CreateDigitalDocModal /> renders and matches snapshot 1`] = `
               aria-invalid="false"
               class="MuiInputBase-input MuiFilledInput-input MuiInputBase-inputAdornedEnd MuiFilledInput-inputAdornedEnd"
               name="url"
+              placeholder="https://example.com"
               required=""
               type="url"
               value=""
@@ -73,7 +74,7 @@ exports[`<CreateDigitalDocModal /> renders and matches snapshot 1`] = `
         </div>
       </div>
       <div
-        class="makeStyles-root-37"
+        class="makeStyles-root-38"
       >
         <p
           class="MuiTypography-root MuiTypography-body1"
@@ -90,6 +91,7 @@ exports[`<CreateDigitalDocModal /> renders and matches snapshot 1`] = `
               aria-invalid="false"
               class="MuiInputBase-input MuiFilledInput-input MuiInputBase-inputAdornedEnd MuiFilledInput-inputAdornedEnd"
               name="thumbnailUrl"
+              placeholder="https://example.com"
               required=""
               type="text"
               value=""
@@ -126,7 +128,7 @@ exports[`<CreateDigitalDocModal /> renders and matches snapshot 1`] = `
         </div>
       </div>
       <div
-        class="makeStyles-root-37"
+        class="makeStyles-root-38"
       >
         <p
           class="MuiTypography-root MuiTypography-body1"
@@ -151,7 +153,7 @@ exports[`<CreateDigitalDocModal /> renders and matches snapshot 1`] = `
         </div>
       </div>
       <div
-        class="makeStyles-root-37"
+        class="makeStyles-root-38"
       >
         <p
           class="MuiTypography-root MuiTypography-body1"
@@ -175,30 +177,7 @@ exports[`<CreateDigitalDocModal /> renders and matches snapshot 1`] = `
         </div>
       </div>
       <div
-        class="makeStyles-root-37"
-      >
-        <p
-          class="MuiTypography-root MuiTypography-body1"
-        >
-          Publisher
-        </p>
-        <div
-          class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
-        >
-          <div
-            class="MuiInputBase-root MuiFilledInput-root MuiInputBase-fullWidth MuiInputBase-formControl"
-          >
-            <input
-              aria-invalid="false"
-              class="MuiInputBase-input MuiFilledInput-input"
-              type="text"
-              value=""
-            />
-          </div>
-        </div>
-      </div>
-      <div
-        class="makeStyles-root-37"
+        class="makeStyles-root-38"
       >
         <p
           class="MuiTypography-root MuiTypography-body1"
@@ -243,7 +222,7 @@ exports[`<CreateDigitalDocModal /> renders and matches snapshot 1`] = `
         </div>
       </div>
       <div
-        class="makeStyles-root-37"
+        class="makeStyles-root-38"
       >
         <p
           class="MuiTypography-root MuiTypography-body1"
@@ -288,7 +267,7 @@ exports[`<CreateDigitalDocModal /> renders and matches snapshot 1`] = `
         </div>
       </div>
       <div
-        class="makeStyles-root-37"
+        class="makeStyles-root-38"
       >
         <p
           class="MuiTypography-root MuiTypography-body1"
@@ -315,7 +294,9 @@ exports[`<CreateDigitalDocModal /> renders and matches snapshot 1`] = `
     <div
       class="MuiDialogActions-root MuiDialogActions-spacing"
     >
-      <div>
+      <div
+        class="makeStyles-buttons-4"
+      >
         <button
           class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
           tabindex="0"

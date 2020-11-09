@@ -40,10 +40,11 @@ export default function CreateDigitalDocModal ({ initialFormValues, onFormSubmit
                 value={values.url}
                 onChange={handleChange}
                 onBlur={handleBlur}
+                placeholder={t('url_example')}
                 type="url"
                 endAdornment={
                   <InputAdornment position="end">
-                    <IconButton>
+                    <IconButton onClick={() => setFieldValue('url',"")}>
                       <CancelIcon />
                     </IconButton>
                   </InputAdornment>               
@@ -56,9 +57,10 @@ export default function CreateDigitalDocModal ({ initialFormValues, onFormSubmit
                 name="thumbnailUrl"
                 onChange={handleChange}
                 onBlur={handleBlur}
+                placeholder={t('url_example')}
                 endAdornment={
                   <InputAdornment position="end">
-                    <IconButton>
+                    <IconButton onClick={() => setFieldValue('thumbnailUrl',"")}>
                       <CancelIcon />
                     </IconButton>
                   </InputAdornment>               
@@ -80,12 +82,15 @@ export default function CreateDigitalDocModal ({ initialFormValues, onFormSubmit
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
+            
+              {/* 
+              TEMP: for now not necessary
               <Input
                 label={t('create_digitial_doc.publisher')}
                 value={values.campaignTitle}
                 onChange={handleChange}
                 onBlur={handleBlur}
-              />
+              /> */}
               <Input
                 label={t('create_digitial_doc.copyright')}
                 value={values.license}

@@ -1,6 +1,6 @@
 import { createStyles } from '@material-ui/styles';
 
-export default () => createStyles({
+export default ({ spacing }) => createStyles({
   root: {
     width: '50%',
   },
@@ -12,5 +12,8 @@ export default () => createStyles({
     position: 'relative',
     margin  : '0 auto',
     width   : '100%',
+  },
+  buttons: {
+    marginRight: spacing(2),
   },
 });
