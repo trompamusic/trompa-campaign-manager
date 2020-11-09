@@ -13,17 +13,20 @@ import styles from './JumbotronContentCampaign.styles';
 const useStyles = makeStyles(styles);
 
 export default function JumbotronContentCampaign ({ campaign, campaignUrl, endDate, to, openSubscribeForm, hasTasksAvailable }) {
-  const { t }    = useTranslation('campaign');
-  const classes  = useStyles();
-  const daysLeft = endDate?.diff(moment(), 'days');
+  const { t }   = useTranslation('campaign');
+  const classes = useStyles();
+  
+  let daysLeft = endDate?.diff(moment(), 'days');
+
+  if(daysLeft < 0) daysLeft = 0;
 
   return (
     <div className={classes.root}>
-      <Typography className={classes.daysToGo}>
-        {daysLeft
-          ? t('jumbotron.days_to_go', { count: daysLeft })
-          : t('jumbotron.no_deadline_available')}
-      </Typography>
+      {endDate && 
+        <Typography className={classes.daysToGo}>
+          {t('jumbotron.days_to_go', { count: daysLeft }) }
+        </Typography>
+      }
       <Typography className={classes.deadline}>
         {endDate && `${t('jumbotron.deadline')}: ${endDate.format("MMMM Do YYYY")}`}
       </Typography>
