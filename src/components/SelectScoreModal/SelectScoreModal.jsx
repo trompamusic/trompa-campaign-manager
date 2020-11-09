@@ -21,6 +21,7 @@ export default function SelectScoreModal({ composition, onLoadScore, onSelectFil
           // TODO: use isActiveCampaign & progress from CE data (once available)
           <SelectScoreItem 
             item={item} 
+            key={item.identifier}
             isActiveCampaign={false}
             progress={60}
             onItemClick={() => onLoadScore(item)}
