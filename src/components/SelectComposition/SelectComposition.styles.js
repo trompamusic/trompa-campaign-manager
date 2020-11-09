@@ -6,11 +6,14 @@ export default ({ spacing, palette, shape, breakpoints, typography }) => createS
     flexDirection: 'row',
   },
   main: {
+    [breakpoints.down('sm')]: {
+      width: '95%',
+    },
+    width         : '45vw',
     display       : 'flex',
     flexDirection : 'column',
     justifyContent: 'center',
     alignItems    : 'center',
-    width         : '45vw',
   },
   formNav: {
     display       : 'flex',
