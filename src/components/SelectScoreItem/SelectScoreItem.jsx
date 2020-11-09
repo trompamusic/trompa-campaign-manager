@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import * as PropTypes from 'prop-types';
-import { Box, Button, Card, IconButton, Typography } from '@material-ui/core';
+import { Avatar, Box, Button, Card, IconButton, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
 import Launch from '@material-ui/icons/Launch';
 import { useTranslation } from 'react-i18next';
+import ScorePlaceholderIcon from "../Icons/ScorePlaceholderIcon";
 import { truncateLabel } from "../../utils";
 import styles from './SelectScoreItem.styles';
 
@@ -16,7 +17,7 @@ export default function SelectScoreItem({ item, isActiveCampaign, progress, onIt
   const [hover, setHover]       = useState(false);
   const [pdfHover, setPdfHover] = useState(false);
   const maxChars                = 200;
-  
+
   return (
     <Card 
       className={classes.item} 
@@ -25,8 +26,10 @@ export default function SelectScoreItem({ item, isActiveCampaign, progress, onIt
       onMouseOut={() => setHover(false)}
       onClick={() => !pdfHover? onItemClick() : null}
     >
-      <Box className={classes.itemImg}>
-        {item?.img && <img src={item?.img} alt={item?.name || ""} />}
+      <Box className={classes.imgBox}>
+        <Avatar className={classes.img} src={item?.image} alt={item?.name || ""}>
+          <ScorePlaceholderIcon className={classes.icon} />
+        </Avatar>
       </Box>
       <Box className={classes.itemMain}>
         <Box className={classes.itemHeader}>

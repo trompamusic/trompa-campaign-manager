@@ -29,35 +29,34 @@ export default function SelectComposition({ onBackButtonClick, onCompositionSubm
   const [score, setScore]             = useState();
   const [modal, setModal]             = useState(MODAL_NONE);
 
-  const lazyQueryCallback                              = { onCompleted: data => onMMCDataLoaded(data) };
+  const lazyQueryCallback                              = { onCompleted: data => onGqlLoaded(data), fetchPolicy: "no-cache" };
   const [getCompositionWithScores, { loading, error }] = useLazyQuery(GET_COMPOSITION_WITH_SCORES, lazyQueryCallback );
 
+  /**
+   * DATA 
+   * Recieve node (composition) from MMC, then trigger lazyQuery to get metadata + scores
+   * 
+   * Todo: Get active campaigns of selected composition
+   */
   const loadComposition = node => {
-    // Recieve node (composition) from MMC, close Modal, trigger lazyQuery to get additional metadata + scores
     setModal(MODAL_NONE);
-    setScore();
-    getCompositionWithScores({ variables: { identifier: node.identifier }, onCompleted: data => onMMCDataLoaded(data) });
+    getCompositionWithScores({ variables: { identifier: node.identifier }, ...lazyQueryCallback });
   };
-
-  const onMMCDataLoaded     = data => {
-    setComposition(data.MusicComposition?.[0]);
-    //Todo: Get active campaigns of this composition
-  };
-
+  const onGqlLoaded     = data => setComposition(data.MusicComposition?.[0]);
+  
+  /**
+   * INTERNAL
+   */
   const loadScore         = score => {
     setScore(score);
     setModal(MODAL_NONE);
-  };
-
-  const onNextButtonClick = () => {
-    // console.log('Submit. Composition/score:', composition, score);
-    onCompositionSubmit({ composition: composition, score: score });
   };
 
   const deselectBoth      = () => {
     setComposition();
     setScore();
   };
+  const onNextButtonClick = () => onCompositionSubmit({ composition: composition, score: score });
 
   const onSelectFileClick = () => {
     console.log('fire');
