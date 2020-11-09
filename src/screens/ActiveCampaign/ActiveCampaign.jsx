@@ -68,7 +68,7 @@ export default function ActiveCampaign ({ match }) {
   const campaignUrl     = window.location.href;
   const campaignEndDate = campaign?.endTime?.formatted && moment(campaign.endTime.formatted);
   const doTaskUrl       = `/campaign/${campaignIdentifier}/task`;
-  const navLinks        = [{ name: t('home'), to: '/' }];
+  const navLinks        = [{ name: t('navbar.home'), to: '/' }];
   const buttons         = [{ name: t('navbar.share'), onClick: () => setShareDialogOpen(true), startIcon: <ShareIcon /> }];
   const primaryButton   = { name: t('navbar.join_campaign'), to: doTaskUrl };
 
