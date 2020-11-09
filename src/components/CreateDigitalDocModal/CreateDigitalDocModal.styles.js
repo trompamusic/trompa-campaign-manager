@@ -30,4 +30,7 @@ export default ({ spacing, breakpoints, typography, palette }) => createStyles({
       paddingTop: spacing(3),
     },
   },
+  buttons: {
+    marginRight: spacing(2),
+  },
 });

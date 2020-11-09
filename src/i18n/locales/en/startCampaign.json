@@ -15,5 +15,6 @@
     "language": "Language",
     "notes": "Miscellaneous Notes",
     "upload": "Upload"
-  }
+  },
+  "url_example": "https://example.com"
 }
