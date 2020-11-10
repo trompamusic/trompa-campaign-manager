@@ -83,6 +83,7 @@ export default function CreateDigitalDocModal({ initialFormValues, onFormSubmit 
                 value={values.creator}
                 onChange={handleChange}
                 onBlur={handleBlur}
+                required
               />
 
               {/*
