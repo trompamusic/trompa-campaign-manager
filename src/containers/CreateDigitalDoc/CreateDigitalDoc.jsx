@@ -10,7 +10,7 @@ export default function CreateDigitalDoc({ musicCompositionId, onDigitalDocCreat
     url         : '',
     license     : 'https://www0.cpdl.org/wiki/index.php/ChoralWiki:CPDL',
     thumbnailUrl: '',
-    description : '',
+    description : undefined,
   };
 
   console.log(musicCompositionId);
