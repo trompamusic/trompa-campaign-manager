@@ -138,7 +138,10 @@ export default function ActiveCampaign ({ match }) {
               scoreTitle={digitalDocument?.title}
               campaignTitle={campaign.title}
               campaignDeadline={daysToGo}
-              onClick={() => history.push(`/campaign/${campaign.identifier}`)}
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                history.push(`/campaign/${campaign.identifier}`);
+              }}
             />
           );})}
       </ActiveCampaignOverviewSection>
