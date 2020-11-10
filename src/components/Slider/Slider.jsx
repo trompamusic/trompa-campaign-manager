@@ -47,6 +47,7 @@ export default function Slider ({ children, itemWidth, framePadding }) {
   return (
     <Carousel
       slidesToShow={slidesToShow}
+      slidesToScroll={slidesToShow}
       framePadding={framePadding}
       renderCenterLeftControls={renderCenterLeftControls}
       renderCenterRightControls={renderCenterRightControls}
