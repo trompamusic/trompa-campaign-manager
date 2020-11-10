@@ -3,11 +3,6 @@
 exports[`<JumbotronContentCampaign /> renders and matches snapshot 1`] = `
 <div>
   <p
-    class="MuiTypography-root makeStyles-daysToGo-1 MuiTypography-body1"
-  >
-    No deadline available
-  </p>
-  <p
     class="MuiTypography-root makeStyles-deadline-2 MuiTypography-body1"
   />
   <div

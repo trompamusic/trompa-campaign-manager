@@ -68,7 +68,7 @@ export default function ActiveCampaign ({ match }) {
   const campaignUrl     = window.location.href;
   const campaignEndDate = campaign?.endTime?.formatted && moment(campaign.endTime.formatted);
   const doTaskUrl       = `/campaign/${campaignIdentifier}/task`;
-  const navLinks        = [{ name: t('home'), to: '/' }];
+  const navLinks        = [{ name: t('navbar.home'), to: '/' }];
   const buttons         = [{ name: t('navbar.share'), onClick: () => setShareDialogOpen(true), startIcon: <ShareIcon /> }];
   const primaryButton   = { name: t('navbar.join_campaign'), to: doTaskUrl };
 
@@ -107,7 +107,7 @@ export default function ActiveCampaign ({ match }) {
         campaign={campaign}
         digitalDocument={digitalDocument}
         musicComposition={digitalDocument?.exampleOfWork[0]}
-        composer={undefined}
+        composer={digitalDocument?.exampleOfWork?.[0]?.composer?.[0]}
       />
       <Jumbotron
         image={images.collaborateHero}
@@ -138,7 +138,10 @@ export default function ActiveCampaign ({ match }) {
               scoreTitle={digitalDocument?.title}
               campaignTitle={campaign.title}
               campaignDeadline={daysToGo}
-              onClick={() => history.push(`/campaign/${campaign.identifier}`)}
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                history.push(`/campaign/${campaign.identifier}`);
+              }}
             />
           );})}
       </ActiveCampaignOverviewSection>
