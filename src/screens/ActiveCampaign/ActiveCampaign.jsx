@@ -107,7 +107,7 @@ export default function ActiveCampaign ({ match }) {
         campaign={campaign}
         digitalDocument={digitalDocument}
         musicComposition={digitalDocument?.exampleOfWork[0]}
-        composer={undefined}
+        composer={digitalDocument?.exampleOfWork?.[0]?.composer?.[0]}
       />
       <Jumbotron
         image={images.collaborateHero}
