@@ -36,13 +36,13 @@ export default function CreateDigitalDoc({ musicCompositionId, onDigitalDocCreat
     url         : '',
     license     : 'https://www0.cpdl.org/wiki/index.php/ChoralWiki:CPDL',
     thumbnailUrl: '',
-    description : undefined,
+    description : '',
   };
 
   const onFormSubmit = async ({ title, url, creator, thumbnailUrl, description, language, license }) => {
     url          = formatUrl(url);
     thumbnailUrl = formatUrl(thumbnailUrl);
-    
+
     const digitalDocumentData = {
       name    : title,
       relation: url,
@@ -54,8 +54,9 @@ export default function CreateDigitalDoc({ musicCompositionId, onDigitalDocCreat
       url,
       creator,
       thumbnailUrl,
-      description,
     };
+
+    if(description) digitalDocumentData.description = description;
 
     try {
       const { ok, data: { data } } = await createDigitalDoc(musicCompositionId, digitalDocumentData);
