@@ -69,6 +69,7 @@ export default function CreateCampaign() {
         name       : campaignTitle,
         title      : campaignTitle,
         description: campaignDescription,
+        endTime    : campaignDeadline.toISOString(),
         digitalDocumentId,
       });
 
