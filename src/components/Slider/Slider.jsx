@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/styles';
 import { useTranslation } from 'react-i18next';
 import * as PropTypes from 'prop-types';
@@ -47,6 +47,7 @@ export default function Slider ({ children, itemWidth, framePadding }) {
   return (
     <Carousel
       slidesToShow={slidesToShow}
+      slidesToScroll={slidesToShow}
       framePadding={framePadding}
       renderCenterLeftControls={renderCenterLeftControls}
       renderCenterRightControls={renderCenterRightControls}

@@ -11,7 +11,9 @@ export default ({ typography, palette, spacing, breakpoints }) => createStyles({
     padding       : 0,
     '& span'      : {
       paddingBottom: spacing(0.3),
-      fontWeight   : 400,
+    },
+    [breakpoints.down('md')]: {
+      padding: spacing(0.75),
     },
   },
   removeHover: {
@@ -20,8 +22,7 @@ export default ({ typography, palette, spacing, breakpoints }) => createStyles({
     },
   },
   navLinkActive: {
-    fontWeight: 600,
-    color     : palette.primary.main,
+    color: palette.primary.main,
   },
   mobile: {
     [breakpoints.up('md')]: {

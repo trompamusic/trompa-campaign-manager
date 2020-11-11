@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import * as PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { makeStyles } from '@material-ui/styles';
-import { Typography, IconButton } from '@material-ui/core';
+import { Typography, Button } from '@material-ui/core';
 import RemoveRedEyeIcon from '@material-ui/icons/RemoveRedEye';
 import ScoreContainer from '../../containers/ScoreContainer/ScoreContainer';
 import images from '../../theme/images';
@@ -95,12 +95,11 @@ export default function Jumbotron ({
               {digitalDocument?.title}
             </Typography>
             <ScoreContainer />
-            <IconButton className={classes.toggleScoreModal} onClick={() => toggleScoremodal(true)}>
-              <RemoveRedEyeIcon color="inherit" />
+            <Button className={classes.toggleScoreModal} startIcon={<RemoveRedEyeIcon color="inherit" />} onClick={() => toggleScoremodal(true)}>
               <Typography variant="body2" color="inherit">
               View progress
               </Typography>
-            </IconButton>
+            </Button>
             <Typography className={classes.progress} variant="body2" color="inherit">
             2/12 pages done
             </Typography>

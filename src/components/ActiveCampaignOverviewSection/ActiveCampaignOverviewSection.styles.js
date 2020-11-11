@@ -14,6 +14,10 @@ export default ({ palette, breakpoints }) => createStyles({
         display: 'none !important',
       },
     },
+    // fixes ghosting rendering issue of scrolling on iOS
+    ".slider-frame": {
+      transform: 'none !important',
+    },
   },
   root: {
     backgroundColor         : palette.common.faintGrey,

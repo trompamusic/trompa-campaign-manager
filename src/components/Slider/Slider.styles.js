@@ -18,9 +18,9 @@ export default ({ palette }) => createStyles({
       opacity: '1 !important',
     },
     ".paging-dot > circle": {
-      r : 6,
-      cx: 10,
-      cy: 10,
+      r : '6px',
+      cx: '10px',
+      cy: '10px',
     },
   },
   slideButton: {

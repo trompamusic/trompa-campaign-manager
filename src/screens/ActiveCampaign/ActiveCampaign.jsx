@@ -115,6 +115,24 @@ export default function ActiveCampaign ({ match }) {
         musicComposition={digitalDocument?.exampleOfWork[0]}
         composer={digitalDocument?.exampleOfWork?.[0]?.composer?.[0]}
       />
+      <ActiveCampaignOverviewSection>
+        {campaigns?.map(campaign => {
+          const daysToGo        = moment(campaign.endTime.formatted)?.diff(moment(), 'days');
+          const digitalDocument = getCampaignDigitalDocument(campaign);
+
+          return (
+            <ActiveCampaignOverviewItem
+              key={campaign.identifier}
+              scoreImage={digitalDocument?.image}
+              scoreTitle={digitalDocument?.title}
+              campaignTitle={campaign.title}
+              campaignDeadline={daysToGo}
+              onClick={() => {
+                history.push(`/campaign/${campaign.identifier}`);
+              }}
+            />
+          );})}
+      </ActiveCampaignOverviewSection>
       <Jumbotron
         image={images.collaborateHero}
         text={{
@@ -132,25 +150,6 @@ export default function ActiveCampaign ({ match }) {
           {t('about.start_today')}
         </Button>
       </Jumbotron>
-      <ActiveCampaignOverviewSection>
-        {campaigns?.map(campaign => {
-          const daysToGo        = moment(campaign.endTime.formatted)?.diff(moment(), 'days');
-          const digitalDocument = getCampaignDigitalDocument(campaign);
-
-          return (
-            <ActiveCampaignOverviewItem
-              key={campaign.identifier}
-              scoreImage={digitalDocument?.image}
-              scoreTitle={digitalDocument?.title}
-              campaignTitle={campaign.title}
-              campaignDeadline={daysToGo}
-              onClick={() => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-                history.push(`/campaign/${campaign.identifier}`);
-              }}
-            />
-          );})}
-      </ActiveCampaignOverviewSection>
       <Footer />
       <ShareDialog
         open={shareDialogOpen}

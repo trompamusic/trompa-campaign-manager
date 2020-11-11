@@ -32,12 +32,10 @@ export default ({ spacing, palette, typography, shape, breakpoints }) => createS
     },
   },
   desktop: {
-    zIndex      : 10,
-    marginLeft  : 92,
-    marginTop   : 150,
-    marginBottom: 'auto',
-    width       : 475,
-    '& h1'      : {
+    zIndex    : 10,
+    marginLeft: 92,
+    width     : 475,
+    '& h1'    : {
       lineHeight: 1.2,
     },
     '& h2': {
@@ -232,8 +230,8 @@ export default ({ spacing, palette, typography, shape, breakpoints }) => createS
     },
   },
   toggleScoreModal: {
-    // marginLeft    : '50px',
     color         : palette.primary.main,
+    margin        : spacing(0.5),
     width         : '55%',
     display       : 'flex',
     justifyContent: 'space-between',
