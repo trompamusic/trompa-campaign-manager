@@ -28,7 +28,9 @@ export const upload = file => {
 
   return promise.then(
     function(data) {
-      return data.Location;
+      const amazonUrl = data.Location;
+
+      return amazonUrl.replace("https://trompa-upload.s3.eu-west-1.amazonaws.com/upload/", "https://files.trompamusic.eu/");
     },
     function(err) {
       return alert("There was an error uploading your file: ", err.message);
