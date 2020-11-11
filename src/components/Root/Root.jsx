@@ -1,5 +1,5 @@
 import React,{ useEffect } from 'react';
-import { Route, Switch, useLocation } from 'react-router-dom';
+import { Route, Switch, useLocation, useHistory } from 'react-router-dom';
 import Home from '../../screens/Home';
 import Task from '../../screens/Task';
 import ActiveCampaign from '../../screens/ActiveCampaign';
@@ -9,10 +9,15 @@ import CreateCampaign from '../../screens/CreateCampaign';
 
 export default function Root(props) {
   const { pathname } = useLocation();
+  const history      = useHistory();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    const isPush       = history.action === 'PUSH';
+
+    if (isPush) {
+      window.scrollTo(0, 0);
+    }
+  }, [history.action, pathname]);
 
   const content = props.error ? (
     <div>Something wen't terribly wrong!</div>

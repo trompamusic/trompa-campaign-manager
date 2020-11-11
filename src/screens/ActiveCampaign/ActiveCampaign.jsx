@@ -122,7 +122,6 @@ export default function ActiveCampaign ({ match }) {
               campaignTitle={campaign.title}
               campaignDeadline={daysToGo}
               onClick={() => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
                 history.push(`/campaign/${campaign.identifier}`);
               }}
             />
