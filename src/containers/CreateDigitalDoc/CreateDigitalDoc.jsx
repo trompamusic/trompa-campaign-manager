@@ -1,6 +1,7 @@
 import React from 'react';
 import CreateDigitalDocModal from '../../components/CreateDigitalDocModal/CreateDigitalDocModal';
 import { createDigitalDoc } from '../../services/api.service';
+import { formatUrl } from "../../utils";
 
 export default function CreateDigitalDoc({ musicCompositionId, onDigitalDocCreated }) {
   const digitalDocumentInitialValues = {
@@ -13,9 +14,10 @@ export default function CreateDigitalDoc({ musicCompositionId, onDigitalDocCreat
     description : undefined,
   };
 
-  console.log(musicCompositionId);
-
   const onFormSubmit = async ({ title, url, creator, thumbnailUrl, description, language, license }) => {
+    url          = formatUrl(url);
+    thumbnailUrl = formatUrl(thumbnailUrl);
+    
     const digitalDocumentData = {
       name    : title,
       relation: url,

@@ -41,7 +41,6 @@ export default function CreateDigitalDocModal({ initialFormValues, onFormSubmit 
                 onChange={handleChange}
                 onBlur={handleBlur}
                 placeholder={t('create_digital_doc.url_example')}
-                type="url"
                 endAdornment={values.url?.length > 0 && (
                   <InputAdornment position="end">
                     <IconButton onClick={() => setFieldValue('url', '')}>

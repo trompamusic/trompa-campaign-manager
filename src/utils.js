@@ -37,3 +37,5 @@ export const hasUrlParameter = parameter => {
 
   return urlParams.has(parameter);
 };
+
+export const formatUrl = url => (url.indexOf('https://') === 0 || url.indexOf('http://') === 0)? url : `https://${url}`;
