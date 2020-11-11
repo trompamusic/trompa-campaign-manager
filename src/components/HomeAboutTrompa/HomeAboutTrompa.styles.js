@@ -73,7 +73,11 @@ export default ({ spacing, breakpoints }) => createStyles({
     width : 'auto',
   },
   smallLogo: {
-    height: '85px !important',
-    width : 'auto',
+    height                  : 85,
+    width                   : 'auto',
+    [breakpoints.down('md')]: {
+      height  : 'auto',
+      maxWidth: 125, 
+    },
   },
 });
