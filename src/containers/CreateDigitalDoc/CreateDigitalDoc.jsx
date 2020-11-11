@@ -1,8 +1,33 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import CreateDigitalDocModal from '../../components/CreateDigitalDocModal/CreateDigitalDocModal';
 import { createDigitalDoc } from '../../services/api.service';
+import * as aws from '../../services/aws.service';
 
 export default function CreateDigitalDoc({ musicCompositionId, onDigitalDocCreated }) {
+  const { t }            = useTranslation('startCampaign');
+  const fileInputRef     = useRef();
+  const setFieldValueRef = useRef();
+
+  const handleUploadButtonClick = setFieldValue => {
+    setFieldValueRef.current = setFieldValue;
+    fileInputRef.current.click();
+  };
+
+  useEffect(() => {
+    aws.initializeUpload();
+
+    fileInputRef.current          = document.createElement('input');
+    fileInputRef.current.type     = 'file';
+    fileInputRef.current.onchange = event => {
+      const file = event.target.files[0];
+
+      file
+        ? aws.upload(file).then(url => setFieldValueRef.current("url", url))
+        : alert(t('create_digital_doc.please_choose'));
+    };
+  }, [t]);
+
   const digitalDocumentInitialValues = {
     title       : '',
     creator     : '',
@@ -12,8 +37,6 @@ export default function CreateDigitalDoc({ musicCompositionId, onDigitalDocCreat
     thumbnailUrl: '',
     description : '',
   };
-
-  console.log(musicCompositionId);
 
   const onFormSubmit = async ({ title, url, creator, thumbnailUrl, description, language, license }) => {
     const digitalDocumentData = {
@@ -42,10 +65,6 @@ export default function CreateDigitalDoc({ musicCompositionId, onDigitalDocCreat
   };
 
   return (
-    <CreateDigitalDocModal initialFormValues={digitalDocumentInitialValues} onFormSubmit={onFormSubmit} />
+    <CreateDigitalDocModal initialFormValues={digitalDocumentInitialValues} onFormSubmit={onFormSubmit} onUploadButtonClick={handleUploadButtonClick} />
   );
 }
-
-CreateDigitalDoc.propTypes = {};
-
-CreateDigitalDoc.defaultProps = {};
