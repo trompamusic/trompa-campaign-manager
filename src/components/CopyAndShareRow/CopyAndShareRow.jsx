@@ -29,10 +29,10 @@ export default function CopyAndShareRow ({ className, campaign, campaignUrl }) {
       alignItems="center"
       container
     >
-      <Grid xs={12} sm={9} item>
+      <Grid xs={12} sm={12} md={9} item>
         <CopyField defaultValue={campaignUrl} fullWidth />
       </Grid>
-      <Grid className={classes.sharingIcons} sm={3} item>
+      <Grid className={classes.sharingIcons} xs={12} md={3} item>
         <a target="_blank" rel="noopener noreferrer" href={`https://www.facebook.com/sharer/sharer.php?u=${campaignUrl}`}>
           <FacebookIcon aria-label="Facebook" />
         </a>

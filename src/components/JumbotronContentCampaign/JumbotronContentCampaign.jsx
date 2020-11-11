@@ -8,21 +8,23 @@ import { Typography } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import CopyAndShareRow from '../CopyAndShareRow/CopyAndShareRow';
+import useWidth from '../../hooks/useWidth';
 import styles from './JumbotronContentCampaign.styles';
 
 const useStyles = makeStyles(styles);
 
 export default function JumbotronContentCampaign ({ campaign, campaignUrl, endDate, to, openSubscribeForm, hasTasksAvailable }) {
   const { t }   = useTranslation('campaign');
+  const width   = useWidth();
   const classes = useStyles();
-  
+
   let daysLeft = endDate?.diff(moment(), 'days');
 
   if(daysLeft < 0) daysLeft = 0;
 
   return (
     <div className={classes.root}>
-      {endDate && 
+      {endDate &&
         <Typography className={classes.daysToGo}>
           {t('jumbotron.days_to_go', { count: daysLeft }) }
         </Typography>
@@ -38,6 +40,7 @@ export default function JumbotronContentCampaign ({ campaign, campaignUrl, endDa
           variant="contained"
           disabled={!hasTasksAvailable}
           color="primary"
+          fullWidth={['xs', 'sm', 'md'].includes(width)}
         >
           {hasTasksAvailable ? t('navbar.join_campaign') : t('jumbotron.processing_score')}
         </Button>
@@ -46,11 +49,12 @@ export default function JumbotronContentCampaign ({ campaign, campaignUrl, endDa
           onClick={openSubscribeForm}
           variant="text"
           startIcon={<NotificationsIcon />}
+          fullWidth={['xs', 'sm', 'md'].includes(width)}
         >
           {t('subscribe_for_updates')}
         </Button>
       </div>
-      <CopyAndShareRow className={classes.copyAndShareRow} campaign={campaign} campaignUrl={campaignUrl} />
+      <CopyAndShareRow campaign={campaign} campaignUrl={campaignUrl} />
     </div>
   );
 }
