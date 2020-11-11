@@ -9,9 +9,7 @@ export default function CreateCampaignSetup({
   onBackButtonClick,
   onCampaignMetaSubmit,
 }) {
-  const onFormSubmit = CampaignMetaValues => {
-    onCampaignMetaSubmit(CampaignMetaValues);
-  };
+  const onFormSubmit = CampaignMetaValues => onCampaignMetaSubmit(CampaignMetaValues);
 
   return <CreateCampaignSetupComponent onSubmit={onFormSubmit} initialFormValues={{ campaignTitle, campaignDescription, campaignDeadline }} onBackButtonClick={onBackButtonClick} />;
 }

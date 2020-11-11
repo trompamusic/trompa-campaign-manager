@@ -12,11 +12,11 @@ import styles from './SelectScoreItem.styles';
 const useStyles = makeStyles(styles);
 
 export default function SelectScoreItem({ item, isActiveCampaign, progress, onItemClick }){
-  const { t }                   = useTranslation('selectComposition');
-  const classes                 = useStyles();
-  const [hover, setHover]       = useState(false);
-  const [pdfHover, setPdfHover] = useState(false);
-  const maxChars                = 200;
+  const { t }                               = useTranslation('selectComposition');
+  const classes                             = useStyles();
+  const [hover, setHover]                   = useState(false);
+  const [buttonBarHover, setButtonBarHover] = useState(false);
+  const maxChars                            = 200;
 
   return (
     <Card 
@@ -24,7 +24,7 @@ export default function SelectScoreItem({ item, isActiveCampaign, progress, onIt
       elevation={hover? 4:2} 
       onMouseOver={() => setHover(true)}
       onMouseOut={() => setHover(false)}
-      onClick={() => !pdfHover? onItemClick() : null}
+      onClick={() => !buttonBarHover? onItemClick : null}
     >
       <Box className={classes.imgBox}>
         <Avatar className={classes.img} src={item?.image} alt={item?.name || ""}>
@@ -34,18 +34,9 @@ export default function SelectScoreItem({ item, isActiveCampaign, progress, onIt
       <Box className={classes.itemMain}>
         <Box className={classes.itemHeader}>
           <Typography variant="h3" color="primary">{item?.title || ""}</Typography>
-          <Box className={classes.itemButtonBox}>
-            {item?.format === "application/pdf" && 
-              <a href={item?.source} target="_blank" rel="noopener noreferrer">
-                <IconButton 
-                  aria-label="PDF" 
-                  onMouseOver={() => setPdfHover(true)}
-                  onMouseOut={() => setPdfHover(false)} 
-                >
-                  <InsertDriveFileIcon className={classes.icon} />
-                  <Typography>{t('pdf')}</Typography>
-                </IconButton>
-              </a>
+          <Box className={classes.itemButtonBox} onMouseOver={() => setButtonBarHover(true)} onMouseOut={() => setButtonBarHover(false)} >
+            {item?.format && item?.source && 
+              <FileButton item={item} classes={classes} t={t} /> 
             }
             {isActiveCampaign && 
               <a href={'<campaignlink>'} target="_blank" rel="noopener noreferrer">
@@ -79,6 +70,27 @@ export default function SelectScoreItem({ item, isActiveCampaign, progress, onIt
     </Card>
   );
 }
+const FileButton = ({ item, t, classes }) => {
+  const getFileType = format => {
+    switch(format){
+    case "application/pdf":          return "pdf";
+    case "application/musicxml+zip": return "mxl";
+    default: return;
+    }
+  };
+  const fileType    = getFileType(item.format);
+
+  if(!fileType) return "";
+
+  return (
+    <a href={item.source} target="_blank" rel="noopener noreferrer">
+      <IconButton aria-label={t(fileType)}>
+        <InsertDriveFileIcon className={classes.icon} />
+        <Typography>{t(fileType)}</Typography>
+      </IconButton>
+    </a>
+  );
+};
 
 SelectScoreItem.propTypes = {
   item            : PropTypes.object,
