@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/styles';
 import { useTranslation } from 'react-i18next';
 import * as PropTypes from 'prop-types';
@@ -17,6 +17,19 @@ export default function Slider ({ children, itemWidth, framePadding }) {
   const { t }                  = useTranslation('campaign');
   const slidesToShow           = getSlidesToShow(windowWidth, itemWidth);
   const slideCount             = children?.length;
+
+  useEffect(() => {
+    // for correct rendering of the dots in firefox
+    const circles                 = document.querySelectorAll('circle');
+
+    if (circles) {
+      circles.forEach(circle => {
+        circle.setAttribute('cy', 10);
+        circle.setAttribute('cx', 10);
+        circle.setAttribute('r', 6);
+      });
+    }
+  },[]);
 
   function getSlidesToShow (windowWidth, itemWidth) {
     const minimumSlides = 2;

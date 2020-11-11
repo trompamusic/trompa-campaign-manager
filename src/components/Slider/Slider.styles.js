@@ -17,11 +17,6 @@ export default ({ palette }) => createStyles({
     ".paging-item:not(.active) > button": {
       opacity: '1 !important',
     },
-    ".paging-dot > circle": {
-      r : 6,
-      cx: 10,
-      cy: 10,
-    },
   },
   slideButton: {
     backgroundColor: palette.common.white,
