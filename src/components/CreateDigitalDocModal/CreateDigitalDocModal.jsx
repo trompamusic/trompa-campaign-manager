@@ -1,4 +1,5 @@
 import React from 'react';
+import * as PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import { useTranslation } from 'react-i18next';
 import Button from '@material-ui/core/Button';
@@ -16,7 +17,7 @@ import styles from './CreateDigitalDocModal.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function CreateDigitalDocModal({ initialFormValues, onFormSubmit }) {
+export default function CreateDigitalDocModal({ initialFormValues, onFormSubmit, onUploadButtonClick }) {
   const { t }   = useTranslation('startCampaign');
   const classes = useStyles();
 
@@ -31,7 +32,7 @@ export default function CreateDigitalDocModal({ initialFormValues, onFormSubmit 
         </Typography>
       </DialogTitle>
       <Form onSubmit={onFormSubmit} initialValues={{ ...initialFormValues }}>
-        {({ values, handleChange, handleSubmit, handleBlur, setFieldValue, setFieldTouched, isSubmitting }) => (
+        {({ values, handleChange, handleSubmit, handleBlur, setFieldValue }) => (
           <form className={classes.container} onSubmit={handleSubmit}>
             <DialogContent>
               <Input
@@ -41,11 +42,16 @@ export default function CreateDigitalDocModal({ initialFormValues, onFormSubmit 
                 onChange={handleChange}
                 onBlur={handleBlur}
                 placeholder={t('create_digital_doc.url_example')}
-                endAdornment={values.url?.length > 0 && (
+                type="url"
+                endAdornment={(
                   <InputAdornment position="end">
-                    <IconButton onClick={() => setFieldValue('url', '')} size="small" tabIndex={99}>
-                      <CancelIcon />
-                    </IconButton>
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      onClick={() => onUploadButtonClick(setFieldValue)}
+                    >
+                      {t('create_digital_doc.select_file')}
+                    </Button>
                   </InputAdornment>
                 )}
                 required
@@ -153,5 +159,9 @@ export default function CreateDigitalDocModal({ initialFormValues, onFormSubmit 
   );
 }
 
-CreateDigitalDocModal.propTypes = {};
+CreateDigitalDocModal.propTypes = {
+  initialFormValues  : PropTypes.object.isRequired,
+  onFormSubmit       : PropTypes.func.isRequired,
+  onUploadButtonClick: PropTypes.func.isRequired,
+};
 

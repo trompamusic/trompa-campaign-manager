@@ -37,7 +37,6 @@ export default ({ spacing, palette, typography, shape, breakpoints }) => createS
     marginTop   : 150,
     marginBottom: 'auto',
     width       : 475,
-    height      : 50,
     '& h1'      : {
       lineHeight: 1.2,
     },
@@ -45,7 +44,7 @@ export default ({ spacing, palette, typography, shape, breakpoints }) => createS
       lineHeight: 1.4,
     },
     '&$campaign': {
-      marginTop: 70,
+      marginTop: 0,
       '& h1'   : {
         lineHeight: 1.3,
       },
@@ -62,7 +61,7 @@ export default ({ spacing, palette, typography, shape, breakpoints }) => createS
       },
       '&$campaign': {
         width    : '50%',
-        marginTop: 110,
+        marginTop: 0,
       },
     },
     [breakpoints.only('md')]: {
