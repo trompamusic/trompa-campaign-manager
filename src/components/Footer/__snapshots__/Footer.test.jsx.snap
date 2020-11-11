@@ -146,7 +146,7 @@ exports[`<Footer /> renders and matches snapshot 1`] = `
               class="MuiGrid-root makeStyles-linksBlock-5 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-lg-6"
             >
               <a
-                href="https://trompamusic.eu/newsletter"
+                href="https://trompamusic.eu/get-involved"
                 rel="noopener noreferrer"
                 target="_blank"
               >
