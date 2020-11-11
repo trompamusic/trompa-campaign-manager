@@ -24,7 +24,7 @@ export default function SelectScoreItem({ item, isActiveCampaign, progress, onIt
       elevation={hover? 4:2} 
       onMouseOver={() => setHover(true)}
       onMouseOut={() => setHover(false)}
-      onClick={() => !buttonBarHover? onItemClick : null}
+      onClick={() => !buttonBarHover? onItemClick() : null}
     >
       <Box className={classes.imgBox}>
         <Avatar className={classes.img} src={item?.image} alt={item?.name || ""}>
