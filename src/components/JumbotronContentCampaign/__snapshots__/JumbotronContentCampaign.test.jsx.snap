@@ -52,28 +52,28 @@ exports[`<JumbotronContentCampaign /> renders and matches snapshot 1`] = `
     </button>
   </div>
   <div
-    class="MuiGrid-root makeStyles-copyAndShareRow-77 makeStyles-copyAndShareRow-5 MuiGrid-container MuiGrid-align-items-xs-center"
+    class="MuiGrid-root makeStyles-copyAndShareRow-76 MuiGrid-container MuiGrid-align-items-xs-center"
   >
     <div
       class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-9"
     >
       <div
-        class="makeStyles-root-182"
+        class="makeStyles-root-181"
       >
         <div
-          class="MuiFormControl-root MuiTextField-root makeStyles-copyField-183 MuiFormControl-fullWidth"
+          class="MuiFormControl-root MuiTextField-root makeStyles-copyField-182 MuiFormControl-fullWidth"
         >
           <div
-            class="MuiInputBase-root MuiFilledInput-root MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiFilledInput-adornedEnd makeStyles-copyFieldAdornedEnd-185 MuiInputBase-marginDense MuiFilledInput-marginDense"
+            class="MuiInputBase-root MuiFilledInput-root MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiFilledInput-adornedEnd makeStyles-copyFieldAdornedEnd-184 MuiInputBase-marginDense MuiFilledInput-marginDense"
           >
             <input
               aria-invalid="false"
-              class="MuiInputBase-input MuiFilledInput-input makeStyles-copyFieldInput-184 MuiInputBase-inputAdornedEnd MuiFilledInput-inputAdornedEnd MuiInputBase-inputMarginDense MuiFilledInput-inputMarginDense makeStyles-copyFieldInputMarginDense-186"
+              class="MuiInputBase-input MuiFilledInput-input makeStyles-copyFieldInput-183 MuiInputBase-inputAdornedEnd MuiFilledInput-inputAdornedEnd MuiInputBase-inputMarginDense MuiFilledInput-inputMarginDense makeStyles-copyFieldInputMarginDense-185"
               type="text"
               value=""
             />
             <span
-              class="makeStyles-copyText-187"
+              class="makeStyles-copyText-186"
             >
               Copy
             </span>
@@ -82,7 +82,7 @@ exports[`<JumbotronContentCampaign /> renders and matches snapshot 1`] = `
       </div>
     </div>
     <div
-      class="MuiGrid-root makeStyles-sharingIcons-78 MuiGrid-item MuiGrid-grid-sm-3"
+      class="MuiGrid-root makeStyles-sharingIcons-77 MuiGrid-item MuiGrid-grid-sm-3"
     >
       <a
         href="https://www.facebook.com/sharer/sharer.php?u=undefined"

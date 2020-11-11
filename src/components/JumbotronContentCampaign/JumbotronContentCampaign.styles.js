@@ -33,9 +33,4 @@ export default ({ palette, typography, spacing, breakpoints }) => createStyles({
       marginBottom: spacing(),
     },
   },
-  copyAndShareRow: {
-    [breakpoints.only('sm')]: {
-      display: 'none',
-    },
-  },
 });
