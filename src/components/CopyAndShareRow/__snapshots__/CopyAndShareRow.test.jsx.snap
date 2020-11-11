@@ -5,7 +5,7 @@ exports[`<CopyAndShareRow /> renders and matches snapshot 1`] = `
   class="MuiGrid-root makeStyles-copyAndShareRow-1 MuiGrid-container MuiGrid-align-items-xs-center"
 >
   <div
-    class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-9"
+    class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-9"
   >
     <div
       class="makeStyles-root-106"
@@ -32,7 +32,7 @@ exports[`<CopyAndShareRow /> renders and matches snapshot 1`] = `
     </div>
   </div>
   <div
-    class="MuiGrid-root makeStyles-sharingIcons-2 MuiGrid-item MuiGrid-grid-sm-3"
+    class="MuiGrid-root makeStyles-sharingIcons-2 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-3"
   >
     <a
       href="https://www.facebook.com/sharer/sharer.php?u=https://www.trompa.com/"
