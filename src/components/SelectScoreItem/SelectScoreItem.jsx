@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import * as PropTypes from 'prop-types';
-import { Avatar, Box, Button, Card, IconButton, Typography } from '@material-ui/core';
+import { Avatar, Box, Card, IconButton, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
-import Launch from '@material-ui/icons/Launch';
+// import Launch from '@material-ui/icons/Launch';
 import { useTranslation } from 'react-i18next';
 import ScorePlaceholderIcon from "../Icons/ScorePlaceholderIcon";
 import { truncateLabel } from "../../utils";
@@ -12,19 +12,27 @@ import styles from './SelectScoreItem.styles';
 const useStyles = makeStyles(styles);
 
 export default function SelectScoreItem({ item, isActiveCampaign, progress, onItemClick }){
-  const { t }                               = useTranslation('selectComposition');
-  const classes                             = useStyles();
-  const [hover, setHover]                   = useState(false);
-  const [buttonBarHover, setButtonBarHover] = useState(false);
-  const maxChars                            = 200;
+  const { t }             = useTranslation('selectComposition');
+  const classes           = useStyles();
+  const [hover, setHover] = useState(false);
+  const maxChars          = 200;
 
+  const getFileType = format => {
+    switch(format){
+    case "application/pdf":          return "pdf";
+    case "application/musicxml+zip": return "mxl";
+    default:                         return;  
+    }
+  };
+  const fileType    = getFileType(item?.format);
+  
   return (
     <Card 
       className={classes.item} 
       elevation={hover? 4:2} 
       onMouseOver={() => setHover(true)}
       onMouseOut={() => setHover(false)}
-      onClick={() => !buttonBarHover? onItemClick() : null}
+      onClick={onItemClick}
     >
       <Box className={classes.imgBox}>
         <Avatar className={classes.img} src={item?.image} alt={item?.name || ""}>
@@ -34,12 +42,25 @@ export default function SelectScoreItem({ item, isActiveCampaign, progress, onIt
       <Box className={classes.itemMain}>
         <Box className={classes.itemHeader}>
           <Typography variant="h3" color="primary">{item?.title || ""}</Typography>
-          <Box className={classes.itemButtonBox} onMouseOver={() => setButtonBarHover(true)} onMouseOut={() => setButtonBarHover(false)} >
-            {item?.format && item?.source && 
-              <FileButton item={item} classes={classes} t={t} /> 
+          <Box className={classes.itemButtonBox}>
+            {fileType && item?.source && 
+              <IconButton 
+                aria-label={t(fileType)} 
+                className={classes.iconButton}
+                href={item.source} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                onClick={e => e.stopPropagation()}
+              >
+                <InsertDriveFileIcon className={classes.icon} />
+                <Typography>{t(fileType)}</Typography>
+              </IconButton>
             }
+            {/* 
+            //ActiveCampaign is not supported yet. TODO
+
             {isActiveCampaign && 
-              <a href={'<campaignlink>'} target="_blank" rel="noopener noreferrer">
+              <a href={} target="_blank" rel="noopener noreferrer">
                 <Button 
                   variant="contained" 
                   size="small" 
@@ -49,7 +70,7 @@ export default function SelectScoreItem({ item, isActiveCampaign, progress, onIt
                   {t('active_campaign')}
                 </Button>
               </a>
-            }
+            }*/}
           </Box>
         </Box>
         <Box>
@@ -70,27 +91,6 @@ export default function SelectScoreItem({ item, isActiveCampaign, progress, onIt
     </Card>
   );
 }
-const FileButton = ({ item, t, classes }) => {
-  const getFileType = format => {
-    switch(format){
-    case "application/pdf":          return "pdf";
-    case "application/musicxml+zip": return "mxl";
-    default: return;
-    }
-  };
-  const fileType    = getFileType(item.format);
-
-  if(!fileType) return "";
-
-  return (
-    <a href={item.source} target="_blank" rel="noopener noreferrer">
-      <IconButton aria-label={t(fileType)}>
-        <InsertDriveFileIcon className={classes.icon} />
-        <Typography>{t(fileType)}</Typography>
-      </IconButton>
-    </a>
-  );
-};
 
 SelectScoreItem.propTypes = {
   item            : PropTypes.object,

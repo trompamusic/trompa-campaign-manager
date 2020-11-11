@@ -60,6 +60,9 @@ export default ({ spacing, palette, shape, breakpoints, typography }) => createS
     maxHeight   : 100,
     marginBottom: spacing(1),
   },
+  iconButton: {
+    borderRadius: spacing(1),
+  },
   icon: {
     marginRight: spacing(1),
   },
