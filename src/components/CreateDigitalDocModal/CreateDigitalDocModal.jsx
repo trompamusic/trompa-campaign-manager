@@ -32,7 +32,7 @@ export default function CreateDigitalDocModal({ initialFormValues, onFormSubmit,
         </Typography>
       </DialogTitle>
       <Form onSubmit={onFormSubmit} initialValues={{ ...initialFormValues }}>
-        {({ values, handleChange, handleSubmit, handleBlur, setFieldValue, setFieldTouched, isSubmitting }) => (
+        {({ values, handleChange, handleSubmit, handleBlur, setFieldValue }) => (
           <form className={classes.container} onSubmit={handleSubmit}>
             <DialogContent>
               <Input
@@ -48,7 +48,7 @@ export default function CreateDigitalDocModal({ initialFormValues, onFormSubmit,
                     <Button
                       variant="contained"
                       color="primary"
-                      onClick={onUploadButtonClick}
+                      onClick={() => onUploadButtonClick(setFieldValue)}
                     >
                       {t('create_digital_doc.select_file')}
                     </Button>
@@ -159,7 +159,7 @@ export default function CreateDigitalDocModal({ initialFormValues, onFormSubmit,
 }
 
 CreateDigitalDocModal.propTypes = {
-  initialFormValues  : PropTypes.func.isRequired,
+  initialFormValues  : PropTypes.object.isRequired,
   onFormSubmit       : PropTypes.func.isRequired,
   onUploadButtonClick: PropTypes.func.isRequired,
 };

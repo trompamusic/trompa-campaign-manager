@@ -1,8 +1,31 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import CreateDigitalDocModal from '../../components/CreateDigitalDocModal/CreateDigitalDocModal';
 import { createDigitalDoc } from '../../services/api.service';
+import * as aws from '../../services/aws.service';
 
 export default function CreateDigitalDoc({ musicCompositionId, onDigitalDocCreated }) {
+  const fileInputRef     = useRef();
+  const setFieldValueRef = useRef();
+
+  const handleUploadButtonClick = setFieldValue => {
+    setFieldValueRef.current = setFieldValue;
+    fileInputRef.current.click();
+  };
+
+  useEffect(() => {
+    aws.initializeUpload();
+
+    fileInputRef.current          = document.createElement('input');
+    fileInputRef.current.type     = 'file';
+    fileInputRef.current.onchange = event => {
+      const file = event.target.files[0];
+
+      file
+        ? aws.upload(file).then(url => setFieldValueRef.current("url", url))
+        : alert("Please choose a file to upload first.");
+    };
+  }, []);
+
   const digitalDocumentInitialValues = {
     title       : '',
     creator     : '',
@@ -39,13 +62,7 @@ export default function CreateDigitalDoc({ musicCompositionId, onDigitalDocCreat
     }
   };
 
-  const handleUploadButtonClick = () => {
-    // TODO
-  };
-
   return (
     <CreateDigitalDocModal initialFormValues={digitalDocumentInitialValues} onFormSubmit={onFormSubmit} onUploadButtonClick={handleUploadButtonClick} />
   );
 }
-
-CreateDigitalDoc.propTypes = {};
