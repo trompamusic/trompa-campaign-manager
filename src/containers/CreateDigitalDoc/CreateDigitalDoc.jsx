@@ -13,8 +13,6 @@ export default function CreateDigitalDoc({ musicCompositionId, onDigitalDocCreat
     description : '',
   };
 
-  console.log(musicCompositionId);
-
   const onFormSubmit = async ({ title, url, creator, thumbnailUrl, description, language, license }) => {
     const digitalDocumentData = {
       name    : title,
@@ -41,11 +39,13 @@ export default function CreateDigitalDoc({ musicCompositionId, onDigitalDocCreat
     }
   };
 
+  const handleUploadButtonClick = () => {
+    // TODO
+  };
+
   return (
-    <CreateDigitalDocModal initialFormValues={digitalDocumentInitialValues} onFormSubmit={onFormSubmit} />
+    <CreateDigitalDocModal initialFormValues={digitalDocumentInitialValues} onFormSubmit={onFormSubmit} onUploadButtonClick={handleUploadButtonClick} />
   );
 }
 
 CreateDigitalDoc.propTypes = {};
-
-CreateDigitalDoc.defaultProps = {};

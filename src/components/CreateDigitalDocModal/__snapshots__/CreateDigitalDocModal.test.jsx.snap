@@ -43,16 +43,34 @@ exports[`<CreateDigitalDocModal /> renders and matches snapshot 1`] = `
             </span>
           </label>
           <div
-            class="MuiInputBase-root MuiFilledInput-root MuiInputBase-fullWidth MuiInputBase-formControl"
+            class="MuiInputBase-root MuiFilledInput-root MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiFilledInput-adornedEnd"
           >
             <input
               aria-invalid="false"
-              class="MuiInputBase-input MuiFilledInput-input"
+              class="MuiInputBase-input MuiFilledInput-input MuiInputBase-inputAdornedEnd MuiFilledInput-inputAdornedEnd"
               name="url"
               required=""
               type="url"
               value=""
             />
+            <div
+              class="MuiInputAdornment-root MuiInputAdornment-filled MuiInputAdornment-positionEnd"
+            >
+              <button
+                class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiButton-label"
+                >
+                  Select file
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
           </div>
         </div>
       </div>
