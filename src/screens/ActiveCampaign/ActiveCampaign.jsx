@@ -109,23 +109,6 @@ export default function ActiveCampaign ({ match }) {
         musicComposition={digitalDocument?.exampleOfWork[0]}
         composer={digitalDocument?.exampleOfWork?.[0]?.composer?.[0]}
       />
-      <Jumbotron
-        image={images.collaborateHero}
-        text={{
-          aboutTitle : t('about.about_collaboration_manager'),
-          description: t('about.trompa_is_developing'),
-        }}
-      >
-        <Button
-          className={classes.buttonHero}
-          component={Link}
-          to={doTaskUrl}
-          variant="contained"
-          color="primary"
-        >
-          {t('about.start_today')}
-        </Button>
-      </Jumbotron>
       <ActiveCampaignOverviewSection>
         {campaigns?.map(campaign => {
           const daysToGo        = moment(campaign.endTime.formatted)?.diff(moment(), 'days');
@@ -145,6 +128,23 @@ export default function ActiveCampaign ({ match }) {
             />
           );})}
       </ActiveCampaignOverviewSection>
+      <Jumbotron
+        image={images.collaborateHero}
+        text={{
+          aboutTitle : t('about.about_collaboration_manager'),
+          description: t('about.trompa_is_developing'),
+        }}
+      >
+        <Button
+          className={classes.buttonHero}
+          component={Link}
+          to={doTaskUrl}
+          variant="contained"
+          color="primary"
+        >
+          {t('about.start_today')}
+        </Button>
+      </Jumbotron>
       <Footer />
       <ShareDialog
         open={shareDialogOpen}
