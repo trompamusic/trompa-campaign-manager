@@ -1,4 +1,5 @@
-import AWS from 'aws-sdk';
+import S3 from 'aws-sdk/clients/s3';
+import { config, CognitoIdentityCredentials } from 'aws-sdk/global';
 
 const bucketName     = process.env.REACT_APP_AWS_SDK_BUCKET_NAME;
 const bucketRegion   = process.env.REACT_APP_AWS_SDK_BUCKET_REGION;
@@ -6,8 +7,8 @@ const IdentityPoolId = process.env.REACT_APP_AWS_SDK_IDENTITY_POOL_ID;
 const folder         = process.env.REACT_APP_AWS_SDK_FOLDER;
 
 export const initializeUpload = () => {
-  AWS.config.update({ region: bucketRegion, credentials: new AWS.CognitoIdentityCredentials({ IdentityPoolId: IdentityPoolId }) });
-  new AWS.S3({ apiVersion: "2006-03-01", params: { Bucket: bucketName } });
+  config.update({ region: bucketRegion, credentials: new CognitoIdentityCredentials({ IdentityPoolId: IdentityPoolId }) });
+  new S3({ apiVersion: "2006-03-01", params: { Bucket: bucketName } });
 };
 
 export const upload = file => {
@@ -15,7 +16,7 @@ export const upload = file => {
   const folderKey = encodeURIComponent(folder) + "/";
   const fileKey   = folderKey + fileName;
 
-  const upload = new AWS.S3.ManagedUpload({
+  const upload = new S3.ManagedUpload({
     params: {
       Bucket: bucketName,
       Key   : fileKey,
