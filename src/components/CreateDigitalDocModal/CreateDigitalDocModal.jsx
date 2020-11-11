@@ -43,7 +43,7 @@ export default function CreateDigitalDocModal({ initialFormValues, onFormSubmit 
                 placeholder={t('create_digital_doc.url_example')}
                 endAdornment={values.url?.length > 0 && (
                   <InputAdornment position="end">
-                    <IconButton onClick={() => setFieldValue('url', '')}>
+                    <IconButton onClick={() => setFieldValue('url', '')} size="small" tabIndex={99}>
                       <CancelIcon />
                     </IconButton>
                   </InputAdornment>
@@ -59,7 +59,7 @@ export default function CreateDigitalDocModal({ initialFormValues, onFormSubmit 
                 placeholder={t('create_digital_doc.url_example')}
                 endAdornment={values.thumbnailUrl?.length > 0 && (
                   <InputAdornment position="end">
-                    <IconButton onClick={() => setFieldValue('thumbnailUrl', '')}>
+                    <IconButton onClick={() => setFieldValue('thumbnailUrl', '')} size="small" tabIndex={99}>
                       <CancelIcon />
                     </IconButton>
                   </InputAdornment>
@@ -105,7 +105,7 @@ export default function CreateDigitalDocModal({ initialFormValues, onFormSubmit 
                 {licenses.map(option => (
                   <MenuItem key={option.label} value={option.value}>
                     {option.label}
-                  </MenuItem>
+                  </MenuItem> 
                 ))}
               </Input>
               <Input
