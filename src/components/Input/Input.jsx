@@ -33,6 +33,9 @@ export default function Input ({ value, label, name, endAdornment, children, pla
 }
 
 Input.propTypes = {
-  value: (PropTypes.number || PropTypes.string).isRequired,
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]).isRequired,
   label: PropTypes.string,
 };

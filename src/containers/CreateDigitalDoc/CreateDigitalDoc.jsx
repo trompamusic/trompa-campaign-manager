@@ -1,9 +1,11 @@
 import React, { useRef, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import CreateDigitalDocModal from '../../components/CreateDigitalDocModal/CreateDigitalDocModal';
 import { createDigitalDoc } from '../../services/api.service';
 import * as aws from '../../services/aws.service';
 
 export default function CreateDigitalDoc({ musicCompositionId, onDigitalDocCreated }) {
+  const { t }            = useTranslation('startCampaign');
   const fileInputRef     = useRef();
   const setFieldValueRef = useRef();
 
@@ -22,9 +24,9 @@ export default function CreateDigitalDoc({ musicCompositionId, onDigitalDocCreat
 
       file
         ? aws.upload(file).then(url => setFieldValueRef.current("url", url))
-        : alert("Please choose a file to upload first.");
+        : alert(t('create_digital_doc.please_choose'));
     };
-  }, []);
+  }, [t]);
 
   const digitalDocumentInitialValues = {
     title       : '',
