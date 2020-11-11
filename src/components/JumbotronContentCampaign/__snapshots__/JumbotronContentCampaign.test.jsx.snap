@@ -10,7 +10,7 @@ exports[`<JumbotronContentCampaign /> renders and matches snapshot 1`] = `
   >
     <a
       aria-disabled="true"
-      class="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-primaryButton-4 MuiButton-containedPrimary Mui-disabled Mui-disabled"
+      class="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-primaryButton-4 MuiButton-containedPrimary Mui-disabled MuiButton-fullWidth Mui-disabled"
       href=""
       role="button"
       tabindex="-1"
@@ -22,7 +22,7 @@ exports[`<JumbotronContentCampaign /> renders and matches snapshot 1`] = `
       </span>
     </a>
     <button
-      class="MuiButtonBase-root MuiButton-root MuiButton-text"
+      class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-fullWidth"
       tabindex="0"
       type="button"
     >
@@ -55,7 +55,7 @@ exports[`<JumbotronContentCampaign /> renders and matches snapshot 1`] = `
     class="MuiGrid-root makeStyles-copyAndShareRow-76 MuiGrid-container MuiGrid-align-items-xs-center"
   >
     <div
-      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-9"
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-9"
     >
       <div
         class="makeStyles-root-181"
@@ -82,7 +82,7 @@ exports[`<JumbotronContentCampaign /> renders and matches snapshot 1`] = `
       </div>
     </div>
     <div
-      class="MuiGrid-root makeStyles-sharingIcons-77 MuiGrid-item MuiGrid-grid-sm-3"
+      class="MuiGrid-root makeStyles-sharingIcons-77 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-3"
     >
       <a
         href="https://www.facebook.com/sharer/sharer.php?u=undefined"

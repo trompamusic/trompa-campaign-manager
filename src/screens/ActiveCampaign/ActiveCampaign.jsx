@@ -72,15 +72,21 @@ export default function ActiveCampaign ({ match }) {
   const buttons         = [{ name: t('navbar.share'), onClick: () => setShareDialogOpen(true), startIcon: <ShareIcon /> }];
   const primaryButton   = { name: t('navbar.join_campaign'), to: doTaskUrl };
 
+  const metaTitle       = campaign?.name ? `${t('help_us_digitize')}: ${campaign?.name}` : t('help_us_digitize_untitled');
+  const metaDescription = campaign?.description || '';
+  const metaImage       = `${window.location.origin}/assets/social-image.jpg`;
+
   return (
     <React.Fragment>
       <Helmet>
-        <title>
-          {campaign?.name
-            ? `${t('help_us_digitize')}: ${campaign?.name}`
-            : t('help_us_digitize_untitled')}
-        </title>
-        <meta name="description" content={campaign?.description || ''} />
+        <title>{metaTitle}</title>
+        <meta name="description" content={metaDescription} />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:title" content={metaTitle} />
+        <meta property="og:image" content={metaImage.replace(/^https:/, 'http:')} />
+        <meta property="og:image:secure_url" content={metaImage.replace(/^http:/, 'https:')} />
+        <meta property="og:image:width" content={1280} />
+        <meta property="og:image:height" content={628} />
       </Helmet>
       <NavBar
         navLinks={navLinks}

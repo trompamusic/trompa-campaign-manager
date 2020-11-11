@@ -7,10 +7,12 @@
   "create_digital_doc": {
     "url_example": "https://...",
     "select_own_file": "Select your own file",
+    "select_file": "Select file",
     "score": "Score URL",
     "thumbnail": "Thumbnail URL",
     "score_title": "Score title",
     "editor": "Editor",
+    "please_choose": "Please choose a file to upload first.",
     "publisher": "Publisher",
     "copyright": "Copyright license",
     "language": "Language",
