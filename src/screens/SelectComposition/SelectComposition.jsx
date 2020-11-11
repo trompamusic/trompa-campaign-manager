@@ -30,12 +30,7 @@ export default function SelectComposition({ composition, score, onSetComposition
   const lazyQueryCallback                              = { onCompleted: data => onGqlLoaded(data), fetchPolicy: "no-cache" };
   const [getCompositionWithScores, { loading, error }] = useLazyQuery(GET_COMPOSITION_WITH_SCORES, lazyQueryCallback );
 
-  /**
-   * DATA
-   * Recieve node (composition) from MMC, then trigger lazyQuery to get metadata + scores
-   *
-   * Todo: Get active campaigns of selected composition
-   */
+  //DATA: Recieve node (composition) from MMC, then trigger lazyQuery to get metadata + scores
   const loadComposition = node => {
     setModal(MODAL_NONE);
     onSetScore();
@@ -43,18 +38,16 @@ export default function SelectComposition({ composition, score, onSetComposition
   };
   const onGqlLoaded     = data => onSetComposition(data.MusicComposition?.[0]);
 
-  /**
-   * INTERNAL
-   */
-  const loadScore         = score => {
+  //INTERNAL
+  const loadScore            = score => {
     onSetScore(score);
     setModal(MODAL_NONE);
   };
-
-  const deselectBoth      = () => {
+  const deselectBoth         = () => {
     onSetComposition();
     onSetScore();
   };
+  const onClickOutsideDialog = () => (modal !== MODAL_SELECT_URL)? setModal(MODAL_NONE) : null;  //selectUrl modal only closes with close button, for usability
 
   if (loading) return <Box>{t('loading')}</Box>;
   if (error) console.log('Failed to load scores', error);
@@ -74,7 +67,7 @@ export default function SelectComposition({ composition, score, onSetComposition
       <Dialog
         className={classes.dialog}
         open={modal !== MODAL_NONE}
-        onClose={e => setModal(MODAL_NONE)}
+        onClose={onClickOutsideDialog}
         maxWidth="lg"
         fullWidth
       >
@@ -89,6 +82,7 @@ export default function SelectComposition({ composition, score, onSetComposition
           {modal === MODAL_COMP && (
             <MultiModalComponent
               config={searchConfig}
+              placeholderText={t('mmc_searchcomposition')}
               onResultClick={node => loadComposition(node)}
             />
           )}
