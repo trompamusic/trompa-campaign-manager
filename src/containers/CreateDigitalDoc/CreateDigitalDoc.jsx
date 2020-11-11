@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import CreateDigitalDocModal from '../../components/CreateDigitalDocModal/CreateDigitalDocModal';
 import { createDigitalDoc } from '../../services/api.service';
+import { formatUrl } from '../../utils';
 import * as aws from '../../services/aws.service';
 
 export default function CreateDigitalDoc({ musicCompositionId, onDigitalDocCreated }) {
@@ -35,10 +36,13 @@ export default function CreateDigitalDoc({ musicCompositionId, onDigitalDocCreat
     url         : '',
     license     : 'https://www0.cpdl.org/wiki/index.php/ChoralWiki:CPDL',
     thumbnailUrl: '',
-    description : '',
+    description : undefined,
   };
 
   const onFormSubmit = async ({ title, url, creator, thumbnailUrl, description, language, license }) => {
+    url          = formatUrl(url);
+    thumbnailUrl = formatUrl(thumbnailUrl);
+    
     const digitalDocumentData = {
       name    : title,
       relation: url,

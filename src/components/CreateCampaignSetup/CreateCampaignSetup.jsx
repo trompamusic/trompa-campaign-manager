@@ -45,6 +45,7 @@ export default function CreateCampaignSetup ({ initialFormValues, onSubmit, onBa
                       variant="filled"
                       InputProps={{ disableUnderline: true }}
                       fullWidth
+                      required
                     />
                   </div>
                   <div className={classes.inputItem}>
@@ -62,6 +63,7 @@ export default function CreateCampaignSetup ({ initialFormValues, onSubmit, onBa
                       rows={4}
                       fullWidth
                       multiline
+                      required
                     />
                   </div>
                   <div className={classes.inputItem}>

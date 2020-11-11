@@ -19183,10 +19183,10 @@ trim-right@^1.0.1:
   resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
   integrity sha1-yy4SAwZ+DI3h9hQJS5/kVwTqYAM=
 
-trompa-multimodal-component@^1.0.0-alpha2:
-  version "1.0.0-alpha2"
-  resolved "https://registry.yarnpkg.com/trompa-multimodal-component/-/trompa-multimodal-component-1.0.0-alpha2.tgz#95f380b53913ac9f3f37d51b3317f0b97ef2dbb9"
-  integrity sha512-yHLqjJnNJDC2LfUx5t14FU4HhlZKSupp5pjoOPEQykUspwXikLh3433U4q3g002xzSzBDs7AOXGoQXo067BniQ==
+trompa-multimodal-component@^1.0.0-alpha3:
+  version "1.0.0-alpha3"
+  resolved "https://registry.yarnpkg.com/trompa-multimodal-component/-/trompa-multimodal-component-1.0.0-alpha3.tgz#3b60b4a930e380ed45bbd0100d5e5002a858b013"
+  integrity sha512-lIi3bdlANNVpfCmvsJzS2oV3aIO2cgam1fa5MopEYy0jRNyRclV8plTGeC/OcPvdZDX8dNBTc2cULmjbulU5og==
   dependencies:
     apollo-cache-inmemory "^1.6.5"
     apollo-client "^2.6.8"
