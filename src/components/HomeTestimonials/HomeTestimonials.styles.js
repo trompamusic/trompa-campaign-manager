@@ -26,7 +26,7 @@ export default ({ spacing, typography, palette, shape, breakpoints }) => createS
     justifyContent          : 'center',
     flexWrap                : 'wrap',
     [breakpoints.down('md')]: {
-      width: 400,
+      maxWidth: 400,
     },
   },
   testimonialItem: {
