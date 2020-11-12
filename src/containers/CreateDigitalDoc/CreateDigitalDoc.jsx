@@ -49,13 +49,13 @@ export default function CreateDigitalDoc({ musicCompositionId, onDigitalDocCreat
     
     const digitalDocumentData = {
       name    : title,
+      url     : formattedScoreUrl,
       relation: formattedScoreUrl,
       source  : formattedScoreUrl,
       image   : formattedThumbnailUrl,
       license,
       language,
       title,
-      url     : formattedScoreUrl,
       creator,
       thumbnailUrl,
     };
