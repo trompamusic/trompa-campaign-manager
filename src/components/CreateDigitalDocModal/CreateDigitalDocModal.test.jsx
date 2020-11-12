@@ -17,8 +17,8 @@ describe('<CreateDigitalDocModal />', () => {
   });
 
   it('fires the onUploadButtonClick callback', () => {
-    const callback      = jest.fn();
-    const { getByText } = render((
+    const callback           = jest.fn();
+    const { queryAllByText } = render((
       <CreateDigitalDocModal
         initialFormValues={() => ''}
         onFormSubmit={() => ''}
@@ -26,7 +26,7 @@ describe('<CreateDigitalDocModal />', () => {
       />
     ));
 
-    fireEvent.click(getByText('Select file'));
+    fireEvent.click(queryAllByText('Select file')[0]);
 
     expect(callback).toHaveBeenCalledTimes(1);
   });
