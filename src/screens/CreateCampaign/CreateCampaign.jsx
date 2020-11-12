@@ -70,6 +70,7 @@ export default function CreateCampaign() {
         title      : campaignTitle,
         description: campaignDescription,
         endTime    : campaignDeadline.toISOString(),
+        creator    : nickname,
         digitalDocumentId,
       });
 
