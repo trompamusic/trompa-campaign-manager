@@ -11,6 +11,7 @@ export default ({ typography, palette, spacing, breakpoints }) => createStyles({
     padding       : 0,
     '& span'      : {
       paddingBottom: spacing(0.3),
+      paddingLeft  : '5px',
     },
     [breakpoints.down('md')]: {
       padding: spacing(0.75),
