@@ -46,7 +46,7 @@ export default function CreateDigitalDoc({ musicCompositionId, onDigitalDocCreat
   const onFormSubmit = async ({ title, scoreUrl, creator, thumbnailUrl, description, language, license }) => {
     const formattedScoreUrl     = formatUrl(scoreUrl);
     const formattedThumbnailUrl = formatUrl(thumbnailUrl);
-    
+
     const digitalDocumentData = {
       name    : title,
       url     : formattedScoreUrl,

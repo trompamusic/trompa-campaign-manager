@@ -168,7 +168,7 @@ export default function ActiveCampaign ({ match }) {
 
 export const GET_CAMPAIGNS = gql`
     query {
-      ControlAction(filter:{wasDerivedFrom:{identifier: "b559c52d-6104-4cb3-ab82-39b82bb2de6c"}}, orderBy: endTime_asc) {
+      ControlAction(filter:{wasDerivedFrom:{identifier: "b559c52d-6104-4cb3-ab82-39b82bb2de6c"}}, orderBy: endTime_asc, first: 20) {
         agent
             identifier
             name
