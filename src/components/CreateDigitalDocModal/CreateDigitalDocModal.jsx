@@ -8,8 +8,6 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import Typography from '@material-ui/core/Typography/Typography';
-import CancelIcon from '@material-ui/icons/Cancel';
-import IconButton from '@material-ui/core/IconButton';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import Input from '../Input/Input';
 import Form from '../Form/Form';
@@ -37,23 +35,23 @@ export default function CreateDigitalDocModal({ initialFormValues, onFormSubmit,
             <DialogContent>
               <Input
                 label={t('create_digital_doc.score')}
-                name="url"
-                value={values.url}
+                name="scoreUrl"
+                value={values.scoreUrl}
                 onChange={handleChange}
                 onBlur={handleBlur}
                 placeholder={t('create_digital_doc.url_example')}
                 type="url"
-                endAdornment={(
+                endAdornment={
                   <InputAdornment position="end">
                     <Button
                       variant="contained"
                       color="primary"
-                      onClick={() => onUploadButtonClick(setFieldValue)}
+                      onClick={() => onUploadButtonClick('scoreUrl', setFieldValue)}
                     >
                       {t('create_digital_doc.select_file')}
                     </Button>
                   </InputAdornment>
-                )}
+                }
                 required
               />
               <Input
@@ -63,13 +61,17 @@ export default function CreateDigitalDocModal({ initialFormValues, onFormSubmit,
                 onChange={handleChange}
                 onBlur={handleBlur}
                 placeholder={t('create_digital_doc.url_example')}
-                endAdornment={values.thumbnailUrl?.length > 0 && (
+                endAdornment={
                   <InputAdornment position="end">
-                    <IconButton onClick={() => setFieldValue('thumbnailUrl', '')} size="small" tabIndex={99}>
-                      <CancelIcon />
-                    </IconButton>
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      onClick={() => onUploadButtonClick('thumbnailUrl', setFieldValue)}
+                    >
+                      {t('create_digital_doc.select_file')}
+                    </Button>
                   </InputAdornment>
-                )}
+                }
                 required
               />
               <Input
