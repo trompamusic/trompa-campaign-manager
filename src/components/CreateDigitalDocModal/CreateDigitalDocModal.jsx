@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import { useTranslation } from 'react-i18next';
@@ -9,18 +9,37 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import Typography from '@material-ui/core/Typography/Typography';
 import InputAdornment from '@material-ui/core/InputAdornment';
+import { IconButton, List, ListItem, ListItemText, Popover } from '@material-ui/core';
+import { Cancel } from '@material-ui/icons';
+import UploadFileIcon from "../Icons/UploadFileIcon";
+import SolidPodIcon from "../Icons/SolidPodIcon";
 import Input from '../Input/Input';
 import Form from '../Form/Form';
 import styles from './CreateDigitalDocModal.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function CreateDigitalDocModal({ initialFormValues, onFormSubmit, onUploadButtonClick }) {
-  const { t }   = useTranslation('startCampaign');
-  const classes = useStyles();
+export default function CreateDigitalDocModal({ initialFormValues, onFormSubmit, handleUploadButtonClick, handleSolidPodButtonClick }) {
+  const { t }                     = useTranslation('startCampaign');
+  const classes                   = useStyles();
+  const [anchorEl, setAnchorEl]   = useState(null);
+  const [inputName, setInputName] = useState();
 
   const licenses  = [{ label: 'Public', value: 'https://www0.cpdl.org/wiki/index.php/ChoralWiki:CPDL' }];
   const languages = [{ label: 'English', value: 'en' }];
+
+  const onSelectFileClick     = (anchorEl, inputName) => {
+    setAnchorEl(anchorEl);
+    setInputName(inputName);
+  };
+  const onUploadButtonClick   = setFieldValue => {
+    setAnchorEl(null);
+    handleUploadButtonClick(inputName, setFieldValue);
+  };
+  const onSolidPodButtonClick = setFieldValue => {
+    setAnchorEl(null);
+    handleSolidPodButtonClick(inputName, setFieldValue);
+  };
 
   return (
     <div className={classes.root}>
@@ -33,6 +52,22 @@ export default function CreateDigitalDocModal({ initialFormValues, onFormSubmit,
         {({ values, handleChange, handleSubmit, handleBlur, setFieldValue }) => (
           <form className={classes.container} onSubmit={handleSubmit}>
             <DialogContent>
+              <Popover 
+                open={!!anchorEl} 
+                anchorEl={anchorEl} 
+                onClose={() => setAnchorEl(null)}
+              >
+                <List>
+                  <ListItem onClick={() => onUploadButtonClick(setFieldValue)} className={classes.listItem} button>
+                    <UploadFileIcon color="primary" className={classes.icon} />
+                    <ListItemText primary={t('create_digital_doc.select_from_disk')} />
+                  </ListItem>
+                  <ListItem onClick={() => onSolidPodButtonClick(setFieldValue)} className={classes.listItem} button>
+                    <SolidPodIcon className={classes.icon} />
+                    <ListItemText primary={t('create_digital_doc.select_from_solid_pod')} /> 
+                  </ListItem>
+                </List>
+              </Popover>
               <Input
                 label={t('create_digital_doc.score')}
                 name="scoreUrl"
@@ -43,13 +78,17 @@ export default function CreateDigitalDocModal({ initialFormValues, onFormSubmit,
                 type="url"
                 endAdornment={
                   <InputAdornment position="end">
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      onClick={() => onUploadButtonClick('scoreUrl', setFieldValue)}
-                    >
-                      {t('create_digital_doc.select_file')}
-                    </Button>
+                    {values.scoreUrl ? 
+                      <IconButton onClick={() => setFieldValue('scoreUrl', '')} size="small"><Cancel /></IconButton>
+                      : 
+                      <Button
+                        variant="contained"
+                        color="primary"
+                        onClick={event => onSelectFileClick(event.currentTarget, 'scoreUrl')}
+                      >
+                        {t('create_digital_doc.select_file')}
+                      </Button>
+                    }
                   </InputAdornment>
                 }
                 required
@@ -61,15 +100,20 @@ export default function CreateDigitalDocModal({ initialFormValues, onFormSubmit,
                 onChange={handleChange}
                 onBlur={handleBlur}
                 placeholder={t('create_digital_doc.url_example')}
+                type="url"
                 endAdornment={
                   <InputAdornment position="end">
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      onClick={() => onUploadButtonClick('thumbnailUrl', setFieldValue)}
-                    >
-                      {t('create_digital_doc.select_file')}
-                    </Button>
+                    {values.thumbnailUrl ? 
+                      <IconButton onClick={() => setFieldValue('thumbnailUrl', '')} size="small"><Cancel /></IconButton>
+                      : 
+                      <Button
+                        variant="contained"
+                        color="primary"
+                        onClick={event => onSelectFileClick(event.currentTarget, 'thumbnailUrl')}
+                      >
+                        {t('create_digital_doc.select_file')}
+                      </Button>
+                    }
                   </InputAdornment>
                 }
                 required
@@ -162,8 +206,9 @@ export default function CreateDigitalDocModal({ initialFormValues, onFormSubmit,
 }
 
 CreateDigitalDocModal.propTypes = {
-  initialFormValues  : PropTypes.object.isRequired,
-  onFormSubmit       : PropTypes.func.isRequired,
-  onUploadButtonClick: PropTypes.func.isRequired,
+  initialFormValues        : PropTypes.object.isRequired,
+  onFormSubmit             : PropTypes.func.isRequired,
+  handleUploadButtonClick  : PropTypes.func.isRequired,
+  handleSolidPodButtonClick: PropTypes.func.isRequired,
 };
 

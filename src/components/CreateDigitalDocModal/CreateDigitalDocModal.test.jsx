@@ -9,7 +9,8 @@ describe('<CreateDigitalDocModal />', () => {
       <CreateDigitalDocModal
         initialFormValues={() => ''}
         onFormSubmit={() => ''}
-        onUploadButtonClick={() => ''}
+        handleUploadButtonClick={() => ''}
+        handleSolidPodButtonClick={() => ''}
       />
     ));
 
@@ -18,16 +19,21 @@ describe('<CreateDigitalDocModal />', () => {
 
   it('fires the onUploadButtonClick callback', () => {
     const callback           = jest.fn();
+    const callbackSolid      = jest.fn();
     const { queryAllByText } = render((
       <CreateDigitalDocModal
         initialFormValues={() => ''}
+        handleUploadButtonClick={callback}
+        handleSolidPodButtonClick={callbackSolid}
         onFormSubmit={() => ''}
-        onUploadButtonClick={callback}
       />
     ));
 
     fireEvent.click(queryAllByText('Select file')[0]);
+    fireEvent.click(queryAllByText('Select from disk')[0]);
+    fireEvent.click(queryAllByText('Select from solid pod')[0]);
 
     expect(callback).toHaveBeenCalledTimes(1);
+    expect(callbackSolid).toHaveBeenCalledTimes(1);
   });
 });
