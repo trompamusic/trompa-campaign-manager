@@ -29,7 +29,7 @@ export default ({ spacing, breakpoints, typography, palette }) => createStyles({
   },
   icon: {
     marginRight: spacing(2),
-    marginLeft : spacing(0.3),
+    marginLeft : 10,
   },
   listItem: {
     '&:hover': {

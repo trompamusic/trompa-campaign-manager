@@ -5,6 +5,7 @@ import { createDigitalDoc } from '../../services/api.service';
 import { formatUrl } from '../../utils';
 import * as aws from '../../services/aws.service';
 import SolidPodBrowser from '../../components/SolidPodBrowser/SolidPodBrowser';
+import FileExtensions from "../../enum/FileExtensions";
 
 const digitalDocumentInitialValues = {
   title       : '',
@@ -14,11 +15,6 @@ const digitalDocumentInitialValues = {
   license     : 'https://www0.cpdl.org/wiki/index.php/ChoralWiki:CPDL',
   thumbnailUrl: '',
   description : '',
-};
-
-const allowedExtensions = {
-  scoreUrl    : ["mei", "xml", "pdf"],
-  thumbnailUrl: ["jpg", "jpeg", "png", "gif"],
 };
 
 export default function CreateDigitalDoc({ musicCompositionId, onDigitalDocCreated }) {
@@ -99,8 +95,8 @@ export default function CreateDigitalDoc({ musicCompositionId, onDigitalDocCreat
       <SolidPodBrowser 
         open={solidPodBrowserOpen} 
         solidPodBrowserUrl={solidPodBrowserUrl}
-        allowedExtensions={inputNameRef.current? allowedExtensions[inputNameRef.current] : []}
-        handleSolidPodFileSelected={fileUrl => handleSolidPodFileSelected(fileUrl)}
+        allowedExtensions={inputNameRef.current? FileExtensions[inputNameRef.current] : []}
+        handleSolidPodFileSelected={handleSolidPodFileSelected}
         onClose={() => setSolidPodBrowserOpen(false)}
       />
     </React.Fragment>

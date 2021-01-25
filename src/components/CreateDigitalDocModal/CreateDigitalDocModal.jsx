@@ -79,7 +79,7 @@ export default function CreateDigitalDocModal({ initialFormValues, onFormSubmit,
                 endAdornment={
                   <InputAdornment position="end">
                     {values.scoreUrl ? 
-                      <IconButton onClick={() => setFieldValue('scoreUrl', '')} size="small"><Cancel /></IconButton>
+                      <IconButton onClick={() => setFieldValue('scoreUrl', '')} size="small" aria-label={t('create_digital_doc.cancel')}><Cancel /></IconButton>
                       : 
                       <Button
                         variant="contained"
