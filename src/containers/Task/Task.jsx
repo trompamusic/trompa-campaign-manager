@@ -168,6 +168,7 @@ export const ALL_POTENTIAL_ACTIONS_QUERY = gql`
           filter: {
               wasGeneratedBy_not: null
               wasDerivedFrom_not: null
+              actionStatus: PotentialActionStatus
               object_single: { identifier: $digitalDocumentIdentifier }
           }
           first: 10
