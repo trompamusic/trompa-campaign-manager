@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import { gql } from 'apollo-boost';
 import client from '../../graphql';
-import { enhanceUrlWithParameters } from '../../utils';
+import { enhanceUrlWithParameters, getCampaignDigitalDocument } from '../../utils';
 import ActiveTask from '../../components/ActiveTask';
 import { NotificationContext } from '../NotificationsProvider/NotificationsProvider';
 import { GET_CAMPAIGN } from '../../screens/ActiveCampaign/';
@@ -79,9 +79,9 @@ export default function Task({ campaignIdentifier, taskIdentifier }) {
       return;
     }
 
-    const campaignTasks = campaign.object.find(current => current.name === 'tasks')?.value;
+    const score = getCampaignDigitalDocument(campaign);
 
-    if (!campaignTasks) {
+    if (!score) {
       return null;
     }
 
@@ -102,7 +102,7 @@ export default function Task({ campaignIdentifier, taskIdentifier }) {
 
     setLoading(true);
 
-    client.query({ query: ALL_POTENTIAL_ACTIONS_QUERY, variables: { identifier: campaignTasks } })
+    client.query({ query: ALL_POTENTIAL_ACTIONS_QUERY, variables: { digitalDocumentIdentifier: score.identifier } })
       .then(response => {
         const allPotentialActions = response.data.ControlAction;
         const offset              = Math.floor(Math.random() * allPotentialActions.length);
@@ -163,16 +163,18 @@ Task.propTypes = {
 };
 
 export const ALL_POTENTIAL_ACTIONS_QUERY = gql`
-    query AllPotentialActions($identifier: ID!) {
-        ControlAction(
-            filter: {
-                wasDerivedFrom: { identifier: $identifier }
-                actionStatus: PotentialActionStatus
-            }
-            first: 10
-        ) {
-            identifier
-        }
+    query AllPotentialActions($digitalDocumentIdentifier: ID!) {
+      ControlAction(
+          filter: {
+              wasGeneratedBy_not: null
+              wasDerivedFrom_not: null
+              actionStatus: PotentialActionStatus
+              object_single: { identifier: $digitalDocumentIdentifier }
+          }
+          first: 10
+      ) {
+          identifier
+      }
     }
 `;
 
