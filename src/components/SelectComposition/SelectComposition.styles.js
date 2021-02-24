@@ -1,19 +1,24 @@
 import { createStyles } from '@material-ui/styles';
 
-export default ({ spacing, palette, shape, breakpoints, typography }) => createStyles({
+export default ({ spacing, palette, breakpoints, typography }) => createStyles({
   root: {
+    position     : 'absolute',
+    top          : '50%',
+    left         : '50%',
+    transform    : 'translate(-50%, -50%)',
     display      : 'flex',
     flexDirection: 'row',
   },
-  main: {
+  content: {
     [breakpoints.down('sm')]: {
-      width: '95%',
+      width: '90vw',
     },
-    width         : '45vw',
+    width         : '40vw',
     display       : 'flex',
     flexDirection : 'column',
     justifyContent: 'center',
     alignItems    : 'center',
+    maxWidth      : 655,
   },
   header: {
     [breakpoints.down('sm')]: {
@@ -45,7 +50,7 @@ export default ({ spacing, palette, shape, breakpoints, typography }) => createS
     [breakpoints.down('sm')]: {
       display: 'none',
     },
-    height: '50vh',
+    height: '40vh',
   },
   part: {
     width  : '100%',
@@ -61,6 +66,7 @@ export default ({ spacing, palette, shape, breakpoints, typography }) => createS
     height         : 36,
     display        : 'flex',
     alignItems     : 'center',
+    justifyContent : 'space-between',
     padding        : spacing(1.5, 2),
     backgroundColor: palette.common.darkGrey,
     borderRadius   : 4,

@@ -10,7 +10,7 @@ exports[`<SelectComposition /> renders and matches snapshot 1`] = `
     src="personWithBass.png"
   />
   <div
-    class="MuiContainer-root makeStyles-main-2 MuiContainer-maxWidthLg"
+    class="MuiContainer-root makeStyles-content-2 MuiContainer-maxWidthLg"
   >
     <h1
       class="MuiTypography-root makeStyles-header-3 MuiTypography-h1"
