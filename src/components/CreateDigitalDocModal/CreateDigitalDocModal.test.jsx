@@ -9,7 +9,7 @@ describe('<CreateDigitalDocModal />', () => {
       <CreateDigitalDocModal
         initialFormValues={() => ''}
         onFormSubmit={() => ''}
-        handleUploadButtonClick={() => ''}
+        onUploadButtonClick={() => ''}
         handleSolidPodButtonClick={() => ''}
       />
     ));
@@ -23,8 +23,8 @@ describe('<CreateDigitalDocModal />', () => {
     const { queryAllByText } = render((
       <CreateDigitalDocModal
         initialFormValues={() => ''}
-        handleUploadButtonClick={callback}
-        handleSolidPodButtonClick={callbackSolid}
+        onUploadButtonClick={callback}
+        onSolidPodButtonClick={callbackSolid}
         onFormSubmit={() => ''}
       />
     ));

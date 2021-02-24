@@ -10,7 +10,7 @@ import styles from './SolidPodBrowser.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function SolidPodBrowser ({ open, solidPodBrowserUrl, allowedExtensions, handleSolidPodFileSelected, onClose }) {
+export default function SolidPodBrowser ({ open, solidPodBrowserUrl, allowedExtensions, onSolidPodFileSelected, onClose }) {
   const { t }                         = useTranslation('startCampaign');
   const classes                       = useStyles();
   const [fileUrl, setFileUrl]         = useState('');
@@ -70,7 +70,7 @@ export default function SolidPodBrowser ({ open, solidPodBrowserUrl, allowedExte
               variant="contained"
               color="primary" 
               disabled={!fileUrl}
-              onClick={() => handleSolidPodFileSelected(fileUrl)}
+              onClick={() => onSolidPodFileSelected(fileUrl)}
             >
               {t('create_digital_doc.select')}
             </Button>
@@ -82,9 +82,9 @@ export default function SolidPodBrowser ({ open, solidPodBrowserUrl, allowedExte
 }
 
 SolidPodBrowser.propTypes = {
-  open                      : PropTypes.bool.isRequired,
-  solidPodBrowserUrl        : PropTypes.string.isRequired,
-  allowedExtensions         : PropTypes.array,
-  handleSolidPodFileSelected: PropTypes.func.isRequired,
-  onClose                   : PropTypes.func.isRequired,
+  open                  : PropTypes.bool.isRequired,
+  solidPodBrowserUrl    : PropTypes.string.isRequired,
+  allowedExtensions     : PropTypes.array,
+  onSolidPodFileSelected: PropTypes.func.isRequired,
+  onClose               : PropTypes.func.isRequired,
 };

@@ -5,7 +5,7 @@ import { createDigitalDoc } from '../../services/api.service';
 import { formatUrl } from '../../utils';
 import * as aws from '../../services/aws.service';
 import SolidPodBrowser from '../../components/SolidPodBrowser/SolidPodBrowser';
-import FileExtensions from "../../enum/FileExtensions";
+import FileExtensions from '../../enum/FileExtensions';
 
 const digitalDocumentInitialValues = {
   title       : '',
@@ -88,15 +88,15 @@ export default function CreateDigitalDoc({ musicCompositionId, onDigitalDocCreat
     <React.Fragment>
       <CreateDigitalDocModal 
         initialFormValues={digitalDocumentInitialValues} 
-        handleUploadButtonClick={handleUploadButtonClick} 
-        handleSolidPodButtonClick={handleSolidPodButtonClick}
+        onUploadButtonClick={handleUploadButtonClick} 
+        onSolidPodButtonClick={handleSolidPodButtonClick}
         onFormSubmit={onFormSubmit} 
       />
       <SolidPodBrowser 
         open={solidPodBrowserOpen} 
         solidPodBrowserUrl={solidPodBrowserUrl}
         allowedExtensions={inputNameRef.current? FileExtensions[inputNameRef.current] : []}
-        handleSolidPodFileSelected={handleSolidPodFileSelected}
+        onSolidPodFileSelected={handleSolidPodFileSelected}
         onClose={() => setSolidPodBrowserOpen(false)}
       />
     </React.Fragment>
