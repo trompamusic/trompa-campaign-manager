@@ -20,6 +20,7 @@ import JumbotronContentCampaign from '../../components/JumbotronContentCampaign/
 import ActiveCampaignTwoSections from '../../components/ActiveCampaignTwoSections/ActiveCampaignTwoSections';
 import ActiveCampaignOverviewSection from '../../components/ActiveCampaignOverviewSection';
 import ActiveCampaignOverviewItem from '../../components/ActiveCampaignOverviewItem';
+import TaskGroupProgress from '../../containers/TaskGroupProgress';
 import Footer from '../../components/Footer/Footer';
 import images from '../../theme/images';
 import styles from './ActiveCampaign.styles';
@@ -109,6 +110,7 @@ export default function ActiveCampaign ({ match }) {
           openSubscribeForm={openSubscribeForm}
         />
       </Jumbotron>
+      <TaskGroupProgress digitalDocumentIdentifier={digitalDocument.identifier} />
       <ActiveCampaignTwoSections
         campaign={campaign}
         digitalDocument={digitalDocument}
