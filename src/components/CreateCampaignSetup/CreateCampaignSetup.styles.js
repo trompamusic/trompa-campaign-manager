@@ -9,18 +9,18 @@ export default ({ typography, palette, spacing, breakpoints }) => createStyles({
   },
   container: {
     display   : 'flex',
-    alignItems: 'flex-end',
-    maxWidth  : 1400,
+    alignItems: 'center',
   },
   content: {
     [breakpoints.down('sm')]: {
       width  : '90vw',
       padding: `0px ${spacing(2)}px`,
     },
-    width        : '50vw',
+    width        : '40vw',
     display      : 'flex',
     flexDirection: 'column',
     alignItems   : 'center',
+    maxWidth     : 655,
   },
   form: {
     maxWidth: 590,
@@ -30,14 +30,7 @@ export default ({ typography, palette, spacing, breakpoints }) => createStyles({
     [breakpoints.down('sm')]: {
       display: 'none',
     },
-    '&:first-child': {
-      height: '54vh',
-      margin: `0px 24px -56px 24px`,
-    },
-    '&:last-child': {
-      margin: `0px 24px -56px 24px`,
-    },
-    height: '59vh',
+    height: '40vh',
   },
   header: {
     [breakpoints.down('sm')]: {

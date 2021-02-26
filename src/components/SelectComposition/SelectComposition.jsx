@@ -17,7 +17,7 @@ export default function SelectComposition({ composition, score, onSelectComposit
   return (
     <Box className={classes.root}>
       <img className={classes.person} src={images.personWithBass} alt={t('person')} />
-      <Container className={classes.main}>
+      <Container className={classes.content}>
         <Typography variant="h1" className={classes.header}>{t('title')}</Typography>
         <Box className={classes.part}>
           <Typography variant="body1">{t('start')}</Typography>

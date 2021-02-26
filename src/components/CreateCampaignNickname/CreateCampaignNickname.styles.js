@@ -9,7 +9,7 @@ export default ({ typography, palette, spacing, shape, breakpoints }) => createS
   },
   container: {
     display   : 'flex',
-    alignItems: 'flex-end' ,
+    alignItems: 'center',
   },
   content: {
     [breakpoints.down('sm')]: {
@@ -19,19 +19,17 @@ export default ({ typography, palette, spacing, shape, breakpoints }) => createS
     display      : 'flex',
     flexDirection: 'column',
     alignItems   : 'center',
+    maxWidth     : 655,
+    padding      : spacing(6),
   },
   person: {
     [breakpoints.down('sm')]: {
       display: 'none',
     },
-    '&:first-child': {
-      height: '54vh',
-    },
     '&:last-child': {
-      marginLeft: spacing(3),
+      marginTop: '-6vh',
     },
-    height: '59vh',
-    margin: `0px ${spacing(5.5)}px -${spacing(7)}px ${spacing(5.5)}px`,
+    height: '40vh',
   },
   goal: {
     [breakpoints.down('sm')]: {
