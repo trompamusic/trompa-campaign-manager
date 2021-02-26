@@ -21,6 +21,7 @@ export default ({ palette, breakpoints }) => createStyles({
   },
   root: {
     backgroundColor         : palette.common.faintGrey,
+    boxShadow               : 'inset 0 1px 3px 0px rgba(0,0,0,0.1)',
     padding                 : 96,
     paddingTop              : 48,
     [breakpoints.only('xs')]: {

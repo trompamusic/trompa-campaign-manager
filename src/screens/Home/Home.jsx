@@ -71,7 +71,6 @@ export default function Home() {
         </Button>
       </Jumbotron>
       <HomeTwoSections />
-      <HomeThreeSteps />
       <ActiveCampaignOverviewSection>
         {campaigns?.map(campaign => {
           const daysToGo        = moment(campaign.endTime.formatted)?.diff(moment(), 'days');
@@ -88,6 +87,7 @@ export default function Home() {
             />
           );})}
       </ActiveCampaignOverviewSection>
+      <HomeThreeSteps />
       <HomeTestimonials />
       <HomeAboutTrompa />
       <Footer />
