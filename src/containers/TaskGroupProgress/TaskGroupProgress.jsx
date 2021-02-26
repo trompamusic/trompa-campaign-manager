@@ -7,7 +7,7 @@ import ProgressStepper from '../../components/ProgressStepper/ProgressStepper';
 const COMPLETED_ACTION_STATUS = "CompletedActionStatus";
 
 export default function TaskGroupProgress ({ digitalDocumentIdentifier }) {
-  const { loading, error, data } = useQuery(ALL_POTENTIAL_ACTIONS, { variables: { digitalDocumentIdentifier } });
+  const { loading, error, data } = useQuery(ALL_CONTROL_ACTIONS, { variables: { digitalDocumentIdentifier } });
   const taskGroups               = data?.ControlAction || [];
   const taskGroupsSorted         = taskGroups.sort(a => a.actionStatus === COMPLETED_ACTION_STATUS? -1 :1);
   const taskGroupNames           = taskGroupsSorted.map(taskGroup => taskGroup.name);
@@ -24,8 +24,8 @@ TaskGroupProgress.propTypes = {
   digitalDocumentIdentifier: PropTypes.string,
 };
 
-export const ALL_POTENTIAL_ACTIONS = gql`
-  query AllPotentialActions($digitalDocumentIdentifier: ID!) {
+export const ALL_CONTROL_ACTIONS = gql`
+  query AllControlActions($digitalDocumentIdentifier: ID!) {
     ControlAction(
       filter: {
         wasGeneratedBy: null, 
