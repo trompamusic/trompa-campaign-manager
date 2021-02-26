@@ -39,3 +39,5 @@ export const hasUrlParameter = parameter => {
 };
 
 export const formatUrl = url => (url.indexOf('https://') === 0 || url.indexOf('http://') === 0)? url : `https://${url}`;
+
+export const extensionFromFilename = fileName => fileName.substring(fileName.lastIndexOf('.') + 1).toLowerCase();

@@ -27,6 +27,16 @@ export default ({ spacing, breakpoints, typography, palette }) => createStyles({
     margin  : '0 auto',
     width   : '100%',
   },
+  icon: {
+    marginRight: spacing(2),
+    marginLeft : 10,
+  },
+  listItem: {
+    '&:hover': {
+      background: palette.background.primary,
+    },
+    paddingRight: spacing(11),
+  },
   buttons: {
     marginRight: spacing(2),
   },
