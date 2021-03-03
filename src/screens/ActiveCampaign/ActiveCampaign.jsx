@@ -110,7 +110,7 @@ export default function ActiveCampaign ({ match }) {
           openSubscribeForm={openSubscribeForm}
         />
       </Jumbotron>
-      <TaskGroupProgress digitalDocumentIdentifier={digitalDocument.identifier} />
+      <TaskGroupProgress digitalDocumentIdentifier={digitalDocument?.identifier} />
       <ActiveCampaignTwoSections
         campaign={campaign}
         digitalDocument={digitalDocument}
