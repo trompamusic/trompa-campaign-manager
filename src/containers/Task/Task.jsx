@@ -2,119 +2,94 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import { gql } from 'apollo-boost';
-import client from '../../graphql';
+import { useLazyQuery } from '@apollo/react-hooks';
 import { enhanceUrlWithParameters, getCampaignDigitalDocument } from '../../utils';
 import ActiveTask from '../../components/ActiveTask';
 import { NotificationContext } from '../NotificationsProvider/NotificationsProvider';
 import { GET_CAMPAIGN } from '../../screens/ActiveCampaign/';
 
 export default function Task({ campaignIdentifier, taskIdentifier }) {
-  const history                               = useHistory();
-  const [loading, setLoading]                 = useState(false);
-  const [campaign, setCampaign]               = useState(null);
-  const [task, setTask]                       = useState(null);
-  const [taskIdentifiers, setTaskIdentifiers] = useState([]);
-  const [tasksReceived, setTasksReceived]     = useState([]);
-  const [taskTotal, setTaskTotal]             = useState(10);
-  const taskDrawAmount                        = 10;
-  const nickname                              = localStorage.getItem('nickname');
+  const history                             = useHistory();
+  const [campaign, setCampaign]             = useState(null);
+  const [task, setTask]                     = useState(null);
+  const [tasksTodo, setTasksTodo]           = useState([]);
+  const [tasksSubmitted, setTasksSubmitted] = useState([]);
+  const taskDrawAmount                      = 10;
+  const refetchTimeout                      = 3000;
+  const [refetchCount, setRefetchCount]     = useState(0);
+  const nickname                            = localStorage.getItem('nickname');
+  const score                               = campaign? getCampaignDigitalDocument(campaign):null;
 
-  const onGoBackClick = () => {
-    history.goBack();
-  };
+  const randomOffset    = list => Math.floor(Math.random() * list.length);
+  const randomSelection = list => list.slice(randomOffset(list), taskDrawAmount);
+  
+  const setTaskUrl          = taskId => history.replace(`/campaign/${campaignIdentifier}/task/${taskId || ""}`);
+  const addToSubmitted      = taskId => !tasksSubmitted.includes(taskId)? setTasksSubmitted(tasksSubmitted.concat(taskId)) : null;
+  const removeFromTodo      = taskId => setTasksTodo(tasksTodo.filter(identifier => identifier !== taskId));
+  const getNextTask         = taskId => tasksTodo.filter(identifier => identifier !== taskId)[0];
+  const newTaskNotSubmitted = task   => task.find(({ identifier }) => !tasksSubmitted.includes(identifier));
+  const extractTask         = task   => newTaskNotSubmitted(task)? setTask(task[0]): setTaskUrl('');
+  
+  const getCampaignCallback = ({ ControlAction: campaign }) => setCampaign(campaign[0]);
+  const getTaskCallback     = ({ ControlAction: task })     => extractTask(task);
+  const getTaskListCallback = ({ ControlAction: taskList }) => {
+    if(taskList.length){
+      const selection = randomSelection(taskList).map(({ identifier }) => identifier);
 
-  const handleNextTaskButtonClick = () => {
-    const remainingTaskIdentifiers = taskIdentifiers.filter(identifier => identifier !== taskIdentifier);
-    const hasReceivedTask          = tasksReceived.includes(taskIdentifier);
-
-    if (!hasReceivedTask) {
-      setTasksReceived(tasksReceived.concat(taskIdentifier));
-    }
-
-    setTaskIdentifiers(remainingTaskIdentifiers);
-    if (remainingTaskIdentifiers.length > 0) {
-      history.replace(`/campaign/${campaignIdentifier}/task/${remainingTaskIdentifiers[0]}`);
+      setTasksTodo(selection);
+      setTaskUrl(selection[0]);
     } else {
-      history.replace(`/campaign/${campaignIdentifier}/task/`);
+      setTasksTodo([]);
+      setTimeout(() => setRefetchCount(refetchCount + 1), refetchTimeout);
     }
   };
+  
+  const [getCampaign, { loadingCampaign }] = useLazyQuery(GET_CAMPAIGN, { variables: { identifier: campaignIdentifier }, onCompleted: getCampaignCallback });
+  const [getTaskList, { loadingTaskList }] = useLazyQuery(ALL_TASKS,    { variables: { identifier: score?.identifier }, onCompleted: getTaskListCallback, fetchPolicy: "no-cache" });
+  const [getTask, { loadingTask }]         = useLazyQuery(NEXT_TASK,    { variables: { identifiers: [taskIdentifier] }, onCompleted: getTaskCallback });
+  
+  const onGoBackClick             = () => history.goBack();
+  const handleNextTaskButtonClick = () => {
+    addToSubmitted(taskIdentifier);
+    removeFromTodo(taskIdentifier);
+    setTaskUrl(getNextTask(taskIdentifier));
+  };
 
-  // Get campaign first
+  // 1. Load the campaign
   useEffect(() => {
     if (campaignIdentifier) {
-      client.query({
-        query    : GET_CAMPAIGN,
-        variables: { identifier: campaignIdentifier },
-      })
-        .then(response => {
-          setCampaign(response.data.ControlAction[0]);
-        });
+      getCampaign();
     }
-  }, [campaignIdentifier]);
+  }, [campaignIdentifier, getCampaign]);
 
-  // Retrieve task on existing draw (task identifier in url)
+  // 2. Load a random list (max 10) of campaign tasks 
   useEffect(() => {
-    if (taskIdentifier) {
-      client.query({
-        query    : CLIENT_NEXT_POTENTIAL_ACTION_QUERY,
-        variables: { taskIdentifiers: [taskIdentifier], offset: 0 },
-      })
-        .then(response => {
-          const newTaskNotReceived = response.data.ControlAction.find(({ identifier }) => !tasksReceived.includes(identifier));
-
-          if (taskTotal === tasksReceived.length) {
-            return;
-          } else if (newTaskNotReceived) {
-            setTask(newTaskNotReceived);
-          } else {
-            history.replace(`/campaign/${campaignIdentifier}/task`);
-          }
-        });
+    if(!taskIdentifier && score) {
+      getTaskList({ variables: { filtered: tasksSubmitted } });
     }
-  }, [campaignIdentifier, history, taskIdentifier, taskTotal, tasksReceived]);
+  },[getTaskList, score, taskIdentifier, refetchCount, tasksSubmitted]);
 
-  // Retrieve tasks on new draw (task identifier not in url)
+  // 3. Load current task (id in url)
   useEffect(() => {
-    if (taskIdentifier || loading || !campaign) {
-      return;
+    if(taskIdentifier){
+      getTask();
     }
+  }, [getTask, taskIdentifier]);
 
-    const score = getCampaignDigitalDocument(campaign);
+  const isLoading = !!(loadingCampaign || loadingTaskList || loadingTask);
 
-    if (!score) {
-      return null;
-    }
-
-    const getCurrentTask = identifiers => {
-      client.query({
-        query    : CLIENT_NEXT_POTENTIAL_ACTION_QUERY,
-        variables: { taskIdentifiers: identifiers, offset: 0 },
-      })
-        .then(response => {
-          const firstTask = response.data.ControlAction[0];
-
-          if (firstTask) {
-            history.replace(`/campaign/${campaignIdentifier}/task/${firstTask.identifier}`);
-            setLoading(false);
-          }
-        });
-    };
-
-    setLoading(true);
-
-    client.query({ query: ALL_POTENTIAL_ACTIONS_QUERY, variables: { digitalDocumentIdentifier: score.identifier } })
-      .then(response => {
-        const allPotentialActions = response.data.ControlAction;
-        const offset              = Math.floor(Math.random() * allPotentialActions.length);
-        const identifiers         = allPotentialActions.slice(offset, taskDrawAmount).map(({ identifier }) => identifier);
-
-        setTaskIdentifiers(identifiers);
-        getCurrentTask(identifiers);
-        setTaskTotal(allPotentialActions.length);
-      });
-  }, [campaignIdentifier, history, loading, taskIdentifier, taskIdentifiers, campaign]);
-
-  if (taskTotal === tasksReceived.length) {
+  if (isLoading) {
+    return (
+      <ActiveTask
+        name="Loading"
+        campaign={campaign?.name}
+        campaignIdentifier={campaignIdentifier}
+        onGoBackClick={onGoBackClick}
+        loading={isLoading}
+      />
+    );
+  }
+  if (!tasksTodo.length || !task) {
     return (
       <ActiveTask
         name="No tasks found"
@@ -123,18 +98,6 @@ export default function Task({ campaignIdentifier, taskIdentifier }) {
         nickname={nickname}
         onGoBackClick={onGoBackClick}
         noTasks
-      />
-    );
-  }
-
-  if (loading || !task) {
-    return (
-      <ActiveTask
-        name="Loading"
-        campaign={campaign?.name}
-        campaignIdentifier={campaignIdentifier}
-        onGoBackClick={onGoBackClick}
-        loading
       />
     );
   }
@@ -162,14 +125,15 @@ Task.propTypes = {
   taskIdentifier    : PropTypes.string,
 };
 
-export const ALL_POTENTIAL_ACTIONS_QUERY = gql`
-    query AllPotentialActions($digitalDocumentIdentifier: ID!) {
+export const ALL_TASKS = gql`
+    query AllPotentialActions($identifier: ID! $filtered: [ID!]) {
       ControlAction(
           filter: {
               wasGeneratedBy_not: null
               wasDerivedFrom_not: null
               actionStatus: PotentialActionStatus
-              object_single: { identifier: $digitalDocumentIdentifier }
+              object_single: { identifier: $identifier }
+              identifier_not_in: $filtered
           }
           first: 10
       ) {
@@ -177,16 +141,16 @@ export const ALL_POTENTIAL_ACTIONS_QUERY = gql`
       }
     }
 `;
-
-export const CLIENT_NEXT_POTENTIAL_ACTION_QUERY = gql`
-    query ClientNextPotentialAction($taskIdentifiers: [ID!]!, $offset: Int!) {
+//, $offset: Int!
+export const NEXT_TASK = gql`
+    query ClientNextPotentialAction($identifiers: [ID!]!) {
         ControlAction(
             filter: {
-                identifier_in: $taskIdentifiers
+                identifier_in: $identifiers
                 actionStatus: PotentialActionStatus
             }
             first: 1
-            offset: $offset
+            offset: 0
         ) {
             identifier
             name
