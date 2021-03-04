@@ -130,7 +130,7 @@ export default function ActiveCampaign ({ match }) {
               campaignTitle={campaign.title}
               campaignDeadline={daysToGo}
               onClick={() => {
-                history.push(`/campaign/${campaign.identifier}`);
+                history.push(`/campaign/${campaign?.identifier}`);
               }}
             />
           );})}
