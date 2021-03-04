@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import { useTranslation } from 'react-i18next';
@@ -26,6 +26,24 @@ export default function ActiveTask ({
 }) {
   const { t }   = useTranslation('task');
   const classes = useStyles();
+
+  const handleSubmit = useCallback(() => {
+    onNextTaskButtonClick();
+    handleNotification('success', t('notifications:thank_you_for_contributing'));
+  }, [onNextTaskButtonClick, handleNotification, t]);
+
+  // Listen to submit message from iframe: window.parent.postMessage('submit', '*')
+  useEffect(() => {
+    const iframeListener = ({ data }) => {
+      if(data === 'submit'){
+        handleSubmit();
+      }
+    };
+
+    window.addEventListener('message', iframeListener);
+
+    return () => window.removeEventListener('message', iframeListener);
+  }, [handleNotification, handleSubmit, onNextTaskButtonClick, t]);
 
   return (
     <React.Fragment>
@@ -75,10 +93,7 @@ export default function ActiveTask ({
         )}
         {!loading && !noTasks && (
           <Button
-            onClick={() => {
-              onNextTaskButtonClick();
-              handleNotification('success', t('notifications:thank_you_for_contributing'));
-            }}
+            onClick={handleSubmit}
             variant="contained"
             color="primary"
           >
