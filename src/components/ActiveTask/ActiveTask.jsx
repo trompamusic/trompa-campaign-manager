@@ -32,7 +32,6 @@ export default function ActiveTask ({
     handleNotification('success', t('notifications:thank_you_for_contributing'));
   }, [onNextTaskButtonClick, handleNotification, t]);
 
-  // Listen to submit message from iframe: window.parent.postMessage('submit', '*')
   useEffect(() => {
     const iframeListener = ({ data }) => {
       if(data === 'submit'){
