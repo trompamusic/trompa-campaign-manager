@@ -12,7 +12,7 @@ describe('<ActiveTask />', () => {
   test('displays next task with task props', () => {
     const { getByText } = render(<ActiveTask name="abc" url="https://demo.videodock.com/trompa/ce-task" />);
 
-    expect(getByText('Next task')).toBeTruthy();
+    expect(getByText('Skip task')).toBeTruthy();
   });
 
   test('displays loading with loading prop', () => {

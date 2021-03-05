@@ -93,10 +93,9 @@ export default function ActiveTask ({
         {!loading && !noTasks && (
           <Button
             onClick={handleSubmit}
-            variant="contained"
             color="primary"
           >
-            {t('next_task')}
+            {t('skip_task')}
           </Button>
         )}
       </AppbarBottom>
