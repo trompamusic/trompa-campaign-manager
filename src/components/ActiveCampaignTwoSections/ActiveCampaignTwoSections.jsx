@@ -41,10 +41,11 @@ export default function ActiveCampaignTwoSections ({ digitalDocument, musicCompo
           <Typography variant="h2">
             {t('complete_score')}
           </Typography>
-          <a className={classes.moreLink} target="_blank" rel="noopener noreferrer" href={digitalDocument?.source}>
-            <OpenInNewIcon />
-            {t('download')}
-          </a>
+          {!!digitalDocument &&
+            <a className={classes.moreLink} target="_blank" rel="noopener noreferrer" href={digitalDocument.source}>
+              <OpenInNewIcon />
+              {t('download')}
+            </a>}
         </section>
       </Grid>
       <Grid className={classNames(classes.twoSections, classes.pieceAuthor)} xs={12} md={6} item>
