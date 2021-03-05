@@ -110,7 +110,7 @@ export default function ActiveCampaign ({ match }) {
           openSubscribeForm={openSubscribeForm}
         />
       </Jumbotron>
-      <TaskGroupProgress digitalDocumentIdentifier={digitalDocument.identifier} />
+      <TaskGroupProgress digitalDocumentIdentifier={digitalDocument?.identifier} />
       <ActiveCampaignTwoSections
         campaign={campaign}
         digitalDocument={digitalDocument}
@@ -130,7 +130,7 @@ export default function ActiveCampaign ({ match }) {
               campaignTitle={campaign.title}
               campaignDeadline={daysToGo}
               onClick={() => {
-                history.push(`/campaign/${campaign.identifier}`);
+                history.push(`/campaign/${campaign?.identifier}`);
               }}
             />
           );})}

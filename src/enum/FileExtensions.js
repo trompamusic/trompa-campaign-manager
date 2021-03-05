@@ -1,5 +1,5 @@
 const FileExtensions = {
-  scoreUrl    : ["mei", "xml", "pdf"],
+  scoreUrl    : ["mei", "xml", "pdf", "mxl"],
   thumbnailUrl: ["jpg", "jpeg", "png", "gif"],
 };
 
