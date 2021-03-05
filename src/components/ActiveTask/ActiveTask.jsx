@@ -34,7 +34,7 @@ export default function ActiveTask ({
 
   useEffect(() => {
     const iframeListener = ({ data }) => {
-      if(data === 'submit'){
+      if (data === 'submit'){
         handleSubmit();
       }
     };
