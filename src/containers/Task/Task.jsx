@@ -15,38 +15,39 @@ export default function Task({ campaignIdentifier, taskIdentifier }) {
   const [tasksTodo, setTasksTodo]           = useState([]);
   const [tasksSubmitted, setTasksSubmitted] = useState([]);
   const taskDrawAmount                      = 10;
-  const refetchTimeout                      = 3000;
+  const refetchTimeout                      = 30000;
   const [refetchCount, setRefetchCount]     = useState(0);
   const nickname                            = localStorage.getItem('nickname');
-  const score                               = campaign? getCampaignDigitalDocument(campaign):null;
+  const score                               = campaign? getCampaignDigitalDocument(campaign) : null;
 
   const randomOffset    = list => Math.floor(Math.random() * list.length);
   const randomSelection = list => list.slice(randomOffset(list), taskDrawAmount);
   
-  const setTaskUrl          = taskId => history.replace(`/campaign/${campaignIdentifier}/task/${taskId || ""}`);
-  const addToSubmitted      = taskId => !tasksSubmitted.includes(taskId)? setTasksSubmitted(tasksSubmitted.concat(taskId)) : null;
-  const removeFromTodo      = taskId => setTasksTodo(tasksTodo.filter(identifier => identifier !== taskId));
-  const getNextTask         = taskId => tasksTodo.filter(identifier => identifier !== taskId)[0];
-  const newTaskNotSubmitted = task   => task.find(({ identifier }) => !tasksSubmitted.includes(identifier));
-  const extractTask         = task   => newTaskNotSubmitted(task)? setTask(task[0]): setTaskUrl('');
+  const setTaskUrl      = taskId => history.replace(`/campaign/${campaignIdentifier}/task/${taskId || ""}`);
+  const addToSubmitted  = taskId => !tasksSubmitted.includes(taskId)? setTasksSubmitted(tasksSubmitted.concat(taskId)) : null;
+  const removeFromTodo  = taskId => setTasksTodo(tasksTodo.filter(identifier => identifier !== taskId));
+  const getNextTask     = taskId => tasksTodo.filter(identifier => identifier !== taskId)[0];
+  const isTaskSubmitted = task   => tasksSubmitted.includes(task?.identifier);
+  const extractTask     = task   => !task || isTaskSubmitted(task)? setTaskUrl('') : setTask(task);
   
   const getCampaignCallback = ({ ControlAction: campaign }) => setCampaign(campaign[0]);
-  const getTaskCallback     = ({ ControlAction: task })     => extractTask(task);
+  const getTaskCallback     = ({ ControlAction: task })     => extractTask(task[0]);
   const getTaskListCallback = ({ ControlAction: taskList }) => {
-    if(taskList.length){
+    if (taskList.length){
       const selection = randomSelection(taskList).map(({ identifier }) => identifier);
 
       setTasksTodo(selection);
       setTaskUrl(selection[0]);
     } else {
+      setTask(null);
       setTasksTodo([]);
       setTimeout(() => setRefetchCount(refetchCount + 1), refetchTimeout);
     }
   };
   
-  const [getCampaign, { loadingCampaign }] = useLazyQuery(GET_CAMPAIGN, { variables: { identifier: campaignIdentifier }, onCompleted: getCampaignCallback });
-  const [getTaskList, { loadingTaskList }] = useLazyQuery(ALL_TASKS,    { variables: { identifier: score?.identifier }, onCompleted: getTaskListCallback, fetchPolicy: "no-cache" });
-  const [getTask, { loadingTask }]         = useLazyQuery(NEXT_TASK,    { variables: { identifiers: [taskIdentifier] }, onCompleted: getTaskCallback });
+  const [getCampaign, { loading:loadingCampaign }] = useLazyQuery(GET_CAMPAIGN, { onCompleted: getCampaignCallback });
+  const [getTask,     { loading:loadingTask }]     = useLazyQuery(NEXT_TASK,    { onCompleted: getTaskCallback });
+  const [getTaskList, { loading:loadingTaskList }] = useLazyQuery(ALL_TASKS,    { onCompleted: getTaskListCallback, fetchPolicy: "no-cache" });
   
   const onGoBackClick             = () => history.goBack();
   const handleNextTaskButtonClick = () => {
@@ -55,41 +56,33 @@ export default function Task({ campaignIdentifier, taskIdentifier }) {
     setTaskUrl(getNextTask(taskIdentifier));
   };
 
-  // 1. Load the campaign
   useEffect(() => {
     if (campaignIdentifier) {
-      getCampaign();
+      getCampaign({ variables: { identifier: campaignIdentifier } });
     }
   }, [campaignIdentifier, getCampaign]);
 
-  // 2. Load a random list (max 10) of campaign tasks 
   useEffect(() => {
-    if(!taskIdentifier && score) {
-      getTaskList({ variables: { filtered: tasksSubmitted } });
+    if (!taskIdentifier && score) {
+      getTaskList({ variables: { identifier: score.identifier, filtered: tasksSubmitted, drawamount: taskDrawAmount } });
     }
-  },[getTaskList, score, taskIdentifier, refetchCount, tasksSubmitted]);
-
-  // 3. Load current task (id in url)
-  useEffect(() => {
-    if(taskIdentifier){
-      getTask();
+    if (taskIdentifier){
+      getTask({ variables: { identifiers: [taskIdentifier] } });
     }
-  }, [getTask, taskIdentifier]);
+  },[getTaskList, getTask, score, taskIdentifier, refetchCount, tasksSubmitted]);
 
-  const isLoading = !!(loadingCampaign || loadingTaskList || loadingTask);
-
-  if (isLoading) {
+  if (loadingCampaign || loadingTaskList || loadingTask) {
     return (
       <ActiveTask
         name="Loading"
         campaign={campaign?.name}
         campaignIdentifier={campaignIdentifier}
         onGoBackClick={onGoBackClick}
-        loading={isLoading}
+        loading
       />
     );
   }
-  if (!tasksTodo.length || !task) {
+  if (!task) {
     return (
       <ActiveTask
         name="No tasks found"
@@ -126,7 +119,7 @@ Task.propTypes = {
 };
 
 export const ALL_TASKS = gql`
-    query AllPotentialActions($identifier: ID! $filtered: [ID!]) {
+    query AllPotentialActions($identifier: ID! $filtered: [ID!] $drawamount: Int) {
       ControlAction(
           filter: {
               wasGeneratedBy_not: null
@@ -135,13 +128,13 @@ export const ALL_TASKS = gql`
               object_single: { identifier: $identifier }
               identifier_not_in: $filtered
           }
-          first: 10
+          first: $drawamount
       ) {
           identifier
       }
     }
 `;
-//, $offset: Int!
+
 export const NEXT_TASK = gql`
     query ClientNextPotentialAction($identifiers: [ID!]!) {
         ControlAction(
@@ -150,7 +143,6 @@ export const NEXT_TASK = gql`
                 actionStatus: PotentialActionStatus
             }
             first: 1
-            offset: 0
         ) {
             identifier
             name
