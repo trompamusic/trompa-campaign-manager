@@ -64,7 +64,7 @@ export default function Task({ campaignIdentifier, taskIdentifier }) {
 
   useEffect(() => {
     if (!taskIdentifier && score) {
-      getTaskList({ variables: { identifier: score.identifier, filtered: tasksSubmitted, drawamount: taskDrawAmount } });
+      getTaskList({ variables: { identifier: score.identifier, filtered: tasksSubmitted, drawAmount: taskDrawAmount } });
     }
     if (taskIdentifier){
       getTask({ variables: { identifiers: [taskIdentifier] } });
@@ -119,7 +119,7 @@ Task.propTypes = {
 };
 
 export const ALL_TASKS = gql`
-    query AllPotentialActions($identifier: ID! $filtered: [ID!] $drawamount: Int) {
+    query AllPotentialActions($identifier: ID! $filtered: [ID!] $drawAmount: Int) {
       ControlAction(
           filter: {
               wasGeneratedBy_not: null
@@ -128,7 +128,7 @@ export const ALL_TASKS = gql`
               object_single: { identifier: $identifier }
               identifier_not_in: $filtered
           }
-          first: $drawamount
+          first: $drawAmount
       ) {
           identifier
       }
