@@ -2,7 +2,7 @@
   "close": "Close",
   "description": "Work on tasks related to the selected campaign.",
   "loading": "Loading...",
-  "next_task": "Next task",
+  "skip_task": "Skip task",
   "no_tasks_left": "No tasks left",
   "no_tasks_available": "There are currently no tasks available for this campaign",
   "this_task_is_not_yet_available": "This task is not yet available.",

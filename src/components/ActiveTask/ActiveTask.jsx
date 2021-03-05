@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import { useTranslation } from 'react-i18next';
@@ -26,6 +26,23 @@ export default function ActiveTask ({
 }) {
   const { t }   = useTranslation('task');
   const classes = useStyles();
+
+  const handleSubmit = useCallback(() => {
+    onNextTaskButtonClick();
+    handleNotification('success', t('notifications:thank_you_for_contributing'));
+  }, [onNextTaskButtonClick, handleNotification, t]);
+
+  useEffect(() => {
+    const iframeListener = ({ data }) => {
+      if (data === 'submit'){
+        handleSubmit();
+      }
+    };
+
+    window.addEventListener('message', iframeListener);
+
+    return () => window.removeEventListener('message', iframeListener);
+  }, [handleNotification, handleSubmit, onNextTaskButtonClick, t]);
 
   return (
     <React.Fragment>
@@ -75,14 +92,10 @@ export default function ActiveTask ({
         )}
         {!loading && !noTasks && (
           <Button
-            onClick={() => {
-              onNextTaskButtonClick();
-              handleNotification('success', t('notifications:thank_you_for_contributing'));
-            }}
-            variant="contained"
+            onClick={handleSubmit}
             color="primary"
           >
-            {t('next_task')}
+            {t('skip_task')}
           </Button>
         )}
       </AppbarBottom>
