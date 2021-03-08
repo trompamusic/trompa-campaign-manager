@@ -13,7 +13,7 @@ const useTaskCount = campaign => {
     if(campaign){
       getTaskList();
     }
-  }, [campaign]);
+  }, [campaign, getTaskList]);
 
   return taskCount;
 };
