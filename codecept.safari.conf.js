@@ -5,8 +5,8 @@ const { setHeadlessWhen } = require('@codeceptjs/configure');
 setHeadlessWhen(process.env.HEADLESS);
 
 exports.config = {
-  tests  : './tests/*_test.js',
-  output : './output',
+  tests  : './end-to-end-test/*_test.js',
+  output : './end-to-end-test/output',
   helpers: {
     Playwright: {
       url    : 'http://localhost:3000',
@@ -15,13 +15,13 @@ exports.config = {
     },
     ResembleHelper: {
       "require"         : "codeceptjs-resemblehelper",
-      "screenshotFolder": "./tests/output/",
-      "baseFolder"      : "./tests/screenshots/base/",
-      "diffFolder"      : "./tests/screenshots/diff/",
+      "screenshotFolder": "./end-to-end-test/output/",
+      "baseFolder"      : "./end-to-end-test/screenshots/base/",
+      "diffFolder"      : "./end-to-end-test/screenshots/diff/",
     },
   },
   include: {
-    I: './tests/steps_file.js',
+    I: './end-to-end-test/steps_file.js',
   },
   bootstrap: null,
   mocha    : {},

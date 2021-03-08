@@ -10,8 +10,9 @@ exports.config = {
   helpers: {
     Playwright: {
       url    : 'http://localhost:3000',
-      show   : false,
-      browser: 'firefox',
+      show   : true,
+      browser: 'chromium',
+      slowMo : 1000,
     },
     ResembleHelper: {
       "require"         : "codeceptjs-resemblehelper",
