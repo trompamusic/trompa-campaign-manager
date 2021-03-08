@@ -1,9 +1,9 @@
 import { createStyles } from '@material-ui/styles';
 
-export default ({ typography, palette, spacing, shape, breakpoints }) => createStyles({
+export default ({ typography, palette, spacing, breakpoints }) => createStyles({
   root: {
     position : 'absolute',
-    top      : '50%',
+    top      : 'calc(56px + 50%)',
     left     : '50%',
     transform: 'translate(-50%, -50%)',
   },
