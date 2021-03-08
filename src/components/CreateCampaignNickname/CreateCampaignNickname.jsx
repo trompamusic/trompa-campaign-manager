@@ -58,7 +58,7 @@ export default function CreateCampaignNickname ({ initialFormValues, onSubmit, o
                     {t('nickname_tip')}
                   </Typography>
                   <div className={classes.buttons}>
-                    <Button onClick={onBackButtonClick} variant="text">
+                    <Button aria-label={t('back')} onClick={onBackButtonClick} variant="text">
                       {t('back')}
                     </Button>
                     <Button
@@ -66,6 +66,7 @@ export default function CreateCampaignNickname ({ initialFormValues, onSubmit, o
                       form="nickname-form"
                       variant="contained"
                       color="primary"
+                      aria-label={t('agree_and_continue')}
                       disabled={isSubmitting}
                     >
                       {t('agree_and_continue')}
