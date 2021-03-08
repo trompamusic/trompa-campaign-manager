@@ -5,6 +5,7 @@ on:
 jobs:
   e2e-tests:
     strategy:
+      fail-fast: false
       matrix:
         os:
           - macos-10.15
@@ -15,13 +16,13 @@ jobs:
           - safari
         exclude:
           - os: windows-2019
-            browser: safari 
+            browser: safari
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: "14"
       - uses: microsoft/playwright-github-action@v1
 
       - name: Get yarn cache directory path
