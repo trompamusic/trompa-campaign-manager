@@ -37,7 +37,8 @@ export default function ActiveCampaign ({ match }) {
   const [shareDialogOpen, setShareDialogOpen]                       = useState(false);
   const { loading, error, data: { ControlAction: campaigns } = {} } = useQuery(GET_CAMPAIGNS);
   const { campaignIdentifier }                                      = match.params;
-  const campaign                                                    = campaigns?.find(({ identifier }) => identifier === campaignIdentifier);
+  const { data: campaignResponse  }                                 = useQuery(GET_CAMPAIGN_WITH_COMPOSITION, { variables: { identifier: campaignIdentifier } });
+  const campaign                                                    = campaignResponse?.ControlAction?.[0];
   const taskCount                                                   = useTaskCount(campaign);
 
   useEffect(() => {
@@ -168,7 +169,7 @@ export default function ActiveCampaign ({ match }) {
   );
 }
 
-export const GET_CAMPAIGNS = gql`
+const GET_CAMPAIGNS = gql`
     query {
       ControlAction(filter:{wasDerivedFrom:{identifier: "b559c52d-6104-4cb3-ab82-39b82bb2de6c"}}, orderBy: endTime_asc, first: 20) {
         agent
@@ -190,6 +191,34 @@ export const GET_CAMPAIGNS = gql`
                             title
                             source
                             image
+                        }
+                    }
+                }
+            }
+        }
+    }`;
+
+const GET_CAMPAIGN_WITH_COMPOSITION = gql`
+  query CampaignWithComposition($identifier: ID!) {
+      ControlAction (identifier: $identifier) {
+          agent
+          identifier
+          name
+          alternateName
+          description
+          endTime {
+            formatted
+          }
+          object {
+              ... on PropertyValue {
+                  name
+                  value
+                  nodeValue {
+                      ... on DigitalDocument {
+                          identifier
+                          title
+                          source
+                          image
                             exampleOfWork {
                                 ... on MusicComposition {
                                     title
@@ -209,12 +238,13 @@ export const GET_CAMPAIGNS = gql`
                                     }
                                 }
                             }
-                        }
-                    }
-                }
-            }
-        }
-    }`;
+                      }
+                  }
+              }
+          }
+      }
+  }
+`;
 
 export const GET_CAMPAIGN = gql`
     query Campaign($identifier: ID!) {
