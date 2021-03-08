@@ -1,3 +1,3 @@
 {
-  "extends": "react-app-vd"
+  "extends": ["react-app-vd", "plugin:codeceptjs/recommended"]
 }
