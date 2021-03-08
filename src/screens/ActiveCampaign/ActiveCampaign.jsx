@@ -98,7 +98,7 @@ export default function ActiveCampaign ({ match }) {
       <Jumbotron
         image={digitalDocument?.image || images.scoreImage}
         campaign={campaign}
-        author={campaign.author}
+        author={campaign.creator}
         digitalDocument={digitalDocument}
         isCampaignPageHeader
       >
@@ -205,6 +205,7 @@ const GET_CAMPAIGN_WITH_COMPOSITION = gql`
           identifier
           name
           alternateName
+          creator
           description
           endTime {
             formatted
