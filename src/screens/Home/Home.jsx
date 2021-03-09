@@ -33,7 +33,7 @@ export default function Home() {
   const campaign                                                    = campaigns?.find(({ identifier }) => identifier === publicCampaignIdentifier);
   const digitalDocument                                             = getCampaignDigitalDocument(campaign);
 
-  if (loading || error || !campaign) {
+  if (loading || error) {
     return null;
   }
 
@@ -60,6 +60,7 @@ export default function Home() {
         campaign={campaign}
         digitalDocument={digitalDocument}
       >
+        {!!campaign && 
         <Button
           className={classes.buttonHero}
           component={Link}
@@ -69,6 +70,7 @@ export default function Home() {
         >
           {t('join_campaign')}
         </Button>
+        }
       </Jumbotron>
       <HomeTwoSections />
       <ActiveCampaignOverviewSection>
