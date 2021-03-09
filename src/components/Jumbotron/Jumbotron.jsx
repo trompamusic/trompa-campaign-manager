@@ -26,6 +26,12 @@ export default function Jumbotron ({
   const { t }                              = useTranslation('common');
   const [scoreModalOpen, toggleScoremodal] = useState(false);
 
+  const extractSourceName = str => {
+    if(!str) return "";
+    const value = str.substring(str.lastIndexOf('/') + 1);
+    return value.substring(0, value.lastIndexOf('.'));
+ }
+
   const renderContent = device => (
     <div className={classNames(classes[device], { [classes.campaign]: isCampaignPageHeader })}>
       {isCampaignPageHeader && (
@@ -94,7 +100,7 @@ export default function Jumbotron ({
             <Typography variant="h3" color="inherit">
               {digitalDocument?.title}
             </Typography>
-            <ScoreContainer />
+            <ScoreContainer pdfName={extractSourceName(digitalDocument?.source)}/>
             <Button className={classes.toggleScoreModal} startIcon={<RemoveRedEyeIcon color="inherit" />} onClick={() => toggleScoremodal(true)}>
               <Typography variant="body2" color="inherit">
               View progress
