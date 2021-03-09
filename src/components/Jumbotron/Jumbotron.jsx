@@ -100,7 +100,7 @@ export default function Jumbotron ({
             <Typography variant="h3" color="inherit">
               {digitalDocument?.title}
             </Typography>
-            <ScoreContainer pdfName={extractSourceName(digitalDocument.source)}/>
+            <ScoreContainer pdfName={extractSourceName(digitalDocument?.source)}/>
             <Button className={classes.toggleScoreModal} startIcon={<RemoveRedEyeIcon color="inherit" />} onClick={() => toggleScoremodal(true)}>
               <Typography variant="body2" color="inherit">
               View progress
