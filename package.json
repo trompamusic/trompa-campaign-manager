@@ -94,7 +94,8 @@
     "selectable-score": "trompamusic/selectable-score",
     "solid-auth-client": "^2.5.2",
     "trompa-multimodal-component": "^1.0.1",
-    "url-search-params-polyfill": "^7.0.0"
+    "url-search-params-polyfill": "^7.0.0",
+    "wait-on": "^5.2.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.13.0",
