@@ -46,7 +46,7 @@ class ScoreContainer extends Component {
     super(props);
 
     this.state          = {
-      uri                 : 'https://royschut2.inrupt.net/public/testa.mei',
+      uri                 : `https://raw.githubusercontent.com/Crowd-Transcribed-MEI-Repositories/${this.props.pdfName}/crowdmanager/aligned.mei`,
       scoreComponentLoaded: false,
     };
 
@@ -89,9 +89,6 @@ class ScoreContainer extends Component {
     this.OPTIONS.scale   = containerWidth / resizeValue;
   }
 
-  setUri = () => {
-    this.setState({ uri: 'https://raw.githubusercontent.com/crowdmanager-test/few_measures_campaign/trompa-campaign/aligned.mei' });
-  }
 
   render() {
     const { classes, showControl, fullScreen } = this.props;
