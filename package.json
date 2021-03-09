@@ -82,7 +82,7 @@
     "seamless-immutable": "^7.1.2",
     "selectable-score": "trompamusic/selectable-score",
     "solid-auth-client": "^2.5.2",
-    "trompa-multimodal-component": "^1.0.0-alpha4",
+    "trompa-multimodal-component": "^1.0.1",
     "url-search-params-polyfill": "^7.0.0"
   },
   "devDependencies": {
