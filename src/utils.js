@@ -12,13 +12,13 @@ export const setPrerenderReady = status => (window.prerenderReady = status);
 export const truncateLabel = (str, maxChars) => {
   if(!str) return "";
   let ret = str.substring(0, maxChars);
-  
+
   ret = ret.substring(0, str.lastIndexOf(' ') -1);
   if(ret.length < str.length) ret = `${ret}...`;
 
   return ret;
 };
-export const getCampaignDigitalDocument = campaign => campaign ? campaign?.object.find(object => object.name === 'Work')?.nodeValue : null;
+export const getCampaignDigitalDocument = campaign => campaign ? campaign?.object.find(object => object.name === 'work')?.nodeValue : null;
 
 export const getCampaignTasksValue = campaign => campaign ? campaign?.object.find(object => object.name === 'tasks')?.value : null;
 
