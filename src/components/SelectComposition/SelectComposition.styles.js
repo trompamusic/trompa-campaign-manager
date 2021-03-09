@@ -3,7 +3,7 @@ import { createStyles } from '@material-ui/styles';
 export default ({ spacing, palette, breakpoints, typography }) => createStyles({
   root: {
     position     : 'absolute',
-    top          : '50%',
+    top          : 'calc(56px + 50%)',
     left         : '50%',
     transform    : 'translate(-50%, -50%)',
     display      : 'flex',
@@ -25,7 +25,6 @@ export default ({ spacing, palette, breakpoints, typography }) => createStyles({
       fontSize: typography.pxToRem(28),
     },
     fontSize     : typography.pxToRem(37),
-    padding      : `0px ${spacing(2)}px`,
     marginBottom : spacing(3),
     textAlign    : 'center',
     letterSpacing: 0.25,
@@ -51,6 +50,7 @@ export default ({ spacing, palette, breakpoints, typography }) => createStyles({
       display: 'none',
     },
     height: '40vh',
+    margin: spacing(4),
   },
   part: {
     width  : '100%',

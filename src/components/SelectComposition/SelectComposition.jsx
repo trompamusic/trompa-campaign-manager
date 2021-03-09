@@ -1,7 +1,7 @@
 import React  from 'react';
 import * as PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Box, Button, Container, IconButton, Typography } from '@material-ui/core';
+import { Box, Button, IconButton, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import Cancel from "@material-ui/icons/Cancel";
 import { useTranslation } from 'react-i18next';
@@ -17,7 +17,7 @@ export default function SelectComposition({ composition, score, onSelectComposit
   return (
     <Box className={classes.root}>
       <img className={classes.person} src={images.personWithBass} alt={t('person')} />
-      <Container className={classes.content}>
+      <div className={classes.content}>
         <Typography variant="h1" className={classes.header}>{t('title')}</Typography>
         <Box className={classes.part}>
           <Typography variant="body1">{t('start')}</Typography>
@@ -58,7 +58,7 @@ export default function SelectComposition({ composition, score, onSelectComposit
           <Button onClick={onBackButtonClick} aria-label={t('back')}>{t('back')}</Button>
           <Button variant="contained" color="primary" disabled={!(composition && score) } onClick={onNextButtonClick} aria-label={t('next')}>{t('next')}</Button>
         </Box>
-      </Container>
+      </div>
       <img className={classes.person} src={images.personTrumpetStandingRight} alt={t('person')} />
     </Box>
   );
