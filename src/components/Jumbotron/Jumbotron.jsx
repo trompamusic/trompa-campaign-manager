@@ -27,6 +27,7 @@ export default function Jumbotron ({
   const [scoreModalOpen, toggleScoremodal] = useState(false);
 
   const extractSourceName = str => {
+    if(!str) return "";
     const value = str.substring(str.lastIndexOf('/') + 1);
     return value.substring(0, value.lastIndexOf('.'));
  }
