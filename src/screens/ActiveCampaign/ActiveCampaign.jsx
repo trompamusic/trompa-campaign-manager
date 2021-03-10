@@ -9,6 +9,7 @@ import { useTranslation } from 'react-i18next';
 import { makeStyles } from '@material-ui/core/styles';
 import ShareIcon from '@material-ui/icons/Share';
 import Button from '@material-ui/core/Button';
+import { CircularProgress } from '@material-ui/core';
 import NotFound from '../NotFound';
 import { getCampaignDigitalDocument, hasUrlParameter } from '../../utils';
 import useTaskCount from '../../hooks/useTaskCount';
@@ -28,18 +29,20 @@ import styles from './ActiveCampaign.styles';
 const useStyles = makeStyles(styles);
 
 export default function ActiveCampaign ({ match }) {
-  const { t }                                                       = useTranslation('campaign');
-  const classes                                                     = useStyles();
-  const subscribeFormRef                                            = useRef();
-  const openSubscribeForm                                           = () => subscribeFormRef.current.typeform.open();
-  const history                                                     = useHistory();
-  const createdParameter                                            = hasUrlParameter("created");
-  const [shareDialogOpen, setShareDialogOpen]                       = useState(false);
-  const { loading, error, data: { ControlAction: campaigns } = {} } = useQuery(GET_CAMPAIGNS);
-  const { campaignIdentifier }                                      = match.params;
-  const { data: campaignResponse  }                                 = useQuery(GET_CAMPAIGN_WITH_COMPOSITION, { variables: { identifier: campaignIdentifier } });
-  const campaign                                                    = campaignResponse?.ControlAction?.[0];
-  const taskCount                                                   = useTaskCount(campaign);
+  const { t }                                                           = useTranslation('campaign');
+  const classes                                                         = useStyles();
+  const subscribeFormRef                                                = useRef();
+  const openSubscribeForm                                               = () => subscribeFormRef.current.typeform.open();
+  const history                                                         = useHistory();
+  const createdParameter                                                = hasUrlParameter("created");
+  const [shareDialogOpen, setShareDialogOpen]                           = useState(false);
+  const { loading: loadingCampaign, error, data: campaignListResponse } = useQuery(GET_CAMPAIGNS);
+  const campaigns                                                       = campaignListResponse?.ControlAction;
+  const { campaignIdentifier }                                          = match.params;
+  const { loading: loadingCampaignList, data: campaignResponse  }       = useQuery(GET_CAMPAIGN_WITH_COMPOSITION, { variables: { identifier: campaignIdentifier } });
+  const campaign                                                        = campaignResponse?.ControlAction?.[0];
+  const taskCount                                                       = useTaskCount(campaign);
+  const isLoading                                                       = loadingCampaign || loadingCampaignList;
 
   useEffect(() => {
     if(createdParameter) {
@@ -54,15 +57,11 @@ export default function ActiveCampaign ({ match }) {
     setShareDialogOpen(false);
   };
 
-  if (loading) {
-    return null;
-  }
-
   if (error) {
     return <h2>{error.message}</h2>;
   }
 
-  if (!loading && !campaign) {
+  if (!campaignIdentifier) {
     return <NotFound />;
   }
 
@@ -95,76 +94,85 @@ export default function ActiveCampaign ({ match }) {
         buttons={buttons}
         primaryButton={primaryButton}
       />
-      <Jumbotron
-        image={digitalDocument?.image || images.scoreImage}
-        campaign={campaign}
-        author={campaign.creator}
-        digitalDocument={digitalDocument}
-        isCampaignPageHeader
-      >
-        <JumbotronContentCampaign
-          campaign={campaign}
-          campaignUrl={campaignUrl}
-          endDate={campaignEndDate}
-          to={doTaskUrl}
-          hasTasksAvailable={taskCount > 0}
-          openSubscribeForm={openSubscribeForm}
-        />
-      </Jumbotron>
-      <TaskGroupProgress digitalDocumentIdentifier={digitalDocument?.identifier} />
-      <ActiveCampaignTwoSections
-        campaign={campaign}
-        digitalDocument={digitalDocument}
-        musicComposition={digitalDocument?.exampleOfWork[0]}
-        composer={digitalDocument?.exampleOfWork?.[0]?.composer?.[0]}
-      />
-      <ActiveCampaignOverviewSection>
-        {campaigns?.map(campaign => {
-          const daysToGo        = moment(campaign.endTime.formatted)?.diff(moment(), 'days');
-          const digitalDocument = getCampaignDigitalDocument(campaign);
-
-          return (
-            <ActiveCampaignOverviewItem
-              key={campaign.identifier}
-              scoreImage={digitalDocument?.image}
-              scoreTitle={digitalDocument?.title}
-              campaignTitle={campaign.title}
-              campaignDeadline={daysToGo}
-              onClick={() => {
-                history.push(`/campaign/${campaign?.identifier}`);
-              }}
+      {isLoading && (
+        <div className={classes.spinner}>
+          <CircularProgress color="primary" />
+        </div>
+      )}
+      {!isLoading && 
+        <React.Fragment>
+          <Jumbotron
+            image={digitalDocument?.image || images.scoreImage}
+            campaign={campaign}
+            author={campaign.creator}
+            digitalDocument={digitalDocument}
+            isCampaignPageHeader
+          >
+            <JumbotronContentCampaign
+              campaign={campaign}
+              campaignUrl={campaignUrl}
+              endDate={campaignEndDate}
+              to={doTaskUrl}
+              hasTasksAvailable={taskCount > 0}
+              openSubscribeForm={openSubscribeForm}
             />
-          );})}
-      </ActiveCampaignOverviewSection>
-      <Jumbotron
-        image={images.collaborateHero}
-        text={{
-          aboutTitle : t('about.about_collaboration_manager'),
-          description: t('about.trompa_is_developing'),
-        }}
-      >
-        <Button
-          className={classes.buttonHero}
-          component={Link}
-          to={doTaskUrl}
-          variant="contained"
-          color="primary"
-        >
-          {t('about.start_today')}
-        </Button>
-      </Jumbotron>
-      <Footer />
-      <ShareDialog
-        open={shareDialogOpen}
-        onClose={handleShareDialogClose}
-        modalContent={{
-          title    : t('sharedialog.drum_up_support'),
-          paragraph: t('sharedialog.lets_face_music'),
-        }}
-        campaign={campaign}
-        campaignUrl={campaignUrl}
-      />
-      <TypeformModal url={`https://kirkandblackbeard.typeform.com/to/NHbUkT?campaignid=${campaignIdentifier}`} formRef={subscribeFormRef} />
+          </Jumbotron>
+          <TaskGroupProgress digitalDocumentIdentifier={digitalDocument?.identifier} />
+          <ActiveCampaignTwoSections
+            campaign={campaign}
+            digitalDocument={digitalDocument}
+            musicComposition={digitalDocument?.exampleOfWork[0]}
+            composer={digitalDocument?.exampleOfWork?.[0]?.composer?.[0]}
+          />
+          <ActiveCampaignOverviewSection>
+            {campaigns?.map(campaign => {
+              const daysToGo        = moment(campaign.endTime.formatted)?.diff(moment(), 'days');
+              const digitalDocument = getCampaignDigitalDocument(campaign);
+
+              return (
+                <ActiveCampaignOverviewItem
+                  key={campaign.identifier}
+                  scoreImage={digitalDocument?.image}
+                  scoreTitle={digitalDocument?.title}
+                  campaignTitle={campaign.title}
+                  campaignDeadline={daysToGo}
+                  onClick={() => {
+                    history.push(`/campaign/${campaign?.identifier}`);
+                  }}
+                />
+              );})}
+          </ActiveCampaignOverviewSection>
+          <Jumbotron
+            image={images.collaborateHero}
+            text={{
+              aboutTitle : t('about.about_collaboration_manager'),
+              description: t('about.trompa_is_developing'),
+            }}
+          >
+            <Button
+              className={classes.buttonHero}
+              component={Link}
+              to={doTaskUrl}
+              variant="contained"
+              color="primary"
+            >
+              {t('about.start_today')}
+            </Button>
+          </Jumbotron>
+          <Footer />
+          <ShareDialog
+            open={shareDialogOpen}
+            onClose={handleShareDialogClose}
+            modalContent={{
+              title    : t('sharedialog.drum_up_support'),
+              paragraph: t('sharedialog.lets_face_music'),
+            }}
+            campaign={campaign}
+            campaignUrl={campaignUrl}
+          />
+          <TypeformModal url={`https://kirkandblackbeard.typeform.com/to/NHbUkT?campaignid=${campaignIdentifier}`} formRef={subscribeFormRef} />
+        </React.Fragment>
+      }
     </React.Fragment>
   );
 }
