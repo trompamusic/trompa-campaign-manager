@@ -41,7 +41,7 @@ export default function AppbarTop ({
               <div className={classes.header}>
                 <ArrowBackIcon onClick={onGoBackClick} className={classes.backIcon} />
                 <div className={classes.heading}>
-                  <Link className={classes.link} to={`/campaign/${campaignIdentifier}`}>
+                  <Link className={classes.link} to={`/campaign/${campaignIdentifier || ""}`}>
                     <Typography className={classes.pageType} variant="h6" color="secondary">
                       {type ? type : t('common:unknown_type')}
                     </Typography>
@@ -57,7 +57,7 @@ export default function AppbarTop ({
         )}
         {mobile && (
           hasContextNavigation ? (
-            <Link className={classes.link} to={`/campaign/${campaignIdentifier}`}>
+            <Link className={classes.link} to={`/campaign/${campaignIdentifier || ""}`}>
               <div className={classes.header}>
                 <ArrowBackIcon onClick={() => onGoBackClick} className={classes.backIcon} />
                 <div>
