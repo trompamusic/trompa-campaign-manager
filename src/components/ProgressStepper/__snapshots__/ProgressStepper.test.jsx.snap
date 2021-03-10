@@ -2,35 +2,39 @@
 
 exports[`<ProgressStepper /> renders and matches snapshot 1`] = `
 <div
-  class="MuiPaper-root MuiStepper-root MuiStepper-horizontal MuiStepper-alternativeLabel MuiPaper-elevation0"
+  class="makeStyles-root-1"
 >
   <div
-    class="MuiStep-root MuiStep-horizontal MuiStep-alternativeLabel"
+    class="MuiPaper-root MuiStepper-root MuiStepper-horizontal MuiStepper-alternativeLabel MuiPaper-elevation0"
   >
-    <span
-      class="MuiStepLabel-root MuiStepLabel-horizontal MuiStepLabel-alternativeLabel"
+    <div
+      class="MuiStep-root MuiStep-horizontal MuiStep-alternativeLabel"
     >
       <span
-        class="MuiStepLabel-iconContainer MuiStepLabel-alternativeLabel"
-      >
-        <div
-          class="makeStyles-root-49"
-        >
-          <div
-            class="makeStyles-circle-50 makeStyles-active-51"
-          />
-        </div>
-      </span>
-      <span
-        class="MuiStepLabel-labelContainer"
+        class="MuiStepLabel-root MuiStepLabel-horizontal MuiStepLabel-alternativeLabel"
       >
         <span
-          class="MuiTypography-root MuiStepLabel-label MuiStepLabel-alternativeLabel MuiStepLabel-active MuiTypography-body2 MuiTypography-displayBlock"
+          class="MuiStepLabel-iconContainer MuiStepLabel-alternativeLabel"
         >
-          one
+          <div
+            class="makeStyles-root-54"
+          >
+            <div
+              class="makeStyles-circle-55 makeStyles-active-56"
+            />
+          </div>
+        </span>
+        <span
+          class="MuiStepLabel-labelContainer"
+        >
+          <span
+            class="MuiTypography-root MuiStepLabel-label MuiStepLabel-alternativeLabel MuiStepLabel-active MuiTypography-body2 MuiTypography-displayBlock"
+          >
+            one
+          </span>
         </span>
       </span>
-    </span>
+    </div>
   </div>
 </div>
 `;

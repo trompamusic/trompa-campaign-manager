@@ -20,7 +20,7 @@ export default function Root(props) {
   }, [history.action, pathname]);
 
   const content = props.error ? (
-    <div>Something wen't terribly wrong!</div>
+    <div>Something went terribly wrong!</div>
   ) : (
     <Switch>
       <Route path="/" component={Home} exact />

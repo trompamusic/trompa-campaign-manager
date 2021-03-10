@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import * as PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -30,8 +29,6 @@ export default function Jumbotron({
     if (!str) return "";
     const value = str.substring(str.lastIndexOf('/') + 1);
 
-    value.substring(0, value.lastIndexOf('.'));
-
     return value.substring(0, value.lastIndexOf('.'));
   };
 
@@ -45,8 +42,7 @@ export default function Jumbotron({
             </span>)}
           {author && (
             <Typography variant="caption">
-              <Link to="#">{author}</Link>
-              {t('jumbotron.has_started')}
+              <span className={classes.author}>{author}</span>{t('jumbotron.has_started')}
             </Typography>)}
         </div>
       )}
