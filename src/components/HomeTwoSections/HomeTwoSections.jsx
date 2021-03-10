@@ -17,7 +17,7 @@ export default function HomeTwoSections () {
     <Grid
       direction="row"
       justify="center"
-      alignItems="center"
+      alignItems="stretch"
       container
     >
       <Grid className={classNames(classes.twoSections, classes.greatScores)} xs={12} md={6} item>
