@@ -2,7 +2,6 @@ import React from 'react';
 import { createMemoryHistory } from "history";
 import { Router } from "react-router";
 import { fireEvent } from '@testing-library/react';
-import GetAppIcon from '@material-ui/icons/GetApp';
 import { render } from '../../testUtils';
 import NavBar from './NavBar';
 

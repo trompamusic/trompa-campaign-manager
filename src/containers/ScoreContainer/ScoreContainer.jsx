@@ -32,7 +32,7 @@ const styles = {
     justifyContent : 'center',
     '& .scorepane ': {
       display        : 'inline-block',
-      backgroundColor: 'white', 
+      backgroundColor: 'white',
     },
   },
   scoreControl: {
@@ -74,7 +74,7 @@ class ScoreContainer extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if(!prevState.scoreComponentLoaded && this.scoreComponent.current) { 
+    if(!prevState.scoreComponentLoaded && this.scoreComponent.current) {
       this.setState({ "scoreComponentLoaded": true });
     }
   }
@@ -89,7 +89,6 @@ class ScoreContainer extends Component {
     this.OPTIONS.scale   = containerWidth / resizeValue;
   }
 
-
   render() {
     const { classes, showControl, fullScreen } = this.props;
 
@@ -101,7 +100,7 @@ class ScoreContainer extends Component {
               uri={this.state.uri}
               key={ 'score' + fullScreen}
               options={ this.OPTIONS }
-              ref={ this.scoreComponent } 
+              ref={ this.scoreComponent }
             />
           </div>
           {showControl && (
