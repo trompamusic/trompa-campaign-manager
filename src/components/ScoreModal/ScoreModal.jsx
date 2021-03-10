@@ -1,9 +1,8 @@
 import React from 'react';
 import { Dialog, Toolbar, IconButton, DialogContent } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
-import ScoreContainer from '../../containers/ScoreContainer/ScoreContainer';
 
-export default function ScoreModal({ onClose, isOpen }){
+export default function ScoreModal({ onClose, isOpen, scoreContainer }){
   return (
     <Dialog
       open={isOpen}
@@ -16,7 +15,7 @@ export default function ScoreModal({ onClose, isOpen }){
         </IconButton>
       </Toolbar>
       <DialogContent>
-        <ScoreContainer showControl fullScreen />
+        {scoreContainer}
       </DialogContent>
     </Dialog>
   );
