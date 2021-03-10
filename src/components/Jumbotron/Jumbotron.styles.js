@@ -95,6 +95,9 @@ export default ({ spacing, palette, typography, shape, breakpoints }) => createS
       display: 'none',
     },
   },
+  author: {
+    color: palette.primary.main,
+  },
   campaign       : {},
   prefixTitleHome: {
     display                 : 'flex',
