@@ -1,6 +1,9 @@
 import { createStyles } from '@material-ui/styles';
 
 export default ({ spacing, typography }) => createStyles({
+  root: {
+    paddingTop: 56,
+  },
   buttonHero: {
     marginTop    : spacing(),
     padding      : '8px 32px',

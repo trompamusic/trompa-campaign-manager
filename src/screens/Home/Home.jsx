@@ -41,7 +41,7 @@ export default function Home() {
   const primaryButton = { name: t('join_campaign'), to: `campaign/${process.env.REACT_APP_PUBLIC_CAMPAIGN_IDENTIFIER}` };
 
   return (
-    <div>
+    <div className={classes.root}>
       <Helmet>
         <title>{t('jumbotron.slogan')}</title>
         <meta name="description" content={t('meta_description')} />
