@@ -95,6 +95,9 @@ export default ({ spacing, palette, typography, shape, breakpoints }) => createS
       display: 'none',
     },
   },
+  author: {
+    color: palette.primary.main,
+  },
   campaign       : {},
   prefixTitleHome: {
     display                 : 'flex',
@@ -231,8 +234,7 @@ export default ({ spacing, palette, typography, shape, breakpoints }) => createS
   },
   toggleScoreModal: {
     color         : palette.primary.main,
-    margin        : spacing(0.5),
-    width         : '55%',
+    margin        : spacing(2, 0, 0),
     display       : 'flex',
     justifyContent: 'space-between',
   },

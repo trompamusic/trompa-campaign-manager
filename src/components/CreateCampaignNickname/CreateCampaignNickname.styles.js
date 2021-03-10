@@ -1,19 +1,16 @@
 import { createStyles } from '@material-ui/styles';
 
 export default ({ typography, palette, spacing, breakpoints }) => createStyles({
-  root: {
-    position : 'absolute',
-    top      : 'calc(56px + 50%)',
-    left     : '50%',
-    transform: 'translate(-50%, -50%)',
-  },
   container: {
-    display   : 'flex',
-    alignItems: 'center',
+    display       : 'flex',
+    alignItems    : 'center',
+    justifyContent: 'center',
+    height        : 'calc(100vh - 56px)',
   },
   content: {
     [breakpoints.down('sm')]: {
-      width: '90vw',
+      width  : '90vw',
+      padding: spacing(3),
     },
     width        : '40vw',
     display      : 'flex',

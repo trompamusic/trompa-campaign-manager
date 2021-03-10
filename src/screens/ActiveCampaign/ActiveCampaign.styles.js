@@ -11,4 +11,10 @@ export default ({ spacing, typography }) => createStyles({
     fontSize     : typography.pxToRem(16),
     letterSpacing: '0.66px',
   },
+  spinner: {
+    width         : '100%',
+    display       : 'flex',
+    justifyContent: 'center',
+    marginTop     : spacing(5),
+  },
 });

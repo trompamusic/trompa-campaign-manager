@@ -1,6 +1,9 @@
 import { createStyles } from '@material-ui/styles';
 
 export default () => createStyles({
+  root: {
+    overflow: 'auto',
+  },
   alternativeLabel: {
     top  : 10,
     left : 'calc(-50% + 16px)',

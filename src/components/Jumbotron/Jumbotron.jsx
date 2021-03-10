@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import * as PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -13,7 +12,7 @@ import styles from './Jumbotron.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function Jumbotron ({
+export default function Jumbotron({
   children,
   image,
   author,
@@ -27,7 +26,7 @@ export default function Jumbotron ({
   const [scoreModalOpen, toggleScoremodal] = useState(false);
 
   const extractSourceName = str => {
-    if(!str) return "";
+    if (!str) return "";
     const value = str.substring(str.lastIndexOf('/') + 1);
 
     return value.substring(0, value.lastIndexOf('.'));
@@ -43,8 +42,7 @@ export default function Jumbotron ({
             </span>)}
           {author && (
             <Typography variant="caption">
-              <Link to="#">{author}</Link>
-              {t('jumbotron.has_started')}
+              <span className={classes.author}>{author}</span>{t('jumbotron.has_started')}
             </Typography>)}
         </div>
       )}
@@ -104,17 +102,19 @@ export default function Jumbotron ({
             <ScoreContainer pdfName={extractSourceName(digitalDocument?.source)} />
             <Button className={classes.toggleScoreModal} startIcon={<RemoveRedEyeIcon color="inherit" />} onClick={() => toggleScoremodal(true)}>
               <Typography variant="body2" color="inherit">
-              View progress
+                View progress
               </Typography>
             </Button>
-            <Typography className={classes.progress} variant="body2" color="inherit">
-            2/12 pages done
-            </Typography>
           </div>
         )}
       </div>
       {renderContent('mobile')}
-      <ScoreModal isOpen={scoreModalOpen} onClose={() => toggleScoremodal(false)} />
+      <ScoreModal
+        isOpen={scoreModalOpen} onClose={() => toggleScoremodal(false)}
+        scoreContainer={
+          <ScoreContainer pdfName={extractSourceName(digitalDocument?.source)} showControl fullScreen />
+        }
+      />
     </header>
   );
 }

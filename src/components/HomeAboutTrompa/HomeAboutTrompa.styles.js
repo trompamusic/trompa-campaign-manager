@@ -39,8 +39,8 @@ export default ({ spacing, breakpoints }) => createStyles({
     transform     : 'translateX(5%)',
     '& img'       : {
       height        : 50,
-      marginRight   : 140,
-      marginBottom  : 60,
+      marginRight   : 40,
+      marginBottom  : 30,
       '&:last-child': {
         marginRight: 0,
       },
@@ -66,18 +66,20 @@ export default ({ spacing, breakpoints }) => createStyles({
         height: 110,
         width : 'auto',
       },
+
+    },
+  },
+  verticalLogos: {
+    [breakpoints.up('sm')]: {
+      marginLeft : 25,
+      marginRight: 25,
     },
   },
   verticalLogo: {
-    height: 50,
-    width : 'auto',
+    display: 'inline-block',
   },
-  smallLogo: {
-    height                  : 85,
-    width                   : 'auto',
-    [breakpoints.down('md')]: {
-      height  : 'auto',
-      maxWidth: 125, 
-    },
+  square: {
+    marginBottom: '0  !important',
+    height      : '75px !important',
   },
 });
