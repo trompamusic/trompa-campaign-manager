@@ -7,6 +7,7 @@ import { makeStyles } from '@material-ui/styles';
 import Button from '@material-ui/core/Button';
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
+import { CircularProgress } from '@material-ui/core';
 import { getCampaignDigitalDocument } from '../../utils';
 import images from '../../theme/images';
 import Jumbotron from '../../components/Jumbotron/Jumbotron';
@@ -33,7 +34,7 @@ export default function Home() {
   const campaign                                                    = campaigns?.find(({ identifier }) => identifier === publicCampaignIdentifier);
   const digitalDocument                                             = getCampaignDigitalDocument(campaign);
 
-  if (loading || error) {
+  if (error) {
     return null;
   }
 
@@ -50,49 +51,59 @@ export default function Home() {
         navLinks={navLinks}
         primaryButton={primaryButton}
       />
-      <TypeformModal url={`https://kirkandblackbeard.typeform.com/to/BpMzhX?campaignid=${campaign?.identifier}`} formRef={startCampaignFormRef} />
-      <Jumbotron
-        image={images.collaborateHero}
-        text={{
-          slogan     : t('jumbotron.slogan'),
-          description: t('jumbotron.description'),
-        }}
-        campaign={campaign}
-        digitalDocument={digitalDocument}
-      >
-        {!!campaign && 
-        <Button
-          className={classes.buttonHero}
-          component={Link}
-          to={`campaign/${publicCampaignIdentifier}`}
-          variant="contained"
-          color="primary"
-        >
-          {t('join_campaign')}
-        </Button>
-        }
-      </Jumbotron>
-      <HomeTwoSections />
-      <ActiveCampaignOverviewSection>
-        {campaigns?.map(campaign => {
-          const daysToGo        = moment(campaign.endTime.formatted)?.diff(moment(), 'days');
-          const digitalDocument = getCampaignDigitalDocument(campaign);
+      {loading && (
+        <div className={classes.spinner}>
+          <CircularProgress color="primary" />
+        </div>
+      )}
+      {!loading && 
+        <React.Fragment>
+        
+          <TypeformModal url={`https://kirkandblackbeard.typeform.com/to/BpMzhX?campaignid=${campaign?.identifier}`} formRef={startCampaignFormRef} />
+          <Jumbotron
+            image={images.collaborateHero}
+            text={{
+              slogan     : t('jumbotron.slogan'),
+              description: t('jumbotron.description'),
+            }}
+            campaign={campaign}
+            digitalDocument={digitalDocument}
+          >
+            {!!campaign && 
+            <Button
+              className={classes.buttonHero}
+              component={Link}
+              to={`campaign/${publicCampaignIdentifier}`}
+              variant="contained"
+              color="primary"
+            >
+              {t('join_campaign')}
+            </Button>
+            }
+          </Jumbotron>
+          <HomeTwoSections />
+          <ActiveCampaignOverviewSection>
+            {campaigns?.map(campaign => {
+              const daysToGo        = moment(campaign.endTime.formatted)?.diff(moment(), 'days');
+              const digitalDocument = getCampaignDigitalDocument(campaign);
 
-          return (
-            <ActiveCampaignOverviewItem
-              key={campaign.identifier}
-              scoreImage={digitalDocument?.image}
-              scoreTitle={digitalDocument?.title}
-              campaignTitle={campaign.title}
-              campaignDeadline={daysToGo}
-              onClick={() => history.push(`/campaign/${campaign.identifier}`)}
-            />
-          );})}
-      </ActiveCampaignOverviewSection>
-      <HomeThreeSteps />
-      <HomeTestimonials />
-      <HomeAboutTrompa />
-      <Footer />
+              return (
+                <ActiveCampaignOverviewItem
+                  key={campaign.identifier}
+                  scoreImage={digitalDocument?.image}
+                  scoreTitle={digitalDocument?.title}
+                  campaignTitle={campaign.title}
+                  campaignDeadline={daysToGo}
+                  onClick={() => history.push(`/campaign/${campaign.identifier}`)}
+                />
+              );})}
+          </ActiveCampaignOverviewSection>
+          <HomeThreeSteps />
+          <HomeTestimonials />
+          <HomeAboutTrompa />
+          <Footer />
+        </React.Fragment>
+      }
     </div>
   );
 }
