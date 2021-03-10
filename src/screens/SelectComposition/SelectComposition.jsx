@@ -71,12 +71,12 @@ export default function SelectComposition({ composition, score, onSetComposition
         maxWidth="lg"
         fullWidth
       >
-        <Box className={classes.dialogBox}>
+        <div className={classes.dialogBox}>
           <Typography variant="h1" className={classes.dialogHeader}>
             {modal === MODAL_COMP && t('select_composition')}
             {modal === MODAL_SCORE && t('select_score')}
           </Typography>
-          <IconButton  className={classes.closeButton} onClick={() => setModal(MODAL_NONE)}>
+          <IconButton className={classes.closeButton} onClick={() => setModal(MODAL_NONE)} size="small">
             <CloseIcon />
           </IconButton>
           {modal === MODAL_COMP && (
@@ -96,7 +96,7 @@ export default function SelectComposition({ composition, score, onSetComposition
           {modal === MODAL_SELECT_URL && (
             <CreateDigitalDoc musicCompositionId={composition?.identifier} onDigitalDocCreated={node => loadScore(node)} />
           )}
-        </Box>
+        </div>
       </Dialog>
     </Container>
   );
