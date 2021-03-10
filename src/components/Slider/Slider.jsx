@@ -19,7 +19,8 @@ export default function Slider ({ children, itemWidth, framePadding }) {
   const slideCount             = children?.length;
 
   function getSlidesToShow (windowWidth, itemWidth) {
-    const minimumSlides = 2;
+    const shouldShowOneItem = (windowWidth / 2) <= itemWidth;
+    const minimumSlides     = shouldShowOneItem ? 1: 2;
 
     if(!windowWidth || !itemWidth) return minimumSlides;
 
