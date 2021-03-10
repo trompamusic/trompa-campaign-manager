@@ -5,7 +5,11 @@ import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import StepConnector from '@material-ui/core/StepConnector';
+import { makeStyles } from '@material-ui/core';
 import QontoStepIcon from "../QontoStepIcon/QontoStepIcon";
+import styles from './ProgressStepper.styles';
+
+const useStyles = makeStyles(styles);
 
 const QontoConnector = withStyles({
   alternativeLabel: {
@@ -31,14 +35,18 @@ const QontoConnector = withStyles({
 })(StepConnector);
 
 export default function ProgressStepper({ activeStep, steps }) {
+  const classes  = useStyles();
+
   return (
-    <Stepper activeStep={activeStep} connector={<QontoConnector />} alternativeLabel>
-      {steps.map(label => (
-        <Step key={label}>
-          <StepLabel StepIconComponent={QontoStepIcon}>{label}</StepLabel>
-        </Step>
-      ))}
-    </Stepper>
+    <div className={classes.root}>
+      <Stepper activeStep={activeStep} connector={<QontoConnector />} alternativeLabel>
+        {steps.map(label => (
+          <Step key={label}>
+            <StepLabel StepIconComponent={QontoStepIcon}>{label}</StepLabel>
+          </Step>
+        ))}
+      </Stepper>
+    </div>
   );
 }
 
