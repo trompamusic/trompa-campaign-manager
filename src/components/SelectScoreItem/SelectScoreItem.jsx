@@ -19,17 +19,17 @@ export default function SelectScoreItem({ item, isActiveCampaign, progress, onIt
 
   const getFileType = format => {
     switch(format){
-    case "application/pdf":          return "pdf";
-    case "application/musicxml+zip": return "mxl";
-    default:                         return;  
+      case "application/pdf":          return "pdf";
+      case "application/musicxml+zip": return "mxl";
+      default:                         return;
     }
   };
   const fileType    = getFileType(item?.format);
-  
+
   return (
-    <Card 
-      className={classes.item} 
-      elevation={hover? 4:2} 
+    <Card
+      className={classes.item}
+      elevation={hover? 4:2}
       onMouseOver={() => setHover(true)}
       onMouseOut={() => setHover(false)}
       onClick={onItemClick}
@@ -43,27 +43,27 @@ export default function SelectScoreItem({ item, isActiveCampaign, progress, onIt
         <Box className={classes.itemHeader}>
           <Typography variant="h3" color="primary">{item?.title || ""}</Typography>
           <Box className={classes.itemButtonBox}>
-            {fileType && item?.source && 
-              <IconButton 
-                aria-label={t(fileType)} 
+            {fileType && item?.source &&
+              <IconButton
+                aria-label={t(fileType)}
                 className={classes.iconButton}
-                href={item.source} 
-                target="_blank" 
-                rel="noopener noreferrer" 
+                href={item.source}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={e => e.stopPropagation()}
               >
                 <InsertDriveFileIcon className={classes.icon} />
                 <Typography>{t(fileType)}</Typography>
               </IconButton>
             }
-            {/* 
+            {/*
             //ActiveCampaign is not supported yet. TODO
 
-            {isActiveCampaign && 
+            {isActiveCampaign &&
               <a href={} target="_blank" rel="noopener noreferrer">
-                <Button 
-                  variant="contained" 
-                  size="small" 
+                <Button
+                  variant="contained"
+                  size="small"
                   color="primary"
                 >
                   <Launch className={classes.icon} />
@@ -83,7 +83,7 @@ export default function SelectScoreItem({ item, isActiveCampaign, progress, onIt
           </Typography>
         </Box>
       </Box>
-      {isActiveCampaign && 
+      {isActiveCampaign &&
         <Box className={classes.progressBar}>
           <Box className={classes.progress} style={{ width: `${progress}%` }}>&nbsp;</Box>
         </Box>

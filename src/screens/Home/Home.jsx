@@ -46,7 +46,7 @@ export default function Home() {
   const metaImage       = `${window.location.origin}/assets/social-image.jpg`;
 
   return (
-    <div>
+    <div className={classes.root}>
       <Helmet>
         <title>{metaTitle}</title>
         <meta name="description" content={metaDescription} />

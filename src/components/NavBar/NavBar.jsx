@@ -71,7 +71,7 @@ export default function NavBar ({
   return (
     <React.Fragment>
       <div className={classes.mobile}>
-        <AppbarTop mobile>
+        <AppbarTop position="fixed" mobile>
           <IconButton onClick={() => setDrawerOpen(true)} aria-label="" component="span">
             <MenuIcon />
           </IconButton>
@@ -97,7 +97,7 @@ export default function NavBar ({
         </SwipeableDrawer>
       </div>
       <div className={classes.desktop}>
-        <AppbarTop>
+        <AppbarTop position="fixed">
           <div>
             {renderLinks()}
             {renderButtons()}

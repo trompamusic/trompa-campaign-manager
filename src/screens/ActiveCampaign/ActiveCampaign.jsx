@@ -78,7 +78,7 @@ export default function ActiveCampaign ({ match }) {
   const metaImage       = `${window.location.origin}/assets/social-image.jpg`;
 
   return (
-    <React.Fragment>
+    <div className={classes.root}>
       <Helmet>
         <title>{metaTitle}</title>
         <meta name="description" content={metaDescription} />
@@ -115,64 +115,39 @@ export default function ActiveCampaign ({ match }) {
               hasTasksAvailable={taskCount > 0}
               openSubscribeForm={openSubscribeForm}
             />
-          </Jumbotron>
-          <TaskGroupProgress digitalDocumentIdentifier={digitalDocument?.identifier} />
-          <ActiveCampaignTwoSections
-            campaign={campaign}
-            digitalDocument={digitalDocument}
-            musicComposition={digitalDocument?.exampleOfWork[0]}
-            composer={digitalDocument?.exampleOfWork?.[0]?.composer?.[0]}
-          />
-          <ActiveCampaignOverviewSection>
-            {campaigns?.map(campaign => {
-              const daysToGo        = moment(campaign.endTime.formatted)?.diff(moment(), 'days');
-              const digitalDocument = getCampaignDigitalDocument(campaign);
+          );})}
+      </ActiveCampaignOverviewSection>
+      <Jumbotron
+        image={images.collaborateHero}
+        text={{
+          aboutTitle : t('about.about_collaboration_manager'),
+          description: t('about.trompa_is_developing'),
+        }}
+      >
+        <Button
+          className={classes.buttonHero}
+          component={Link}
+          to={doTaskUrl}
+          variant="contained"
+          color="primary"
+        >
+          {t('about.start_today')}
+        </Button>
+      </Jumbotron>
+      <Footer />
+      <ShareDialog
+        open={shareDialogOpen}
+        onClose={handleShareDialogClose}
+        modalContent={{
+          title    : t('sharedialog.drum_up_support'),
+          paragraph: t('sharedialog.lets_face_music'),
+        }}
+        campaign={campaign}
+        campaignUrl={campaignUrl}
+      />
+      <TypeformModal url={`https://kirkandblackbeard.typeform.com/to/NHbUkT?campaignid=${campaignIdentifier}`} formRef={subscribeFormRef} />
+    </div>
 
-              return (
-                <ActiveCampaignOverviewItem
-                  key={campaign.identifier}
-                  scoreImage={digitalDocument?.image}
-                  scoreTitle={digitalDocument?.title}
-                  campaignTitle={campaign.title}
-                  campaignDeadline={daysToGo}
-                  onClick={() => {
-                    history.push(`/campaign/${campaign?.identifier}`);
-                  }}
-                />
-              );})}
-          </ActiveCampaignOverviewSection>
-          <Jumbotron
-            image={images.collaborateHero}
-            text={{
-              aboutTitle : t('about.about_collaboration_manager'),
-              description: t('about.trompa_is_developing'),
-            }}
-          >
-            <Button
-              className={classes.buttonHero}
-              component={Link}
-              to={doTaskUrl}
-              variant="contained"
-              color="primary"
-            >
-              {t('about.start_today')}
-            </Button>
-          </Jumbotron>
-          <Footer />
-          <ShareDialog
-            open={shareDialogOpen}
-            onClose={handleShareDialogClose}
-            modalContent={{
-              title    : t('sharedialog.drum_up_support'),
-              paragraph: t('sharedialog.lets_face_music'),
-            }}
-            campaign={campaign}
-            campaignUrl={campaignUrl}
-          />
-          <TypeformModal url={`https://kirkandblackbeard.typeform.com/to/NHbUkT?campaignid=${campaignIdentifier}`} formRef={subscribeFormRef} />
-        </React.Fragment>
-      )}
-    </React.Fragment>
   );
 }
 
