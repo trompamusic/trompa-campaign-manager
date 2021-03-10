@@ -2,14 +2,19 @@ import { createStyles } from '@material-ui/styles';
 
 export default ({ spacing, palette, breakpoints, typography }) => createStyles({
   root: {
-    width  : '100vw',
-    height : '100%',
-    padding: spacing(5),
+    display       : 'flex',
+    alignItems    : 'center',
+    justifyContent: 'center',
+    height        : 'calc(100vh - 56px - 106px)',
   },
   dialog: {
+    position       : 'relative',
     backgroundColor: palette.background.primary,
   },
   dialogHeader: {
+    [breakpoints.down('xs')]: {
+      display: 'none',
+    },
     [breakpoints.down('sm')]: {
       fontSize: typography.pxToRem(28),
     },
@@ -21,13 +26,18 @@ export default ({ spacing, palette, breakpoints, typography }) => createStyles({
     color        : palette.text.darkPurple,
   },
   dialogBox: {
-    display       : 'flex',
-    flexDirection : 'column',
-    justifyContent: 'center',
-    alignItems    : 'center',
-    padding       : spacing(3),
+    [breakpoints.down('xs')]: {
+      margin   : 0,
+      marginTop: spacing(6),
+    },
+    margin: spacing(3),
   },
   closeButton: {
+    [breakpoints.down('xs')]: {
+      top    : spacing(1),
+      right  : spacing(1),
+      padding: spacing(.5),
+    },
     position: 'absolute',
     right   : spacing(3),
     top     : spacing(3),
