@@ -94,12 +94,11 @@ export default function ActiveCampaign ({ match }) {
         buttons={buttons}
         primaryButton={primaryButton}
       />
-      {isLoading && (
+      { isLoading ? (
         <div className={classes.spinner}>
           <CircularProgress color="primary" />
         </div>
-      )}
-      {!isLoading && 
+      ): (
         <React.Fragment>
           <Jumbotron
             image={digitalDocument?.image || images.scoreImage}
@@ -172,7 +171,7 @@ export default function ActiveCampaign ({ match }) {
           />
           <TypeformModal url={`https://kirkandblackbeard.typeform.com/to/NHbUkT?campaignid=${campaignIdentifier}`} formRef={subscribeFormRef} />
         </React.Fragment>
-      }
+      )}
     </React.Fragment>
   );
 }
