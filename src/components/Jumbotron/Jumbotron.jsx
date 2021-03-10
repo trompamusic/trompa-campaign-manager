@@ -31,7 +31,7 @@ export default function Jumbotron ({
     const value = str.substring(str.lastIndexOf('/') + 1);
 
     return value.substring(0, value.lastIndexOf('.'));
- };
+  };
 
   const renderContent = device => (
     <div className={classNames(classes[device], { [classes.campaign]: isCampaignPageHeader })}>

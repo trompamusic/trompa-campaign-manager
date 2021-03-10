@@ -1,6 +1,16 @@
 {
   "extends": "react-app-vd",
   "rules": {
-    "indent" : "off"
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1,
+        "ignoredNodes": [
+          "TemplateLiteral"
+        ]
+      }
+    ],
+    "template-curly-spacing": 0
   }
 }
