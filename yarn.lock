@@ -9230,7 +9230,7 @@ deepmerge@^2.1.1:
   resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-2.2.1.tgz#5d3ff22a01c00f645405a2fbc17d0778a1801170"
   integrity sha512-R9hc1Xa/NOBi9WRVUWg19rl1UB7Tt4kuPd+thNJgFZoxXsTz7ncaPaeIm+40oSGuP33DfMb4sZt1QIGiJzC4EA==
 
-deepmerge@^4.0.0:
+deepmerge@^4.0.0, deepmerge@^4.2.2:
   version "4.2.2"
   resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-4.2.2.tgz#44d2ea3679b8f4d4ffba33f03d865fc1e7bf4955"
   integrity sha512-FJ3UgI4gIl+PHZm53knsuSFpE+nESMr7M4v9QcgB7S63Kj/6WqMiFQJpBBYz1Pt+66bZpP3Q7Lye0Oo9MPKEdg==
@@ -19746,7 +19746,7 @@ selectable-score@trompamusic/selectable-score:
     browserslist "^4.11.0"
     dragselect "^1.13.1"
     fibers "^4.0.2"
-    meld-clients-core oerc-music/meld-clients-core#with-lib
+    meld-clients-core oerc-music/meld-clients-core#dev-meld-2.0-solidSubmit
     node-sass "^4.14.1"
     prop-types "^15.7.2"
     react "^16.13.0"
@@ -21287,15 +21287,16 @@ trim-right@^1.0.1:
   resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
   integrity sha1-yy4SAwZ+DI3h9hQJS5/kVwTqYAM=
 
-trompa-multimodal-component@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/trompa-multimodal-component/-/trompa-multimodal-component-1.0.1.tgz#66bf7bcddeb8d29131870893a53a2d262c774923"
-  integrity sha512-lwpp/OM32CtTSOAOfAuEKVJg/cB3OkROWKeitAKIFhDJey0XVfKg7+DlWIbNMnbbBZvLK7NEl92evg69Dq4GOQ==
+trompa-multimodal-component@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/trompa-multimodal-component/-/trompa-multimodal-component-1.2.0.tgz#6d6888a5f52dcae0356dfc81ea3bb3191db81735"
+  integrity sha512-ePtqxVRBvesCDNOlWsNiFw/nH8K9ti486tV/NY3mtjRfxEz2ZyeZPspgSCB3ml832F30oz6uRpyAhB4XF4HgaQ==
   dependencies:
     apollo-cache-inmemory "^1.6.5"
     apollo-client "^2.6.8"
     apollo-link-http "^1.5.16"
     classnames "^2.2.6"
+    deepmerge "^4.2.2"
     graphql "^14.5.8"
     graphql-tag "^2.10.1"
     i18next "^19.0.3"
