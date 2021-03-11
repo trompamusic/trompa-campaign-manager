@@ -14905,7 +14905,7 @@ media-typer@0.3.0:
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
   integrity sha1-hxDXrwqmJvj/+hzgAWhUUmMlV0g=
 
-meld-clients-core@Videodock/meld-clients-core#dev-meld-2.0-postbuild, meld-clients-core@oerc-music/meld-clients-core#with-lib:
+meld-clients-core@Videodock/meld-clients-core#dev-meld-2.0-postbuild, meld-clients-core@oerc-music/meld-clients-core#dev-meld-2.0-solidSubmit:
   version "1.1.0"
   resolved "https://codeload.github.com/Videodock/meld-clients-core/tar.gz/c6b398d327c620abc9c539fc92d1f4560a73ab3f"
   dependencies:
@@ -21287,10 +21287,10 @@ trim-right@^1.0.1:
   resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
   integrity sha1-yy4SAwZ+DI3h9hQJS5/kVwTqYAM=
 
-trompa-multimodal-component@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/trompa-multimodal-component/-/trompa-multimodal-component-1.2.0.tgz#6d6888a5f52dcae0356dfc81ea3bb3191db81735"
-  integrity sha512-ePtqxVRBvesCDNOlWsNiFw/nH8K9ti486tV/NY3mtjRfxEz2ZyeZPspgSCB3ml832F30oz6uRpyAhB4XF4HgaQ==
+trompa-multimodal-component@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/trompa-multimodal-component/-/trompa-multimodal-component-1.2.1.tgz#11760d6ea873bdb86589a3bac9e84b2cadbe46a4"
+  integrity sha512-M3k9O/rS25+WFoI4soR9ybleq5HpdaCcbcflOF5HBK6Z91WzteXsS4XwbDOxhnoCDXBn1ZRaw5cEQLseSE6m+Q==
   dependencies:
     apollo-cache-inmemory "^1.6.5"
     apollo-client "^2.6.8"
