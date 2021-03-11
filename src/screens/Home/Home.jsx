@@ -31,7 +31,7 @@ export default function Home() {
   const startCampaignFormRef                                        = useRef();
   const { loading, error, data: { ControlAction: campaigns } = {} } = useQuery(GET_CAMPAIGNS);
   const publicCampaignIdentifier                                    = process.env.REACT_APP_PUBLIC_CAMPAIGN_IDENTIFIER;
-  const campaign                                                    = campaigns?.find(({ identifier }) => identifier === publicCampaignIdentifier);
+  const campaign                                                    = campaigns?.find(({ identifier }) => identifier === publicCampaignIdentifier) || campaigns?.[0];
   const digitalDocument                                             = getCampaignDigitalDocument(campaign);
 
   if (error) {
