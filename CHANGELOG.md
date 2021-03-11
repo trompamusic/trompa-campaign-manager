@@ -1,3 +1,18 @@
+## [1.3.2](https://github.com/trompamusic/trompa-campaign-manager/compare/v1.3.1...v1.3.2) (2021-03-11)
+
+
+### Bug Fixes
+
+* **project:** disabled ResizeObserver ([e86dc2f](https://github.com/trompamusic/trompa-campaign-manager/commit/e86dc2f2abb4f4c11717398fbb0b1f6eac6d4164))
+* **project:** enabled initial size ([d736e8d](https://github.com/trompamusic/trompa-campaign-manager/commit/d736e8d16b3c8a44c5825ca913ccee2ac81b13f8))
+
+
+### Features
+
+* **campaign:** add title to task groups ([3393633](https://github.com/trompamusic/trompa-campaign-manager/commit/33936336626d0377d57feea1c8f3d7635213507e))
+
+
+
 ## [1.3.1](https://github.com/trompamusic/trompa-campaign-manager/compare/v1.2.0...v1.3.1) (2021-03-11)
 
 
