@@ -11,14 +11,13 @@ export default ({ spacing, breakpoints }) => createStyles({
       marginBottom: spacing(3),
     },
     '& p': {
-      width      : '90%',
-      maxWidth   : 1200,
       marginLeft : 'auto',
       marginRight: 'auto',
     },
     [breakpoints.only('xs')]: {
       justifyContent: 'flex-start',
       marginLeft    : spacing(4),
+      marginRight   : spacing(4),
       '& h2'        : {
         textAlign   : 'left',
         marginBottom: spacing(),
@@ -28,58 +27,25 @@ export default ({ spacing, breakpoints }) => createStyles({
       },
     },
   },
+  squareLogos      : {},
   partnersContainer: {
-    display       : 'flex',
-    alignItems    : 'center',
-    justifyContent: 'center',
-    flexWrap      : 'wrap',
-    width         : '90%',
-    maxWidth      : 1250,
-    margin        : 45,
-    transform     : 'translateX(5%)',
-    '& img'       : {
-      height        : 50,
-      marginRight   : 40,
-      marginBottom  : 30,
-      '&:last-child': {
-        marginRight: 0,
-      },
+    textAlign           : 'center',
+    maxWidth            : 1250,
+    margin              : 45,
+    '& $squareLogos img': {
+      height: 70,
     },
-    [breakpoints.down('md')]: {
-      margin : 20,
-      '& img': {
-        marginRight : 70,
-        marginBottom: 30,
-      },
+    '& img': {
+      height      : 50,
+      marginRight : spacing(4),
+      marginLeft  : spacing(4),
+      marginBottom: spacing(4),
     },
     [breakpoints.only('xs')]: {
-      justifyContent: 'flex-start',
-      margin        : 0,
-      marginTop     : spacing(2),
-      width         : 320,
-      transform     : 'translateX(0%)',
-      '& img'       : {
-        height: 'auto',
-        width : 240,
+      '& img': {
+        marginLeft : spacing(2),
+        marginRight: spacing(2),
       },
-      '& $verticalLogo': {
-        height: 110,
-        width : 'auto',
-      },
-
     },
-  },
-  verticalLogos: {
-    [breakpoints.up('sm')]: {
-      marginLeft : 25,
-      marginRight: 25,
-    },
-  },
-  verticalLogo: {
-    display: 'inline-block',
-  },
-  square: {
-    marginBottom: '0  !important',
-    height      : '75px !important',
   },
 });
