@@ -19,13 +19,13 @@ export default function TaskGroupProgress ({ digitalDocumentIdentifier }) {
   const endStep                  = startStep + stepsToShow;
   const steps                    = endStep < taskGroupsSorted.length? taskGroupsSorted.slice(startStep, endStep) : taskGroupsSorted.slice(-stepsToShow);
   const selectedStep             = steps.filter(taskGroup => taskGroup.actionStatus === COMPLETED_ACTION_STATUS).length;
-  const taskGroupNames           = steps.map(taskGroup => taskGroup.name);
+  const taskGroupTitles          = steps.map(taskGroup => taskGroup.title);
 
   if(loading || error || !taskGroups.length) {
     return null;
   }
 
-  return <ProgressStepper activeStep={selectedStep} steps={taskGroupNames} />;
+  return <ProgressStepper activeStep={selectedStep} steps={taskGroupTitles} />;
 }
 
 TaskGroupProgress.propTypes = {
@@ -43,6 +43,7 @@ export const ALL_CONTROL_ACTIONS = gql`
       first: 10
     ) {
       name
+      title
       identifier
       actionStatus
       __typename
