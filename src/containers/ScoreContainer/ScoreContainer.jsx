@@ -67,11 +67,11 @@ class ScoreContainer extends Component {
   }
 
   componentDidMount() {
-    this.sizeScore();
+    // this.sizeScore();
 
     // Element resize support
-    this.resizeObserver = new ResizeObserver(() => this.sizeScore());
-    this.resizeObserver.observe(document.getElementById("root"));
+    // this.resizeObserver = new ResizeObserver(() => this.sizeScore());
+    // this.resizeObserver.observe(document.getElementById("root"));
 
     this.getScore();
   }
@@ -98,15 +98,15 @@ class ScoreContainer extends Component {
     }
   }
 
-  sizeScore = () => {
-    if (!this.scoreContainer.current) {
-      return;
-    }
-    const containerWidth = this.scoreContainer.current?.clientWidth;
-    const resizeValue    = this.props.fullScreen ? 40 : 15;
+  // sizeScore = () => {
+  //   if (!this.scoreContainer.current) {
+  //     return;
+  //   }
+  //   const containerWidth = this.scoreContainer.current?.clientWidth;
+  //   const resizeValue    = this.props.fullScreen ? 40 : 15;
 
-    this.OPTIONS.scale = containerWidth / resizeValue;
-  };
+  //   this.OPTIONS.scale = containerWidth / resizeValue;
+  // };
 
   render() {
     const { classes, showControl, fullScreen } = this.props;
