@@ -77,7 +77,6 @@ class ScoreContainer extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-
     if (!prevState.scoreComponentLoaded && this.scoreComponent.current) {
       this.setState({ scoreComponentLoaded: true });
     }
@@ -92,10 +91,10 @@ class ScoreContainer extends Component {
       }
 
       console.log("Score not available yet");
+
       return;
     } catch (e) {
-      console.log(e)
-
+      console.log(e);
     }
   }
 
@@ -106,10 +105,8 @@ class ScoreContainer extends Component {
     const containerWidth = this.scoreContainer.current?.clientWidth;
     const resizeValue    = this.props.fullScreen ? 40 : 15;
 
-
     this.OPTIONS.scale = containerWidth / resizeValue;
   };
-
 
   render() {
     const { classes, showControl, fullScreen } = this.props;

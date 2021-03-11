@@ -43,12 +43,12 @@ export default ({ spacing, typography, palette, breakpoints }) => createStyles({
     },
   },
   unlockClassicsImageOverlay: {
-    position  : 'relative',
-    top    : -25,
+    position    : 'relative',
+    top         : -25,
     marginBottom: -25,
-    display   : 'flex',
-    alignItems: 'flex-end',
-    '& span'  : {
+    display     : 'flex',
+    alignItems  : 'flex-end',
+    '& span'    : {
       fontFamily : typography.fontFamilyOpenSans,
       color      : palette.primary.main,
       fontSize   : typography.pxToRem(100),
