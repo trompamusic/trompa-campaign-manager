@@ -49,9 +49,9 @@ exports[`<HomeAboutTrompa /> renders and matches snapshot 1`] = `
           class="makeStyles-verticalLogos-3"
         >
           <img
-            alt="Royal Concertgebouw Orchestra"
+            alt="Universität für Musik und darstellende Kunst Wien"
             class="makeStyles-verticalLogo-4"
-            src="rco.png"
+            src="mdw.png"
           />
           <img
             alt="Voctro Labs"
@@ -60,9 +60,8 @@ exports[`<HomeAboutTrompa /> renders and matches snapshot 1`] = `
           />
         </div>
         <img
-          alt="Universität für Musik und darstellende Kunst Wien"
-          class="makeStyles-verticalLogo-4"
-          src="mdw.png"
+          alt="Royal Concertgebouw Orchestra"
+          src="co.png"
         />
         <img
           alt="Technische Universiteit Delft"
