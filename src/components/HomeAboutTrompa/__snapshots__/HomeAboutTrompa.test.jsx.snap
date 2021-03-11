@@ -45,24 +45,27 @@ exports[`<HomeAboutTrompa /> renders and matches snapshot 1`] = `
           alt="Goldsmiths, University of London"
           src="goldsmiths.png"
         />
-        <img
-          alt="Royal Concertgebouw Orchestra"
-          class="makeStyles-verticalLogo-3"
-          src="rco.png"
-        />
-        <img
-          alt="Voctro Labs"
-          class="makeStyles-smallLogo-4"
-          src="voctro_labs.png"
-        />
+        <div
+          class="makeStyles-verticalLogos-3"
+        >
+          <img
+            alt="Royal Concertgebouw Orchestra"
+            class="makeStyles-verticalLogo-4"
+            src="rco.png"
+          />
+          <img
+            alt="Voctro Labs"
+            class="makeStyles-verticalLogo-4"
+            src="voctro_labs.png"
+          />
+        </div>
         <img
           alt="Universität für Musik und darstellende Kunst Wien"
-          class="makeStyles-verticalLogo-3"
+          class="makeStyles-verticalLogo-4"
           src="mdw.png"
         />
         <img
           alt="Technische Universiteit Delft"
-          class="makeStyles-smallLogo-4"
           src="tu_delft.png"
         />
       </div>

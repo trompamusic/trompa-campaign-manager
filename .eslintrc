@@ -1,3 +1,16 @@
 {
-  "extends": ["react-app-vd", "plugin:codeceptjs/recommended"]
+  "extends": ["react-app-vd", "plugin:codeceptjs/recommended"],
+  "rules": {
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1,
+        "ignoredNodes": [
+          "TemplateLiteral"
+        ]
+      }
+    ],
+    "template-curly-spacing": 0
+  }
 }

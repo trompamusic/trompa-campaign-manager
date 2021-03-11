@@ -26,7 +26,7 @@ exports[`<ActiveTask /> renders and matches snapshot 1`] = `
       >
         <a
           class="makeStyles-link-6"
-          href="/campaign/undefined"
+          href="/campaign/"
         >
           <h6
             class="MuiTypography-root makeStyles-pageType-9 MuiTypography-h6 MuiTypography-colorSecondary"

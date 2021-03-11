@@ -1,8 +1,8 @@
 import { createStyles } from '@material-ui/styles';
 
 export default ({ spacing, typography }) => createStyles({
-  relative: {
-    position: 'relative',
+  root: {
+    paddingTop: 56,
   },
   buttonHero: {
     marginTop    : spacing(),
@@ -10,5 +10,11 @@ export default ({ spacing, typography }) => createStyles({
     fontFamily   : typography.fontFamilyOpenSans,
     fontSize     : typography.pxToRem(16),
     letterSpacing: '0.66px',
+  },
+  spinner: {
+    width         : '100%',
+    display       : 'flex',
+    justifyContent: 'center',
+    marginTop     : spacing(5),
   },
 });

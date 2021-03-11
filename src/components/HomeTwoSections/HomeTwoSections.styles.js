@@ -30,8 +30,6 @@ export default ({ spacing, typography, palette, breakpoints }) => createStyles({
     },
   },
   greatScores: {
-    paddingTop              : 2,
-    paddingBottom           : 4,
     justifyContent          : 'flex-end',
     backgroundColor         : palette.common.faintGrey,
     [breakpoints.down('sm')]: {
@@ -45,11 +43,12 @@ export default ({ spacing, typography, palette, breakpoints }) => createStyles({
     },
   },
   unlockClassicsImageOverlay: {
-    position  : 'absolute',
-    bottom    : -40,
-    display   : 'flex',
-    alignItems: 'flex-end',
-    '& span'  : {
+    position    : 'relative',
+    top         : -25,
+    marginBottom: -25,
+    display     : 'flex',
+    alignItems  : 'flex-end',
+    '& span'    : {
       fontFamily : typography.fontFamilyOpenSans,
       color      : palette.primary.main,
       fontSize   : typography.pxToRem(100),

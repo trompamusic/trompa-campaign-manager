@@ -3,6 +3,7 @@ import { createStyles } from '@material-ui/styles';
 export default ({ palette, spacing, typography, breakpoints }) => createStyles({
   root: {
     maxWidth       : 244,
+    margin         : 'auto',
     backgroundColor: palette.common.white,
   },
   imageContainer: {
