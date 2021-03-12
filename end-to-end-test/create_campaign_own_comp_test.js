@@ -5,9 +5,6 @@ Feature('Create campaign with own score reference');
 const screenshotSubDir = 'own_reference_';
 const date             = new Date().getSeconds();
 
-// 'https://royschut2.inrupt.net/public/testa.mei'
-// 'https://clipart-library.com/images/8iEb8o7yT.jpg'
-
 Scenario('Navigate to create campaign', async ({ I }) => {
   I.clearCookie();
   I.amOnPage('/');
