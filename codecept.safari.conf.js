@@ -17,9 +17,9 @@ exports.config = {
     },
     ResembleHelper: {
       "require"         : "codeceptjs-resemblehelper",
-      "screenshotFolder": "./end-to-end-test/output/",
-      "baseFolder"      : "./end-to-end-test/screenshots/base/",
-      "diffFolder"      : "./end-to-end-test/screenshots/diff/",
+      "screenshotFolder": "./end-to-end-test/output/webkit/",
+      "baseFolder"      : "./end-to-end-test/screenshots/base/webkit/",
+      "diffFolder"      : "./end-to-end-test/screenshots/diff/webkit/",
     },
     GraphQL: {
       endpoint: process.env.REACT_APP_GRAPHQL_URL,
