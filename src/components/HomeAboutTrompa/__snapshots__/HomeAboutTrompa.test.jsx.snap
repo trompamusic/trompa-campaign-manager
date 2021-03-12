@@ -19,7 +19,7 @@ exports[`<HomeAboutTrompa /> renders and matches snapshot 1`] = `
         TROMPA (Towards Richer Online Music Public-domain Archives) is an international research project, sponsored by the European Union. In the project, we are investigating how we can make public-domain digital music resources more accessible...with a little bit of help from state-of-the-art technology, and you!
       </p>
       <div
-        class="makeStyles-partnersContainer-2"
+        class="makeStyles-partnersContainer-3"
       >
         <img
           alt="Universitat Pompeu Fabra TIDE"
@@ -46,23 +46,20 @@ exports[`<HomeAboutTrompa /> renders and matches snapshot 1`] = `
           src="goldsmiths.png"
         />
         <div
-          class="makeStyles-verticalLogos-3"
+          class="makeStyles-squareLogos-2"
         >
           <img
-            alt="Royal Concertgebouw Orchestra"
-            class="makeStyles-verticalLogo-4"
-            src="rco.png"
+            alt="Universität für Musik und darstellende Kunst Wien"
+            src="mdw.png"
           />
           <img
             alt="Voctro Labs"
-            class="makeStyles-verticalLogo-4"
             src="voctro_labs.png"
           />
         </div>
         <img
-          alt="Universität für Musik und darstellende Kunst Wien"
-          class="makeStyles-verticalLogo-4"
-          src="mdw.png"
+          alt="Royal Concertgebouw Orchestra"
+          src="co.png"
         />
         <img
           alt="Technische Universiteit Delft"

@@ -34,11 +34,11 @@ export default function HomeAboutTrompa () {
             <img src={images.partnerPeachnote} alt={t('about.partners.peachnote')} />
             <img src={images.partnerVideodock} alt={t('about.partners.videodock')} />
             <img src={images.partnerGoldsmiths} alt={t('about.partners.goldsmiths')} />
-            <div className={classes.verticalLogos}>            
-              <img className={classes.verticalLogo} src={images.partnerRco} alt={t('about.partners.rco')} />
-              <img className={classes.verticalLogo} src={images.partnerVoctroLabs} alt={t('about.partners.voctroLabs')} />
+            <div className={classes.squareLogos}>
+              <img src={images.partnerMdw} alt={t('about.partners.mdw')} />
+              <img src={images.partnerVoctroLabs} alt={t('about.partners.voctroLabs')} />
             </div>
-            <img className={classes.verticalLogo} src={images.partnerMdw} alt={t('about.partners.mdw')} />
+            <img src={images.partnerCo} alt={t('about.partners.rco')} />
             <img  src={images.partnerTuDelft} alt={t('about.partners.tudelft')} />
           </div>
         </section>

@@ -19,7 +19,7 @@ export default {
   partnerMdw                : require('./images/partners/mdw.png'),
   partnerMuziekweb          : require('./images/partners/muziekweb.png'),
   partnerPeachnote          : require('./images/partners/peachnote.png'),
-  partnerRco                : require('./images/partners/rco.png'),
+  partnerCo                 : require('./images/partners/co.png'),
   partnerTuDelft            : require('./images/partners/tu_delft.png'),
   partnerUpfMtg             : require('./images/partners/upf_mtg.png'),
   partnerUpfTide            : require('./images/partners/upf_tide.png'),

@@ -1,21 +1,12 @@
-import { useState, useEffect } from 'react';
 import { gql } from 'apollo-boost';
-import { useLazyQuery } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/react-hooks';
 import { getCampaignDigitalDocument } from '../utils';
 
 const useTaskCount = campaign => {
-  const [taskCount, setTaskCount] = useState(0);
-  const score                     = getCampaignDigitalDocument(campaign);
-  const getTaskListCallback       = ({ ControlAction:taskList }) => setTaskCount(taskList? taskList.length : 0);
-  const [getTaskList]             = useLazyQuery(ALL_TASKS, { variables: { identifier: score?.identifier }, onCompleted: getTaskListCallback });
+  const score    = getCampaignDigitalDocument(campaign);
+  const { data } = useQuery(ALL_TASKS, { variables: { identifier: score?.identifier }, pollInterval: 30000 });
 
-  useEffect(() => {
-    if(campaign){
-      getTaskList();
-    }
-  }, [campaign, getTaskList]);
-
-  return taskCount;
+  return data?.ControlAction?.length || 0;
 };
 
 export default useTaskCount;

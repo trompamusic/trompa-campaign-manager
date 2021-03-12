@@ -30,6 +30,8 @@ const styles = {
   container: {
     display        : "flex",
     justifyContent : "center",
+    height         : '100%',
+    width          : '100%',
     "& .scorepane ": {
       display        : "inline-block",
       backgroundColor: "white",
@@ -63,15 +65,10 @@ class ScoreContainer extends Component {
     this.store          = createStore(reducers);
     this.scoreComponent = createRef();
     this.scoreContainer = createRef();
-    this.resizeObserver = null;
   }
 
   componentDidMount() {
     this.sizeScore();
-
-    // Element resize support
-    this.resizeObserver = new ResizeObserver(() => this.sizeScore());
-    this.resizeObserver.observe(document.getElementById("root"));
 
     this.getScore();
   }
@@ -84,15 +81,16 @@ class ScoreContainer extends Component {
 
   async getScore() {
     try {
-      const response = await fetch(`https://raw.githubusercontent.com/Crowd-Transcribed-MEI-Repositories/${this.props.pdfName}/crowdmanager/aligned.mei`);
+      const uri      = `https://raw.githubusercontent.com/Crowd-Transcribed-MEI-Repositories/${this.props.pdfName}/crowdmanager/aligned.mei`;
+      const response = await fetch(uri,{ method: "head" });
 
       if (response.ok) {
-        this.setState({ uri: response.url });
+        this.setState({ uri });
+
+        return;
       }
 
       console.log("Score not available yet");
-
-      return;
     } catch (e) {
       console.log(e);
     }
@@ -102,6 +100,7 @@ class ScoreContainer extends Component {
     if (!this.scoreContainer.current) {
       return;
     }
+
     const containerWidth = this.scoreContainer.current?.clientWidth;
     const resizeValue    = this.props.fullScreen ? 40 : 15;
 

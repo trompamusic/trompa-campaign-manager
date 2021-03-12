@@ -1,3 +1,59 @@
+## [1.3.2](https://github.com/trompamusic/trompa-campaign-manager/compare/v1.3.1...v1.3.2) (2021-03-11)
+
+
+### Bug Fixes
+
+* **project:** disabled ResizeObserver ([e86dc2f](https://github.com/trompamusic/trompa-campaign-manager/commit/e86dc2f2abb4f4c11717398fbb0b1f6eac6d4164))
+* **project:** enabled initial size ([d736e8d](https://github.com/trompamusic/trompa-campaign-manager/commit/d736e8d16b3c8a44c5825ca913ccee2ac81b13f8))
+
+
+### Features
+
+* **campaign:** add title to task groups ([3393633](https://github.com/trompamusic/trompa-campaign-manager/commit/33936336626d0377d57feea1c8f3d7635213507e))
+
+
+
+## [1.3.1](https://github.com/trompamusic/trompa-campaign-manager/compare/v1.2.0...v1.3.1) (2021-03-11)
+
+
+### Bug Fixes
+
+* **campaign:** fix mobile layout issues ([e30b1e4](https://github.com/trompamusic/trompa-campaign-manager/commit/e30b1e47ab9f8eb3fdeb5fc4c918beecfa1687dd))
+* **campaign:** fix score preview ([78fe23a](https://github.com/trompamusic/trompa-campaign-manager/commit/78fe23a60b6030273263fe073d68ac520be19738))
+* **campaign:** fix task count campaign page ([1cedfeb](https://github.com/trompamusic/trompa-campaign-manager/commit/1cedfeb62df3d54a0c2c7d5cc6cfe3bd997ec7a4))
+* **campaign:** make older campaigns fetchable ([3889928](https://github.com/trompamusic/trompa-campaign-manager/commit/3889928bdfc95f2afb0584038aa22104ba0f9f23))
+* **campaign:** make task progress responsive ([829b4a2](https://github.com/trompamusic/trompa-campaign-manager/commit/829b4a24bd8b525f7a82da0a8d9cae5d27fabde4))
+* **campaign:** remove link from campaign creator ([e28ece9](https://github.com/trompamusic/trompa-campaign-manager/commit/e28ece945e6900294d8cfe2ceecd7b7658e8730f))
+* **campaign:** show campaign creator correctly ([bf118c5](https://github.com/trompamusic/trompa-campaign-manager/commit/bf118c5235c9ada0e9089dffc79ab851e91fd179))
+* **campaign:** show spinner while loading task url ([415db19](https://github.com/trompamusic/trompa-campaign-manager/commit/415db19d5d47ebb3f5043de3bbc38e9ee21e93e5))
+* **campaign:** use spinner while loading ([10b5bb4](https://github.com/trompamusic/trompa-campaign-manager/commit/10b5bb498268f0e5ac103cd9aa680c24f0bc194f))
+* **home:** use metadata from campaign for SEO ([031f84b](https://github.com/trompamusic/trompa-campaign-manager/commit/031f84b951bcd256a86fc1c303d62c0002225062))
+* **landing-page:** fix not showing home when no campaign ([33223d2](https://github.com/trompamusic/trompa-campaign-manager/commit/33223d2ab70fdcbdaf990c0992e19224ecd5e61a))
+* **landing-page:** use first campaign as public fallback ([fcc9d76](https://github.com/trompamusic/trompa-campaign-manager/commit/fcc9d76edda64b17fd561287acd732a748e8c92b))
+* **landing-page:** use spinner while loading ([0d7524e](https://github.com/trompamusic/trompa-campaign-manager/commit/0d7524e119c2703f86e8750704322b8b5c5e09c5))
+* **project:** add fixed menu on home and campaign ([c3c0bbe](https://github.com/trompamusic/trompa-campaign-manager/commit/c3c0bbeadb3e42b354548732f36cbf128a0564bf))
+* **project:** fix eslint errors ([a409e1a](https://github.com/trompamusic/trompa-campaign-manager/commit/a409e1ad16a6b323a1235e31d04a25d0709c974e))
+* **project:** fix eslint setting ([e0f87f5](https://github.com/trompamusic/trompa-campaign-manager/commit/e0f87f57c39394a90154748932a112a31f540cd7))
+* **project:** fix locale typo ([1e2f336](https://github.com/trompamusic/trompa-campaign-manager/commit/1e2f3363fabec07c5fa76a98fc7a2cf6dd2e71af))
+* **project:** set eslint rule indent off ([3e099f8](https://github.com/trompamusic/trompa-campaign-manager/commit/3e099f8be881a41c5beccefb0bb8680d5c8366a5))
+* **startcampaign:** fix layout consistency ([f90e64a](https://github.com/trompamusic/trompa-campaign-manager/commit/f90e64aeef2920875631d2d23ea4f707cc3342cd))
+* **startcampaign:** fix mobile responsiveness ([c2b2f96](https://github.com/trompamusic/trompa-campaign-manager/commit/c2b2f96615bdb13a9e015e4f7e7e07cd3d4d2afa))
+* **startcampaign:** fix undefined campaign error ([cfa725a](https://github.com/trompamusic/trompa-campaign-manager/commit/cfa725a6559c18a1e92ea8ef807f789a7a26f958))
+* **startcampaign:** fix undefined in url ([af61bf8](https://github.com/trompamusic/trompa-campaign-manager/commit/af61bf88a0477c1dde063cd1fa963cadc93c2f75))
+* **utils:** get DigitalDocument from work ([f5c016c](https://github.com/trompamusic/trompa-campaign-manager/commit/f5c016c4b4def40c63647369d7a68a251eacf5d3))
+
+
+### Features
+
+* **campaign:** add periodic task refetching ([bb3d1a4](https://github.com/trompamusic/trompa-campaign-manager/commit/bb3d1a418144ff67aa4c7bae420a89d532aed295))
+* **campaign:** change next task button to skip task ([b55f643](https://github.com/trompamusic/trompa-campaign-manager/commit/b55f643bf7c27cc57c374db9fdcd765d22154072))
+* **campaign:** load next task on iframe submit ([7b50ff0](https://github.com/trompamusic/trompa-campaign-manager/commit/7b50ff00ecb1bd1f8db7f437c8ee9d70acfd6c67))
+* **layout:** on mobile limit items slider ([6c28754](https://github.com/trompamusic/trompa-campaign-manager/commit/6c287544611321ba380ea1a171d9a614f0a469b8))
+* **project:** update multimodal component dependency ([bdac56d](https://github.com/trompamusic/trompa-campaign-manager/commit/bdac56d6a0c1c1e7032c44241d94eb3aff3a6116))
+* **startcampaign:** use cleaner solidpodbrowser url ([79e846c](https://github.com/trompamusic/trompa-campaign-manager/commit/79e846c3f044dd621d25feac5e68a91853c973eb))
+
+
+
 # 1.3.0 (2021-03-09)
 
 

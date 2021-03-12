@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/styles';
 import { useTranslation } from 'react-i18next';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography/Typography';
+import { CircularProgress } from '@material-ui/core';
 import AppbarTop from '../AppbarTop/AppbarTop';
 import AppbarBottom from '../AppbarBottom/AppbarBottom';
 import NicknameMenuContainer from '../../containers/NicknameMenuContainer/NicknameMenuContainer';
@@ -72,9 +73,7 @@ export default function ActiveTask ({
             />
           ) : (
             <div className={classes.emptyIframe}>
-              <Typography variant="h2">
-                {(t('this_task_is_not_yet_available'))}
-              </Typography>
+              <CircularProgress color="primary" />
             </div>
           )}
         </React.Fragment>

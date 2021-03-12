@@ -30,6 +30,9 @@ export default ({ typography, palette, spacing, breakpoints }) => createStyles({
     margin: spacing(4),
   },
   header: {
+    [breakpoints.down('xs')]: {
+      marginTop: spacing(3),
+    },
     [breakpoints.down('sm')]: {
       fontSize: typography.pxToRem(28),
     },
