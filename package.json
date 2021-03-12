@@ -34,6 +34,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "test:cc": "npx codeceptjs run --steps -c  codecept.conf.js",
     "test:chrome": "npx codeceptjs run -c codecept.chrome.conf.js",
     "test:firefox": "npx codeceptjs run -c codecept.firefox.conf.js",
     "test:safari": "npx codeceptjs run -c codecept.safari.conf.js",
@@ -93,9 +94,9 @@
     "seamless-immutable": "^7.1.2",
     "selectable-score": "trompamusic/selectable-score",
     "solid-auth-client": "^2.5.2",
-    "wait-on": "^5.2.1",
     "trompa-multimodal-component": "^1.2.1",
-    "url-search-params-polyfill": "^7.0.0"
+    "url-search-params-polyfill": "^7.0.0",
+    "wait-on": "^5.2.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.13.0",
@@ -118,7 +119,7 @@
     "boards-preset-vd": "^3.1.0",
     "conventional-changelog": "^3.1.24",
     "conventional-changelog-cli": "^2.1.1",
-    "dotenv": "^8.0.0",
+    "dotenv": "^8.2.0",
     "dotenv-webpack": "^1.5.4",
     "eslint-config-react-app-vd": "^1.0.4",
     "eslint-plugin-import": "^2.12.0",
