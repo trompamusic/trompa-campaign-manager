@@ -13,7 +13,7 @@ Scenario('Navigate to create campaign', async ({ I }) => {
   I.seeVisualDiff(screenshotSubDir + "create_campaign_page.png", { tolerance, prepareBaseImage: false });
 });
 
-Scenario('Start a camapaign Anonymous',({ I }) => {
+Scenario('Start a campaign Anonymous',({ I }) => {
   I.click('button[type=submit]');
   I.see('Anonymous');
 

@@ -12,7 +12,7 @@ Scenario('Navigate to create campaign', async ({ I }) => {
   I.seeVisualDiff(screenshotSubDir + "create_campaign_page.png", { tolerance, prepareBaseImage: false });
 });
 
-Scenario('Start a camapaign with a nickname',({ I }) => {
+Scenario('Start a campaign with a nickname',({ I }) => {
   I.fillField('nickname', 'end-to-end-test');
   I.click('button[type=submit]');
   I.see('end-to-end-test');
