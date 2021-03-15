@@ -9,7 +9,7 @@ Feature('home');
 
 Scenario('Going to landing page viewing the first section', async ({ I, env }) => {
   I.amOnPage('/');
-  I.saveScreenshot("landing_page.png");
+  // I.saveScreenshot("landing_page.png");
   I.seeVisualDiff("landing_page.png", { tolerance, prepareBaseImage: false });
 
   const identifier                  = env.REACT_APP_PUBLIC_CAMPAIGN_IDENTIFIER;
@@ -37,7 +37,7 @@ Scenario('Going to landing page viewing the first section', async ({ I, env }) =
 });
 
 Scenario('View the second section', async ({ I }) => {
-  I.saveScreenshot("landing_page_steps.png");
+  // I.saveScreenshot("landing_page_steps.png");
   I.seeVisualDiff("landing_page_steps.png", { tolerance, prepareBaseImage: false });
   I.say('I can read the steps needed to run the campaign');
   I.say('Step 1');
@@ -50,7 +50,7 @@ Scenario('View the second section', async ({ I }) => {
 
 Scenario('View the active campaigns', async ({ I }) => {
   I.scrollTo(ariaLabel("campaigns"));
-  I.saveScreenshot("landing_page_active_campaigns.png");
+  // I.saveScreenshot("landing_page_active_campaigns.png");
   I.seeVisualDiff("landing_page_active_campaigns.png", { tolerance, prepareBaseImage: false });
 
   const response                     = await I.sendQuery(GET_CAMPAIGNS);
@@ -91,7 +91,7 @@ Scenario('View the active campaigns', async ({ I }) => {
 
 Scenario('View the Supported by', async ({ I }) => {
   I.scrollTo(locate('section').withChild('h2').withText('Supported by'));
-  I.saveScreenshot("landing_page_supported_by.png");
+  // I.saveScreenshot("landing_page_supported_by.png");
   I.seeVisualDiff("landing_page_supported_by.png", { tolerance, prepareBaseImage: false });
   
   I.see('Supported by', 'h2');
