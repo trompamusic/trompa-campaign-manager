@@ -51,7 +51,7 @@ Scenario('View the second section', async ({ I }) => {
 Scenario('View the active campaigns', async ({ I }) => {
   I.scrollTo(ariaLabel("campaigns"));
   I.saveScreenshot("landing_page_active_campaigns.png");
-  I.seeVisualDiff("landing_page_active_campaigns.png", { tolerance, prepareBaseImage: false });
+  // I.seeVisualDiff("landing_page_active_campaigns.png", { tolerance, prepareBaseImage: false });
 
   const response                     = await I.sendQuery(GET_CAMPAIGNS);
   const { ControlAction: campaigns } =  response.data.data;
