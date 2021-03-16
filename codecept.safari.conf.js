@@ -14,7 +14,7 @@ exports.config = {
       url          : 'http://localhost:3000',
       show         : false,
       browser      : 'webkit',
-      waitForAction: 1000,
+      waitForAction: 2000,
     },
     ResembleHelper: {
       "require"         : "codeceptjs-resemblehelper",
