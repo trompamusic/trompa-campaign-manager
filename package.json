@@ -36,7 +36,7 @@
     "test": "react-scripts test --env=jsdom",
     "test:cc": "npx codeceptjs run --steps -c  codecept.conf.js",
     "test:chrome": "npx codeceptjs run -c codecept.chrome.conf.js",
-    "test:firefox": "npx codeceptjs run -c codecept.firefox.conf.js",
+    "test:firefox": "npx codeceptjs run --steps -c codecept.firefox.conf.js",
     "test:safari": "npx codeceptjs run -c codecept.safari.conf.js",
     "test:local:chrome": "concurrently --kill-others --success first -n \"server,test\" \"npx serve -s build -l 3000 \" \"wait-on http://localhost:3000 && yarn test:chrome\"",
     "test:local:firefox": "concurrently --kill-others --success first -n \"server,test\" \"npx serve -s build -l 3000 \" \"wait-on http://localhost:3000 && yarn test:firefox\"",

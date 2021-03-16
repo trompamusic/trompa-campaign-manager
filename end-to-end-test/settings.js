@@ -1,3 +1,3 @@
 module.exports = {
-  tolerance: 1,
+  tolerance: 5,
 };

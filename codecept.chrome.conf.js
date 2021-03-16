@@ -8,7 +8,7 @@ setHeadlessWhen(process.env.HEADLESS);
 
 exports.config = {
   tests  : './end-to-end-test/*_test.js',
-  output : './end-to-end-test/output/chrome/',
+  output : './end-to-end-test/output/chrome',
   helpers: {
     Playwright: {
       url    : 'http://localhost:3000',
@@ -17,9 +17,9 @@ exports.config = {
     },
     ResembleHelper: {
       "require"         : "codeceptjs-resemblehelper",
-      "screenshotFolder": "./end-to-end-test/output/chrome/",
-      "baseFolder"      : "./end-to-end-test/screenshots/base/chrome/",
-      "diffFolder"      : "./end-to-end-test/screenshots/diff/chrome/",
+      "screenshotFolder": "./end-to-end-test/output/chrome",
+      "baseFolder"      : "./end-to-end-test/screenshots/base/chrome",
+      "diffFolder"      : "./end-to-end-test/screenshots/diff/chrome",
     },    
     GraphQL: {
       endpoint: process.env.REACT_APP_GRAPHQL_URL,
