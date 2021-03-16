@@ -24,7 +24,7 @@ Scenario('Select a composition',({ I }) => {
   I.see('Composition & Score');
   I.click(ariaLabel('select_composition'));
   I.see('Search the composition');
-  I.waitForElement(compositionModalLocators.headerInitialResults, 3);
+  I.waitForElement(compositionModalLocators.headerInitialResults, 10);
   I.click(locate('div.MuiGrid-item').withText('Declaration'));
   I.saveScreenshot(screenshotSubDir + "create_campaign_page_composition.png");
   I.seeVisualDiff(screenshotSubDir + "create_campaign_page_composition.png", { tolerance, prepareBaseImage: false });
