@@ -16,7 +16,8 @@ module.exports = {
         'i18n',
         'theme',
         'utils',
-        'slider'
+        'slider',
+        'e2e',
       ],
     ],
   },
