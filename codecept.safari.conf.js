@@ -11,9 +11,10 @@ exports.config = {
   output : './end-to-end-test/output/webkit/',
   helpers: {
     Playwright: {
-      url    : 'http://localhost:3000',
-      show   : false,
-      browser: 'webkit',
+      url          : 'http://localhost:3000',
+      show         : false,
+      browser      : 'webkit',
+      waitForAction: 500,
     },
     ResembleHelper: {
       "require"         : "codeceptjs-resemblehelper",
