@@ -9,7 +9,7 @@ Scenario('Navigate to create campaign', async ({ I }) => {
   I.click('Start your own campaign');
 
   I.saveScreenshot(screenshotSubDir + "create_campaign_page.png");
-  I.seeVisualDiff(screenshotSubDir + "create_campaign_page.png", { tolerance, prepareBaseImage: false     });
+  I.seeVisualDiff(screenshotSubDir + "create_campaign_page.png", { tolerance, prepareBaseImage: false });
 });
 
 Scenario('Start a campaign Anonymous',({ I }) => {
@@ -17,7 +17,7 @@ Scenario('Start a campaign Anonymous',({ I }) => {
   I.see('Anonymous');
 
   I.saveScreenshot(screenshotSubDir + "create_campaign_page_anonymous.png");
-  I.seeVisualDiff(screenshotSubDir + "create_campaign_page_anonymous.png", { tolerance, prepareBaseImage: false     });
+  I.seeVisualDiff(screenshotSubDir + "create_campaign_page_anonymous.png", { tolerance, prepareBaseImage: false });
 });
 
 Scenario('Select a composition',({ I }) => {
@@ -27,7 +27,7 @@ Scenario('Select a composition',({ I }) => {
   I.waitForElement(compositionModalLocators.headerInitialResults, 3);
   I.click(locate('div.MuiGrid-item').withText('Declaration'));
   I.saveScreenshot(screenshotSubDir + "create_campaign_page_composition.png");
-  I.seeVisualDiff(screenshotSubDir + "create_campaign_page_composition.png", { tolerance, prepareBaseImage: false     });
+  I.seeVisualDiff(screenshotSubDir + "create_campaign_page_composition.png", { tolerance, prepareBaseImage: false });
 });
 
 Scenario('Select a score',({ I }) => {
@@ -37,7 +37,7 @@ Scenario('Select a score',({ I }) => {
   I.click(ariaLabel('Next'));
 
   I.saveScreenshot(screenshotSubDir + "create_campaign_page_score.png");
-  I.seeVisualDiff(screenshotSubDir + "create_campaign_page_score.png", { tolerance, prepareBaseImage: false     });
+  I.seeVisualDiff(screenshotSubDir + "create_campaign_page_score.png", { tolerance, prepareBaseImage: false });
 });
 
 Scenario('Fill in campaign details and submit the campaign', async ({ I }) => {
@@ -51,7 +51,7 @@ Scenario('Fill in campaign details and submit the campaign', async ({ I }) => {
   I.click('OK');
 
   I.saveScreenshot(screenshotSubDir + "create_campaign_page_campaign_details.png");
-  I.seeVisualDiff(screenshotSubDir + "create_campaign_page_campaign_details.png", { tolerance, prepareBaseImage: false     });
+  I.seeVisualDiff(screenshotSubDir + "create_campaign_page_campaign_details.png", { tolerance, prepareBaseImage: false });
 });
 
 Scenario('Submit the campaign',({ I }) => {
@@ -60,14 +60,14 @@ Scenario('Submit the campaign',({ I }) => {
   I.see('Drum up support and invite your fellow musicians.');
 
   I.saveScreenshot(screenshotSubDir + "create_campaign_page_campaign_share_dialog.png");
-  I.seeVisualDiff(screenshotSubDir + "create_campaign_page_campaign_share_dialog.png", { tolerance, prepareBaseImage: false     });
+  I.seeVisualDiff(screenshotSubDir + "create_campaign_page_campaign_share_dialog.png", { tolerance, prepareBaseImage: false });
   
   I.click(ariaLabel('Close'));
   I.waitForDetached('.MuiDialog-container', 10);
 
   I.see('Processing, check back soon');
   I.saveScreenshot(screenshotSubDir +"create_campaign_page_campaign_submitted.png");
-  I.seeVisualDiff(screenshotSubDir +"create_campaign_page_campaign_submitted.png", { tolerance, prepareBaseImage: false     });
+  I.seeVisualDiff(screenshotSubDir +"create_campaign_page_campaign_submitted.png", { tolerance, prepareBaseImage: false });
   I.clearCookie();
 });
 
