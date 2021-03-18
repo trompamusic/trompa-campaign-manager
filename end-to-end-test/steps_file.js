@@ -3,8 +3,12 @@
 module.exports = function() {
   return actor({
 
-    // Define custom steps here, use 'this' to access default methods of I.
-    // It is recommended to place a general 'login' function here.
+    // use this function to check if running on mobile, using the profile variable results in inconsistencies
+    isMobile: function(isMobile) {
+      this.usePlaywrightTo('to check if device is mobile', async ({ context }) => {
+        await context._parent._options.isMobile && isMobile();
+      });
+    },
 
   });
 };
