@@ -50,7 +50,7 @@ jobs:
         if: failure()
         uses: actions/upload-artifact@v2
         with:
-          name: codeceptjs-screenshots
+          name: codeceptjs-screenshots-${{matrix.os}}-${{matrix.browser}}
           retention-days: 30
           path: |
             end-to-end-test/output/
