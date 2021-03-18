@@ -1,4 +1,5 @@
 const { setHeadlessWhen } = require('@codeceptjs/configure');
+const { devices }         = require('playwright');
 
 require('dotenv').config({ path: __dirname + '/.env' });
 
@@ -12,6 +13,7 @@ exports.config = {
   helpers: {
     Playwright: {
       url    : 'http://localhost:3000',
+      emulate: devices['Pixel 2'],
       show   : true,
       browser: 'chromium',
       slowMo : 1000,
