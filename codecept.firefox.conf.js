@@ -11,10 +11,9 @@ exports.config = {
   output : './end-to-end-test/output/firefox',
   helpers: {
     Playwright: {
-      url          : 'http://localhost:3000',
-      show         : false,
-      browser      : 'firefox',
-      waitForAction: 1000,
+      url    : 'http://localhost:3000',
+      show   : false,
+      browser: 'firefox',
     },
     ResembleHelper: {
       "require"         : "codeceptjs-resemblehelper",
