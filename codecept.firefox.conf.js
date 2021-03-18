@@ -1,4 +1,5 @@
 const { setHeadlessWhen } = require('@codeceptjs/configure');
+const { devices }         = require('playwright');
 
 require('dotenv').config({ path: __dirname + '/.env' });
 
@@ -14,6 +15,7 @@ exports.config = {
       url          : 'http://localhost:3000',
       show         : false,
       browser      : 'firefox',
+      emulate      : process.profile === 'mobile' ? devices['Pixel 2'] : null,
       waitForAction: 1000,
     },
     ResembleHelper: {
@@ -27,8 +29,9 @@ exports.config = {
     },
   },
   include: {
-    I  : './end-to-end-test/steps_file.js',
-    env: process.env,
+    I     : './end-to-end-test/steps_file.js',
+    env   : process.env,
+    mobile: process.profile === 'mobile',
   },
   bootstrap: null,
   mocha    : {},

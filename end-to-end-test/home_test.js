@@ -7,10 +7,18 @@ const getCampaignDigitalDocument = campaign => campaign ? campaign?.object.find(
 
 Feature('home');
 
+let isMobile = false;
+
+const setMobile = () => {
+  isMobile = true;
+};
+
 Scenario('Going to landing page viewing the first section', async ({ I, env }) => {
   I.amOnPage('/');
+  I.isMobile(setMobile);
+
   I.saveScreenshot("landing_page.png");
-  I.seeVisualDiff("landing_page.png", { tolerance, prepareBaseImage: false });
+  I.seeVisualDiff("landing_page.png", { tolerance, prepareBaseImage: true });
 
   const identifier                  = env.REACT_APP_PUBLIC_CAMPAIGN_IDENTIFIER;
   const response                    = await I.sendQuery(GET_CAMPAIGN, { identifier });
@@ -38,7 +46,7 @@ Scenario('Going to landing page viewing the first section', async ({ I, env }) =
 
 Scenario('View the second section', async ({ I }) => {
   I.saveScreenshot("landing_page_steps.png");
-  I.seeVisualDiff("landing_page_steps.png", { tolerance, prepareBaseImage: false });
+  I.seeVisualDiff("landing_page_steps.png", { tolerance, prepareBaseImage: true });
   I.say('I can read the steps needed to run the campaign');
   I.say('Step 1');
   I.see('Pick a score and invite your collaborators', 'h2');
@@ -51,7 +59,7 @@ Scenario('View the second section', async ({ I }) => {
 Scenario('View the active campaigns', async ({ I }) => {
   I.scrollTo(ariaLabel("campaigns"));
   I.saveScreenshot("landing_page_active_campaigns.png");
-  // I.seeVisualDiff("landing_page_active_campaigns.png", { tolerance, prepareBaseImage: false });
+  // I.seeVisualDiff("landing_page_active_campaigns.png", { tolerance, prepareBaseImage: true });
 
   const response                     = await I.sendQuery(GET_CAMPAIGNS);
   const { ControlAction: campaigns } =  response.data.data;
@@ -61,9 +69,10 @@ Scenario('View the active campaigns', async ({ I }) => {
 
   within('.slider', async () => {
     let currentSlide             = 1;
+    const slidesVisible          = isMobile ? 1 : 4;
     const numerOfVisibleElements = await I.grabNumberOfVisibleElements('.slide-visible');
 
-    assert.equal(4, numerOfVisibleElements);
+    assert.equal(slidesVisible, numerOfVisibleElements);
 
     if (numerOfVisibleElements <= campaigns.length) {
       return;
@@ -92,7 +101,7 @@ Scenario('View the active campaigns', async ({ I }) => {
 Scenario('View the Supported by', async ({ I }) => {
   I.scrollTo(locate('section').withChild('h2').withText('Supported by'));
   I.saveScreenshot("landing_page_supported_by.png");
-  I.seeVisualDiff("landing_page_supported_by.png", { tolerance, prepareBaseImage: false });
+  I.seeVisualDiff("landing_page_supported_by.png", { tolerance, prepareBaseImage: true });
   
   I.see('Supported by', 'h2');
 

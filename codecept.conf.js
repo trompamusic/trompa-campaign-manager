@@ -7,13 +7,15 @@ require('dotenv').config({ path: __dirname + '/.env' });
 // export HEADLESS=true && npx codeceptjs run
 setHeadlessWhen(process.env.HEADLESS);
 
+console.log("process.env", process.env);
+
 exports.config = {
   tests  : './end-to-end-test/*_test.js',
   output : './end-to-end-test/output',
   helpers: {
     Playwright: {
       url    : 'http://localhost:3000',
-      emulate: devices['Pixel 2'],
+      emulate: process.profile === 'mobile' ? devices['Pixel 2'] : null,
       show   : true,
       browser: 'chromium',
       slowMo : 1000,
@@ -30,8 +32,9 @@ exports.config = {
   },
 
   include: {
-    I  : './end-to-end-test/steps_file.js',
-    env: process.env,
+    I       : './end-to-end-test/steps_file.js',
+    env     : process.env,
+    isMobile: process.profile === 'mobile',
   },
   bootstrap: null,
   mocha    : {},

@@ -1,4 +1,5 @@
 const { setHeadlessWhen } = require('@codeceptjs/configure');
+const { devices }         = require('playwright');
 
 require('dotenv').config({ path: __dirname + '/.env' });
 
@@ -14,6 +15,7 @@ exports.config = {
       url          : 'http://localhost:3000',
       show         : false,
       browser      : 'webkit',
+      emulate      : process.profile === 'mobile' ? devices['iPhone 11 Pro'] : null,
       waitForAction: 2000,
     },
     ResembleHelper: {
