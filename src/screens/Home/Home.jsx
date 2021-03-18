@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import moment from 'moment';
 import { Helmet } from 'react-helmet';
 import { Link, useHistory } from 'react-router-dom';
@@ -12,7 +12,6 @@ import { getCampaignDigitalDocument } from '../../utils';
 import images from '../../theme/images';
 import Jumbotron from '../../components/Jumbotron/Jumbotron';
 import NavBar from '../../components/NavBar/NavBar';
-import TypeformModal from '../../components/TypeformModal';
 import HomeTwoSections from '../../components/HomeTwoSections/HomeTwoSections';
 import HomeThreeSteps from '../../components/HomeThreeSteps/HomeThreeSteps';
 import HomeTestimonials from '../../components/HomeTestimonials/HomeTestimonials';
@@ -28,7 +27,6 @@ export default function Home() {
   const classes                                                     = useStyles();
   const { t }                                                       = useTranslation('home');
   const history                                                     = useHistory();
-  const startCampaignFormRef                                        = useRef();
   const { loading, error, data: { ControlAction: campaigns } = {} } = useQuery(GET_CAMPAIGNS);
   const publicCampaignIdentifier                                    = process.env.REACT_APP_PUBLIC_CAMPAIGN_IDENTIFIER;
   const campaign                                                    = campaigns?.find(({ identifier }) => identifier === publicCampaignIdentifier) || campaigns?.[0];
@@ -66,10 +64,8 @@ export default function Home() {
           <CircularProgress color="primary" />
         </div>
       )}
-      {!loading && 
+      {!loading &&
         <React.Fragment>
-        
-          <TypeformModal url={`https://kirkandblackbeard.typeform.com/to/BpMzhX?campaignid=${campaign?.identifier}`} formRef={startCampaignFormRef} />
           <Jumbotron
             image={images.collaborateHero}
             text={{
@@ -79,7 +75,7 @@ export default function Home() {
             campaign={campaign}
             digitalDocument={digitalDocument}
           >
-            {!!campaign && 
+            {!!campaign &&
             <Button
               className={classes.buttonHero}
               component={Link}

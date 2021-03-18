@@ -21,59 +21,30 @@ exports[`<JumbotronContentCampaign /> renders and matches snapshot 1`] = `
         Processing, check back soon
       </span>
     </a>
-    <button
-      class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-fullWidth"
-      tabindex="0"
-      type="button"
-    >
-      <span
-        class="MuiButton-label"
-      >
-        <span
-          class="MuiButton-startIcon MuiButton-iconSizeMedium"
-        >
-          <svg
-            aria-hidden="true"
-            class="MuiSvgIcon-root"
-            focusable="false"
-            role="presentation"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"
-            />
-          </svg>
-        </span>
-        Subscribe for updates
-      </span>
-      <span
-        class="MuiTouchRipple-root"
-      />
-    </button>
   </div>
   <div
-    class="MuiGrid-root makeStyles-copyAndShareRow-76 MuiGrid-container MuiGrid-align-items-xs-center"
+    class="MuiGrid-root makeStyles-copyAndShareRow-67 MuiGrid-container MuiGrid-align-items-xs-center"
   >
     <div
       class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-9"
     >
       <div
-        class="makeStyles-root-181"
+        class="makeStyles-root-172"
       >
         <div
-          class="MuiFormControl-root MuiTextField-root makeStyles-copyField-182 MuiFormControl-fullWidth"
+          class="MuiFormControl-root MuiTextField-root makeStyles-copyField-173 MuiFormControl-fullWidth"
         >
           <div
-            class="MuiInputBase-root MuiFilledInput-root MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiFilledInput-adornedEnd makeStyles-copyFieldAdornedEnd-184 MuiInputBase-marginDense MuiFilledInput-marginDense"
+            class="MuiInputBase-root MuiFilledInput-root MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiFilledInput-adornedEnd makeStyles-copyFieldAdornedEnd-175 MuiInputBase-marginDense MuiFilledInput-marginDense"
           >
             <input
               aria-invalid="false"
-              class="MuiInputBase-input MuiFilledInput-input makeStyles-copyFieldInput-183 MuiInputBase-inputAdornedEnd MuiFilledInput-inputAdornedEnd MuiInputBase-inputMarginDense MuiFilledInput-inputMarginDense makeStyles-copyFieldInputMarginDense-185"
+              class="MuiInputBase-input MuiFilledInput-input makeStyles-copyFieldInput-174 MuiInputBase-inputAdornedEnd MuiFilledInput-inputAdornedEnd MuiInputBase-inputMarginDense MuiFilledInput-inputMarginDense makeStyles-copyFieldInputMarginDense-176"
               type="text"
               value=""
             />
             <span
-              class="makeStyles-copyText-186"
+              class="makeStyles-copyText-177"
             >
               Copy
             </span>
@@ -82,7 +53,7 @@ exports[`<JumbotronContentCampaign /> renders and matches snapshot 1`] = `
       </div>
     </div>
     <div
-      class="MuiGrid-root makeStyles-sharingIcons-77 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-3"
+      class="MuiGrid-root makeStyles-sharingIcons-68 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-3"
     >
       <a
         href="https://www.facebook.com/sharer/sharer.php?u=undefined"

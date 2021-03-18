@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import moment from 'moment';
 import { gql } from 'apollo-boost';
 import { useHistory } from 'react-router-dom';
@@ -15,7 +15,6 @@ import { getCampaignDigitalDocument, hasUrlParameter } from '../../utils';
 import useTaskCount from '../../hooks/useTaskCount';
 import ShareDialog from '../../components/ShareDialog/ShareDialog';
 import NavBar from '../../components/NavBar/NavBar';
-import TypeformModal from '../../components/TypeformModal';
 import Jumbotron from '../../components/Jumbotron/Jumbotron';
 import JumbotronContentCampaign from '../../components/JumbotronContentCampaign/JumbotronContentCampaign';
 import ActiveCampaignTwoSections from '../../components/ActiveCampaignTwoSections/ActiveCampaignTwoSections';
@@ -31,8 +30,6 @@ const useStyles = makeStyles(styles);
 export default function ActiveCampaign ({ match }) {
   const { t }                                                           = useTranslation('campaign');
   const classes                                                         = useStyles();
-  const subscribeFormRef                                                = useRef();
-  const openSubscribeForm                                               = () => subscribeFormRef.current.typeform.open();
   const history                                                         = useHistory();
   const createdParameter                                                = hasUrlParameter("created");
   const [shareDialogOpen, setShareDialogOpen]                           = useState(false);
@@ -113,7 +110,6 @@ export default function ActiveCampaign ({ match }) {
               endDate={campaignEndDate}
               to={doTaskUrl}
               hasTasksAvailable={taskCount > 0}
-              openSubscribeForm={openSubscribeForm}
             />
           </Jumbotron>
           <TaskGroupProgress digitalDocumentIdentifier={digitalDocument?.identifier} />
@@ -140,7 +136,7 @@ export default function ActiveCampaign ({ match }) {
                   }}
                 />
               );})}
-          </ActiveCampaignOverviewSection>      
+          </ActiveCampaignOverviewSection>
           <Jumbotron
             image={images.collaborateHero}
             text={{
@@ -169,7 +165,6 @@ export default function ActiveCampaign ({ match }) {
             campaign={campaign}
             campaignUrl={campaignUrl}
           />
-          <TypeformModal url={`https://kirkandblackbeard.typeform.com/to/NHbUkT?campaignid=${campaignIdentifier}`} formRef={subscribeFormRef} />
         </React.Fragment>
       )}
     </div>

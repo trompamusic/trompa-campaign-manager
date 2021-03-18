@@ -29,6 +29,6 @@ export default ({ palette, typography, spacing, breakpoints }) => createStyles({
     fontSize     : typography.pxToRem(16),
     letterSpacing: '0.66px',
     marginRight  : spacing(),
-    marginBottom : spacing(2),
+    marginBottom : spacing(0.5),
   },
 });

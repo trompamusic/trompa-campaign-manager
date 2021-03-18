@@ -6,7 +6,6 @@ import { useTranslation } from 'react-i18next';
 import { makeStyles } from '@material-ui/styles';
 import { Typography } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
-import NotificationsIcon from '@material-ui/icons/Notifications';
 import CopyAndShareRow from '../CopyAndShareRow/CopyAndShareRow';
 import useWidth from '../../hooks/useWidth';
 import styles from './JumbotronContentCampaign.styles';
@@ -43,15 +42,6 @@ export default function JumbotronContentCampaign ({ campaign, campaignUrl, endDa
           fullWidth={['xs', 'sm', 'md'].includes(width)}
         >
           {hasTasksAvailable ? t('navbar.join_campaign') : t('jumbotron.processing_score')}
-        </Button>
-        <Button
-          component="button"
-          onClick={openSubscribeForm}
-          variant="text"
-          startIcon={<NotificationsIcon />}
-          fullWidth={['xs', 'sm', 'md'].includes(width)}
-        >
-          {t('subscribe_for_updates')}
         </Button>
       </div>
       <CopyAndShareRow campaign={campaign} campaignUrl={campaignUrl} />
