@@ -30,11 +30,11 @@ export default ({ typography, palette, spacing, breakpoints }) => createStyles({
       display: 'none',
     },
   },
-  desktop: {
-    [breakpoints.down('sm')]: {
-      display: 'none',
-    },
-  },
+  // desktop: {
+  //   [breakpoints.down('sm')]: {
+  //     display: 'none',
+  //   },
+  // },
   drawerTop: {
     display        : 'flex',
     justifyContent : 'space-between',

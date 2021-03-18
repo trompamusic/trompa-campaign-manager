@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import * as PropTypes from 'prop-types';
 import { Link, NavLink } from 'react-router-dom';
 import { makeStyles } from '@material-ui/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -19,6 +20,7 @@ export default function NavBar ({
   primaryButton,
 }) {
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const isMobile                    = useMediaQuery(theme => theme.breakpoints.down('sm'));
 
   const classes = useStyles();
 
@@ -72,7 +74,7 @@ export default function NavBar ({
     <React.Fragment>
       <div className={classes.mobile}>
         <AppbarTop position="fixed" mobile>
-          <IconButton onClick={() => setDrawerOpen(true)} aria-label="" component="span">
+          <IconButton onClick={() => setDrawerOpen(true)} aria-label="menu" component="span">
             <MenuIcon />
           </IconButton>
         </AppbarTop>
@@ -96,15 +98,16 @@ export default function NavBar ({
           </div>
         </SwipeableDrawer>
       </div>
-      <div className={classes.desktop}>
-        <AppbarTop position="fixed">
-          <div>
-            {renderLinks()}
-            {renderButtons()}
-            {renderPrimaryButton()}
-          </div>
-        </AppbarTop>
-      </div>
+      {!isMobile && (
+        <div className={classes.desktop}>
+          <AppbarTop position="fixed">
+            <div>
+              {renderLinks()}
+              {renderButtons()}
+              {renderPrimaryButton()}
+            </div>
+          </AppbarTop>
+        </div>                )}
     </React.Fragment>
   );
 }
