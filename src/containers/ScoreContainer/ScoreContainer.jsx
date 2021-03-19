@@ -1,46 +1,46 @@
-import React, { Component, createRef } from "react";
-import { Provider } from "react-redux";
-import { createStore, applyMiddleware } from "redux";
-import thunk from "redux-thunk";
-import ReduxPromise from "redux-promise";
-import classNames from "classnames";
-import { withStyles } from "@material-ui/core/styles";
-import { reducers } from "meld-clients-core/lib/reducers";
-import Score from "meld-clients-core/lib/containers/score";
-import { Button } from "@material-ui/core";
-import NextPageButton from "selectable-score/lib/next-page-button.js";
-import PrevPageButton from "selectable-score/lib/prev-page-button.js";
+import React, { Component, createRef } from 'react';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import ReduxPromise from 'redux-promise';
+import classNames from 'classnames';
+import { withStyles } from '@material-ui/core/styles';
+import { reducers } from 'meld-clients-core/lib/reducers';
+import Score from 'selectable-score/lib/selectable-score.js';
+import { Button } from '@material-ui/core';
+import NextPageButton from 'selectable-score/lib/next-page-button.js';
+import PrevPageButton from 'selectable-score/lib/prev-page-button.js';
 
 const createStoreWithMiddleware = applyMiddleware(thunk, ReduxPromise)(createStore);
 
 const styles = {
   root: {
-    display        : "flex",
-    flexDirection  : "column",
-    justifyContent : "center",
-    width          : "100%",
-    height         : "75%",
-    backgroundColor: "#DDE3E9",
+    display        : 'flex',
+    flexDirection  : 'column',
+    justifyContent : 'center',
+    width          : '100%',
+    height         : '75%',
+    backgroundColor: '#DDE3E9',
     padding        : 15,
-    boxSizing      : "border-box",
+    boxSizing      : 'border-box',
   },
   fullScreen: {
-    height: "100%",
+    height: '100%',
   },
   container: {
-    display        : "flex",
-    justifyContent : "center",
+    display        : 'flex',
+    justifyContent : 'center',
     height         : '100%',
     width          : '100%',
-    "& .scorepane ": {
-      display        : "inline-block",
-      backgroundColor: "white",
+    '& .scorepane ': {
+      display        : 'inline-block',
+      backgroundColor: 'white',
 
     },
   },
   scoreControl: {
-    display       : "flex",
-    justifyContent: "center",
+    display       : 'flex',
+    justifyContent: 'center',
   },
 };
 
@@ -49,7 +49,7 @@ class ScoreContainer extends Component {
     super(props);
 
     this.state = {
-      uri                 : "",
+      uri                 : '',
       scoreComponentLoaded: false,
     };
 
@@ -58,7 +58,7 @@ class ScoreContainer extends Component {
       adjustPageHeight: 1,
       pageHeight      : 2100,
       pageWidth       : 1480,
-      footer          : "none",
+      footer          : 'none',
       unit            : 7,
     };
 
@@ -82,7 +82,7 @@ class ScoreContainer extends Component {
   async getScore() {
     try {
       const uri      = `https://raw.githubusercontent.com/Crowd-Transcribed-MEI-Repositories/${this.props.pdfName}/crowdmanager/aligned.mei`;
-      const response = await fetch(uri,{ method: "head" });
+      const response = await fetch(uri,{ method: 'head' });
 
       if (response.ok) {
         this.setState({ uri });
@@ -90,7 +90,7 @@ class ScoreContainer extends Component {
         return;
       }
 
-      console.log("Score not available yet");
+      console.log('Score not available yet');
     } catch (e) {
       console.log(e);
     }
@@ -122,8 +122,8 @@ class ScoreContainer extends Component {
             {uri && (
               <Score
                 uri={uri}
-                key={"score" + fullScreen}
-                options={this.OPTIONS}
+                key={'score' + fullScreen}
+                vrvOptions={this.OPTIONS}
                 ref={this.scoreComponent}
               />
             )}
