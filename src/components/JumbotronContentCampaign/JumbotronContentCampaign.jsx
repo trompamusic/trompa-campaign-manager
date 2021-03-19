@@ -12,7 +12,7 @@ import styles from './JumbotronContentCampaign.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function JumbotronContentCampaign ({ campaign, campaignUrl, endDate, to, openSubscribeForm, hasTasksAvailable }) {
+export default function JumbotronContentCampaign ({ campaign, campaignUrl, endDate, to, hasTasksAvailable }) {
   const { t }   = useTranslation('campaign');
   const width   = useWidth();
   const classes = useStyles();
@@ -54,6 +54,5 @@ JumbotronContentCampaign.propTypes = {
   campaignUrl      : PropTypes.string,
   campaignEndDate  : PropTypes.string,
   to               : PropTypes.string,
-  openSubscribeForm: PropTypes.func,
   hasTasksAvailable: PropTypes.bool,
 };

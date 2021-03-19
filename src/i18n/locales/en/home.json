@@ -25,15 +25,6 @@
     "description": "Create modern, playable scores from known and unknown classics.",
     "slogan": "Make even Mozart more memorable"
   },
-  "mailchimp_dialog": {
-    "email": "Email address",
-    "first_name": "First name",
-    "last_name": "Last name",
-    "required": "indicates required",
-    "subscribe": "Subscribe",
-    "which_work": "Which work would you like to digitise?",
-    "paragraph": "Before you can kick-off your campaign we need to know three basic things:"
-  },
   "testimonials": {
     "composer": "Composer",
     "quoteBeethoven": "I don't hear a word of what they say!",

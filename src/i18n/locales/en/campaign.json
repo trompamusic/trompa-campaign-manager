@@ -13,7 +13,6 @@
   "download": "Download",
   "share_this_campaign": "Share this campaign",
   "start_your_own_campaign": "Start your own campaign",
-  "subscribe_for_updates": "Subscribe for updates",
   "unknown_composer": "Unknown composer",
   "about": {
     "about_collaboration_manager": "About Trompa Collaboration Campaign Manager",
@@ -35,10 +34,6 @@
     "days_to_go_plural": "{{count}} days to go",
     "description": "Let's work together on bringing Mahler's 6th to our yearly outdoor performance. This version would be perfect, but the quality of the PDF is really insufficient. Can you all help cleaning it up? We've got five weeks to do it, people!",
     "processing_score": "Processing, check back soon"
-  },
-  "mailchimp": {
-    "keep_you_posted": "We'll keep you posted",
-    "leave_your_email_here": "Leave your email here and we'll send you a weekly update on the campaign and a quarterly update on the TROMPA project"
   },
   "navbar": {
     "download_mei_file": "Download MEI file",

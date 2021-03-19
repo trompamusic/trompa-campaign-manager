@@ -78,39 +78,6 @@ exports[`<ActiveCampaign /> renders and matches snapshot 1`] = `
               viewBox="0 0 24 24"
             >
               <path
-                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
-              />
-            </svg>
-          </span>
-          Subscribe for updates
-        </span>
-        <span
-          class="MuiTouchRipple-root"
-        />
-      </button>
-    </div>
-    <div
-      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-auto"
-    >
-      <button
-        class="MuiButtonBase-root MuiButton-root MuiButton-text"
-        tabindex="0"
-        type="button"
-      >
-        <span
-          class="MuiButton-label"
-        >
-          <span
-            class="MuiButton-startIcon MuiButton-iconSizeMedium"
-          >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root"
-              focusable="false"
-              role="presentation"
-              viewBox="0 0 24 24"
-            >
-              <path
                 d="M12.95,2 L12.95,4.02 C17.34,4.56 20.45,8.55 19.91,12.94 C19.45,16.58 16.59,19.47 12.95,19.9 L12.95,21.9 C18.45,21.35 22.45,16.47 21.9,10.97 C21.45,6.22 17.68,2.47 12.95,2 M10.95,2.03 C9,2.22 7.14,2.97 5.62,4.23 L7.05,5.71 C8.17,4.81 9.52,4.23 10.95,4.03 L10.95,2.03 M4.21,5.64 C2.95,7.16 2.2,9.01 2,10.97 L4,10.97 C4.19,9.55 4.75,8.2 5.64,7.07 L4.21,5.64 M2.01,12.97 C2.21,14.93 2.98,16.78 4.22,18.3 L5.64,16.87 C4.76,15.74 4.19,14.39 4.01,12.97 L2.01,12.97 M7.05,18.34 L5.62,19.71 C7.13,20.97 8.99,21.76 10.95,21.97 L10.95,19.97 C9.53,19.79 8.18,19.22 7.05,18.34 M14.54,7.97 L11.95,10.56 L9.36,7.97 L7.95,9.38 L10.54,11.97 L7.95,14.56 L9.36,15.97 L11.95,13.38 L14.54,15.97 L15.95,14.56 L13.36,11.97 L15.95,9.38 L14.54,7.97 Z"
               />
             </svg>

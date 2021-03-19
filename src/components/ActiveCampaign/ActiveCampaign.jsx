@@ -4,11 +4,10 @@ import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import { Typography } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
-import EmailIcon from '@material-ui/icons/Email';
-import DownloadIcon from '@material-ui/icons/CloudDownload';
 import { Link } from 'react-router-dom';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
+import DownloadIcon from '@material-ui/icons/CloudDownload';
 import FileMusicIcon from '../Icons/FileMusicIcon';
 import MusicProcessIcon from '../Icons/MusicProcessIcon';
 import ProgressCloseIcon from '../Icons/ProgressCloseIcon';
@@ -66,11 +65,6 @@ export default function ActiveCampaign({
               color="primary"
             >
               {t('help_this_campaign')}
-            </Button>
-          </Grid>
-          <Grid xs={12} sm={'auto'} item>
-            <Button startIcon={<EmailIcon />} variant="text">
-              {t('subscribe_for_updates')}
             </Button>
           </Grid>
           <Grid xs={12} sm={'auto'} item>
