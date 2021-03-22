@@ -1,0 +1,107 @@
+const {  ariaLabel, compositionModalLocators } = require('./locators');
+const {  tolerance }                           = require('./settings');
+
+Feature('Create campaign with own score reference');
+let screenshotSubDir = 'own_reference_';
+
+let isMobile = false;
+
+const setMobile = () => {
+  isMobile = true;
+};
+
+Scenario('Checking if it is running on mobile', async ({ I }) => {
+  I.amOnPage('/');
+  I.isMobile(setMobile);
+});
+
+Scenario('Navigate to create campaign', async ({ I }) => {
+  if (isMobile) {
+    screenshotSubDir = 'mobile_' + screenshotSubDir;
+    I.click(ariaLabel('menu'));
+  }
+
+  I.click('Start your own campaign');
+  I.saveScreenshot(screenshotSubDir + "create_campaign_page.png");
+  I.seeVisualDiff(screenshotSubDir + "create_campaign_page.png", { tolerance, prepareBaseImage: true });
+});
+
+Scenario('Start a campaign with a nickname',({ I }) => {
+  I.fillField('nickname', 'end-to-end-test');
+  I.click('button[type=submit]');
+
+  if(isMobile) {
+    I.see('e');
+  } else {
+    I.see('end-to-end-test');
+  }
+
+  I.saveScreenshot(screenshotSubDir + "create_campaign_page_withnickname.png");
+  I.seeVisualDiff(screenshotSubDir + "create_campaign_page_withnickname.png", { tolerance, prepareBaseImage: true });
+});
+
+Scenario('Select a composition',({ I }) => {
+  I.see('Composition & Score');
+  I.click(ariaLabel('select_composition'));
+
+  if(!isMobile) {
+    I.see('Search the composition');
+  } 
+
+  I.waitForElement(compositionModalLocators.headerInitialResults, 10);
+  I.click(locate('div.MuiGrid-item').withText('Declaration'));
+
+  I.saveScreenshot(screenshotSubDir + "create_campaign_page_composition.png");
+  I.seeVisualDiff(screenshotSubDir + "create_campaign_page_composition.png", { tolerance, prepareBaseImage: true });
+});
+
+Scenario('Create a score reference',({ I }) => {
+  I.click(ariaLabel('select_score'));
+  
+  if(!isMobile) {
+    I.see('Select score version to improve');
+  } 
+  
+  I.click(locate('button').withText('Select your own file'));
+  I.click('button[type=submit]');
+  I.dontSee(ariaLabel('Next'));
+
+  I.fillField('scoreUrl', 'https://royschut2.inrupt.net/public/testa.mei');
+  I.fillField('thumbnailUrl', 'https://complianz.io/wp-content/uploads/2019/03/placeholder-300x202.jpg');
+  I.fillField('title', 'end-to-end-test');
+  I.fillField('creator', 'end-to-end-test');
+  I.click('button[type=submit]');
+
+  I.click(ariaLabel('Next'));
+  I.saveScreenshot(screenshotSubDir + "create_campaign_page_score.png");
+  I.seeVisualDiff(screenshotSubDir + "create_campaign_page_score.png", { tolerance, prepareBaseImage: true });
+});
+
+Scenario('Fill in campaign details and submit the campaign',({ I }) => {
+  I.fillField('campaignTitle', 'end-to-end-test');
+  I.fillField('campaignDescription', 'end-to-end-test');
+  
+  I.fillField('campaignDeadline', 'June 24 00:01');
+
+  I.saveScreenshot(screenshotSubDir + "create_campaign_page_campaign_details.png");
+  I.seeVisualDiff(screenshotSubDir + "create_campaign_page_campaign_details.png", { tolerance, prepareBaseImage: true });
+
+  I.click('OK');
+});
+
+Scenario('Submit the campaign',({ I }) => {
+  I.click('button[type=submit]');
+  I.waitForElement('.MuiDialog-container', 10);
+
+  I.see('Drum up support and invite your fellow musicians.');
+  I.saveScreenshot(screenshotSubDir + "create_campaign_page_campaign_share_dialog.png");
+  I.seeVisualDiff(screenshotSubDir + "create_campaign_page_campaign_share_dialog.png", { tolerance, prepareBaseImage: true });
+
+  I.click(ariaLabel('Close'));
+  I.waitForDetached('.MuiDialog-container', 10);
+
+  I.see('Processing, check back soon');
+  I.saveScreenshot(screenshotSubDir + "create_campaign_page_campaign_submitted.png");
+  I.seeVisualDiff(screenshotSubDir + "create_campaign_page_campaign_submitted.png", { tolerance, prepareBaseImage: true });
+  I.clearCookie();
+});

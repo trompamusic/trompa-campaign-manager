@@ -30,7 +30,7 @@ export default function SelectComposition({ composition, score, onSelectComposit
                 {composition ? (
                   <IconButton onClick={onDeselectCompositionClick} size="small"><Cancel /></IconButton>
                 ) : (
-                  <Button variant="contained" color="primary" onClick={onSelectCompositionClick}>{t('select')}</Button>
+                  <Button variant="contained" color="primary" aria-label={'select_composition'} onClick={onSelectCompositionClick}>{t('select')}</Button>
                 )}
               </div>
             </div>
@@ -48,15 +48,15 @@ export default function SelectComposition({ composition, score, onSelectComposit
                 {score ? (
                   <IconButton onClick={onDeselectScoreClick} size="small"><Cancel /></IconButton>
                 ) : (
-                  <Button variant="contained" color="primary" onClick={onSelectScoreClick} disabled={!composition}>{t('select')}</Button>
+                  <Button variant="contained" color="primary" aria-label={'select_score'} onClick={onSelectScoreClick} disabled={!composition}>{t('select')}</Button>
                 )}
               </div>
             </div>
           </Box>
         </Box>
         <Box className={classes.formNav}>
-          <Button onClick={onBackButtonClick}>{t('back')}</Button>
-          <Button variant="contained" color="primary" disabled={!(composition && score) } onClick={onNextButtonClick}>{t('next')}</Button>
+          <Button onClick={onBackButtonClick} aria-label={t('back')}>{t('back')}</Button>
+          <Button variant="contained" color="primary" disabled={!(composition && score) } onClick={onNextButtonClick} aria-label={t('next')}>{t('next')}</Button>
         </Box>
       </div>
       <img className={classes.person} src={images.personTrumpetStandingRight} alt={t('person')} />

@@ -95,7 +95,7 @@ export default function CreateCampaignSetup ({ initialFormValues, onSubmit, onBa
                     />
                   </div>
                   <div className={classes.buttons}>
-                    <Button onClick={onBackButtonClick} variant="text">
+                    <Button aria-label={t('back')} onClick={onBackButtonClick} variant="text">
                       {t('back')}
                     </Button>
                     <Button
@@ -103,6 +103,7 @@ export default function CreateCampaignSetup ({ initialFormValues, onSubmit, onBa
                       form="campaign-meta-form"
                       variant="contained"
                       color="primary"
+                      aria-label={t('setup.setup_my_campaign')} 
                       disabled={isSubmitting}
                     >
                       {t('setup.setup_my_campaign')}

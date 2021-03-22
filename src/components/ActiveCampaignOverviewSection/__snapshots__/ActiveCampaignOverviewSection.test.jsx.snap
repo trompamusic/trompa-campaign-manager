@@ -2,6 +2,7 @@
 
 exports[`<ActiveCampaignOverviewSection /> renders and matches snapshot 1`] = `
 <div
+  aria-label="campaigns"
   class="makeStyles-root-1"
 >
   <h2

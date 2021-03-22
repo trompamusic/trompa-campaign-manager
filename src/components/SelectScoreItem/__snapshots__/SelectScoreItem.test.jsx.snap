@@ -3,6 +3,7 @@
 exports[`<SelectScoreItem /> renders and matches snapshot 1`] = `
 <div
   class="MuiPaper-root MuiCard-root makeStyles-item-1 MuiPaper-elevation2 MuiPaper-rounded"
+  role="listitem"
 >
   <div
     class="MuiBox-root MuiBox-root-42 makeStyles-imgBox-2"

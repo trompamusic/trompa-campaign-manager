@@ -1,5 +1,5 @@
 {
-  "extends": "react-app-vd",
+  "extends": ["react-app-vd", "plugin:codeceptjs/recommended"],
   "rules": {
     "indent": [
       "error",

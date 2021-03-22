@@ -14,7 +14,7 @@ export default function ActiveCampaignOverviewSection ({ children }) {
   const campaignItemWidth = 244;
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} aria-label={"campaigns"}>
       <Typography className={classes.heading} variant="h2">
         {t('overview.heading')}
       </Typography>

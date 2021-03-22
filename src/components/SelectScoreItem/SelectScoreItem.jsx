@@ -33,6 +33,7 @@ export default function SelectScoreItem({ item, isActiveCampaign, progress, onIt
       onMouseOver={() => setHover(true)}
       onMouseOut={() => setHover(false)}
       onClick={onItemClick}
+      role="listitem"
     >
       <Box className={classes.imgBox}>
         <Avatar className={classes.img} src={item?.image} alt={item?.name || ""}>

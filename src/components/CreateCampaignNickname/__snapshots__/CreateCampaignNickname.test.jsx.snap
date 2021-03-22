@@ -75,6 +75,7 @@ exports[`<CreateCampaignNickname /> renders and matches snapshot 1`] = `
             class="makeStyles-buttons-8"
           >
             <button
+              aria-label="Back"
               class="MuiButtonBase-root MuiButton-root MuiButton-text"
               tabindex="0"
               type="button"
@@ -89,6 +90,7 @@ exports[`<CreateCampaignNickname /> renders and matches snapshot 1`] = `
               />
             </button>
             <button
+              aria-label="I agree and want to continue"
               class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
               form="nickname-form"
               tabindex="0"

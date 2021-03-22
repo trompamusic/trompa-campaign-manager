@@ -38,6 +38,7 @@ exports[`<SelectComposition /> renders and matches snapshot 1`] = `
           </p>
           <div>
             <button
+              aria-label="select_composition"
               class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
               tabindex="0"
               type="button"
@@ -81,6 +82,7 @@ exports[`<SelectComposition /> renders and matches snapshot 1`] = `
           </p>
           <div>
             <button
+              aria-label="select_score"
               class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary Mui-disabled Mui-disabled"
               disabled=""
               tabindex="-1"
@@ -100,6 +102,7 @@ exports[`<SelectComposition /> renders and matches snapshot 1`] = `
       class="MuiBox-root MuiBox-root-81 makeStyles-formNav-5"
     >
       <button
+        aria-label="Back"
         class="MuiButtonBase-root MuiButton-root MuiButton-text"
         tabindex="0"
         type="button"
@@ -114,6 +117,7 @@ exports[`<SelectComposition /> renders and matches snapshot 1`] = `
         />
       </button>
       <button
+        aria-label="Next"
         class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary Mui-disabled Mui-disabled"
         disabled=""
         tabindex="-1"
