@@ -22,7 +22,7 @@ Scenario('Going to landing page viewing the first section', async ({ I, env }) =
 
   const identifier                  = env.REACT_APP_PUBLIC_CAMPAIGN_IDENTIFIER;
   const response                    = await I.sendQuery(GET_CAMPAIGN, { identifier });
-  const { ControlAction: campaign } =  response.data.data;
+  const { ControlAction: campaign } = response.data.data;
   const digitalDocument             = getCampaignDigitalDocument(...campaign);
 
   I.say('I am looking at the current campaign');
@@ -32,7 +32,7 @@ Scenario('Going to landing page viewing the first section', async ({ I, env }) =
   I.see(`Help us digitize the ${digitalDocument.title}`);
   I.see('Create modern, playable scores from known and unknown classics.');
 
-  I.say('On the right side I can see a image');
+  I.say('On the right side I can see an image');
   I.seeElement('img');
 
   I.say('I can read the explanation');
@@ -62,7 +62,7 @@ Scenario('View the active campaigns', async ({ I }) => {
   // I.seeVisualDiff("landing_page_active_campaigns.png", { tolerance, prepareBaseImage: true });
 
   const response                     = await I.sendQuery(GET_CAMPAIGNS);
-  const { ControlAction: campaigns } =  response.data.data;
+  const { ControlAction: campaigns } = response.data.data;
   const numberOfSlides               = campaigns.length < 20 ? campaigns.length : 20;
   
   I.see('Active campaigns', 'h2');
@@ -110,8 +110,7 @@ Scenario('View the Supported by', async ({ I }) => {
   // });
 });
 
-const GET_CAMPAIGNS =`
-query {
+const GET_CAMPAIGNS =`query {
 	ControlAction(filter:{wasDerivedFrom:{identifier: "b559c52d-6104-4cb3-ab82-39b82bb2de6c"}}, orderBy: endTime_asc, first: 20) {
 		identifier
     name
@@ -135,25 +134,24 @@ query {
 	}
 }`;
 
-const GET_CAMPAIGN =`
-    query Campaign($identifier: ID!) {
-        ControlAction (identifier: $identifier) {
-            identifier
-            name
-            description
-            object {
-                ... on PropertyValue {
-                    name
-                    value
-                    nodeValue {
-                        ... on DigitalDocument {
-                            identifier
-                            title
-                            source
-                        }
-                    }
-                }
-            }
-        }
-    }
-`;
+
+const GET_CAMPAIGN =`query Campaign($identifier: ID!) {
+  ControlAction (identifier: $identifier) {
+      identifier
+      name
+      description
+      object {
+          ... on PropertyValue {
+              name
+              value
+              nodeValue {
+                  ... on DigitalDocument {
+                      identifier
+                      title
+                      source
+                  }
+              }
+          }
+      }
+  }
+}`;
