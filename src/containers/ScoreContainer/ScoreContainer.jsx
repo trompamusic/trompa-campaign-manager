@@ -81,7 +81,7 @@ class ScoreContainer extends Component {
 
   async getScore() {
     try {
-      const uri      = `https://raw.githubusercontent.com/Crowd-Transcribed-MEI-Repositories/${this.props.pdfName}/crowdmanager/aligned.mei`;
+      const uri      = `https://raw.githubusercontent.com/Crowd-Transcribed-MEI-Repositories/${this.props.digitalDocId}/crowdmanager/aligned.mei`;
       const response = await fetch(uri,{ method: 'head' });
 
       if (response.ok) {
