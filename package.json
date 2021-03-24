@@ -76,7 +76,7 @@
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
     "seamless-immutable": "^7.1.2",
-    "selectable-score": "trompamusic/selectable-score#1.1",
+    "selectable-score": "trompamusic/selectable-score#1.2",
     "solid-auth-client": "^2.5.2",
     "trompa-multimodal-component": "^1.2.1",
     "url-search-params-polyfill": "^7.0.0"

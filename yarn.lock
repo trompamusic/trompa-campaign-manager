@@ -7563,10 +7563,10 @@ downshift@^6.0.6:
     prop-types "^15.7.2"
     react-is "^17.0.1"
 
-dragselect@^1.13.1:
-  version "1.15.1"
-  resolved "https://registry.yarnpkg.com/dragselect/-/dragselect-1.15.1.tgz#3b532172af80211b8c3712e0e66e09a2c07adbe2"
-  integrity sha512-2U57z6flnl5tJKHOMqMTgasIVDMWlo0357LYsRPzaSHfcG6ZygLPijJC4JAYCJ85ycjEV9m1N2HlxAduz8yl2g==
+dragselect@latest:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/dragselect/-/dragselect-2.0.2.tgz#5ae15db3b68b03f3772ecd258875abb51bfaaaed"
+  integrity sha512-BAU9FqVw06bSW+Fj9LSYwrwVJ4iKTIsQKvgkORZt4raBZ1XGNi7e+L6/b2trVze3U4EfmdHMDOEEXTWMIyqCzA==
 
 duplexer@^0.1.1:
   version "0.1.2"
@@ -12203,7 +12203,7 @@ media-typer@0.3.0:
 
 meld-clients-core@oerc-music/meld-clients-core#meld-dev-2.0-TROMPA:
   version "2.0.0"
-  resolved "https://codeload.github.com/oerc-music/meld-clients-core/tar.gz/1f23c0f7b8f6feb55269b1a460b2e910967fd1f8"
+  resolved "https://codeload.github.com/oerc-music/meld-clients-core/tar.gz/83fb5bfddd41e308e629ab25462d381ca50484e1"
   dependencies:
     axios "^0.19.0"
     immutability-helper "^2.1.2"
@@ -12220,12 +12220,14 @@ meld-clients-core@oerc-music/meld-clients-core#meld-dev-2.0-TROMPA:
     react-media-player "^0.7.9"
     react-redux "^7.2.0"
     react-router latest
+    react-router-dom "^4.3.1"
     react-scripts "^3.1.1"
     redux "^4.0.5"
     redux-promise "^0.6.0"
     redux-thunk "^2.3.0"
     solid-auth-client "^2.4.1"
     svg-inline-react "^3.2.0"
+    uuid "^8.3.2"
 
 memoizerific@^1.11.3:
   version "1.11.3"
@@ -15035,9 +15037,9 @@ react-i18next@^10.11.4:
     html-parse-stringify2 "2.0.1"
 
 react-i18next@^11.3.0:
-  version "11.8.10"
-  resolved "https://registry.yarnpkg.com/react-i18next/-/react-i18next-11.8.10.tgz#aa64bc20410ee8f660a5b918d53f4e41271edf00"
-  integrity sha512-ckjNzMjYkmx4fQ8zzuaYTosYN3Co6ebrgCQJzuZCcGFYSR/kGHZzSu0xw9VhtnbjJVKx0gEMV3DLRvzi4xDZUw==
+  version "11.8.11"
+  resolved "https://registry.yarnpkg.com/react-i18next/-/react-i18next-11.8.11.tgz#bdf0440bad0d576664057a0c1233cb4fecf9eaab"
+  integrity sha512-S17B952IB8T5Zs0SoGNR5zSHU5N7+X2D2OydhAtqNHT+iw9Tbt7WBNExufe9NbmpUQUUjKrCHIkl2diNTdGYtA==
   dependencies:
     "@babel/runtime" "^7.13.6"
     html-parse-stringify2 "^2.0.1"
@@ -15201,6 +15203,18 @@ react-refresh@^0.8.3:
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.8.3.tgz#721d4657672d400c5e3c75d063c4a85fb2d5d68f"
   integrity sha512-X8jZHc7nCMjaCqoU+V2I0cOhNW+QMBwSUkeXnTi8IPe6zaRWfn60ZzvFDZqWPfmSJfjub7dDW1SP0jaHWLu/hg==
 
+react-router-dom@^4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-4.3.1.tgz#4c2619fc24c4fa87c9fd18f4fb4a43fe63fbd5c6"
+  integrity sha512-c/MlywfxDdCp7EnB7YfPMOfMD3tOtIjrQlj/CKfNMBxdmpJP8xcz5P/UAFn3JbnQCNUxsHyVVqllF9LhgVyFCA==
+  dependencies:
+    history "^4.7.2"
+    invariant "^2.2.4"
+    loose-envify "^1.3.1"
+    prop-types "^15.6.1"
+    react-router "^4.3.1"
+    warning "^4.0.1"
+
 react-router-dom@^5.1.2:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-5.2.0.tgz#9e65a4d0c45e13289e66c7b17c7e175d0ea15662"
@@ -15229,6 +15243,19 @@ react-router@5.2.0, react-router@latest:
     react-is "^16.6.0"
     tiny-invariant "^1.0.2"
     tiny-warning "^1.0.0"
+
+react-router@^4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/react-router/-/react-router-4.3.1.tgz#aada4aef14c809cb2e686b05cee4742234506c4e"
+  integrity sha512-yrvL8AogDh2X42Dt9iknk4wF4V8bWREPirFfS9gLU1huk6qK41sg7Z/1S81jjTrGHxa3B8R3J6xIkDAA6CVarg==
+  dependencies:
+    history "^4.7.2"
+    hoist-non-react-statics "^2.5.0"
+    invariant "^2.2.4"
+    loose-envify "^1.3.1"
+    path-to-regexp "^1.7.0"
+    prop-types "^15.6.1"
+    warning "^4.0.1"
 
 react-scripts@^3.1.1, react-scripts@^3.4.4:
   version "3.4.4"
@@ -16223,12 +16250,12 @@ select@^1.1.2:
   resolved "https://registry.yarnpkg.com/select/-/select-1.1.2.tgz#0e7350acdec80b1108528786ec1d4418d11b396d"
   integrity sha1-DnNQrN7ICxEIUoeG7B1EGNEbOW0=
 
-selectable-score@trompamusic/selectable-score#1.1:
-  version "1.1.0"
-  resolved "https://codeload.github.com/trompamusic/selectable-score/tar.gz/61d8fc9f7dfe329811f58a6768793780cc4dbce7"
+selectable-score@trompamusic/selectable-score#1.2:
+  version "1.2.0"
+  resolved "https://codeload.github.com/trompamusic/selectable-score/tar.gz/bbfa550484209e59edfbea5d1954bb5c333110a3"
   dependencies:
     browserslist "^4.11.0"
-    dragselect "^1.13.1"
+    dragselect latest
     fibers "^4.0.2"
     meld-clients-core oerc-music/meld-clients-core#meld-dev-2.0-TROMPA
     node-sass "^4.14.1"
@@ -18066,6 +18093,11 @@ uuid@^3.3.2, uuid@^3.4.0:
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
 
+uuid@^8.3.2:
+  version "8.3.2"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
+  integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
+
 v8-compile-cache@^2.0.3:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/v8-compile-cache/-/v8-compile-cache-2.3.0.tgz#2de19618c66dc247dcfb6f99338035d8245a2cee"
@@ -18155,7 +18187,7 @@ warning@^3.0.0:
   dependencies:
     loose-envify "^1.0.0"
 
-warning@^4.0.2, warning@^4.0.3:
+warning@^4.0.1, warning@^4.0.2, warning@^4.0.3:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/warning/-/warning-4.0.3.tgz#16e9e077eb8a86d6af7d64aa1e05fd85b4678ca3"
   integrity sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==
