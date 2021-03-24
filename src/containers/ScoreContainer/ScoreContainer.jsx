@@ -122,7 +122,7 @@ class ScoreContainer extends Component {
             {uri && (
               <Score
                 uri={uri}
-                key={'score' + fullScreen}
+                key={`score${fullScreen}`}
                 vrvOptions={this.OPTIONS}
                 ref={this.scoreComponent}
               />
