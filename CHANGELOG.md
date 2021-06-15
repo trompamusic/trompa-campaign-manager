@@ -1,3 +1,12 @@
+## [1.3.4](https://github.com/Videodock/ce-campaign-manager/compare/v1.3.3...v1.3.4) (2021-06-15)
+
+
+### Bug Fixes
+
+* **project:** update public campaign and show title ([c151973](https://github.com/Videodock/ce-campaign-manager/commit/c151973d2727d8ab240e504e6013a1c06c7fca49))
+
+
+
 ## [1.3.3](https://github.com/Videodock/ce-campaign-manager/compare/v1.2.0...v1.3.3) (2021-06-15)
 
 
