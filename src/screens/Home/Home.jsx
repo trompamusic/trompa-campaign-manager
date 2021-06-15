@@ -83,7 +83,7 @@ export default function Home() {
         <Jumbotron
           image={images.collaborateHero}
           text={{
-            slogan     : t('jumbotron.slogan'),
+            slogan     : campaign?.name || t('jumbotron.slogan'),
             description: t('jumbotron.description'),
           }}
           campaign={campaign}

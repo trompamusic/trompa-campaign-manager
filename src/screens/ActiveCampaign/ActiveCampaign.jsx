@@ -28,30 +28,33 @@ import styles from './ActiveCampaign.styles';
 
 const useStyles = makeStyles(styles);
 
-export default function ActiveCampaign ({ match }) {
+export default function ActiveCampaign({ match }) {
   const { t }                                                           = useTranslation('campaign');
   const classes                                                         = useStyles();
   const subscribeFormRef                                                = useRef();
   const openSubscribeForm                                               = () => subscribeFormRef.current.typeform.open();
   const history                                                         = useHistory();
-  const createdParameter                                                = hasUrlParameter("created");
+  const createdParameter                                                = hasUrlParameter('created');
   const [shareDialogOpen, setShareDialogOpen]                           = useState(false);
-  const { loading: loadingCampaign, error, data: campaignListResponse } = useQuery(GET_CAMPAIGNS);
+  const { loading: loadingCampaign, error, data: campaignListResponse } = useQuery(GET_CAMPAIGNS, { variables: { endTime: moment().format() } });
   const campaigns                                                       = campaignListResponse?.ControlAction;
   const { campaignIdentifier }                                          = match.params;
-  const { loading: loadingCampaignList, data: campaignResponse  }       = useQuery(GET_CAMPAIGN_WITH_COMPOSITION, { variables: { identifier: campaignIdentifier } });
+  const {
+    loading: loadingCampaignList,
+    data   : campaignResponse,
+  }                                                                     = useQuery(GET_CAMPAIGN_WITH_COMPOSITION, { variables: { identifier: campaignIdentifier } });
   const campaign                                                        = campaignResponse?.ControlAction?.[0];
   const taskCount                                                       = useTaskCount(campaign);
   const isLoading                                                       = loadingCampaign || loadingCampaignList;
 
   useEffect(() => {
-    if(createdParameter) {
+    if (createdParameter) {
       setShareDialogOpen(true);
     }
   }, [createdParameter]);
 
   const handleShareDialogClose = () => {
-    if(createdParameter) {
+    if (createdParameter) {
       history.replace(`/campaign/${campaignIdentifier}`);
     }
     setShareDialogOpen(false);
@@ -94,11 +97,11 @@ export default function ActiveCampaign ({ match }) {
         buttons={buttons}
         primaryButton={primaryButton}
       />
-      { isLoading ? (
+      {isLoading ? (
         <div className={classes.spinner}>
           <CircularProgress color="primary" />
         </div>
-      ): (
+      ) : (
         <React.Fragment>
           <Jumbotron
             image={digitalDocument?.image || images.scoreImage}
@@ -139,8 +142,9 @@ export default function ActiveCampaign ({ match }) {
                     history.push(`/campaign/${campaign?.identifier}`);
                   }}
                 />
-              );})}
-          </ActiveCampaignOverviewSection>      
+              );
+            })}
+          </ActiveCampaignOverviewSection>
           <Jumbotron
             image={images.collaborateHero}
             text={{
@@ -169,7 +173,10 @@ export default function ActiveCampaign ({ match }) {
             campaign={campaign}
             campaignUrl={campaignUrl}
           />
-          <TypeformModal url={`https://kirkandblackbeard.typeform.com/to/NHbUkT?campaignid=${campaignIdentifier}`} formRef={subscribeFormRef} />
+          <TypeformModal
+            url={`https://kirkandblackbeard.typeform.com/to/NHbUkT?campaignid=${campaignIdentifier}`}
+            formRef={subscribeFormRef}
+          />
         </React.Fragment>
       )}
     </div>
@@ -177,15 +184,21 @@ export default function ActiveCampaign ({ match }) {
 }
 
 const GET_CAMPAIGNS = gql`
-    query {
-      ControlAction(filter:{wasDerivedFrom:{identifier: "b559c52d-6104-4cb3-ab82-39b82bb2de6c"}}, orderBy: endTime_asc, first: 20) {
-        agent
+    query ($endTime: String) {
+        ControlAction(
+            filter: {
+                wasDerivedFrom: { identifier: "b559c52d-6104-4cb3-ab82-39b82bb2de6c" },
+                endTime_gt: { formatted: $endTime }
+            },
+            orderBy: endTime_asc, first: 20
+        ) {
+            agent
             identifier
             name
             alternateName
             description
             endTime {
-              formatted
+                formatted
             }
             object
             {
@@ -206,27 +219,27 @@ const GET_CAMPAIGNS = gql`
     }`;
 
 const GET_CAMPAIGN_WITH_COMPOSITION = gql`
-  query CampaignWithComposition($identifier: ID!) {
-      ControlAction (identifier: $identifier) {
-          agent
-          identifier
-          name
-          alternateName
-          creator
-          description
-          endTime {
-            formatted
-          }
-          object {
-              ... on PropertyValue {
-                  name
-                  value
-                  nodeValue {
-                      ... on DigitalDocument {
-                          identifier
-                          title
-                          source
-                          image
+    query CampaignWithComposition($identifier: ID!) {
+        ControlAction (identifier: $identifier) {
+            agent
+            identifier
+            name
+            alternateName
+            creator
+            description
+            endTime {
+                formatted
+            }
+            object {
+                ... on PropertyValue {
+                    name
+                    value
+                    nodeValue {
+                        ... on DigitalDocument {
+                            identifier
+                            title
+                            source
+                            image
                             exampleOfWork {
                                 ... on MusicComposition {
                                     title
@@ -246,12 +259,12 @@ const GET_CAMPAIGN_WITH_COMPOSITION = gql`
                                     }
                                 }
                             }
-                      }
-                  }
-              }
-          }
-      }
-  }
+                        }
+                    }
+                }
+            }
+        }
+    }
 `;
 
 export const GET_CAMPAIGN = gql`
