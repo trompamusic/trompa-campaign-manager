@@ -27,7 +27,6 @@ exports[`<NavBar /> renders and matches snapshot 1`] = `
               aria-hidden="true"
               class="MuiSvgIcon-root"
               focusable="false"
-              role="presentation"
               viewBox="0 0 24 24"
             >
               <path
@@ -53,7 +52,7 @@ exports[`<NavBar /> renders and matches snapshot 1`] = `
     </div>
   </header>
   <div
-    class="PrivateSwipeArea-root-135 PrivateSwipeArea-anchorLeft-136"
+    class="PrivateSwipeArea-root-20 PrivateSwipeArea-anchorLeft-21"
     style="width: 20px;"
   />
 </div>

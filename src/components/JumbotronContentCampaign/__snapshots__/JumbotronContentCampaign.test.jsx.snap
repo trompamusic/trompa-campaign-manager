@@ -36,7 +36,6 @@ exports[`<JumbotronContentCampaign /> renders and matches snapshot 1`] = `
             aria-hidden="true"
             class="MuiSvgIcon-root"
             focusable="false"
-            role="presentation"
             viewBox="0 0 24 24"
           >
             <path
@@ -52,28 +51,28 @@ exports[`<JumbotronContentCampaign /> renders and matches snapshot 1`] = `
     </button>
   </div>
   <div
-    class="MuiGrid-root makeStyles-copyAndShareRow-76 MuiGrid-container MuiGrid-align-items-xs-center"
+    class="MuiGrid-root makeStyles-copyAndShareRow-5 MuiGrid-container MuiGrid-align-items-xs-center"
   >
     <div
       class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-9"
     >
       <div
-        class="makeStyles-root-181"
+        class="makeStyles-root-7"
       >
         <div
-          class="MuiFormControl-root MuiTextField-root makeStyles-copyField-182 MuiFormControl-fullWidth"
+          class="MuiFormControl-root MuiTextField-root makeStyles-copyField-8 MuiFormControl-fullWidth"
         >
           <div
-            class="MuiInputBase-root MuiFilledInput-root MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiFilledInput-adornedEnd makeStyles-copyFieldAdornedEnd-184 MuiInputBase-marginDense MuiFilledInput-marginDense"
+            class="MuiInputBase-root MuiFilledInput-root MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiFilledInput-adornedEnd makeStyles-copyFieldAdornedEnd-10 MuiInputBase-marginDense MuiFilledInput-marginDense"
           >
             <input
               aria-invalid="false"
-              class="MuiInputBase-input MuiFilledInput-input makeStyles-copyFieldInput-183 MuiInputBase-inputAdornedEnd MuiFilledInput-inputAdornedEnd MuiInputBase-inputMarginDense MuiFilledInput-inputMarginDense makeStyles-copyFieldInputMarginDense-185"
+              class="MuiInputBase-input MuiFilledInput-input makeStyles-copyFieldInput-9 MuiInputBase-inputAdornedEnd MuiFilledInput-inputAdornedEnd MuiInputBase-inputMarginDense MuiFilledInput-inputMarginDense makeStyles-copyFieldInputMarginDense-11"
               type="text"
               value=""
             />
             <span
-              class="makeStyles-copyText-186"
+              class="makeStyles-copyText-12"
             >
               Copy
             </span>
@@ -82,7 +81,7 @@ exports[`<JumbotronContentCampaign /> renders and matches snapshot 1`] = `
       </div>
     </div>
     <div
-      class="MuiGrid-root makeStyles-sharingIcons-77 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-3"
+      class="MuiGrid-root makeStyles-sharingIcons-6 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-3"
     >
       <a
         href="https://www.facebook.com/sharer/sharer.php?u=undefined"
@@ -94,7 +93,6 @@ exports[`<JumbotronContentCampaign /> renders and matches snapshot 1`] = `
           aria-label="Facebook"
           class="MuiSvgIcon-root"
           focusable="false"
-          role="presentation"
           viewBox="0 0 24 24"
         >
           <path
@@ -113,7 +111,6 @@ exports[`<JumbotronContentCampaign /> renders and matches snapshot 1`] = `
           aria-label="Twitter"
           class="MuiSvgIcon-root"
           focusable="false"
-          role="presentation"
           viewBox="0 0 24 24"
         >
           <path
@@ -132,7 +129,6 @@ exports[`<JumbotronContentCampaign /> renders and matches snapshot 1`] = `
           aria-label="Mail"
           class="MuiSvgIcon-root"
           focusable="false"
-          role="presentation"
           viewBox="0 0 24 24"
         >
           <path

@@ -14,7 +14,6 @@ exports[`<ActiveTask /> renders and matches snapshot 1`] = `
         aria-hidden="true"
         class="MuiSvgIcon-root makeStyles-backIcon-8"
         focusable="false"
-        role="presentation"
         viewBox="0 0 24 24"
       >
         <path

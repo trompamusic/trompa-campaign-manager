@@ -5,7 +5,7 @@ exports[`<SelectScoreModal /> renders and matches snapshot 1`] = `
   class="MuiContainer-root makeStyles-root-1 MuiContainer-maxWidthLg"
 >
   <div
-    class="MuiBox-root MuiBox-root-15"
+    class="MuiBox-root MuiBox-root-6"
   >
     <div
       class="MuiPaper-root MuiCard-root makeStyles-uploadCard-2 MuiPaper-elevation0 MuiPaper-rounded"
@@ -33,7 +33,6 @@ exports[`<SelectScoreModal /> renders and matches snapshot 1`] = `
             aria-hidden="true"
             class="MuiSvgIcon-root makeStyles-icon-5"
             focusable="false"
-            role="presentation"
             viewBox="0 0 24 24"
           >
             <path

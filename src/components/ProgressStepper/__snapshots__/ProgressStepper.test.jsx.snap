@@ -17,10 +17,10 @@ exports[`<ProgressStepper /> renders and matches snapshot 1`] = `
           class="MuiStepLabel-iconContainer MuiStepLabel-alternativeLabel"
         >
           <div
-            class="makeStyles-root-54"
+            class="makeStyles-root-6"
           >
             <div
-              class="makeStyles-circle-55 makeStyles-active-56"
+              class="makeStyles-circle-7 makeStyles-active-8"
             />
           </div>
         </span>

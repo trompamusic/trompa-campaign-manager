@@ -5,7 +5,7 @@ exports[`<SelectScoreItem /> renders and matches snapshot 1`] = `
   class="MuiPaper-root MuiCard-root makeStyles-item-1 MuiPaper-elevation2 MuiPaper-rounded"
 >
   <div
-    class="MuiBox-root MuiBox-root-42 makeStyles-imgBox-2"
+    class="MuiBox-root MuiBox-root-12 makeStyles-imgBox-2"
   >
     <div
       class="MuiAvatar-root MuiAvatar-circle makeStyles-img-3 MuiAvatar-colorDefault"
@@ -14,7 +14,6 @@ exports[`<SelectScoreItem /> renders and matches snapshot 1`] = `
         aria-hidden="true"
         class="MuiSvgIcon-root"
         focusable="false"
-        role="presentation"
         viewBox="0 0 20 20"
       >
         <g
@@ -105,20 +104,20 @@ exports[`<SelectScoreItem /> renders and matches snapshot 1`] = `
     </div>
   </div>
   <div
-    class="MuiBox-root MuiBox-root-59 makeStyles-itemMain-4"
+    class="MuiBox-root MuiBox-root-13 makeStyles-itemMain-4"
   >
     <div
-      class="MuiBox-root MuiBox-root-60 makeStyles-itemHeader-5"
+      class="MuiBox-root MuiBox-root-14 makeStyles-itemHeader-5"
     >
       <h3
         class="MuiTypography-root MuiTypography-h3 MuiTypography-colorPrimary"
       />
       <div
-        class="MuiBox-root MuiBox-root-91 makeStyles-itemButtonBox-6"
+        class="MuiBox-root MuiBox-root-15 makeStyles-itemButtonBox-6"
       />
     </div>
     <div
-      class="MuiBox-root MuiBox-root-92"
+      class="MuiBox-root MuiBox-root-16"
     >
       <p
         class="MuiTypography-root MuiTypography-body1"

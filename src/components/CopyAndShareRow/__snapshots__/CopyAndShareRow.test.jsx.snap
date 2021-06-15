@@ -8,22 +8,22 @@ exports[`<CopyAndShareRow /> renders and matches snapshot 1`] = `
     class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-9"
   >
     <div
-      class="makeStyles-root-106"
+      class="makeStyles-root-3"
     >
       <div
-        class="MuiFormControl-root MuiTextField-root makeStyles-copyField-107 MuiFormControl-fullWidth"
+        class="MuiFormControl-root MuiTextField-root makeStyles-copyField-4 MuiFormControl-fullWidth"
       >
         <div
-          class="MuiInputBase-root MuiFilledInput-root MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiFilledInput-adornedEnd makeStyles-copyFieldAdornedEnd-109 MuiInputBase-marginDense MuiFilledInput-marginDense"
+          class="MuiInputBase-root MuiFilledInput-root MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiFilledInput-adornedEnd makeStyles-copyFieldAdornedEnd-6 MuiInputBase-marginDense MuiFilledInput-marginDense"
         >
           <input
             aria-invalid="false"
-            class="MuiInputBase-input MuiFilledInput-input makeStyles-copyFieldInput-108 MuiInputBase-inputAdornedEnd MuiFilledInput-inputAdornedEnd MuiInputBase-inputMarginDense MuiFilledInput-inputMarginDense makeStyles-copyFieldInputMarginDense-110"
+            class="MuiInputBase-input MuiFilledInput-input makeStyles-copyFieldInput-5 MuiInputBase-inputAdornedEnd MuiFilledInput-inputAdornedEnd MuiInputBase-inputMarginDense MuiFilledInput-inputMarginDense makeStyles-copyFieldInputMarginDense-7"
             type="text"
             value="https://www.trompa.com/"
           />
           <span
-            class="makeStyles-copyText-111"
+            class="makeStyles-copyText-8"
           >
             Copy
           </span>
@@ -44,7 +44,6 @@ exports[`<CopyAndShareRow /> renders and matches snapshot 1`] = `
         aria-label="Facebook"
         class="MuiSvgIcon-root"
         focusable="false"
-        role="presentation"
         viewBox="0 0 24 24"
       >
         <path
@@ -63,7 +62,6 @@ exports[`<CopyAndShareRow /> renders and matches snapshot 1`] = `
         aria-label="Twitter"
         class="MuiSvgIcon-root"
         focusable="false"
-        role="presentation"
         viewBox="0 0 24 24"
       >
         <path
@@ -82,7 +80,6 @@ exports[`<CopyAndShareRow /> renders and matches snapshot 1`] = `
         aria-label="Mail"
         class="MuiSvgIcon-root"
         focusable="false"
-        role="presentation"
         viewBox="0 0 24 24"
       >
         <path

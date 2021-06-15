@@ -25,21 +25,28 @@ import styles from './Home.styles';
 const useStyles = makeStyles(styles);
 
 export default function Home() {
-  const classes                                                     = useStyles();
-  const { t }                                                       = useTranslation('home');
-  const history                                                     = useHistory();
-  const startCampaignFormRef                                        = useRef();
-  const { loading, error, data: { ControlAction: campaigns } = {} } = useQuery(GET_CAMPAIGNS);
-  const publicCampaignIdentifier                                    = process.env.REACT_APP_PUBLIC_CAMPAIGN_IDENTIFIER;
-  const campaign                                                    = campaigns?.find(({ identifier }) => identifier === publicCampaignIdentifier) || campaigns?.[0];
-  const digitalDocument                                             = getCampaignDigitalDocument(campaign);
+  const classes                  = useStyles();
+  const { t }                    = useTranslation('home');
+  const history                  = useHistory();
+  const startCampaignFormRef     = useRef();
+  const {
+    loading,
+    error,
+    data: { ControlAction: campaigns } = {},
+  }                              = useQuery(GET_CAMPAIGNS, { variables: { endTime: moment().format() } });
+  const publicCampaignIdentifier = process.env.REACT_APP_PUBLIC_CAMPAIGN_IDENTIFIER;
+  const campaign                 = campaigns?.find(({ identifier }) => identifier === publicCampaignIdentifier) || campaigns?.[0];
+  const digitalDocument          = getCampaignDigitalDocument(campaign);
 
   if (error) {
     return null;
   }
 
   const navLinks      = [{ name: t('home'), to: '/' }, { name: t('start_campaign'), to: '/createcampaign' }];
-  const primaryButton = { name: t('join_campaign'), to: `campaign/${process.env.REACT_APP_PUBLIC_CAMPAIGN_IDENTIFIER}` };
+  const primaryButton = {
+    name: t('join_campaign'),
+    to  : `campaign/${process.env.REACT_APP_PUBLIC_CAMPAIGN_IDENTIFIER}`,
+  };
 
   const metaTitle       = campaign?.name ? `${t('help_us_digitize')}: ${campaign?.name}` : t('help_us_digitize_untitled');
   const metaDescription = campaign?.description || '';
@@ -66,82 +73,89 @@ export default function Home() {
           <CircularProgress color="primary" />
         </div>
       )}
-      {!loading && 
-        <React.Fragment>
-        
-          <TypeformModal url={`https://kirkandblackbeard.typeform.com/to/BpMzhX?campaignid=${campaign?.identifier}`} formRef={startCampaignFormRef} />
-          <Jumbotron
-            image={images.collaborateHero}
-            text={{
-              slogan     : t('jumbotron.slogan'),
-              description: t('jumbotron.description'),
-            }}
-            campaign={campaign}
-            digitalDocument={digitalDocument}
-          >
-            {!!campaign && 
-            <Button
-              className={classes.buttonHero}
-              component={Link}
-              to={`campaign/${publicCampaignIdentifier}`}
-              variant="contained"
-              color="primary"
-            >
-              {t('join_campaign')}
-            </Button>
-            }
-          </Jumbotron>
-          <HomeTwoSections />
-          <ActiveCampaignOverviewSection>
-            {campaigns?.map(campaign => {
-              const daysToGo        = moment(campaign.endTime.formatted)?.diff(moment(), 'days');
-              const digitalDocument = getCampaignDigitalDocument(campaign);
+      {!loading &&
+      <React.Fragment>
 
-              return (
-                <ActiveCampaignOverviewItem
-                  key={campaign.identifier}
-                  scoreImage={digitalDocument?.image}
-                  scoreTitle={digitalDocument?.title}
-                  campaignTitle={campaign.title}
-                  campaignDeadline={daysToGo}
-                  onClick={() => history.push(`/campaign/${campaign.identifier}`)}
-                />
-              );})}
-          </ActiveCampaignOverviewSection>
-          <HomeThreeSteps />
-          <HomeTestimonials />
-          <HomeAboutTrompa />
-          <Footer />
-        </React.Fragment>
+        <TypeformModal
+          url={`https://kirkandblackbeard.typeform.com/to/BpMzhX?campaignid=${campaign?.identifier}`}
+          formRef={startCampaignFormRef}
+        />
+        <Jumbotron
+          image={images.collaborateHero}
+          text={{
+            slogan     : t('jumbotron.slogan'),
+            description: t('jumbotron.description'),
+          }}
+          campaign={campaign}
+          digitalDocument={digitalDocument}
+        >
+          {!!campaign &&
+          <Button
+            className={classes.buttonHero}
+            component={Link}
+            to={`campaign/${publicCampaignIdentifier}`}
+            variant="contained"
+            color="primary"
+          >
+            {t('join_campaign')}
+          </Button>
+          }
+        </Jumbotron>
+        <HomeTwoSections />
+        <ActiveCampaignOverviewSection>
+          {campaigns?.map(campaign => {
+            const daysToGo        = moment(campaign.endTime.formatted)?.diff(moment(), 'days');
+            const digitalDocument = getCampaignDigitalDocument(campaign);
+
+            return (
+              <ActiveCampaignOverviewItem
+                key={campaign.identifier}
+                scoreImage={digitalDocument?.image}
+                scoreTitle={digitalDocument?.title}
+                campaignTitle={campaign.title}
+                campaignDeadline={daysToGo}
+                onClick={() => history.push(`/campaign/${campaign.identifier}`)}
+              />
+            );
+          })}
+        </ActiveCampaignOverviewSection>
+        <HomeThreeSteps />
+        <HomeTestimonials />
+        <HomeAboutTrompa />
+        <Footer />
+      </React.Fragment>
       }
     </div>
   );
 }
 
 const GET_CAMPAIGNS = gql`
-query {
-	ControlAction(filter:{wasDerivedFrom:{identifier: "b559c52d-6104-4cb3-ab82-39b82bb2de6c"}}, orderBy: endTime_asc, first: 20) {
-		identifier
-    name
-    endTime {
-      formatted
-    }
-    object
-    {
-			... on PropertyValue {
-        name
-        value
-				nodeValue {
-					... on DigitalDocument {
-						identifier
-						title
-            image
-					}
-				}
-			}
-		}
-	}
-}`;
+    query($endTime: String) {
+        ControlAction(filter:{
+            wasDerivedFrom:{identifier: "b559c52d-6104-4cb3-ab82-39b82bb2de6c"},
+            endTime_gt: { formatted: $endTime }
+        }, orderBy: endTime_asc, first: 20) {
+            identifier
+            name
+            endTime {
+                formatted
+            }
+            object
+            {
+                ... on PropertyValue {
+                    name
+                    value
+                    nodeValue {
+                        ... on DigitalDocument {
+                            identifier
+                            title
+                            image
+                        }
+                    }
+                }
+            }
+        }
+    }`;
 
 export const GET_CAMPAIGN = gql`
     query Campaign($identifier: ID!) {

@@ -2,7 +2,7 @@
 
 exports[`<SelectComposition /> renders and matches snapshot 1`] = `
 <div
-  class="MuiBox-root MuiBox-root-14 makeStyles-root-1"
+  class="MuiBox-root MuiBox-root-13 makeStyles-root-1"
 >
   <img
     alt="person"
@@ -18,7 +18,7 @@ exports[`<SelectComposition /> renders and matches snapshot 1`] = `
       Composition & Score
     </h1>
     <div
-      class="MuiBox-root MuiBox-root-45 makeStyles-part-8"
+      class="MuiBox-root MuiBox-root-14 makeStyles-part-8"
     >
       <p
         class="MuiTypography-root MuiTypography-body1"
@@ -26,7 +26,7 @@ exports[`<SelectComposition /> renders and matches snapshot 1`] = `
         Let's start with the composition
       </p>
       <div
-        class="MuiBox-root MuiBox-root-46 makeStyles-inputBox-9"
+        class="MuiBox-root MuiBox-root-15 makeStyles-inputBox-9"
       >
         <div
           class="makeStyles-selectInput-10"
@@ -61,7 +61,7 @@ exports[`<SelectComposition /> renders and matches snapshot 1`] = `
       </p>
     </div>
     <div
-      class="MuiBox-root MuiBox-root-79 makeStyles-part-8"
+      class="MuiBox-root MuiBox-root-16 makeStyles-part-8"
     >
       <p
         class="MuiTypography-root MuiTypography-body1"
@@ -69,7 +69,7 @@ exports[`<SelectComposition /> renders and matches snapshot 1`] = `
         Score
       </p>
       <div
-        class="MuiBox-root MuiBox-root-80 makeStyles-inputBox-9"
+        class="MuiBox-root MuiBox-root-17 makeStyles-inputBox-9"
       >
         <div
           class="makeStyles-selectInput-10"
@@ -97,7 +97,7 @@ exports[`<SelectComposition /> renders and matches snapshot 1`] = `
       </div>
     </div>
     <div
-      class="MuiBox-root MuiBox-root-81 makeStyles-formNav-5"
+      class="MuiBox-root MuiBox-root-18 makeStyles-formNav-5"
     >
       <button
         class="MuiButtonBase-root MuiButton-root MuiButton-text"
